@@ -1,5 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full"><head><meta charset="utf-8">
+<html lang="en" class="h-full"><head>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/social-image.png">
+  <meta property="og:image:width" content="2640">
+  <meta property="og:image:height" content="1430">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="/social-image.png"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Press | Alphabees</title>
 <meta name="description" content="Press kit, interviews, and speaker requests about Alphabees and the AI tutor for Moodle.">
@@ -208,15 +215,6 @@ opacity: 0 !important;
     overflow: hidden;
   }
 </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R1NYZ0V0HK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-R1NYZ0V0HK');
-</script>
 </head>
   <body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
 
@@ -517,7 +515,7 @@ opacity: 0 !important;
         <img src="https://uniscientia.it/wp-content/uploads/2022/06/cropped-logo-uniscientia-r.png" alt="brmi" class="w-[102px] h-[28px] object-contain grayscale opacity-60 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100" loading="lazy" decoding="async" referrerpolicy="no-referrer">
       </div>
 
-      <!-- Logo 6: LernLink -->
+      <!-- Logo 6: LearningLink -->
       <div class="group flex items-center justify-center transition-all duration-300">
         <img src="https://moodle.com/wp-content/uploads/2020/01/lern-link-gross-scaled.png" alt="brmi" class="w-[102px] h-[28px] object-contain grayscale opacity-60 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100" loading="lazy" decoding="async" referrerpolicy="no-referrer">
       </div>
@@ -631,7 +629,277 @@ opacity: 0 !important;
 <script>
   const progress = 76; const rings = document.querySelectorAll('[data-ring]'); rings.forEach((ring, idx) => { const r = parseFloat(ring.getAttribute('data-radius')); const circumference = 2 * Math.PI * r; const pct = progress / 100; const dash = Math.max(0, circumference * pct - 2); ring.style.transition = 'stroke-dasharray 1200ms cubic-bezier(0.22, 1, 0.36, 1), stroke-dashoffset 1200ms cubic-bezier(0.22, 1, 0.36, 1)'; ring.style.strokeDasharray = `0 ${circumference}`; ring.style.strokeDashoffset = '0'; setTimeout(() => { ring.style.strokeDasharray = `${dash} ${circumference}`; ring.style.strokeDashoffset = '0'; }, 120 + idx * 80); }); document.getElementById('percentValue').textContent = progress;
 </script>
-</div></main><!-- Workaround: Remove Aura-injected animation-killing styles -->
+</div><section class="md:py-24 overflow-hidden font-geist bg-white pt-16 pb-16 relative">
+  <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
+    <!-- Header -->
+    <div class="mb-12 md:mb-16 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div class="max-w-2xl">
+        <h2 class="md:text-4xl text-3xl font-semibold text-gray-900 tracking-tight">Questions &amp; Answers</h2>
+        <p class="text-lg text-gray-600 mt-4">Here you’ll find more information about the Alphabees AI Tutor and our services.</p>
+      </div>
+      <!-- Decorative icon/element -->
+
+    </div>
+
+    <!-- FAQ Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
+      <!-- Item 1 -->
+      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+        <button onclick="toggleFaq(this)" class="flex focus:outline-none text-left w-full pt-6 pr-6 pb-6 pl-6 items-center justify-between" aria-expanded="false">
+          <span class="text-base font-semibold text-gray-900">What does an AI tutor do?</span>
+          <span class="flex shrink-0 items-center justify-center transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon text-blue-600 bg-white w-8 h-8 border-gray-200 border rounded-full ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300 w-[16px] h-[16px]" data-icon-replaced="true" style="color: rgb(37, 99, 235); width: 16px; height: 16px;"><path d="M5 12h14" class=""></path><path d="M12 5v14" class=""></path></svg>
+          </span>
+        </button>
+        <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
+          <div class="overflow-hidden">
+            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">An AI tutor supports learners right in the course — with instant answers, summaries, examples, personalized practice, and clear explanations. It uses your course content (and any sources you add) as its knowledge base, so responses stay aligned with your e‑learning and drive progress. Learners get the help they need without ever leaving the platform.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+        <button onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
+          <span class="text-base font-semibold text-gray-900">What does an AI tutor cost?</span>
+          <span class="ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-blue-600 transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+          </span>
+        </button>
+        <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
+          <div class="overflow-hidden">
+            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">Try the Alphabees AI Tutor for free and launch it instantly in your LMS. Plans start at €99/month for up to 20 AI tutors, around 10,000 chat replies, and 100 learners. For larger needs, the Professional plan includes 50 AI tutors, around 25,000 chat replies, and 250 learners for €249/month. Both plans include unlimited courses, the Moodle block plugin, the Alphabees Analytics Portal, and email support.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+        <button onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
+          <span class="text-base font-semibold text-gray-900">Which AI models does Alphabees offer?</span>
+          <span class="ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-blue-600 transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+          </span>
+        </button>
+        <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
+          <div class="overflow-hidden">
+            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">Alphabees gives you access to top AI providers and the latest high‑performance models. Choose between open‑source and closed‑source options. Currently available: OpenAI, Anthropic, Google, Meta, Mistral, Groq, DeepSeek. Pick your preferred provider — no separate contract required. If you want to bring your own model or a self‑hosted open‑weight model like LLaMA 3, just reach out. We’ll help you connect your API key.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+        <button onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
+          <span class="text-base font-semibold text-gray-900">Do I need a separate AI provider subscription?</span>
+          <span class="ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-blue-600 transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+          </span>
+        </button>
+        <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
+          <div class="overflow-hidden">
+            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">No. Alphabees gives you access to top AI providers and the latest high‑performance models. Just choose a provider in the Alphabees portal when you set up your tutor. All AI usage costs are already included in your plan.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+        <button onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
+          <span class="text-base font-semibold text-gray-900">Can I integrate the AI tutor into my e‑learning and LMS?</span>
+          <span class="ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-blue-600 transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+          </span>
+        </button>
+        <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
+          <div class="overflow-hidden">
+            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">Yes. Our AI tutors integrate into common LMS platforms, so they fit seamlessly into your existing learning flow. For Moodle we even built a dedicated plugin — easy to set up with no technical knowledge.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+        <button onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
+          <span class="text-base font-semibold text-gray-900">Where is my data hosted?</span>
+          <span class="ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-blue-600 transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform=" "="" duration-300"=""><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+          </span>
+        </button>
+        <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
+          <div class="overflow-hidden">
+            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">All data is securely hosted on our servers in Germany, ensuring GDPR compliance.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 7 -->
+      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+        <button onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
+          <span class="text-base font-semibold text-gray-900">Is the tutor compliant with GDPR and the EU AI Act?</span>
+          <span class="ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-blue-600 transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform=" "="" duration-300"=""><path d="M5 12h14"></path><path d="M12 5v14" class=""></path></svg>
+          </span>
+        </button>
+        <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
+          <div class="overflow-hidden">
+            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">Yes. The Alphabees AI Tutor is GDPR‑compliant and built to meet EU AI Act requirements. We store no personal data and don’t use your data to train models. A GDPR‑compliant data processing agreement (DPA) exists between Alphabees and each AI provider, and we sign a DPA with every customer as well. In line with the EU AI Act, the tutor is used as a supportive learning tool, clearly labeled as AI via a disclaimer banner, and does not make automated decisions with legal or performance consequences.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 8 -->
+      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+        <button onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
+          <span class="text-base font-semibold text-gray-900">Does the AI tutor work in the Moodle Mobile App?</span>
+          <span class="ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-blue-600 transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform=" "="" duration-300"=""><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+          </span>
+        </button>
+        <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
+          <div class="overflow-hidden">
+            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">Yes. Alphabees is the only AI tutor that also works inside the Moodle Mobile App. With our dedicated plugin, learners can use the full AI assistance on the go, right inside their Moodle courses.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Contact Section -->
+
+  </div>
+  <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
+    <!-- Header -->
+    <div class="mb-12 md:mb-16 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div class="max-w-2xl">
+
+
+      </div>
+      <!-- Decorative icon/element -->
+
+    </div>
+
+    <!-- FAQ Grid -->
+
+
+    <!-- Bottom Contact Section -->
+    <div class="sm:p-10 overflow-hidden group bg-gray-900 rounded-3xl mt-16 pt-8 pr-8 pb-8 pl-8 relative shadow-2xl">
+      <!-- Glow effects -->
+      <div class="absolute top-0 right-0 -mt-10 -mr-10 h-64 w-64 rounded-full bg-blue-500/20 blur-3xl group-hover:bg-blue-500/30 transition-colors duration-500">
+      </div>
+      <div class="-mb-10 -ml-10 group-hover:bg-indigo-500/30 transition-colors duration-500 bg-indigo-500/20 w-64 h-64 rounded-full absolute bottom-0 left-0 blur-3xl">
+      </div>
+
+      <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="text-center md:text-left">
+          <h3 class="text-2xl font-semibold text-white tracking-tight">Still have questions?</h3>
+          <p class="text-gray-400 max-w-md mt-2">Got more questions about Alphabees or the AI tutor? Our AI support bot is trained on all our knowledge — it can likely answer right away.</p>
+        </div>
+        <div class="flex-shrink-0">
+          <button onclick="toggleContactForm(this)" class="inline-flex hover:bg-gray-50 hover:scale-[1.02] transition-all duration-200 text-sm font-semibold text-gray-900 bg-white rounded-full pt-3 pr-6 pb-3 pl-6 shadow-sm gap-x-2 gap-y-2 items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" style="width: 18px; height: 18px; color: rgb(17, 24, 39)" class="lucide lucide-mail w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" data-mingcute="message-4-ai-line" data-icon-set="mingcute" data-icon-replaced="true" stroke-width="0.5"><g fill="none" class=""><path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"></path><path fill="#111827" d="M2 6a3 3 0 0 1 3-3h8a1 1 0 1 1 0 2H5a1 1 0 0 0-1 1v13l2.134-1.6a2 2 0 0 1 1.199-.4H19a1 1 0 0 0 1-1v-4a1 1 0 1 1 2 0v4a3 3 0 0 1-3 3H7.333L4 21.5c-.824.618-2 .03-2-1zm9 6a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2zm4-4a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2zm5-7a1 1 0 0 1 .946.677l.13.378c.3.879.99 1.57 1.87 1.87l.377.129a1 1 0 0 1 0 1.892l-.378.13c-.879.3-1.57.99-1.87 1.87l-.129.377a1 1 0 0 1-1.892 0l-.13-.378a3 3 0 0 0-1.87-1.87l-.377-.129a1 1 0 0 1 0-1.892l.378-.13c.879-.3 1.57-.99 1.87-1.87l.129-.377l.062-.146A1 1 0 0 1 20 1m0 3.196a5 5 0 0 1-.804.804q.449.355.804.803q.356-.447.803-.803A5 5 0 0 1 20 4.196" class=""></path></g></svg>
+            Contact AI Support
+          </button>
+        </div>
+      </div>
+
+      <!-- Expandable Form Block -->
+      <div id="contactFormBlock" class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out mt-0">
+        <div class="overflow-hidden">
+          <div class="pt-10 mt-8 border-t border-white/10">
+
+            <!-- AI Tutor Chat Integration -->
+            <div class="mx-auto max-w-2xl bg-white/5 ring-1 ring-white/10 rounded-2xl p-2 relative shadow-2xl backdrop-blur-md">
+
+              <!-- Header -->
+              <div class="flex items-center justify-between mb-4 px-2 pt-2">
+                <span class="text-xs font-medium text-gray-400 font-geist flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg>
+                AI-Customer Support
+              </span>
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-2.5 py-1 text-emerald-400 text-[10px] font-medium font-geist ring-1 ring-inset ring-emerald-500/20">
+                <span class="relative flex h-1.5 w-1.5">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+                </span>
+                Live
+                </span>
+              </div>
+
+              <!-- Chat Container -->
+              <div class="rounded-xl bg-white ring-1 ring-white/10 overflow-hidden relative">
+                <div class="h-[450px] w-full">
+                  <iframe title="Alphabees AI Tutor" class="w-full h-full border-0" src="https://chat.alphabees.de/production/index.html?botId=e15f4089-aff4-4d5b-acbe-71652f89e311&amp;apiKey=359ea983-451c-4c2a-bbf1-ea467946e84f&amp;isFullscreen=true" allow="clipboard-read; clipboard-write; microphone; camera"></iframe>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleFaq(btn) {
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      const content = btn.nextElementSibling;
+      const icon = btn.querySelector('svg');
+      
+      // Toggle current
+      btn.setAttribute('aria-expanded', !isExpanded);
+      
+      if (!isExpanded) {
+        content.classList.remove('grid-rows-[0fr]');
+        content.classList.add('grid-rows-[1fr]');
+        icon.classList.add('rotate-45'); // Plus to X rotation
+        btn.parentElement.classList.add('border-blue-200', 'bg-white', 'shadow-lg', 'shadow-blue-500/5');
+        btn.parentElement.classList.remove('bg-gray-50/30');
+      } else {
+        content.classList.add('grid-rows-[0fr]');
+        content.classList.remove('grid-rows-[1fr]');
+        icon.classList.remove('rotate-45');
+        btn.parentElement.classList.remove('border-blue-200', 'bg-white', 'shadow-lg', 'shadow-blue-500/5');
+        btn.parentElement.classList.add('bg-gray-50/30');
+      }
+    }
+
+    function toggleContactForm(btn) {
+  const formBlock = document.getElementById('contactFormBlock');
+
+  // Original (eingeklappt) merken
+  if (!btn.dataset.collapsedHtml) {
+    btn.dataset.collapsedHtml = btn.innerHTML;
+  }
+
+  const isExpanded = formBlock.classList.contains('grid-rows-[1fr]');
+
+  if (!isExpanded) {
+    // aufklappen
+    formBlock.classList.remove('grid-rows-[0fr]');
+    formBlock.classList.add('grid-rows-[1fr]');
+    btn.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-x w-[18px] h-[18px]">
+        <path d="M18 6 6 18"></path>
+        <path d="m6 6 12 12"></path>
+      </svg>
+      Close Form
+    `;
+  } else {
+    // zuklappen
+    formBlock.classList.add('grid-rows-[0fr]');
+    formBlock.classList.remove('grid-rows-[1fr]');
+    btn.innerHTML = btn.dataset.collapsedHtml;
+  }
+}
+
+  </script>
+</section>
+</main>
+<div id="site-footer"></div><!-- Workaround: Remove Aura-injected animation-killing styles -->
 <script>
 (function() {
   function removeAuraAnimationBlockers() {

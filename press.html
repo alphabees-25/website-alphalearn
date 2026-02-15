@@ -1,5 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full"><head><meta charset="utf-8">
+<html lang="en" class="h-full"><head>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/social-image.png">
+  <meta property="og:image:width" content="2640">
+  <meta property="og:image:height" content="1430">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="/social-image.png"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Finance Visibility — Hero</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -207,15 +214,6 @@ opacity: 0 !important;
     overflow: hidden;
   }
 </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R1NYZ0V0HK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-R1NYZ0V0HK');
-</script>
 </head>
   <body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
 
@@ -630,7 +628,344 @@ opacity: 0 !important;
 <script>
   const progress = 76; const rings = document.querySelectorAll('[data-ring]'); rings.forEach((ring, idx) => { const r = parseFloat(ring.getAttribute('data-radius')); const circumference = 2 * Math.PI * r; const pct = progress / 100; const dash = Math.max(0, circumference * pct - 2); ring.style.transition = 'stroke-dasharray 1200ms cubic-bezier(0.22, 1, 0.36, 1), stroke-dashoffset 1200ms cubic-bezier(0.22, 1, 0.36, 1)'; ring.style.strokeDasharray = `0 ${circumference}`; ring.style.strokeDashoffset = '0'; setTimeout(() => { ring.style.strokeDasharray = `${dash} ${circumference}`; ring.style.strokeDashoffset = '0'; }, 120 + idx * 80); }); document.getElementById('percentValue').textContent = progress;
 </script>
-</div></main><!-- Workaround: Remove Aura-injected animation-killing styles -->
+</div><section class="md:py-24 overflow-hidden font-geist bg-white pt-16 pb-16 relative">
+  <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
+    <!-- Header -->
+    <div class="mb-12 md:mb-16 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div class="max-w-2xl">
+        <h2 class="md:text-4xl text-3xl font-semibold text-gray-900 tracking-tight">Fragen &amp; Antworten</h2>
+        <p class="text-lg text-gray-600 mt-4">Hier findest du weitere Informationen rund um den Alphabees KI-Tutor und
+          die
+          Leistungen von Alphabees.</p>
+      </div>
+      <!-- Decorative icon/element -->
+
+    </div>
+
+    <!-- FAQ Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
+      <!-- Item 1 -->
+      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+        <button onclick="toggleFaq(this)" class="flex focus:outline-none text-left w-full pt-6 pr-6 pb-6 pl-6 items-center justify-between" aria-expanded="false">
+          <span class="text-base font-semibold text-gray-900">Was macht ein KI-Tutor? </span>
+          <span class="flex shrink-0 items-center justify-center transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon text-blue-600 bg-white w-8 h-8 border-gray-200 border rounded-full ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300 w-[16px] h-[16px]" data-icon-replaced="true" style="color: rgb(37, 99, 235); width: 16px; height: 16px;"><path d="M5 12h14" class=""></path><path d="M12 5v14" class=""></path></svg>
+          </span>
+        </button>
+        <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
+          <div class="overflow-hidden">
+            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
+              Ein KI-Tutor unterstützt Lernende direkt im Kurs – mit sofortigen Antworten, Zusammenfassungen,
+              Praxisbeispielen, personalisierten Übungen und klaren Erklärungen. Er nutzt die Kursinhalte, oder andere,
+              von
+              dir zur Verfügung gestellten Quellen als Wissensbasis, sodass alle Antworten inhaltlich zu deinen
+              e-Learnings
+              passen und den Lernfortschritt fördern. So erhalten Lernende genau die Unterstützung, die sie brauchen,
+              ohne
+              die Lernplattform verlassen zu müssen.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+        <button onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
+          <span class="text-base font-semibold text-gray-900">Was kostet ein KI-Tutor?</span>
+          <span class="ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-blue-600 transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+          </span>
+        </button>
+        <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
+          <div class="overflow-hidden">
+            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
+              Du kannst den Alphabees KI-Tutor kostenlos testen und sofort in deinem LMS einsetzen. Unsere Pläne starten
+              ab
+              99 € pro Monat für bis zu 20 KI-Tutoren, ca. 10.000 Chat-Antworten und 100 Lernende.
+
+              Für größere Anforderungen gibt es den Professional-Tarif mit 50 KI-Tutoren, ca. 25.000 Chat-Antworten und
+              250
+              Lernenden für 249 € pro Monat.
+
+              Beide Tarife beinhalten unbegrenzte Kurse, ein Moodle-Block-Plugin, das Alphabees Analytics Portal und
+              E-Mail-Support.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+        <button onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
+          <span class="text-base font-semibold text-gray-900">Welche KI-Modelle bietet Alphabees an?</span>
+          <span class="ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-blue-600 transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+          </span>
+        </button>
+        <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
+          <div class="overflow-hidden">
+            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
+              Alphabees bietet dir bereits eine große Auswahl der beliebtesten KI-Anbieter und neusten und
+              leistungsstärksten KI-Modelle. Wähle zwischen Open-Source- und Closed-Source-KI-Modellen. Aktuell bieten
+              wir:
+              OpenAI, Anthropic, Google, Meta, Mistral, Groq, DeepSeek. Du kannst deinen favorisierten KI-Anbieter aus
+              dieser Liste wählen und benötigst keinen eigenen Vertrag mit dem Anbieter (z.B. OpenAI account).
+
+              Solltest du dennoch dein eigenes KI-Modell oder ein selbst-gehostetes open-weight Modell wie z.B. LLaMA 3
+              mitbringen wollen, kontaktiere uns gerne. Wir finden einen Weg deinen API-Key einzubinden.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+        <button onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
+          <span class="text-base font-semibold text-gray-900">Brauche ich zusätzlich ein Abo bei einem KI-Anbieter?</span>
+          <span class="ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-blue-600 transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+          </span>
+        </button>
+        <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
+          <div class="overflow-hidden">
+            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
+              Nein, du brauchst keinen zusätzlichen KI-Anbieter. Alphabees bietet dir bereits eine große Auswahl der
+              beliebtesten
+              KI-Anbieter und neusten und leistungsstärksten KI-Modelle. Wähle einfach einen KI-Anbieter im Alphabees
+              Portal
+              bei der Konfiguration deines KI-Tutors. Alle Kosten für die KI-Nutzung sind in deinem Alphabees Paket
+              bereits
+              enthalten.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+        <button onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
+          <span class="text-base font-semibold text-gray-900">Kann ich den KI-Tutor in meine e-Learnings und mein LMS integrieren?</span>
+          <span class="ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-blue-600 transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+          </span>
+        </button>
+        <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
+          <div class="overflow-hidden">
+            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
+              Ja, unsere KI-Tutoren lassen sich in verschiedene Lernmanagementsysteme (LMS) integrieren, sodass sie
+              nahtlos
+              in deine
+              bestehenden Lernprozess eingebunden werden können. Für Moodle haben wir sogar ein eigenes Plugin
+              entwickelt.
+              Für kinderleichte Integration ohne technische Vorkenntnisse.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+        <button onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
+          <span class="text-base font-semibold text-gray-900">Wo werden meine Daten gehostet?</span>
+          <span class="ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-blue-600 transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform=" "="" duration-300"=""><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+          </span>
+        </button>
+        <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
+          <div class="overflow-hidden">
+            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
+              Alle Daten werden sicher auf unseren Servern in Deutschland gehostet. Dies gewährleistet die Einhaltung
+              Der
+              DSGVO Richtlinien.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 7 -->
+      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+        <button onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
+          <span class="text-base font-semibold text-gray-900">Ist der Tutor konform gemäß DSGVO und EU-AI-act?</span>
+          <span class="ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-blue-600 transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform=" "="" duration-300"=""><path d="M5 12h14"></path><path d="M12 5v14" class=""></path></svg>
+          </span>
+        </button>
+        <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
+          <div class="overflow-hidden">
+            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
+              Ja. Der Alphabees KI-Tutor ist DSGVO-konform und auf die Anforderungen des EU AI Act ausgelegt. Es werden
+              keine Personenbezogene Daten gespeichert und keine Daten zum Training der KI genutzt. Eine DSGVO konforme
+              Auftragsverarbeitungsvereinbarung (AVV) besteht zwischen Alphabees und jedem angebotnenen KI-Anbieter. Mit
+              jedem Kunden wird ebenfalls eine AVV geschlossen.
+
+              Im Sinne des EU AI Act wird der Tutor als unterstützendes Lernwerkzeug eingesetzt, über einen Disclaimer
+              Banner klar als KI gekennzeichnet und ohne automatisierte Entscheidungen mit Rechts- oder Leistungsfolgen.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 8 -->
+      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+        <button onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
+          <span class="text-base font-semibold text-gray-900">Funktioniert der KI-Tutor auch in der Moodle Mobile App?</span>
+          <span class="ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-blue-600 transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform=" "="" duration-300"=""><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+          </span>
+        </button>
+        <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
+          <div class="overflow-hidden">
+            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
+              Ja. Der Alphabees KI-Tutor ist der weltweit einzige KI-Tutor, der auch in der Moodle Mobile App
+              funktioniert.
+              Durch unser speziel entwickeltes Plugin, können Lernende auch von unterwegs die KI-Lernhilfen direkt in
+              ihrem
+              Moodle Kurs auf ihren Mobilgeräten im vollen Umfang nutzen.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Contact Section -->
+
+  </div>
+  <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
+    <!-- Header -->
+    <div class="mb-12 md:mb-16 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div class="max-w-2xl">
+
+
+      </div>
+      <!-- Decorative icon/element -->
+
+    </div>
+
+    <!-- FAQ Grid -->
+
+
+    <!-- Bottom Contact Section -->
+    <div class="sm:p-10 overflow-hidden group bg-gray-900 rounded-3xl mt-16 pt-8 pr-8 pb-8 pl-8 relative shadow-2xl">
+      <!-- Glow effects -->
+      <div class="absolute top-0 right-0 -mt-10 -mr-10 h-64 w-64 rounded-full bg-blue-500/20 blur-3xl group-hover:bg-blue-500/30 transition-colors duration-500">
+      </div>
+      <div class="-mb-10 -ml-10 group-hover:bg-indigo-500/30 transition-colors duration-500 bg-indigo-500/20 w-64 h-64 rounded-full absolute bottom-0 left-0 blur-3xl">
+      </div>
+
+      <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="text-center md:text-left">
+          <h3 class="text-2xl font-semibold text-white tracking-tight">Noch Fragen?</h3>
+          <p class="text-gray-400 max-w-md mt-2">Du hast weitere Fragen zu Alphabees oder der Funktionalität des
+            KI-Tutors? Wir haben unseren AI-Support Bot mit all unserem Wissen gefüttert. Mit sicherheit wird er deine
+            Frage beantworten können.
+          </p>
+        </div>
+        <div class="flex-shrink-0">
+          <button onclick="toggleContactForm(this)" class="inline-flex hover:bg-gray-50 hover:scale-[1.02] transition-all duration-200 text-sm font-semibold text-gray-900 bg-white rounded-full pt-3 pr-6 pb-3 pl-6 shadow-sm gap-x-2 gap-y-2 items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" style="width: 18px; height: 18px; color: rgb(17, 24, 39)" class="lucide lucide-mail w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" data-mingcute="message-4-ai-line" data-icon-set="mingcute" data-icon-replaced="true" stroke-width="0.5"><g fill="none" class=""><path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"></path><path fill="#111827" d="M2 6a3 3 0 0 1 3-3h8a1 1 0 1 1 0 2H5a1 1 0 0 0-1 1v13l2.134-1.6a2 2 0 0 1 1.199-.4H19a1 1 0 0 0 1-1v-4a1 1 0 1 1 2 0v4a3 3 0 0 1-3 3H7.333L4 21.5c-.824.618-2 .03-2-1zm9 6a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2zm4-4a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2zm5-7a1 1 0 0 1 .946.677l.13.378c.3.879.99 1.57 1.87 1.87l.377.129a1 1 0 0 1 0 1.892l-.378.13c-.879.3-1.57.99-1.87 1.87l-.129.377a1 1 0 0 1-1.892 0l-.13-.378a3 3 0 0 0-1.87-1.87l-.377-.129a1 1 0 0 1 0-1.892l.378-.13c.879-.3 1.57-.99 1.87-1.87l.129-.377l.062-.146A1 1 0 0 1 20 1m0 3.196a5 5 0 0 1-.804.804q.449.355.804.803q.356-.447.803-.803A5 5 0 0 1 20 4.196" class=""></path></g></svg>
+            Contact AI Support
+          </button>
+        </div>
+      </div>
+
+      <!-- Expandable Form Block -->
+      <div id="contactFormBlock" class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out mt-0">
+        <div class="overflow-hidden">
+          <div class="pt-10 mt-8 border-t border-white/10">
+
+            <!-- AI Tutor Chat Integration -->
+            <div class="mx-auto max-w-2xl bg-white/5 ring-1 ring-white/10 rounded-2xl p-2 relative shadow-2xl backdrop-blur-md">
+
+              <!-- Header -->
+              <div class="flex items-center justify-between mb-4 px-2 pt-2">
+                <span class="text-xs font-medium text-gray-400 font-geist flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg>
+                AI-Customer Support
+              </span>
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-2.5 py-1 text-emerald-400 text-[10px] font-medium font-geist ring-1 ring-inset ring-emerald-500/20">
+                <span class="relative flex h-1.5 w-1.5">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+                </span>
+                Live
+                </span>
+              </div>
+
+              <!-- Chat Container -->
+              <div class="rounded-xl bg-white ring-1 ring-white/10 overflow-hidden relative">
+                <div class="h-[450px] w-full">
+                  <iframe title="Alphabees KI Tutor" class="w-full h-full border-0" src="https://chat.alphabees.de/production/index.html?botId=e15f4089-aff4-4d5b-acbe-71652f89e311&amp;apiKey=359ea983-451c-4c2a-bbf1-ea467946e84f&amp;isFullscreen=true" allow="clipboard-read; clipboard-write; microphone; camera"></iframe>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleFaq(btn) {
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      const content = btn.nextElementSibling;
+      const icon = btn.querySelector('svg');
+      
+      // Toggle current
+      btn.setAttribute('aria-expanded', !isExpanded);
+      
+      if (!isExpanded) {
+        content.classList.remove('grid-rows-[0fr]');
+        content.classList.add('grid-rows-[1fr]');
+        icon.classList.add('rotate-45'); // Plus to X rotation
+        btn.parentElement.classList.add('border-blue-200', 'bg-white', 'shadow-lg', 'shadow-blue-500/5');
+        btn.parentElement.classList.remove('bg-gray-50/30');
+      } else {
+        content.classList.add('grid-rows-[0fr]');
+        content.classList.remove('grid-rows-[1fr]');
+        icon.classList.remove('rotate-45');
+        btn.parentElement.classList.remove('border-blue-200', 'bg-white', 'shadow-lg', 'shadow-blue-500/5');
+        btn.parentElement.classList.add('bg-gray-50/30');
+      }
+    }
+
+    function toggleContactForm(btn) {
+  const formBlock = document.getElementById('contactFormBlock');
+
+  // Original (eingeklappt) merken
+  if (!btn.dataset.collapsedHtml) {
+    btn.dataset.collapsedHtml = btn.innerHTML;
+  }
+
+  const isExpanded = formBlock.classList.contains('grid-rows-[1fr]');
+
+  if (!isExpanded) {
+    // aufklappen
+    formBlock.classList.remove('grid-rows-[0fr]');
+    formBlock.classList.add('grid-rows-[1fr]');
+    btn.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-x w-[18px] h-[18px]">
+        <path d="M18 6 6 18"></path>
+        <path d="m6 6 12 12"></path>
+      </svg>
+      Close Form
+    `;
+  } else {
+    // zuklappen
+    formBlock.classList.add('grid-rows-[0fr]');
+    formBlock.classList.remove('grid-rows-[1fr]');
+    btn.innerHTML = btn.dataset.collapsedHtml;
+  }
+}
+
+  </script>
+</section>
+</main>
+<div id="site-footer"></div><!-- Workaround: Remove Aura-injected animation-killing styles -->
 <script>
 (function() {
   function removeAuraAnimationBlockers() {
