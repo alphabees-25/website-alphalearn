@@ -46,7 +46,9 @@
     window.location.replace(target);
   };
 
-  const preferLang = getStoredLang() || getAutoLang();
+  const storedLang = getStoredLang();
+  const autoLang = getAutoLang();
+  const preferLang = storedLang || autoLang;
   const currentLang = getCurrentLangFromPath();
 
   if (!currentLang) {
@@ -54,8 +56,13 @@
     return;
   }
 
-  if (getStoredLang() && currentLang !== getStoredLang()) {
-    redirectToLang(getStoredLang());
+  if (!storedLang && currentLang && currentLang !== autoLang) {
+    redirectToLang(autoLang);
+    return;
+  }
+
+  if (storedLang && currentLang !== storedLang) {
+    redirectToLang(storedLang);
     return;
   }
 
