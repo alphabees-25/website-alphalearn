@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(echo \"=== VERIFICATION: Checking for other common issues ===\" echo \"\" echo \"1. Broken links to /KONTRAFORM:\" grep -c 'href=\"\"/KONTRAFORM\"\"' *.html)",
+      "Bash(echo \"None found ✓\" echo \"\" echo \"3. JavaScript closeNewsletterPopup\\( \\) with space:\" grep -c 'closeNewsletterPopup\\( \\)' *.html)",
+      "Bash(python3:*)",
+      "Bash(for file in *.html)",
+      "Bash(do)",
+      "Bash(if grep -q 'href=\"\"features\\\\.html\"\".*Funktionen.*<span class=\"\"absolute -bottom-1' \"$file\")",
+      "Bash(then)",
+      "Bash(echo:*)",
+      "Bash(else)",
+      "Bash(fi)",
+      "Bash(grep:*)",
+      "Bash(ls:*)"
+    ]
+  }
+}
