@@ -8,7 +8,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/social-image.png"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Finance Visibility — Hero</title>
+<title>Cookies | Alphabees</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -289,7 +289,7 @@ opacity: 0 !important;
   <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-blue-50/40 via-indigo-50/40 to-purple-50/40 rounded-full blur-3xl -z-10 pointer-events-none opacity-60">
   </div>
 
-  <h1 class="leading-[1.1] text-balance sm:text-5xl lg:text-6xl text-4xl font-semibold text-gray-900 tracking-tight font-geist max-w-4xl mb-6" style="animation: 1s ease-out 0.1s 1 normal both running fadeSlideIn">Cookie Policy</h1>
+  <h1 class="leading-[1.1] text-balance sm:text-5xl lg:text-6xl text-4xl font-semibold text-gray-900 tracking-tight font-geist max-w-4xl mb-6" style="animation: 1s ease-out 0.1s 1 normal both running fadeSlideIn">Cookies</h1>
 
   
 
@@ -306,6 +306,33 @@ opacity: 0 !important;
     <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-gradient-to-tr from-blue-50/30 to-transparent blur-3xl rounded-full pointer-events-none"></div>
 
     <div class="sm:p-12 pt-8 pr-8 pb-8 pl-8 relative space-y-10">
+
+      <!-- Cookie Settings -->
+      <div id="cookie-settings" class="rounded-2xl border border-gray-200 bg-white/80 p-6 shadow-sm space-y-4">
+        <div class="flex items-center gap-2">
+          <div class="h-1.5 w-1.5 rounded-full bg-gray-900"></div>
+          <h3 class="text-lg font-semibold text-gray-900 tracking-tight font-geist">Cookie-Einstellungen</h3>
+        </div>
+        <p class="text-sm leading-relaxed text-gray-600 font-geist">Hier können Sie Ihre Einwilligung anpassen. Essenzielle Cookies sind immer aktiv.</p>
+        <div class="rounded-xl border border-gray-200 bg-white/70 p-4">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm text-gray-700 font-geist">
+            <label class="flex items-center gap-2">
+              <input id="policy-cookie-functional" type="checkbox" class="rounded border-gray-300 text-gray-900 focus:ring-gray-900">
+              Funktional (Sprache)
+            </label>
+            <label class="flex items-center gap-2">
+              <input id="policy-cookie-analytics" type="checkbox" class="rounded border-gray-300 text-gray-900 focus:ring-gray-900">
+              Analytics (Google Analytics)
+            </label>
+          </div>
+          <div class="mt-4 flex flex-wrap items-center gap-2">
+            <button id="policy-cookie-accept" class="inline-flex items-center justify-center text-xs sm:text-sm font-medium text-white bg-gray-900 hover:bg-gray-800 transition rounded-lg px-3 py-2">Alle akzeptieren</button>
+            <button id="policy-cookie-reject" class="inline-flex items-center justify-center text-xs sm:text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 transition rounded-lg px-3 py-2">Nur notwendige</button>
+            <button id="policy-cookie-save" class="inline-flex items-center justify-center text-xs sm:text-sm font-medium text-white bg-gray-900 hover:bg-gray-800 transition rounded-lg px-3 py-2">Auswahl speichern</button>
+            <span id="policy-cookie-status" class="text-xs text-gray-500 font-geist"></span>
+          </div>
+        </div>
+      </div>
       
       <!-- Last Updated Header -->
       <div class="flex items-center gap-3 border-b border-gray-900/5 pb-6 mb-8">
@@ -345,8 +372,9 @@ opacity: 0 !important;
       <div class="space-y-4">
         <h3 class="text-lg font-semibold text-gray-900 tracking-tight font-geist">3. Unser Cookie-Banner und Ihre Einwilligung</h3>
         <p class="text-sm leading-relaxed text-gray-600 font-geist">Beim ersten Besuch unserer Website wird Ihnen ein Cookie-Banner angezeigt. Über diesen Banner bitten wir Sie um Ihre ausdrückliche Einwilligung zur Verwendung von Analyse- und Marketing-Cookies. Essenzielle Cookies, die für die Grundfunktionalität der Website erforderlich sind, werden immer geladen.</p>
-        <p class="text-sm leading-relaxed text-gray-600 font-geist">Sie können Ihre Cookie-Einstellungen jederzeit über den Cookie-Banner oder die Einstellungen in Ihrem Browser ändern.</p>
+        <p class="text-sm leading-relaxed text-gray-600 font-geist">Sie können Ihre Cookie-Einstellungen jederzeit über den Cookie-Banner, diese Seite oder die Einstellungen in Ihrem Browser ändern.</p>
       </div>
+
 
       <!-- Section 4 -->
       <div class="space-y-8">
@@ -900,6 +928,64 @@ opacity: 0 !important;
     if (window.lucide && typeof lucide.createIcons === 'function') {
       lucide.createIcons({ attrs: { 'stroke-width': 1.5 } });
     }
+  </script>
+  <script>
+    (function () {
+      const functional = document.getElementById('policy-cookie-functional');
+      const analytics = document.getElementById('policy-cookie-analytics');
+      const acceptBtn = document.getElementById('policy-cookie-accept');
+      const rejectBtn = document.getElementById('policy-cookie-reject');
+      const saveBtn = document.getElementById('policy-cookie-save');
+      const status = document.getElementById('policy-cookie-status');
+
+      if (!functional || !analytics || !saveBtn) return;
+
+      const applyState = () => {
+        const consent = window.abCookieConsent.get();
+        if (!consent) return;
+        functional.checked = !!consent.functional;
+        analytics.checked = !!consent.analytics;
+      };
+
+      const setStatus = (text) => {
+        if (!status) return;
+        status.textContent = text;
+        setTimeout(() => {
+          if (status.textContent === text) status.textContent = '';
+        }, 3000);
+      };
+
+      const init = (attempt = 0) => {
+        if (!window.abCookieConsent || typeof window.abCookieConsent.get !== 'function') {
+          if (attempt < 30) {
+            setTimeout(() => init(attempt + 1), 100);
+          }
+          return;
+        }
+
+        applyState();
+
+        acceptBtn?.addEventListener('click', () => {
+          window.abCookieConsent.set({ functional: true, analytics: true });
+          applyState();
+          setStatus('Gespeichert.');
+        });
+
+        rejectBtn?.addEventListener('click', () => {
+          window.abCookieConsent.set({ functional: false, analytics: false });
+          applyState();
+          setStatus('Gespeichert.');
+        });
+
+        saveBtn.addEventListener('click', () => {
+          window.abCookieConsent.set({ functional: !!functional.checked, analytics: !!analytics.checked });
+          applyState();
+          setStatus('Gespeichert.');
+        });
+      };
+
+      init();
+    })();
   </script>
 <!-- Global Footer -->
 <div id="site-footer"></div><script>

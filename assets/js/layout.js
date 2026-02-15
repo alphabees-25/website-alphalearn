@@ -107,6 +107,10 @@
     activeConsent = next;
     applyConsent(next);
   };
+
+  window.abCookieConsent = {
+    get: () => activeConsent || readConsent(),
+    set: (partial) => setConsent(partial)
   };
 
   const getStoredLang = () => {
