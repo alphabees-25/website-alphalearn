@@ -134,8 +134,26 @@
   const getCurrentLangFromPath = () => {
     const parts = window.location.pathname.split('/').filter(Boolean);
     if (parts[0] === 'de' || parts[0] === 'en') return parts[0];
+    const idx = parts.findIndex((part) => part === 'de' || part === 'en');
+    if (idx !== -1) return parts[idx];
     return null;
   };
+
+  const getBasePath = () => {
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    const idx = parts.findIndex((part) => part === 'de' || part === 'en');
+    if (idx === -1) {
+      if (parts.length <= 1) return '';
+      const last = parts[parts.length - 1];
+      const baseParts = last.includes('.html') ? parts.slice(0, -1) : parts;
+      const base = baseParts.join('/');
+      return base ? `/${base}` : '';
+    }
+    const base = parts.slice(0, idx).join('/');
+    return base ? `/${base}` : '';
+  };
+
+  const normalizePath = (path) => path.replace(/\/{2,}/g, '/');
 
   const getCurrentPage = () => {
     return window.location.pathname.split('/').pop() || 'index.html';
@@ -143,7 +161,8 @@
 
   const redirectToLang = (lang) => {
     const page = getCurrentPage();
-    const target = page === 'index.html' ? `/${lang}/` : `/${lang}/${page}`;
+    const basePath = getBasePath();
+    const target = page === 'index.html' ? `${basePath}/${lang}/` : `${basePath}/${lang}/${page}`;
     window.location.replace(target);
   };
 
@@ -230,7 +249,8 @@
           deleteCookie('lang');
         }
         const page = getCurrentPage();
-        const target = page === 'index.html' ? `/${lang}/` : `/${lang}/${page}`;
+        const basePath = getBasePath();
+        const target = page === 'index.html' ? `${basePath}/${lang}/` : `${basePath}/${lang}/${page}`;
         window.location.href = target;
       });
     });
@@ -317,8 +337,8 @@
   };
 
   Promise.all([
-    loadPartial(headerTarget, `/${currentLang}/partials/header.html`),
-    loadPartial(footerTarget, `/${currentLang}/partials/footer.html`)
+    loadPartial(headerTarget, normalizePath(`${getBasePath()}/${currentLang}/partials/header.html`)),
+    loadPartial(footerTarget, normalizePath(`${getBasePath()}/${currentLang}/partials/footer.html`))
   ])
     .then(() => {
       setActiveNav();
