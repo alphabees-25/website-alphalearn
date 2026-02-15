@@ -42,7 +42,8 @@
 
   const redirectToLang = (lang) => {
     const page = getCurrentPage();
-    window.location.replace(`/${lang}/${page}`);
+    const target = page === 'index.html' ? `/${lang}/` : `/${lang}/${page}`;
+    window.location.replace(target);
   };
 
   const preferLang = getStoredLang() || getAutoLang();
@@ -112,7 +113,8 @@
         localStorage.setItem('preferredLang', lang);
         setCookie('lang', lang);
         const page = getCurrentPage();
-        window.location.href = `/${lang}/${page}`;
+        const target = page === 'index.html' ? `/${lang}/` : `/${lang}/${page}`;
+        window.location.href = target;
       });
     });
   };
