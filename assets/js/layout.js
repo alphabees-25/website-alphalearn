@@ -266,6 +266,32 @@
     const settingsBtn = document.getElementById('cookie-settings-toggle');
     const functionalToggle = document.getElementById('cookie-functional');
     const analyticsToggle = document.getElementById('cookie-analytics');
+    const messageEl = banner.querySelector('[data-cookie-message]');
+    const functionalLabel = banner.querySelector('[data-cookie-functional-label]');
+    const analyticsLabel = banner.querySelector('[data-cookie-analytics-label]');
+    const messageLink = messageEl ? messageEl.querySelector('a') : null;
+
+    const applyBannerLanguage = () => {
+      const isEn = currentLang === 'en';
+      banner.setAttribute('aria-label', isEn ? 'Cookie Settings' : 'Cookie-Einstellungen');
+      if (messageEl) {
+        const text = isEn
+          ? 'We use cookies for analytics (Google Analytics) and to remember your language. You can consent or use only essential cookies.'
+          : 'Wir verwenden Cookies für Statistik (Google Analytics) und um Ihre Sprache zu speichern. Sie können zustimmen oder nur notwendige Cookies nutzen.';
+        if (messageLink) {
+          const linkHtml = messageLink.outerHTML;
+          messageEl.innerHTML = `${text} ${linkHtml}.`;
+        } else {
+          messageEl.textContent = text;
+        }
+      }
+      if (acceptBtn) acceptBtn.textContent = isEn ? 'Accept all' : 'Alle akzeptieren';
+      if (rejectBtn) rejectBtn.textContent = isEn ? 'Essential only' : 'Nur notwendige';
+      if (settingsBtn) settingsBtn.textContent = isEn ? 'Settings' : 'Einstellungen';
+      if (saveBtn) saveBtn.textContent = isEn ? 'Save selection' : 'Auswahl speichern';
+      if (functionalLabel) functionalLabel.textContent = isEn ? 'Functional (language)' : 'Funktional (Sprache)';
+      if (analyticsLabel) analyticsLabel.textContent = isEn ? 'Analytics' : 'Analytics';
+    };
 
     const updateToggles = () => {
       const consent = activeConsent || readConsent();
@@ -322,6 +348,8 @@
         showBanner(true);
       });
     });
+
+    applyBannerLanguage();
 
     if (!activeConsent) {
       showBanner(false);

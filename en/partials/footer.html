@@ -139,7 +139,7 @@
 
 <div id="cookie-banner" class="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-6 sm:max-w-xl bg-white/95 text-gray-900 border border-gray-200 shadow-2xl rounded-2xl px-4 py-3 backdrop-blur-md z-[999] hidden" role="dialog" aria-live="polite" aria-label="Cookie Settings">
   <div class="flex flex-col gap-3">
-    <div class="text-xs sm:text-sm text-gray-700 font-geist">
+    <div class="text-xs sm:text-sm text-gray-700 font-geist" data-cookie-message>
       We use cookies for analytics (Google Analytics) and to remember your language. You can consent or use only essential cookies.
       <a href="cookie-policy.html#cookie-settings" class="underline hover:text-gray-900">Cookies</a>.
     </div>
@@ -152,11 +152,11 @@
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs text-gray-700 font-geist">
         <label class="flex items-center gap-2">
           <input id="cookie-functional" type="checkbox" class="rounded border-gray-300 text-gray-900 focus:ring-gray-900">
-          Functional (language)
+          <span data-cookie-functional-label>Functional (language)</span>
         </label>
         <label class="flex items-center gap-2">
           <input id="cookie-analytics" type="checkbox" class="rounded border-gray-300 text-gray-900 focus:ring-gray-900">
-          Analytics
+          <span data-cookie-analytics-label>Analytics</span>
         </label>
       </div>
       <div class="mt-3">
