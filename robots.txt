@@ -1,0 +1,7 @@
+User-agent: * Allow: /
+
+No restricted areas found in current build
+
+If staging or preview paths are added later, block them here
+
+Sitemap: https://alphalearn.ai/sitemap.xml
