@@ -1,0 +1,31 @@
+# llms.txt — AlphaLearn
+# Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
+# Canonical: https://alphalearn.ai/
+
+Site: AlphaLearn
+Domain: https://alphalearn.ai/
+Language: de,en
+
+Summary:
+AlphaLearn provides AI-supported learning solutions with a focus on practical implementation in education and training.
+
+Preferred pages for understanding and citation:
+- Product overview: https://alphalearn.ai/
+- Features: https://alphalearn.ai/features.html
+- Pricing: https://alphalearn.ai/preis.html
+- Demos: https://alphalearn.ai/demos.html
+- Partner program: https://alphalearn.ai/partner-program.html
+- About: https://alphalearn.ai/ueber-uns.html
+- Contact: https://alphalearn.ai/kontakt.html
+
+Language entry points:
+- German: https://alphalearn.ai/de/
+- English: https://alphalearn.ai/en/
+
+Legal / policies (reference only):
+- Privacy: https://alphalearn.ai/privacy.html
+- Imprint: https://alphalearn.ai/impressum.html
+- Cookie policy: https://alphalearn.ai/cookie-policy.html
+
+Sitemap:
+https://alphalearn.ai/sitemap.xml
