@@ -2,6 +2,7 @@
   const headerTarget = document.getElementById('site-header');
   const footerTarget = document.getElementById('site-footer');
   const CONSENT_KEY = 'ab_cookie_consent_v1';
+  const TEMP_LANG_KEY = 'ab_temp_lang';
   const CONSENT_VERSION = 1;
   const GA_MEASUREMENT_ID = 'G-R1NYZ0V0HK';
   let activeConsent = null;
@@ -106,6 +107,19 @@
     saveConsent(next);
     activeConsent = next;
     applyConsent(next);
+
+    if (next.functional) {
+      const tempLang = getTempLang();
+      const current = getCurrentLangFromPath();
+      const langToStore = tempLang || current;
+      if (langToStore) {
+        localStorage.setItem('preferredLang', langToStore);
+        setCookie('lang', langToStore);
+      }
+      clearTempLang();
+    } else {
+      clearTempLang();
+    }
   };
 
   window.abCookieConsent = {
@@ -115,6 +129,18 @@
 
   const getStoredLang = () => {
     return localStorage.getItem('preferredLang') || getCookie('lang');
+  };
+
+  const getTempLang = () => {
+    return sessionStorage.getItem(TEMP_LANG_KEY);
+  };
+
+  const setTempLang = (lang) => {
+    sessionStorage.setItem(TEMP_LANG_KEY, lang);
+  };
+
+  const clearTempLang = () => {
+    sessionStorage.removeItem(TEMP_LANG_KEY);
   };
 
   const getAutoLang = () => {
@@ -171,8 +197,9 @@
 
   const hasFunctionalConsent = () => !!(activeConsent && activeConsent.functional);
   const storedLang = hasFunctionalConsent() ? getStoredLang() : null;
+  const tempLang = !storedLang ? getTempLang() : null;
   const autoLang = getAutoLang();
-  const preferLang = storedLang || autoLang;
+  const preferLang = storedLang || tempLang || autoLang;
   const currentLang = getCurrentLangFromPath();
 
   if (!currentLang) {
@@ -180,8 +207,8 @@
     return;
   }
 
-  if (!storedLang && currentLang && currentLang !== autoLang) {
-    redirectToLang(autoLang);
+  if (!storedLang && tempLang && currentLang !== tempLang) {
+    redirectToLang(tempLang);
     return;
   }
 
@@ -244,7 +271,9 @@
         if (hasFunctionalConsent()) {
           localStorage.setItem('preferredLang', lang);
           setCookie('lang', lang);
+          clearTempLang();
         } else {
+          setTempLang(lang);
           localStorage.removeItem('preferredLang');
           deleteCookie('lang');
         }
