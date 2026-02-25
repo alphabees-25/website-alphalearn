@@ -1621,17 +1621,17 @@
             </div>
           </div>
 
-          <!-- Card 4: Enterprise -->
+          <!-- Card 4: API-Deal -->
           <div
             class="group flex flex-col transition-all duration-300 hover:shadow-2xl hover:shadow-gray-300/60 hover:border-gray-200 animate-on-scroll bg-gray-100/50 h-full border-gray-200 border rounded-[2rem] pt-8 pr-8 pb-8 pl-8"
             style="animation: fadeSlideIn 1s ease-out 0.5s both">
             <div class="text-center mb-8 h-[130px] flex flex-col justify-end">
-              <h3 class="text-lg font-semibold text-gray-900 font-geist mb-4">Lifetime</h3>
+              <h3 class="text-lg font-semibold text-gray-900 font-geist mb-4">API-Deal</h3>
               <div class="flex mb-2 gap-x-1.5 gap-y-1.5 items-baseline justify-center">
 
-                <span class="tabular-nums text-5xl font-bold text-gray-900 tracking-tighter font-geist">5.000 €</span>
+                <span id="price-api-deal" class="tabular-nums text-5xl font-bold text-gray-900 tracking-tighter font-geist">500 €</span>
               </div>
-              <p class="text-xs text-gray-400 font-geist">einmaliger Kauf</p>
+              <p class="text-xs text-gray-400 font-geist">pro Monat</p>
             </div>
 
             <a href="https://calendly.com/demo-alphabees/austausch-anfragen-alphabees"
@@ -1695,12 +1695,12 @@
                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M20 6 9 17l-5-5"></path>
                   </svg>
-                  <span class="">250 Learners</span>
+                  <span class="">1.000 Learners</span>
                   <!-- Tooltip -->
                   <div
                     class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max max-w-[200px] scale-95 opacity-0 transition-all duration-200 group-hover/item:scale-100 group-hover/item:opacity-100 pointer-events-none z-50">
                     <div class="bg-gray-900 text-white text-xs font-medium rounded-lg py-2 px-3 shadow-xl">
-                      Bis zu 250 Lernende befinden sich monatlich in deiner Lernplattform und haben Zugriff auf den
+                      Bis zu 1.000 Lernende befinden sich monatlich in deiner Lernplattform und haben Zugriff auf den
                       KI-Tutor.
                       Egal
                       ob sie ihn
@@ -1727,6 +1727,7 @@
               const btnAnnual = document.getElementById('btn-annual');
               const priceBasic = document.getElementById('price-basic');
               const pricePro = document.getElementById('price-pro');
+              const priceApiDeal = document.getElementById('price-api-deal');
 
               if (!bg || !priceBasic || !pricePro) return;
 
@@ -1742,6 +1743,7 @@
 
                 priceBasic.textContent = '99 €';
                 pricePro.textContent = '249 €';
+                if (priceApiDeal) priceApiDeal.textContent = '625 €';
               } else {
                 bg.classList.remove('translate-x-0');
                 bg.classList.add('translate-x-full');
@@ -1754,6 +1756,7 @@
 
                 priceBasic.textContent = '79 €';
                 pricePro.textContent = '199 €';
+                if (priceApiDeal) priceApiDeal.textContent = '500 €';
               }
             };
           </script>
@@ -1869,8 +1872,8 @@
                       class="sticky top-0 z-20 bg-white p-8 w-1/5 text-left align-bottom relative border-l border-gray-100 border-r">
                       <div class="flex flex-col text-center gap-x-4 gap-y-4 items-center">
                         <div class="">
-                          <div class="text-xl font-bold text-gray-900 font-geist mb-1">Lifetime</div>
-                          <div class="text-xs text-gray-500 font-geist">5.000 € (einmalig)</div>
+                          <div class="text-xl font-bold text-gray-900 font-geist mb-1">API-Deal</div>
+                          <div id="table-price-api-deal" class="text-xs text-gray-500 font-geist">500 € / Monat</div>
                         </div>
                         <a href="https://calendly.com/demo-alphabees/austausch-anfragen-alphabees"
                           class="inline-flex items-center justify-center hover:bg-gray-50 hover:text-gray-900 transition-all whitespace-nowrap text-xs font-medium text-gray-700 bg-white border-gray-200 border rounded-lg pt-1.5 pr-3 pb-1.5 pl-3 shadow-sm">Demo
@@ -3044,6 +3047,7 @@
               const btnAnnual = document.getElementById('table-btn-annual');
               const priceBasic = document.getElementById('table-price-basic');
               const pricePro = document.getElementById('table-price-pro');
+              const priceApiDeal = document.getElementById('table-price-api-deal');
 
               // Wenn Preise nicht gefunden werden, gibt es nichts zu updaten.
               if (!priceBasic || !pricePro) return;
@@ -3075,9 +3079,11 @@
               if (isMonthly) {
                 priceBasic.innerHTML = '99 € / Monat';
                 pricePro.innerHTML = '249 € / Monat';
+                if (priceApiDeal) priceApiDeal.innerHTML = '625 € / Monat';
               } else {
                 priceBasic.innerHTML = '79 € / Monat';
                 pricePro.innerHTML = '199 € / Monat';
+                if (priceApiDeal) priceApiDeal.innerHTML = '500 € / Monat';
               }
             };
 
