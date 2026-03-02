@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="/social-image.png">
+  <meta property="og:image:width" content="2640">
+  <meta property="og:image:height" content="1430">
+  <meta property="og:title" content="When does self-hosting AI tutors make sense? — Alphabees">
+  <meta property="og:description" content="Cost and break-even analysis for education providers: self-hosted LLM vs. cloud AI — when does it actually pay off?">
+  <meta name="twitter:title" content="When does self-hosting AI tutors make sense? — Alphabees">
+  <meta name="twitter:description" content="Cost and break-even analysis for education providers: self-hosted LLM vs. cloud AI — when does it actually pay off?">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="/social-image.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>When does self-hosting AI tutors make sense? — Alphabees Blog</title>
+  <meta name="description" content="Cost and break-even analysis for education providers: self-hosted LLM vs. cloud AI — when does it actually pay off?">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes fadeSlideIn {
+      0%   { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+      40%  { opacity: 0.9; transform: translateY(0); filter: blur(0px); }
+      100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+    }
+    .animate-on-scroll { animation-play-state: paused !important; }
+    .animate-on-scroll.animate { animation-play-state: running !important; }
+    html, body { overflow-x: hidden; width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* Article typography */
+    .prose h2 {
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: #111827;
+      margin-top: 2.5rem;
+      margin-bottom: 0.875rem;
+      line-height: 1.3;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose p {
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+    .prose ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .prose ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+    .prose ul li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: #6366f1;
+      margin-top: 0.6em;
+    }
+    .prose blockquote {
+      border-left: 3px solid #6366f1;
+      padding: 0.75rem 1.25rem;
+      margin: 1.75rem 0;
+      background: #f5f3ff;
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+    .prose blockquote p {
+      color: #4338ca;
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .prose .highlight-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .prose .highlight-box p {
+      margin-bottom: 0;
+      color: #1e40af;
+      font-weight: 500;
+    }
+    .prose strong {
+      color: #111827;
+      font-weight: 600;
+    }
+  </style>
+  <script>
+    (function () {
+      const style = document.createElement('style');
+      style.textContent = `.animate-on-scroll { animation-play-state: paused !important; } .animate-on-scroll.animate { animation-play-state: running !important; }`;
+      document.head.appendChild(style);
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+              window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+      }
+      window.initInViewAnimations = function (selector = '.animate-on-scroll') {
+        document.querySelectorAll(selector).forEach((el) => { window.__inViewIO.observe(el); });
+      };
+      document.addEventListener('DOMContentLoaded', () => initInViewAnimations());
+    })();
+  </script>
+  <script src="/assets/js/layout.js" defer></script>
+</head>
+<body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
+
+  <!-- Global Header -->
+  <div id="site-header"></div>
+
+  <main class="relative">
+
+    <!-- Hero Banner -->
+    <div class="relative bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 overflow-hidden">
+      <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-fuchsia-400/10 blur-3xl pointer-events-none"></div>
+
+      <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 pt-24 pb-16 sm:pt-32 sm:pb-20 relative">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 mb-8 text-sm text-white/60 font-geist" style="animation: fadeSlideIn 1s ease-out 0.05s both;">
+          <a href="index.html" class="hover:text-white transition">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <a href="blog.html" class="hover:text-white transition">Blog</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <span class="text-white/40">Article</span>
+        </nav>
+
+        <!-- Category + meta -->
+        <div class="flex flex-wrap items-center gap-3 mb-6" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+          <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-white text-xs font-semibold font-geist">Analysis</span>
+          <span class="text-white/50 text-sm font-geist">March 2026</span>
+          <span class="w-1 h-1 rounded-full bg-white/30"></span>
+          <span class="text-white/50 text-sm font-geist">12 min read</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white font-geist leading-[1.15] tracking-tight mb-5" style="animation: fadeSlideIn 1s ease-out 0.15s both;">
+          When does self-hosting AI tutors make sense?
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-white/70 font-geist font-normal leading-relaxed max-w-2xl" style="animation: fadeSlideIn 1s ease-out 0.2s both;">
+          The cost and break-even analysis for education providers
+        </p>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 py-14 sm:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 lg:gap-16">
+
+        <!-- Main Article -->
+        <article class="prose animate-on-scroll" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+
+          <p>More and more education providers are exploring their own AI tutors. The technical barrier has dropped, open-source models like Llama are freely available, and powerful hardware seems more affordable than just a few years ago.</p>
+
+          <p>The obvious question therefore is:</p>
+
+          <blockquote><p>Why should we pay monthly API costs to OpenAI or Anthropic when we can host a large language model ourselves?</p></blockquote>
+
+          <p>At first glance, a self-hosted LLM looks like the more cost-effective solution. But anyone who realistically calculates the actual AI server costs, ongoing operating costs, and quality differences often arrives at a different conclusion.</p>
+
+          <p>That's exactly where our LLM cost calculator for education providers comes in.</p>
+
+          <!-- Section -->
+          <h2>What does "self-hosting an LLM" actually mean?</h2>
+
+          <p>When people talk about a "self-hosted LLM," they typically mean:</p>
+
+          <ul>
+            <li>Your own on-premises server</li>
+            <li>A Mac Mini running Llama</li>
+            <li>Full data control</li>
+            <li>No ongoing token costs</li>
+          </ul>
+
+          <p>Technically, this is possible. Economically, it's more complex.</p>
+
+          <p>A large language model requires significant computing resources. The decisive factor is the available VRAM on the GPU. For smaller models like Llama 3 8B, an RTX 4090 with 24 GB VRAM may be sufficient. However, anyone who wants to achieve answer quality at GPT-4 level needs significantly larger models like Llama 3 70B — and therefore professional server hardware.</p>
+
+          <p>This is where the gap between theory and practice begins.</p>
+
+          <!-- Section -->
+          <h2>The real hardware costs of an AI server</h2>
+
+          <p>Many calculations only account for the purchase cost of a GPU. But a productive AI tutor requires a stable infrastructure.</p>
+
+          <p>A solid setup in the education sector requires:</p>
+
+          <ul>
+            <li>High-performance GPU(s) with sufficient VRAM</li>
+            <li>Powerful CPU</li>
+            <li>64–256 GB RAM</li>
+            <li>NVMe storage</li>
+            <li>Redundant power supply</li>
+            <li>Professional cooling</li>
+            <li>Monitoring and backup systems</li>
+          </ul>
+
+          <p>For smaller models, the investment quickly reaches <strong>€4,000–6,000</strong>.<br>For larger models with multiple GPUs or enterprise hardware, we're looking at <strong>€60,000–80,000</strong>.</p>
+
+          <p>This sum needs to be amortized over several years. In practice, our calculator assumes a 36-month depreciation period.</p>
+
+          <p>But even that doesn't complete the picture.</p>
+
+          <!-- Section -->
+          <h2>Ongoing operating costs: the underestimated factor</h2>
+
+          <p>The biggest misconception in the "cloud vs. on-premise AI" decision lies in ongoing operations.</p>
+
+          <p>An AI server doesn't only run when students are learning. It must be continuously available. This means:</p>
+
+          <ul>
+            <li>Power consumption between 400 and 1,500 watts in continuous operation</li>
+            <li>Additional cooling costs</li>
+            <li>Maintenance and driver updates</li>
+            <li>Model optimization</li>
+            <li>Security updates</li>
+            <li>Monitoring</li>
+            <li>Backup strategies</li>
+            <li>Contingency plans for outages</li>
+          </ul>
+
+          <p>But above all, internal staff time is required.</p>
+
+          <p>A self-hosted LLM requires continuous attention. Even by conservative estimates, <strong>10–25 hours of IT work per month</strong> are needed. At a realistic internal hourly rate, this quickly adds up to several hundred to over a thousand euros per month.</p>
+
+          <p>These ongoing AI operating costs are simply left out of many presentations.</p>
+
+          <!-- Section -->
+          <h2>Scalability: the strategic difference</h2>
+
+          <p>Another key point is scalability.</p>
+
+          <p>When an AI tutor is successful, usage increases. 5,000 requests per day become 15,000 or 30,000.</p>
+
+          <p>With a cloud solution, costs scale linearly with usage. No restructuring is required.</p>
+
+          <p>With a self-hosted solution, growth means:</p>
+
+          <ul>
+            <li>New GPUs</li>
+            <li>New servers</li>
+            <li>New investments</li>
+            <li>New architecture planning</li>
+          </ul>
+
+          <p>The scaling risk lies entirely with the education provider.</p>
+
+          <!-- Section -->
+          <h2>The quality factor is often ignored</h2>
+
+          <p>A common misconception goes:</p>
+
+          <blockquote><p>"Open-source models are now just as good as GPT."</p></blockquote>
+
+          <p>In many benchmarks, modern open-source models are impressive. But in a didactic context, it's not just about facts — what matters is:</p>
+
+          <ul>
+            <li>Precision in complex explanations</li>
+            <li>Consistency in long dialogues</li>
+            <li>Didactic structure</li>
+            <li>Error minimization</li>
+            <li>Hallucination rate</li>
+            <li>Language quality</li>
+          </ul>
+
+          <p>For AI tutors in particular, the quality of answers directly affects learning outcomes and student satisfaction.</p>
+
+          <p>Anyone who self-hosts a lightweight LLM may save costs, but trades quality for infrastructure control.</p>
+
+          <p>Our calculator therefore considers not only costs, but also the target quality level.</p>
+
+          <!-- Section -->
+          <h2>Example calculation: 10,000 chat requests per day</h2>
+
+          <p>Consider a typical education provider:</p>
+
+          <ul>
+            <li>10,000 tutor requests per day</li>
+            <li>Average of 1,500 tokens per interaction</li>
+            <li>Approximately 450 million tokens per month</li>
+          </ul>
+
+          <p>In the cloud model, only usage-based costs arise. There is no upfront investment, no hardware commitment, no operational risk.</p>
+
+          <p>With a self-hosted solution of comparable model size, you face:</p>
+
+          <ul>
+            <li>High initial investments</li>
+            <li>Ongoing electricity costs</li>
+            <li>Staff costs</li>
+            <li>Scaling risks</li>
+          </ul>
+
+          <p>The closer you want to get to state-of-the-art model quality, the more the supposed cost advantage of self-hosting disappears.</p>
+
+          <!-- Section -->
+          <h2>Why we built the LLM cost calculator</h2>
+
+          <p>In conversations with universities, academies, and training providers, we repeatedly encounter the same assumption:</p>
+
+          <blockquote><p>"Self-hosting is cheaper."</p></blockquote>
+
+          <p>This statement is only correct under certain conditions:</p>
+
+          <ul>
+            <li>Very high, consistent usage volumes</li>
+            <li>An in-house ML engineering team</li>
+            <li>Existing server infrastructure</li>
+            <li>A clear long-term AI strategy</li>
+          </ul>
+
+          <p>For many education providers, this simply doesn't apply.</p>
+
+          <p>That's why we developed an interactive AI infrastructure cost calculator. It calculates:</p>
+
+          <ul>
+            <li>Total Cost of Ownership (TCO)</li>
+            <li>Break-even point</li>
+            <li>Hardware requirements</li>
+            <li>Electricity and staffing costs</li>
+            <li>Token-based cloud costs</li>
+            <li>Scaling scenarios</li>
+          </ul>
+
+          <p>The result is not a blanket recommendation, but a solid basis for decision-making.</p>
+
+          <!-- Section -->
+          <h2>When does self-hosting an LLM actually make sense?</h2>
+
+          <p>Self-hosting can be worthwhile when:</p>
+
+          <ul>
+            <li>Data privacy requirements are extremely high</li>
+            <li>Very large usage volumes are planned</li>
+            <li>A dedicated AI infrastructure team is in place</li>
+            <li>Strategically building internal AI expertise is a priority</li>
+          </ul>
+
+          <p>For many mid-sized education providers, however, a cloud-based solution is economically more flexible, lower risk, and faster to scale.</p>
+
+          <p>The key question is not: <strong>"What is cheaper?"</strong></p>
+
+          <p>The strategically relevant question is:</p>
+
+          <blockquote><p>Which solution is more economical, more scalable, and qualitatively more appropriate for our AI tutor in the long run?</p></blockquote>
+
+          <p>Our calculator provides:</p>
+
+          <ul>
+            <li>Transparent cost comparisons</li>
+            <li>Concrete scenarios</li>
+            <li>Decision-relevant key figures</li>
+            <li>An objective break-even analysis</li>
+          </ul>
+
+          <!-- CTA -->
+          <div class="highlight-box mt-10">
+            <p class="text-base mb-4">If you are currently evaluating whether to self-host an LLM or opt for cloud AI, use our free <strong>LLM Cost Calculator for Education Providers</strong>.</p>
+            <p class="text-sm mb-0">Within minutes it will show you whether self-hosting makes financial sense for your institution, what infrastructure you'd realistically need, where your break-even lies, and which solution is strategically more appropriate.</p>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 not-prose">
+            <a href="https://portal.alphabees.de/auth/register"
+               class="inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 transition text-white font-semibold font-geist text-sm rounded-xl px-6 py-3.5 shadow-lg shadow-violet-500/20">
+              Use the cost calculator now
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+            <a href="kontakt.html"
+               class="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 transition text-gray-700 font-semibold font-geist text-sm rounded-xl px-6 py-3.5 border border-gray-200 shadow-sm">
+              Schedule a consultation
+            </a>
+          </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="hidden lg:block">
+          <div class="sticky top-28 space-y-6">
+
+            <!-- Author / Publisher info -->
+            <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100">
+              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide font-geist mb-3">Published by</p>
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center shrink-0">
+                  <span class="text-white text-xs font-bold font-geist">A</span>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-gray-900 font-geist">Alphabees</p>
+                  <p class="text-xs text-gray-400 font-geist">March 2026</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Back to blog -->
+            <a href="blog.html" class="flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition group">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:-translate-x-0.5 transition-transform"><path d="m15 18-6-6 6-6"></path></svg>
+              Back to Blog
+            </a>
+
+            <!-- Related articles -->
+            <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100">
+              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide font-geist mb-4">Related articles</p>
+              <a href="ki-tutor-guide-bildungsanbieter-deutschland-2026.html" class="group flex flex-col gap-1 hover:bg-white rounded-xl p-2 -mx-2 transition">
+                <span class="text-sm font-medium text-gray-800 group-hover:text-violet-600 font-geist transition leading-snug">AI Tutor Guide for Education Providers 2026</span>
+                <span class="text-xs text-gray-400 font-geist">Market overview · March 2026</span>
+              </a>
+            </div>
+
+            <!-- CTA box -->
+            <div class="bg-gradient-to-br from-violet-600 to-indigo-700 rounded-2xl p-5 text-white">
+              <p class="text-sm font-semibold font-geist mb-2">Try an AI tutor?</p>
+              <p class="text-xs text-white/70 font-geist mb-4 leading-relaxed">Start for free with the Alphabees portal and experience a real AI tutor for your institution.</p>
+              <a href="https://portal.alphabees.de/auth/register"
+                 class="inline-flex items-center gap-1.5 bg-white text-violet-700 hover:bg-violet-50 transition text-xs font-semibold font-geist rounded-lg px-4 py-2">
+                Get started free
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </a>
+            </div>
+
+          </div>
+        </aside>
+
+      </div>
+
+      <!-- Mobile back to blog -->
+      <div class="lg:hidden mt-12 pt-8 border-t border-gray-100">
+        <a href="blog.html" class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+          Back to Blog
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Newsletter Popup -->
+  <div id="newsletter-popup" class="fixed inset-0 z-[1000] hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+    <div class="animate-popup bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
+      <button onclick="closeNewsletterPopup()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+      <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Almost there!</h3>
+      <p class="text-gray-600 text-center mb-6">We've sent you a confirmation email. Please check your inbox and click the confirmation link.</p>
+      <p class="text-gray-500 text-sm text-center mb-6">💡 Can't find it? Check your spam folder.</p>
+      <button onclick="closeNewsletterPopup()" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-lg transition">Got it</button>
+    </div>
+  </div>
+
+  <style>
+    @keyframes popupFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    .animate-popup { animation: popupFadeIn 0.3s ease-out; }
+    #newsletter-popup.flex { display: flex !important; }
+  </style>
+
+  <script>
+    function showNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.add('hidden');
+      popup.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('newsletter-popup').addEventListener('click', function(e) {
+      if (e.target === this) closeNewsletterPopup();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeNewsletterPopup();
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsletterForm = document.querySelector('form[data-sv-form="8647011"]');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('input[name="email_address"]');
+          fetch(this.action, { method: 'POST', body: new FormData(this), mode: 'no-cors' })
+            .finally(() => { showNewsletterPopup(); emailInput.value = ''; });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
