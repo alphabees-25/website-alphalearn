@@ -186,6 +186,11 @@
   };
 
   const redirectToLang = (lang) => {
+    const altLink = document.querySelector(`link[rel="alternate"][hreflang="${lang}"]`);
+    if (altLink) {
+      window.location.replace(altLink.getAttribute('href'));
+      return;
+    }
     const page = getCurrentPage();
     const basePath = getBasePath();
     const target = page === 'index.html' ? `${basePath}/${lang}/` : `${basePath}/${lang}/${page}`;
