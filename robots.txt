@@ -6,4 +6,4 @@ Disallow: /partials/
 Disallow: /de/partials/
 Disallow: /en/partials/
 
-Sitemap: https://alphalearn.ai/sitemap.xml
+Sitemap: https://moodle-ai-tutor.alphalearn.ai/sitemap.xml
