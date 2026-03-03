@@ -282,10 +282,7 @@
           localStorage.removeItem('preferredLang');
           deleteCookie('lang');
         }
-        const page = getCurrentPage();
-        const basePath = getBasePath();
-        const target = page === 'index.html' ? `${basePath}/${lang}/` : `${basePath}/${lang}/${page}`;
-        window.location.href = target;
+        redirectToLang(lang);
       });
     });
   };
