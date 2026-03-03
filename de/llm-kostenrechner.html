@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="de" class="h-full">
+<head>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/social-image.png">
+  <meta property="og:image:width" content="2640">
+  <meta property="og:image:height" content="1430">
+  <meta property="og:title" content="LLM-Kostenrechner: Was kostet Self-Hosting wirklich?">
+  <meta property="og:description" content="Berechnen Sie die realen Kosten eines selbst gehosteten KI-Tutors — Hardware, Strom, Personal und versteckte Kostentreiber im Überblick.">
+  <meta property="og:url" content="https://moodle-ai-tutor.alphalearn.ai/de/llm-kostenrechner.html">
+  <meta name="twitter:title" content="LLM-Kostenrechner: Was kostet Self-Hosting wirklich?">
+  <meta name="twitter:description" content="Berechnen Sie die realen Kosten eines selbst gehosteten KI-Tutors — Hardware, Strom, Personal und versteckte Kostentreiber im Überblick.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="/social-image.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LLM-Kostenrechner: Was kostet Self-Hosting wirklich? | Alphabees</title>
+  <meta name="description" content="Berechnen Sie die realen Kosten eines selbst gehosteten KI-Tutors — Hardware, Strom, Personal und versteckte Kostentreiber im Überblick.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://moodle-ai-tutor.alphalearn.ai/de/llm-kostenrechner.html">
+  <link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/llm-kostenrechner.html">
+  <link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/llm-cost-calculator.html">
+  <link rel="alternate" hreflang="x-default" href="https://moodle-ai-tutor.alphalearn.ai/de/llm-kostenrechner.html">
+  <meta name="geo.region" content="DE">
+  <meta name="geo.country" content="DE">
+  <meta name="geo.placename" content="Deutschland">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes fadeSlideIn {
+      0%   { opacity: 0; transform: translateY(24px); filter: blur(6px); }
+      100% { opacity: 1; transform: translateY(0);    filter: blur(0);   }
+    }
+    .animate-on-scroll { animation-play-state: paused !important; }
+    .animate-on-scroll.animate { animation-play-state: running !important; }
+    html, body { overflow-x: hidden; width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    input[type="range"] {
+      -webkit-appearance: none; appearance: none;
+      width: 100%; height: 6px; border-radius: 9999px;
+      background: #e5e7eb; outline: none; cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px; height: 20px; border-radius: 50%;
+      background: #7c3aed; cursor: pointer;
+      border: 2px solid white;
+      box-shadow: 0 1px 4px rgba(0,0,0,.18), 0 0 0 3px rgba(124,58,237,.15);
+    }
+    input[type="range"]::-moz-range-thumb {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: #7c3aed; border: 2px solid white; cursor: pointer;
+    }
+
+    .toggle-btn {
+      position: relative; width: 48px; height: 26px;
+      border-radius: 9999px; border: none; cursor: pointer;
+      transition: background .2s; background: #d1d5db; flex-shrink: 0;
+    }
+    .toggle-btn.active { background: #7c3aed; }
+    .toggle-thumb {
+      position: absolute; top: 3px; left: 3px;
+      width: 20px; height: 20px; border-radius: 50%;
+      background: white; box-shadow: 0 1px 3px rgba(0,0,0,.2);
+      transition: transform .2s;
+    }
+    .toggle-btn.active .toggle-thumb { transform: translateX(22px); }
+
+    .tier-card {
+      border: 2px solid #e5e7eb; border-radius: 12px;
+      padding: 12px; cursor: pointer;
+      transition: border-color .15s, background .15s;
+      background: white;
+    }
+    .tier-card:hover { border-color: #a78bfa; }
+    .tier-card.selected { border-color: #7c3aed; background: #faf5ff; }
+
+    .badge-green  { display:inline-flex;align-items:center;gap:4px;background:#f0fdf4;color:#15803d;font-size:.7rem;font-weight:600;border-radius:9999px;padding:2px 8px; }
+    .badge-orange { display:inline-flex;align-items:center;gap:4px;background:#fff7ed;color:#c2410c;font-size:.7rem;font-weight:600;border-radius:9999px;padding:2px 8px; }
+  </style>
+  <script>
+    (() => {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('animate'); obs.unobserve(e.target); } });
+      }, { threshold: 0.1 });
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.animate-on-scroll').forEach(el => obs.observe(el));
+      });
+    })();
+  </script>
+  <script src="/assets/js/layout.js" defer></script>
+</head>
+<body class="min-h-screen antialiased text-gray-900 bg-gray-50 overflow-x-hidden"
+      style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
+
+  <div id="site-header"></div>
+
+  <main class="relative">
+
+    <!-- Hero -->
+    <div class="relative bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 overflow-hidden">
+      <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-fuchsia-400/10 blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-14 sm:pt-32 sm:pb-16 relative">
+        <nav class="flex items-center gap-2 mb-8 text-sm text-white/60 font-geist"
+             style="animation: fadeSlideIn .8s ease-out both;">
+          <a href="index.html" class="hover:text-white transition">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <span class="text-white/40">Kostenrechner</span>
+        </nav>
+
+        <div class="flex flex-wrap items-center gap-3 mb-5"
+             style="animation: fadeSlideIn .8s ease-out .05s both;">
+          <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-white text-xs font-semibold font-geist">
+            Kostenloses Tool
+          </span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white font-geist leading-[1.15] tracking-tight mb-5"
+            style="animation: fadeSlideIn .8s ease-out .1s both;">
+          Ab wann lohnt sich das Self-Hosting eines KI-Tutors?
+        </h1>
+        <div class="text-base sm:text-lg text-white/70 font-geist font-normal leading-relaxed max-w-3xl space-y-3"
+             style="animation: fadeSlideIn .8s ease-out .15s both;">
+          <p>Die Idee klingt verlockend: Ein eigenes KI-Modell auf dem Server im Haus, volle Kontrolle und scheinbar geringere Kosten als bei den großen Cloud-Anbietern. Doch ist das wirklich die ganze Wahrheit?</p>
+          <p>Dieser Rechner geht über oberflächliche Preislisten hinaus. Er deckt die Total Cost of Ownership (TCO) auf – von der teuren Server-Hardware über versteckte Personalaufwände bis hin zu den Stromkosten, die Ihnen niemand nennt.</p>
+          <p>Geben Sie Ihre erwarteten Eckdaten ein und finden Sie heraus, ab welchem Punkt sich der Eigenbetrieb wirklich rechnet und welchen Preis Sie für die Unabhängigkeit zahlen – nicht nur in Euro, sondern auch in Qualität und Skalierbarkeit.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Calculator -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+
+      <!-- 1. Inputs -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8 mb-5 animate-on-scroll"
+           style="animation: fadeSlideIn .7s ease-out both;">
+
+        <h2 class="text-base font-semibold font-geist text-gray-900 mb-5">Ihre Einrichtung</h2>
+
+        <!-- Sliders 2-col -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 mb-5">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <label class="text-sm font-medium text-gray-700">Lernende im LMS</label>
+              <span class="font-semibold font-geist text-violet-700 text-sm bg-violet-50 px-2.5 py-0.5 rounded-full"
+                    id="learners-display">1.000</span>
+            </div>
+            <input type="range" id="learners" min="100" max="50000" step="100" value="1000">
+            <div class="flex justify-between mt-1.5 text-xs text-gray-400"><span>100</span><span>50.000</span></div>
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <div>
+                <label class="text-sm font-medium text-gray-700">KI-Anfragen / Tag / Lernenden</label>
+                <p class="text-xs text-gray-400">Ø Fragen pro Person und Tag</p>
+              </div>
+              <span class="font-semibold font-geist text-violet-700 text-sm bg-violet-50 px-2.5 py-0.5 rounded-full ml-3"
+                    id="requests-display">5</span>
+            </div>
+            <input type="range" id="requestsPerDay" min="1" max="30" step="1" value="5">
+            <div class="flex justify-between mt-1.5 text-xs text-gray-400"><span>1</span><span>30</span></div>
+          </div>
+        </div>
+
+        <!-- Team toggle -->
+        <div class="flex items-center justify-between py-4 border-t border-gray-100">
+          <div>
+            <p class="text-sm font-medium text-gray-800">KI-Entwicklungsteam vorhanden?</p>
+            <p class="text-xs text-gray-400 mt-0.5">Internes Personal für KI-Infrastruktur und Wartung</p>
+          </div>
+          <div class="flex items-center gap-3 ml-4">
+            <span id="team-label" class="text-sm text-gray-500">Nicht vorhanden</span>
+            <button id="teamToggle" class="toggle-btn" role="switch" aria-checked="false" aria-label="KI-Team vorhanden">
+              <span class="toggle-thumb"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Hardware tiers -->
+        <div class="pt-4 border-t border-gray-100">
+          <p class="text-sm font-medium text-gray-800 mb-3">Hardware-Konfiguration</p>
+          <div class="grid grid-cols-3 gap-2">
+            <div class="tier-card" data-tier="mini">
+              <div class="font-semibold text-xs font-geist text-gray-800 mb-0.5">Mac Mini M4 Pro</div>
+              <div class="text-xs text-violet-600 font-medium">~2.000 €</div>
+              <div class="text-xs text-gray-400 mt-2 leading-relaxed">Llama 3 8B · 35 W<br>bis 800 Anfr./Tag</div>
+            </div>
+            <div class="tier-card selected" data-tier="server">
+              <div class="font-semibold text-xs font-geist text-gray-800 mb-0.5">KI-Server (RTX 4090)</div>
+              <div class="text-xs text-violet-600 font-medium">~3.500 €</div>
+              <div class="text-xs text-gray-400 mt-2 leading-relaxed">Llama 3 8B · 400 W<br>bis 4.000 Anfr./Tag</div>
+            </div>
+            <div class="tier-card" data-tier="pro">
+              <div class="font-semibold text-xs font-geist text-gray-800 mb-0.5">Profi-Server (2× H100)</div>
+              <div class="text-xs text-violet-600 font-medium">~75.000 €</div>
+              <div class="text-xs text-gray-400 mt-2 leading-relaxed">Llama 3 70B · 1.500 W<br>bis 20.000 Anfr./Tag</div>
+            </div>
+          </div>
+          <p class="text-xs text-orange-600 font-medium mt-2.5 h-4" id="r-units-warn"></p>
+        </div>
+      </div>
+
+      <!-- 2. Self-hosting cost — dark card -->
+      <div class="bg-gray-900 rounded-2xl p-6 sm:p-8 mb-5 text-white animate-on-scroll"
+           style="animation: fadeSlideIn .7s ease-out .05s both;">
+        <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-5 font-geist">Kostenkalkulation Self-Hosting</p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div>
+            <div class="text-3xl sm:text-4xl font-bold font-geist text-white" id="r-self-total">—</div>
+            <div class="text-xs text-gray-400 mt-1.5">monatliche Betriebskosten</div>
+          </div>
+          <div>
+            <div class="text-3xl sm:text-4xl font-bold font-geist text-gray-300" id="r-init">—</div>
+            <div class="text-xs text-gray-400 mt-1.5">Anfangsinvestition (Hardware)</div>
+          </div>
+          <div>
+            <div class="text-3xl sm:text-4xl font-bold font-geist text-orange-400" id="r-three-year">—</div>
+            <div class="text-xs text-gray-400 mt-1.5">Gesamtkosten über 3 Jahre</div>
+          </div>
+        </div>
+        <div class="mt-5 pt-5 border-t border-white/10 flex flex-wrap gap-x-6 gap-y-2 text-xs text-gray-400">
+          <span>≈ <span class="text-gray-200 font-medium" id="r-per-learner">—</span> pro Lernenden / Monat</span>
+          <span><span class="text-gray-200 font-medium" id="r-daily">—</span> Anfragen / Tag</span>
+          <span><span class="text-gray-200 font-medium" id="r-monthly">—</span> Anfragen / Monat</span>
+        </div>
+      </div>
+
+      <!-- 3. Cost breakdown -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8 mb-5 animate-on-scroll"
+           style="animation: fadeSlideIn .7s ease-out .1s both;">
+
+        <h2 class="text-base font-semibold font-geist text-gray-900 mb-1">Monatliche Kosten im Detail</h2>
+        <p class="text-xs text-gray-400 mb-4">Laufende Betriebskosten ohne Anfangsinvestition</p>
+
+        <div class="divide-y divide-gray-50">
+          <div class="flex justify-between items-center py-3">
+            <div>
+              <span class="text-sm text-gray-700">Hardware (amortisiert, 36 Monate)</span>
+              <p class="text-xs text-gray-400 mt-0.5">Kaufpreis × Anzahl Einheiten ÷ 36</p>
+            </div>
+            <span class="font-semibold font-geist text-gray-800 tabular-nums" id="r-hw">—</span>
+          </div>
+          <div class="flex justify-between items-center py-3">
+            <div>
+              <span class="text-sm text-gray-700">Strom (24/7 Betrieb)</span>
+              <p class="text-xs text-gray-400 mt-0.5">0,35 €/kWh · Dauerbetrieb</p>
+            </div>
+            <span class="font-semibold font-geist text-gray-800 tabular-nums" id="r-elec">—</span>
+          </div>
+          <div class="flex justify-between items-center py-3">
+            <div>
+              <span class="text-sm text-gray-700">Personal (Wartung, Updates, Support)</span>
+              <p class="text-xs text-gray-400 mt-0.5" id="r-personnel-hint">Externer Spezialist: 90 €/h</p>
+            </div>
+            <span class="font-semibold font-geist text-gray-800 tabular-nums" id="r-personnel">—</span>
+          </div>
+          <div class="flex justify-between items-center py-3" id="r-coloc-row" style="display:none">
+            <div>
+              <span class="text-sm text-gray-700">Colocation (Rechenzentrum)</span>
+              <p class="text-xs text-gray-400 mt-0.5">Rack-Miete inkl. Strom-Infrastruktur</p>
+            </div>
+            <span class="font-semibold font-geist text-gray-800 tabular-nums" id="r-coloc">—</span>
+          </div>
+          <div class="flex justify-between items-center pt-4 pb-1">
+            <span class="font-semibold text-gray-900">Gesamt / Monat</span>
+            <span class="font-bold text-gray-900 font-geist text-xl tabular-nums" id="r-breakdown-total">—</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Qualitative comparison -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8 mb-5 overflow-x-auto animate-on-scroll"
+           style="animation: fadeSlideIn .7s ease-out .15s both;">
+
+        <h2 class="text-base font-semibold font-geist text-gray-900 mb-1">Qualitative Bewertung</h2>
+        <p class="text-xs text-gray-400 mb-5">Betriebliche Unterschiede jenseits der reinen Kosten</p>
+
+        <table class="w-full text-sm min-w-[440px]">
+          <thead>
+            <tr class="border-b border-gray-100">
+              <th class="text-left py-2.5 text-gray-500 font-medium w-2/5">Kriterium</th>
+              <th class="py-2.5 text-blue-600 font-medium text-center w-[30%]">
+                Cloud-KI<br><span class="font-normal text-xs text-blue-400">(neuste KI-Modelle)</span>
+              </th>
+              <th class="py-2.5 text-gray-600 font-medium text-center w-[30%]">
+                Self-Hosting<br><span class="font-normal text-xs text-gray-400" id="q-model-label">(Llama 3 8B)</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-50">
+            <tr>
+              <td class="py-3 text-gray-700 font-medium">Antwortqualität</td>
+              <td class="py-3 text-center"><span class="text-yellow-400 text-base">★★★★★</span></td>
+              <td class="py-3 text-center" id="q-quality">—</td>
+            </tr>
+            <tr>
+              <td class="py-3 text-gray-700 font-medium">Wartungsaufwand</td>
+              <td class="py-3 text-center"><span class="badge-green">✓ Keiner</span></td>
+              <td class="py-3 text-center" id="q-maintenance">—</td>
+            </tr>
+            <tr>
+              <td class="py-3 text-gray-700 font-medium">Skalierbarkeit</td>
+              <td class="py-3 text-center"><span class="badge-green">✓ Unbegrenzt</span></td>
+              <td class="py-3 text-center"><span class="badge-orange">⚠ Begrenzt</span></td>
+            </tr>
+            <tr>
+              <td class="py-3 text-gray-700 font-medium">Datenschutz</td>
+              <td class="py-3 text-center"><span class="badge-green">✓ DSGVO-Konform</span></td>
+              <td class="py-3 text-center"><span class="badge-green">✓ Vollständige Kontrolle</span></td>
+            </tr>
+            <tr>
+              <td class="py-3 text-gray-700 font-medium">Ausfallsicherheit</td>
+              <td class="py-3 text-center"><span class="badge-green">✓ 99,9 % SLA</span></td>
+              <td class="py-3 text-center"><span class="badge-orange">⚠ Eigenverantwortung</span></td>
+            </tr>
+            <tr>
+              <td class="py-3 text-gray-700 font-medium">Modell-Updates</td>
+              <td class="py-3 text-center"><span class="badge-green">✓ Automatisch</span></td>
+              <td class="py-3 text-center"><span class="badge-orange">⚠ Manuell &amp; riskant</span></td>
+            </tr>
+            <tr>
+              <td class="py-3 text-gray-700 font-medium">Anfangsinvestition</td>
+              <td class="py-3 text-center"><span class="badge-green">✓ 0 €</span></td>
+              <td class="py-3 text-center" id="q-investment">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 5. CTA -->
+      <div class="rounded-2xl bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 p-8 text-center mb-8 animate-on-scroll"
+           style="animation: fadeSlideIn .7s ease-out .2s both;">
+        <p class="text-xs font-semibold text-white/50 uppercase tracking-widest mb-2 font-geist">Alphabees KI-Tutor</p>
+        <h3 class="text-xl sm:text-2xl font-semibold text-white font-geist mb-2">
+          Cloud-KI ohne Wartungsaufwand — einsatzbereit in Ihrem LMS
+        </h3>
+        <p class="text-white/70 text-sm mb-7 max-w-xl mx-auto">
+          DSGVO-konform, skalierbar, mit Ihrer Wissensbasis — keine Hardware, kein DevOps.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="features.html"
+             class="inline-flex items-center justify-center gap-2 bg-white text-violet-700 font-semibold font-geist text-sm rounded-xl px-6 py-3 hover:bg-violet-50 transition shadow-sm">
+            Funktionen des KI-Tutors erkunden
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
+          <a href="https://portal.alphabees.de/auth/register"
+             class="inline-flex items-center justify-center gap-2 bg-white/15 backdrop-blur border border-white/25 text-white font-semibold font-geist text-sm rounded-xl px-6 py-3 hover:bg-white/25 transition">
+            Kostenlos testen
+          </a>
+        </div>
+      </div>
+
+      <p class="text-xs text-gray-400 text-center leading-relaxed max-w-2xl mx-auto pb-4">
+        Annahmen: Ø 1.500 Tokens / Anfrage · Strompreis 0,35 €/kWh · Abschreibung 36 Monate ·
+        Personal intern 65 €/h, extern 90 €/h. Diese Kalkulation dient zur Orientierung und ersetzt keine individuelle Kostenanalyse.
+      </p>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script>
+  (function () {
+    'use strict';
+
+    var ELEC = 0.35, AMRT = 36;
+
+    var TIERS = {
+      mini:   { hardware:2000,  watts:35,   capacity:800,   model:'Llama 3 8B',  qualityStars:3, hNoTeam:10, hTeam:5,  coloc:0   },
+      server: { hardware:3500,  watts:400,  capacity:4000,  model:'Llama 3 8B',  qualityStars:3, hNoTeam:20, hTeam:10, coloc:0   },
+      pro:    { hardware:75000, watts:1500, capacity:20000, model:'Llama 3 70B', qualityStars:4, hNoTeam:40, hTeam:20, coloc:400 }
+    };
+
+    var S = { learners:1000, rpd:5, team:false, tier:'server' };
+
+    function fmt(n)  { return Math.round(n).toLocaleString('de-DE'); }
+    function eur(n)  { return Math.round(n).toLocaleString('de-DE') + '\u00a0€'; }
+    function el(id)  { return document.getElementById(id); }
+    function txt(id, v) { var e = el(id); if (e) e.textContent = v; }
+    function html(id, v) { var e = el(id); if (e) e.innerHTML = v; }
+    function badge(good, t) {
+      return '<span class="' + (good ? 'badge-green' : 'badge-orange') + '">' + t + '</span>';
+    }
+
+    function compute() {
+      var t       = TIERS[S.tier];
+      var daily   = S.learners * S.rpd;
+      var monthly = daily * 30;
+      var units   = Math.max(1, Math.ceil(daily / t.capacity));
+      var hwMo    = (t.hardware * units) / AMRT;
+      var elecMo  = (t.watts * units / 1000) * 24 * 30 * ELEC;
+      var rate    = S.team ? 65 : 90;
+      var hours   = (S.team ? t.hTeam : t.hNoTeam) * (units > 1 ? 1.3 : 1);
+      var persMo  = hours * rate;
+      var selfMo  = hwMo + elecMo + persMo + t.coloc;
+      var initInv = t.hardware * units;
+      return {
+        daily:daily, monthly:monthly, units:units, t:t,
+        hwMo:hwMo, elecMo:elecMo, persMo:persMo,
+        selfMo:selfMo, initInv:initInv,
+        threeYear: initInv + selfMo * 36,
+        perLearner: selfMo / S.learners
+      };
+    }
+
+    function render() {
+      var r = compute();
+      var t = TIERS[S.tier];
+
+      /* Volume */
+      txt('r-daily',   fmt(r.daily));
+      txt('r-monthly', fmt(r.monthly));
+
+      /* Main cost numbers */
+      txt('r-self-total', eur(r.selfMo));
+      txt('r-init',       eur(r.initInv));
+      txt('r-three-year', eur(r.threeYear));
+
+      var plEl = el('r-per-learner');
+      if (plEl) plEl.textContent = r.perLearner.toLocaleString('de-DE', {minimumFractionDigits:2, maximumFractionDigits:2}) + '\u00a0€';
+
+      /* Breakdown */
+      txt('r-hw',             eur(r.hwMo));
+      txt('r-elec',           eur(r.elecMo));
+      txt('r-personnel',      eur(r.persMo));
+      txt('r-coloc',          r.t.coloc > 0 ? eur(r.t.coloc) : '—');
+      txt('r-breakdown-total', eur(r.selfMo));
+
+      var cRow = el('r-coloc-row');
+      if (cRow) cRow.style.display = r.t.coloc > 0 ? '' : 'none';
+
+      var ph = el('r-personnel-hint');
+      if (ph) ph.textContent = S.team
+        ? 'Internes Team: 65\u00a0€/h \u00b7 ' + Math.round((t.hTeam) * (r.units > 1 ? 1.3 : 1)) + '\u00a0h/Monat'
+        : 'Externer Spezialist: 90\u00a0€/h \u00b7 ' + Math.round((t.hNoTeam) * (r.units > 1 ? 1.3 : 1)) + '\u00a0h/Monat';
+
+      var uw = el('r-units-warn');
+      if (uw) uw.textContent = r.units > 1
+        ? '\u26a0 ' + r.units + ' Einheiten erforderlich f\u00fcr Ihr Anfragevolumen'
+        : '';
+
+      /* Qualitative */
+      txt('q-model-label', '(' + t.model + ')');
+      var s = t.qualityStars;
+      html('q-quality', '<span class="text-yellow-400 text-base">' + '\u2605'.repeat(s) + '</span>'
+                      + '<span class="text-gray-200 text-base">' + '\u2605'.repeat(5 - s) + '</span>');
+      var hrsLabel = S.team ? t.hTeam : t.hNoTeam;
+      html('q-maintenance', badge(false, '\u26a0 ' + hrsLabel + '\u2013' + Math.round(hrsLabel * 1.5) + ' h/Mo.'));
+      html('q-investment',  badge(false, '\u26a0 ' + eur(r.initInv)));
+    }
+
+    function init() {
+      var ls = el('learners'), ld = el('learners-display');
+      if (ls) ls.addEventListener('input', function () {
+        S.learners = +this.value;
+        if (ld) ld.textContent = fmt(+this.value);
+        render();
+      });
+
+      var rs = el('requestsPerDay'), rd = el('requests-display');
+      if (rs) rs.addEventListener('input', function () {
+        S.rpd = +this.value;
+        if (rd) rd.textContent = this.value;
+        render();
+      });
+
+      var tg = el('teamToggle');
+      if (tg) tg.addEventListener('click', function () {
+        S.team = !S.team;
+        this.classList.toggle('active', S.team);
+        this.setAttribute('aria-checked', String(S.team));
+        var lbl = el('team-label');
+        if (lbl) lbl.textContent = S.team ? 'Ja, vorhanden' : 'Nicht vorhanden';
+        render();
+      });
+
+      document.querySelectorAll('.tier-card').forEach(function (card) {
+        card.addEventListener('click', function () {
+          S.tier = this.dataset.tier;
+          document.querySelectorAll('.tier-card').forEach(function (c) { c.classList.remove('selected'); });
+          this.classList.add('selected');
+          render();
+        });
+      });
+
+      render();
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+  })();
+  </script>
+
+</body>
+</html>

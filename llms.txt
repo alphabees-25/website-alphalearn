@@ -30,6 +30,7 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 - KI-Tutor-Guide für Bildungsanbieter 2026: https://moodle-ai-tutor.alphalearn.ai/de/ki-tutor-guide-bildungsanbieter-deutschland-2026.html
 - Self-Hosting von KI-Tutoren — Kosten-Analyse: https://moodle-ai-tutor.alphalearn.ai/de/wann-lohnt-sich-self-hosting-ki-tutoren.html
+- LLM Kostenrechner (Cloud vs. Self-Hosting): https://moodle-ai-tutor.alphalearn.ai/de/llm-kostenrechner.html
 
 ---
 
@@ -51,6 +52,7 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 - AI Tutor Guide for Education Providers 2026: https://moodle-ai-tutor.alphalearn.ai/en/ai-tutor-guide-education-providers-2026.html
 - Self-Hosting AI Tutors — Cost Analysis: https://moodle-ai-tutor.alphalearn.ai/en/self-hosting-ai-tutors-worth-it.html
+- LLM Cost Calculator (Cloud vs. Self-Hosting): https://moodle-ai-tutor.alphalearn.ai/en/llm-cost-calculator.html
 
 ---
 

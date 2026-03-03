@@ -184,6 +184,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/llm-kostenrechner.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://moodle-ai-tutor.alphalearn.ai/de/partner-program.html</loc>
     <lastmod>2026-02-19</lastmod>
     <changefreq>monthly</changefreq>
@@ -306,6 +312,12 @@
   </url>
   <url>
     <loc>https://moodle-ai-tutor.alphalearn.ai/en/self-hosting-ai-tutors-worth-it.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/llm-cost-calculator.html</loc>
     <lastmod>2026-03-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
