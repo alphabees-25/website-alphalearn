@@ -1,7 +1,9 @@
-User-agent: * Allow: /
+User-agent: *
+Allow: /
 
-No restricted areas found in current build
-
-If staging or preview paths are added later, block them here
+# Partials are HTML fragments, not standalone pages
+Disallow: /partials/
+Disallow: /de/partials/
+Disallow: /en/partials/
 
 Sitemap: https://alphalearn.ai/sitemap.xml

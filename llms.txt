@@ -1,31 +1,71 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://alphalearn.ai/
+# Last updated: 2026-03-03
 
 Site: AlphaLearn
 Domain: https://alphalearn.ai/
-Language: de,en
+Languages: de, en
 
 Summary:
-AlphaLearn provides AI-supported learning solutions with a focus on practical implementation in education and training.
+AlphaLearn provides AI-powered tutoring solutions for education providers — including Moodle-integrated AI tutors, self-hosted LLM deployments, and cloud-based learning assistants. Headquartered in Germany, serving DACH and international markets.
 
-Preferred pages for understanding and citation:
-- Product overview: https://alphalearn.ai/
-- Features: https://alphalearn.ai/features.html
-- Pricing: https://alphalearn.ai/preis.html
-- Demos: https://alphalearn.ai/demos.html
-- Partner program: https://alphalearn.ai/partner-program.html
-- About: https://alphalearn.ai/ueber-uns.html
-- Contact: https://alphalearn.ai/kontakt.html
+---
 
-Language entry points:
-- German: https://alphalearn.ai/de/
-- English: https://alphalearn.ai/en/
+## Key pages (German — de/)
 
-Legal / policies (reference only):
-- Privacy: https://alphalearn.ai/privacy.html
-- Imprint: https://alphalearn.ai/impressum.html
-- Cookie policy: https://alphalearn.ai/cookie-policy.html
+- Homepage (DE): https://alphalearn.ai/de/
+- Features: https://alphalearn.ai/de/features.html
+- Pricing: https://alphalearn.ai/de/preis.html
+- Demos: https://alphalearn.ai/de/demos.html
+- Moodle Plugin: https://alphalearn.ai/de/moodle-plugin.html
+- Moodle Mobile App: https://alphalearn.ai/de/moodle-mobile-app.html
+- Partner Program: https://alphalearn.ai/de/partner-program.html
+- About: https://alphalearn.ai/de/ueber-uns.html
+- Contact: https://alphalearn.ai/de/kontakt.html
+- Careers: https://alphalearn.ai/de/careers.html
+- Press: https://alphalearn.ai/de/press.html
 
-Sitemap:
-https://alphalearn.ai/sitemap.xml
+## Blog articles (German)
+
+- KI-Tutor-Guide für Bildungsanbieter 2026: https://alphalearn.ai/de/ki-tutor-guide-bildungsanbieter-deutschland-2026.html
+- Self-Hosting von KI-Tutoren — Kosten-Analyse: https://alphalearn.ai/de/wann-lohnt-sich-self-hosting-ki-tutoren.html
+
+---
+
+## Key pages (English — en/)
+
+- Homepage (EN): https://alphalearn.ai/en/
+- Features: https://alphalearn.ai/en/features.html
+- Pricing: https://alphalearn.ai/en/pricing.html
+- Demos: https://alphalearn.ai/en/demos.html
+- Moodle Plugin: https://alphalearn.ai/en/moodle-plugin.html
+- Moodle Mobile App: https://alphalearn.ai/en/moodle-mobile-app.html
+- Partner Program: https://alphalearn.ai/en/partner-program.html
+- About: https://alphalearn.ai/en/about.html
+- Contact: https://alphalearn.ai/en/contact.html
+- Careers: https://alphalearn.ai/en/careers.html
+- Press: https://alphalearn.ai/en/press.html
+
+## Blog articles (English)
+
+- AI Tutor Guide for Education Providers 2026: https://alphalearn.ai/en/ai-tutor-guide-education-providers-2026.html
+- Self-Hosting AI Tutors — Cost Analysis: https://alphalearn.ai/en/self-hosting-ai-tutors-worth-it.html
+
+---
+
+## Legal / policies (reference only)
+
+- Privacy Policy (DE): https://alphalearn.ai/de/privacy.html
+- Privacy Policy (EN): https://alphalearn.ai/en/privacy.html
+- Cookie Policy: https://alphalearn.ai/en/cookie-policy.html
+- Terms (EN): https://alphalearn.ai/en/terms.html
+- AGB (DE): https://alphalearn.ai/de/agb.html
+- Imprint (EN): https://alphalearn.ai/en/imprint.html
+- Impressum (DE): https://alphalearn.ai/de/impressum.html
+- Security: https://alphalearn.ai/en/security.html
+- Compliance: https://alphalearn.ai/en/compliance.html
+
+---
+
+Sitemap: https://alphalearn.ai/sitemap.xml
