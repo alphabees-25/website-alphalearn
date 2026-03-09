@@ -559,7 +559,13 @@ font-family: 'Cormorant Garamond', serif !important;
       });
     };
 
-    document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
+    document.addEventListener("DOMContentLoaded", () => {
+        initInViewAnimations();
+        // Fallback: force-animate any elements the observer missed (iOS Safari / mobile quirks)
+        setTimeout(() => {
+          document.querySelectorAll(".animate-on-scroll:not(.animate)").forEach(el => el.classList.add("animate"));
+        }, 1000);
+      });
   })();
   </script>
 
