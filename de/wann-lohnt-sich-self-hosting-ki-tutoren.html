@@ -136,12 +136,18 @@
               window.__inViewIO.unobserve(entry.target);
             }
           });
-        }, { threshold: 0.1 });
+        }, { threshold: 0 });
       }
       window.initInViewAnimations = function (selector = '.animate-on-scroll') {
         document.querySelectorAll(selector).forEach((el) => { window.__inViewIO.observe(el); });
       };
-      document.addEventListener('DOMContentLoaded', () => initInViewAnimations());
+      document.addEventListener('DOMContentLoaded', () => {
+        initInViewAnimations();
+        // Fallback: force-animate any elements the observer missed (iOS Safari / mobile quirks)
+        setTimeout(() => {
+          document.querySelectorAll('.animate-on-scroll:not(.animate)').forEach(el => el.classList.add('animate'));
+        }, 1000);
+      });
     })();
   </script>
   <script src="/assets/js/layout.js" defer></script>
