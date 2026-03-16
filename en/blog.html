@@ -179,17 +179,40 @@
           </div>
         </a>
 
-        <div class="flex flex-col rounded-2xl border border-dashed border-gray-200 bg-gray-50/50 overflow-hidden animate-on-scroll" style="animation: fadeSlideIn 1s ease-out 0.35s both;">
-          <div class="aspect-[16/9] bg-gray-100/60 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d1d5db" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 5v14"></path><path d="M5 12h14"></path>
-            </svg>
+        <!-- Article Card: LLM Cost Calculator -->
+        <a href="llm-cost-calculator.html"
+           class="group flex flex-col rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden animate-on-scroll"
+           style="animation: fadeSlideIn 1s ease-out 0.35s both;">
+
+          <!-- Thumbnail (gradient) -->
+          <div class="relative overflow-hidden aspect-[16/9] bg-gradient-to-br from-indigo-600 via-blue-600 to-cyan-500 flex items-center justify-center">
+            <div class="text-white/20 text-[120px] font-bold font-geist leading-none select-none">€</div>
+            <div class="absolute top-4 left-4 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1">
+              <span class="text-white text-xs font-semibold font-geist">Tool</span>
+            </div>
           </div>
-          <div class="p-6 flex-1 flex flex-col justify-center items-center text-center">
-            <p class="text-sm font-medium text-gray-400 font-geist">More articles</p>
-            <p class="text-xs text-gray-300 font-geist mt-1">Coming soon</p>
+
+          <!-- Content -->
+          <div class="flex flex-col flex-1 p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xs text-gray-400 font-geist">March 2026</span>
+              <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+              <span class="text-xs text-gray-400 font-geist">Interactive</span>
+            </div>
+            <h2 class="text-lg font-semibold text-gray-900 font-geist leading-snug mb-3 group-hover:text-blue-600 transition-colors">
+              When Does Self-Hosting an AI Tutor Actually Pay Off?
+            </h2>
+            <p class="text-sm text-gray-500 font-geist leading-relaxed flex-1">
+              Calculate the real costs of running a self-hosted AI tutor — hardware, electricity, staffing, and hidden cost drivers at a glance.
+            </p>
+            <div class="mt-5 flex items-center gap-1.5 text-sm font-medium text-blue-600 font-geist group-hover:gap-2.5 transition-all">
+              <span>Open Calculator</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </div>
           </div>
-        </div>
+        </a>
 
       </div>
     </div>

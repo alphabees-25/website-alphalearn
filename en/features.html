@@ -1039,8 +1039,10 @@
               <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" class="block w-[94px] h-[94px]" role="img" aria-label="Animated robot icon" style="width: 94px; height: 94px; color: rgb(17, 24, 39);" stroke-width="2">
                 <title>Animated robot icon</title>
                 <style>
-                  .robot-eye-scan-en { animation: robotScan 1.8s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
-                  .robot-eye-blink-en { animation: robotBlink 7s infinite; transform-origin: center; transform-box: fill-box; }
+                  .robot-eye-scan-en { animation: robotScanEn 1.8s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+                  .robot-eye-blink-en { animation: robotBlinkEn 7s infinite; transform-origin: center; transform-box: fill-box; }
+                  @keyframes robotScanEn { 0% { transform: translateX(14px); } 18% { transform: translateX(14px); } 38% { transform: translateX(0); } 52% { transform: translateX(0); } 72% { transform: translateX(-14px); } 84% { transform: translateX(-14px); } 100% { transform: translateX(14px); } }
+                  @keyframes robotBlinkEn { 0%, 28%, 30%, 78%, 80%, 82%, 100% { transform: scaleY(1); } 29% { transform: scaleY(0.02); } 79% { transform: scaleY(0.02); } 79.5% { transform: scaleY(1); } 81% { transform: scaleY(0.02); } }
                 </style>
                 <rect width="512" height="512" fill="#5B2BE0"></rect>
                 <g fill="#FFFFFF">
