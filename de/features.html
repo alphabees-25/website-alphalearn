@@ -984,6 +984,196 @@
         });
   </script>
 </section>
+
+<section class="overflow-hidden bg-white border-gray-100 border-t pt-24 pb-24 relative">
+  <!-- CSS for Custom Animations -->
+  <style>
+    @keyframes flow-dash {
+      to {
+        stroke-dashoffset: -40;
+      }
+    }
+
+    .animate-flow {
+      stroke-dashoffset: 0;
+      animation: flow-dash 2s linear infinite;
+    }
+
+    @keyframes gentle-pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+        box-shadow: 0 0 30px -5px rgba(99, 102, 241, 0.3);
+      }
+
+      50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+        box-shadow: 0 0 50px -5px rgba(99, 102, 241, 0.5);
+      }
+    }
+
+    .animate-ai-pulse {
+      animation: gentle-pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+  </style>
+
+  <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6 relative">
+
+    <!-- Section Header -->
+    <div class="animate-on-scroll text-center max-w-2xl mx-auto mt-16 mb-12" style="animation: fadeSlideIn 1s ease-out 0.1s both">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-medium font-geist mb-6">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
+        Integrationen
+      </div>
+      <h2 class="sm:text-4xl text-4xl font-semibold text-gray-900 tracking-tight font-geist">Direkte Integrationen für deine KI-Tutor Wissensbasis</h2>
+      <p class="text-lg text-gray-500 font-geist mt-4">Verbinde dein Alphalearn Portal direkt mit deinen bestehenden Datenbanken wie z.B. Moodle, Microsoft SharePoint, Google Drive oder Dropbox. Für einen nahtlosen Wissensfluss ohne manuelle Uploads oder doppelte Datenpflege.</p>
+    </div>
+
+    <!-- Animation Container -->
+    <div class="flex flex-col items-center animate-on-scroll w-full max-w-3xl mr-auto ml-auto relative pb-16" style="min-height: 380px; animation: fadeSlideIn 1s ease-out 0.25s both">
+
+      <!-- SVG CONNECTORS (Top → Bottom) -->
+      <div class="absolute inset-0 pointer-events-none z-0">
+        <svg class="w-full h-full" viewBox="0 0 600 400" fill="none" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="stream-gradient-feat" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#6366f1" stop-opacity="0.8"></stop>
+              <stop offset="50%" stop-color="#6366f1" stop-opacity="1"></stop>
+              <stop offset="100%" stop-color="#6366f1" stop-opacity="0.8"></stop>
+            </linearGradient>
+            <filter id="glow-line-feat" filterUnits="userSpaceOnUse">
+              <feGaussianBlur stdDeviation="2" result="blur"></feGaussianBlur>
+              <feComposite in="SourceGraphic" in2="blur" operator="over"></feComposite>
+            </filter>
+          </defs>
+          <!-- Source 1 → Center (grid col 1: x=75 = 1/8 of 600) -->
+          <path d="M75 64 C 75 150, 300 150, 300 200" stroke="url(#stream-gradient-feat)" stroke-width="2" stroke-dasharray="8 4" stroke-linecap="round" class="animate-flow" filter="url(#glow-line-feat)" style="animation-delay: 0s; stroke-opacity: 0.8;"></path>
+          <!-- Source 2 → Center (grid col 2: x=225 = 3/8 of 600) -->
+          <path d="M225 64 C 225 150, 300 150, 300 200" stroke="url(#stream-gradient-feat)" stroke-width="2" stroke-dasharray="8 4" stroke-linecap="round" class="animate-flow" filter="url(#glow-line-feat)" style="animation-delay: 0.5s; stroke-opacity: 0.8;"></path>
+          <!-- Source 3 → Center (grid col 3: x=375 = 5/8 of 600) -->
+          <path d="M375 64 C 375 150, 300 150, 300 200" stroke="url(#stream-gradient-feat)" stroke-width="2" stroke-dasharray="8 4" stroke-linecap="round" class="animate-flow" filter="url(#glow-line-feat)" style="animation-delay: 1s; stroke-opacity: 0.8;"></path>
+          <!-- Source 4 → Center (grid col 4: x=525 = 7/8 of 600) -->
+          <path d="M525 64 C 525 150, 300 150, 300 200" stroke="url(#stream-gradient-feat)" stroke-width="2" stroke-dasharray="8 4" stroke-linecap="round" class="animate-flow" filter="url(#glow-line-feat)" style="animation-delay: 1.5s; stroke-opacity: 0.8;"></path>
+        </svg>
+      </div>
+
+      <!-- TOP: Data Sources (Inputs) — grid, evenly spread -->
+      <div class="relative z-10 grid grid-cols-4 justify-items-center w-full">
+
+        <!-- Source 1: Moodle -->
+        <div class="group flex flex-col items-center animate-float relative" style="animation-delay: 0s;">
+          <!-- Tooltip -->
+          <div class="absolute -top-10 left-1/2 -translate-x-1/2 px-2.5 py-1.5 bg-gray-900 text-white text-xs font-medium rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50">
+            Moodle
+            <div class="absolute bottom-[-4px] left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+          </div>
+          <div class="flex transition-all duration-300 bg-white w-16 h-16 border-indigo-400 border rounded-2xl drop-shadow-[0_14px_20px_rgba(99,102,241,0.45)] drop-shadow-[0_6px_10px_rgba(15,23,42,0.18)] items-center justify-center overflow-hidden">
+            <img src="https://images.icon-icons.com/2415/PNG/512/moodle_original_logo_icon_146420.png" alt="Moodle" class="w-10 h-10 object-contain" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Source 2: Microsoft SharePoint -->
+        <div class="group flex flex-col items-center animate-float relative" style="animation-delay: 1s;">
+          <!-- Tooltip -->
+          <div class="absolute -top-10 left-1/2 -translate-x-1/2 px-2.5 py-1.5 bg-gray-900 text-white text-xs font-medium rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50">
+            Microsoft Sharepoint
+            <div class="absolute bottom-[-4px] left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+          </div>
+          <div class="flex transition-all duration-300 bg-white w-16 h-16 border-indigo-400 border rounded-2xl drop-shadow-[0_14px_20px_rgba(99,102,241,0.45)] drop-shadow-[0_6px_10px_rgba(15,23,42,0.18)] items-center justify-center overflow-hidden">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Microsoft_Office_SharePoint_%282025%E2%80%93present%29.svg/960px-Microsoft_Office_SharePoint_%282025%E2%80%93present%29.svg.png" alt="Microsoft SharePoint" class="w-10 h-10 object-contain" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Source 3: Google Drive -->
+        <div class="group flex flex-col items-center animate-float relative" style="animation-delay: 2s;">
+          <!-- Tooltip -->
+          <div class="absolute -top-10 left-1/2 -translate-x-1/2 px-2.5 py-1.5 bg-gray-900 text-white text-xs font-medium rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50">
+            Google Drive
+            <div class="absolute bottom-[-4px] left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+          </div>
+          <div class="flex transition-all duration-300 bg-white w-16 h-16 border-indigo-400 border rounded-2xl drop-shadow-[0_14px_20px_rgba(99,102,241,0.45)] drop-shadow-[0_6px_10px_rgba(15,23,42,0.18)] items-center justify-center overflow-hidden">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Drive_icon_%282020%29.svg/3840px-Google_Drive_icon_%282020%29.svg.png" alt="Google Drive" class="w-10 h-10 object-contain" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Source 4: Dropbox -->
+        <div class="group flex flex-col items-center animate-float relative" style="animation-delay: 3s;">
+          <!-- Tooltip -->
+          <div class="absolute -top-10 left-1/2 -translate-x-1/2 px-2.5 py-1.5 bg-gray-900 text-white text-xs font-medium rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50">
+            Dropbox
+            <div class="absolute bottom-[-4px] left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+          </div>
+          <div class="flex transition-all duration-300 bg-white w-16 h-16 border-indigo-400 border rounded-2xl drop-shadow-[0_14px_20px_rgba(99,102,241,0.45)] drop-shadow-[0_6px_10px_rgba(15,23,42,0.18)] items-center justify-center overflow-hidden">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Dropbox_Icon.svg/960px-Dropbox_Icon.svg.png" alt="Dropbox" class="w-10 h-10 object-contain" loading="lazy">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BOTTOM: AI Tutor Core -->
+      <div class="relative z-20 flex flex-col items-center mt-24">
+        <div class="relative w-32 h-32 flex items-center justify-center">
+          <div class="absolute inset-0 rounded-full bg-indigo-500/20 animate-ai-pulse blur-xl"></div>
+          <div class="absolute inset-2 rounded-full bg-gradient-to-tr from-blue-600 via-indigo-600 to-violet-500 animate-spin-slow blur-sm opacity-75" style="animation-duration: 10s;"></div>
+          <div class="flex overflow-hidden bg-gradient-to-br from-indigo-900 via-indigo-800 to-violet-900 w-24 h-24 border-white/10 border rounded-full relative shadow-2xl items-center justify-center">
+            <div class="overflow-hidden bg-[#5B2BE0] w-full h-full rounded-xl relative">
+              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" class="block w-[94px] h-[94px]" role="img" aria-label="Animated robot icon" style="width: 94px; height: 94px; color: rgb(17, 24, 39);" stroke-width="2">
+                <title>Animated robot icon</title>
+                <style>
+                  .robot-eye-scan-feat { animation: robotScan 1.8s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+                  .robot-eye-blink-feat { animation: robotBlink 7s infinite; transform-origin: center; transform-box: fill-box; }
+                  @keyframes robotScan { 0% { transform: translateX(14px); } 18% { transform: translateX(14px); } 38% { transform: translateX(0); } 52% { transform: translateX(0); } 72% { transform: translateX(-14px); } 84% { transform: translateX(-14px); } 100% { transform: translateX(14px); } }
+                  @keyframes robotBlink { 0%, 28%, 30%, 78%, 80%, 82%, 100% { transform: scaleY(1); } 29% { transform: scaleY(0.02); } 79% { transform: scaleY(0.02); } 79.5% { transform: scaleY(1); } 81% { transform: scaleY(0.02); } }
+                </style>
+                <rect width="512" height="512" fill="#5B2BE0"></rect>
+                <g fill="#FFFFFF">
+                  <circle cx="256" cy="115" r="26"></circle>
+                  <rect x="251" y="135" width="10" height="45"></rect>
+                  <rect x="96" y="175" width="320" height="210" rx="95"></rect>
+                  <rect x="236" y="380" width="40" height="25"></rect>
+                  <path d="M196 405 H316 A12 12 0 0 1 316 435 H196 A12 12 0 0 1 196 405"></path>
+                </g>
+                <g class="robot-eye-scan-feat">
+                  <g class="robot-eye-blink-feat">
+                    <rect x="198" y="235" width="36" height="85" rx="18" fill="#5B2BE0"></rect>
+                    <rect x="278" y="235" width="36" height="85" rx="18" fill="#5B2BE0"></rect>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <!-- Status Badge -->
+          <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap">
+            <span class="inline-flex items-center gap-1.5 text-[10px] uppercase font-semibold text-gray-900 tracking-wider font-geist bg-white border-gray-100 border rounded-md pt-1 pr-2.5 pb-1 pl-2.5 shadow-sm"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span></span> KI-Tutor</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
       <p class="text-sm text-black/50 font-geist text-center">mit Unterstützung von: </p>
     
     <div class="flex justify-center items-center gap-6 mt-4">
