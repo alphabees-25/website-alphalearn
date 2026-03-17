@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="de" class="h-full">
+<head>
+  <base href="/de/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://drive.google.com/uc?id=1Bcx5rnh_IRYr8QeV9l6VoFkTgsF8Z6mH&export=download">
+  <meta property="og:image:width" content="2640">
+  <meta property="og:image:height" content="1430">
+  <meta property="og:title" content="Agile Transformation: Warum L&D umdenken muss | Alphabees">
+  <meta property="og:description" content="Agile Transformationen scheitern oft an fehlenden Fähigkeiten, nicht an Frameworks. Erfahren Sie, wie L&D sein Betriebsmodell anpassen muss.">
+  <meta property="og:url" content="https://moodle-ai-tutor.alphalearn.ai/de/blog/agile-transformation-ld-betriebsmodell-neu-denken.html">
+  <meta name="twitter:title" content="Agile Transformation: Warum L&D umdenken muss | Alphabees">
+  <meta name="twitter:description" content="Agile Transformationen scheitern oft an fehlenden Fähigkeiten, nicht an Frameworks. Erfahren Sie, wie L&D sein Betriebsmodell anpassen muss.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://drive.google.com/uc?id=1Bcx5rnh_IRYr8QeV9l6VoFkTgsF8Z6mH&export=download">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agile Transformation: Warum L&D umdenken muss | Alphabees</title>
+  <meta name="description" content="Agile Transformationen scheitern oft an fehlenden Fähigkeiten, nicht an Frameworks. Erfahren Sie, wie L&D sein Betriebsmodell anpassen muss.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/agile-transformation-ld-betriebsmodell-neu-denken.html">
+  <link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/agile-transformation-ld-betriebsmodell-neu-denken.html">
+  <link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/agile-transformation-ld-betriebsmodell-neu-denken.html">
+  <link rel="alternate" hreflang="x-default" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/agile-transformation-ld-betriebsmodell-neu-denken.html">
+  <meta name="geo.region" content="DE">
+  <meta name="geo.country" content="DE">
+  <meta name="geo.placename" content="Deutschland">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes fadeSlideIn {
+      0%   { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+      40%  { opacity: 0.9; transform: translateY(0); filter: blur(0px); }
+      100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+    }
+    .animate-on-scroll { animation-play-state: paused !important; }
+    .animate-on-scroll.animate { animation-play-state: running !important; }
+    html, body { overflow-x: hidden; width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* Article typography */
+    .prose h2 {
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: #111827;
+      margin-top: 2.5rem;
+      margin-bottom: 0.875rem;
+      line-height: 1.3;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose p {
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+    .prose ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .prose ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+    .prose ul li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: #6366f1;
+      margin-top: 0.6em;
+    }
+    .prose blockquote {
+      border-left: 3px solid #6366f1;
+      padding: 0.75rem 1.25rem;
+      margin: 1.75rem 0;
+      background: #f5f3ff;
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+    .prose blockquote p {
+      color: #4338ca;
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .prose .highlight-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .prose .highlight-box p {
+      margin-bottom: 0;
+      color: #1e40af;
+      font-weight: 500;
+    }
+    .prose strong {
+      color: #111827;
+      font-weight: 600;
+    }
+  </style>
+  <script>
+    (function () {
+      const style = document.createElement('style');
+      style.textContent = `.animate-on-scroll { animation-play-state: paused !important; } .animate-on-scroll.animate { animation-play-state: running !important; }`;
+      document.head.appendChild(style);
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+              window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0 });
+      }
+      window.initInViewAnimations = function (selector = '.animate-on-scroll') {
+        document.querySelectorAll(selector).forEach((el) => { window.__inViewIO.observe(el); });
+      };
+      document.addEventListener('DOMContentLoaded', () => {
+        initInViewAnimations();
+        // Fallback: force-animate any elements the observer missed (iOS Safari / mobile quirks)
+        setTimeout(() => {
+          document.querySelectorAll('.animate-on-scroll:not(.animate)').forEach(el => el.classList.add('animate'));
+        }, 1000);
+      });
+    })();
+  </script>
+  <script src="/assets/js/layout.js" defer></script>
+</head>
+<body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
+
+  <!-- Global Header -->
+  <div id="site-header"></div>
+
+  <main class="relative">
+
+    <!-- Hero Banner -->
+    <div class="relative bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 overflow-hidden">
+      <!-- Decorative blobs -->
+      <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-fuchsia-400/10 blur-3xl pointer-events-none"></div>
+
+      <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 pt-24 pb-0 sm:pt-32 sm:pb-0 relative">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 mb-8 text-sm text-white/60 font-geist" style="animation: fadeSlideIn 1s ease-out 0.05s both;">
+          <a href="index.html" class="hover:text-white transition">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <a href="blog.html" class="hover:text-white transition">Blog</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <span class="text-white/40">Artikel</span>
+        </nav>
+
+        <!-- Category + meta -->
+        <div class="flex flex-wrap items-center gap-3 mb-6" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+          <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-white text-xs font-semibold font-geist">Analyse</span>
+          <span class="text-white/50 text-sm font-geist">März 2026</span>
+          <span class="w-1 h-1 rounded-full bg-white/30"></span>
+          <span class="text-white/50 text-sm font-geist">12 Min. Lesezeit</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white font-geist leading-[1.15] tracking-tight mb-5" style="animation: fadeSlideIn 1s ease-out 0.15s both;">Agile Transformation: Warum L&D umdenken muss | Alphabees</h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-white/70 font-geist font-normal leading-relaxed max-w-2xl" style="animation: fadeSlideIn 1s ease-out 0.2s both;">Viele agile Transformationen scheitern nicht an mangelnden Frameworks, sondern daran, dass Kompetenzen nicht mit strukturellen Veränderungen Schritt halten. L&D muss sein eigenes Betriebsmodell überdenken.</p>
+
+        <!-- Hero image -->
+        <div class="mt-10" style="animation: fadeSlideIn 1s ease-out 0.25s both;">
+          <img src="https://drive.google.com/uc?id=1Bcx5rnh_IRYr8QeV9l6VoFkTgsF8Z6mH&export=download" alt="" class="w-full rounded-t-2xl object-cover max-h-72 sm:max-h-96 shadow-2xl" loading="eager">
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 py-14 sm:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 lg:gap-16">
+
+        <!-- Main Article -->
+        <article class="prose animate-on-scroll" style="animation: fadeSlideIn 1s ease-out 0.1s both;"><p>Agile Methoden sind längst kein Trend mehr, sondern eine strategische Notwendigkeit. Hochschulen, Akademien und Weiterbildungsanbieter stehen vor der Herausforderung, ihre Strukturen schneller anzupassen, kürzere Feedbackzyklen zu etablieren und auf veränderte Anforderungen flexibel zu reagieren. Doch obwohl viele Bildungsorganisationen agile Praktiken einführen, bleiben die erhofften Ergebnisse häufig aus. Die Ursache liegt selten in fehlenden Frameworks oder falschen Methoden. Sie liegt in der Diskrepanz zwischen struktureller Veränderung und tatsächlicher Kompetenzentwicklung.</p>
+
+<p>Für Entscheider im Bildungsbereich bedeutet das eine unbequeme Erkenntnis: Die Einführung von Sprints, Backlogs und crossfunktionalen Teams reicht nicht aus. Wenn die Fähigkeiten der Mitarbeitenden nicht mit dem Tempo der organisatorischen Veränderung Schritt halten, entstehen Reibungsverluste. Unter Druck fallen Teams in alte Muster zurück, Entscheidungswege verschwimmen, und die versprochene Agilität bleibt eine Fassade.</p>
+
+<h2>Die wahre Lücke: Ausführung statt Absicht</h2>
+
+<p>Agile Transformationen versprechen schnellere Reaktionsfähigkeit, klarere Priorisierung und mehr Transparenz. Für Bildungsorganisationen bedeutet das konkret: kürzere Entwicklungszeiten für neue Lernangebote, bessere Anpassung an Lernendenbedürfnisse und effizientere Ressourcennutzung. Doch diese Vorteile entstehen nicht automatisch durch die Einführung neuer Strukturen.</p>
+
+<p>Das eigentliche Problem liegt in der Ausführung. Organisationen führen agile Governance-Strukturen ein, doch das Verhalten unter Belastung bleibt unverändert. Wenn Druck entsteht, nehmen Eskalationen zu, Silos entstehen erneut, und die Geschwindigkeit sinkt. Der fehlende Baustein ist selten der Prozess. Es ist die systematische Entwicklung von Fähigkeiten, die zur neuen Arbeitsweise passen.</p>
+
+<p>Für Learning and Development bedeutet das eine fundamentale Neuausrichtung. L&D kann nicht länger als reaktive Servicefunktion agieren, die auf Anfragen wartet. Wenn Produktteams alle zwei Wochen liefern und die Lernentwicklung drei Monate dauert, entsteht eine strukturelle Fehlausrichtung, die jede agile Initiative untergräbt.</p>
+
+<h2>Was L&D von agilen Prinzipien lernen muss</h2>
+
+<p>Die Befähigung einer Organisation für agiles Arbeiten beginnt damit, dass L&D selbst agile Prinzipien übernimmt. Das bedeutet konkret: Ausrichtung an Wertströmen statt an Abteilungslogiken, kürzere Entwicklungszyklen, aktive Beteiligung an Priorisierungsentscheidungen und geteilte Verantwortung für Ergebnisse.</p>
+
+<p>Ein praktisches Minimum-Modell für agiles L&D umfasst einen klar priorisierten Lern-Backlog, einen benannten Learning Product Owner, zweiwöchige Entwicklungszyklen, Sprint-Reviews mit Stakeholdern und Retrospektiven zur kontinuierlichen Verbesserung. Der Fokus liegt nicht auf der Einhaltung von Zeremonien, sondern auf der Verkürzung von Zykluszeiten und der Erhöhung der Feedbackgeschwindigkeit.</p>
+
+<p>Nicht jeder Lernbereich eignet sich gleichermaßen für agile Methoden. Eine hilfreiche Unterscheidung erfolgt entlang zweier Dimensionen: Wie schnell verändern sich Inhalte, Prozesse oder Produkte? Und welche Risiken entstehen, wenn jemand improvisiert? Bereiche mit hoher Veränderungsrate und moderatem Risiko eignen sich ideal für iterative, sprintbasierte Lernentwicklung. Bereiche mit hohem Risiko erfordern kontrollierte Iteration mit klaren Governance-Checkpoints.</p>
+
+<h2>Von Wissensvermittlung zu Verhaltensklarheit</h2>
+
+<p>Ein häufiger Grund für das Scheitern agiler Transformationen: Mitarbeitende verstehen das Framework, aber ihnen fehlt Klarheit über die erwarteten Verhaltensweisen. Training zu agilen Prinzipien reicht nicht aus, wenn die Ausführungsmuster unter Druck nicht verstärkt werden.</p>
+
+<p>L&D muss definieren, wie gute Priorisierung konkret aussieht, welche Risikogrenzen akzeptabel sind, welche Eskalationsstandards gelten und wie crossfunktionale Zusammenarbeit ablaufen soll. Wenn Verhaltensweisen nicht beobachtbar sind, können sie nicht gecoacht werden. Information allein verändert selten Leistung. Kompetenz erfordert Wiederholung.</p>
+
+<p>Effektive agile Lernumgebungen setzen deshalb auf szenariobasierte Simulationen, Entscheidungslabore, Eskalationsübungen, Verstärkungswerkzeuge für Führungskräfte und Peer-Review-Frameworks. Übung baut Vertrauen auf. Vertrauen trägt Veränderung.</p>
+
+<h2>Wie KI-gestützte Lernbegleitung agile Kompetenzentwicklung ermöglicht</h2>
+
+<p>Die Herausforderung für Bildungsorganisationen liegt darin, kontinuierliche Kompetenzentwicklung in kurzen Zyklen zu ermöglichen, ohne die L&D-Ressourcen zu überlasten. Genau hier entfalten KI-gestützte Lernbegleiter ihren Wert.</p>
+
+<p>Ein KI-Tutor, der sich direkt in bestehende Moodle-Kurse integriert, kann Lernende rund um die Uhr unterstützen, ohne dass zusätzliche Entwicklungsressourcen gebunden werden. Er ermöglicht individuelle Übungsschleifen, gibt sofortiges Feedback und passt sich an unterschiedliche Adoptionsgeschwindigkeiten an. Während manche Teams agile Methoden schnell übernehmen, benötigen andere mehr Zeit und Unterstützung. Ein KI-Tutor kann diese Unterschiede ausgleichen, ohne dass für jede Zielgruppe separate Lernangebote entwickelt werden müssen.</p>
+
+<p>Für Entscheider bedeutet das: Die Investition in einen KI-Tutor verkürzt nicht nur die Zeit bis zur Kompetenz, sondern entlastet auch die L&D-Abteilung. Statt monatelang neue Kurse zu entwickeln, können bestehende Inhalte durch intelligente Lernbegleitung aufgewertet werden. Die modulare Struktur ermöglicht schnelle Anpassungen, wenn sich Anforderungen ändern.</p>
+
+<h2>Messung neu denken: Flow und Ausführung statt Abschlussquoten</h2>
+
+<p>Traditionelle Lernkennzahlen wie Abschlussraten oder Kursbewertungen sind in agilen Kontexten unzureichend. Sie zeigen nicht, ob die Transformation tatsächlich gelingt. Relevanter sind drei Kategorien von Metriken:</p>
+
+<ul>
+<li><strong>Flow-Metriken:</strong> Zykluszeit, Work in Progress, Nacharbeitsraten</li>
+<li><strong>Adoptionsmetriken:</strong> Nutzungsmuster, Verstärkungshäufigkeit, Anwendungsvertrauen</li>
+<li><strong>Ergebnismetriken:</strong> Zeit bis zur Kompetenz, Fehlerreduktion, Ausführungskonsistenz</li>
+</ul>
+
+<p>Ein KI-Tutor kann wertvolle Daten zu diesen Metriken liefern. Er erfasst, welche Fragen Lernende stellen, wo sie stocken und wie sich ihr Verständnis über die Zeit entwickelt. Diese Einblicke ermöglichen es L&D, gezielt nachzusteuern und die Lernunterstützung kontinuierlich zu verbessern.</p>
+
+<h2>Fazit: Agilität als Fähigkeit, nicht als Initiative</h2>
+
+<p>Agile Transformation ist keine Projektmanagement-Methodik. Sie ist eine Ausführungsphilosophie. Wenn Organisationen von Vorhersagbarkeit zu Anpassungsfähigkeit wechseln, müssen Kompetenzen entsprechend mitwachsen. Learning and Development spielt dabei eine entscheidende Rolle, nicht durch mehr Kurse, sondern durch die Neugestaltung der Systeme, die Leistung unter dynamischen Bedingungen aufbauen und aufrechterhalten.</p>
+
+<p>Für Hochschulen, Akademien und Weiterbildungsanbieter im DACH-Raum bedeutet das: Die Investition in intelligente Lernbegleitung ist keine optionale Ergänzung, sondern eine strategische Notwendigkeit. Ein KI-Tutor, der sich nahtlos in bestehende Moodle-Infrastrukturen integriert, ermöglicht genau die Art von kontinuierlicher, adaptiver Kompetenzentwicklung, die agile Transformationen zum Erfolg führt.</p>
+
+<p><strong>Möchten Sie erfahren, wie der Alphabees KI-Tutor Ihre L&D-Abteilung bei der agilen Transformation unterstützen kann? Vereinbaren Sie ein unverbindliches Gespräch und entdecken Sie, wie intelligente Lernbegleitung Ihre Moodle-Kurse auf das nächste Level hebt.</strong></p></article>
+
+        <!-- Sidebar -->
+        <aside class="hidden lg:block">
+          <div class="sticky top-28 space-y-6">
+
+            <!-- Author / Publisher info -->
+            <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100">
+              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide font-geist mb-3">Veröffentlicht von</p>
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center shrink-0">
+                  <span class="text-white text-xs font-bold font-geist">A</span>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-gray-900 font-geist">Alphabees</p>
+                  <p class="text-xs text-gray-400 font-geist">März 2026</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Back to blog -->
+            <a href="blog.html" class="flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition group">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:-translate-x-0.5 transition-transform"><path d="m15 18-6-6 6-6"></path></svg>
+              Zurück zum Blog
+            </a>
+
+            <!-- Related articles -->
+            <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100">
+              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide font-geist mb-4">Weitere Artikel</p>
+              <a href="ki-tutor-guide-bildungsanbieter-deutschland-2026.html" class="group flex flex-col gap-1 hover:bg-white rounded-xl p-2 -mx-2 transition">
+                <span class="text-sm font-medium text-gray-800 group-hover:text-violet-600 font-geist transition leading-snug">KI-Tutor-Guide für Bildungsanbieter 2026</span>
+                <span class="text-xs text-gray-400 font-geist">Marktüberblick · März 2026</span>
+              </a>
+            </div>
+
+            <!-- CTA box -->
+            <div class="bg-gradient-to-br from-violet-600 to-indigo-700 rounded-2xl p-5 text-white">
+              <p class="text-sm font-semibold font-geist mb-2">KI-Tutor testen?</p>
+              <p class="text-xs text-white/70 font-geist mb-4 leading-relaxed">Starten Sie kostenlos mit dem Alphabees-Portal und erleben Sie einen echten KI-Tutor für Ihre Einrichtung.</p>
+              <a href="https://portal.alphabees.de/auth/register"
+                 class="inline-flex items-center gap-1.5 bg-white text-violet-700 hover:bg-violet-50 transition text-xs font-semibold font-geist rounded-lg px-4 py-2">
+                Kostenlos starten
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </a>
+            </div>
+
+          </div>
+        </aside>
+
+      </div>
+
+      <!-- Mobile back to blog -->
+      <div class="lg:hidden mt-12 pt-8 border-t border-gray-100">
+        <a href="blog.html" class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+          Zurück zum Blog
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Newsletter Popup -->
+  <div id="newsletter-popup" class="fixed inset-0 z-[1000] hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+    <div class="animate-popup bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
+      <button onclick="closeNewsletterPopup()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+      <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Fast geschafft!</h3>
+      <p class="text-gray-600 text-center mb-6">Wir haben dir eine Bestätigungsmail gesendet. Bitte schau in deinem Posteingang nach und klicke auf den Bestätigungslink.</p>
+      <p class="text-gray-500 text-sm text-center mb-6">💡 Nicht gefunden? Schau auch im Spam-Ordner nach.</p>
+      <button onclick="closeNewsletterPopup()" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-lg transition">Verstanden</button>
+    </div>
+  </div>
+
+  <style>
+    @keyframes popupFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    .animate-popup { animation: popupFadeIn 0.3s ease-out; }
+    #newsletter-popup.flex { display: flex !important; }
+  </style>
+
+  <script>
+    function showNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.add('hidden');
+      popup.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('newsletter-popup').addEventListener('click', function(e) {
+      if (e.target === this) closeNewsletterPopup();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeNewsletterPopup();
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsletterForm = document.querySelector('form[data-sv-form="8647011"]');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('input[name="email_address"]');
+          fetch(this.action, { method: 'POST', body: new FormData(this), mode: 'no-cors' })
+            .finally(() => { showNewsletterPopup(); emailInput.value = ''; });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
