@@ -1,35 +1,38 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="de" class="h-full">
 <head>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="article">
   <meta property="og:image" content="/social-image.png">
   <meta property="og:image:width" content="2640">
   <meta property="og:image:height" content="1430">
-  <meta property="og:title" content="Using Learning Videos as AI Tutor Knowledge Base | Twelve Labs + Alphabees">
-  <meta property="og:description" content="How to analyze learning videos with Video Understanding AI and use them as a RAG knowledge base for your AI tutor in Moodle. Step-by-step tutorial.">
-  <meta property="og:url" content="https://moodle-ai-tutor.alphalearn.ai/en/videos-as-knowledge-base-ai-tutor.html">
-  <meta name="twitter:title" content="Using Learning Videos as AI Tutor Knowledge Base | Twelve Labs + Alphabees">
-  <meta name="twitter:description" content="How to analyze learning videos with Video Understanding AI and use them as a RAG knowledge base for your AI tutor in Moodle. Step-by-step tutorial.">
+  <meta property="og:title" content="Videos als Wissensbasis für KI-Tutoren nutzen | Twelve Labs + Alphabees">
+  <meta property="og:description" content="Wie du Lernvideos mit Video Understanding AI analysierst und als RAG-Wissensbasis für deinen KI-Tutor in Moodle nutzt. Schritt-für-Schritt-Tutorial.">
+  <meta property="og:url" content="https://moodle-ai-tutor.alphalearn.ai/de/blog/videos-als-wissensbasis-ki-tutor.html">
+  <meta name="twitter:title" content="Videos als Wissensbasis für KI-Tutoren nutzen | Twelve Labs + Alphabees">
+  <meta name="twitter:description" content="Wie du Lernvideos mit Video Understanding AI analysierst und als RAG-Wissensbasis für deinen KI-Tutor in Moodle nutzt. Schritt-für-Schritt-Tutorial.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/social-image.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Using Learning Videos as AI Tutor Knowledge Base | Tutorial 2026</title>
-  <meta name="description" content="Video Understanding AI, AI tutor and RAG for e-learning: how to analyze learning videos with Twelve Labs, generate a structured script, and use it as a searchable knowledge base for your Alphabees AI tutor in Moodle.">
+  <title>Lernvideos als Wissensbasis für KI-Tutoren nutzen | Tutorial 2026</title>
+  <meta name="description" content="Video Understanding AI, KI-Tutor und RAG: Wie du Lernvideos mit Twelve Labs automatisch analysierst, ein Skript erzeugst und als durchsuchbare Wissensbasis für deinen Alphabees KI-Tutor in Moodle verwendest.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://moodle-ai-tutor.alphalearn.ai/en/videos-as-knowledge-base-ai-tutor.html">
-  <link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/videos-as-knowledge-base-ai-tutor.html">
-  <link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/videos-als-wissensbasis-ki-tutor.html">
-  <link rel="alternate" hreflang="x-default" href="https://moodle-ai-tutor.alphalearn.ai/en/videos-as-knowledge-base-ai-tutor.html">
+  <link rel="canonical" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/videos-als-wissensbasis-ki-tutor.html">
+  <link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/videos-als-wissensbasis-ki-tutor.html">
+  <link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/videos-as-knowledge-base-ai-tutor.html">
+  <link rel="alternate" hreflang="x-default" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/videos-als-wissensbasis-ki-tutor.html">
+  <meta name="geo.region" content="DE">
+  <meta name="geo.country" content="DE">
+  <meta name="geo.placename" content="Deutschland">
 
   <!-- JSON-LD: Article Schema (GEO/SEO) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "TechArticle",
-    "headline": "Using Learning Videos as a Knowledge Base for AI Tutors: Step-by-Step Workflow with Twelve Labs and Alphabees",
-    "description": "How to automatically analyze learning videos with Video Understanding AI, generate a structured script with timestamps, and import it as a RAG knowledge base for an AI tutor in Moodle.",
+    "headline": "Lernvideos als Wissensbasis für KI-Tutoren nutzen: Schritt-für-Schritt-Workflow mit Twelve Labs und Alphabees",
+    "description": "Wie du Lernvideos mit Video Understanding AI automatisch analysierst, ein strukturiertes Skript mit Timestamps erzeugst und dieses als RAG-Wissensbasis für einen KI-Tutor in Moodle importierst.",
     "author": {
       "@type": "Organization",
       "name": "Alphabees",
@@ -45,10 +48,10 @@
     },
     "datePublished": "2026-03-16",
     "dateModified": "2026-03-16",
-    "inLanguage": "en",
-    "keywords": "Video Understanding AI, AI tutor, Twelve Labs, Moodle AI, RAG, knowledge base, video AI, e-learning AI, learning videos AI",
+    "inLanguage": "de",
+    "keywords": "Video Understanding AI, KI-Tutor, Twelve Labs, Moodle KI, RAG, Wissensbasis, Video AI, E-Learning KI, Lernvideos KI",
     "articleSection": "Tutorial",
-    "url": "https://moodle-ai-tutor.alphalearn.ai/en/videos-as-knowledge-base-ai-tutor.html"
+    "url": "https://moodle-ai-tutor.alphalearn.ai/de/blog/videos-als-wissensbasis-ki-tutor.html"
   }
   </script>
 
@@ -60,42 +63,42 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What is Video Understanding AI?",
+        "name": "Was ist Video Understanding AI?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Video Understanding AI is a technology that comprehends video content holistically — not just the spoken audio via speech-to-text, but also the visual content, scenes, objects, and relationships within the footage. Providers like Twelve Labs develop so-called Video Understanding Foundation Models specifically for this purpose."
+          "text": "Video Understanding AI ist eine KI-Technologie, die nicht nur den gesprochenen Text eines Videos per Speech-to-Text erkennt, sondern auch den visuellen Inhalt, Szenen, Objekte und Zusammenhänge im Bildmaterial analysiert. Anbieter wie Twelve Labs entwickeln sogenannte Video Understanding Foundation Models, die Videos umfassend inhaltlich verstehen können."
         }
       },
       {
         "@type": "Question",
-        "name": "How can I use videos as a knowledge base for an AI tutor?",
+        "name": "Wie kann ich Videos als Wissensbasis für einen KI-Tutor nutzen?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "With Video Understanding AI (e.g. Twelve Labs), a video is automatically analyzed and converted into a structured script with timestamps. This script is then imported as a PDF into an AI tutor's knowledge base (e.g. Alphabees). The AI tutor can then answer questions about the video content without learners having to watch the entire video."
+          "text": "Mit Video Understanding AI (z. B. Twelve Labs) kann ein Video automatisch analysiert und in ein strukturiertes Skript mit Timestamps umgewandelt werden. Dieses Skript wird als PDF in die Wissensbasis eines KI-Tutors (z. B. Alphabees) importiert. Der KI-Tutor kann dann Fragen zu den Videoinhalten beantworten, ohne dass Lernende das gesamte Video ansehen müssen."
         }
       },
       {
         "@type": "Question",
-        "name": "What is RAG and why is it relevant for AI tutors?",
+        "name": "Was ist RAG und warum ist es für KI-Tutoren relevant?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "RAG stands for Retrieval Augmented Generation. With this method, relevant knowledge content is retrieved from a database and passed to a language model as context before it generates a response. For AI tutors, this means the model responds not from general training knowledge, but based on the institution's own course materials — including imported video scripts."
+          "text": "RAG steht für Retrieval Augmented Generation. Bei dieser Methode werden relevante Wissensinhalte aus einer Datenbank abgerufen und einem Sprachmodell als Kontext übergeben, bevor es eine Antwort generiert. Für KI-Tutoren bedeutet das: Das Modell antwortet nicht aus allgemeinem Trainingswissen, sondern auf Basis der eigenen Kursinhalte, Dokumente oder — durch diesen Workflow — auch Videos."
         }
       },
       {
         "@type": "Question",
-        "name": "What is the difference between Video Understanding AI and classic transcription?",
+        "name": "Welcher Unterschied besteht zwischen Video Understanding AI und klassischer Transkription?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Classic transcription (speech-to-text) only converts spoken audio into text. Video Understanding AI additionally analyzes the visual content itself: scenes, displayed objects, and visual information. For screencasts, presentations, and instructional videos with visual elements, this difference is decisive for the quality of the resulting knowledge base."
+          "text": "Klassische Transkription (Speech-to-Text) wandelt nur das gesprochene Audio in Text um. Video Understanding AI analysiert zusätzlich das Bildmaterial selbst: Szenen, dargestellte Objekte, visuelle Informationen und den Zusammenhang zwischen Bild und Ton. Dadurch ist das erzeugte Wissen deutlich präziser und vollständiger als eine reine Audiotranskription."
         }
       },
       {
         "@type": "Question",
-        "name": "Can this workflow be used directly in Moodle?",
+        "name": "Lässt sich dieser Workflow direkt in Moodle nutzen?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. The Alphabees AI tutor can be integrated directly into Moodle. Once a video has been imported as a script-based knowledge base, that knowledge is available in the Moodle course via the AI tutor as an interactive, queryable resource."
+          "text": "Ja. Der Alphabees KI-Tutor kann direkt in Moodle integriert werden. Sobald ein Video als Skript-Wissensbasis importiert wurde, steht dieses Wissen im Moodle-Kurs über den KI-Tutor als interaktive, abfragbare Ressource zur Verfügung."
         }
       }
     ]
@@ -344,6 +347,7 @@
 
     <!-- Hero Banner -->
     <div class="relative bg-gradient-to-br from-slate-900 via-indigo-900 to-violet-800 overflow-hidden">
+      <!-- Decorative blobs -->
       <div class="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
       <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-violet-400/10 blur-3xl pointer-events-none"></div>
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-indigo-500/10 blur-3xl pointer-events-none"></div>
@@ -356,31 +360,33 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
           <a href="blog.html" class="hover:text-white transition">Blog</a>
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
-          <span class="text-white/40">Article</span>
+          <span class="text-white/40">Artikel</span>
         </nav>
 
         <!-- Category + meta -->
         <div class="flex flex-wrap items-center gap-3 mb-6" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
           <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-white text-xs font-semibold font-geist">Tutorial</span>
-          <span class="text-white/50 text-sm font-geist">March 2026</span>
+          <span class="text-white/50 text-sm font-geist">März 2026</span>
           <span class="w-1 h-1 rounded-full bg-white/30"></span>
-          <span class="text-white/50 text-sm font-geist">8 min read</span>
+          <span class="text-white/50 text-sm font-geist">8 Min. Lesezeit</span>
         </div>
 
         <!-- Title -->
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white font-geist leading-[1.15] tracking-tight mb-5" style="animation: fadeSlideIn 1s ease-out 0.15s both;">
-          Using Learning Videos as a Knowledge Base for AI Tutors
+          Lernvideos als Wissensbasis für KI-Tutoren nutzen
         </h1>
 
         <!-- Subtitle -->
         <p class="text-lg sm:text-xl text-white/70 font-geist font-normal leading-relaxed max-w-2xl" style="animation: fadeSlideIn 1s ease-out 0.2s both;">
-          How Video Understanding AI turns any video into a searchable, interactive knowledge source
+          Wie Video Understanding AI jedes Video in eine durchsuchbare, interaktive Wissensquelle verwandelt
         </p>
 
         <!-- Hero visual -->
         <div class="mt-10 relative" style="animation: fadeSlideIn 1s ease-out 0.25s both;">
           <div class="w-full rounded-t-2xl overflow-hidden bg-gradient-to-br from-slate-800 to-indigo-900 shadow-2xl" style="min-height: 260px; max-height: 340px; display: flex; align-items: center; justify-content: center;">
+            <!-- Decorative video-to-brain visual -->
             <div class="flex items-center justify-center gap-6 sm:gap-10 px-8 py-12">
+              <!-- Video icons -->
               <div class="flex flex-col gap-4">
                 <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;"><path d="m22 8-6 4 6 4V8z"></path><rect width="14" height="12" x="2" y="6" rx="2" ry="2"></rect></svg>
@@ -392,21 +398,25 @@
                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;"><path d="m22 8-6 4 6 4V8z"></path><rect width="14" height="12" x="2" y="6" rx="2" ry="2"></rect></svg>
                 </div>
               </div>
+              <!-- Arrow -->
               <div class="flex flex-col gap-1 items-center">
                 <div style="width: 40px; height: 2px; background: linear-gradient(90deg, rgba(255,255,255,0.3), rgba(255,255,255,0.8));"></div>
                 <div style="width: 40px; height: 2px; background: linear-gradient(90deg, rgba(255,255,255,0.3), rgba(255,255,255,0.8));"></div>
                 <div style="width: 40px; height: 2px; background: linear-gradient(90deg, rgba(255,255,255,0.3), rgba(255,255,255,0.8));"></div>
                 <div class="mt-2" style="color: rgba(255,255,255,0.7); font-size: 0.65rem; font-family: 'Geist', sans-serif; white-space: nowrap;">Video AI</div>
               </div>
+              <!-- Brain / KI icon -->
               <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-indigo-500/30 border-2 border-indigo-400/40 flex items-center justify-center shadow-lg shadow-indigo-500/20">
                 <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.9;"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"></path><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"></path><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"></path><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"></path><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"></path><path d="M3.477 10.896a4 4 0 0 1 .585-.396"></path><path d="M19.938 10.5a4 4 0 0 1 .585.396"></path><path d="M6 18a4 4 0 0 1-1.967-.516"></path><path d="M19.967 17.484A4 4 0 0 1 18 18"></path></svg>
               </div>
+              <!-- Arrow -->
               <div class="flex flex-col gap-1 items-center">
                 <div style="width: 40px; height: 2px; background: linear-gradient(90deg, rgba(255,255,255,0.8), rgba(255,255,255,0.3));"></div>
                 <div style="width: 40px; height: 2px; background: linear-gradient(90deg, rgba(255,255,255,0.8), rgba(255,255,255,0.3));"></div>
                 <div style="width: 40px; height: 2px; background: linear-gradient(90deg, rgba(255,255,255,0.8), rgba(255,255,255,0.3));"></div>
                 <div class="mt-2" style="color: rgba(255,255,255,0.7); font-size: 0.65rem; font-family: 'Geist', sans-serif; white-space: nowrap;">RAG</div>
               </div>
+              <!-- KI-Tutor icon -->
               <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-violet-500/30 border border-violet-400/40 flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.9;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
               </div>
@@ -423,154 +433,154 @@
         <!-- Main Article -->
         <article class="prose animate-on-scroll" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
 
-          <p><strong>AI tutor, video AI and RAG for e-learning:</strong> Many education providers have invested significant time and money in explainer and instructional videos over recent years. The problem: that knowledge is locked inside the video. Video Understanding AI changes this — turning classic learning videos into a searchable, interactive knowledge base for AI tutors.</p>
+          <p><strong>KI-Tutor, Video AI und RAG für E-Learning:</strong> Viele Bildungsanbieter haben in den letzten Jahren viel Zeit und Geld in Erklärvideos und Lernvideos investiert. Das Problem: Dieses Wissen steckt im Video fest. Mit Video Understanding AI lässt sich das ändern — und klassische Lernvideos werden zu einer durchsuchbaren, interaktiven Wissensbasis für KI-Tutoren.</p>
 
           <!-- YouTube Demo Video -->
           <div class="not-prose my-8">
             <div class="relative w-full rounded-2xl overflow-hidden shadow-lg" style="aspect-ratio: 16/9;">
               <iframe
                 src="https://www.youtube.com/embed/gylhpEEBgoY"
-                title="Using Learning Videos as AI Tutor Knowledge Base — Demo with Twelve Labs & Alphabees"
+                title="Lernvideos als Wissensbasis für KI-Tutoren nutzen — Demo mit Twelve Labs & Alphabees"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
                 loading="lazy"
                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;">
               </iframe>
             </div>
-            <p class="text-sm text-gray-400 font-geist mt-3 text-center">Demo: Full workflow from Twelve Labs to the Alphabees AI tutor</p>
+            <p class="text-sm text-gray-400 font-geist mt-3 text-center">Demo: Vollständiger Workflow von Twelve Labs bis zum Alphabees KI-Tutor</p>
           </div>
 
           <!-- Section -->
-          <h2>The Problem with Classic Learning Videos</h2>
+          <h2>Das Problem mit klassischen Lernvideos</h2>
 
-          <p>Many organizations have built extensive libraries of explainer videos, screencast tutorials, and recorded lectures over the years. This is valuable knowledge — but in a form that modern AI systems can barely use.</p>
+          <p>Viele Organisationen haben über Jahre hinweg umfangreiche Bibliotheken an Erklärvideos, Screencast-Tutorials und Lehraufzeichnungen aufgebaut. Das ist wertvolles Wissen — aber in einer Form, die für moderne KI-Systeme kaum nutzbar ist.</p>
 
-          <blockquote><p>Videos are mostly a one-way street. Knowledge is locked inside the video and can't easily be searched or integrated into AI tutors.</p></blockquote>
+          <blockquote><p>Videos sind meist eine Einbahnstraße. Das Wissen steckt im Video fest und lässt sich nur schwer durchsuchen oder in KI-Tutoren integrieren.</p></blockquote>
 
-          <p>The concrete limitations of classic learning videos:</p>
+          <p>Die konkreten Einschränkungen klassischer Lernvideos:</p>
 
           <ul>
-            <li>Content is rigid and difficult to update</li>
-            <li>Knowledge cannot be searched</li>
-            <li>No modular reuse across different learning modules</li>
-            <li>Practically inaccessible for AI tutors and RAG systems</li>
-            <li>Learners must consume the entire video linearly</li>
+            <li>Inhalte sind starr und schwer aktualisierbar</li>
+            <li>Das Wissen kann nicht durchsucht werden</li>
+            <li>Keine modulare Wiederverwendung für andere Lernmodule</li>
+            <li>Für KI-Tutoren und RAG-Systeme praktisch unzugänglich</li>
+            <li>Lernende müssen das gesamte Video linear konsumieren</li>
           </ul>
 
-          <p>Especially when education providers want to deploy AI learning companions, they need knowledge in a searchable, structured form — not locked inside a video file.</p>
+          <p>Gerade wenn Bildungsanbieter KI-Lernbegleitsysteme einsetzen möchten, brauchen sie das Wissen in einer durchsuchbaren, strukturierten Form — nicht eingesperrt in einer Videodatei.</p>
 
           <!-- Section -->
-          <h2>What Is Video Understanding AI?</h2>
+          <h2>Was ist Video Understanding AI?</h2>
 
-          <p>Video Understanding AI is a new class of AI models specifically designed to comprehend the content of videos. Unlike classic transcription (which only converts speech to text), Video Understanding AI analyzes the video as a whole:</p>
+          <p>Video Understanding AI ist eine neue Klasse von KI-Modellen, die speziell für das inhaltliche Verstehen von Videos entwickelt wurden. Im Unterschied zur klassischen Transkription (die nur das Gesprochene in Text umwandelt) analysiert Video Understanding AI das Video in seiner Gesamtheit:</p>
 
           <ul>
-            <li>Spoken text (audio transcription)</li>
-            <li>Visual content: scenes, objects, visuals</li>
-            <li>Relationships between image and spoken content</li>
-            <li>Temporal structure and transitions</li>
+            <li>Gesprochener Text (Audio-Transkription)</li>
+            <li>Visueller Inhalt: Szenen, Objekte, Darstellungen</li>
+            <li>Zusammenhänge zwischen Bild und gesprochenem Inhalt</li>
+            <li>Zeitliche Struktur und Übergänge</li>
           </ul>
 
-          <p>The result is a far richer understanding of video content than a pure audio transcription ever provides.</p>
+          <p>Das Ergebnis ist ein deutlich reichhaltigeres Verständnis des Video-Inhalts als bei einer reinen Audio-Transkription.</p>
 
           <div class="highlight-box">
-            <p><strong>Definition:</strong> Video Understanding Foundation Models are pre-trained AI models that semantically understand videos — similar to how language models (LLMs) understand text. Providers like <strong>Twelve Labs</strong> specialize in this technology.</p>
+            <p><strong>Definition:</strong> Video Understanding Foundation Models sind vortrainierte KI-Modelle, die Videos semantisch verstehen — ähnlich wie Sprachmodelle (LLMs) Texte verstehen. Anbieter wie <strong>Twelve Labs</strong> haben sich auf diese Technologie spezialisiert.</p>
           </div>
 
           <!-- Section -->
-          <h2>The Workflow: Step by Step</h2>
+          <h2>Der Workflow: Schritt für Schritt</h2>
 
-          <p>Here is the complete workflow for converting a learning video into an AI tutor knowledge base — demonstrated using an explainer video about how fossils form.</p>
+          <p>Hier ist der vollständige Workflow, um ein Lernvideo in eine KI-Tutor-Wissensbasis umzuwandeln — demonstriert am Beispiel eines Erklärvideo über die Entstehung von Fossilien.</p>
 
-          <h3>Step 1: Source a royalty-free video</h3>
-          <p>Use royalty-free video sources or your own productions. Platforms like Pexels, Pixabay or Wikimedia Commons work well for testing. Important: keep license information ready and credit the author where required.</p>
+          <h3>Schritt 1: Lizenzfreies Video beschaffen</h3>
+          <p>Nutze lizenzfreie Videoquellen oder eigene Produktionen. Für Tests eignen sich Plattformen wie Pexels, Pixabay oder Wikimedia Commons. Wichtig: Halte die Lizenzangaben bereit und nenne den Autor, falls erforderlich.</p>
 
-          <h3>Step 2: Upload the video to Twelve Labs</h3>
-          <p>Create a free account at Twelve Labs and upload the video into a new project. Twelve Labs processes the video and builds an internal semantic index — this takes anywhere from a few seconds to a few minutes depending on the length.</p>
+          <h3>Schritt 2: Video bei Twelve Labs hochladen</h3>
+          <p>Erstelle ein kostenloses Konto bei Twelve Labs und lade das Video in ein neues Projekt hoch. Twelve Labs verarbeitet das Video und baut intern einen semantischen Index auf — das dauert je nach Länge einige Sekunden bis Minuten.</p>
 
           <div class="step-box">
-            <p class="step-label">Tip</p>
-            <p>Twelve Labs offers different models, including <strong>Marengo</strong> for search and retrieval tasks and <strong>Pegasus</strong> for generative tasks such as script generation. For this workflow, we use Pegasus.</p>
+            <p class="step-label">Tipp</p>
+            <p>Twelve Labs bietet verschiedene Modelle an, u. a. <strong>Marengo</strong> für Such- und Abruf-Anwendungen und <strong>Pegasus</strong> für generative Aufgaben wie die Skript-Erstellung. Für unseren Workflow nutzen wir Pegasus.</p>
           </div>
 
-          <h3>Step 3: Generate a complete script with timestamps</h3>
-          <p>Once processed, you can give the AI direct instructions. For an AI tutor knowledge base, the following prompt works well:</p>
+          <h3>Schritt 3: Vollständiges Skript mit Timestamps generieren</h3>
+          <p>Nach der Verarbeitung können wir der KI direkt Aufgaben stellen. Für die Wissensbasis eines KI-Tutors bietet sich folgende Anfrage an:</p>
 
-          <blockquote><p>"Generate a complete script of the video with all relevant information and timestamps."</p></blockquote>
+          <blockquote><p>„Erstelle ein vollständiges Skript des Videos mit allen relevanten Informationen und Zeitstempeln."</p></blockquote>
 
-          <p>Twelve Labs then returns a structured, detailed script — not just a spoken-word transcript, but a fully coherent content document with context and timestamps.</p>
+          <p>Twelve Labs liefert daraufhin ein strukturiertes, detailliertes Skript — nicht nur den gesprochenen Text, sondern ein inhaltlich vollständiges Dokument mit Kontext und Timestamps.</p>
 
-          <h3>Step 4: Export the script as a PDF</h3>
-          <p>Copy the generated script and save it as a PDF file. This document now contains the entire knowledge of the video in a structured, machine-readable form.</p>
+          <h3>Schritt 4: Skript als PDF exportieren</h3>
+          <p>Das generierte Skript wird kopiert und als PDF-Datei gespeichert. Dieses Dokument enthält nun das gesamte Wissen des Videos in strukturierter, maschinenlesbarer Form.</p>
 
-          <h3>Step 5: Import into the Alphabees AI tutor</h3>
-          <p>In the Alphabees AI tutor admin portal:</p>
+          <h3>Schritt 5: In den Alphabees KI-Tutor importieren</h3>
+          <p>Im Alphabees KI-Tutor Verwaltungsportal:</p>
           <ol>
-            <li>Create a new knowledge base (e.g. "Fossils — Learning Video March 2026")</li>
-            <li>Create a new folder</li>
-            <li>Upload the PDF script</li>
+            <li>Neue Wissensbasis anlegen (z. B. „Fossilien — Lernvideo März 2026")</li>
+            <li>Neuen Ordner erstellen</li>
+            <li>Das PDF-Skript hochladen</li>
           </ol>
 
-          <p>The AI tutor processes the document automatically and builds an internal vector database (RAG) based on the content.</p>
+          <p>Der KI-Tutor verarbeitet das Dokument automatisch und erstellt intern eine Vektordatenbank (RAG) auf Basis des Inhalts.</p>
 
-          <h3>Step 6: Query the AI tutor</h3>
-          <p>The AI tutor can now answer questions about this video. Ask for example: <em>"How do fossils form?"</em> — the tutor responds precisely based on the video content, including relevant timestamps as references.</p>
+          <h3>Schritt 6: KI-Tutor abfragen</h3>
+          <p>Ab sofort kann der KI-Tutor Fragen zu diesem Video beantworten. Frage zum Beispiel: <em>„Wie entstehen Fossilien?"</em> — der Tutor antwortet präzise auf Basis des Videoinhalts, inklusive der relevanten Zeitstempel als Referenz.</p>
 
           <!-- Section -->
-          <h2>What Is RAG — and Why Does It Matter?</h2>
+          <h2>Was ist RAG — und warum ist es entscheidend?</h2>
 
-          <p><strong>RAG (Retrieval Augmented Generation)</strong> is the technical foundation that enables an AI tutor to respond not from general training knowledge, but from the institution's own course content.</p>
+          <p><strong>RAG (Retrieval Augmented Generation)</strong> ist die technische Grundlage dafür, dass ein KI-Tutor nicht aus allgemeinem Trainingswissen antwortet, sondern aus den eigenen Kursinhalten einer Bildungseinrichtung.</p>
 
-          <p>The process, simplified:</p>
+          <p>Der Prozess vereinfacht erklärt:</p>
           <ol>
-            <li>The learner's question is converted into a semantic search vector</li>
-            <li>The system searches the vector database for relevant text passages</li>
-            <li>The most relevant passages are passed to the language model as context</li>
-            <li>The language model formulates a precise answer based on those sources</li>
+            <li>Die Frage des Lernenden wird in einen semantischen Suchvektor umgewandelt</li>
+            <li>Das System sucht in der Vektordatenbank nach relevanten Textpassagen</li>
+            <li>Die relevantesten Passagen werden als Kontext an das Sprachmodell übergeben</li>
+            <li>Das Sprachmodell formuliert eine präzise Antwort auf Basis dieser Quellen</li>
           </ol>
 
-          <p>Through the video-to-script workflow, video content becomes accessible to RAG systems for the first time — without needing to analyze the video in real time.</p>
+          <p>Durch den Video-zu-Skript-Workflow werden Videoinhalte erstmals für RAG-Systeme zugänglich — ohne dass das Video selbst in Echtzeit analysiert werden muss.</p>
 
           <!-- Section -->
-          <h2>Practical Use Cases</h2>
+          <h2>Einsatzmöglichkeiten in der Praxis</h2>
 
-          <p>Once a video has been imported as a knowledge base, several scenarios open up for education providers:</p>
+          <p>Sobald ein Video als Wissensbasis importiert ist, eröffnen sich verschiedene Nutzungsszenarien für Bildungsanbieter:</p>
 
           <ul>
-            <li><strong>Moodle integration:</strong> The AI tutor is embedded directly into a Moodle course. Learners can ask questions about course content — including video content — without watching the full video</li>
-            <li><strong>Website integration:</strong> An AI tutor on a course landing page answers prospective participants' questions based on existing learning materials and videos</li>
-            <li><strong>On-demand knowledge retrieval:</strong> Learners search for specific content rather than linearly consuming a 45-minute video</li>
-            <li><strong>Exercise generation:</strong> The AI tutor automatically generates practice questions based on the video script</li>
-            <li><strong>Multilingual content:</strong> The script can be translated, enabling videos to serve as a knowledge base in multiple languages</li>
+            <li><strong>Moodle-Integration:</strong> Der KI-Tutor wird direkt in einen Moodle-Kurs eingebettet. Lernende können Fragen zum Kursinhalt — einschließlich Video-Inhalte — stellen, ohne das Video vollständig anzusehen</li>
+            <li><strong>Website-Integration:</strong> Ein KI-Tutor auf einer Kursseite beantwortet Fragen potenzieller Teilnehmer auf Basis der vorhandenen Lernmaterialien und Videos</li>
+            <li><strong>On-Demand-Wissensabruf:</strong> Lernende suchen gezielt nach bestimmten Inhalten statt ein 45-Minuten-Video linear zu konsumieren</li>
+            <li><strong>Übungsgenerierung:</strong> Der KI-Tutor erzeugt automatisch Übungsfragen auf Basis des Video-Skripts</li>
+            <li><strong>Mehrsprachige Inhalte:</strong> Das Skript kann übersetzt werden, sodass Videos in mehreren Sprachen als Wissensbasis dienen</li>
           </ul>
 
           <!-- Section -->
-          <h2>Video Understanding AI vs. Classic Transcription</h2>
+          <h2>Video Understanding AI vs. klassische Transkription</h2>
 
-          <p>A common objection: <em>"Couldn't I just use a transcription tool like Whisper?"</em></p>
+          <p>Ein häufiger Einwand: <em>„Ich könnte doch einfach ein Transkriptions-Tool wie Whisper nutzen."</em></p>
 
-          <p>True — for purely audio-based content. The key difference lies in visual understanding:</p>
+          <p>Das stimmt — für rein audio-basierte Inhalte. Der entscheidende Unterschied liegt im visuellen Verständnis:</p>
 
           <ul>
-            <li><strong>Classic transcription:</strong> Converts spoken audio to text. What is shown on screen is lost</li>
-            <li><strong>Video Understanding AI:</strong> Additionally analyzes the visual content — diagrams, animations, demonstrated processes, captions — and incorporates these into the generated knowledge</li>
+            <li><strong>Klassische Transkription:</strong> Wandelt das gesprochene Audio in Text um. Was auf dem Bildschirm gezeigt wird, geht verloren</li>
+            <li><strong>Video Understanding AI:</strong> Analysiert zusätzlich den visuellen Inhalt — Diagramme, Animationen, demonstrierte Prozesse, Bildunterschriften — und bezieht diese in das generierte Wissen ein</li>
           </ul>
 
-          <p>For explainer videos, screencasts, and presentation recordings, this difference delivers the decisive quality improvement: the script is not just a transcript, but a comprehensive content document.</p>
+          <p>Bei Erklärvideos, Screencasts oder Präsentationsaufzeichnungen macht dieser Unterschied den entscheidenden qualitativen Sprung: Das Skript ist nicht nur eine Abschrift, sondern ein vollständiges inhaltliches Dokument.</p>
 
           <!-- Section -->
-          <h2>Outlook: Video RAG Directly in the Alphabees Portal</h2>
+          <h2>Ausblick: Video-RAG direkt im Alphabees Portal</h2>
 
-          <p>The workflow shown here currently works as a manual process: analyze video → export script → upload to knowledge base. This takes a few minutes and is manageable for individual videos.</p>
+          <p>Der hier gezeigte Workflow funktioniert heute als manueller Prozess: Video analysieren → Skript exportieren → in die Wissensbasis hochladen. Das dauert wenige Minuten und ist für Einzelvideos gut handhabbar.</p>
 
-          <p>Long-term, a direct integration into the Alphabees Portal is planned: videos would be uploaded directly or linked by URL, the analysis would run automatically in the background, and the knowledge would immediately be available in the knowledge base.</p>
+          <p>Langfristig ist eine direkte Integration in das Alphabees Portal geplant: Videos würden dann direkt hochgeladen oder per Link eingebunden, die Analyse läuft automatisch im Hintergrund, und das Wissen steht sofort in der Wissensbasis zur Verfügung.</p>
 
           <div class="highlight-box">
-            <p>If you'd like to use videos directly in your Alphabees Portal as a knowledge base, <strong>get in touch with us</strong>. Based on interest, we'll accelerate development of this integration accordingly.</p>
+            <p>Wenn Sie Videos direkt in Ihrem Alphabees Portal als Wissensbasis nutzen möchten, <strong>melden Sie sich gerne bei uns</strong>. Je nach Interesse beschleunigen wir die Entwicklung dieser Integration entsprechend.</p>
           </div>
 
           <!-- Tools -->
-          <h2>Tools in This Workflow</h2>
+          <h2>Tools in diesem Workflow</h2>
 
           <a href="https://www.twelvelabs.io" target="_blank" rel="noopener" class="tool-card not-prose">
             <div class="tool-icon">
@@ -578,7 +588,7 @@
             </div>
             <div>
               <div class="tool-name">Twelve Labs</div>
-              <p class="tool-desc">Video Understanding Foundation Models — semantic video analysis and script generation</p>
+              <p class="tool-desc">Video Understanding Foundation Models — Semantische Videoanalyse und Skript-Generierung</p>
             </div>
           </a>
 
@@ -587,60 +597,60 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
             </div>
             <div>
-              <div class="tool-name">Alphabees AI Tutor</div>
-              <p class="tool-desc">AI tutors for Moodle and learning platforms — with your own RAG knowledge base</p>
+              <div class="tool-name">Alphabees KI-Tutor</div>
+              <p class="tool-desc">KI-Tutoren für Moodle und Bildungsplattformen — mit eigener RAG-Wissensbasis</p>
             </div>
           </a>
 
           <!-- FAQ Section -->
-          <h2>Frequently Asked Questions (FAQ)</h2>
+          <h2>Häufige Fragen (FAQ)</h2>
 
           <div class="faq-item">
-            <h3>What is Video Understanding AI?</h3>
-            <p>Video Understanding AI is a technology that comprehends video content holistically — not just the spoken audio, but also the visual content, scenes, objects, and relationships within the footage. Providers like Twelve Labs develop so-called Video Understanding Foundation Models for this purpose.</p>
+            <h3>Was ist Video Understanding AI?</h3>
+            <p>Video Understanding AI ist eine KI-Technologie, die Videos inhaltlich versteht — nicht nur das gesprochene Audio, sondern auch den visuellen Inhalt, Szenen und dargestellte Informationen. Anbieter wie Twelve Labs entwickeln sogenannte Video Understanding Foundation Models für diese Aufgabe.</p>
           </div>
 
           <div class="faq-item">
-            <h3>How can I use videos as a knowledge base for an AI tutor?</h3>
-            <p>With Video Understanding AI (e.g. Twelve Labs), a video is automatically analyzed and converted into a structured script with timestamps. This script is then imported as a PDF into an AI tutor's knowledge base (e.g. Alphabees). The AI tutor can then answer questions about the video content without learners having to watch the full video.</p>
+            <h3>Wie kann ich Videos als Wissensbasis für einen KI-Tutor nutzen?</h3>
+            <p>Mit Video Understanding AI (z. B. Twelve Labs) wird ein Video automatisch analysiert und in ein strukturiertes Skript mit Timestamps umgewandelt. Dieses Skript wird als PDF in die Wissensbasis eines KI-Tutors (z. B. Alphabees) importiert. Der KI-Tutor beantwortet danach Fragen auf Basis des Videoinhalts.</p>
           </div>
 
           <div class="faq-item">
-            <h3>What is RAG and why is it relevant for AI tutors?</h3>
-            <p>RAG (Retrieval Augmented Generation) is a method in which relevant knowledge content is retrieved from a database and passed to a language model as context before it generates a response. For AI tutors, this means the model responds not from general training knowledge, but precisely based on the institution's own course materials — including imported video scripts.</p>
+            <h3>Was ist RAG und warum ist es für KI-Tutoren relevant?</h3>
+            <p>RAG (Retrieval Augmented Generation) ist die Methode, bei der relevante Wissensinhalte aus einer Datenbank abgerufen und einem Sprachmodell als Kontext übergeben werden. Für KI-Tutoren bedeutet das: Das Modell antwortet nicht aus allgemeinem Trainingswissen, sondern präzise auf Basis der eigenen Kursinhalte — inklusive der importierten Video-Skripte.</p>
           </div>
 
           <div class="faq-item">
-            <h3>What is the difference between Video Understanding AI and classic transcription?</h3>
-            <p>Classic transcription converts only spoken audio into text. Video Understanding AI additionally analyzes the visual content itself: scenes, displayed objects, and visual information. For screencasts, presentations, and instructional videos with visual elements, this difference is decisive for the quality of the resulting knowledge base.</p>
+            <h3>Welcher Unterschied besteht zwischen Video Understanding AI und klassischer Transkription?</h3>
+            <p>Klassische Transkription wandelt nur das gesprochene Audio in Text um. Video Understanding AI analysiert zusätzlich das Bildmaterial selbst: Szenen, dargestellte Objekte und visuelle Informationen. Besonders bei Screencasts, Präsentationen und Lehrvideos mit visuellen Elementen ist dieser Unterschied entscheidend für die Qualität der Wissensbasis.</p>
           </div>
 
           <div class="faq-item">
-            <h3>Can this workflow be used directly in Moodle?</h3>
-            <p>Yes. The Alphabees AI tutor can be integrated directly into Moodle. Once a video has been imported as a script-based knowledge base, that knowledge is available in the Moodle course via the AI tutor as an interactive, queryable resource. Learners can ask questions about video content without having to consume the video linearly.</p>
+            <h3>Lässt sich dieser Workflow direkt in Moodle nutzen?</h3>
+            <p>Ja. Der Alphabees KI-Tutor kann direkt in Moodle integriert werden. Sobald ein Video als Skript-Wissensbasis importiert wurde, steht dieses Wissen im Moodle-Kurs über den KI-Tutor als interaktive Ressource zur Verfügung. Lernende können Fragen zu den Video-Inhalten stellen, ohne das Video linear konsumieren zu müssen.</p>
           </div>
 
           <div class="faq-item">
-            <h3>Which video formats are supported?</h3>
-            <p>Twelve Labs supports common video formats including MP4, MOV, AVI, and more. Maximum video length and file size depend on the chosen pricing plan. For most explainer videos and recorded lectures, there are no practical limitations.</p>
+            <h3>Welche Videoformate werden unterstützt?</h3>
+            <p>Twelve Labs unterstützt gängige Videoformate wie MP4, MOV, AVI und weitere. Die maximale Videolänge und Dateigröße hängen vom gewählten Preisplan ab. Für die meisten Erklärvideos und Lehraufzeichnungen gelten keine praktischen Einschränkungen.</p>
           </div>
 
           <!-- CTA -->
           <div class="highlight-box mt-10">
-            <p class="text-base mb-4">Want to turn your existing learning videos into an AI tutor knowledge base? Try the Alphabees AI tutor for free and experience how your video library becomes interactive.</p>
-            <p class="text-sm mb-0">For a direct video RAG integration without manual workflow steps, <strong>reach out to us</strong> — we're building this feature for interested partners.</p>
+            <p class="text-base mb-4">Möchten Sie Ihre bestehenden Lernvideos in eine KI-Tutor-Wissensbasis umwandeln? Testen Sie den Alphabees KI-Tutor kostenlos und erleben Sie, wie Ihre Videobibliothek interaktiv wird.</p>
+            <p class="text-sm mb-0">Für eine direkte Video-RAG-Integration ohne manuellen Workflow-Schritt <strong>sprechen Sie uns an</strong> — wir entwickeln diese Funktion für interessierte Partner weiter.</p>
           </div>
 
           <!-- CTA Buttons -->
           <div class="mt-8 flex flex-col sm:flex-row gap-4 not-prose">
             <a href="https://portal.alphabees.de/auth/register"
                class="inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 transition text-white font-semibold font-geist text-sm rounded-xl px-6 py-3.5 shadow-lg shadow-indigo-500/20">
-              Try AI Tutor for free
+              KI-Tutor kostenlos testen
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
             </a>
             <a href="features.html"
                class="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 transition text-gray-700 font-semibold font-geist text-sm rounded-xl px-6 py-3.5 border border-gray-200 shadow-sm">
-              Explore all features
+              Alle Funktionen entdecken
             </a>
           </div>
 
@@ -652,27 +662,27 @@
 
             <!-- Author / Publisher info -->
             <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100">
-              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide font-geist mb-3">Published by</p>
+              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide font-geist mb-3">Veröffentlicht von</p>
               <div class="flex items-center gap-3">
                 <div class="w-9 h-9 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shrink-0">
                   <span class="text-white text-xs font-bold font-geist">M</span>
                 </div>
                 <div>
                   <p class="text-sm font-semibold text-gray-900 font-geist">Marcel, Alphabees</p>
-                  <p class="text-xs text-gray-400 font-geist">March 2026</p>
+                  <p class="text-xs text-gray-400 font-geist">März 2026</p>
                 </div>
               </div>
             </div>
 
             <!-- Table of contents -->
             <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100">
-              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide font-geist mb-4">In this article</p>
+              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide font-geist mb-4">In diesem Artikel</p>
               <nav class="flex flex-col gap-2">
-                <a href="#" class="text-sm text-gray-600 hover:text-indigo-600 font-geist transition leading-snug">The problem with learning videos</a>
+                <a href="#" class="text-sm text-gray-600 hover:text-indigo-600 font-geist transition leading-snug">Das Problem mit Lernvideos</a>
                 <a href="#" class="text-sm text-gray-600 hover:text-indigo-600 font-geist transition leading-snug">Video Understanding AI</a>
-                <a href="#" class="text-sm text-gray-600 hover:text-indigo-600 font-geist transition leading-snug">Step-by-step workflow</a>
-                <a href="#" class="text-sm text-gray-600 hover:text-indigo-600 font-geist transition leading-snug">What is RAG?</a>
-                <a href="#" class="text-sm text-gray-600 hover:text-indigo-600 font-geist transition leading-snug">Use cases</a>
+                <a href="#" class="text-sm text-gray-600 hover:text-indigo-600 font-geist transition leading-snug">Schritt-für-Schritt-Workflow</a>
+                <a href="#" class="text-sm text-gray-600 hover:text-indigo-600 font-geist transition leading-snug">Was ist RAG?</a>
+                <a href="#" class="text-sm text-gray-600 hover:text-indigo-600 font-geist transition leading-snug">Einsatzmöglichkeiten</a>
                 <a href="#" class="text-sm text-gray-600 hover:text-indigo-600 font-geist transition leading-snug">FAQ</a>
               </nav>
             </div>
@@ -680,29 +690,29 @@
             <!-- Back to blog -->
             <a href="blog.html" class="flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition group">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:-translate-x-0.5 transition-transform"><path d="m15 18-6-6 6-6"></path></svg>
-              Back to Blog
+              Zurück zum Blog
             </a>
 
             <!-- Related articles -->
             <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100">
-              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide font-geist mb-4">More articles</p>
-              <a href="ai-tutor-guide-education-providers-2026.html" class="group flex flex-col gap-1 hover:bg-white rounded-xl p-2 -mx-2 transition mb-2">
-                <span class="text-sm font-medium text-gray-800 group-hover:text-indigo-600 font-geist transition leading-snug">AI Tutor Guide for Education Providers 2026</span>
-                <span class="text-xs text-gray-400 font-geist">Market overview · March 2026</span>
+              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide font-geist mb-4">Weitere Artikel</p>
+              <a href="ki-tutor-guide-bildungsanbieter-deutschland-2026.html" class="group flex flex-col gap-1 hover:bg-white rounded-xl p-2 -mx-2 transition mb-2">
+                <span class="text-sm font-medium text-gray-800 group-hover:text-indigo-600 font-geist transition leading-snug">KI-Tutor-Guide für Bildungsanbieter 2026</span>
+                <span class="text-xs text-gray-400 font-geist">Marktüberblick · März 2026</span>
               </a>
-              <a href="self-hosting-ai-tutors-worth-it.html" class="group flex flex-col gap-1 hover:bg-white rounded-xl p-2 -mx-2 transition">
-                <span class="text-sm font-medium text-gray-800 group-hover:text-indigo-600 font-geist transition leading-snug">When does self-hosting AI tutors make sense?</span>
-                <span class="text-xs text-gray-400 font-geist">Analysis · March 2026</span>
+              <a href="wann-lohnt-sich-self-hosting-ki-tutoren.html" class="group flex flex-col gap-1 hover:bg-white rounded-xl p-2 -mx-2 transition">
+                <span class="text-sm font-medium text-gray-800 group-hover:text-indigo-600 font-geist transition leading-snug">Wann lohnt sich Self-Hosting von KI-Tutoren?</span>
+                <span class="text-xs text-gray-400 font-geist">Analyse · März 2026</span>
               </a>
             </div>
 
             <!-- CTA box -->
             <div class="bg-gradient-to-br from-indigo-600 to-violet-700 rounded-2xl p-5 text-white">
-              <p class="text-sm font-semibold font-geist mb-2">Activate your video knowledge?</p>
-              <p class="text-xs text-white/70 font-geist mb-4 leading-relaxed">Start for free with the Alphabees AI tutor and turn your videos into a searchable knowledge base.</p>
+              <p class="text-sm font-semibold font-geist mb-2">Video-Wissen aktivieren?</p>
+              <p class="text-xs text-white/70 font-geist mb-4 leading-relaxed">Starten Sie kostenlos mit dem Alphabees KI-Tutor und machen Sie Ihre Videos zur durchsuchbaren Wissensbasis.</p>
               <a href="https://portal.alphabees.de/auth/register"
                  class="inline-flex items-center gap-1.5 bg-white text-indigo-700 hover:bg-indigo-50 transition text-xs font-semibold font-geist rounded-lg px-4 py-2">
-                Start for free
+                Kostenlos starten
                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
               </a>
             </div>
@@ -716,7 +726,7 @@
       <div class="lg:hidden mt-12 pt-8 border-t border-gray-100">
         <a href="blog.html" class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
-          Back to Blog
+          Zurück zum Blog
         </a>
       </div>
 
@@ -735,10 +745,10 @@
       <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
       </div>
-      <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Almost there!</h3>
-      <p class="text-gray-600 text-center mb-6">We've sent you a confirmation email. Please check your inbox and click the confirmation link.</p>
-      <p class="text-gray-500 text-sm text-center mb-6">💡 Can't find it? Check your spam folder.</p>
-      <button onclick="closeNewsletterPopup()" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-lg transition">Got it</button>
+      <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Fast geschafft!</h3>
+      <p class="text-gray-600 text-center mb-6">Wir haben dir eine Bestätigungsmail gesendet. Bitte schau in deinem Posteingang nach und klicke auf den Bestätigungslink.</p>
+      <p class="text-gray-500 text-sm text-center mb-6">💡 Nicht gefunden? Schau auch im Spam-Ordner nach.</p>
+      <button onclick="closeNewsletterPopup()" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-lg transition">Verstanden</button>
     </div>
   </div>
 
