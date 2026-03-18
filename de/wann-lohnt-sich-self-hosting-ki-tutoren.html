@@ -122,6 +122,56 @@
       color: #111827;
       font-weight: 600;
     }
+
+    /* FAQ Accordion */
+    .faq-item {
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      margin-bottom: 0.625rem;
+    }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1rem 1.25rem;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #111827;
+      font-family: 'Geist', sans-serif;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      user-select: none;
+      background: #f9fafb;
+      transition: background 0.15s;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary:hover { background: #f3f4f6; }
+    .faq-item[open] summary { background: #ede9fe; color: #5b21b6; }
+    .faq-item summary .faq-icon {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      border-radius: 50%;
+      background: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s, transform 0.2s;
+    }
+    .faq-item[open] summary .faq-icon {
+      background: #7c3aed;
+      transform: rotate(45deg);
+    }
+    .faq-item[open] summary .faq-icon svg { stroke: #fff; }
+    .faq-item .faq-body {
+      padding: 1rem 1.25rem 1.25rem;
+      color: #374151;
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      border-top: 1px solid #e5e7eb;
+    }
   </style>
   <script>
     (function () {
@@ -497,20 +547,59 @@
           <!-- FAQ Section -->
           <h2>Häufige Fragen zum LLM Self-Hosting</h2>
 
-          <h3>Wann lohnt sich Self-Hosting für Bildungsanbieter?</h3>
-          <p>Self-Hosting lohnt sich vor allem bei sehr hohen konstanten Nutzungsvolumina, eigenem ML-Engineering-Team, bestehender Server-Infrastruktur und extremen Datenschutzanforderungen. Für viele mittelgroße Bildungsanbieter in DACH ist eine Cloud-Lösung wirtschaftlich flexibler, risikoärmer und schneller skalierbar.</p>
+          <div class="not-prose mt-6 mb-2">
 
-          <h3>Was kostet ein Self-Hosted LLM-Server konkret?</h3>
-          <p>Für kleinere Modelle liegen die Anschaffungskosten bei <strong>4.000–6.000 Euro</strong>. Bei größeren Modellen mit mehreren GPUs sind <strong>60.000–80.000 Euro</strong> realistisch. Hinzu kommen laufende Strom-, Wartungs- und Personalkosten von mehreren hundert bis über tausend Euro pro Monat – über 36 Monate amortisiert.</p>
+            <details class="faq-item">
+              <summary>
+                Wann lohnt sich Self-Hosting für Bildungsanbieter?
+                <span class="faq-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                </span>
+              </summary>
+              <div class="faq-body">Self-Hosting lohnt sich vor allem bei sehr hohen konstanten Nutzungsvolumina, eigenem ML-Engineering-Team, bestehender Server-Infrastruktur und extremen Datenschutzanforderungen. Für viele mittelgroße Bildungsanbieter in DACH ist eine Cloud-Lösung wirtschaftlich flexibler, risikoärmer und schneller skalierbar.</div>
+            </details>
 
-          <h3>Sind Open-Source-LLMs genauso gut wie GPT-4 für KI-Tutoren?</h3>
-          <p>In allgemeinen Benchmarks kommen moderne Open-Source-Modelle nah heran. Im didaktischen Kontext unterscheiden sie sich jedoch bei Präzision komplexer Erklärungen, Konsistenz in langen Dialogen und Halluzinationsrate – Faktoren, die den Lernerfolg direkt beeinflussen.</p>
+            <details class="faq-item">
+              <summary>
+                Was kostet ein Self-Hosted LLM-Server konkret?
+                <span class="faq-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                </span>
+              </summary>
+              <div class="faq-body">Für kleinere Modelle liegen die Anschaffungskosten bei <strong>4.000–6.000 Euro</strong>. Bei größeren Modellen mit mehreren GPUs sind <strong>60.000–80.000 Euro</strong> realistisch. Hinzu kommen laufende Strom-, Wartungs- und Personalkosten von mehreren hundert bis über tausend Euro pro Monat – über 36 Monate amortisiert.</div>
+            </details>
 
-          <h3>Welche GPU brauche ich für ein Self-Hosted LLM?</h3>
-          <p>Für kleinere Modelle wie Llama 3 8B reicht eine RTX 4090 mit 24 GB VRAM. Für Modelle auf GPT-4-Niveau (z.B. Llama 3 70B) sind mehrere High-End-GPUs mit insgesamt 80–160 GB VRAM notwendig – das entspricht Enterprise-Hardware im fünf- bis sechsstelligen Bereich.</p>
+            <details class="faq-item">
+              <summary>
+                Sind Open-Source-LLMs genauso gut wie GPT-4 für KI-Tutoren?
+                <span class="faq-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                </span>
+              </summary>
+              <div class="faq-body">In allgemeinen Benchmarks kommen moderne Open-Source-Modelle nah heran. Im didaktischen Kontext unterscheiden sie sich jedoch bei Präzision komplexer Erklärungen, Konsistenz in langen Dialogen und Halluzinationsrate – Faktoren, die den Lernerfolg direkt beeinflussen.</div>
+            </details>
 
-          <h3>Wie berechne ich meinen Break-Even?</h3>
-          <p>Der Break-Even hängt von Nutzungsvolumen, Hardware-Amortisation, Strom- und Personalkosten sowie der angestrebten Modellqualität ab. Unser kostenloser LLM-Kostenrechner berechnet den individuellen Break-Even-Punkt und vergleicht die Total Cost of Ownership (TCO) beider Ansätze.</p>
+            <details class="faq-item">
+              <summary>
+                Welche GPU brauche ich für ein Self-Hosted LLM?
+                <span class="faq-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                </span>
+              </summary>
+              <div class="faq-body">Für kleinere Modelle wie Llama 3 8B reicht eine RTX 4090 mit 24 GB VRAM. Für Modelle auf GPT-4-Niveau (z.B. Llama 3 70B) sind mehrere High-End-GPUs mit insgesamt 80–160 GB VRAM notwendig – das entspricht Enterprise-Hardware im fünf- bis sechsstelligen Bereich.</div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                Wie berechne ich meinen Break-Even?
+                <span class="faq-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                </span>
+              </summary>
+              <div class="faq-body">Der Break-Even hängt von Nutzungsvolumen, Hardware-Amortisation, Strom- und Personalkosten sowie der angestrebten Modellqualität ab. Unser kostenloser LLM-Kostenrechner berechnet den individuellen Break-Even-Punkt und vergleicht die Total Cost of Ownership (TCO) beider Ansätze.</div>
+            </details>
+
+          </div>
 
           <!-- CTA -->
           <div class="highlight-box mt-10">
@@ -560,9 +649,17 @@
             <!-- Related articles -->
             <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100">
               <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide font-geist mb-4">Weitere Artikel</p>
-              <a href="ki-tutor-guide-bildungsanbieter-deutschland-2026.html" class="group flex flex-col gap-1 hover:bg-white rounded-xl p-2 -mx-2 transition">
+              <a href="ki-tutor-guide-bildungsanbieter-deutschland-2026.html" class="group flex flex-col gap-1 hover:bg-white rounded-xl p-2 -mx-2 transition mb-2">
                 <span class="text-sm font-medium text-gray-800 group-hover:text-violet-600 font-geist transition leading-snug">KI-Tutor-Guide für Bildungsanbieter 2026</span>
                 <span class="text-xs text-gray-400 font-geist">Marktüberblick · März 2026</span>
+              </a>
+              <a href="blog/videos-als-wissensbasis-ki-tutor.html" class="group flex flex-col gap-1 hover:bg-white rounded-xl p-2 -mx-2 transition mb-2">
+                <span class="text-sm font-medium text-gray-800 group-hover:text-violet-600 font-geist transition leading-snug">Lernvideos als Wissensbasis für KI-Tutoren nutzen</span>
+                <span class="text-xs text-gray-400 font-geist">Tutorial · März 2026</span>
+              </a>
+              <a href="llm-kostenrechner.html" class="group flex flex-col gap-1 hover:bg-white rounded-xl p-2 -mx-2 transition">
+                <span class="text-sm font-medium text-gray-800 group-hover:text-violet-600 font-geist transition leading-snug">Ab wann lohnt sich das Self-Hosting eines KI-Tutors?</span>
+                <span class="text-xs text-gray-400 font-geist">Kalkulator · März 2026</span>
               </a>
             </div>
 
