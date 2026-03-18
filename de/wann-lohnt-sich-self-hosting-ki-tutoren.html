@@ -151,6 +151,86 @@
     })();
   </script>
   <script src="/assets/js/layout.js" defer></script>
+
+  <!-- JSON-LD: Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Wann lohnt sich Self-Hosting von KI-Tutoren?",
+    "description": "Kosten & Break-Even für Bildungsanbieter in DACH: Wann lohnt sich Self-Hosted LLM vs. Cloud-KI? Rechenbeispiele, Kostenvergleich & Entscheidungshilfe.",
+    "author": {
+      "@type": "Organization",
+      "name": "Alphabees",
+      "url": "https://moodle-ai-tutor.alphalearn.ai"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Alphabees",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://moodle-ai-tutor.alphalearn.ai/favicon.svg"
+      }
+    },
+    "datePublished": "2026-03-01",
+    "dateModified": "2026-03-18",
+    "inLanguage": "de",
+    "keywords": "Self-Hosting LLM, KI-Tutor Kosten, Self-Hosted LLM Bildung, Cloud vs On-Premise KI, LLM Kostenrechner, KI-Infrastruktur Bildungsanbieter, DACH",
+    "articleSection": "Analyse",
+    "url": "https://moodle-ai-tutor.alphalearn.ai/de/wann-lohnt-sich-self-hosting-ki-tutoren.html",
+    "image": "https://moodle-ai-tutor.alphalearn.ai/assets/images/Mac_mini_AI-Farm.webp"
+  }
+  </script>
+
+  <!-- JSON-LD: FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wann lohnt sich Self-Hosting eines LLM für Bildungsanbieter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Self-Hosting lohnt sich vor allem bei sehr hohen konstanten Nutzungsvolumina, eigenem ML-Engineering-Team, bestehender Server-Infrastruktur und extremen Datenschutzanforderungen. Für viele mittelgroße Bildungsanbieter in DACH ist eine Cloud-Lösung wirtschaftlich flexibler, risikoärmer und schneller skalierbar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was kostet ein Self-Hosted LLM-Server für Bildungseinrichtungen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Für kleinere Modelle liegen die Anschaffungskosten bei 4.000–6.000 Euro. Bei größeren Modellen mit mehreren GPUs oder Enterprise-Hardware sind 60.000–80.000 Euro realistisch. Hinzu kommen laufende Strom-, Wartungs- und Personalkosten von mehreren hundert bis über tausend Euro pro Monat."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Sind Open-Source-LLMs genauso gut wie GPT-4 für KI-Tutoren?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In allgemeinen Benchmarks kommen moderne Open-Source-Modelle nah heran. Im didaktischen Kontext unterscheiden sie sich jedoch bei Präzision komplexer Erklärungen, Konsistenz in langen Dialogen, didaktischer Struktur und Halluzinationsrate – Faktoren, die den Lernerfolg direkt beeinflussen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie berechne ich den Break-Even zwischen Self-Hosting und Cloud-KI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Der Break-Even hängt von Nutzungsvolumen, Hardware-Amortisation (in der Regel 36 Monate), Strom- und Personalkosten sowie der angestrebten Modellqualität ab. Der kostenlose LLM-Kostenrechner von Alphabees berechnet den individuellen Break-Even-Punkt und vergleicht die Total Cost of Ownership (TCO) beider Ansätze."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche GPU brauche ich für ein Self-Hosted LLM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Für kleinere Modelle wie Llama 3 8B reicht eine RTX 4090 mit 24 GB VRAM. Für Modelle auf GPT-4-Niveau (z.B. Llama 3 70B) sind mehrere High-End-GPUs mit insgesamt 80–160 GB VRAM notwendig, was Enterprise-Hardware im fünf- bis sechsstelligen Bereich erfordert."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
 
@@ -413,6 +493,24 @@
             <li>Entscheidungsrelevante Kennzahlen</li>
             <li>Eine objektive Break-Even-Analyse</li>
           </ul>
+
+          <!-- FAQ Section -->
+          <h2>Häufige Fragen zum LLM Self-Hosting</h2>
+
+          <h3>Wann lohnt sich Self-Hosting für Bildungsanbieter?</h3>
+          <p>Self-Hosting lohnt sich vor allem bei sehr hohen konstanten Nutzungsvolumina, eigenem ML-Engineering-Team, bestehender Server-Infrastruktur und extremen Datenschutzanforderungen. Für viele mittelgroße Bildungsanbieter in DACH ist eine Cloud-Lösung wirtschaftlich flexibler, risikoärmer und schneller skalierbar.</p>
+
+          <h3>Was kostet ein Self-Hosted LLM-Server konkret?</h3>
+          <p>Für kleinere Modelle liegen die Anschaffungskosten bei <strong>4.000–6.000 Euro</strong>. Bei größeren Modellen mit mehreren GPUs sind <strong>60.000–80.000 Euro</strong> realistisch. Hinzu kommen laufende Strom-, Wartungs- und Personalkosten von mehreren hundert bis über tausend Euro pro Monat – über 36 Monate amortisiert.</p>
+
+          <h3>Sind Open-Source-LLMs genauso gut wie GPT-4 für KI-Tutoren?</h3>
+          <p>In allgemeinen Benchmarks kommen moderne Open-Source-Modelle nah heran. Im didaktischen Kontext unterscheiden sie sich jedoch bei Präzision komplexer Erklärungen, Konsistenz in langen Dialogen und Halluzinationsrate – Faktoren, die den Lernerfolg direkt beeinflussen.</p>
+
+          <h3>Welche GPU brauche ich für ein Self-Hosted LLM?</h3>
+          <p>Für kleinere Modelle wie Llama 3 8B reicht eine RTX 4090 mit 24 GB VRAM. Für Modelle auf GPT-4-Niveau (z.B. Llama 3 70B) sind mehrere High-End-GPUs mit insgesamt 80–160 GB VRAM notwendig – das entspricht Enterprise-Hardware im fünf- bis sechsstelligen Bereich.</p>
+
+          <h3>Wie berechne ich meinen Break-Even?</h3>
+          <p>Der Break-Even hängt von Nutzungsvolumen, Hardware-Amortisation, Strom- und Personalkosten sowie der angestrebten Modellqualität ab. Unser kostenloser LLM-Kostenrechner berechnet den individuellen Break-Even-Punkt und vergleicht die Total Cost of Ownership (TCO) beider Ansätze.</p>
 
           <!-- CTA -->
           <div class="highlight-box mt-10">
