@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="de" class="h-full">
+<head>
+  <base href="/de/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/1talXVNtoM7nT95-5U_aoax1yD9peFpTC">
+  <meta property="og:image:width" content="2640">
+  <meta property="og:image:height" content="1430">
+  <meta property="og:title" content="Corporate Training skalieren: Wo KI Weiterbildung unterstützt | Alphabees">
+  <meta property="og:description" content="Warum Corporate Training in Großunternehmen oft scheitert und wie KI-gestützte Lösungen L&D-Teams entlasten und Weiterbildung skalierbar machen.">
+  <meta property="og:url" content="https://moodle-ai-tutor.alphalearn.ai/de/blog/corporate-training-skalierung-ki-unterstuetzung.html">
+  <meta name="twitter:title" content="Corporate Training skalieren: Wo KI Weiterbildung unterstützt | Alphabees">
+  <meta name="twitter:description" content="Warum Corporate Training in Großunternehmen oft scheitert und wie KI-gestützte Lösungen L&D-Teams entlasten und Weiterbildung skalierbar machen.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1talXVNtoM7nT95-5U_aoax1yD9peFpTC">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Corporate Training skalieren: Wo KI Weiterbildung unterstützt | Alphabees</title>
+  <meta name="description" content="Warum Corporate Training in Großunternehmen oft scheitert und wie KI-gestützte Lösungen L&D-Teams entlasten und Weiterbildung skalierbar machen.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/corporate-training-skalierung-ki-unterstuetzung.html">
+  <link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/corporate-training-skalierung-ki-unterstuetzung.html">
+  <link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/corporate-training-skalierung-ki-unterstuetzung.html">
+  <link rel="alternate" hreflang="x-default" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/corporate-training-skalierung-ki-unterstuetzung.html">
+  <meta name="geo.region" content="DE">
+  <meta name="geo.country" content="DE">
+  <meta name="geo.placename" content="Deutschland">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes fadeSlideIn {
+      0%   { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+      40%  { opacity: 0.9; transform: translateY(0); filter: blur(0px); }
+      100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+    }
+    .animate-on-scroll { animation-play-state: paused !important; }
+    .animate-on-scroll.animate { animation-play-state: running !important; }
+    html, body { overflow-x: hidden; width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* Article typography */
+    .prose h2 {
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: #111827;
+      margin-top: 2.5rem;
+      margin-bottom: 0.875rem;
+      line-height: 1.3;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose p {
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+    .prose ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .prose ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+    .prose ul li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: #6366f1;
+      margin-top: 0.6em;
+    }
+    .prose blockquote {
+      border-left: 3px solid #6366f1;
+      padding: 0.75rem 1.25rem;
+      margin: 1.75rem 0;
+      background: #f5f3ff;
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+    .prose blockquote p {
+      color: #4338ca;
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .prose .highlight-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .prose .highlight-box p {
+      margin-bottom: 0;
+      color: #1e40af;
+      font-weight: 500;
+    }
+    .prose strong {
+      color: #111827;
+      font-weight: 600;
+    }
+  </style>
+  <script>
+    (function () {
+      const style = document.createElement('style');
+      style.textContent = `.animate-on-scroll { animation-play-state: paused !important; } .animate-on-scroll.animate { animation-play-state: running !important; }`;
+      document.head.appendChild(style);
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+              window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0 });
+      }
+      window.initInViewAnimations = function (selector = '.animate-on-scroll') {
+        document.querySelectorAll(selector).forEach((el) => { window.__inViewIO.observe(el); });
+      };
+      document.addEventListener('DOMContentLoaded', () => {
+        initInViewAnimations();
+        // Fallback: force-animate any elements the observer missed (iOS Safari / mobile quirks)
+        setTimeout(() => {
+          document.querySelectorAll('.animate-on-scroll:not(.animate)').forEach(el => el.classList.add('animate'));
+        }, 1000);
+      });
+    })();
+  </script>
+  <script src="/assets/js/layout.js" defer></script>
+</head>
+<body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
+
+  <!-- Global Header -->
+  <div id="site-header"></div>
+
+  <main class="relative">
+
+    <!-- Hero Banner -->
+    <div class="relative bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 overflow-hidden">
+      <!-- Decorative blobs -->
+      <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-fuchsia-400/10 blur-3xl pointer-events-none"></div>
+
+      <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 pt-24 pb-0 sm:pt-32 sm:pb-0 relative">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 mb-8 text-sm text-white/60 font-geist" style="animation: fadeSlideIn 1s ease-out 0.05s both;">
+          <a href="index.html" class="hover:text-white transition">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <a href="blog.html" class="hover:text-white transition">Blog</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <span class="text-white/40">Artikel</span>
+        </nav>
+
+        <!-- Category + meta -->
+        <div class="flex flex-wrap items-center gap-3 mb-6" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+          <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-white text-xs font-semibold font-geist">Analyse</span>
+          <span class="text-white/50 text-sm font-geist">März 2026</span>
+          <span class="w-1 h-1 rounded-full bg-white/30"></span>
+          <span class="text-white/50 text-sm font-geist">12 Min. Lesezeit</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white font-geist leading-[1.15] tracking-tight mb-5" style="animation: fadeSlideIn 1s ease-out 0.15s both;">Corporate Training skalieren: Wo KI Weiterbildung unterstützt | Alphabees</h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-white/70 font-geist font-normal leading-relaxed max-w-2xl" style="animation: fadeSlideIn 1s ease-out 0.2s both;">Betriebliche Weiterbildung wächst schneller als die Kapazitäten interner L&D-Teams. Erfahren Sie, warum klassische Trainingsansätze an Grenzen stoßen und wie KI-Tutoren skalierbare Lernbegleitung ermöglichen.</p>
+
+        <!-- Hero image -->
+        <div class="mt-10" style="animation: fadeSlideIn 1s ease-out 0.25s both;">
+          <img src="https://lh3.googleusercontent.com/d/1talXVNtoM7nT95-5U_aoax1yD9peFpTC" alt="Skalierung von Corporate Training – Illustration vernetzter Lernpfade mit KI-Unterstützung" class="w-full rounded-t-2xl object-cover max-h-72 sm:max-h-96 shadow-2xl" loading="eager">
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 py-14 sm:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 lg:gap-16">
+
+        <!-- Main Article -->
+        <article class="prose animate-on-scroll" style="animation: fadeSlideIn 1s ease-out 0.1s both;"><p>Betriebliche Weiterbildung zählt zu den größten Investitionen, die Unternehmen in ihre Belegschaft tätigen. Der globale Markt für Corporate Training wird bis 2035 voraussichtlich ein Volumen von über 800 Milliarden US-Dollar erreichen. Trotz dieser enormen Summen kämpfen viele Großunternehmen damit, Schulungen konsistent, effizient und in angemessenem Umfang bereitzustellen.</p>
+
+<p>Das Problem liegt nicht am mangelnden Engagement der Learning-&-Development-Teams. Es liegt an strukturellen Herausforderungen, die mit klassischen Ansätzen kaum zu bewältigen sind. Für Bildungsverantwortliche und Entscheider im DACH-Raum stellt sich daher die Frage: Wie lässt sich Weiterbildung skalieren, ohne Qualität und Relevanz zu opfern?</p>
+
+<h2>Warum klassisches Corporate Training an Grenzen stößt</h2>
+
+<p>In großen Organisationen ist Weiterbildung kein einmaliges Projekt, sondern ein kontinuierlicher Prozess. Compliance-Schulungen, technische Trainings, Produktschulungen und Führungskräfteentwicklung laufen parallel. Neue Mitarbeitende benötigen Onboarding, während bestehende Teams sich an veränderte Prozesse anpassen müssen. Diese Dynamik erzeugt einen permanenten Schulungsbedarf, der selten nachlässt.</p>
+
+<p>Interne L&D-Teams sind in der Regel hochqualifiziert, aber personell begrenzt. Sie koordinieren Fachexperten, entwickeln Lernprogramme, verwalten Learning-Management-Systeme und überwachen Abschlussquoten. Wenn die Anzahl der Schulungsinitiativen wächst, erreichen selbst effiziente Teams irgendwann ihre Kapazitätsgrenzen.</p>
+
+<p>Viele Unternehmen reagieren darauf mit einem Netzwerk externer Dienstleister. Ein Anbieter entwickelt Compliance-Kurse, ein anderer produziert Lernvideos, ein dritter übernimmt Übersetzungen. Diese Fragmentierung löst kurzfristige Engpässe, schafft aber langfristig neue Probleme: Inkonsistente Kursqualität, unterschiedliche Designstandards und ein hoher Koordinationsaufwand belasten die internen Teams zusätzlich.</p>
+
+<p>Hinzu kommt ein fundamentales Timing-Problem. Traditionelle Kursentwicklung dauert Wochen oder Monate. In dieser Zeit ändern sich Produkte, Regularien oder interne Prozesse. Wenn ein Kurs endlich ausgerollt wird, sind Teile des Inhalts bereits veraltet. Für globale Organisationen verschärft sich diese Herausforderung durch Übersetzungen, kulturelle Anpassungen und regionale Compliance-Anforderungen.</p>
+
+<h2>Wo KI betriebliche Weiterbildung wirksam unterstützt</h2>
+
+<p>Künstliche Intelligenz bietet keine Patentlösung für alle Skalierungsprobleme. Ihr Wert liegt nicht darin, erfahrene Instruktionsdesigner zu ersetzen. Vielmehr beschleunigt KI spezifische Entwicklungsschritte, die sonst wertvolle Produktionszeit binden.</p>
+
+<p>Bei der Content-Erstellung kann KI Szenarien, Assessments oder Videoskripte generieren. Statt bei null zu beginnen, arbeiten L&D-Teams mit einem Entwurf, den sie für Ton, Genauigkeit und didaktischen Wert verfeinern. Ähnlich verhält es sich bei visuellen Assets: KI-Tools erstellen unterstützende Grafiken oder sorgen für ein konsistentes visuelles Erscheinungsbild über mehrere Module hinweg.</p>
+
+<p>Für Voiceover-Produktion reduzieren KI-Lösungen die Durchlaufzeit erheblich. Mehrsprachige Rollouts profitieren von KI-gestützten Übersetzungstools, die eine schnellere Bereitstellung in verschiedenen Regionen ermöglichen. Der entscheidende Punkt: Die strategischen Entscheidungen über Lernziele, didaktische Struktur und Zielgruppenansprache bleiben beim Menschen.</p>
+
+<p>KI fungiert in diesem Kontext als Kapazitätsmultiplikator. Sie beschleunigt jene Komponenten, die sich automatisieren lassen, während die qualitätskritischen Aspekte der Lerngestaltung in menschlicher Verantwortung verbleiben.</p>
+
+<h2>KI-Tutoren als intelligente Lernbegleiter</h2>
+
+<p>Über die Unterstützung bei der Content-Erstellung hinaus eröffnen KI-Agenten neue Möglichkeiten für die betriebliche Weiterbildung. Anders als klassische KI-Tools, die Inhalte generieren oder Daten analysieren, können KI-Agenten kontextbezogen handeln und Lernende aktiv unterstützen.</p>
+
+<p>Ein KI-Tutor fungiert als On-Demand-Lernassistent. Statt durch Kursportale zu navigieren oder Kataloge zu durchsuchen, stellen Mitarbeitende eine Frage und erhalten zielgerichtete Antworten, kompakte Lernmodule oder Performance-Support-Materialien. Diese unmittelbare Verfügbarkeit schließt die Lücke zwischen strukturierten Schulungsprogrammen und dem Moment, in dem Wissen tatsächlich benötigt wird.</p>
+
+<p>Für L&D-Verantwortliche bieten KI-Tutoren weitere Vorteile: Sie identifizieren automatisch Bereiche, in denen Lernende wiederholt Schwierigkeiten haben. Auf dieser Basis können zusätzliche Vertiefungsinhalte empfohlen oder Kurse gezielt angepasst werden. Personalisierte Lernpfade entstehen ohne manuellen Mehraufwand, basierend auf Rolle, Kompetenzprofil und bisherigem Lernverhalten.</p>
+
+<p>Der Alphabees KI-Tutor zeigt, wie sich dieses Konzept in der Praxis umsetzen lässt. Er integriert sich direkt in bestehende Moodle-Kurse und nutzt die vorhandenen Kursinhalte als Wissensbasis. Lernende erhalten so eine individuelle Begleitung rund um die Uhr, ohne dass Bildungsverantwortliche zusätzliche Systeme einführen oder Inhalte doppelt pflegen müssen.</p>
+
+<h2>Von isolierten Kursen zu intelligenten Lernoperationen</h2>
+
+<p>Die Zukunft der betrieblichen Weiterbildung liegt nicht in einzelnen Kursen, sondern in einem integrierten System aus strukturierten Lernoperationen, KI-gestützter Entwicklung und intelligenten Lernagenten. Diese Kombination ermöglicht es, Schulungen schneller zu entwickeln, kontinuierlich zu aktualisieren und individuell bereitzustellen.</p>
+
+<p>Technologie allein entscheidet jedoch nicht über den Erfolg. Der eigentliche Differenzierungsfaktor ist die Fähigkeit, didaktische Expertise, operative Disziplin und intelligente Werkzeuge sinnvoll zu verbinden. Wenn diese Elemente zusammenwirken, entwickelt sich betriebliche Weiterbildung von einer Sammlung einzelner Kurse zu einem dynamischen Kompetenzmotor.</p>
+
+<p>Für Entscheider im Bildungsbereich bedeutet das: Die Investition in KI-gestützte Lernbegleitung zahlt sich dann aus, wenn sie in eine durchdachte Lernstrategie eingebettet ist. Ein KI-Tutor wie der von Alphabees kann L&D-Teams entlasten und Lernenden bessere Unterstützung bieten – vorausgesetzt, er arbeitet mit qualitativ hochwertigen Inhalten und klaren Lernzielen.</p>
+
+<h2>Fazit: Skalierbare Weiterbildung braucht intelligente Unterstützung</h2>
+
+<p>Die Herausforderungen bei der Skalierung von Corporate Training sind real und werden mit wachsenden Organisationen nicht kleiner. Fragmentierte Anbieterstrukturen, überlastete L&D-Teams und der ständige Wettlauf zwischen Kursentwicklung und Business-Veränderungen erfordern neue Ansätze.</p>
+
+<p>KI bietet hier keine vollständige Automatisierung, aber eine wirksame Entlastung. Durch die Beschleunigung von Entwicklungsschritten und den Einsatz intelligenter Lernbegleiter können Bildungsverantwortliche mehr Lernende erreichen, ohne Qualität einzubüßen.</p>
+
+<p>Wenn Sie erfahren möchten, wie der Alphabees KI-Tutor Ihre Moodle-Kurse in skalierbare Lernerlebnisse verwandelt, vereinbaren Sie eine persönliche Demo. Entdecken Sie, wie KI-gestützte Lernbegleitung Ihre Weiterbildungsstrategie auf das nächste Level hebt.</p></article>
+
+        <!-- Sidebar -->
+        <aside class="hidden lg:block">
+          <div class="sticky top-28 space-y-6">
+
+            <!-- Author / Publisher info -->
+            <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100">
+              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide font-geist mb-3">Veröffentlicht von</p>
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center shrink-0">
+                  <span class="text-white text-xs font-bold font-geist">A</span>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-gray-900 font-geist">Alphabees</p>
+                  <p class="text-xs text-gray-400 font-geist">März 2026</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Back to blog -->
+            <a href="blog.html" class="flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition group">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:-translate-x-0.5 transition-transform"><path d="m15 18-6-6 6-6"></path></svg>
+              Zurück zum Blog
+            </a>
+
+            <!-- Related articles -->
+            <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100">
+              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide font-geist mb-4">Weitere Artikel</p>
+              <a href="ki-tutor-guide-bildungsanbieter-deutschland-2026.html" class="group flex flex-col gap-1 hover:bg-white rounded-xl p-2 -mx-2 transition">
+                <span class="text-sm font-medium text-gray-800 group-hover:text-violet-600 font-geist transition leading-snug">KI-Tutor-Guide für Bildungsanbieter 2026</span>
+                <span class="text-xs text-gray-400 font-geist">Marktüberblick · März 2026</span>
+              </a>
+            </div>
+
+            <!-- CTA box -->
+            <div class="bg-gradient-to-br from-violet-600 to-indigo-700 rounded-2xl p-5 text-white">
+              <p class="text-sm font-semibold font-geist mb-2">KI-Tutor testen?</p>
+              <p class="text-xs text-white/70 font-geist mb-4 leading-relaxed">Starten Sie kostenlos mit dem Alphabees-Portal und erleben Sie einen echten KI-Tutor für Ihre Einrichtung.</p>
+              <a href="https://portal.alphabees.de/auth/register"
+                 class="inline-flex items-center gap-1.5 bg-white text-violet-700 hover:bg-violet-50 transition text-xs font-semibold font-geist rounded-lg px-4 py-2">
+                Kostenlos starten
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </a>
+            </div>
+
+          </div>
+        </aside>
+
+      </div>
+
+      <!-- Mobile back to blog -->
+      <div class="lg:hidden mt-12 pt-8 border-t border-gray-100">
+        <a href="blog.html" class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+          Zurück zum Blog
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Newsletter Popup -->
+  <div id="newsletter-popup" class="fixed inset-0 z-[1000] hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+    <div class="animate-popup bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
+      <button onclick="closeNewsletterPopup()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+      <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Fast geschafft!</h3>
+      <p class="text-gray-600 text-center mb-6">Wir haben dir eine Bestätigungsmail gesendet. Bitte schau in deinem Posteingang nach und klicke auf den Bestätigungslink.</p>
+      <p class="text-gray-500 text-sm text-center mb-6">💡 Nicht gefunden? Schau auch im Spam-Ordner nach.</p>
+      <button onclick="closeNewsletterPopup()" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-lg transition">Verstanden</button>
+    </div>
+  </div>
+
+  <style>
+    @keyframes popupFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    .animate-popup { animation: popupFadeIn 0.3s ease-out; }
+    #newsletter-popup.flex { display: flex !important; }
+  </style>
+
+  <script>
+    function showNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.add('hidden');
+      popup.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('newsletter-popup').addEventListener('click', function(e) {
+      if (e.target === this) closeNewsletterPopup();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeNewsletterPopup();
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsletterForm = document.querySelector('form[data-sv-form="8647011"]');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('input[name="email_address"]');
+          fetch(this.action, { method: 'POST', body: new FormData(this), mode: 'no-cors' })
+            .finally(() => { showNewsletterPopup(); emailInput.value = ''; });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
