@@ -395,51 +395,10 @@
     }
   };
 
-  const initDynamicSidebar = () => {
-    const aside = document.getElementById('blog-sidebar');
-    if (!aside) return;
-    const inner = aside.querySelector('.sidebar-inner');
-    if (!inner) return;
-
-    const TOP = 112;   // 7rem — header height
-    const BOTTOM = 24; // 1.5rem gap from viewport bottom
-
-    let stickyTop = TOP;
-    let lastScrollY = window.scrollY;
-
-    inner.style.position = 'sticky';
-
-    const update = () => {
-      const scrollY = window.scrollY;
-      const delta = scrollY - lastScrollY;
-      lastScrollY = scrollY;
-
-      const innerH = inner.offsetHeight;
-      const vpH = window.innerHeight;
-
-      if (innerH <= vpH - TOP - BOTTOM) {
-        // Sidebar fits in viewport: simple sticky top
-        inner.style.top = TOP + 'px';
-        return;
-      }
-
-      // Sidebar taller than viewport: track scroll delta
-      // Scroll down (delta > 0): stickyTop decreases → shows bottom (CTA)
-      // Scroll up  (delta < 0): stickyTop increases → shows top
-      const minTop = Math.max(0, vpH - innerH - BOTTOM);
-      stickyTop = Math.max(minTop, Math.min(TOP, stickyTop - delta));
-      inner.style.top = Math.round(stickyTop) + 'px';
-    };
-
-    window.addEventListener('scroll', update, { passive: true });
-    requestAnimationFrame(update);
-  };
-
   if (window.location.pathname.includes('/blog/')) {
     const sidebarTarget = document.getElementById('blog-sidebar');
     if (sidebarTarget) {
       loadPartial(sidebarTarget, normalizePath(`${getBasePath()}/${currentLang}/partials/sidebar.html`))
-        .then(() => initDynamicSidebar())
         .catch((err) => console.error('[layout] sidebar load failed', err));
     }
   }
