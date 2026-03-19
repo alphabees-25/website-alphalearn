@@ -395,6 +395,53 @@
     }
   };
 
+  const initDynamicSidebar = () => {
+    const aside = document.getElementById('blog-sidebar');
+    if (!aside) return;
+    const inner = aside.querySelector('.sidebar-inner');
+    if (!inner) return;
+
+    const TOP = 112;   // 7rem — matches header height (top-28)
+    const BOTTOM = 24; // 1.5rem
+    let lastY = window.scrollY;
+
+    const update = () => {
+      const y = window.scrollY;
+      const innerH = inner.offsetHeight;
+      const vpH = window.innerHeight;
+
+      if (innerH + TOP <= vpH) {
+        // sidebar fits in viewport: simple sticky top
+        inner.style.position = 'sticky';
+        inner.style.top = TOP + 'px';
+        inner.style.bottom = 'auto';
+      } else if (y > lastY) {
+        // scrolling down: stick to bottom so CTA stays visible
+        inner.style.position = 'sticky';
+        inner.style.top = 'auto';
+        inner.style.bottom = BOTTOM + 'px';
+      } else {
+        // scrolling up: stick to top
+        inner.style.position = 'sticky';
+        inner.style.top = TOP + 'px';
+        inner.style.bottom = 'auto';
+      }
+      lastY = y;
+    };
+
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  };
+
+  if (window.location.pathname.includes('/blog/')) {
+    const sidebarTarget = document.getElementById('blog-sidebar');
+    if (sidebarTarget) {
+      loadPartial(sidebarTarget, normalizePath(`${getBasePath()}/${currentLang}/partials/sidebar.html`))
+        .then(() => initDynamicSidebar())
+        .catch((err) => console.error('[layout] sidebar load failed', err));
+    }
+  }
+
   Promise.all([
     loadPartial(headerTarget, normalizePath(`${getBasePath()}/${currentLang}/partials/header.html`)),
     loadPartial(footerTarget, normalizePath(`${getBasePath()}/${currentLang}/partials/footer.html`))
