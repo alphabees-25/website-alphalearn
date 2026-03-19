@@ -401,36 +401,38 @@
     const inner = aside.querySelector('.sidebar-inner');
     if (!inner) return;
 
-    const TOP = 112;   // 7rem — matches header height (top-28)
-    const BOTTOM = 24; // 1.5rem
-    let lastY = window.scrollY;
+    const TOP = 112;   // 7rem — header height
+    const BOTTOM = 24; // 1.5rem gap from viewport bottom
+
+    let stickyTop = TOP;
+    let lastScrollY = window.scrollY;
+
+    inner.style.position = 'sticky';
 
     const update = () => {
-      const y = window.scrollY;
+      const scrollY = window.scrollY;
+      const delta = scrollY - lastScrollY;
+      lastScrollY = scrollY;
+
       const innerH = inner.offsetHeight;
       const vpH = window.innerHeight;
 
-      if (innerH + TOP <= vpH) {
-        // sidebar fits in viewport: simple sticky top
-        inner.style.position = 'sticky';
+      if (innerH <= vpH - TOP - BOTTOM) {
+        // Sidebar fits in viewport: simple sticky top
         inner.style.top = TOP + 'px';
-        inner.style.bottom = 'auto';
-      } else if (y > lastY) {
-        // scrolling down: stick to bottom so CTA stays visible
-        inner.style.position = 'sticky';
-        inner.style.top = 'auto';
-        inner.style.bottom = BOTTOM + 'px';
-      } else {
-        // scrolling up: stick to top
-        inner.style.position = 'sticky';
-        inner.style.top = TOP + 'px';
-        inner.style.bottom = 'auto';
+        return;
       }
-      lastY = y;
+
+      // Sidebar taller than viewport: track scroll delta
+      // Scroll down (delta > 0): stickyTop decreases → shows bottom (CTA)
+      // Scroll up  (delta < 0): stickyTop increases → shows top
+      const minTop = Math.max(0, vpH - innerH - BOTTOM);
+      stickyTop = Math.max(minTop, Math.min(TOP, stickyTop - delta));
+      inner.style.top = Math.round(stickyTop) + 'px';
     };
 
     window.addEventListener('scroll', update, { passive: true });
-    update();
+    requestAnimationFrame(update);
   };
 
   if (window.location.pathname.includes('/blog/')) {
