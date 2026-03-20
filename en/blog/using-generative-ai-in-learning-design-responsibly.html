@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/1kvSiUzFnY08zlvbLth2Q_6eZkYLzxXXZ">
+  <meta property="og:image:width" content="2640">
+  <meta property="og:image:height" content="1430">
+  <meta property="og:title" content="Using Generative AI in Learning Design Responsibly | Alphabees">
+  <meta property="og:description" content="How education leaders can use generative AI in learning design responsibly: strategies to prevent hallucinations and create authentic learning experiences.">
+  <meta property="og:url" content="https://moodle-ai-tutor.alphalearn.ai/en/blog/using-generative-ai-in-learning-design-responsibly.html">
+  <meta name="twitter:title" content="Using Generative AI in Learning Design Responsibly | Alphabees">
+  <meta name="twitter:description" content="How education leaders can use generative AI in learning design responsibly: strategies to prevent hallucinations and create authentic learning experiences.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1kvSiUzFnY08zlvbLth2Q_6eZkYLzxXXZ">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Using Generative AI in Learning Design Responsibly | Alphabees</title>
+  <meta name="description" content="How education leaders can use generative AI in learning design responsibly: strategies to prevent hallucinations and create authentic learning experiences.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/using-generative-ai-in-learning-design-responsibly.html">
+  <link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/generative-ki-im-learning-design-kontrolliert-einsetzen.html">
+  <link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/using-generative-ai-in-learning-design-responsibly.html">
+  <link rel="alternate" hreflang="x-default" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/generative-ki-im-learning-design-kontrolliert-einsetzen.html">
+  <meta name="geo.region" content="DE">
+  <meta name="geo.country" content="DE">
+  <meta name="geo.placename" content="Deutschland">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes fadeSlideIn {
+      0%   { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+      40%  { opacity: 0.9; transform: translateY(0); filter: blur(0px); }
+      100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+    }
+    .animate-on-scroll { animation-play-state: paused !important; }
+    .animate-on-scroll.animate { animation-play-state: running !important; }
+    html, body { overflow-x: hidden; width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* Article typography */
+    .prose h2 {
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: #111827;
+      margin-top: 2.5rem;
+      margin-bottom: 0.875rem;
+      line-height: 1.3;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose p {
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+    .prose ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .prose ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+    .prose ul li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: #6366f1;
+      margin-top: 0.6em;
+    }
+    .prose blockquote {
+      border-left: 3px solid #6366f1;
+      padding: 0.75rem 1.25rem;
+      margin: 1.75rem 0;
+      background: #f5f3ff;
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+    .prose blockquote p {
+      color: #4338ca;
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .prose .highlight-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .prose .highlight-box p {
+      margin-bottom: 0;
+      color: #1e40af;
+      font-weight: 500;
+    }
+    .prose strong {
+      color: #111827;
+      font-weight: 600;
+    }
+  
+      /* FAQ Accordion */
+      .faq-item { border: 1px solid #e5e7eb; border-radius: 0.75rem; overflow: hidden; margin-bottom: 0.625rem; }
+      .faq-item summary { list-style: none; cursor: pointer; padding: 1rem 1.25rem; font-size: 0.9375rem; font-weight: 600; color: #111827; font-family: 'Geist', sans-serif; display: flex; justify-content: space-between; align-items: center; gap: 1rem; user-select: none; background: #f9fafb; transition: background 0.15s; }
+      .faq-item summary::-webkit-details-marker { display: none; }
+      .faq-item summary:hover { background: #f3f4f6; }
+      .faq-item[open] summary { background: #ede9fe; color: #5b21b6; }
+      .faq-item summary .faq-icon { width: 20px; height: 20px; min-width: 20px; border-radius: 50%; background: #e5e7eb; display: flex; align-items: center; justify-content: center; transition: background 0.15s, transform 0.2s; }
+      .faq-item[open] summary .faq-icon { background: #7c3aed; transform: rotate(45deg); }
+      .faq-item[open] summary .faq-icon svg { stroke: #fff; }
+      .faq-item .faq-body { padding: 1rem 1.25rem 1.25rem; color: #374151; font-size: 0.9375rem; line-height: 1.75; border-top: 1px solid #e5e7eb; }
+      /* Definition Lists */
+      .prose dl { margin: 1rem 0 1.5rem 0; }
+      .prose dt { font-weight: 600; color: #111827; font-size: 1rem; margin-top: 1.25rem; margin-bottom: 0.25rem; font-family: 'Geist', sans-serif; }
+      .prose dd { color: #374151; font-size: 1rem; line-height: 1.75; margin-left: 0; padding-left: 1rem; border-left: 2px solid #6366f1; }
+  </style>
+  <script>
+    (function () {
+      const style = document.createElement('style');
+      style.textContent = `.animate-on-scroll { animation-play-state: paused !important; } .animate-on-scroll.animate { animation-play-state: running !important; }`;
+      document.head.appendChild(style);
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+              window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0 });
+      }
+      window.initInViewAnimations = function (selector = '.animate-on-scroll') {
+        document.querySelectorAll(selector).forEach((el) => { window.__inViewIO.observe(el); });
+      };
+      document.addEventListener('DOMContentLoaded', () => {
+        initInViewAnimations();
+        // Fallback: force-animate any elements the observer missed (iOS Safari / mobile quirks)
+        setTimeout(() => {
+          document.querySelectorAll('.animate-on-scroll:not(.animate)').forEach(el => el.classList.add('animate'));
+        }, 1000);
+      });
+    })();
+  </script>
+  <script src="/assets/js/layout.js" defer></script>
+</head>
+<body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
+
+  <!-- Global Header -->
+  <div id="site-header"></div>
+
+  <main class="relative">
+
+    <!-- Hero Banner -->
+    <div class="relative bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 overflow-hidden">
+      <!-- Decorative blobs -->
+      <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-fuchsia-400/10 blur-3xl pointer-events-none"></div>
+
+      <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 pt-24 pb-0 sm:pt-32 sm:pb-0 relative">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 mb-8 text-sm text-white/60 font-geist" style="animation: fadeSlideIn 1s ease-out 0.05s both;">
+          <a href="../index.html" class="hover:text-white transition">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <a href="../blog.html" class="hover:text-white transition">Blog</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <span class="text-white/40">Artikel</span>
+        </nav>
+
+        <!-- Category + meta -->
+        <div class="flex flex-wrap items-center gap-3 mb-6" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+          <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-white text-xs font-semibold font-geist">Strategy</span>
+          <span class="text-white/50 text-sm font-geist">March 2026</span>
+          <span class="w-1 h-1 rounded-full bg-white/30"></span>
+          <span class="text-white/50 text-sm font-geist">12 Min. Lesezeit</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white font-geist leading-[1.15] tracking-tight mb-5" style="animation: fadeSlideIn 1s ease-out 0.15s both;">
+          Using Generative AI in Learning Design Responsibly | Alphabees
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-white/70 font-geist font-normal leading-relaxed max-w-2xl" style="animation: fadeSlideIn 1s ease-out 0.2s both;">
+          Generative AI significantly accelerates the development of learning materials—but carries risks like hallucinations. This article presents strategies for controlled implementation in education.
+        </p>
+
+        <!-- Hero image -->
+        <div class="mt-10" style="animation: fadeSlideIn 1s ease-out 0.25s both;">
+          <img src="https://lh3.googleusercontent.com/d/1kvSiUzFnY08zlvbLth2Q_6eZkYLzxXXZ"
+               alt="Generative AI in learning design – person creating learning materials with AI support"
+               class="w-full rounded-t-2xl object-cover max-h-72 sm:max-h-96 shadow-2xl"
+               loading="eager">
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 py-14 sm:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 lg:gap-16">
+
+        <!-- Main Article -->
+        <article class="prose animate-on-scroll" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+
+<p>Generative AI has rapidly evolved into a powerful tool for developing learning materials. It summarizes extensive expert interviews, drafts learning content, structures complex topics, and significantly accelerates early design phases. In many projects, it functions like a tireless research assistant, transforming expertise into structured learning experiences.</p>
+
+<p>However, those who deploy generative AI in real educational projects also know its darker side: AI is not neutral. When faced with incomplete data or vague instructions, the system does not respond with "I don't know." Instead, it fills gaps—sometimes with plausible but false information. It invents sources, generates unsupported conclusions, or confidently suggests ideas that do not fit the actual context. For those responsible for education and professional development, this creates a central challenge: How can generative AI be used effectively without losing control over accuracy, authenticity, and accountability in learning content?</p>
+
+<h2>Learning Objectives as an Essential Control Structure</h2>
+
+<p>The first and most important principle in AI-assisted learning design comes from classical pedagogy: always start with the learning objective. People vary, days differ, and the learning environment constantly changes—but the learning objective remains the cornerstone that keeps the learning experience focused and meaningful.</p>
+
+<p>In AI-supported design, this principle becomes even more critical. Before any content is generated, learning objectives must be clearly and explicitly defined. Every prompt, every outline, and every content draft is tied back to these objectives. As the project progresses and conversations with subject matter experts deepen, objectives may shift slightly—but they always remain the anchor of the process.</p>
+
+<p>This practice prevents a common problem with generative AI: content expansion without direction. AI can produce large amounts of polished-looking material, but without a clear objective structure, this material may drift away from the actual learning goals. The objectives function as a control system that keeps AI outputs aligned with the training's purpose.</p>
+
+<h2>Dedicated AI Assistants with Curated Sources</h2>
+
+<p>Another crucial practice is creating a project-specific AI assistant rather than using a generic chatbot. In a structured workflow, key materials are uploaded:</p>
+
+<ul>
+<li>Compliance and policy documents</li>
+<li>Subject matter expert notes and summaries</li>
+<li>Instructional design frameworks</li>
+<li>Documents defining course objectives</li>
+</ul>
+
+<p>These materials become the source base that the AI assistant draws upon when generating content. This approach significantly reduces hallucinations by directing the system toward verified internal information rather than relying on general patterns from the internet. It keeps prompts focused and ensures that generated materials remain connected to the specific learning context.</p>
+
+<p>The assistant thus becomes a structured knowledge environment rather than a free-floating text generator. For educational institutions, this means: an AI tutor integrated directly into the learning platform that exclusively accesses course-specific materials delivers more precise and contextually relevant responses than a general AI system.</p>
+
+<h2>Authentic Practice as the Starting Point</h2>
+
+<p>One of the most valuable insights in AI-assisted learning design is this: authentic learning experiences must come from real practice, not from the AI's imagination. Generative AI can create convincing scenarios, but it struggles with the subtle details of local language, tone, and professional nuance. These elements are crucial in leadership training and corporate professional development.</p>
+
+<p>The solution begins with real experience. Instructors and facilitators record short reflective videos for professional development, for example. These videos capture genuine conversations, authentic language, and the subtle dynamics of practice. Transcripts from these recordings are used as source material in the AI assistant. The AI is then instructed to generate scripts or scenarios based on these transcripts—guided by the learning objectives.</p>
+
+<p>This process allows AI to structure and refine the material while preserving the authentic voice of practitioners. The result is learning content that sounds natural and grounded rather than artificial.</p>
+
+<h2>Scaling Without Losing Meaning</h2>
+
+<p>One of the most promising applications of AI in learning design is scaling knowledge. Once content is anchored in real experience and aligned with objectives, AI can help refine and expand it. For example, language can be made clearer or optimized for better discoverability on digital platforms.</p>
+
+<p>However, this step always comes after content alignment, not before. Every revision is checked again against the learning objectives to ensure that clarity improvements or searchability optimizations do not distort the intended meaning. AI can amplify language patterns, but learning designers must retain responsibility for the integrity of the learning message.</p>
+
+<p>For decision-makers in higher education, academies, and corporations, this means: deploying AI tutors requires thoughtful integration into existing learning processes. An AI tutor like the one from Alphabees, embedded directly into Moodle courses, uses existing course materials as its knowledge base. This automatically aligns responses with the course context, significantly reducing the risk of hallucinations.</p>
+
+<h2>AI as a Structured Partner in Learning Design</h2>
+
+<p>Generative AI reflects how people in a field speak, write, and structure ideas. When used responsibly, it can help uncover patterns in organizational knowledge and accelerate the translation of expertise into learning experiences. However, this only works when AI is thoughtfully embedded into the learning design process.</p>
+
+<p>Integrating AI across all phases of an instructional design model—from analysis through design and development to implementation and evaluation—while maintaining strong collaboration with subject matter experts is the key. AI replaces neither the learning designer nor the subject matter expert. Instead, it becomes a structured partner that helps organize knowledge, refine language, and scale learning experiences.</p>
+
+<p>Education leaders facing the decision to integrate AI tools into their learning environment should therefore choose solutions that enable controlled processes. An AI tutor based on their own course content that functions as a 24/7 learning companion offers the benefits of generative AI while maintaining content control. The future of learning lies not in deploying AI without oversight, but in using it as a responsible partner that protects authenticity rather than diluting it.</p>
+
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="not-prose mt-6 mb-2">
+            <details class="faq-item">
+              <summary>
+                How can AI hallucinations be prevented in learning design?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">By using dedicated AI assistants with curated sources and clear learning objectives as control structures. The AI should exclusively access verified internal documents.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                What role do learning objectives play in AI-assisted content design?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Learning objectives serve as anchors that align all AI-generated content with its actual purpose. Without clear objectives, AI produces volume but lacks direction.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Can generative AI create authentic learning experiences?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">AI alone cannot generate authentic experiences. However, it can structure and refine real-world examples when these are provided as source data.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How can AI be responsibly integrated into existing learning platforms?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Through connection to course-specific materials, clear objective guidelines, and continuous quality checks of outputs against defined learning goals.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                What distinguishes controlled AI deployment from uncontrolled use?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Controlled deployment relies on structured processes, verified sources, and defined objectives. Uncontrolled use leaves content direction entirely to the AI.</div>
+            </details>
+          </div>
+
+          <div class="highlight-box mt-10">
+            <p class="text-base mb-4">Discover how the <strong>Alphabees AI Tutor</strong> intelligently extends your Moodle courses – with 24/7 learning support and no new infrastructure costs.</p>
+          </div>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 not-prose">
+            <a href="../features.html"
+               class="inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 transition text-white font-semibold font-geist text-sm rounded-xl px-6 py-3.5 shadow-lg shadow-violet-500/20">
+              Explore the Alphabees AI Tutor features
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="hidden lg:block">
+          <div class="sticky top-28 space-y-6">
+
+            <!-- Author / Publisher info -->
+            <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100">
+              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide font-geist mb-3">Veröffentlicht von</p>
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center shrink-0">
+                  <span class="text-white text-xs font-bold font-geist">A</span>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-gray-900 font-geist">Alphabees</p>
+                  <p class="text-xs text-gray-400 font-geist">März 2026</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Back to blog -->
+            <a href="../blog.html" class="flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition group">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:-translate-x-0.5 transition-transform"><path d="m15 18-6-6 6-6"></path></svg>
+              Zurück zum Blog
+            </a>
+
+            <!-- Related articles -->
+            <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100">
+              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide font-geist mb-4">Weitere Artikel</p>
+              <a href="ki-tutor-guide-bildungsanbieter-deutschland-2026.html" class="group flex flex-col gap-1 hover:bg-white rounded-xl p-2 -mx-2 transition">
+                <span class="text-sm font-medium text-gray-800 group-hover:text-violet-600 font-geist transition leading-snug">KI-Tutor-Guide für Bildungsanbieter 2026</span>
+                <span class="text-xs text-gray-400 font-geist">Marktüberblick · März 2026</span>
+              </a>
+            </div>
+
+            <!-- CTA box -->
+            <div class="bg-gradient-to-br from-violet-600 to-indigo-700 rounded-2xl p-5 text-white">
+              <p class="text-sm font-semibold font-geist mb-2">KI-Tutor testen?</p>
+              <p class="text-xs text-white/70 font-geist mb-4 leading-relaxed">Starten Sie kostenlos mit dem Alphabees-Portal und erleben Sie einen echten KI-Tutor für Ihre Einrichtung.</p>
+              <a href="https://portal.alphabees.de/auth/register"
+                 class="inline-flex items-center gap-1.5 bg-white text-violet-700 hover:bg-violet-50 transition text-xs font-semibold font-geist rounded-lg px-4 py-2">
+                Kostenlos starten
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </a>
+            </div>
+
+          </div>
+        </aside>
+
+      </div>
+
+      <!-- Mobile back to blog -->
+      <div class="lg:hidden mt-12 pt-8 border-t border-gray-100">
+        <a href="../blog.html" class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+          Zurück zum Blog
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Newsletter Popup -->
+  <div id="newsletter-popup" class="fixed inset-0 z-[1000] hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+    <div class="animate-popup bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
+      <button onclick="closeNewsletterPopup()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+      <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Fast geschafft!</h3>
+      <p class="text-gray-600 text-center mb-6">Wir haben dir eine Bestätigungsmail gesendet. Bitte schau in deinem Posteingang nach und klicke auf den Bestätigungslink.</p>
+      <p class="text-gray-500 text-sm text-center mb-6">💡 Nicht gefunden? Schau auch im Spam-Ordner nach.</p>
+      <button onclick="closeNewsletterPopup()" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-lg transition">Verstanden</button>
+    </div>
+  </div>
+
+  <style>
+    @keyframes popupFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    .animate-popup { animation: popupFadeIn 0.3s ease-out; }
+    #newsletter-popup.flex { display: flex !important; }
+  </style>
+
+  <script>
+    function showNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.add('hidden');
+      popup.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('newsletter-popup').addEventListener('click', function(e) {
+      if (e.target === this) closeNewsletterPopup();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeNewsletterPopup();
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsletterForm = document.querySelector('form[data-sv-form="8647011"]');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('input[name="email_address"]');
+          fetch(this.action, { method: 'POST', body: new FormData(this), mode: 'no-cors' })
+            .finally(() => { showNewsletterPopup(); emailInput.value = ''; });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
