@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-03-03
+# Last updated: 2026-03-19
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -31,6 +31,26 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 - KI-Tutor-Guide für Bildungsanbieter 2026: https://moodle-ai-tutor.alphalearn.ai/de/ki-tutor-guide-bildungsanbieter-deutschland-2026.html
 - Self-Hosting von KI-Tutoren — Kosten-Analyse: https://moodle-ai-tutor.alphalearn.ai/de/wann-lohnt-sich-self-hosting-ki-tutoren.html
 - LLM Kostenrechner (Cloud vs. Self-Hosting): https://moodle-ai-tutor.alphalearn.ai/de/llm-kostenrechner.html
+- Barrierefreie Hochschullehre: Zugänglichkeit für alle: https://moodle-ai-tutor.alphalearn.ai/de/blog/barrierefreie-hochschullehre-zugaenglichkeit-fuer-alle.html
+- Corporate Learning Camp 2026: Impulse für moderne Weiterbildung: https://moodle-ai-tutor.alphalearn.ai/de/blog/corporate-learning-camp-2026-impulse-fuer-moderne-weiterbildung.html
+- Corporate Training skalieren mit KI-Unterstützung: https://moodle-ai-tutor.alphalearn.ai/de/blog/corporate-training-skalierung-ki-unterstuetzung.html
+- Customer Enablement Strategie für Bildungsanbieter: https://moodle-ai-tutor.alphalearn.ai/de/blog/customer-enablement-strategie-bildungsanbieter.html
+- Happy Sheets Ade: Wie Bildungsverantwortliche den ROI von Weiterbildung messen: https://moodle-ai-tutor.alphalearn.ai/de/blog/happy-sheets-ade-wie-bildungsverantwortliche-den-roi-von-weiterbildung-endlich-messen.html
+- Lernerfolgsmessung mit dem KI-Tutor: https://moodle-ai-tutor.alphalearn.ai/de/blog/happy-sheets-lernerfolgsmessung-ki-tutor.html
+- Das Herrenberg-Urteil: Hochschulen, Lehrbeauftragte und KI-Lösungen: https://moodle-ai-tutor.alphalearn.ai/de/blog/herrenberg-urteil-hochschulen-lehrbeauftragte-ki-loesungen.html
+- Inklusive Bildung und Digitalisierung: Das Bremer Schulgesetz: https://moodle-ai-tutor.alphalearn.ai/de/blog/inklusive-bildung-digitalisierung-bremen-schulgesetz.html
+- KI-Analytics für Learning & Development Performance: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-analytics-learning-development-performance.html
+- KI-Fortbildung für Lehrkräfte in NRW: Was Bildungsverantwortliche lernen können: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-fortbildung-lehrkraefte-nrw-was-bildungsverantwortliche-lernen-koennen.html
+- Kognitive Lerntheorie im E-Learning: Prinzipien für nachhaltigen Lernerfolg: https://moodle-ai-tutor.alphalearn.ai/de/blog/kognitive-lerntheorie-im-e-learning-prinzipien-fuer-nachhaltigen-lernerfolg.html
+- Learning Circles und Peer-Learning in der Weiterbildung: https://moodle-ai-tutor.alphalearn.ai/de/blog/learning-circles-peer-learning-weiterbildung.html
+- LMS Compliance-Risiko reduzieren durch Prävention: https://moodle-ai-tutor.alphalearn.ai/de/blog/lms-compliance-risiko-reduzieren-praevention.html
+- Mathematikbildung und Statistik: KI-Unterstützung an Hochschulen: https://moodle-ai-tutor.alphalearn.ai/de/blog/mathematikbildung-statistik-ki-unterstuetzung-hochschulen.html
+- Newskilling mit dem KI-Tutor: Kompetenzentwicklung an der Hochschule: https://moodle-ai-tutor.alphalearn.ai/de/blog/newskilling-ki-tutor-hochschule-kompetenzentwicklung.html
+- Smartphone-Schutzzonen an Schulen in Hessen: https://moodle-ai-tutor.alphalearn.ai/de/blog/smartphone-schutzzonen-schulen-hessen-digitale-bildung.html
+- Studentische Erwartungen an die Hochschullehre: Struktur statt Innovation: https://moodle-ai-tutor.alphalearn.ai/de/blog/studentische-erwartungen-hochschullehre-struktur-statt-innovation.html
+- Videos als Wissensbasis für den KI-Tutor: https://moodle-ai-tutor.alphalearn.ai/de/blog/videos-als-wissensbasis-ki-tutor.html
+- Warum agile Transformationen ohne angepasste L&D-Strukturen scheitern: https://moodle-ai-tutor.alphalearn.ai/de/blog/warum-agile-transformationen-ohne-angepasste-ld-strukturen-scheitern.html
+- Wenn Prüfungen zum Selbstzweck werden: Instructional Design & Accountability: https://moodle-ai-tutor.alphalearn.ai/de/blog/wenn-pruefungen-zum-selbstzweck-werden-instructional-design-accountability.html
 
 ---
 
@@ -53,6 +73,25 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 - AI Tutor Guide for Education Providers 2026: https://moodle-ai-tutor.alphalearn.ai/en/ai-tutor-guide-education-providers-2026.html
 - Self-Hosting AI Tutors — Cost Analysis: https://moodle-ai-tutor.alphalearn.ai/en/self-hosting-ai-tutors-worth-it.html
 - LLM Cost Calculator (Cloud vs. Self-Hosting): https://moodle-ai-tutor.alphalearn.ai/en/llm-cost-calculator.html
+- Accessible Higher Education: Why Accessibility Benefits Everyone: https://moodle-ai-tutor.alphalearn.ai/en/blog/accessible-higher-education-why-accessibility-benefits-everyone.html
+- AI Analytics for Learning & Development Performance: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-analytics-learning-development-performance.html
+- AI Training for Teachers in NRW: Lessons for Education Leaders: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-training-teachers-nrw-lessons-for-education-leaders.html
+- Cognitive Learning Theory in E-Learning: Principles for Lasting Success: https://moodle-ai-tutor.alphalearn.ai/en/blog/cognitive-learning-theory-in-e-learning-principles-for-lasting-success.html
+- Corporate Learning Camp 2026: Insights for Modern Professional Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/corporate-learning-camp-2026-insights-for-modern-professional-development.html
+- Corporate Training Scaling with AI Support: https://moodle-ai-tutor.alphalearn.ai/en/blog/corporate-training-skalierung-ki-unterstuetzung.html
+- Customer Enablement Strategy for Education Providers: https://moodle-ai-tutor.alphalearn.ai/en/blog/customer-enablement-strategy-education-providers.html
+- Goodbye Happy Sheets: How to Measure Training ROI: https://moodle-ai-tutor.alphalearn.ai/en/blog/goodbye-happy-sheets-how-to-measure-training-roi.html
+- The Herrenberg Ruling: Universities, Adjunct Lecturers and AI Solutions: https://moodle-ai-tutor.alphalearn.ai/en/blog/herrenberg-ruling-universities-adjunct-lecturers-ai-solutions.html
+- Inclusive Education and Digitalization: The Bremen School Law: https://moodle-ai-tutor.alphalearn.ai/en/blog/inclusive-education-digitalization-bremen-school-law.html
+- Learning Circles and Peer Learning in Professional Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/learning-circles-peer-learning-professional-development.html
+- Mathematics Education and Statistics: AI Support at Universities: https://moodle-ai-tutor.alphalearn.ai/en/blog/mathematics-education-statistics-ai-support-universities.html
+- Newskilling with AI Tutors: Competency Development in Higher Education: https://moodle-ai-tutor.alphalearn.ai/en/blog/newskilling-ai-tutors-higher-education-competency-development.html
+- Reducing Compliance Risks with LMS Prevention: https://moodle-ai-tutor.alphalearn.ai/en/blog/reducing-compliance-risks-with-lms-prevention.html
+- Smartphone-Free Zones in Schools: Digital Education in Hesse: https://moodle-ai-tutor.alphalearn.ai/en/blog/smartphone-free-zones-schools-hesse-digital-education.html
+- Student Expectations in Higher Education: Structure over Innovation: https://moodle-ai-tutor.alphalearn.ai/en/blog/student-expectations-higher-education-structure-over-innovation.html
+- Videos as Knowledge Base for the AI Tutor: https://moodle-ai-tutor.alphalearn.ai/en/blog/videos-as-knowledge-base-ai-tutor.html
+- When Testing Becomes the Goal: Instructional Design & Accountability: https://moodle-ai-tutor.alphalearn.ai/en/blog/when-testing-becomes-the-goal-instructional-design-accountability.html
+- Why Agile Transformations Fail Without Adapted L&D Structures: https://moodle-ai-tutor.alphalearn.ai/en/blog/why-agile-transformations-fail-without-adapted-ld-structures.html
 
 ---
 

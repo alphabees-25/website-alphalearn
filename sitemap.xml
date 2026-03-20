@@ -10,117 +10,9 @@
     <loc>https://moodle-ai-tutor.alphalearn.ai/</loc>
     <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/"/>
-    <lastmod>2026-02-19</lastmod>
+    <lastmod>2026-03-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://moodle-ai-tutor.alphalearn.ai/features.html</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://moodle-ai-tutor.alphalearn.ai/preis.html</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://moodle-ai-tutor.alphalearn.ai/demos.html</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://moodle-ai-tutor.alphalearn.ai/moodle-plugin.html</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://moodle-ai-tutor.alphalearn.ai/moodle-mobile-app.html</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://moodle-ai-tutor.alphalearn.ai/blog.html</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://moodle-ai-tutor.alphalearn.ai/ki-tutor-guide-bildungsanbieter-deutschland-2026.html</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://moodle-ai-tutor.alphalearn.ai/partner-program.html</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://moodle-ai-tutor.alphalearn.ai/careers.html</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://moodle-ai-tutor.alphalearn.ai/press.html</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://moodle-ai-tutor.alphalearn.ai/ueber-uns.html</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://moodle-ai-tutor.alphalearn.ai/kontakt.html</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://moodle-ai-tutor.alphalearn.ai/privacy.html</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://moodle-ai-tutor.alphalearn.ai/cookie-policy.html</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://moodle-ai-tutor.alphalearn.ai/security.html</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://moodle-ai-tutor.alphalearn.ai/compliance.html</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://moodle-ai-tutor.alphalearn.ai/agb.html</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://moodle-ai-tutor.alphalearn.ai/impressum.html</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
 
   <!-- ================================================ -->
@@ -131,13 +23,13 @@
     <loc>https://moodle-ai-tutor.alphalearn.ai/de/</loc>
     <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/"/>
-    <lastmod>2026-02-19</lastmod>
+    <lastmod>2026-03-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://moodle-ai-tutor.alphalearn.ai/de/features.html</loc>
-    <lastmod>2026-02-19</lastmod>
+    <lastmod>2026-03-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -167,7 +59,7 @@
   </url>
   <url>
     <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog.html</loc>
-    <lastmod>2026-03-03</lastmod>
+    <lastmod>2026-03-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -256,6 +148,128 @@
     <priority>0.3</priority>
   </url>
 
+  <!-- DE Blog articles -->
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/barrierefreie-hochschullehre-zugaenglichkeit-fuer-alle.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/corporate-learning-camp-2026-impulse-fuer-moderne-weiterbildung.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/corporate-training-skalierung-ki-unterstuetzung.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/customer-enablement-strategie-bildungsanbieter.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/happy-sheets-ade-wie-bildungsverantwortliche-den-roi-von-weiterbildung-endlich-messen.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/happy-sheets-lernerfolgsmessung-ki-tutor.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/herrenberg-urteil-hochschulen-lehrbeauftragte-ki-loesungen.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/inklusive-bildung-digitalisierung-bremen-schulgesetz.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-analytics-learning-development-performance.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-fortbildung-lehrkraefte-nrw-was-bildungsverantwortliche-lernen-koennen.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/kognitive-lerntheorie-im-e-learning-prinzipien-fuer-nachhaltigen-lernerfolg.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/learning-circles-peer-learning-weiterbildung.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/lms-compliance-risiko-reduzieren-praevention.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/mathematikbildung-statistik-ki-unterstuetzung-hochschulen.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/newskilling-ki-tutor-hochschule-kompetenzentwicklung.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/smartphone-schutzzonen-schulen-hessen-digitale-bildung.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/studentische-erwartungen-hochschullehre-struktur-statt-innovation.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/videos-als-wissensbasis-ki-tutor.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/warum-agile-transformationen-ohne-angepasste-ld-strukturen-scheitern.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/wenn-pruefungen-zum-selbstzweck-werden-instructional-design-accountability.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- ================================================ -->
   <!-- ENGLISH (en/)                                    -->
   <!-- ================================================ -->
@@ -264,13 +278,13 @@
     <loc>https://moodle-ai-tutor.alphalearn.ai/en/</loc>
     <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/"/>
-    <lastmod>2026-02-19</lastmod>
+    <lastmod>2026-03-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://moodle-ai-tutor.alphalearn.ai/en/features.html</loc>
-    <lastmod>2026-02-19</lastmod>
+    <lastmod>2026-03-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -300,7 +314,7 @@
   </url>
   <url>
     <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog.html</loc>
-    <lastmod>2026-03-03</lastmod>
+    <lastmod>2026-03-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -387,6 +401,122 @@
     <lastmod>2026-03-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+
+  <!-- EN Blog articles -->
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/accessible-higher-education-why-accessibility-benefits-everyone.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-analytics-learning-development-performance.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-training-teachers-nrw-lessons-for-education-leaders.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/cognitive-learning-theory-in-e-learning-principles-for-lasting-success.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/corporate-learning-camp-2026-insights-for-modern-professional-development.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/corporate-training-skalierung-ki-unterstuetzung.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/customer-enablement-strategy-education-providers.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/goodbye-happy-sheets-how-to-measure-training-roi.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/herrenberg-ruling-universities-adjunct-lecturers-ai-solutions.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/inclusive-education-digitalization-bremen-school-law.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/learning-circles-peer-learning-professional-development.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/mathematics-education-statistics-ai-support-universities.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/newskilling-ai-tutors-higher-education-competency-development.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/reducing-compliance-risks-with-lms-prevention.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/smartphone-free-zones-schools-hesse-digital-education.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/student-expectations-higher-education-structure-over-innovation.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/videos-as-knowledge-base-ai-tutor.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/when-testing-becomes-the-goal-instructional-design-accountability.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/why-agile-transformations-fail-without-adapted-ld-structures.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
 </urlset>

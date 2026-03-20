@@ -396,12 +396,14 @@
   };
 
   if (window.location.pathname.includes('/blog/')) {
+    // Fix overflow-x:hidden on body breaking position:sticky —
+    // replace with clip which doesn't create a new scroll container.
+    // Must run for all blog pages, including those with inline sidebar HTML.
+    document.body.style.overflowX = 'clip';
+    document.documentElement.style.overflowX = 'clip';
+
     const sidebarTarget = document.getElementById('blog-sidebar');
     if (sidebarTarget) {
-      // Fix overflow-x:hidden on body breaking position:sticky —
-      // replace with clip which doesn't create a new scroll container
-      document.body.style.overflowX = 'clip';
-      document.documentElement.style.overflowX = 'clip';
       // Apply sticky directly to the aside grid item (synchronous, before fetch)
       sidebarTarget.style.position = 'sticky';
       sidebarTarget.style.top = '7rem';
