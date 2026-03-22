@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/1Cfmcv-qI9gSefmkefXwowtTheWP1-3Om">
+  <meta property="og:image:width" content="2640">
+  <meta property="og:image:height" content="1430">
+  <meta property="og:title" content="LMS Adoption Metrics Explained | Alphabees">
+  <meta property="og:description" content="Learn which LMS metrics measure real adoption and how AI tutors sustainably boost engagement and skill development.">
+  <meta property="og:url" content="https://moodle-ai-tutor.alphalearn.ai/en/blog/lms-adoption-metrics-explained.html">
+  <meta name="twitter:title" content="LMS Adoption Metrics Explained | Alphabees">
+  <meta name="twitter:description" content="Learn which LMS metrics measure real adoption and how AI tutors sustainably boost engagement and skill development.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1Cfmcv-qI9gSefmkefXwowtTheWP1-3Om">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LMS Adoption Metrics Explained | Alphabees</title>
+  <meta name="description" content="Learn which LMS metrics measure real adoption and how AI tutors sustainably boost engagement and skill development.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/lms-adoption-metrics-explained.html">
+  <link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/lms-adoption-metriken-erklaert.html">
+  <link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/lms-adoption-metrics-explained.html">
+  <link rel="alternate" hreflang="x-default" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/lms-adoption-metriken-erklaert.html">
+  <meta name="geo.region" content="DE">
+  <meta name="geo.country" content="DE">
+  <meta name="geo.placename" content="Deutschland">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes fadeSlideIn {
+      0%   { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+      40%  { opacity: 0.9; transform: translateY(0); filter: blur(0px); }
+      100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+    }
+    .animate-on-scroll { animation-play-state: paused !important; }
+    .animate-on-scroll.animate { animation-play-state: running !important; }
+    html, body { overflow-x: hidden; width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* Article typography */
+    .prose h2 {
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: #111827;
+      margin-top: 2.5rem;
+      margin-bottom: 0.875rem;
+      line-height: 1.3;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose p {
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+    .prose ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .prose ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+    .prose ul li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: #6366f1;
+      margin-top: 0.6em;
+    }
+    .prose blockquote {
+      border-left: 3px solid #6366f1;
+      padding: 0.75rem 1.25rem;
+      margin: 1.75rem 0;
+      background: #f5f3ff;
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+    .prose blockquote p {
+      color: #4338ca;
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .prose .highlight-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .prose .highlight-box p {
+      margin-bottom: 0;
+      color: #1e40af;
+      font-weight: 500;
+    }
+    .prose strong {
+      color: #111827;
+      font-weight: 600;
+    }
+  
+      /* FAQ Accordion */
+      .faq-item { border: 1px solid #e5e7eb; border-radius: 0.75rem; overflow: hidden; margin-bottom: 0.625rem; }
+      .faq-item summary { list-style: none; cursor: pointer; padding: 1rem 1.25rem; font-size: 0.9375rem; font-weight: 600; color: #111827; font-family: 'Geist', sans-serif; display: flex; justify-content: space-between; align-items: center; gap: 1rem; user-select: none; background: #f9fafb; transition: background 0.15s; }
+      .faq-item summary::-webkit-details-marker { display: none; }
+      .faq-item summary:hover { background: #f3f4f6; }
+      .faq-item[open] summary { background: #ede9fe; color: #5b21b6; }
+      .faq-item summary .faq-icon { width: 20px; height: 20px; min-width: 20px; border-radius: 50%; background: #e5e7eb; display: flex; align-items: center; justify-content: center; transition: background 0.15s, transform 0.2s; }
+      .faq-item[open] summary .faq-icon { background: #7c3aed; transform: rotate(45deg); }
+      .faq-item[open] summary .faq-icon svg { stroke: #fff; }
+      .faq-item .faq-body { padding: 1rem 1.25rem 1.25rem; color: #374151; font-size: 0.9375rem; line-height: 1.75; border-top: 1px solid #e5e7eb; }
+      /* Definition Lists */
+      .prose dl { margin: 1rem 0 1.5rem 0; }
+      .prose dt { font-weight: 600; color: #111827; font-size: 1rem; margin-top: 1.25rem; margin-bottom: 0.25rem; font-family: 'Geist', sans-serif; }
+      .prose dd { color: #374151; font-size: 1rem; line-height: 1.75; margin-left: 0; padding-left: 1rem; border-left: 2px solid #6366f1; }
+  </style>
+  <script>
+    (function () {
+      const style = document.createElement('style');
+      style.textContent = `.animate-on-scroll { animation-play-state: paused !important; } .animate-on-scroll.animate { animation-play-state: running !important; }`;
+      document.head.appendChild(style);
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+              window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0 });
+      }
+      window.initInViewAnimations = function (selector = '.animate-on-scroll') {
+        document.querySelectorAll(selector).forEach((el) => { window.__inViewIO.observe(el); });
+      };
+      document.addEventListener('DOMContentLoaded', () => {
+        initInViewAnimations();
+        // Fallback: force-animate any elements the observer missed (iOS Safari / mobile quirks)
+        setTimeout(() => {
+          document.querySelectorAll('.animate-on-scroll:not(.animate)').forEach(el => el.classList.add('animate'));
+        }, 1000);
+      });
+    })();
+  </script>
+  <script src="/assets/js/layout.js" defer></script>
+</head>
+<body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
+
+  <!-- Global Header -->
+  <div id="site-header"></div>
+
+  <main class="relative">
+
+    <!-- Hero Banner -->
+    <div class="relative bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 overflow-hidden">
+      <!-- Decorative blobs -->
+      <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-fuchsia-400/10 blur-3xl pointer-events-none"></div>
+
+      <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 pt-24 pb-0 sm:pt-32 sm:pb-0 relative">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 mb-8 text-sm text-white/60 font-geist" style="animation: fadeSlideIn 1s ease-out 0.05s both;">
+          <a href="../index.html" class="hover:text-white transition">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <a href="../blog.html" class="hover:text-white transition">Blog</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <span class="text-white/40">Artikel</span>
+        </nav>
+
+        <!-- Category + meta -->
+        <div class="flex flex-wrap items-center gap-3 mb-6" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+          <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-white text-xs font-semibold font-geist">Analysis</span>
+          <span class="text-white/50 text-sm font-geist">March 2026</span>
+          <span class="w-1 h-1 rounded-full bg-white/30"></span>
+          <span class="text-white/50 text-sm font-geist">12 Min. Lesezeit</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white font-geist leading-[1.15] tracking-tight mb-5" style="animation: fadeSlideIn 1s ease-out 0.15s both;">
+          LMS Adoption Metrics Explained | Alphabees
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-white/70 font-geist font-normal leading-relaxed max-w-2xl" style="animation: fadeSlideIn 1s ease-out 0.2s both;">
+          Login numbers and completion rates often obscure actual LMS usage. This article reveals which metrics reflect real adoption and how education leaders can improve them strategically.
+        </p>
+
+        <!-- Hero image -->
+        <div class="mt-10" style="animation: fadeSlideIn 1s ease-out 0.25s both;">
+          <img src="https://lh3.googleusercontent.com/d/1Cfmcv-qI9gSefmkefXwowtTheWP1-3Om"
+               alt="LMS adoption metrics – dashboard with engagement data and learning progress"
+               class="w-full rounded-t-2xl object-cover max-h-72 sm:max-h-96 shadow-2xl"
+               loading="eager">
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 py-14 sm:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 lg:gap-16">
+
+        <!-- Main Article -->
+        <article class="prose animate-on-scroll" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+
+<p>When educational institutions or organizations invest in a Learning Management System, they expect more than a digital repository for course materials. They expect measurable skill development, better learning outcomes, and a demonstrable contribution to organizational success. After rollout, dashboards quickly display initial numbers: logins, completion rates, time spent. Everything appears active. Yet a crucial question often remains unanswered: Are learners actually using the LMS, or are they only logging in when required?</p>
+
+<p>For decision-makers in education, this distinction is fundamental. Only when genuine adoption occurs does a learning platform deliver its full value. This article explains which metrics are truly meaningful and how modern AI support can help bridge the gap between login and real learning.</p>
+
+<h2>What distinguishes real adoption from superficial usage</h2>
+
+<p>Adoption means more than access. It is not about how many user accounts have been created or how many employees have completed the annual mandatory training. Real adoption manifests when learners regularly return to the platform because they recognize personal value. It shows when leaders actively monitor learning progress and incorporate it into development conversations. And it becomes visible when competencies measurably grow.</p>
+
+<p>A helpful comparison: Signing up for a gym membership is not adoption. A single visit is not adoption. Only regular training with visible progress constitutes real adoption. The same principle applies to learning platforms.</p>
+
+<p>Login data alone can therefore be misleading. When learners only log in during mandatory training periods, usage appears high in certain months and drops off afterward. This pattern merely shows compliance. More meaningful is the rate of active users over longer periods: How many learners log in weekly or monthly? Do they return voluntarily? Consistent usage over months indicates stronger adoption.</p>
+
+<h2>Why activity does not equal engagement</h2>
+
+<p>Dashboards often highlight completion rates and total learning time. These numbers look impressive in presentations. Yet activity does not automatically mean engagement. When learners merely click through slides to mark a course as complete, no sustainable learning takes place.</p>
+
+<p>The situation differs when learners voluntarily enroll in optional programs, explore new subject areas, or follow structured learning paths. These behaviors signal genuine interest. Completion rates should therefore always be viewed in context: Are learners choosing their own courses? Are they continuously progressing through sequential learning paths?</p>
+
+<p>Time spent also deserves differentiated consideration. More time does not automatically mean better learning. When learners struggle with navigation or technical issues, measured time increases while satisfaction decreases. A well-designed learning environment enables focused, productive learning sessions. Healthy engagement often manifests as moderate but regular usage time with relevant content, combined with recurring visits.</p>
+
+<h2>Learning path progression as a trust indicator</h2>
+
+<p>Many learners begin courses with enthusiasm but fail to complete them. Tracking learning path progression helps understand this pattern. When most learners drop off after the first module, something is wrong. The content might seem irrelevant. The structure might be confusing. Or learners may not see how the program connects to their goals.</p>
+
+<p>Conversely, when learners continuously advance from one module to the next and complete structured learning journeys, this demonstrates trust in the system. Progression reflects belief in the value of learning.</p>
+
+<p>This is where an AI tutor can make a decisive difference. When learners receive immediate support during difficulties, dropout probability decreases. An intelligent learning companion available around the clock with access to specific course content keeps learners in their learning flow. It answers comprehension questions, provides guidance, and motivates continued progress.</p>
+
+<h2>The underestimated role of leaders</h2>
+
+<p>Adoption is not solely the learners' responsibility. Leaders play a central role. When managers regularly log in, review team progress, and discuss development plans, learning becomes part of the performance culture. Metrics on manager engagement, such as login frequency and use of feedback features, reveal whether leadership actively supports the learning culture.</p>
+
+<p>For learners, this functions like an instructor who actively evaluates assignments and provides improvement suggestions. Support increases seriousness and consistency. When leaders remain inactive on the learning platform, adoption often stays limited at the learner level.</p>
+
+<p>For education leaders, this means: Involving instructors, team leads, or training managers in LMS usage is not a nice-to-have but a critical success factor.</p>
+
+<h2>Skill development as the strongest adoption metric</h2>
+
+<p>The most meaningful adoption metric connects directly to competency growth. Are learners closing skill gaps? Are certification rates improving? Are teams developing capabilities aligned with strategic priorities?</p>
+
+<p>When learning platforms effectively track competencies, they become more than course repositories. They become systems for systematic skill development. Competency improvement shows that learning works.</p>
+
+<p>Ultimately, LMS adoption must connect to measurable outcomes. When onboarding time decreases because new employees quickly complete structured programs, adoption delivers value. When sales teams achieve better results after targeted training, learning links to outcomes. When internal promotions increase because employees build new competencies, adoption supports career development.</p>
+
+<h2>Low adoption as a signal, not failure</h2>
+
+<p>Low LMS adoption metrics should not be interpreted as failure. They are signals. They may indicate that learning feels disconnected from daily work. They may show that the platform is difficult to navigate. They may reveal that content is not linked to career development. Or they may point out that leaders are not reinforcing learning.</p>
+
+<p>Every metric tells a story. With low adoption, the solution rarely lies in assigning more courses. Instead, organizations must improve relevance, simplify the user experience, and connect learning to real outcomes.</p>
+
+<p>User experience strongly influences adoption. When learning platforms are intuitive, learners explore more confidently. When onboarding is guided, first impressions improve. When content loads quickly and navigation feels smooth, frustration decreases. Simple technology encourages return visits; complicated technology leads to quiet withdrawal.</p>
+
+<h2>The contribution of intelligent learning support to adoption</h2>
+
+<p>An AI tutor that seamlessly integrates into existing Moodle courses addresses multiple adoption barriers simultaneously. It improves user experience by providing learners with immediate help for comprehension questions. It increases relevance by accessing actual course content and delivering context-specific support. It promotes learning path progression by guiding learners through difficult passages.</p>
+
+<p>For education leaders, this means: Such a learning companion can bridge the gap between technical availability and real adoption. It transforms a passive platform into an active development partner for learners.</p>
+
+<p>LMS adoption metrics are more than numbers on a dashboard. They represent behavior, culture, and development. When measured thoughtfully and used for improvement, they help organizations transform learning platforms into genuine development engines. For decision-makers in education, the central insight is this: Adoption is not defined by usage alone. It is defined by value, consistency, and visible progress. And when these elements align, learning truly begins to create impact.</p>
+
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="not-prose mt-6 mb-2">
+            <details class="faq-item">
+              <summary>
+                Which LMS metrics indicate real adoption rather than mere compliance?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Recurring voluntary logins, learning path progression, and skill development over time indicate real adoption. One-time mandatory logins or pure completion rates provide little meaningful insight.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Why are high completion rates not a reliable indicator of learning success?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Learners can click through courses superficially without internalizing content. Completion rates only become meaningful when combined with skill development and voluntary course participation.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How does manager engagement influence LMS adoption?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">When leaders actively monitor learning progress and incorporate it into development conversations, learner usage increases significantly. Without management support, adoption typically remains superficial.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                What do low LMS adoption scores mean for education leaders?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Low scores signal the need for action, such as lack of content relevance, difficult navigation, or missing connection to career goals. They require targeted optimization rather than more mandatory courses.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How can LMS adoption be linked to business outcomes?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">By measuring metrics like reduced onboarding time, improved sales performance after training, or increasing internal promotions, organizations can demonstrate the learning platform's value contribution.</div>
+            </details>
+          </div>
+
+          <div class="highlight-box mt-10">
+            <p class="text-base mb-4">Discover how the <strong>Alphabees AI Tutor</strong> intelligently extends your Moodle courses – with 24/7 learning support and no new infrastructure costs.</p>
+          </div>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 not-prose">
+            <a href="../features.html"
+               class="inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 transition text-white font-semibold font-geist text-sm rounded-xl px-6 py-3.5 shadow-lg shadow-violet-500/20">
+              Explore the Alphabees AI Tutor features
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside id="blog-sidebar" class="hidden lg:block"></aside>
+
+      </div>
+
+      <!-- Mobile back to blog -->
+      <div class="lg:hidden mt-12 pt-8 border-t border-gray-100">
+        <a href="../blog.html" class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+          Zurück zum Blog
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Newsletter Popup -->
+  <div id="newsletter-popup" class="fixed inset-0 z-[1000] hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+    <div class="animate-popup bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
+      <button onclick="closeNewsletterPopup()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+      <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Fast geschafft!</h3>
+      <p class="text-gray-600 text-center mb-6">Wir haben dir eine Bestätigungsmail gesendet. Bitte schau in deinem Posteingang nach und klicke auf den Bestätigungslink.</p>
+      <p class="text-gray-500 text-sm text-center mb-6">💡 Nicht gefunden? Schau auch im Spam-Ordner nach.</p>
+      <button onclick="closeNewsletterPopup()" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-lg transition">Verstanden</button>
+    </div>
+  </div>
+
+  <style>
+    @keyframes popupFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    .animate-popup { animation: popupFadeIn 0.3s ease-out; }
+    #newsletter-popup.flex { display: flex !important; }
+  </style>
+
+  <script>
+    function showNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.add('hidden');
+      popup.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('newsletter-popup').addEventListener('click', function(e) {
+      if (e.target === this) closeNewsletterPopup();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeNewsletterPopup();
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsletterForm = document.querySelector('form[data-sv-form="8647011"]');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('input[name="email_address"]');
+          fetch(this.action, { method: 'POST', body: new FormData(this), mode: 'no-cors' })
+            .finally(() => { showNewsletterPopup(); emailInput.value = ''; });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
