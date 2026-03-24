@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-03-19
+# Last updated: 2026-03-24
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,23 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Training-Umfragen richtig nutzen: So steigern Sie den Erfolg Ihrer Weiterbildung: https://moodle-ai-tutor.alphalearn.ai/de/blog/training-umfragen-strategisch-einsetzen-fuer-wirksame-weiterbildung.html
+- eLearning Outsourcing: Wann es sich lohnt und wie Sie den richtigen Partner finden: https://moodle-ai-tutor.alphalearn.ai/de/blog/elearning-outsourcing-wann-sinnvoll-und-wie-den-richtigen-partner-finden.html
+- LMS erfolgreich implementieren: Best Practices für Bildungsverantwortliche: https://moodle-ai-tutor.alphalearn.ai/de/blog/lms-implementierung-best-practices-fuer-bildungsverantwortliche.html
+- AI Literacy aufbauen: So gelingt die strategische Umsetzung an Hochschulen: https://moodle-ai-tutor.alphalearn.ai/de/blog/ai-literacy-strategisch-aufbauen-taskforce-hochschule.html
+- Agentic AI & No-Code: Wie technische Weiterbildung die Transformation beschleunigt: https://moodle-ai-tutor.alphalearn.ai/de/blog/agentic-ai-no-code-technische-weiterbildung-transformation.html
+- Preboarding in der Weiterbildung: Lernende schon vor Kursstart erfolgreich begleiten: https://moodle-ai-tutor.alphalearn.ai/de/blog/preboarding-in-der-weiterbildung-lernende-vor-kursstart-begleiten.html
+- LMS Adoption messen: Die wichtigsten Metriken einfach erklärt: https://moodle-ai-tutor.alphalearn.ai/de/blog/lms-adoption-metriken-erklaert.html
+- Onboarding-Plan erstellen: Strategien für eine strukturierte Weiterbildung: https://moodle-ai-tutor.alphalearn.ai/de/blog/onboarding-plan-strukturiert-gestalten-strategien-fuer-bildungsverantwortliche.html
+- Outcome-orientierte Lernplattformen: So machen Sie Lernergebnisse messbar: https://moodle-ai-tutor.alphalearn.ai/de/blog/outcome-orientierte-lernplattformen-messbare-lernergebnisse.html
+- Generative KI im Workplace Learning: Wie Sie Urteilsvermögen gezielt trainieren: https://moodle-ai-tutor.alphalearn.ai/de/blog/generative-ki-workplace-learning-urteilsvermoegen-trainieren.html
+- Lerntheorien im Überblick: Die Grundlage für KI-gestütztes Lernen: https://moodle-ai-tutor.alphalearn.ai/de/blog/lerntheorien-im-ueberblick-fundament-fuer-ki-gestuetztes-lernen.html
+- Hochschulfinanzierung in der Krise: Wie KI fehlende Lehrkapazitäten ausgleicht: https://moodle-ai-tutor.alphalearn.ai/de/blog/hochschulfinanzierung-krise-ki-loesungen-lehrkapazitaet.html
+- KI-Tutorielle Systeme an Hochschulen: Erkenntnisse aus der Bayern-Studie: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-tutorielle-systeme-hochschulen-bayern-studie.html
+- Modernisierte Berufsausbildung: Warum Einstiegsgehälter steigen: https://moodle-ai-tutor.alphalearn.ai/de/blog/modernisierte-berufsausbildung-hoehere-einstiegsgehaelter.html
+- Generative KI im Learning Design: Kontrolliert und effektiv einsetzen: https://moodle-ai-tutor.alphalearn.ai/de/blog/generative-ki-im-learning-design-kontrolliert-einsetzen.html
+- PowerPoint zu SCORM mit KI: Der effiziente Workflow für Bildungsverantwortliche: https://moodle-ai-tutor.alphalearn.ai/de/blog/powerpoint-zu-scorm-mit-ki-workflow-fuer-bildungsverantwortliche.html
+- Enterprise LMS auswählen: Die wichtigsten Kriterien für Bildungsverantwortliche: https://moodle-ai-tutor.alphalearn.ai/de/blog/enterprise-lms-auswahl-kriterien-fuer-bildungsverantwortliche.html
 - KI-Tutor-Guide für Bildungsanbieter 2026: https://moodle-ai-tutor.alphalearn.ai/de/ki-tutor-guide-bildungsanbieter-deutschland-2026.html
 - Self-Hosting von KI-Tutoren — Kosten-Analyse: https://moodle-ai-tutor.alphalearn.ai/de/wann-lohnt-sich-self-hosting-ki-tutoren.html
 - LLM Kostenrechner (Cloud vs. Self-Hosting): https://moodle-ai-tutor.alphalearn.ai/de/llm-kostenrechner.html
@@ -70,6 +87,23 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Using Training Surveys Strategically For Effective Professional Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/using-training-surveys-strategically-for-effective-professional-development.html
+- Elearning Outsourcing When It Makes Sense And How To Find The Right Partner: https://moodle-ai-tutor.alphalearn.ai/en/blog/elearning-outsourcing-when-it-makes-sense-and-how-to-find-the-right-partner.html
+- Lms Implementation Best Practices For Education Leaders: https://moodle-ai-tutor.alphalearn.ai/en/blog/lms-implementation-best-practices-for-education-leaders.html
+- Building Ai Literacy Strategically Taskforce Approach Universities: https://moodle-ai-tutor.alphalearn.ai/en/blog/building-ai-literacy-strategically-taskforce-approach-universities.html
+- Agentic Ai No Code Technical Training Transformation: https://moodle-ai-tutor.alphalearn.ai/en/blog/agentic-ai-no-code-technical-training-transformation.html
+- Preboarding In Continuing Education Supporting Learners Before Course Start: https://moodle-ai-tutor.alphalearn.ai/en/blog/preboarding-in-continuing-education-supporting-learners-before-course-start.html
+- Lms Adoption Metrics Explained: https://moodle-ai-tutor.alphalearn.ai/en/blog/lms-adoption-metrics-explained.html
+- Structured Onboarding Plan Strategies For Education Leaders: https://moodle-ai-tutor.alphalearn.ai/en/blog/structured-onboarding-plan-strategies-for-education-leaders.html
+- Outcome Oriented Learning Platforms Measurable Learning Outcomes: https://moodle-ai-tutor.alphalearn.ai/en/blog/outcome-oriented-learning-platforms-measurable-learning-outcomes.html
+- Generative Ai Workplace Learning Training Judgment: https://moodle-ai-tutor.alphalearn.ai/en/blog/generative-ai-workplace-learning-training-judgment.html
+- Learning Theories Overview Foundation For Ai Assisted Learning: https://moodle-ai-tutor.alphalearn.ai/en/blog/learning-theories-overview-foundation-for-ai-assisted-learning.html
+- Higher Education Funding Crisis Ai Solutions Teaching Capacity: https://moodle-ai-tutor.alphalearn.ai/en/blog/higher-education-funding-crisis-ai-solutions-teaching-capacity.html
+- Ai Tutorial Systems Universities Bavaria Study: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-tutorial-systems-universities-bavaria-study.html
+- Modernized Vocational Training Higher Starting Salaries: https://moodle-ai-tutor.alphalearn.ai/en/blog/modernized-vocational-training-higher-starting-salaries.html
+- Using Generative Ai In Learning Design Responsibly: https://moodle-ai-tutor.alphalearn.ai/en/blog/using-generative-ai-in-learning-design-responsibly.html
+- Powerpoint To Scorm With Ai Workflow For Education Leaders: https://moodle-ai-tutor.alphalearn.ai/en/blog/powerpoint-to-scorm-with-ai-workflow-for-education-leaders.html
+- Enterprise Lms Selection Criteria For Education Leaders: https://moodle-ai-tutor.alphalearn.ai/en/blog/enterprise-lms-selection-criteria-for-education-leaders.html
 - AI Tutor Guide for Education Providers 2026: https://moodle-ai-tutor.alphalearn.ai/en/ai-tutor-guide-education-providers-2026.html
 - Self-Hosting AI Tutors — Cost Analysis: https://moodle-ai-tutor.alphalearn.ai/en/self-hosting-ai-tutors-worth-it.html
 - LLM Cost Calculator (Cloud vs. Self-Hosting): https://moodle-ai-tutor.alphalearn.ai/en/llm-cost-calculator.html
