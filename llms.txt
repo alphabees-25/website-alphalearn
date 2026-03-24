@@ -31,6 +31,7 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 - Training-Umfragen richtig nutzen: So steigern Sie den Erfolg Ihrer Weiterbildung: https://moodle-ai-tutor.alphalearn.ai/de/blog/training-umfragen-strategisch-einsetzen-fuer-wirksame-weiterbildung.html
 - eLearning Outsourcing: Wann es sich lohnt und wie Sie den richtigen Partner finden: https://moodle-ai-tutor.alphalearn.ai/de/blog/elearning-outsourcing-wann-sinnvoll-und-wie-den-richtigen-partner-finden.html
 - LMS erfolgreich implementieren: Best Practices für Bildungsverantwortliche: https://moodle-ai-tutor.alphalearn.ai/de/blog/lms-implementierung-best-practices-fuer-bildungsverantwortliche.html
+- AI Literacy an Hochschulen strategisch aufbauen: https://moodle-ai-tutor.alphalearn.ai/de/blog/ai-literacy-an-hochschulen-strategisch-aufbauen.html
 - AI Literacy aufbauen: So gelingt die strategische Umsetzung an Hochschulen: https://moodle-ai-tutor.alphalearn.ai/de/blog/ai-literacy-strategisch-aufbauen-taskforce-hochschule.html
 - Agentic AI & No-Code: Wie technische Weiterbildung die Transformation beschleunigt: https://moodle-ai-tutor.alphalearn.ai/de/blog/agentic-ai-no-code-technische-weiterbildung-transformation.html
 - Preboarding in der Weiterbildung: Lernende schon vor Kursstart erfolgreich begleiten: https://moodle-ai-tutor.alphalearn.ai/de/blog/preboarding-in-der-weiterbildung-lernende-vor-kursstart-begleiten.html
@@ -112,7 +113,7 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 - AI Training for Teachers in NRW: Lessons for Education Leaders: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-training-teachers-nrw-lessons-for-education-leaders.html
 - Cognitive Learning Theory in E-Learning: Principles for Lasting Success: https://moodle-ai-tutor.alphalearn.ai/en/blog/cognitive-learning-theory-in-e-learning-principles-for-lasting-success.html
 - Corporate Learning Camp 2026: Insights for Modern Professional Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/corporate-learning-camp-2026-insights-for-modern-professional-development.html
-- Corporate Training Scaling with AI Support: https://moodle-ai-tutor.alphalearn.ai/en/blog/corporate-training-skalierung-ki-unterstuetzung.html
+- Scaling Corporate Training: How AI Supports L&D: https://moodle-ai-tutor.alphalearn.ai/en/blog/corporate-training-scaling-ai-support.html
 - Customer Enablement Strategy for Education Providers: https://moodle-ai-tutor.alphalearn.ai/en/blog/customer-enablement-strategy-education-providers.html
 - Goodbye Happy Sheets: How to Measure Training ROI: https://moodle-ai-tutor.alphalearn.ai/en/blog/goodbye-happy-sheets-how-to-measure-training-roi.html
 - The Herrenberg Ruling: Universities, Adjunct Lecturers and AI Solutions: https://moodle-ai-tutor.alphalearn.ai/en/blog/herrenberg-ruling-universities-adjunct-lecturers-ai-solutions.html
