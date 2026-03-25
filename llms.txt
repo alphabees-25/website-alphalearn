@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-03-24
+# Last updated: 2026-03-25
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,11 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Studium ohne Abitur: Rekordwerte 2024 | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/studium-ohne-abitur-rekordwerte-und-chancen-fuer-bildungsanbieter.html
+- Interpersonelles Lernen mit KI-Tutor optimieren | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/interpersonelles-lernen-ki-tutor-weiterbildung.html
+- Support-Tickets als Frühwarnsystem für Schulungslücken | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/support-tickets-als-fruehwarnsystem-fuer-schulungsluecken.html
+- Persönliches Wissensmanagement mit KI | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/persoenliches-wissensmanagement-mit-ki-chancen-fuer-die-weiterbildung.html
+- Persönliches Wissensmanagement mit KI-Tutor | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/persoenliches-wissensmanagement-ki-tutor-unterstuetzung.html
 - Training-Umfragen richtig nutzen: So steigern Sie den Erfolg Ihrer Weiterbildung: https://moodle-ai-tutor.alphalearn.ai/de/blog/training-umfragen-strategisch-einsetzen-fuer-wirksame-weiterbildung.html
 - eLearning Outsourcing: Wann es sich lohnt und wie Sie den richtigen Partner finden: https://moodle-ai-tutor.alphalearn.ai/de/blog/elearning-outsourcing-wann-sinnvoll-und-wie-den-richtigen-partner-finden.html
 - LMS erfolgreich implementieren: Best Practices für Bildungsverantwortliche: https://moodle-ai-tutor.alphalearn.ai/de/blog/lms-implementierung-best-practices-fuer-bildungsverantwortliche.html
@@ -88,6 +93,11 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Studying Without Abitur Record Numbers Opportunities For Education Providers: https://moodle-ai-tutor.alphalearn.ai/en/blog/studying-without-abitur-record-numbers-opportunities-for-education-providers.html
+- Interpersonal Learning Ai Tutor Professional Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/interpersonal-learning-ai-tutor-professional-development.html
+- Support Tickets As Early Warning System For Training Gaps: https://moodle-ai-tutor.alphalearn.ai/en/blog/support-tickets-as-early-warning-system-for-training-gaps.html
+- Personal Knowledge Management With Ai Opportunities For Professional Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/personal-knowledge-management-with-ai-opportunities-for-professional-development.html
+- Personal Knowledge Management Ai Tutor Support: https://moodle-ai-tutor.alphalearn.ai/en/blog/personal-knowledge-management-ai-tutor-support.html
 - Using Training Surveys Strategically For Effective Professional Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/using-training-surveys-strategically-for-effective-professional-development.html
 - Elearning Outsourcing When It Makes Sense And How To Find The Right Partner: https://moodle-ai-tutor.alphalearn.ai/en/blog/elearning-outsourcing-when-it-makes-sense-and-how-to-find-the-right-partner.html
 - Lms Implementation Best Practices For Education Leaders: https://moodle-ai-tutor.alphalearn.ai/en/blog/lms-implementation-best-practices-for-education-leaders.html
