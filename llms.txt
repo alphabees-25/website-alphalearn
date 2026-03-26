@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-03-25
+# Last updated: 2026-03-26
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,9 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Cross-Training für Mitarbeiter: Flexibilität und Resilienz | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/cross-training-mitarbeiter-flexibilitaet-resilienz-bildungsorganisationen.html
+- Lernen als fehlende Ebene digitaler Transformation | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/lernen-als-fehlende-ebene-digitale-transformation.html
+- E-Learning-Blog-Autorität aufbauen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/elearning-blog-autoritaet-aufbauen-content-strategie.html
 - Studium ohne Abitur: Rekordwerte 2024 | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/studium-ohne-abitur-rekordwerte-und-chancen-fuer-bildungsanbieter.html
 - Interpersonelles Lernen mit KI-Tutor optimieren | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/interpersonelles-lernen-ki-tutor-weiterbildung.html
 - Support-Tickets als Frühwarnsystem für Schulungslücken | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/support-tickets-als-fruehwarnsystem-fuer-schulungsluecken.html
@@ -93,6 +96,9 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Cross Training Employees Flexibility Resilience Educational Organizations: https://moodle-ai-tutor.alphalearn.ai/en/blog/cross-training-employees-flexibility-resilience-educational-organizations.html
+- Learning As Missing Layer Digital Transformation: https://moodle-ai-tutor.alphalearn.ai/en/blog/learning-as-missing-layer-digital-transformation.html
+- Elearning Blog Authority Content Strategy: https://moodle-ai-tutor.alphalearn.ai/en/blog/elearning-blog-authority-content-strategy.html
 - Studying Without Abitur Record Numbers Opportunities For Education Providers: https://moodle-ai-tutor.alphalearn.ai/en/blog/studying-without-abitur-record-numbers-opportunities-for-education-providers.html
 - Interpersonal Learning Ai Tutor Professional Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/interpersonal-learning-ai-tutor-professional-development.html
 - Support Tickets As Early Warning System For Training Gaps: https://moodle-ai-tutor.alphalearn.ai/en/blog/support-tickets-as-early-warning-system-for-training-gaps.html
