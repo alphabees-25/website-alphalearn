@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-03-26
+# Last updated: 2026-03-27
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,11 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Herrenberg-Urteil: Rechtssicherheit für Lehrbeauftragte | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/herrenberg-urteil-lehrbeauftragte-hochschulen-rechtssicherheit.html
+- Qualitätsstandards für Custom Learning Content | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/custom-learning-content-qualitaetsstandards-weiterbildung.html
+- Timelines im Lerndesign für Bildungsverantwortliche | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/timelines-im-lerndesign-einsatzmoeglichkeiten-fuer-bildungsverantwortliche.html
+- E-Learning Kompetenzentwicklung: Digitale Weiterbildung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/elearning-kompetenzentwicklung-workforce-digitale-weiterbildung.html
+- Industriemeister Metall: Weiterbildung KI-gestützt | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/industriemeister-metall-weiterbildung-ki-gestuetzt-begleiten.html
 - Cross-Training für Mitarbeiter: Flexibilität und Resilienz | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/cross-training-mitarbeiter-flexibilitaet-resilienz-bildungsorganisationen.html
 - Lernen als fehlende Ebene digitaler Transformation | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/lernen-als-fehlende-ebene-digitale-transformation.html
 - E-Learning-Blog-Autorität aufbauen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/elearning-blog-autoritaet-aufbauen-content-strategie.html
@@ -96,6 +101,11 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Herrenberg Ruling Lecturers Universities Legal Certainty: https://moodle-ai-tutor.alphalearn.ai/en/blog/herrenberg-ruling-lecturers-universities-legal-certainty.html
+- Custom Learning Content Quality Standards Professional Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/custom-learning-content-quality-standards-professional-development.html
+- Timelines In Learning Design Applications For Education Leaders: https://moodle-ai-tutor.alphalearn.ai/en/blog/timelines-in-learning-design-applications-for-education-leaders.html
+- Elearning Competency Development Workforce Digital Training: https://moodle-ai-tutor.alphalearn.ai/en/blog/elearning-competency-development-workforce-digital-training.html
+- Industrial Master Metalworking Ai Supported Training: https://moodle-ai-tutor.alphalearn.ai/en/blog/industrial-master-metalworking-ai-supported-training.html
 - Cross Training Employees Flexibility Resilience Educational Organizations: https://moodle-ai-tutor.alphalearn.ai/en/blog/cross-training-employees-flexibility-resilience-educational-organizations.html
 - Learning As Missing Layer Digital Transformation: https://moodle-ai-tutor.alphalearn.ai/en/blog/learning-as-missing-layer-digital-transformation.html
 - Elearning Blog Authority Content Strategy: https://moodle-ai-tutor.alphalearn.ai/en/blog/elearning-blog-authority-content-strategy.html
