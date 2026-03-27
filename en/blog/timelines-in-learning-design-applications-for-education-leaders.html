@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/1MVTjzMVIdgQHlQKtDxYdjTQFiQcNusIh">
+  <meta property="og:image:width" content="2640">
+  <meta property="og:image:height" content="1430">
+  <meta property="og:title" content="Timelines in Learning Design for Education Leaders | Alphabees">
+  <meta property="og:description" content="Discover how timelines structure onboarding, course development, and learning paths. Practical tips for decision-makers in education.">
+  <meta property="og:url" content="https://moodle-ai-tutor.alphalearn.ai/en/blog/timelines-in-learning-design-applications-for-education-leaders.html">
+  <meta name="twitter:title" content="Timelines in Learning Design for Education Leaders | Alphabees">
+  <meta name="twitter:description" content="Discover how timelines structure onboarding, course development, and learning paths. Practical tips for decision-makers in education.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1MVTjzMVIdgQHlQKtDxYdjTQFiQcNusIh">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Timelines in Learning Design for Education Leaders | Alphabees</title>
+  <meta name="description" content="Discover how timelines structure onboarding, course development, and learning paths. Practical tips for decision-makers in education.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/timelines-in-learning-design-applications-for-education-leaders.html">
+  <link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/timelines-im-lerndesign-einsatzmoeglichkeiten-fuer-bildungsverantwortliche.html">
+  <link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/timelines-in-learning-design-applications-for-education-leaders.html">
+  <link rel="alternate" hreflang="x-default" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/timelines-im-lerndesign-einsatzmoeglichkeiten-fuer-bildungsverantwortliche.html">
+  <meta name="geo.region" content="DE">
+  <meta name="geo.country" content="DE">
+  <meta name="geo.placename" content="Deutschland">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes fadeSlideIn {
+      0%   { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+      40%  { opacity: 0.9; transform: translateY(0); filter: blur(0px); }
+      100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+    }
+    .animate-on-scroll { animation-play-state: paused !important; }
+    .animate-on-scroll.animate { animation-play-state: running !important; }
+    html, body { overflow-x: hidden; width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* Article typography */
+    .prose h2 {
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: #111827;
+      margin-top: 2.5rem;
+      margin-bottom: 0.875rem;
+      line-height: 1.3;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose p {
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+    .prose ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .prose ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+    .prose ul li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: #6366f1;
+      margin-top: 0.6em;
+    }
+    .prose blockquote {
+      border-left: 3px solid #6366f1;
+      padding: 0.75rem 1.25rem;
+      margin: 1.75rem 0;
+      background: #f5f3ff;
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+    .prose blockquote p {
+      color: #4338ca;
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .prose .highlight-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .prose .highlight-box p {
+      margin-bottom: 0;
+      color: #1e40af;
+      font-weight: 500;
+    }
+    .prose strong {
+      color: #111827;
+      font-weight: 600;
+    }
+  
+      /* FAQ Accordion */
+      .faq-item { border: 1px solid #e5e7eb; border-radius: 0.75rem; overflow: hidden; margin-bottom: 0.625rem; }
+      .faq-item summary { list-style: none; cursor: pointer; padding: 1rem 1.25rem; font-size: 0.9375rem; font-weight: 600; color: #111827; font-family: 'Geist', sans-serif; display: flex; justify-content: space-between; align-items: center; gap: 1rem; user-select: none; background: #f9fafb; transition: background 0.15s; }
+      .faq-item summary::-webkit-details-marker { display: none; }
+      .faq-item summary:hover { background: #f3f4f6; }
+      .faq-item[open] summary { background: #ede9fe; color: #5b21b6; }
+      .faq-item summary .faq-icon { width: 20px; height: 20px; min-width: 20px; border-radius: 50%; background: #e5e7eb; display: flex; align-items: center; justify-content: center; transition: background 0.15s, transform 0.2s; }
+      .faq-item[open] summary .faq-icon { background: #7c3aed; transform: rotate(45deg); }
+      .faq-item[open] summary .faq-icon svg { stroke: #fff; }
+      .faq-item .faq-body { padding: 1rem 1.25rem 1.25rem; color: #374151; font-size: 0.9375rem; line-height: 1.75; border-top: 1px solid #e5e7eb; }
+      /* Definition Lists */
+      .prose dl { margin: 1rem 0 1.5rem 0; }
+      .prose dt { font-weight: 600; color: #111827; font-size: 1rem; margin-top: 1.25rem; margin-bottom: 0.25rem; font-family: 'Geist', sans-serif; }
+      .prose dd { color: #374151; font-size: 1rem; line-height: 1.75; margin-left: 0; padding-left: 1rem; border-left: 2px solid #6366f1; }
+  </style>
+  <script>
+    (function () {
+      const style = document.createElement('style');
+      style.textContent = `.animate-on-scroll { animation-play-state: paused !important; } .animate-on-scroll.animate { animation-play-state: running !important; }`;
+      document.head.appendChild(style);
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+              window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0 });
+      }
+      window.initInViewAnimations = function (selector = '.animate-on-scroll') {
+        document.querySelectorAll(selector).forEach((el) => { window.__inViewIO.observe(el); });
+      };
+      document.addEventListener('DOMContentLoaded', () => {
+        initInViewAnimations();
+        // Fallback: force-animate any elements the observer missed (iOS Safari / mobile quirks)
+        setTimeout(() => {
+          document.querySelectorAll('.animate-on-scroll:not(.animate)').forEach(el => el.classList.add('animate'));
+        }, 1000);
+      });
+    })();
+  </script>
+  <script src="/assets/js/layout.js" defer></script>
+</head>
+<body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
+
+  <!-- Global Header -->
+  <div id="site-header"></div>
+
+  <main class="relative">
+
+    <!-- Hero Banner -->
+    <div class="relative bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 overflow-hidden">
+      <!-- Decorative blobs -->
+      <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-fuchsia-400/10 blur-3xl pointer-events-none"></div>
+
+      <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 pt-24 pb-0 sm:pt-32 sm:pb-0 relative">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 mb-8 text-sm text-white/60 font-geist" style="animation: fadeSlideIn 1s ease-out 0.05s both;">
+          <a href="../index.html" class="hover:text-white transition">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <a href="../blog.html" class="hover:text-white transition">Blog</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <span class="text-white/40">Artikel</span>
+        </nav>
+
+        <!-- Category + meta -->
+        <div class="flex flex-wrap items-center gap-3 mb-6" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+          <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-white text-xs font-semibold font-geist">Practice</span>
+          <span class="text-white/50 text-sm font-geist">March 2026</span>
+          <span class="w-1 h-1 rounded-full bg-white/30"></span>
+          <span class="text-white/50 text-sm font-geist">12 Min. Lesezeit</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white font-geist leading-[1.15] tracking-tight mb-5" style="animation: fadeSlideIn 1s ease-out 0.15s both;">
+          Timelines in Learning Design for Education Leaders | Alphabees
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-white/70 font-geist font-normal leading-relaxed max-w-2xl" style="animation: fadeSlideIn 1s ease-out 0.2s both;">
+          Timelines help education leaders structure complex learning processes clearly and communicate them transparently to stakeholders. This article presents practical applications for onboarding, course development, and strategic planning.
+        </p>
+
+        <!-- Hero image -->
+        <div class="mt-10" style="animation: fadeSlideIn 1s ease-out 0.25s both;">
+          <img src="https://lh3.googleusercontent.com/d/1MVTjzMVIdgQHlQKtDxYdjTQFiQcNusIh"
+               alt="Timelines in learning design – visual representation of a structured learning path"
+               class="w-full rounded-t-2xl object-cover max-h-72 sm:max-h-96 shadow-2xl"
+               loading="eager">
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 py-14 sm:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 lg:gap-16">
+
+        <!-- Main Article -->
+        <article class="prose animate-on-scroll" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+
+<p>Designing learning programs requires clear structures. Whether onboarding new employees, developing a multi-month professional development program, or strategically planning an academy – education leaders face the challenge of making complex processes understandable. Timelines offer a proven tool for this purpose: they visualize what happens when and how individual steps connect.</p>
+
+<p>For decision-makers at universities, academies, or companies with their own training and development programs, timelines are more than just project management aids. They serve internal coordination, stakeholder communication, and quality assurance of learning processes. This article shows how timelines can be used in learning design and which formats suit different requirements.</p>
+
+<h2>What Timelines Accomplish in Education</h2>
+
+<p>A timeline is a visual representation of events, milestones, or tasks along a time axis. In education, timelines fulfill several functions simultaneously:</p>
+
+<dl>
+<dt>Structuring learning paths:</dt>
+<dd>Timelines show how knowledge is built step by step – from foundational modules to advanced content.</dd>
+<dt>Project planning:</dt>
+<dd>When developing new courses or implementing digital learning platforms, timelines help keep track of deadlines and dependencies.</dd>
+<dt>Stakeholder communication:</dt>
+<dd>Decision-makers can use timelines to transparently present to committees, funding bodies, or executive management how a program is structured and what results are expected at which point in time.</dd>
+</dl>
+
+<p>The strength of timelines lies in their clarity. Instead of lengthy text documents or complex tables, they convey essential information at a glance. This saves time in coordination meetings and reduces misunderstandings.</p>
+
+<h2>Applications for Timelines in Learning Design</h2>
+
+<p>Different timeline formats are used depending on the context. Three areas are particularly relevant for education leaders:</p>
+
+<h3>Onboarding and Orientation</h3>
+
+<p>Structured onboarding significantly determines how quickly new employees or students become productive. An onboarding timeline can divide the first 90 days into clear phases: orientation, professional training, and initial independent tasks. Each phase contains defined milestones and learning objectives.</p>
+
+<p>For academies and professional development providers, similar structures can be applied to participants. A visual representation of the learning journey helps manage expectations and makes progress trackable.</p>
+
+<h3>Course Development and Program Rollouts</h3>
+
+<p>Developing a new course or launching a professional development program involves numerous steps: needs analysis, conception, content creation, pilot phase, and finally the broad rollout. A project timeline makes these phases visible and shows which tasks can run in parallel and where dependencies exist.</p>
+
+<p>Especially when multiple departments collaborate – such as the subject area, IT, and instructional design – a shared timeline creates accountability. All participants see when their input is needed and how delays affect the overall plan.</p>
+
+<h3>Strategic Planning and Reporting</h3>
+
+<p>Timelines are also suitable for presenting longer-term developments. A university can, for example, visualize the digital transformation of its teaching over several years: from introducing an LMS to integrating AI-powered tools to the widespread use of adaptive learning formats.</p>
+
+<p>In presentations to decision-making bodies or in funding applications, such timelines help make the strategic vision tangible. They connect past achievements with planned measures and show a coherent development path.</p>
+
+<h2>Design Principles for Effective Timelines</h2>
+
+<p>A timeline only fulfills its purpose when it is understandable and relevant. Several principles help with the design:</p>
+
+<ul>
+<li><strong>Clarity over aesthetics:</strong> The most important milestones should be immediately recognizable. Overloaded presentations with too many details confuse more than they help.</li>
+<li><strong>Choose the appropriate format:</strong> A linear timeline is suitable for simple processes. For complex projects with parallel work streams, a Gantt chart is more appropriate. Interactive timelines are ideal when learners should navigate through the content themselves.</li>
+<li><strong>Consider the target audience:</strong> A timeline for the project team can be more detailed than a version for executive management. The latter should focus on strategic milestones.</li>
+<li><strong>Ensure accessibility:</strong> High-contrast colors, readable font sizes, and avoiding purely color-coded information ensure that the timeline is accessible to everyone.</li>
+</ul>
+
+<h2>Tools for Creating Timelines</h2>
+
+<p>The choice of tool depends on the intended use. For presentations to stakeholders, PowerPoint is a good option: SmartArt graphics allow for quickly creating clear timelines that can be adapted to corporate design guidelines.</p>
+
+<p>Excel is better suited for operational project planning. Here, tasks, start and end dates, and responsibilities can be recorded in tabular form and visualized as bar charts. The advantage: the timeline can be continuously updated and shared with the team.</p>
+
+<p>For visually appealing presentations without in-depth design knowledge, tools like Canva are available. Numerous templates enable quick creation of timelines suitable for marketing materials or public-facing documents.</p>
+
+<p>Finally, Google Docs enables collaborative work on simple timelines. Using tables or inserted drawings, teams can work together on planning – particularly useful in early project phases.</p>
+
+<h2>Timelines and AI-Powered Learning Support</h2>
+
+<p>The visualization of learning paths gains additional significance when digital learning companions come into play. An AI tutor integrated into an existing LMS like Moodle can guide an individual learner's progress along a defined timeline.</p>
+
+<p>Instead of just providing content, the AI tutor actively supports achieving milestones: it answers questions about current modules, points out upcoming deadlines, and helps with reviewing content that has not yet been consolidated. The timeline thus transforms from a static planning document into a dynamic orientation framework for personalized learning.</p>
+
+<p>For education leaders, this means: the investment in well-structured learning paths pays off twice. They not only facilitate internal planning but also form the foundation for intelligent, adaptive learning systems.</p>
+
+<h2>Conclusion</h2>
+
+<p>Timelines are a versatile tool for anyone who plans, implements, and communicates learning processes. They create transparency, facilitate coordination between various stakeholders, and help present complex programs in an understandable way. The choice of the right format and tool depends on the specific use case – from internal project planning to stakeholder presentations. Combined with AI-powered learning companions, structured learning paths become the foundation for personalized, adaptive educational offerings that support learners around the clock.</p>
+
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="not-prose mt-6 mb-2">
+            <details class="faq-item">
+              <summary>
+                How do timelines help with planning onboarding programs?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Timelines visualize all onboarding phases chronologically and show dependencies between individual steps. This helps education leaders maintain oversight and identify bottlenecks early.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Which tools are suitable for creating learning timelines?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">PowerPoint works well for presentations, Excel for data-based project planning, and Canva for visually appealing designs. The choice depends on the intended use and target audience.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Can timelines be integrated into an LMS?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Yes, modern learning platforms like Moodle enable the display of learning paths as visual timelines. AI tutors can additionally guide individual progress along these time axes.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                What distinguishes linear from branched timelines?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Linear timelines show a fixed sequence of events, while branched timelines enable different paths depending on role or learning objective. Branched formats are particularly suited for personalized learning journeys.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How do timelines support communication with stakeholders?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Timelines translate complex learning programs into understandable visualizations. Decision-makers can see milestones, timeframes, and expected outcomes at a glance.</div>
+            </details>
+          </div>
+
+          <div class="highlight-box mt-10">
+            <p class="text-base mb-4">Discover how the <strong>Alphabees AI Tutor</strong> intelligently extends your Moodle courses – with 24/7 learning support and no new infrastructure costs.</p>
+          </div>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 not-prose">
+            <a href="../features.html"
+               class="inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 transition text-white font-semibold font-geist text-sm rounded-xl px-6 py-3.5 shadow-lg shadow-violet-500/20">
+              Explore the Alphabees AI Tutor features
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside id="blog-sidebar" class="hidden lg:block"></aside>
+
+      </div>
+
+      <!-- Mobile back to blog -->
+      <div class="lg:hidden mt-12 pt-8 border-t border-gray-100">
+        <a href="../blog.html" class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+          Zurück zum Blog
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Newsletter Popup -->
+  <div id="newsletter-popup" class="fixed inset-0 z-[1000] hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+    <div class="animate-popup bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
+      <button onclick="closeNewsletterPopup()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+      <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Fast geschafft!</h3>
+      <p class="text-gray-600 text-center mb-6">Wir haben dir eine Bestätigungsmail gesendet. Bitte schau in deinem Posteingang nach und klicke auf den Bestätigungslink.</p>
+      <p class="text-gray-500 text-sm text-center mb-6">💡 Nicht gefunden? Schau auch im Spam-Ordner nach.</p>
+      <button onclick="closeNewsletterPopup()" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-lg transition">Verstanden</button>
+    </div>
+  </div>
+
+  <style>
+    @keyframes popupFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    .animate-popup { animation: popupFadeIn 0.3s ease-out; }
+    #newsletter-popup.flex { display: flex !important; }
+  </style>
+
+  <script>
+    function showNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.add('hidden');
+      popup.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('newsletter-popup').addEventListener('click', function(e) {
+      if (e.target === this) closeNewsletterPopup();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeNewsletterPopup();
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsletterForm = document.querySelector('form[data-sv-form="8647011"]');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('input[name="email_address"]');
+          fetch(this.action, { method: 'POST', body: new FormData(this), mode: 'no-cors' })
+            .finally(() => { showNewsletterPopup(); emailInput.value = ''; });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
