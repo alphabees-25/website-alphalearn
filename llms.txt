@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-03-27
+# Last updated: 2026-03-28
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,10 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- KI in der Hochschullehre: Bayerns NewNormal-Initiative | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-in-der-hochschullehre-bayerns-newnormal-initiative-zeigt-wie-digitale-transformation-gelingt.html
+- Soft Skills Training mit KI skalieren | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/soft-skills-training-mit-ki-skalieren.html
+- Ethische KI im Lernen: Innovation und Verantwortung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ethische-ki-im-lernen-innovation-und-verantwortung-in-balance.html
+- KI im E-Learning: Transformation der Weiterbildung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-im-elearning-wie-kuenstliche-intelligenz-die-weiterbildung-transformiert.html
 - Herrenberg-Urteil: Rechtssicherheit für Lehrbeauftragte | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/herrenberg-urteil-lehrbeauftragte-hochschulen-rechtssicherheit.html
 - Qualitätsstandards für Custom Learning Content | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/custom-learning-content-qualitaetsstandards-weiterbildung.html
 - Timelines im Lerndesign für Bildungsverantwortliche | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/timelines-im-lerndesign-einsatzmoeglichkeiten-fuer-bildungsverantwortliche.html
@@ -101,6 +105,10 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Ai In Higher Education Bavarias Newnormal Initiative Shows How Digital Transformation Succeeds: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-in-higher-education-bavarias-newnormal-initiative-shows-how-digital-transformation-succeeds.html
+- Scaling Soft Skills Training With Ai: https://moodle-ai-tutor.alphalearn.ai/en/blog/scaling-soft-skills-training-with-ai.html
+- Ethical Ai In Learning Balancing Innovation And Responsibility: https://moodle-ai-tutor.alphalearn.ai/en/blog/ethical-ai-in-learning-balancing-innovation-and-responsibility.html
+- Ai In Elearning How Artificial Intelligence Transforms Professional Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-in-elearning-how-artificial-intelligence-transforms-professional-development.html
 - Herrenberg Ruling Lecturers Universities Legal Certainty: https://moodle-ai-tutor.alphalearn.ai/en/blog/herrenberg-ruling-lecturers-universities-legal-certainty.html
 - Custom Learning Content Quality Standards Professional Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/custom-learning-content-quality-standards-professional-development.html
 - Timelines In Learning Design Applications For Education Leaders: https://moodle-ai-tutor.alphalearn.ai/en/blog/timelines-in-learning-design-applications-for-education-leaders.html
