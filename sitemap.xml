@@ -1232,4 +1232,70 @@
     <priority>0.7</priority>
   </url>
 
+
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/custom-elearning-skalierbare-unternehmensschulungen.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/custom-elearning-skalierbare-unternehmensschulungen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/custom-elearning-scalable-corporate-training.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/custom-elearning-scalable-corporate-training.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/custom-elearning-skalierbare-unternehmensschulungen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/custom-elearning-scalable-corporate-training.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/onboarding-lms-fuer-unternehmen-worauf-entscheider-achten-sollten.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/onboarding-lms-fuer-unternehmen-worauf-entscheider-achten-sollten.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/onboarding-lms-for-enterprises-what-decision-makers-should-consider.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/onboarding-lms-for-enterprises-what-decision-makers-should-consider.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/onboarding-lms-fuer-unternehmen-worauf-entscheider-achten-sollten.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/onboarding-lms-for-enterprises-what-decision-makers-should-consider.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/schulterblick-mikroformat-kollegiales-lernen-weiterbildung.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/schulterblick-mikroformat-kollegiales-lernen-weiterbildung.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/shoulder-look-microformat-peer-learning-professional-development.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/shoulder-look-microformat-peer-learning-professional-development.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/schulterblick-mikroformat-kollegiales-lernen-weiterbildung.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/shoulder-look-microformat-peer-learning-professional-development.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/gamification-in-der-weiterbildung-spielerische-elemente-fuer-mehr-motivation.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/gamification-in-der-weiterbildung-spielerische-elemente-fuer-mehr-motivation.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/gamification-in-professional-training-playful-elements-for-increased-motivation.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/gamification-in-professional-training-playful-elements-for-increased-motivation.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/gamification-in-der-weiterbildung-spielerische-elemente-fuer-mehr-motivation.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/gamification-in-professional-training-playful-elements-for-increased-motivation.html"/>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
