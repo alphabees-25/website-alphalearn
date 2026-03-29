@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-03-28
+# Last updated: 2026-03-29
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,10 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Custom eLearning: Skalierbare Unternehmensschulungen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/custom-elearning-skalierbare-unternehmensschulungen.html
+- Onboarding-LMS für Unternehmen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/onboarding-lms-fuer-unternehmen-worauf-entscheider-achten-sollten.html
+- Schulterblick als Mikroformat für kollegiales Lernen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/schulterblick-mikroformat-kollegiales-lernen-weiterbildung.html
+- Gamification in der Weiterbildung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/gamification-in-der-weiterbildung-spielerische-elemente-fuer-mehr-motivation.html
 - KI in der Hochschullehre: Bayerns NewNormal-Initiative | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-in-der-hochschullehre-bayerns-newnormal-initiative-zeigt-wie-digitale-transformation-gelingt.html
 - Soft Skills Training mit KI skalieren | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/soft-skills-training-mit-ki-skalieren.html
 - Ethische KI im Lernen: Innovation und Verantwortung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ethische-ki-im-lernen-innovation-und-verantwortung-in-balance.html
@@ -105,6 +109,10 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Custom Elearning Scalable Corporate Training: https://moodle-ai-tutor.alphalearn.ai/en/blog/custom-elearning-scalable-corporate-training.html
+- Onboarding Lms For Enterprises What Decision Makers Should Consider: https://moodle-ai-tutor.alphalearn.ai/en/blog/onboarding-lms-for-enterprises-what-decision-makers-should-consider.html
+- Shoulder Look Microformat Peer Learning Professional Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/shoulder-look-microformat-peer-learning-professional-development.html
+- Gamification In Professional Training Playful Elements For Increased Motivation: https://moodle-ai-tutor.alphalearn.ai/en/blog/gamification-in-professional-training-playful-elements-for-increased-motivation.html
 - Ai In Higher Education Bavarias Newnormal Initiative Shows How Digital Transformation Succeeds: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-in-higher-education-bavarias-newnormal-initiative-shows-how-digital-transformation-succeeds.html
 - Scaling Soft Skills Training With Ai: https://moodle-ai-tutor.alphalearn.ai/en/blog/scaling-soft-skills-training-with-ai.html
 - Ethical Ai In Learning Balancing Innovation And Responsibility: https://moodle-ai-tutor.alphalearn.ai/en/blog/ethical-ai-in-learning-balancing-innovation-and-responsibility.html
