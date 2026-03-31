@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-03-30
+# Last updated: 2026-03-31
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,10 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Fachkräftemangel Soziale Arbeit: Hochschulen reagieren | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/fachkraeftemangel-soziale-arbeit-hochschulen-kapazitaeten-ausbauen.html
+- Training-Checklisten für Onboarding und Weiterbildung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/training-checklisten-onboarding-weiterbildung-leitfaden.html
+- Mitarbeiterfluktuation senken durch zentrale Lernplattform | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/mitarbeiterfluktuation-senken-durch-zentrale-lernplattform.html
+- Rapid eLearning als Reaktionssystem für Unternehmen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/rapid-elearning-als-reaktionssystem-fuer-unternehmen.html
 - KI-gestützte LMS für Corporate Learning | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-lms-corporate-learning-moderne-lernframeworks.html
 - Warum ein LMS allein nicht ausreicht | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/warum-lms-allein-nicht-ausreicht-vernetzte-lernsysteme.html
 - Custom eLearning: Skalierbare Unternehmensschulungen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/custom-elearning-skalierbare-unternehmensschulungen.html
@@ -111,6 +115,10 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Skills Shortage Social Work Universities Expand Capacity: https://moodle-ai-tutor.alphalearn.ai/en/blog/skills-shortage-social-work-universities-expand-capacity.html
+- Training Checklists Onboarding Professional Development Guide: https://moodle-ai-tutor.alphalearn.ai/en/blog/training-checklists-onboarding-professional-development-guide.html
+- Reduce Employee Turnover With Centralized Learning Platform: https://moodle-ai-tutor.alphalearn.ai/en/blog/reduce-employee-turnover-with-centralized-learning-platform.html
+- Rapid Elearning As Business Response System: https://moodle-ai-tutor.alphalearn.ai/en/blog/rapid-elearning-as-business-response-system.html
 - Ai Lms Corporate Learning Modern Learning Frameworks: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-lms-corporate-learning-modern-learning-frameworks.html
 - Why Lms Alone Is Not Enough Connected Learning Systems: https://moodle-ai-tutor.alphalearn.ai/en/blog/why-lms-alone-is-not-enough-connected-learning-systems.html
 - Custom Elearning Scalable Corporate Training: https://moodle-ai-tutor.alphalearn.ai/en/blog/custom-elearning-scalable-corporate-training.html
