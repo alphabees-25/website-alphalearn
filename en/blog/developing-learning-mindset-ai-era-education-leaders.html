@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/15nOC8k15ux-O6zwNEJuTtRTtOJadQDNf">
+  <meta property="og:image:width" content="2640">
+  <meta property="og:image:height" content="1430">
+  <meta property="og:title" content="Developing a Learning Mindset in the AI Era | Alphabees">
+  <meta property="og:description" content="Learn how education leaders can foster a continuous learning mindset and why this is crucial for learning success in the age of AI.">
+  <meta property="og:url" content="https://moodle-ai-tutor.alphalearn.ai/en/blog/developing-learning-mindset-ai-era-education-leaders.html">
+  <meta name="twitter:title" content="Developing a Learning Mindset in the AI Era | Alphabees">
+  <meta name="twitter:description" content="Learn how education leaders can foster a continuous learning mindset and why this is crucial for learning success in the age of AI.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/15nOC8k15ux-O6zwNEJuTtRTtOJadQDNf">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Developing a Learning Mindset in the AI Era | Alphabees</title>
+  <meta name="description" content="Learn how education leaders can foster a continuous learning mindset and why this is crucial for learning success in the age of AI.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/developing-learning-mindset-ai-era-education-leaders.html">
+  <link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/lernhaltung-entwickeln-ki-zeitalter-bildungsverantwortliche.html">
+  <link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/developing-learning-mindset-ai-era-education-leaders.html">
+  <link rel="alternate" hreflang="x-default" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/lernhaltung-entwickeln-ki-zeitalter-bildungsverantwortliche.html">
+  <meta name="geo.region" content="DE">
+  <meta name="geo.country" content="DE">
+  <meta name="geo.placename" content="Deutschland">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes fadeSlideIn {
+      0%   { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+      40%  { opacity: 0.9; transform: translateY(0); filter: blur(0px); }
+      100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+    }
+    .animate-on-scroll { animation-play-state: paused !important; }
+    .animate-on-scroll.animate { animation-play-state: running !important; }
+    html, body { overflow-x: hidden; width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* Article typography */
+    .prose h2 {
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: #111827;
+      margin-top: 2.5rem;
+      margin-bottom: 0.875rem;
+      line-height: 1.3;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose p {
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+    .prose ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .prose ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+    .prose ul li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: #6366f1;
+      margin-top: 0.6em;
+    }
+    .prose blockquote {
+      border-left: 3px solid #6366f1;
+      padding: 0.75rem 1.25rem;
+      margin: 1.75rem 0;
+      background: #f5f3ff;
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+    .prose blockquote p {
+      color: #4338ca;
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .prose .highlight-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .prose .highlight-box p {
+      margin-bottom: 0;
+      color: #1e40af;
+      font-weight: 500;
+    }
+    .prose strong {
+      color: #111827;
+      font-weight: 600;
+    }
+  
+      /* FAQ Accordion */
+      .faq-item { border: 1px solid #e5e7eb; border-radius: 0.75rem; overflow: hidden; margin-bottom: 0.625rem; }
+      .faq-item summary { list-style: none; cursor: pointer; padding: 1rem 1.25rem; font-size: 0.9375rem; font-weight: 600; color: #111827; font-family: 'Geist', sans-serif; display: flex; justify-content: space-between; align-items: center; gap: 1rem; user-select: none; background: #f9fafb; transition: background 0.15s; }
+      .faq-item summary::-webkit-details-marker { display: none; }
+      .faq-item summary:hover { background: #f3f4f6; }
+      .faq-item[open] summary { background: #ede9fe; color: #5b21b6; }
+      .faq-item summary .faq-icon { width: 20px; height: 20px; min-width: 20px; border-radius: 50%; background: #e5e7eb; display: flex; align-items: center; justify-content: center; transition: background 0.15s, transform 0.2s; }
+      .faq-item[open] summary .faq-icon { background: #7c3aed; transform: rotate(45deg); }
+      .faq-item[open] summary .faq-icon svg { stroke: #fff; }
+      .faq-item .faq-body { padding: 1rem 1.25rem 1.25rem; color: #374151; font-size: 0.9375rem; line-height: 1.75; border-top: 1px solid #e5e7eb; }
+      /* Definition Lists */
+      .prose dl { margin: 1rem 0 1.5rem 0; }
+      .prose dt { font-weight: 600; color: #111827; font-size: 1rem; margin-top: 1.25rem; margin-bottom: 0.25rem; font-family: 'Geist', sans-serif; }
+      .prose dd { color: #374151; font-size: 1rem; line-height: 1.75; margin-left: 0; padding-left: 1rem; border-left: 2px solid #6366f1; }
+  </style>
+  <script>
+    (function () {
+      const style = document.createElement('style');
+      style.textContent = `.animate-on-scroll { animation-play-state: paused !important; } .animate-on-scroll.animate { animation-play-state: running !important; }`;
+      document.head.appendChild(style);
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+              window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0 });
+      }
+      window.initInViewAnimations = function (selector = '.animate-on-scroll') {
+        document.querySelectorAll(selector).forEach((el) => { window.__inViewIO.observe(el); });
+      };
+      document.addEventListener('DOMContentLoaded', () => {
+        initInViewAnimations();
+        // Fallback: force-animate any elements the observer missed (iOS Safari / mobile quirks)
+        setTimeout(() => {
+          document.querySelectorAll('.animate-on-scroll:not(.animate)').forEach(el => el.classList.add('animate'));
+        }, 1000);
+      });
+    })();
+  </script>
+  <script src="/assets/js/layout.js" defer></script>
+</head>
+<body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
+
+  <!-- Global Header -->
+  <div id="site-header"></div>
+
+  <main class="relative">
+
+    <!-- Hero Banner -->
+    <div class="relative bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 overflow-hidden">
+      <!-- Decorative blobs -->
+      <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-fuchsia-400/10 blur-3xl pointer-events-none"></div>
+
+      <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 pt-24 pb-0 sm:pt-32 sm:pb-0 relative">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 mb-8 text-sm text-white/60 font-geist" style="animation: fadeSlideIn 1s ease-out 0.05s both;">
+          <a href="../index.html" class="hover:text-white transition">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <a href="../blog.html" class="hover:text-white transition">Blog</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <span class="text-white/40">Artikel</span>
+        </nav>
+
+        <!-- Category + meta -->
+        <div class="flex flex-wrap items-center gap-3 mb-6" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+          <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-white text-xs font-semibold font-geist">Strategy</span>
+          <span class="text-white/50 text-sm font-geist">April 2026</span>
+          <span class="w-1 h-1 rounded-full bg-white/30"></span>
+          <span class="text-white/50 text-sm font-geist">12 Min. Lesezeit</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white font-geist leading-[1.15] tracking-tight mb-5" style="animation: fadeSlideIn 1s ease-out 0.15s both;">
+          Developing a Learning Mindset in the AI Era | Alphabees
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-white/70 font-geist font-normal leading-relaxed max-w-2xl" style="animation: fadeSlideIn 1s ease-out 0.2s both;">
+          The ability to learn continuously is becoming a core competency in digital transformation. For education leaders, this means learning environments must foster adaptability, not just transfer knowledge.
+        </p>
+
+        <!-- Hero image -->
+        <div class="mt-10" style="animation: fadeSlideIn 1s ease-out 0.25s both;">
+          <img src="https://lh3.googleusercontent.com/d/15nOC8k15ux-O6zwNEJuTtRTtOJadQDNf"
+               alt="Learning mindset in the AI era – person using digital learning environment with AI support"
+               class="w-full rounded-t-2xl object-cover max-h-72 sm:max-h-96 shadow-2xl"
+               loading="eager">
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 py-14 sm:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 lg:gap-16">
+
+        <!-- Main Article -->
+        <article class="prose animate-on-scroll" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+
+<p>The demands on learners and educators are changing fundamentally. In a working world shaped by artificial intelligence, it is no longer sufficient to apply knowledge acquired once. The ability to learn continuously, critically question what has been learned, and adapt to new circumstances is becoming a central competency. For education leaders in universities, academies, and companies, this raises a crucial question: How can learning environments be designed that not only transfer knowledge but foster a sustainable learning mindset?</p>
+
+<h2>What characterizes a learning mindset</h2>
+
+<p>A learning mindset describes the willingness and ability to continuously absorb new knowledge, let go of outdated assumptions, and apply insights practically. Unlike a mere interest in professional development, a genuine learning mindset manifests in concrete behavior: actively seeking feedback, experimenting with new approaches, and reflecting on one's own learning processes.</p>
+
+<p>The term is often confused with growth mindset. While growth mindset describes the fundamental belief that abilities can be developed through effort, a learning mindset goes beyond this. It encompasses observable actions and habits that anchor learning in daily life. For education leaders, this distinction is relevant: programs that only target beliefs fall short. Sustainable competency growth only occurs when learners change their behavior.</p>
+
+<p>Closely related is the concept of learning agility, which describes the ability to quickly apply what has been learned to new, complex situations. The key to successful competency development lies in the combination of belief, behavioral change, and practical application.</p>
+
+<h2>Why AI amplifies the importance of continuous learning</h2>
+
+<p>Artificial intelligence is changing not just individual tasks but entire job profiles. The half-life of competencies is shortening, and knowledge that is relevant today may already be outdated tomorrow. This dynamic affects all areas: from higher education to professional development to in-company training.</p>
+
+<p>For educational institutions, this means a paradigm shift. Instead of primarily transferring specialized knowledge, fostering adaptability moves to the forefront. Learners need to know not only how to solve a task but also how to develop new solutions when the task changes.</p>
+
+<p>Developing a learning mindset in the AI era requires a conscious shift in perspective:</p>
+
+<dl>
+<dt>From knowledge to questioning competency:</dt>
+<dd>Value no longer lies primarily in retrieving information but in the ability to ask the right questions and use AI tools purposefully.</dd>
+<dt>From expertise to adaptability:</dt>
+<dd>Specialized knowledge remains important, but the willingness to update what has been learned and build new competencies becomes the decisive success factor.</dd>
+<dt>From static roles to dynamic competency profiles:</dt>
+<dd>Job descriptions are becoming more flexible, and lifelong learning is becoming a prerequisite for professional relevance.</dd>
+</dl>
+
+<p>Organizations that ignore this development risk competency stagnation, growing resistance to new technologies, and declining employability of their staff.</p>
+
+<h2>Learning mindset in practice: Examples from everyday education</h2>
+
+<p>A learning mindset manifests in concrete situations. For education leaders, it is helpful to know these behaviors in order to foster them systematically.</p>
+
+<p>A course designer developing a new onboarding program consciously decides against proven methods and instead tests an AI-supported approach. Rather than waiting for perfection, they start with a pilot module and systematically collect feedback. When the evaluation shows that learners drop out at a particular point, they adjust the design and test again. This iterative approach characterizes a genuine learning mindset: openness to change, willingness for self-criticism, and consistent action orientation.</p>
+
+<p>Leaders also significantly shape the learning culture of their teams. Those who introduce a new tool as an experiment, speak openly about their own difficulties, and take constructive criticism seriously create psychological safety. In such an environment, learners dare to make mistakes and learn from them.</p>
+
+<p>At the individual level, a learning mindset shows itself in professionals who independently identify and close knowledge gaps. They do not wait for formal training but use available resources, actively seek feedback, and document their learning progress. This self-direction is a core characteristic of lifelong learning.</p>
+
+<h2>How education leaders systematically foster a learning mindset</h2>
+
+<p>Designing learning environments that support a continuous learning mindset requires a rethinking of program design. The focus shifts from pure knowledge transfer to behavior shaping.</p>
+
+<p>Linear courses with predetermined paths restrict initiative. Learning environments that offer choices, enable branching scenarios, and promote self-directed exploration activate learners more effectively. Those who can decide for themselves what comes next take responsibility for their own learning process.</p>
+
+<p>Reflection is a central element of a learning mindset. Instead of only asking for correct answers, learning programs should regularly encourage self-assessment: What worked? Which assumptions proved to be wrong? What would I do differently next time? Such reflection loops anchor learning more deeply and foster metacognitive skills.</p>
+
+<p>Many education systems reward only outcomes: degrees, certificates, exam grades. However, a learning mindset develops particularly when the process also receives recognition. Making progress visible, appreciating willingness to experiment, and honoring persistence sends an important signal: learning is a continuous process, not a one-time event.</p>
+
+<p>Fear of failure inhibits learning. Simulations, scenario-based exercises, and protected experimentation spaces allow learners to make decisions and experience their consequences without taking real risks. In such environments, resilience and willingness to try new things develop.</p>
+
+<p>AI-powered learning companions can play an important role here. They offer personalized feedback, make learning progress transparent, and adapt content to individual needs. An AI tutor integrated directly into existing Moodle courses enables learners to ask questions at any time, check their understanding, and work specifically on weak points. This continuous support fosters exactly the behaviors that constitute a sustainable learning mindset: active questioning, regular practice, and self-directed learning.</p>
+
+<h2>Strategic significance for educational institutions</h2>
+
+<p>For universities, academies, and continuing education providers, fostering a learning mindset is more than a didactic concept. It is becoming a strategic success factor. Institutions that equip learners not only with knowledge but also with the ability for lifelong learning increase their employability and the long-term value of their educational offerings.</p>
+
+<p>At the same time, demands on learning infrastructure are increasing. Modern learning management systems must enable flexibility, personalization, and continuous learning support. Integrating AI tutors into existing systems like Moodle offers a practical path here without having to completely replace proven infrastructure.</p>
+
+<p>Developing an organization-wide learning culture requires commitment at all levels: from strategic alignment to program design to daily learning support. Education leaders who actively shape this transformation position their institutions for a future in which adaptability becomes the decisive differentiating factor.</p>
+
+<p>The ability to learn continuously is becoming an indispensable competency in a world shaped by AI. Educational institutions that design their learning environments accordingly and support learners in developing a sustainable learning mindset create the foundation for long-term success—both for their participants and for themselves.</p>
+
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="not-prose mt-6 mb-2">
+            <details class="faq-item">
+              <summary>
+                How does a learning mindset differ from a growth mindset?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">A growth mindset describes the belief that abilities can be developed. A learning mindset goes further and encompasses active behaviors such as seeking feedback, experimenting, and applying what has been learned.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Why has a continuous learning mindset become more important in the AI era?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">AI is changing workflows faster than ever, causing competencies to become outdated more quickly. Those who learn continuously remain adaptable and can use new technologies productively.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How can educational institutions foster a learning mindset in participants?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Through learning environments that enable reflection, experimentation, and self-directed learning. AI tutors can provide individual support and activate learners.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                What role do leaders play in developing a learning culture?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Leaders shape learning culture by demonstrating their own willingness to learn, treating mistakes as learning opportunities, and actively supporting professional development rather than just demanding it.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Can AI help develop a learning mindset?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Yes, AI-powered systems can provide personalized feedback, make learning progress visible, and strengthen motivation for continuous learning through adaptive content.</div>
+            </details>
+          </div>
+
+          <div class="highlight-box mt-10">
+            <p class="text-base mb-4">Discover how the <strong>Alphabees AI Tutor</strong> intelligently extends your Moodle courses – with 24/7 learning support and no new infrastructure costs.</p>
+          </div>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 not-prose">
+            <a href="../features.html"
+               class="inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 transition text-white font-semibold font-geist text-sm rounded-xl px-6 py-3.5 shadow-lg shadow-violet-500/20">
+              Explore the Alphabees AI Tutor features
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside id="blog-sidebar" class="hidden lg:block"></aside>
+
+      </div>
+
+      <!-- Mobile back to blog -->
+      <div class="lg:hidden mt-12 pt-8 border-t border-gray-100">
+        <a href="../blog.html" class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+          Zurück zum Blog
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Newsletter Popup -->
+  <div id="newsletter-popup" class="fixed inset-0 z-[1000] hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+    <div class="animate-popup bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
+      <button onclick="closeNewsletterPopup()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+      <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Fast geschafft!</h3>
+      <p class="text-gray-600 text-center mb-6">Wir haben dir eine Bestätigungsmail gesendet. Bitte schau in deinem Posteingang nach und klicke auf den Bestätigungslink.</p>
+      <p class="text-gray-500 text-sm text-center mb-6">💡 Nicht gefunden? Schau auch im Spam-Ordner nach.</p>
+      <button onclick="closeNewsletterPopup()" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-lg transition">Verstanden</button>
+    </div>
+  </div>
+
+  <style>
+    @keyframes popupFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    .animate-popup { animation: popupFadeIn 0.3s ease-out; }
+    #newsletter-popup.flex { display: flex !important; }
+  </style>
+
+  <script>
+    function showNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.add('hidden');
+      popup.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('newsletter-popup').addEventListener('click', function(e) {
+      if (e.target === this) closeNewsletterPopup();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeNewsletterPopup();
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsletterForm = document.querySelector('form[data-sv-form="8647011"]');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('input[name="email_address"]');
+          fetch(this.action, { method: 'POST', body: new FormData(this), mode: 'no-cors' })
+            .finally(() => { showNewsletterPopup(); emailInput.value = ''; });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
