@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-03-31
+# Last updated: 2026-04-01
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,10 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Lernhaltung im KI-Zeitalter entwickeln | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/lernhaltung-entwickeln-ki-zeitalter-bildungsverantwortliche.html
+- Trainingseffektivität messen: Echte Ergebnisse | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/trainingseffektivitaet-messen-geschaeftsergebnisse-statt-vanity-metriken.html
+- Microlearning Instructional Design: Kompakte Lerneinheiten | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/microlearning-instructional-design-kompakte-lerneinheiten-fuer-die-weiterbildung.html
+- KI-Nutzung in Studium und Lehre: HFD-Studie 2026 | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-nutzung-studium-lehre-hfd-studie-hochschulen.html
 - Fachkräftemangel Soziale Arbeit: Hochschulen reagieren | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/fachkraeftemangel-soziale-arbeit-hochschulen-kapazitaeten-ausbauen.html
 - Training-Checklisten für Onboarding und Weiterbildung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/training-checklisten-onboarding-weiterbildung-leitfaden.html
 - Mitarbeiterfluktuation senken durch zentrale Lernplattform | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/mitarbeiterfluktuation-senken-durch-zentrale-lernplattform.html
@@ -115,6 +119,10 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Developing Learning Mindset Ai Era Education Leaders: https://moodle-ai-tutor.alphalearn.ai/en/blog/developing-learning-mindset-ai-era-education-leaders.html
+- Measuring Training Effectiveness Business Outcomes Not Vanity Metrics: https://moodle-ai-tutor.alphalearn.ai/en/blog/measuring-training-effectiveness-business-outcomes-not-vanity-metrics.html
+- Microlearning Instructional Design Compact Learning Units For Professional Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/microlearning-instructional-design-compact-learning-units-for-professional-development.html
+- Ai Use Higher Education Hfd Study Universities: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-use-higher-education-hfd-study-universities.html
 - Skills Shortage Social Work Universities Expand Capacity: https://moodle-ai-tutor.alphalearn.ai/en/blog/skills-shortage-social-work-universities-expand-capacity.html
 - Training Checklists Onboarding Professional Development Guide: https://moodle-ai-tutor.alphalearn.ai/en/blog/training-checklists-onboarding-professional-development-guide.html
 - Reduce Employee Turnover With Centralized Learning Platform: https://moodle-ai-tutor.alphalearn.ai/en/blog/reduce-employee-turnover-with-centralized-learning-platform.html
