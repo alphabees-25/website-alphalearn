@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-01
+# Last updated: 2026-04-02
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,12 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Erasmus+ Top-Ups: Mehr Chancengleichheit bei Auslandsaufenthalten | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/erasmus-top-ups-chancengleichheit-auslandsaufenthalte-hochschulen.html
+- Szenariobasiertes Lernen im Corporate Training | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/szenariobasiertes-lernen-im-corporate-training.html
+- Personalisiertes Lernen: Technologie für den Lernenden | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/personalisiertes-lernen-technologie-lernende-mittelpunkt.html
+- Bilder mit LLMs für besseres Instructional Design | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/bilder-mit-llms-fuer-besseres-instructional-design-nutzen.html
+- Duale Ausbildung rückläufig: KI in der Weiterbildung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/duale-ausbildung-ruecklaeufig-ki-unterstuetzung-weiterbildung.html
+- Dialog Lehrende & Studierende: Beziehungsarbeit | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/paartherapie-fuer-hochschulen-dialog-zwischen-lehrenden-und-studierenden.html
 - Lernhaltung im KI-Zeitalter entwickeln | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/lernhaltung-entwickeln-ki-zeitalter-bildungsverantwortliche.html
 - Trainingseffektivität messen: Echte Ergebnisse | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/trainingseffektivitaet-messen-geschaeftsergebnisse-statt-vanity-metriken.html
 - Microlearning Instructional Design: Kompakte Lerneinheiten | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/microlearning-instructional-design-kompakte-lerneinheiten-fuer-die-weiterbildung.html
@@ -119,6 +125,12 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Erasmus Top Ups Equal Opportunities Study Abroad Universities: https://moodle-ai-tutor.alphalearn.ai/en/blog/erasmus-top-ups-equal-opportunities-study-abroad-universities.html
+- Scenario Based Learning In Corporate Training: https://moodle-ai-tutor.alphalearn.ai/en/blog/scenario-based-learning-in-corporate-training.html
+- Personalized Learning Technology Learner Centered: https://moodle-ai-tutor.alphalearn.ai/en/blog/personalized-learning-technology-learner-centered.html
+- Using Images With Llms For Better Instructional Design: https://moodle-ai-tutor.alphalearn.ai/en/blog/using-images-with-llms-for-better-instructional-design.html
+- Dual Vocational Training Decline Ai Support Professional Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/dual-vocational-training-decline-ai-support-professional-development.html
+- Couples Therapy For Universities Dialogue Between Faculty And Students: https://moodle-ai-tutor.alphalearn.ai/en/blog/couples-therapy-for-universities-dialogue-between-faculty-and-students.html
 - Developing Learning Mindset Ai Era Education Leaders: https://moodle-ai-tutor.alphalearn.ai/en/blog/developing-learning-mindset-ai-era-education-leaders.html
 - Measuring Training Effectiveness Business Outcomes Not Vanity Metrics: https://moodle-ai-tutor.alphalearn.ai/en/blog/measuring-training-effectiveness-business-outcomes-not-vanity-metrics.html
 - Microlearning Instructional Design Compact Learning Units For Professional Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/microlearning-instructional-design-compact-learning-units-for-professional-development.html
