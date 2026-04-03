@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-02
+# Last updated: 2026-04-03
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,10 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Lebenslanges Lernen: Definition, Prinzipien & Strategien | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/lebenslanges-lernen-definition-prinzipien-strategien-bildungseinrichtungen.html
+- Microlearning im LMS: Corporate Training gestalten | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/microlearning-im-lms-corporate-training-effektiv-gestalten.html
+- Microlearning für Mobile Learning | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/microlearning-mobile-learning-im-arbeitsfluss.html
+- Berufsorientierung digital gestalten | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/berufsorientierung-zukunftstag-brandenburg-digitale-lernbegleitung.html
 - Erasmus+ Top-Ups: Mehr Chancengleichheit bei Auslandsaufenthalten | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/erasmus-top-ups-chancengleichheit-auslandsaufenthalte-hochschulen.html
 - Szenariobasiertes Lernen im Corporate Training | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/szenariobasiertes-lernen-im-corporate-training.html
 - Personalisiertes Lernen: Technologie für den Lernenden | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/personalisiertes-lernen-technologie-lernende-mittelpunkt.html
@@ -125,6 +129,10 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Lifelong Learning Definition Principles Strategies Educational Institutions: https://moodle-ai-tutor.alphalearn.ai/en/blog/lifelong-learning-definition-principles-strategies-educational-institutions.html
+- Microlearning In Lms Effective Corporate Training: https://moodle-ai-tutor.alphalearn.ai/en/blog/microlearning-in-lms-effective-corporate-training.html
+- Microlearning Mobile Learning In The Flow Of Work: https://moodle-ai-tutor.alphalearn.ai/en/blog/microlearning-mobile-learning-in-the-flow-of-work.html
+- Career Orientation Future Day Digital Learning Support: https://moodle-ai-tutor.alphalearn.ai/en/blog/career-orientation-future-day-digital-learning-support.html
 - Erasmus Top Ups Equal Opportunities Study Abroad Universities: https://moodle-ai-tutor.alphalearn.ai/en/blog/erasmus-top-ups-equal-opportunities-study-abroad-universities.html
 - Scenario Based Learning In Corporate Training: https://moodle-ai-tutor.alphalearn.ai/en/blog/scenario-based-learning-in-corporate-training.html
 - Personalized Learning Technology Learner Centered: https://moodle-ai-tutor.alphalearn.ai/en/blog/personalized-learning-technology-learner-centered.html
