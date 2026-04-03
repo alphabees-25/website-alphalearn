@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/1NJmutKJUlvqTtBMTvcWjH4Ly802kLoZd">
+  <meta property="og:image:width" content="2640">
+  <meta property="og:image:height" content="1430">
+  <meta property="og:title" content="Microlearning for Mobile Learning | Alphabees">
+  <meta property="og:description" content="Microlearning on mobile devices enables learning in the flow of work. How education leaders can sustainably boost engagement and knowledge retention.">
+  <meta property="og:url" content="https://moodle-ai-tutor.alphalearn.ai/en/blog/microlearning-mobile-learning-in-the-flow-of-work.html">
+  <meta name="twitter:title" content="Microlearning for Mobile Learning | Alphabees">
+  <meta name="twitter:description" content="Microlearning on mobile devices enables learning in the flow of work. How education leaders can sustainably boost engagement and knowledge retention.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1NJmutKJUlvqTtBMTvcWjH4Ly802kLoZd">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Microlearning for Mobile Learning | Alphabees</title>
+  <meta name="description" content="Microlearning on mobile devices enables learning in the flow of work. How education leaders can sustainably boost engagement and knowledge retention.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/microlearning-mobile-learning-in-the-flow-of-work.html">
+  <link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/microlearning-mobile-learning-im-arbeitsfluss.html">
+  <link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/microlearning-mobile-learning-in-the-flow-of-work.html">
+  <link rel="alternate" hreflang="x-default" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/microlearning-mobile-learning-im-arbeitsfluss.html">
+  <meta name="geo.region" content="DE">
+  <meta name="geo.country" content="DE">
+  <meta name="geo.placename" content="Deutschland">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes fadeSlideIn {
+      0%   { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+      40%  { opacity: 0.9; transform: translateY(0); filter: blur(0px); }
+      100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+    }
+    .animate-on-scroll { animation-play-state: paused !important; }
+    .animate-on-scroll.animate { animation-play-state: running !important; }
+    html, body { overflow-x: hidden; width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* Article typography */
+    .prose h2 {
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: #111827;
+      margin-top: 2.5rem;
+      margin-bottom: 0.875rem;
+      line-height: 1.3;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose p {
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+    .prose ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .prose ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+    .prose ul li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: #6366f1;
+      margin-top: 0.6em;
+    }
+    .prose blockquote {
+      border-left: 3px solid #6366f1;
+      padding: 0.75rem 1.25rem;
+      margin: 1.75rem 0;
+      background: #f5f3ff;
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+    .prose blockquote p {
+      color: #4338ca;
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .prose .highlight-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .prose .highlight-box p {
+      margin-bottom: 0;
+      color: #1e40af;
+      font-weight: 500;
+    }
+    .prose strong {
+      color: #111827;
+      font-weight: 600;
+    }
+  
+      /* FAQ Accordion */
+      .faq-item { border: 1px solid #e5e7eb; border-radius: 0.75rem; overflow: hidden; margin-bottom: 0.625rem; }
+      .faq-item summary { list-style: none; cursor: pointer; padding: 1rem 1.25rem; font-size: 0.9375rem; font-weight: 600; color: #111827; font-family: 'Geist', sans-serif; display: flex; justify-content: space-between; align-items: center; gap: 1rem; user-select: none; background: #f9fafb; transition: background 0.15s; }
+      .faq-item summary::-webkit-details-marker { display: none; }
+      .faq-item summary:hover { background: #f3f4f6; }
+      .faq-item[open] summary { background: #ede9fe; color: #5b21b6; }
+      .faq-item summary .faq-icon { width: 20px; height: 20px; min-width: 20px; border-radius: 50%; background: #e5e7eb; display: flex; align-items: center; justify-content: center; transition: background 0.15s, transform 0.2s; }
+      .faq-item[open] summary .faq-icon { background: #7c3aed; transform: rotate(45deg); }
+      .faq-item[open] summary .faq-icon svg { stroke: #fff; }
+      .faq-item .faq-body { padding: 1rem 1.25rem 1.25rem; color: #374151; font-size: 0.9375rem; line-height: 1.75; border-top: 1px solid #e5e7eb; }
+      /* Definition Lists */
+      .prose dl { margin: 1rem 0 1.5rem 0; }
+      .prose dt { font-weight: 600; color: #111827; font-size: 1rem; margin-top: 1.25rem; margin-bottom: 0.25rem; font-family: 'Geist', sans-serif; }
+      .prose dd { color: #374151; font-size: 1rem; line-height: 1.75; margin-left: 0; padding-left: 1rem; border-left: 2px solid #6366f1; }
+  </style>
+  <script>
+    (function () {
+      const style = document.createElement('style');
+      style.textContent = `.animate-on-scroll { animation-play-state: paused !important; } .animate-on-scroll.animate { animation-play-state: running !important; }`;
+      document.head.appendChild(style);
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+              window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0 });
+      }
+      window.initInViewAnimations = function (selector = '.animate-on-scroll') {
+        document.querySelectorAll(selector).forEach((el) => { window.__inViewIO.observe(el); });
+      };
+      document.addEventListener('DOMContentLoaded', () => {
+        initInViewAnimations();
+        // Fallback: force-animate any elements the observer missed (iOS Safari / mobile quirks)
+        setTimeout(() => {
+          document.querySelectorAll('.animate-on-scroll:not(.animate)').forEach(el => el.classList.add('animate'));
+        }, 1000);
+      });
+    })();
+  </script>
+  <script src="/assets/js/layout.js" defer></script>
+</head>
+<body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
+
+  <!-- Global Header -->
+  <div id="site-header"></div>
+
+  <main class="relative">
+
+    <!-- Hero Banner -->
+    <div class="relative bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 overflow-hidden">
+      <!-- Decorative blobs -->
+      <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-fuchsia-400/10 blur-3xl pointer-events-none"></div>
+
+      <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 pt-24 pb-0 sm:pt-32 sm:pb-0 relative">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 mb-8 text-sm text-white/60 font-geist" style="animation: fadeSlideIn 1s ease-out 0.05s both;">
+          <a href="../index.html" class="hover:text-white transition">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <a href="../blog.html" class="hover:text-white transition">Blog</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <span class="text-white/40">Artikel</span>
+        </nav>
+
+        <!-- Category + meta -->
+        <div class="flex flex-wrap items-center gap-3 mb-6" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+          <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-white text-xs font-semibold font-geist">Strategy</span>
+          <span class="text-white/50 text-sm font-geist">April 2026</span>
+          <span class="w-1 h-1 rounded-full bg-white/30"></span>
+          <span class="text-white/50 text-sm font-geist">12 Min. Lesezeit</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white font-geist leading-[1.15] tracking-tight mb-5" style="animation: fadeSlideIn 1s ease-out 0.15s both;">
+          Microlearning for Mobile Learning | Alphabees
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-white/70 font-geist font-normal leading-relaxed max-w-2xl" style="animation: fadeSlideIn 1s ease-out 0.2s both;">
+          Microlearning on mobile devices adapts to everyday work routines and increases learning success. Discover how educational institutions benefit from short, mobile learning units.
+        </p>
+
+        <!-- Hero image -->
+        <div class="mt-10" style="animation: fadeSlideIn 1s ease-out 0.25s both;">
+          <img src="https://lh3.googleusercontent.com/d/1NJmutKJUlvqTtBMTvcWjH4Ly802kLoZd"
+               alt="Microlearning Mobile Learning – Person learning on smartphone between meetings"
+               class="w-full rounded-t-2xl object-cover max-h-72 sm:max-h-96 shadow-2xl"
+               loading="eager">
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 py-14 sm:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 lg:gap-16">
+
+        <!-- Main Article -->
+        <article class="prose animate-on-scroll" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+
+<p>When learners have only a few minutes between lectures, meetings, or work tasks, a one-hour training module becomes a burden rather than an enrichment. Two factors significantly hinder traditional, time-intensive training formats: First, there simply isn't enough time—workloads and packed schedules leave little room for longer learning sessions. Second, attention is fragmented—studies show that the average attention span has dropped to under one minute before learners switch between tasks.</p>
+
+<p>For decision-makers in universities, academies, and continuing education institutions, this development presents a central challenge. At the same time, it opens new opportunities: Since learners are constantly using mobile devices anyway, this is precisely where contemporary learning formats can make an impact. Microlearning on mobile devices meets learners where they are—and adapts to their daily routines instead of interrupting them.</p>
+
+<h2>Why Microlearning Works on Mobile Devices</h2>
+
+<p>Microlearning combined with mobile learning works because it adapts to the actual thinking, working, and decision-making patterns of modern learners. Several factors come together here:</p>
+
+<p><strong>Integration into the natural daily routine:</strong> Most learners cannot reserve an hour at a stretch for professional development. They have five minutes between appointments, three minutes before an important conversation, or ten minutes during their commute. Microlearning utilizes precisely these moments. A practical example: Before an exam or presentation, students open a four-minute module that summarizes key concepts, shows comparisons, and provides two application examples. Because the training is accessible on a device that is already used constantly, the barrier of logging in on a laptop or waiting for long loading times disappears.</p>
+
+<p><strong>Brain-friendly knowledge delivery:</strong> People retain information better when it is delivered in small, focused units and repeated over time. Long, information-dense training sessions overwhelm working memory. Instead of a one-time 90-minute workshop with accompanying documentation, a structured microlearning approach enables a different method: On day one, a five-minute animated overview; after three days, an interactive scenario with decision options; after one week, a brief knowledge check via push notification; after two weeks, an application task with practical relevance. This approach leverages spacing and repetition—each interaction strengthens neural connections and improves long-term retention.</p>
+
+<h2>Learning at the Moment of Need</h2>
+
+<p>Learning has the greatest impact when it can be applied immediately. This applies to students as well as professionals in continuing education. A well-designed mobile microlearning module can include in such situations:</p>
+
+<dl>
+<dt>Decision trees:</dt>
+<dd>Simple visual structures for quick orientation on complex questions.</dd>
+<dt>Step-by-step guides:</dt>
+<dd>Compact action instructions for specific situations.</dd>
+<dt>Checklists:</dt>
+<dd>Clear compilations of important points to check off.</dd>
+<dt>Brief scenarios:</dt>
+<dd>Realistic examples that demonstrate best practices.</dd>
+</dl>
+
+<p>Because the module is available on mobile, it can be accessed discreetly and immediately before the respective situation. This transforms learning from a theoretical exercise into a practical tool for everyday life. For education leaders, this means: Microlearning should be embedded in the daily learning flow rather than languishing in isolation within learning platform libraries.</p>
+
+<h2>Adapting to Modern Media Consumption</h2>
+
+<p>Learners already consume information in short, mobile-optimized formats—news notifications, short videos, compact updates. Microlearning doesn't change this behavior but builds upon it. For an institution that wants to teach data privacy knowledge, for example, the learning units could be designed as follows:</p>
+
+<ul>
+<li>Three-minute animated risk scenarios</li>
+<li>Interactive exercises for recognizing phishing attempts</li>
+<li>Short quiz formats with immediate feedback</li>
+</ul>
+
+<p>Delivered weekly via mobile devices, these units feel less like mandatory training and more like engaging digital experiences. Thoughtful design ensures the learning experience feels intuitive—with clear visualizations, thumb-friendly navigation, short text blocks, and high interactivity. When learning feels familiar and easy to navigate, resistance drops significantly.</p>
+
+<h2>Higher Engagement and Better Completion Rates</h2>
+
+<p>When learning is short, interactive, and mobile-accessible, completion rates naturally improve. But engagement means more than just finishing a module—it's about learners actively interacting with the content from start to finish. For competency development, this could mean:</p>
+
+<ul>
+<li>Branched simulations for complex conversation situations</li>
+<li>Interactive coaching tips to reveal</li>
+<li>Brief reflection prompts</li>
+<li>Quick polls for exchange with other learners</li>
+</ul>
+
+<p>These elements transform passive content into active decision-making experiences. And because the modules are short, learners are more likely to return for follow-up units. This continuity is crucial for genuine behavior change and sustainable competency building.</p>
+
+<h2>Scalability and Agility for Educational Institutions</h2>
+
+<p>Mobile-based microlearning solutions are easier to update and distribute than extensive programs. When requirements change—whether through new examination regulations, updated subject content, or changed frameworks—microlearning enables quick revision of a four-minute module with immediate redistribution. No complete course redesign is necessary.</p>
+
+<p>From the perspective of education leaders, this means faster delivery, less production disruption, better measurability of impact, and greater flexibility when requirements change. This is particularly relevant in areas where knowledge evolves rapidly—from technical disciplines to regulatory topics.</p>
+
+<h2>Best Practices for Implementation</h2>
+
+<p>For educational institutions looking to scale microlearning solutions, these best practices separate average initiatives from high-impact programs:</p>
+
+<p><strong>Start with competency gaps:</strong> Before creating modules, identify specific problem areas. Are learners struggling with certain concepts? Are there recurring errors in exams? Is understanding inconsistent in certain areas? Microlearning works best when closely linked to measurable learning objectives.</p>
+
+<p><strong>Design for mobile use:</strong> Mobile learning doesn't mean shrinking desktop content. It requires vertical layouts, minimal text, tap-based navigation, short video segments, and interactive elements optimized for small screens.</p>
+
+<p><strong>Use scenario-based design:</strong> Adults learn best through context. Instead of explaining a new regulation in slides, present a realistic decision situation. Learners make decisions and experience their consequences—this mirrors real situations and improves retention.</p>
+
+<p><strong>Integrate reinforcement and analytics:</strong> Microlearning unfolds its strength through continuity. Push reminders, knowledge checks, and follow-up micro-modules should be distributed over weeks. Combined with analytics dashboards, completion rates, engagement time, performance assessment, and behavior change indicators can be tracked.</p>
+
+<h2>The Added Value of an AI Tutor for Microlearning</h2>
+
+<p>An AI tutor directly integrated into existing learning management systems like Moodle can take microlearning to a new level. It enables automatic conversion of course content into short, focused learning units and delivers them contextually. Learners receive support exactly when they need it—whether a quick explanation before an exam, a summary of complex concepts, or targeted practice questions on areas with knowledge gaps.</p>
+
+<p>Round-the-clock availability means that learning is no longer tied to fixed office hours or seminar times. Instead, support adapts to individual schedules and learning rhythms. For educational institutions, this reduces support workload while simultaneously improving learning outcomes.</p>
+
+<p>Learners don't need more training hours—they need smarter learning moments. In an environment where attention is scarce and time is limited, mobile microlearning solutions meet learners where they are—without sacrificing depth or impact. For education leaders looking to modernize their learning ecosystems, investing in high-quality, performance-oriented microlearning solutions forms the foundation for sustainable competency building in today's fast-paced educational landscape.</p>
+
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="not-prose mt-6 mb-2">
+            <details class="faq-item">
+              <summary>
+                What is the difference between microlearning and traditional e-learning?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Microlearning relies on short learning units of just a few minutes that target specific competencies. Traditional e-learning often comprises longer modules that must be completed in one sitting.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Why is microlearning particularly suited for mobile devices?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Mobile devices are already used constantly and enable learning in short time windows between other activities. The compact formats perfectly match natural usage habits.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How can microlearning be integrated into existing learning platforms like Moodle?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Modern AI tutors can automatically convert course content into short, mobile learning units and deliver them contextually. Integration happens directly within the existing course structure.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                What types of learning content are suitable for microlearning?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Particularly well-suited are knowledge refreshers, exam preparation, compliance training, and situational learning. Complex topics require supplementary in-depth formats.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How do educational institutions measure microlearning success?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Relevant metrics include completion rates, engagement duration, repetition behavior, and practical application. AI-powered systems deliver this data automatically.</div>
+            </details>
+          </div>
+
+          <div class="highlight-box mt-10">
+            <p class="text-base mb-4">Discover how the <strong>Alphabees AI Tutor</strong> intelligently extends your Moodle courses – with 24/7 learning support and no new infrastructure costs.</p>
+          </div>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 not-prose">
+            <a href="../features.html"
+               class="inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 transition text-white font-semibold font-geist text-sm rounded-xl px-6 py-3.5 shadow-lg shadow-violet-500/20">
+              Explore the Alphabees AI Tutor features
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside id="blog-sidebar" class="hidden lg:block"></aside>
+
+      </div>
+
+      <!-- Mobile back to blog -->
+      <div class="lg:hidden mt-12 pt-8 border-t border-gray-100">
+        <a href="../blog.html" class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+          Zurück zum Blog
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Newsletter Popup -->
+  <div id="newsletter-popup" class="fixed inset-0 z-[1000] hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+    <div class="animate-popup bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
+      <button onclick="closeNewsletterPopup()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+      <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Fast geschafft!</h3>
+      <p class="text-gray-600 text-center mb-6">Wir haben dir eine Bestätigungsmail gesendet. Bitte schau in deinem Posteingang nach und klicke auf den Bestätigungslink.</p>
+      <p class="text-gray-500 text-sm text-center mb-6">💡 Nicht gefunden? Schau auch im Spam-Ordner nach.</p>
+      <button onclick="closeNewsletterPopup()" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-lg transition">Verstanden</button>
+    </div>
+  </div>
+
+  <style>
+    @keyframes popupFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    .animate-popup { animation: popupFadeIn 0.3s ease-out; }
+    #newsletter-popup.flex { display: flex !important; }
+  </style>
+
+  <script>
+    function showNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.add('hidden');
+      popup.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('newsletter-popup').addEventListener('click', function(e) {
+      if (e.target === this) closeNewsletterPopup();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeNewsletterPopup();
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsletterForm = document.querySelector('form[data-sv-form="8647011"]');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('input[name="email_address"]');
+          fetch(this.action, { method: 'POST', body: new FormData(this), mode: 'no-cors' })
+            .finally(() => { showNewsletterPopup(); emailInput.value = ''; });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
