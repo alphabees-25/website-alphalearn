@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-03
+# Last updated: 2026-04-04
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,10 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- KI-Prompts für E-Learning: Content effizient erstellen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-prompts-fuer-elearning-content-erstellung.html
+- Empathie im Lerndesign: Warum Inhaltszentrierung scheitert | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/empathie-im-lerndesign-warum-inhaltszentrierung-nicht-mehr-ausreicht.html
+- KI-Strategie-Roadmap: Vom Pilotprojekt zur Skalierung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-strategie-roadmap-vom-pilotprojekt-zur-skalierung.html
+- GenAI, KI-Agenten und Agentic AI an Hochschulen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/von-assistenz-zu-autonomie-genai-ki-agenten-und-agentic-ai-an-hochschulen.html
 - Lebenslanges Lernen: Definition, Prinzipien & Strategien | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/lebenslanges-lernen-definition-prinzipien-strategien-bildungseinrichtungen.html
 - Microlearning im LMS: Corporate Training gestalten | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/microlearning-im-lms-corporate-training-effektiv-gestalten.html
 - Microlearning für Mobile Learning | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/microlearning-mobile-learning-im-arbeitsfluss.html
@@ -129,6 +133,10 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Ai Prompts For Elearning Content Creation: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-prompts-for-elearning-content-creation.html
+- Empathy In Learning Design Why Content Centricity Is No Longer Enough: https://moodle-ai-tutor.alphalearn.ai/en/blog/empathy-in-learning-design-why-content-centricity-is-no-longer-enough.html
+- Ai Strategy Roadmap From Pilot Project To Scaling: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-strategy-roadmap-from-pilot-project-to-scaling.html
+- From Assistance To Autonomy Genai Ai Agents And Agentic Ai In Higher Education: https://moodle-ai-tutor.alphalearn.ai/en/blog/from-assistance-to-autonomy-genai-ai-agents-and-agentic-ai-in-higher-education.html
 - Lifelong Learning Definition Principles Strategies Educational Institutions: https://moodle-ai-tutor.alphalearn.ai/en/blog/lifelong-learning-definition-principles-strategies-educational-institutions.html
 - Microlearning In Lms Effective Corporate Training: https://moodle-ai-tutor.alphalearn.ai/en/blog/microlearning-in-lms-effective-corporate-training.html
 - Microlearning Mobile Learning In The Flow Of Work: https://moodle-ai-tutor.alphalearn.ai/en/blog/microlearning-mobile-learning-in-the-flow-of-work.html
