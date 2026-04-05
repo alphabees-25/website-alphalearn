@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-04
+# Last updated: 2026-04-05
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,8 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Menschenzentriertes Talentmanagement als Erfolgsfaktor | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/menschenzentriertes-talentmanagement-erfolgsfaktor-fuer-weiterbildung.html
+- Kontinuierliche Lernkultur: Erfolgsfaktoren | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/kontinuierliche-lernkultur-erfolgsfaktoren-leistungsstarker-organisationen.html
 - KI-Prompts für E-Learning: Content effizient erstellen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-prompts-fuer-elearning-content-erstellung.html
 - Empathie im Lerndesign: Warum Inhaltszentrierung scheitert | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/empathie-im-lerndesign-warum-inhaltszentrierung-nicht-mehr-ausreicht.html
 - KI-Strategie-Roadmap: Vom Pilotprojekt zur Skalierung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-strategie-roadmap-vom-pilotprojekt-zur-skalierung.html
@@ -133,6 +135,8 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Human Centered Talent Management Success Factor For Professional Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/human-centered-talent-management-success-factor-for-professional-development.html
+- Continuous Learning Culture Success Factors High Performing Organizations: https://moodle-ai-tutor.alphalearn.ai/en/blog/continuous-learning-culture-success-factors-high-performing-organizations.html
 - Ai Prompts For Elearning Content Creation: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-prompts-for-elearning-content-creation.html
 - Empathy In Learning Design Why Content Centricity Is No Longer Enough: https://moodle-ai-tutor.alphalearn.ai/en/blog/empathy-in-learning-design-why-content-centricity-is-no-longer-enough.html
 - Ai Strategy Roadmap From Pilot Project To Scaling: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-strategy-roadmap-from-pilot-project-to-scaling.html
