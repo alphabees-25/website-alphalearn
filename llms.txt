@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-06
+# Last updated: 2026-04-07
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,9 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Performance Management Training: Strategien für Bildung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/performance-management-training-strategischer-leitfaden-fuer-bildungsverantwortliche.html
+- Kontinuierliches Lernen strategisch verankern | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/kontinuierliches-lernen-strategisch-verankern.html
+- KI verändert Corporate Learning 2026 | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-corporate-learning-strategien-2026-personalisierung-analytics.html
 - Fehler als Lernchance im adaptiven Lernen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/fehler-als-lernchance-adaptives-lernen.html
 - KI-Automatisierung für Bildungsinhalte | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-automatisierung-content-erstellung-lokalisierung-bildung.html
 - Menschenzentriertes Talentmanagement als Erfolgsfaktor | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/menschenzentriertes-talentmanagement-erfolgsfaktor-fuer-weiterbildung.html
@@ -137,6 +140,9 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Performance Management Training Strategic Guide For Education Leaders: https://moodle-ai-tutor.alphalearn.ai/en/blog/performance-management-training-strategic-guide-for-education-leaders.html
+- Anchoring Continuous Learning Strategically: https://moodle-ai-tutor.alphalearn.ai/en/blog/anchoring-continuous-learning-strategically.html
+- Ai Corporate Learning Strategies 2026 Personalization Analytics: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-corporate-learning-strategies-2026-personalization-analytics.html
 - Mistakes As Learning Opportunities Adaptive Learning: https://moodle-ai-tutor.alphalearn.ai/en/blog/mistakes-as-learning-opportunities-adaptive-learning.html
 - Ai Automation Content Creation Localization Education: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-automation-content-creation-localization-education.html
 - Human Centered Talent Management Success Factor For Professional Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/human-centered-talent-management-success-factor-for-professional-development.html
