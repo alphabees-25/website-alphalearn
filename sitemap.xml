@@ -1814,4 +1814,70 @@
     <priority>0.7</priority>
   </url>
 
+
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/europaeische-forschung-bildung-innovation-staerken.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/europaeische-forschung-bildung-innovation-staerken.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/european-research-education-strengthening-innovation.html"/>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/european-research-education-strengthening-innovation.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/europaeische-forschung-bildung-innovation-staerken.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/european-research-education-strengthening-innovation.html"/>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/mitarbeiter-empowerment-strategien-fuer-fuehrungskraefte.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/mitarbeiter-empowerment-strategien-fuer-fuehrungskraefte.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/employee-empowerment-strategies-for-leaders.html"/>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/employee-empowerment-strategies-for-leaders.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/mitarbeiter-empowerment-strategien-fuer-fuehrungskraefte.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/employee-empowerment-strategies-for-leaders.html"/>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/lms-migration-risiken-minimieren-effizient-umsetzen.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/lms-migration-risiken-minimieren-effizient-umsetzen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/lms-migration-minimize-risks-implement-efficiently.html"/>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/lms-migration-minimize-risks-implement-efficiently.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/lms-migration-risiken-minimieren-effizient-umsetzen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/lms-migration-minimize-risks-implement-efficiently.html"/>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-transparenz-bildungsinhalte-4-schritte-framework.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-transparenz-bildungsinhalte-4-schritte-framework.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-transparency-educational-content-4-step-framework.html"/>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-transparency-educational-content-4-step-framework.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-transparenz-bildungsinhalte-4-schritte-framework.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-transparency-educational-content-4-step-framework.html"/>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
