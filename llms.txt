@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-07
+# Last updated: 2026-04-08
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,10 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Europäische Forschung und Bildung stärken | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/europaeische-forschung-bildung-innovation-staerken.html
+- Mitarbeiter-Empowerment: 9 Strategien für Führungskräfte | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/mitarbeiter-empowerment-strategien-fuer-fuehrungskraefte.html
+- LMS-Migration: Risiken minimieren und effizient umsetzen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/lms-migration-risiken-minimieren-effizient-umsetzen.html
+- KI-Transparenz in Bildungsinhalten: 4-Schritte-Framework | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-transparenz-bildungsinhalte-4-schritte-framework.html
 - Performance Management Training: Strategien für Bildung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/performance-management-training-strategischer-leitfaden-fuer-bildungsverantwortliche.html
 - Kontinuierliches Lernen strategisch verankern | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/kontinuierliches-lernen-strategisch-verankern.html
 - KI verändert Corporate Learning 2026 | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-corporate-learning-strategien-2026-personalisierung-analytics.html
@@ -140,6 +144,10 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- European Research Education Strengthening Innovation: https://moodle-ai-tutor.alphalearn.ai/en/blog/european-research-education-strengthening-innovation.html
+- Employee Empowerment Strategies For Leaders: https://moodle-ai-tutor.alphalearn.ai/en/blog/employee-empowerment-strategies-for-leaders.html
+- Lms Migration Minimize Risks Implement Efficiently: https://moodle-ai-tutor.alphalearn.ai/en/blog/lms-migration-minimize-risks-implement-efficiently.html
+- Ai Transparency Educational Content 4 Step Framework: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-transparency-educational-content-4-step-framework.html
 - Performance Management Training Strategic Guide For Education Leaders: https://moodle-ai-tutor.alphalearn.ai/en/blog/performance-management-training-strategic-guide-for-education-leaders.html
 - Anchoring Continuous Learning Strategically: https://moodle-ai-tutor.alphalearn.ai/en/blog/anchoring-continuous-learning-strategically.html
 - Ai Corporate Learning Strategies 2026 Personalization Analytics: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-corporate-learning-strategies-2026-personalization-analytics.html
