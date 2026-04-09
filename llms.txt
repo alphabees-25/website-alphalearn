@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-08
+# Last updated: 2026-04-09
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,12 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Nachhaltigkeit an Hochschulen strukturell verankern | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/nachhaltigkeit-hochschulen-strukturelle-verankerung-ki-gestuetzte-lehre.html
+- Liberate Global: Konsolidierung der E-Learning-Branche | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/liberate-global-fusion-elearning-branche-konsolidierung.html
+- Instructional Design Programme: Der Weg zur Zertifizierung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/instructional-design-programme-zertifizierungen-leitfaden.html
+- Workflow-Engpässe im E-Learning | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/workflow-engpaesse-e-learning-ineffiziente-prozesse-lernen.html
+- Neugier und Zukunftslust im Corporate Learning | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/neugier-und-zukunftslust-im-corporate-learning-wie-lerngemeinschaften-innovation-foerdern.html
+- Der Kurs als Lerneinheit stirbt – KI-Alternativen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/kurs-als-lerneinheit-stirbt-ki-alternativen.html
 - Europäische Forschung und Bildung stärken | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/europaeische-forschung-bildung-innovation-staerken.html
 - Mitarbeiter-Empowerment: 9 Strategien für Führungskräfte | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/mitarbeiter-empowerment-strategien-fuer-fuehrungskraefte.html
 - LMS-Migration: Risiken minimieren und effizient umsetzen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/lms-migration-risiken-minimieren-effizient-umsetzen.html
@@ -144,6 +150,12 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Sustainability Universities Structural Integration Ai Supported Teaching: https://moodle-ai-tutor.alphalearn.ai/en/blog/sustainability-universities-structural-integration-ai-supported-teaching.html
+- Liberate Global Merger Elearning Industry Consolidation: https://moodle-ai-tutor.alphalearn.ai/en/blog/liberate-global-merger-elearning-industry-consolidation.html
+- Instructional Design Programs Certifications Guide: https://moodle-ai-tutor.alphalearn.ai/en/blog/instructional-design-programs-certifications-guide.html
+- Workflow Bottlenecks E Learning Inefficient Processes Learning: https://moodle-ai-tutor.alphalearn.ai/en/blog/workflow-bottlenecks-e-learning-inefficient-processes-learning.html
+- Curiosity And Future Readiness In Corporate Learning How Learning Communities Drive Innovation: https://moodle-ai-tutor.alphalearn.ai/en/blog/curiosity-and-future-readiness-in-corporate-learning-how-learning-communities-drive-innovation.html
+- Course As Learning Unit Dying Ai Alternatives: https://moodle-ai-tutor.alphalearn.ai/en/blog/course-as-learning-unit-dying-ai-alternatives.html
 - European Research Education Strengthening Innovation: https://moodle-ai-tutor.alphalearn.ai/en/blog/european-research-education-strengthening-innovation.html
 - Employee Empowerment Strategies For Leaders: https://moodle-ai-tutor.alphalearn.ai/en/blog/employee-empowerment-strategies-for-leaders.html
 - Lms Migration Minimize Risks Implement Efficiently: https://moodle-ai-tutor.alphalearn.ai/en/blog/lms-migration-minimize-risks-implement-efficiently.html
