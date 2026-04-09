@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/1Jm3tvUAdusUBFIDldCy7Ub3fC7tcK4Rz">
+  <meta property="og:image:width" content="2640">
+  <meta property="og:image:height" content="1430">
+  <meta property="og:title" content="The Course Is Dying – AI Alternatives | Alphabees">
+  <meta property="og:description" content="Why the traditional online course has had its day and how AI-powered learning support opens up economical alternatives for education decision-makers.">
+  <meta property="og:url" content="https://moodle-ai-tutor.alphalearn.ai/en/blog/course-as-learning-unit-dying-ai-alternatives.html">
+  <meta name="twitter:title" content="The Course Is Dying – AI Alternatives | Alphabees">
+  <meta name="twitter:description" content="Why the traditional online course has had its day and how AI-powered learning support opens up economical alternatives for education decision-makers.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1Jm3tvUAdusUBFIDldCy7Ub3fC7tcK4Rz">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Course Is Dying – AI Alternatives | Alphabees</title>
+  <meta name="description" content="Why the traditional online course has had its day and how AI-powered learning support opens up economical alternatives for education decision-makers.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/course-as-learning-unit-dying-ai-alternatives.html">
+  <link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/kurs-als-lerneinheit-stirbt-ki-alternativen.html">
+  <link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/course-as-learning-unit-dying-ai-alternatives.html">
+  <link rel="alternate" hreflang="x-default" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/kurs-als-lerneinheit-stirbt-ki-alternativen.html">
+  <meta name="geo.region" content="DE">
+  <meta name="geo.country" content="DE">
+  <meta name="geo.placename" content="Deutschland">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes fadeSlideIn {
+      0%   { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+      40%  { opacity: 0.9; transform: translateY(0); filter: blur(0px); }
+      100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+    }
+    .animate-on-scroll { animation-play-state: paused !important; }
+    .animate-on-scroll.animate { animation-play-state: running !important; }
+    html, body { overflow-x: hidden; width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* Article typography */
+    .prose h2 {
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: #111827;
+      margin-top: 2.5rem;
+      margin-bottom: 0.875rem;
+      line-height: 1.3;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose p {
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+    .prose ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .prose ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+    .prose ul li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: #6366f1;
+      margin-top: 0.6em;
+    }
+    .prose blockquote {
+      border-left: 3px solid #6366f1;
+      padding: 0.75rem 1.25rem;
+      margin: 1.75rem 0;
+      background: #f5f3ff;
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+    .prose blockquote p {
+      color: #4338ca;
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .prose .highlight-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .prose .highlight-box p {
+      margin-bottom: 0;
+      color: #1e40af;
+      font-weight: 500;
+    }
+    .prose strong {
+      color: #111827;
+      font-weight: 600;
+    }
+  
+      /* FAQ Accordion */
+      .faq-item { border: 1px solid #e5e7eb; border-radius: 0.75rem; overflow: hidden; margin-bottom: 0.625rem; }
+      .faq-item summary { list-style: none; cursor: pointer; padding: 1rem 1.25rem; font-size: 0.9375rem; font-weight: 600; color: #111827; font-family: 'Geist', sans-serif; display: flex; justify-content: space-between; align-items: center; gap: 1rem; user-select: none; background: #f9fafb; transition: background 0.15s; }
+      .faq-item summary::-webkit-details-marker { display: none; }
+      .faq-item summary:hover { background: #f3f4f6; }
+      .faq-item[open] summary { background: #ede9fe; color: #5b21b6; }
+      .faq-item summary .faq-icon { width: 20px; height: 20px; min-width: 20px; border-radius: 50%; background: #e5e7eb; display: flex; align-items: center; justify-content: center; transition: background 0.15s, transform 0.2s; }
+      .faq-item[open] summary .faq-icon { background: #7c3aed; transform: rotate(45deg); }
+      .faq-item[open] summary .faq-icon svg { stroke: #fff; }
+      .faq-item .faq-body { padding: 1rem 1.25rem 1.25rem; color: #374151; font-size: 0.9375rem; line-height: 1.75; border-top: 1px solid #e5e7eb; }
+      /* Definition Lists */
+      .prose dl { margin: 1rem 0 1.5rem 0; }
+      .prose dt { font-weight: 600; color: #111827; font-size: 1rem; margin-top: 1.25rem; margin-bottom: 0.25rem; font-family: 'Geist', sans-serif; }
+      .prose dd { color: #374151; font-size: 1rem; line-height: 1.75; margin-left: 0; padding-left: 1rem; border-left: 2px solid #6366f1; }
+  </style>
+  <script>
+    (function () {
+      const style = document.createElement('style');
+      style.textContent = `.animate-on-scroll { animation-play-state: paused !important; } .animate-on-scroll.animate { animation-play-state: running !important; }`;
+      document.head.appendChild(style);
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+              window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0 });
+      }
+      window.initInViewAnimations = function (selector = '.animate-on-scroll') {
+        document.querySelectorAll(selector).forEach((el) => { window.__inViewIO.observe(el); });
+      };
+      document.addEventListener('DOMContentLoaded', () => {
+        initInViewAnimations();
+        // Fallback: force-animate any elements the observer missed (iOS Safari / mobile quirks)
+        setTimeout(() => {
+          document.querySelectorAll('.animate-on-scroll:not(.animate)').forEach(el => el.classList.add('animate'));
+        }, 1000);
+      });
+    })();
+  </script>
+  <script src="/assets/js/layout.js" defer></script>
+</head>
+<body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
+
+  <!-- Global Header -->
+  <div id="site-header"></div>
+
+  <main class="relative">
+
+    <!-- Hero Banner -->
+    <div class="relative bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 overflow-hidden">
+      <!-- Decorative blobs -->
+      <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-fuchsia-400/10 blur-3xl pointer-events-none"></div>
+
+      <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 pt-24 pb-0 sm:pt-32 sm:pb-0 relative">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 mb-8 text-sm text-white/60 font-geist" style="animation: fadeSlideIn 1s ease-out 0.05s both;">
+          <a href="../index.html" class="hover:text-white transition">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <a href="../blog.html" class="hover:text-white transition">Blog</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <span class="text-white/40">Artikel</span>
+        </nav>
+
+        <!-- Category + meta -->
+        <div class="flex flex-wrap items-center gap-3 mb-6" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+          <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-white text-xs font-semibold font-geist">Analysis</span>
+          <span class="text-white/50 text-sm font-geist">April 2026</span>
+          <span class="w-1 h-1 rounded-full bg-white/30"></span>
+          <span class="text-white/50 text-sm font-geist">12 Min. Lesezeit</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white font-geist leading-[1.15] tracking-tight mb-5" style="animation: fadeSlideIn 1s ease-out 0.15s both;">
+          The Course Is Dying – AI Alternatives | Alphabees
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-white/70 font-geist font-normal leading-relaxed max-w-2xl" style="animation: fadeSlideIn 1s ease-out 0.2s both;">
+          Formal online courses have been the standard in corporate training for decades. But AI-powered learning support now makes pedagogically superior alternatives economically viable for the first time.
+        </p>
+
+        <!-- Hero image -->
+        <div class="mt-10" style="animation: fadeSlideIn 1s ease-out 0.25s both;">
+          <img src="https://lh3.googleusercontent.com/d/1Jm3tvUAdusUBFIDldCy7Ub3fC7tcK4Rz"
+               alt="AI-powered learning alternatives – illustration of an adaptive learning system"
+               class="w-full rounded-t-2xl object-cover max-h-72 sm:max-h-96 shadow-2xl"
+               loading="eager">
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 py-14 sm:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 lg:gap-16">
+
+        <!-- Main Article -->
+        <article class="prose animate-on-scroll" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+
+<p>For roughly fifty years, the course has been the standard unit of corporate learning. Not because it is particularly effective, but because no alternative seemed scalable enough. This paradigm is now facing a fundamental shift. Artificial intelligence is making learning formats economically viable that have long been recognized as pedagogically superior.</p>
+
+<p>For education leaders in universities, academies, and corporations, this development represents a strategic turning point. The question is no longer whether AI-powered learning support will arrive, but how quickly existing structures can be adapted.</p>
+
+<h2>The well-known weaknesses of the traditional course format</h2>
+
+<p>Criticism of the traditional online course is nothing new. Education researchers have documented three central problem areas for years that limit the effectiveness of formal training.</p>
+
+<p>The first problem concerns the disconnect from daily work. Employees consume learning content in an artificial setting that has little to do with their actual challenges. Informal learning in the workplace – where real competency development occurs – remains largely untouched by formal training.</p>
+
+<p>The second problem is the transfer deficit. Even when participants successfully complete a course, it does not mean they will apply what they learned. The gap between knowledge and action persists because the learning context does not match the application context.</p>
+
+<p>The third problem is cost. Developing high-quality online courses ties up considerable resources. At the same time, the return on investment is difficult to demonstrate when behavioral changes fail to materialize.</p>
+
+<p>Despite these well-known weaknesses, the course remained the dominant learning unit. The reason was economic in nature: the pedagogically superior alternatives simply could not be scaled.</p>
+
+<h2>AI as an economic enabler of better learning formats</h2>
+
+<p>Artificial intelligence fundamentally changes this equation. What was previously too complex or too expensive suddenly becomes economically feasible. Three alternative learning formats are now coming into focus:</p>
+
+<dl>
+<dt>Contextual examples in the workflow</dt>
+<dd>Instead of conveying abstract concepts in isolated courses, AI systems can provide concrete examples exactly when learners need them. The connection between theory and practice occurs immediately in the application context.</dd>
+
+<dt>Feedback on real work outputs</dt>
+<dd>Instead of standardized quiz questions, AI tutors can provide individual feedback on actual tasks. The feedback relates to real challenges, not constructed test scenarios.</dd>
+
+<dt>Intelligent decision support</dt>
+<dd>Job aids and performance support tools can be dynamically adapted to specific needs through AI. Learners receive exactly the support they need at the moment of application.</dd>
+</dl>
+
+<p>These formats have long been considered pedagogically superior but economically unfeasible. The individual support they require was simply too personnel-intensive. AI-powered systems change this calculation because they enable scalable individualization.</p>
+
+<h2>What AI reveals about existing course designs</h2>
+
+<p>A remarkable side effect of AI deployment is the exposure of weak course concepts. When education leaders attempt to delegate repetitive course development to AI systems, it becomes apparent how insubstantial some designs were from the start.</p>
+
+<p>At the same time, AI makes it easier to diagnose whether a course is even the right answer to a learning problem. Many competency gaps can be closed more effectively through contextual support than through formal training.</p>
+
+<p>For education leaders, this represents an opportunity for critical stocktaking. Which existing course offerings actually address learning needs? Which exist only because no better alternative was available?</p>
+
+<h2>The enduring importance of structured learning formats</h2>
+
+<p>Despite all the criticism of the traditional course format, it would be shortsighted to write off structured learning entirely. Courses fulfill functions that AI-powered alternatives cannot easily replace.</p>
+
+<p>A course is also a temporal agreement among people to come together and exchange ideas. Peer learning, the exchange between learners, finds a framework in formal structures. This social aspect of learning remains largely unaffected by AI-powered individualization.</p>
+
+<p>The future therefore lies not in the complete replacement of courses, but in a more differentiated answer to the question of which learning format is suitable for which need. Formal training retains its place – but as one option among several, not as an unquestioned standard.</p>
+
+<h2>Practical implementation: AI tutors in existing learning environments</h2>
+
+<p>For universities, academies, and training providers, the question of concrete implementation arises. How can AI-powered learning formats be integrated into existing infrastructures?</p>
+
+<p>A pragmatic approach is to embed AI tutors directly into existing learning management systems. Platforms like Moodle already provide the basic structure for delivering learning content. An AI tutor can use this content to offer contextual support – around the clock and without additional personnel costs.</p>
+
+<p>Crucially, the AI tutor should not be conceived as a replacement for human instructors, but as a complement. Its strength lies in availability and scalability: questions can be answered when they arise, not only during the next office hours or the next in-person session.</p>
+
+<p>Integration with existing course content also means that no completely new infrastructure needs to be built. Existing materials are enhanced through AI-powered interaction rather than replaced by new formats.</p>
+
+<h2>Strategic implications for education leaders</h2>
+
+<p>The shift away from the course as the sole learning unit has strategic consequences for decision-makers in education. Three areas for action are emerging:</p>
+
+<p>First, inventory analysis: Which formal training programs address genuine competency needs, and which exist out of habit? AI-powered diagnostic tools can create transparency here.</p>
+
+<p>First, inventory analysis: Which formal training programs address genuine competency needs, and which exist out of habit? AI-powered diagnostic tools can create transparency here.</p>
+
+<p>Second, piloting: Entry into AI-powered learning support does not have to be disruptive. Integrating an AI tutor into existing Moodle courses enables a controlled test of new formats.</p>
+
+<p>Third, competency development: Education leaders themselves need an understanding of which learning needs are suited to which formats. The decision between courses, performance support, and contextual assistance is becoming a core didactic competency.</p>
+
+<p>The shift from the course as the standard unit to a differentiated portfolio of learning formats will not happen overnight. But the economic conditions have fundamentally changed through AI. Education leaders who embrace this development early can make their offerings more effective and cost-efficient – and secure a strategic advantage.</p>
+
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="not-prose mt-6 mb-2">
+            <details class="faq-item">
+              <summary>
+                Why do traditional online courses often fail in corporate training?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Online courses are disconnected from daily work and suffer from a transfer problem – what is learned is rarely applied. They also incur high costs with little demonstrable benefit.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                What AI-powered alternatives to traditional courses exist?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">AI enables contextual examples in the workflow, automated feedback on real tasks, and intelligent decision support. These formats were previously too expensive for broad deployment.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How can AI-powered learning support be integrated into existing LMS?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Modern AI tutors can be embedded directly into Moodle and other learning platforms, using existing course content for contextual support.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Does it make sense to completely abandon structured courses?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Structured courses retain their value for peer learning and collaborative exchange. AI alternatives complement formal training but do not replace it entirely.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                What ROI does AI-powered learning support offer compared to traditional courses?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">AI tutors reduce development costs, enable 24/7 availability, and improve learning transfer through contextual support at the moment of need.</div>
+            </details>
+          </div>
+
+          <div class="highlight-box mt-10">
+            <p class="text-base mb-4">Discover how the <strong>Alphabees AI Tutor</strong> intelligently extends your Moodle courses – with 24/7 learning support and no new infrastructure costs.</p>
+          </div>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 not-prose">
+            <a href="../features.html"
+               class="inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 transition text-white font-semibold font-geist text-sm rounded-xl px-6 py-3.5 shadow-lg shadow-violet-500/20">
+              Explore the Alphabees AI Tutor features
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside id="blog-sidebar" class="hidden lg:block"></aside>
+
+      </div>
+
+      <!-- Mobile back to blog -->
+      <div class="lg:hidden mt-12 pt-8 border-t border-gray-100">
+        <a href="../blog.html" class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+          Zurück zum Blog
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Newsletter Popup -->
+  <div id="newsletter-popup" class="fixed inset-0 z-[1000] hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+    <div class="animate-popup bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
+      <button onclick="closeNewsletterPopup()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+      <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Fast geschafft!</h3>
+      <p class="text-gray-600 text-center mb-6">Wir haben dir eine Bestätigungsmail gesendet. Bitte schau in deinem Posteingang nach und klicke auf den Bestätigungslink.</p>
+      <p class="text-gray-500 text-sm text-center mb-6">💡 Nicht gefunden? Schau auch im Spam-Ordner nach.</p>
+      <button onclick="closeNewsletterPopup()" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-lg transition">Verstanden</button>
+    </div>
+  </div>
+
+  <style>
+    @keyframes popupFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    .animate-popup { animation: popupFadeIn 0.3s ease-out; }
+    #newsletter-popup.flex { display: flex !important; }
+  </style>
+
+  <script>
+    function showNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.add('hidden');
+      popup.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('newsletter-popup').addEventListener('click', function(e) {
+      if (e.target === this) closeNewsletterPopup();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeNewsletterPopup();
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsletterForm = document.querySelector('form[data-sv-form="8647011"]');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('input[name="email_address"]');
+          fetch(this.action, { method: 'POST', body: new FormData(this), mode: 'no-cors' })
+            .finally(() => { showNewsletterPopup(); emailInput.value = ''; });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
