@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-09
+# Last updated: 2026-04-10
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,11 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- KI-Rechenkapazitäten an Hochschulen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-rechenkapazitaeten-hochschulen-thueringen-investition.html
+- Neurodiversität im Soft Skills Training | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/neurodiversitaet-soft-skills-training-inklusiv-gestalten.html
+- KI-Kompetenzen für die Arbeitswelt der Zukunft | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-kompetenzen-fuer-die-arbeitswelt-der-zukunft.html
+- L&D und Geschäftsführung: Strategische Partnerschaft | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ld-und-geschaeftsfuehrung-strategische-partnerschaft-fuer-messbaren-lernerfolg.html
+- EU-Leitlinien zu KI und Desinformation: Orientierung für Hochschulen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/eu-leitlinien-ki-desinformation-hochschulbildung.html
 - Nachhaltigkeit an Hochschulen strukturell verankern | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/nachhaltigkeit-hochschulen-strukturelle-verankerung-ki-gestuetzte-lehre.html
 - Liberate Global: Konsolidierung der E-Learning-Branche | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/liberate-global-fusion-elearning-branche-konsolidierung.html
 - Instructional Design Programme: Der Weg zur Zertifizierung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/instructional-design-programme-zertifizierungen-leitfaden.html
@@ -150,6 +155,11 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Ai Computing Capacity Universities Thuringia Investment: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-computing-capacity-universities-thuringia-investment.html
+- Neurodiversity Inclusive Soft Skills Training: https://moodle-ai-tutor.alphalearn.ai/en/blog/neurodiversity-inclusive-soft-skills-training.html
+- Ai Skills For The Future Of Work: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-skills-for-the-future-of-work.html
+- Ld And C Suite Strategic Partnership For Measurable Learning Success: https://moodle-ai-tutor.alphalearn.ai/en/blog/ld-and-c-suite-strategic-partnership-for-measurable-learning-success.html
+- Eu Guidelines Ai Disinformation Higher Education: https://moodle-ai-tutor.alphalearn.ai/en/blog/eu-guidelines-ai-disinformation-higher-education.html
 - Sustainability Universities Structural Integration Ai Supported Teaching: https://moodle-ai-tutor.alphalearn.ai/en/blog/sustainability-universities-structural-integration-ai-supported-teaching.html
 - Liberate Global Merger Elearning Industry Consolidation: https://moodle-ai-tutor.alphalearn.ai/en/blog/liberate-global-merger-elearning-industry-consolidation.html
 - Instructional Design Programs Certifications Guide: https://moodle-ai-tutor.alphalearn.ai/en/blog/instructional-design-programs-certifications-guide.html
