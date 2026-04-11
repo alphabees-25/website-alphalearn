@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="de" class="h-full">
+<head>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/1SXMcKgHNKGPDy4MJ9cWcE-ZKl6fw1l0N">
+  <meta property="og:image:width" content="2640">
+  <meta property="og:image:height" content="1430">
+  <meta property="og:title" content="Promptathon: KI-Kompetenzen im Team entwickeln | Alphabees">
+  <meta property="og:description" content="Wie Promptathons KI-Adoption in Organisationen fördern. Erfahren Sie, warum Community-basiertes Lernen effektiver ist als klassische Schulungen.">
+  <meta property="og:url" content="https://moodle-ai-tutor.alphalearn.ai/de/blog/promptathon-ki-kompetenzen-im-team-entwickeln.html">
+  <meta name="twitter:title" content="Promptathon: KI-Kompetenzen im Team entwickeln | Alphabees">
+  <meta name="twitter:description" content="Wie Promptathons KI-Adoption in Organisationen fördern. Erfahren Sie, warum Community-basiertes Lernen effektiver ist als klassische Schulungen.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1SXMcKgHNKGPDy4MJ9cWcE-ZKl6fw1l0N">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Promptathon: KI-Kompetenzen im Team entwickeln | Alphabees</title>
+  <meta name="description" content="Wie Promptathons KI-Adoption in Organisationen fördern. Erfahren Sie, warum Community-basiertes Lernen effektiver ist als klassische Schulungen.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/promptathon-ki-kompetenzen-im-team-entwickeln.html">
+  <link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/promptathon-ki-kompetenzen-im-team-entwickeln.html">
+  <link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/promptathon-developing-ai-skills-in-teams.html">
+  <link rel="alternate" hreflang="x-default" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/promptathon-ki-kompetenzen-im-team-entwickeln.html">
+  <meta name="geo.region" content="DE">
+  <meta name="geo.country" content="DE">
+  <meta name="geo.placename" content="Deutschland">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes fadeSlideIn {
+      0%   { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+      40%  { opacity: 0.9; transform: translateY(0); filter: blur(0px); }
+      100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+    }
+    .animate-on-scroll { animation-play-state: paused !important; }
+    .animate-on-scroll.animate { animation-play-state: running !important; }
+    html, body { overflow-x: hidden; width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* Article typography */
+    .prose h2 {
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: #111827;
+      margin-top: 2.5rem;
+      margin-bottom: 0.875rem;
+      line-height: 1.3;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose p {
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+    .prose ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .prose ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+    .prose ul li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: #6366f1;
+      margin-top: 0.6em;
+    }
+    .prose blockquote {
+      border-left: 3px solid #6366f1;
+      padding: 0.75rem 1.25rem;
+      margin: 1.75rem 0;
+      background: #f5f3ff;
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+    .prose blockquote p {
+      color: #4338ca;
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .prose .highlight-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .prose .highlight-box p {
+      margin-bottom: 0;
+      color: #1e40af;
+      font-weight: 500;
+    }
+    .prose strong {
+      color: #111827;
+      font-weight: 600;
+    }
+  
+      /* FAQ Accordion */
+      .faq-item { border: 1px solid #e5e7eb; border-radius: 0.75rem; overflow: hidden; margin-bottom: 0.625rem; }
+      .faq-item summary { list-style: none; cursor: pointer; padding: 1rem 1.25rem; font-size: 0.9375rem; font-weight: 600; color: #111827; font-family: 'Geist', sans-serif; display: flex; justify-content: space-between; align-items: center; gap: 1rem; user-select: none; background: #f9fafb; transition: background 0.15s; }
+      .faq-item summary::-webkit-details-marker { display: none; }
+      .faq-item summary:hover { background: #f3f4f6; }
+      .faq-item[open] summary { background: #ede9fe; color: #5b21b6; }
+      .faq-item summary .faq-icon { width: 20px; height: 20px; min-width: 20px; border-radius: 50%; background: #e5e7eb; display: flex; align-items: center; justify-content: center; transition: background 0.15s, transform 0.2s; }
+      .faq-item[open] summary .faq-icon { background: #7c3aed; transform: rotate(45deg); }
+      .faq-item[open] summary .faq-icon svg { stroke: #fff; }
+      .faq-item .faq-body { padding: 1rem 1.25rem 1.25rem; color: #374151; font-size: 0.9375rem; line-height: 1.75; border-top: 1px solid #e5e7eb; }
+      /* Definition Lists */
+      .prose dl { margin: 1rem 0 1.5rem 0; }
+      .prose dt { font-weight: 600; color: #111827; font-size: 1rem; margin-top: 1.25rem; margin-bottom: 0.25rem; font-family: 'Geist', sans-serif; }
+      .prose dd { color: #374151; font-size: 1rem; line-height: 1.75; margin-left: 0; padding-left: 1rem; border-left: 2px solid #6366f1; }
+  </style>
+  <script>
+    (function () {
+      const style = document.createElement('style');
+      style.textContent = `.animate-on-scroll { animation-play-state: paused !important; } .animate-on-scroll.animate { animation-play-state: running !important; }`;
+      document.head.appendChild(style);
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+              window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0 });
+      }
+      window.initInViewAnimations = function (selector = '.animate-on-scroll') {
+        document.querySelectorAll(selector).forEach((el) => { window.__inViewIO.observe(el); });
+      };
+      document.addEventListener('DOMContentLoaded', () => {
+        initInViewAnimations();
+        // Fallback: force-animate any elements the observer missed (iOS Safari / mobile quirks)
+        setTimeout(() => {
+          document.querySelectorAll('.animate-on-scroll:not(.animate)').forEach(el => el.classList.add('animate'));
+        }, 1000);
+      });
+    })();
+  </script>
+  <script src="/assets/js/layout.js" defer></script>
+</head>
+<body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
+
+  <!-- Global Header -->
+  <div id="site-header"></div>
+
+  <main class="relative">
+
+    <!-- Hero Banner -->
+    <div class="relative bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 overflow-hidden">
+      <!-- Decorative blobs -->
+      <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-fuchsia-400/10 blur-3xl pointer-events-none"></div>
+
+      <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 pt-24 pb-0 sm:pt-32 sm:pb-0 relative">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 mb-8 text-sm text-white/60 font-geist" style="animation: fadeSlideIn 1s ease-out 0.05s both;">
+          <a href="../index.html" class="hover:text-white transition">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <a href="../blog.html" class="hover:text-white transition">Blog</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <span class="text-white/40">Artikel</span>
+        </nav>
+
+        <!-- Category + meta -->
+        <div class="flex flex-wrap items-center gap-3 mb-6" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+          <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-white text-xs font-semibold font-geist">Praxis</span>
+          <span class="text-white/50 text-sm font-geist">April 2026</span>
+          <span class="w-1 h-1 rounded-full bg-white/30"></span>
+          <span class="text-white/50 text-sm font-geist">12 Min. Lesezeit</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white font-geist leading-[1.15] tracking-tight mb-5" style="animation: fadeSlideIn 1s ease-out 0.15s both;">
+          Promptathon: KI-Kompetenzen im Team entwickeln | Alphabees
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-white/70 font-geist font-normal leading-relaxed max-w-2xl" style="animation: fadeSlideIn 1s ease-out 0.2s both;">
+          Der Promptathon etabliert sich als wirksames Format für die KI-Qualifizierung in Organisationen. Entscheider erfahren, warum Community-basiertes Lernen nachhaltiger wirkt als isolierte Trainings.
+        </p>
+
+        <!-- Hero image -->
+        <div class="mt-10" style="animation: fadeSlideIn 1s ease-out 0.25s both;">
+          <img src="https://lh3.googleusercontent.com/d/1SXMcKgHNKGPDy4MJ9cWcE-ZKl6fw1l0N"
+               alt="Promptathon für KI-Kompetenzen – Gruppe bei kollaborativem KI-Training"
+               class="w-full rounded-t-2xl object-cover max-h-72 sm:max-h-96 shadow-2xl"
+               loading="eager">
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 py-14 sm:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 lg:gap-16">
+
+        <!-- Main Article -->
+        <article class="prose animate-on-scroll" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+
+<p>Die Einführung von Künstlicher Intelligenz in Organisationen scheitert selten an der Technologie selbst. Sie scheitert an der Adoption durch die Mitarbeitenden. Klassische Schulungsformate erreichen oft nicht die gewünschte Wirkung: Das Gelernte versickert, die Tools bleiben ungenutzt, die erhofften Produktivitätsgewinne stellen sich nicht ein. Ein Format gewinnt deshalb zunehmend an Bedeutung, das einen anderen Ansatz verfolgt: der Promptathon.</p>
+
+<h2>Vom Training zur Community: Ein Paradigmenwechsel</h2>
+
+<p>Marina Kraft, aktives Mitglied der Corporate Learning Community, hat im Februar 2026 den dritten Promptathon mit 127 Kolleg:innen durchgeführt. Ihre Beobachtung fasst zusammen, was viele Bildungsverantwortliche inzwischen erkennen: KI-Kompetenzen entstehen nicht im Seminarraum, sondern in der gemeinsamen Praxis.</p>
+
+<p>Der entscheidende Unterschied liegt im Ansatz. Während traditionelle Schulungen Wissen vermitteln und auf spätere Anwendung hoffen, verbindet der Promptathon Lernen und Anwenden in einem gemeinsamen Erlebnis. Die Teilnehmenden arbeiten an realen Aufgaben, tauschen Erfahrungen aus und sehen unmittelbar, welche Ansätze funktionieren.</p>
+
+<p>Für Entscheider im Bildungsbereich bedeutet das eine grundlegende Verschiebung der Perspektive:</p>
+
+<dl>
+<dt>Vom Einzeltraining zur Community of Practice:</dt>
+<dd>Nachhaltiges Lernen entsteht durch regelmäßigen Austausch und gegenseitige Unterstützung, nicht durch einmalige Wissensvermittlung.</dd>
+<dt>Von der Pflichtveranstaltung zum sichtbaren Erfolg:</dt>
+<dd>Wenn Lernerfolge geteilt und gefeiert werden, steigt die Motivation zur weiteren Entwicklung.</dd>
+<dt>Von der Perfektion zum Experimentieren:</dt>
+<dd>KI-Kompetenz entwickelt sich durch Ausprobieren und Iteration, nicht durch das Befolgen starrer Regeln.</dd>
+</dl>
+
+<h2>Warum klassische Schulungsformate bei KI oft versagen</h2>
+
+<p>Die Herausforderung bei der KI-Qualifizierung unterscheidet sich grundlegend von anderen Weiterbildungsthemen. KI-Tools entwickeln sich rasant weiter, beste Praktiken sind noch nicht etabliert, und der individuelle Nutzen hängt stark vom konkreten Anwendungskontext ab.</p>
+
+<p>Klassische E-Learning-Module oder Präsenzschulungen stoßen hier an ihre Grenzen. Sie vermitteln Grundlagen, die wenige Wochen später bereits überholt sein können. Sie zeigen Beispiele, die sich nicht auf die eigene Arbeitssituation übertragen lassen. Und sie enden, bevor die eigentliche Lernkurve beginnt: bei der täglichen Anwendung im Arbeitsalltag.</p>
+
+<p>Die Konsequenz für viele Organisationen: hohe Investitionen in Schulungen, aber geringe tatsächliche Nutzung der KI-Tools. Die Mitarbeitenden kehren an ihren Arbeitsplatz zurück, der Alltag übernimmt, und die neuen Fähigkeiten verkümmern mangels Übung und Unterstützung.</p>
+
+<h2>Elemente erfolgreicher KI-Qualifizierung</h2>
+
+<p>Aus den Erfahrungen mit Formaten wie dem Promptathon lassen sich Erfolgsfaktoren ableiten, die für jede Organisation relevant sind, die KI-Kompetenzen aufbauen möchte:</p>
+
+<ul>
+<li>Regelmäßigkeit statt Einmaligkeit: Wiederkehrende Lernformate verankern neue Verhaltensweisen besser als einzelne intensive Schulungen.</li>
+<li>Peer-Learning statt reiner Instruktion: Der Austausch unter Kolleg:innen schafft Relevanz und fördert den Transfer in die eigene Praxis.</li>
+<li>Sichtbarkeit der Erfolge: Wenn gute Prompts, gelöste Probleme und produktive Anwendungen geteilt werden, entsteht ein positiver Kreislauf.</li>
+<li>Niedrigschwelliger Zugang: Die Hürde zur Teilnahme muss gering sein, damit auch zurückhaltende Mitarbeitende einsteigen.</li>
+<li>Kontinuierliche Unterstützung: Zwischen organisierten Lernformaten brauchen Lernende Anlaufstellen für Fragen und Probleme.</li>
+</ul>
+
+<p>Besonders der letzte Punkt verdient Aufmerksamkeit. Die Energie eines Promptathons verpufft, wenn Teilnehmende danach allein gelassen werden. Hier zeigt sich der Wert von Strukturen, die über das Event hinaus wirken.</p>
+
+<h2>Die Rolle kontinuierlicher Lernbegleitung</h2>
+
+<p>Community-Events wie Promptathons setzen wichtige Impulse. Doch die eigentliche Kompetenzentwicklung geschieht zwischen diesen Höhepunkten: wenn eine Mitarbeiterin einen komplexen Prompt formulieren möchte, wenn ein Teamleiter die passende KI-Anwendung für einen Prozess sucht, wenn Unsicherheiten im täglichen Umgang mit den Tools auftreten.</p>
+
+<p>Genau hier entfalten KI-Tutoren ihren Nutzen. Sie sind verfügbar, wenn die Frage entsteht, nicht erst beim nächsten organisierten Lernformat. Sie können auf die spezifische Situation eingehen, statt allgemeine Antworten zu geben. Und sie ermöglichen ein Übungsumfeld, in dem Fehler keine Konsequenzen haben.</p>
+
+<p>Für Bildungsverantwortliche ergibt sich daraus ein Zusammenspiel verschiedener Elemente:</p>
+
+<ul>
+<li>Community-Events wie Promptathons für gemeinsames Erleben und Motivation</li>
+<li>Strukturierte Lernpfade für systematischen Kompetenzaufbau</li>
+<li>KI-gestützte Lernbegleitung für individuelle Unterstützung im Moment des Bedarfs</li>
+<li>Plattformen für den Austausch von Best Practices und erfolgreichen Anwendungen</li>
+</ul>
+
+<p>Die Integration eines KI-Tutors in bestehende Lernmanagementsysteme wie Moodle schließt die Lücke zwischen organisierten Lernformaten und dem individuellen Lernbedarf. Lernende erhalten Unterstützung genau dann, wenn sie diese benötigen, ohne auf den nächsten Promptathon oder die nächste Sprechstunde warten zu müssen.</p>
+
+<h2>Messbare Adoption statt Schulungsteilnahmen</h2>
+
+<p>Ein Umdenken ist auch bei den Erfolgskennzahlen erforderlich. Die Anzahl durchgeführter Schulungen oder die Teilnahmequoten sagen wenig über die tatsächliche KI-Kompetenz einer Organisation aus. Relevanter sind Fragen wie: Wie viele Mitarbeitende nutzen KI-Tools regelmäßig in ihrer Arbeit? Welche Prozesse wurden durch KI-Unterstützung verbessert? Wie entwickelt sich die Qualität der Interaktionen mit KI-Systemen über die Zeit?</p>
+
+<p>Organisationen, die messbare KI-Adoption erreichen, kombinieren verschiedene Ansätze. Sie schaffen Gelegenheiten zum gemeinsamen Lernen, wie es der Promptathon exemplarisch zeigt. Sie etablieren Strukturen für kontinuierliche Unterstützung. Und sie machen Lernerfolge sichtbar, sodass eine positive Dynamik entsteht.</p>
+
+<p>Die Erfahrung zeigt: KI-Kompetenz lässt sich nicht verordnen, aber sie lässt sich kultivieren. Formate wie der Promptathon demonstrieren, dass der menschliche Faktor entscheidend bleibt. Gemeinsames Experimentieren, gegenseitige Unterstützung und sichtbare Erfolge schaffen die Grundlage für eine Organisation, in der KI tatsächlich im Arbeitsalltag ankommt.</p>
+
+<p>Für Entscheider im Bildungsbereich liegt die Aufgabe darin, diese verschiedenen Elemente zu einem kohärenten Gesamtkonzept zu verbinden. Der Promptathon zeigt einen wichtigen Baustein. Die Frage für jede Organisation lautet: Welche weiteren Strukturen braucht es, damit aus dem Impuls nachhaltige Kompetenzentwicklung wird?</p>
+
+          <h2>Häufig gestellte Fragen</h2>
+
+          <div class="not-prose mt-6 mb-2">
+            <details class="faq-item">
+              <summary>
+                Was ist ein Promptathon und wie funktioniert er?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Ein Promptathon ist ein kollaboratives Lernformat, bei dem Teams gemeinsam KI-Anwendungen und Prompt-Techniken erproben. Die Teilnehmenden lernen voneinander und entwickeln praxisnahe Lösungen für ihren Arbeitsalltag.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Wie viele Teilnehmende braucht ein Promptathon für messbare Ergebnisse?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Erfolgreiche Promptathons funktionieren bereits ab kleinen Gruppen, skalieren aber auch auf über 100 Personen. Entscheidend ist die aktive Beteiligung und der strukturierte Austausch, nicht die reine Teilnehmerzahl.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Warum scheitern klassische KI-Schulungen oft an der Umsetzung?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Isolierte Trainings vermitteln Wissen ohne Anwendungskontext. Ohne Community und sichtbare Erfolgserlebnisse fehlt der Transfer in den Arbeitsalltag.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Wie lässt sich KI-Adoption im Unternehmen nachhaltig verankern?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Durch den Aufbau von Communities of Practice, in denen Lernen sichtbar und gefeiert wird. Regelmäßige Formate wie Promptathons schaffen Verbindlichkeit und fördern den Wissenstransfer.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Welche Rolle spielen KI-Tutoren bei der Entwicklung von KI-Kompetenzen?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">KI-Tutoren bieten individuellen Support zwischen organisierten Lernformaten. Sie ermöglichen kontinuierliches Üben und beantworten Fragen genau dann, wenn sie im Arbeitsalltag entstehen.</div>
+            </details>
+          </div>
+
+          <div class="highlight-box mt-10">
+            <p class="text-base mb-4">Entdecke, wie der <strong>Alphabees KI-Tutor</strong> deine Moodle-Kurse intelligent erweitert – mit 24/7 Lernunterstützung und ohne neue Infrastrukturkosten.</p>
+          </div>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 not-prose">
+            <a href="../features.html"
+               class="inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 transition text-white font-semibold font-geist text-sm rounded-xl px-6 py-3.5 shadow-lg shadow-violet-500/20">
+              Alphabees KI-Tutor Features entdecken
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside id="blog-sidebar" class="hidden lg:block"></aside>
+
+      </div>
+
+      <!-- Mobile back to blog -->
+      <div class="lg:hidden mt-12 pt-8 border-t border-gray-100">
+        <a href="../blog.html" class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+          Zurück zum Blog
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Newsletter Popup -->
+  <div id="newsletter-popup" class="fixed inset-0 z-[1000] hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+    <div class="animate-popup bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
+      <button onclick="closeNewsletterPopup()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+      <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Fast geschafft!</h3>
+      <p class="text-gray-600 text-center mb-6">Wir haben dir eine Bestätigungsmail gesendet. Bitte schau in deinem Posteingang nach und klicke auf den Bestätigungslink.</p>
+      <p class="text-gray-500 text-sm text-center mb-6">💡 Nicht gefunden? Schau auch im Spam-Ordner nach.</p>
+      <button onclick="closeNewsletterPopup()" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-lg transition">Verstanden</button>
+    </div>
+  </div>
+
+  <style>
+    @keyframes popupFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    .animate-popup { animation: popupFadeIn 0.3s ease-out; }
+    #newsletter-popup.flex { display: flex !important; }
+  </style>
+
+  <script>
+    function showNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.add('hidden');
+      popup.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('newsletter-popup').addEventListener('click', function(e) {
+      if (e.target === this) closeNewsletterPopup();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeNewsletterPopup();
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsletterForm = document.querySelector('form[data-sv-form="8647011"]');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('input[name="email_address"]');
+          fetch(this.action, { method: 'POST', body: new FormData(this), mode: 'no-cors' })
+            .finally(() => { showNewsletterPopup(); emailInput.value = ''; });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
