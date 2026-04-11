@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-10
+# Last updated: 2026-04-11
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,11 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- KI-Intelligenzschicht im LMS: Eigene Kontrolle | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-intelligenzschicht-lms-eigene-kontrolle-statt-vendor-abhaengigkeit.html
+- Warum KI-Lernprojekte scheitern – und wie Sie es vermeiden | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/warum-ki-lernprojekte-scheitern-und-wie-sie-es-vermeiden.html
+- Governance für KI-Lerninhalte: Qualität sichern | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/governance-ki-generierte-lerninhalte-qualitaet-vertrauen.html
+- Berufsorientierung neu gedacht: SchulePlus-Modell | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/berufsorientierung-schuleplus-individuelle-lernbegleitung.html
+- Promptathon: KI-Kompetenzen im Team entwickeln | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/promptathon-ki-kompetenzen-im-team-entwickeln.html
 - KI-Rechenkapazitäten an Hochschulen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-rechenkapazitaeten-hochschulen-thueringen-investition.html
 - Neurodiversität im Soft Skills Training | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/neurodiversitaet-soft-skills-training-inklusiv-gestalten.html
 - KI-Kompetenzen für die Arbeitswelt der Zukunft | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-kompetenzen-fuer-die-arbeitswelt-der-zukunft.html
@@ -155,6 +160,11 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Ai Intelligence Layer Lms Control Vs Vendor Dependency: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-intelligence-layer-lms-control-vs-vendor-dependency.html
+- Why Ai Learning Projects Fail And How To Avoid It: https://moodle-ai-tutor.alphalearn.ai/en/blog/why-ai-learning-projects-fail-and-how-to-avoid-it.html
+- Governance Ai Generated Learning Content Quality Trust: https://moodle-ai-tutor.alphalearn.ai/en/blog/governance-ai-generated-learning-content-quality-trust.html
+- Career Orientation Schuleplus Individual Learning Support: https://moodle-ai-tutor.alphalearn.ai/en/blog/career-orientation-schuleplus-individual-learning-support.html
+- Promptathon Developing Ai Skills In Teams: https://moodle-ai-tutor.alphalearn.ai/en/blog/promptathon-developing-ai-skills-in-teams.html
 - Ai Computing Capacity Universities Thuringia Investment: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-computing-capacity-universities-thuringia-investment.html
 - Neurodiversity Inclusive Soft Skills Training: https://moodle-ai-tutor.alphalearn.ai/en/blog/neurodiversity-inclusive-soft-skills-training.html
 - Ai Skills For The Future Of Work: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-skills-for-the-future-of-work.html
