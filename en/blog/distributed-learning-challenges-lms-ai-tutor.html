@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/1a28uwfV_mtKrj0cgrm9pGenJIKwehb_m">
+  <meta property="og:image:width" content="2640">
+  <meta property="og:image:height" content="1430">
+  <meta property="og:title" content="Distributed Learning: 7 Challenges and Solutions | Alphabees">
+  <meta property="og:description" content="Distributed learning presents complex challenges for educational institutions. Learn how LMS platforms and AI tutors effectively address them.">
+  <meta property="og:url" content="https://moodle-ai-tutor.alphalearn.ai/en/blog/distributed-learning-challenges-lms-ai-tutor.html">
+  <meta name="twitter:title" content="Distributed Learning: 7 Challenges and Solutions | Alphabees">
+  <meta name="twitter:description" content="Distributed learning presents complex challenges for educational institutions. Learn how LMS platforms and AI tutors effectively address them.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1a28uwfV_mtKrj0cgrm9pGenJIKwehb_m">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Distributed Learning: 7 Challenges and Solutions | Alphabees</title>
+  <meta name="description" content="Distributed learning presents complex challenges for educational institutions. Learn how LMS platforms and AI tutors effectively address them.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/distributed-learning-challenges-lms-ai-tutor.html">
+  <link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/verteiltes-lernen-herausforderungen-lms-ki-tutor.html">
+  <link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/distributed-learning-challenges-lms-ai-tutor.html">
+  <link rel="alternate" hreflang="x-default" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/verteiltes-lernen-herausforderungen-lms-ki-tutor.html">
+  <meta name="geo.region" content="DE">
+  <meta name="geo.country" content="DE">
+  <meta name="geo.placename" content="Deutschland">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes fadeSlideIn {
+      0%   { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+      40%  { opacity: 0.9; transform: translateY(0); filter: blur(0px); }
+      100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+    }
+    .animate-on-scroll { animation-play-state: paused !important; }
+    .animate-on-scroll.animate { animation-play-state: running !important; }
+    html, body { overflow-x: hidden; width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* Article typography */
+    .prose h2 {
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: #111827;
+      margin-top: 2.5rem;
+      margin-bottom: 0.875rem;
+      line-height: 1.3;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose p {
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+    .prose ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .prose ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+    .prose ul li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: #6366f1;
+      margin-top: 0.6em;
+    }
+    .prose blockquote {
+      border-left: 3px solid #6366f1;
+      padding: 0.75rem 1.25rem;
+      margin: 1.75rem 0;
+      background: #f5f3ff;
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+    .prose blockquote p {
+      color: #4338ca;
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .prose .highlight-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .prose .highlight-box p {
+      margin-bottom: 0;
+      color: #1e40af;
+      font-weight: 500;
+    }
+    .prose strong {
+      color: #111827;
+      font-weight: 600;
+    }
+  
+      /* FAQ Accordion */
+      .faq-item { border: 1px solid #e5e7eb; border-radius: 0.75rem; overflow: hidden; margin-bottom: 0.625rem; }
+      .faq-item summary { list-style: none; cursor: pointer; padding: 1rem 1.25rem; font-size: 0.9375rem; font-weight: 600; color: #111827; font-family: 'Geist', sans-serif; display: flex; justify-content: space-between; align-items: center; gap: 1rem; user-select: none; background: #f9fafb; transition: background 0.15s; }
+      .faq-item summary::-webkit-details-marker { display: none; }
+      .faq-item summary:hover { background: #f3f4f6; }
+      .faq-item[open] summary { background: #ede9fe; color: #5b21b6; }
+      .faq-item summary .faq-icon { width: 20px; height: 20px; min-width: 20px; border-radius: 50%; background: #e5e7eb; display: flex; align-items: center; justify-content: center; transition: background 0.15s, transform 0.2s; }
+      .faq-item[open] summary .faq-icon { background: #7c3aed; transform: rotate(45deg); }
+      .faq-item[open] summary .faq-icon svg { stroke: #fff; }
+      .faq-item .faq-body { padding: 1rem 1.25rem 1.25rem; color: #374151; font-size: 0.9375rem; line-height: 1.75; border-top: 1px solid #e5e7eb; }
+      /* Definition Lists */
+      .prose dl { margin: 1rem 0 1.5rem 0; }
+      .prose dt { font-weight: 600; color: #111827; font-size: 1rem; margin-top: 1.25rem; margin-bottom: 0.25rem; font-family: 'Geist', sans-serif; }
+      .prose dd { color: #374151; font-size: 1rem; line-height: 1.75; margin-left: 0; padding-left: 1rem; border-left: 2px solid #6366f1; }
+  </style>
+  <script>
+    (function () {
+      const style = document.createElement('style');
+      style.textContent = `.animate-on-scroll { animation-play-state: paused !important; } .animate-on-scroll.animate { animation-play-state: running !important; }`;
+      document.head.appendChild(style);
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+              window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0 });
+      }
+      window.initInViewAnimations = function (selector = '.animate-on-scroll') {
+        document.querySelectorAll(selector).forEach((el) => { window.__inViewIO.observe(el); });
+      };
+      document.addEventListener('DOMContentLoaded', () => {
+        initInViewAnimations();
+        // Fallback: force-animate any elements the observer missed (iOS Safari / mobile quirks)
+        setTimeout(() => {
+          document.querySelectorAll('.animate-on-scroll:not(.animate)').forEach(el => el.classList.add('animate'));
+        }, 1000);
+      });
+    })();
+  </script>
+  <script src="/assets/js/layout.js" defer></script>
+</head>
+<body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
+
+  <!-- Global Header -->
+  <div id="site-header"></div>
+
+  <main class="relative">
+
+    <!-- Hero Banner -->
+    <div class="relative bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 overflow-hidden">
+      <!-- Decorative blobs -->
+      <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-fuchsia-400/10 blur-3xl pointer-events-none"></div>
+
+      <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 pt-24 pb-0 sm:pt-32 sm:pb-0 relative">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 mb-8 text-sm text-white/60 font-geist" style="animation: fadeSlideIn 1s ease-out 0.05s both;">
+          <a href="../index.html" class="hover:text-white transition">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <a href="../blog.html" class="hover:text-white transition">Blog</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <span class="text-white/40">Artikel</span>
+        </nav>
+
+        <!-- Category + meta -->
+        <div class="flex flex-wrap items-center gap-3 mb-6" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+          <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-white text-xs font-semibold font-geist">Analysis</span>
+          <span class="text-white/50 text-sm font-geist">April 2026</span>
+          <span class="w-1 h-1 rounded-full bg-white/30"></span>
+          <span class="text-white/50 text-sm font-geist">12 Min. Lesezeit</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white font-geist leading-[1.15] tracking-tight mb-5" style="animation: fadeSlideIn 1s ease-out 0.15s both;">
+          Distributed Learning: 7 Challenges and Solutions | Alphabees
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-white/70 font-geist font-normal leading-relaxed max-w-2xl" style="animation: fadeSlideIn 1s ease-out 0.2s both;">
+          Educational institutions with distributed learners struggle with consistency, visibility, and individual support. Modern LMS solutions and AI-powered tutors provide scalable answers to these structural challenges.
+        </p>
+
+        <!-- Hero image -->
+        <div class="mt-10" style="animation: fadeSlideIn 1s ease-out 0.25s both;">
+          <img src="https://lh3.googleusercontent.com/d/1a28uwfV_mtKrj0cgrm9pGenJIKwehb_m"
+               alt="Distributed learning – learners at various locations using digital learning platforms"
+               class="w-full rounded-t-2xl object-cover max-h-72 sm:max-h-96 shadow-2xl"
+               loading="eager">
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 py-14 sm:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 lg:gap-16">
+
+        <!-- Main Article -->
+        <article class="prose animate-on-scroll" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+
+<p>Education no longer takes place in a single location. Students learn from home, training participants work in different cities, and employees in companies are spread across multiple sites. This flexibility opens up opportunities but presents significant organizational and didactic challenges for education managers. How can consistent knowledge transfer succeed when learners are never in the same place at the same time? And how can individual support be ensured without overwhelming personnel resources?</p>
+
+<p>For decision-makers at universities, academies, and companies with training responsibilities, the answer to these questions is business-critical. Modern Learning Management Systems combined with AI-powered tutors offer solutions that unite scalability and quality.</p>
+
+<h2>The seven central challenges of distributed learning</h2>
+
+<p>When learners do not come together physically, structural problems arise that can hardly be managed with traditional methods. Education managers regularly encounter the following seven challenges:</p>
+
+<dl>
+<dt>Inconsistent learning quality:</dt>
+<dd>Different locations often mean different levels of support intensity. Some groups receive intensive assistance while others are neglected.</dd>
+<dt>Delayed onboarding:</dt>
+<dd>New participants often have to wait for the next in-person session before they can fully get started. This costs time and motivation.</dd>
+<dt>Lack of visibility:</dt>
+<dd>Without centralized systems, managers do not know who has already completed which content and where knowledge gaps exist.</dd>
+<dt>Difficult performance measurement:</dt>
+<dd>Evaluating learning progress becomes complicated when no uniform standards and measurement methods exist.</dd>
+<dt>Low engagement:</dt>
+<dd>Isolated learning without social integration frequently leads to loss of motivation and higher dropout rates.</dd>
+<dt>Compliance risks:</dt>
+<dd>Mandatory training and certifications can hardly be documented without centralized records.</dd>
+<dt>Limited support capacity:</dt>
+<dd>Instructors and trainers cannot be available around the clock for all learners, regardless of time zone or work schedule.</dd>
+</dl>
+
+<p>These challenges reinforce each other. Lack of visibility makes targeted intervention difficult, low engagement leads to poorer outcomes, and limited support capacity intensifies feelings of isolation among learners.</p>
+
+<h2>How modern LMS solutions address structural problems</h2>
+
+<p>A Learning Management System creates the technical foundation for consistent distributed learning. The benefits extend far beyond simply providing content:</p>
+
+<p><strong>Standardized learning paths</strong> ensure that all participants receive the same content at the same quality level. Role-based assignments ensure learners only see relevant courses. This reduces overwhelm and increases completion rates.</p>
+
+<p><strong>Real-time tracking</strong> gives education managers a constant overview of learning progress. Who has completed which modules? Where are things stalling? Which topics are causing difficulties? This data enables proactive intervention before problems escalate.</p>
+
+<p><strong>Flexible onboarding</strong> allows new participants to start immediately. Introductory courses, orientation materials, and initial learning modules are available independent of in-person sessions. The time to productive participation is significantly reduced.</p>
+
+<p><strong>Automated compliance documentation</strong> records course completions, manages certificates, and creates audit trails. For educational institutions in regulated sectors, this is indispensable.</p>
+
+<h2>The limits of pure LMS solutions and the added value of AI tutors</h2>
+
+<p>As powerful as modern LMS platforms are, they do not solve one central problem: individual support in real time. An LMS can deliver content and measure progress. However, it cannot answer questions, explain connections, or provide individualized assistance.</p>
+
+<p>This is exactly where AI-powered tutors come in. An AI tutor integrated directly into the Moodle course environment acts as a constantly available learning companion. It knows the course content, understands the context of questions, and delivers precise answers tailored to the specific course.</p>
+
+<p>For distributed learning groups, this means a fundamental difference:</p>
+
+<ul>
+<li>Learners in different time zones receive immediate support without having to wait for office hours.</li>
+<li>Repeated standard questions are answered automatically, giving instructors time for more complex support tasks.</li>
+<li>Every learner receives individual explanations at their level without other participants suffering as a result.</li>
+<li>The feeling of isolation during remote learning is reduced, as a contact person is always available.</li>
+</ul>
+
+<p>The combination of a structured LMS and an intelligent tutor closes the gap between scalability and individual support. Educational institutions can reach more learners without sacrificing the quality of support.</p>
+
+<h2>Strategic considerations for education managers</h2>
+
+<p>The decision for a distributed learning concept has often already been made, whether through external circumstances or strategic considerations. The real question is: How can this concept be implemented sustainably and with high quality?</p>
+
+<p>Three factors deserve special attention:</p>
+
+<p><strong>Integration instead of isolated solutions:</strong> New tools should fit seamlessly into existing systems. An AI tutor that works directly in Moodle requires no additional platform and no system change for learners. Acceptance increases when the tool is available where learning already takes place.</p>
+
+<p><strong>Data-driven development:</strong> The combination of LMS tracking and tutor interactions provides valuable insights. Which topics cause the most follow-up questions? Where do learners drop out? This data enables continuous improvement of course content and learning paths.</p>
+
+<p><strong>Scalability without quality loss:</strong> A system that works with one hundred learners must also work with one thousand learners. AI-powered solutions scale without proportional staff increases while maintaining support quality.</p>
+
+<p>Distributed learning is not a temporary phenomenon. For universities, academies, and continuing education providers, it is part of strategic reality. The tools to successfully shape this reality exist. What matters is using them consistently while keeping both the structural requirements of an LMS and the individual needs of learners in view. Modern AI tutors that integrate directly into Moodle offer precisely this connection between structure and personal support.</p>
+
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="not-prose mt-6 mb-2">
+            <details class="faq-item">
+              <summary>
+                What benefits does an LMS offer for distributed learning groups?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">An LMS enables location-independent access to standardized learning content and provides real-time data on all participants' progress. This creates consistency while maintaining flexibility.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How does an AI tutor support learners outside regular office hours?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">An AI tutor is available around the clock and answers questions directly within the course context. Learners receive immediate help without waiting for instructors.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Which compliance requirements can an LMS address?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">LMS platforms document course completions, manage certifications, and create comprehensive audit trails. This is particularly relevant for regulated industries and mandatory training.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How can learning quality be ensured across distributed teams?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Standardized learning paths, role-based assignments, and continuous tracking ensure all learners achieve the same knowledge level. AI-powered analytics identify gaps early on.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Is an AI tutor also suitable for universities and continuing education providers?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Yes, AI tutors integrate seamlessly into existing Moodle environments and scale with participant numbers. They reduce instructor workload and improve support ratios without additional staffing.</div>
+            </details>
+          </div>
+
+          <div class="highlight-box mt-10">
+            <p class="text-base mb-4">Discover how the <strong>Alphabees AI Tutor</strong> intelligently extends your Moodle courses – with 24/7 learning support and no new infrastructure costs.</p>
+          </div>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 not-prose">
+            <a href="../features.html"
+               class="inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 transition text-white font-semibold font-geist text-sm rounded-xl px-6 py-3.5 shadow-lg shadow-violet-500/20">
+              Explore the Alphabees AI Tutor features
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside id="blog-sidebar" class="hidden lg:block"></aside>
+
+      </div>
+
+      <!-- Mobile back to blog -->
+      <div class="lg:hidden mt-12 pt-8 border-t border-gray-100">
+        <a href="../blog.html" class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+          Zurück zum Blog
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Newsletter Popup -->
+  <div id="newsletter-popup" class="fixed inset-0 z-[1000] hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+    <div class="animate-popup bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
+      <button onclick="closeNewsletterPopup()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+      <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Fast geschafft!</h3>
+      <p class="text-gray-600 text-center mb-6">Wir haben dir eine Bestätigungsmail gesendet. Bitte schau in deinem Posteingang nach und klicke auf den Bestätigungslink.</p>
+      <p class="text-gray-500 text-sm text-center mb-6">💡 Nicht gefunden? Schau auch im Spam-Ordner nach.</p>
+      <button onclick="closeNewsletterPopup()" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-lg transition">Verstanden</button>
+    </div>
+  </div>
+
+  <style>
+    @keyframes popupFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    .animate-popup { animation: popupFadeIn 0.3s ease-out; }
+    #newsletter-popup.flex { display: flex !important; }
+  </style>
+
+  <script>
+    function showNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.add('hidden');
+      popup.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('newsletter-popup').addEventListener('click', function(e) {
+      if (e.target === this) closeNewsletterPopup();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeNewsletterPopup();
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsletterForm = document.querySelector('form[data-sv-form="8647011"]');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('input[name="email_address"]');
+          fetch(this.action, { method: 'POST', body: new FormData(this), mode: 'no-cors' })
+            .finally(() => { showNewsletterPopup(); emailInput.value = ''; });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
