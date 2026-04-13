@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-12
+# Last updated: 2026-04-13
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,9 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- KI in der Hochschulbildung: Administration und Lernen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-in-der-hochschulbildung-administration-und-lernen-transformieren.html
+- Verteiltes Lernen: 7 Herausforderungen und Lösungen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/verteiltes-lernen-herausforderungen-lms-ki-tutor.html
+- Corporate Learning Camp 2026: KI-Chatbots Weiterbildung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/corporate-learning-camp-2026-ki-chatbots-weiterbildung.html
 - State of Digital Learning 2026: Erkenntnisse | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/state-of-digital-learning-report-2026-erkenntnisse-fuer-bildungsverantwortliche.html
 - Lernsysteme: Warum Plattformen nicht mehr reichen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/warum-lernsysteme-ueber-plattformen-hinauswachsen-muessen.html
 - KI-Intelligenzschicht im LMS: Eigene Kontrolle | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-intelligenzschicht-lms-eigene-kontrolle-statt-vendor-abhaengigkeit.html
@@ -162,6 +165,9 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Ai In Higher Education Transforming Administration And Learning: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-in-higher-education-transforming-administration-and-learning.html
+- Distributed Learning Challenges Lms Ai Tutor: https://moodle-ai-tutor.alphalearn.ai/en/blog/distributed-learning-challenges-lms-ai-tutor.html
+- Corporate Learning Camp 2026 Ai Chatbots Corporate Training: https://moodle-ai-tutor.alphalearn.ai/en/blog/corporate-learning-camp-2026-ai-chatbots-corporate-training.html
 - State Of Digital Learning Report 2026 Insights For Education Leaders: https://moodle-ai-tutor.alphalearn.ai/en/blog/state-of-digital-learning-report-2026-insights-for-education-leaders.html
 - Why Learning Systems Must Outgrow Platforms: https://moodle-ai-tutor.alphalearn.ai/en/blog/why-learning-systems-must-outgrow-platforms.html
 - Ai Intelligence Layer Lms Control Vs Vendor Dependency: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-intelligence-layer-lms-control-vs-vendor-dependency.html
