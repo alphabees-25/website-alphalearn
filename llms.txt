@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-13
+# Last updated: 2026-04-14
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,9 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Claude AI im Instructional Design | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/claude-ai-fuer-instructional-design-was-bildungsverantwortliche-wissen-muessen.html
+- Von Completion Rates zu Verhaltensänderung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/von-completion-rates-zu-verhaltensaenderung-lernerfolg-neu-denken.html
+- Blended Learning für Führungskräfteentwicklung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/blended-learning-fuehrungskraefteentwicklung.html
 - KI in der Hochschulbildung: Administration und Lernen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-in-der-hochschulbildung-administration-und-lernen-transformieren.html
 - Verteiltes Lernen: 7 Herausforderungen und Lösungen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/verteiltes-lernen-herausforderungen-lms-ki-tutor.html
 - Corporate Learning Camp 2026: KI-Chatbots Weiterbildung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/corporate-learning-camp-2026-ki-chatbots-weiterbildung.html
@@ -165,6 +168,9 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Claude Ai For Instructional Design What Education Leaders Need To Know: https://moodle-ai-tutor.alphalearn.ai/en/blog/claude-ai-for-instructional-design-what-education-leaders-need-to-know.html
+- From Completion Rates To Behavior Change Rethinking Learning Success: https://moodle-ai-tutor.alphalearn.ai/en/blog/from-completion-rates-to-behavior-change-rethinking-learning-success.html
+- Blended Learning Leadership Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/blended-learning-leadership-development.html
 - Ai In Higher Education Transforming Administration And Learning: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-in-higher-education-transforming-administration-and-learning.html
 - Distributed Learning Challenges Lms Ai Tutor: https://moodle-ai-tutor.alphalearn.ai/en/blog/distributed-learning-challenges-lms-ai-tutor.html
 - Corporate Learning Camp 2026 Ai Chatbots Corporate Training: https://moodle-ai-tutor.alphalearn.ai/en/blog/corporate-learning-camp-2026-ai-chatbots-corporate-training.html
