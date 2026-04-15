@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-14
+# Last updated: 2026-04-15
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,11 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- KI-Fragen richtig stellen: Leitfaden für L&D | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-fragen-richtig-stellen-leitfaden-fuer-bildungsverantwortliche.html
+- Training-ROI messen: Skills Visibility als Schlüssel | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/training-roi-skills-visibility-kompetenzentwicklung.html
+- KI-gestütztes Learning Design: Bessere Lernerfahrungen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-gestuetztes-learning-design-bessere-lernerfahrungen-schaffen.html
+- Ausbildungsabbrüche und soziale Ungleichheit | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ausbildungsabbrueche-soziale-ungleichheit-ki-lernbegleitung.html
+- Duale Berufsausbildung 2025: Rückläufige Zahlen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/duale-berufsausbildung-2025-ruecklaeufige-zahlen-als-weckruf.html
 - Claude AI im Instructional Design | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/claude-ai-fuer-instructional-design-was-bildungsverantwortliche-wissen-muessen.html
 - Von Completion Rates zu Verhaltensänderung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/von-completion-rates-zu-verhaltensaenderung-lernerfolg-neu-denken.html
 - Blended Learning für Führungskräfteentwicklung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/blended-learning-fuehrungskraefteentwicklung.html
@@ -168,6 +173,11 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Effective Ai Prompting Guide For Learning Professionals: https://moodle-ai-tutor.alphalearn.ai/en/blog/effective-ai-prompting-guide-for-learning-professionals.html
+- Training Roi Skills Visibility Competency Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/training-roi-skills-visibility-competency-development.html
+- Ai Powered Learning Design Creating Better Learning Experiences: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-powered-learning-design-creating-better-learning-experiences.html
+- Training Dropouts Social Inequality Ai Learning Support: https://moodle-ai-tutor.alphalearn.ai/en/blog/training-dropouts-social-inequality-ai-learning-support.html
+- Dual Vocational Training 2025 Declining Numbers Wake Up Call: https://moodle-ai-tutor.alphalearn.ai/en/blog/dual-vocational-training-2025-declining-numbers-wake-up-call.html
 - Claude Ai For Instructional Design What Education Leaders Need To Know: https://moodle-ai-tutor.alphalearn.ai/en/blog/claude-ai-for-instructional-design-what-education-leaders-need-to-know.html
 - From Completion Rates To Behavior Change Rethinking Learning Success: https://moodle-ai-tutor.alphalearn.ai/en/blog/from-completion-rates-to-behavior-change-rethinking-learning-success.html
 - Blended Learning Leadership Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/blended-learning-leadership-development.html
