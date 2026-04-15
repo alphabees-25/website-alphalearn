@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/1tLyCHUxT1HQsYzTLZRvjqpVWtWzK8cBV">
+  <meta property="og:image:width" content="2640">
+  <meta property="og:image:height" content="1430">
+  <meta property="og:title" content="Measuring Training ROI: Skills Visibility as Key | Alphabees">
+  <meta property="og:description" content="Why completion rates don't reveal true training success. Learn how skills visibility makes training ROI measurable.">
+  <meta property="og:url" content="https://moodle-ai-tutor.alphalearn.ai/en/blog/training-roi-skills-visibility-competency-development.html">
+  <meta name="twitter:title" content="Measuring Training ROI: Skills Visibility as Key | Alphabees">
+  <meta name="twitter:description" content="Why completion rates don't reveal true training success. Learn how skills visibility makes training ROI measurable.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1tLyCHUxT1HQsYzTLZRvjqpVWtWzK8cBV">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Measuring Training ROI: Skills Visibility as Key | Alphabees</title>
+  <meta name="description" content="Why completion rates don't reveal true training success. Learn how skills visibility makes training ROI measurable.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/training-roi-skills-visibility-competency-development.html">
+  <link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/training-roi-skills-visibility-kompetenzentwicklung.html">
+  <link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/training-roi-skills-visibility-competency-development.html">
+  <link rel="alternate" hreflang="x-default" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/training-roi-skills-visibility-kompetenzentwicklung.html">
+  <meta name="geo.region" content="DE">
+  <meta name="geo.country" content="DE">
+  <meta name="geo.placename" content="Deutschland">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes fadeSlideIn {
+      0%   { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+      40%  { opacity: 0.9; transform: translateY(0); filter: blur(0px); }
+      100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+    }
+    .animate-on-scroll { animation-play-state: paused !important; }
+    .animate-on-scroll.animate { animation-play-state: running !important; }
+    html, body { overflow-x: hidden; width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* Article typography */
+    .prose h2 {
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: #111827;
+      margin-top: 2.5rem;
+      margin-bottom: 0.875rem;
+      line-height: 1.3;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose p {
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+    .prose ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .prose ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+    .prose ul li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: #6366f1;
+      margin-top: 0.6em;
+    }
+    .prose blockquote {
+      border-left: 3px solid #6366f1;
+      padding: 0.75rem 1.25rem;
+      margin: 1.75rem 0;
+      background: #f5f3ff;
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+    .prose blockquote p {
+      color: #4338ca;
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .prose .highlight-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .prose .highlight-box p {
+      margin-bottom: 0;
+      color: #1e40af;
+      font-weight: 500;
+    }
+    .prose strong {
+      color: #111827;
+      font-weight: 600;
+    }
+  
+      /* FAQ Accordion */
+      .faq-item { border: 1px solid #e5e7eb; border-radius: 0.75rem; overflow: hidden; margin-bottom: 0.625rem; }
+      .faq-item summary { list-style: none; cursor: pointer; padding: 1rem 1.25rem; font-size: 0.9375rem; font-weight: 600; color: #111827; font-family: 'Geist', sans-serif; display: flex; justify-content: space-between; align-items: center; gap: 1rem; user-select: none; background: #f9fafb; transition: background 0.15s; }
+      .faq-item summary::-webkit-details-marker { display: none; }
+      .faq-item summary:hover { background: #f3f4f6; }
+      .faq-item[open] summary { background: #ede9fe; color: #5b21b6; }
+      .faq-item summary .faq-icon { width: 20px; height: 20px; min-width: 20px; border-radius: 50%; background: #e5e7eb; display: flex; align-items: center; justify-content: center; transition: background 0.15s, transform 0.2s; }
+      .faq-item[open] summary .faq-icon { background: #7c3aed; transform: rotate(45deg); }
+      .faq-item[open] summary .faq-icon svg { stroke: #fff; }
+      .faq-item .faq-body { padding: 1rem 1.25rem 1.25rem; color: #374151; font-size: 0.9375rem; line-height: 1.75; border-top: 1px solid #e5e7eb; }
+      /* Definition Lists */
+      .prose dl { margin: 1rem 0 1.5rem 0; }
+      .prose dt { font-weight: 600; color: #111827; font-size: 1rem; margin-top: 1.25rem; margin-bottom: 0.25rem; font-family: 'Geist', sans-serif; }
+      .prose dd { color: #374151; font-size: 1rem; line-height: 1.75; margin-left: 0; padding-left: 1rem; border-left: 2px solid #6366f1; }
+  </style>
+  <script>
+    (function () {
+      const style = document.createElement('style');
+      style.textContent = `.animate-on-scroll { animation-play-state: paused !important; } .animate-on-scroll.animate { animation-play-state: running !important; }`;
+      document.head.appendChild(style);
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+              window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0 });
+      }
+      window.initInViewAnimations = function (selector = '.animate-on-scroll') {
+        document.querySelectorAll(selector).forEach((el) => { window.__inViewIO.observe(el); });
+      };
+      document.addEventListener('DOMContentLoaded', () => {
+        initInViewAnimations();
+        // Fallback: force-animate any elements the observer missed (iOS Safari / mobile quirks)
+        setTimeout(() => {
+          document.querySelectorAll('.animate-on-scroll:not(.animate)').forEach(el => el.classList.add('animate'));
+        }, 1000);
+      });
+    })();
+  </script>
+  <script src="/assets/js/layout.js" defer></script>
+</head>
+<body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
+
+  <!-- Global Header -->
+  <div id="site-header"></div>
+
+  <main class="relative">
+
+    <!-- Hero Banner -->
+    <div class="relative bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 overflow-hidden">
+      <!-- Decorative blobs -->
+      <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-fuchsia-400/10 blur-3xl pointer-events-none"></div>
+
+      <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 pt-24 pb-0 sm:pt-32 sm:pb-0 relative">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 mb-8 text-sm text-white/60 font-geist" style="animation: fadeSlideIn 1s ease-out 0.05s both;">
+          <a href="../index.html" class="hover:text-white transition">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <a href="../blog.html" class="hover:text-white transition">Blog</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <span class="text-white/40">Artikel</span>
+        </nav>
+
+        <!-- Category + meta -->
+        <div class="flex flex-wrap items-center gap-3 mb-6" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+          <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-white text-xs font-semibold font-geist">Analysis</span>
+          <span class="text-white/50 text-sm font-geist">April 2026</span>
+          <span class="w-1 h-1 rounded-full bg-white/30"></span>
+          <span class="text-white/50 text-sm font-geist">12 Min. Lesezeit</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white font-geist leading-[1.15] tracking-tight mb-5" style="animation: fadeSlideIn 1s ease-out 0.15s both;">
+          Measuring Training ROI: Skills Visibility as Key | Alphabees
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-white/70 font-geist font-normal leading-relaxed max-w-2xl" style="animation: fadeSlideIn 1s ease-out 0.2s both;">
+          Most educational institutions measure training success through completion rates and satisfaction scores. But these metrics show activity, not competency development. Skills visibility closes this gap.
+        </p>
+
+        <!-- Hero image -->
+        <div class="mt-10" style="animation: fadeSlideIn 1s ease-out 0.25s both;">
+          <img src="https://lh3.googleusercontent.com/d/1tLyCHUxT1HQsYzTLZRvjqpVWtWzK8cBV"
+               alt="Training ROI and skills visibility – competency development diagram"
+               class="w-full rounded-t-2xl object-cover max-h-72 sm:max-h-96 shadow-2xl"
+               loading="eager">
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 py-14 sm:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 lg:gap-16">
+
+        <!-- Main Article -->
+        <article class="prose animate-on-scroll" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+
+<p>Only two in ten HR professionals see measuring training ROI as a challenge. That sounds like progress – until you look more closely at what is actually being measured. Current research shows: only 37 percent of organizations evaluate their training measures based on actual business impact. The rest rely on completion rates, satisfaction scores, and cost per learner.</p>
+
+<p>These metrics are easy to collect, simple to report – and easy to misinterpret. Most educational institutions and companies feel confident about their assessment of training ROI. But this confidence is based on metrics that describe activity, not outcomes. Without insight into learners' actual competency development, it remains unclear whether training builds the skills that are truly needed.</p>
+
+<h2>Common metrics and their blind spots</h2>
+
+<p>Measuring training success typically relies on a handful of familiar metrics. Each tells a story – just not the one decision-makers actually need.</p>
+
+<dl>
+<dt>Completion rates:</dt>
+<dd>They show who finished a course. Whether anything was learned remains unclear. Consider this: current surveys show that 70 percent of employees engage in other activities during training – the highest figure in three years. In this context, "completed" says very little.</dd>
+<dt>Satisfaction scores:</dt>
+<dd>84 percent of employees report being satisfied with their training. But satisfaction and learning success are two different things. A course can be entertaining, well-structured, and still ineffective when it comes to building new competencies.</dd>
+<dt>Cost per learner:</dt>
+<dd>This metric measures efficiency, not effectiveness. Training can be cost-effective and scalable – and still achieve nothing if the content doesn't match actual competency gaps.</dd>
+</dl>
+
+<p>None of these metrics is fundamentally wrong. Completion rates help identify dropouts. Satisfaction data can flag poorly designed content. Cost tracking keeps budgets in check. The problem: none of these metrics answers the crucial question – is the workforce actually becoming more competent through this training?</p>
+
+<p>The discrepancy is telling: while only 37 percent measure business impact, 75 percent claim their training strategy is aligned with business objectives. This 38-point gap shows: the alignment is based on assumptions, not evidence.</p>
+
+<h2>The missing element: Skills visibility</h2>
+
+<p>The reason traditional metrics fall short isn't that they're useless. They simply measure the wrong level. Completions, satisfaction, and costs are input metrics. They describe what went into the training. They say nothing about what came out of it.</p>
+
+<p>To measure training ROI meaningfully, three questions must be answered:</p>
+
+<ul>
+<li>What competencies does the workforce currently have?</li>
+<li>What competencies does the organization need?</li>
+<li>Has training closed the gap between the two?</li>
+</ul>
+
+<p>Most organizations cannot answer any of these questions with certainty. Surveys show that 86 percent of employees develop their skills by figuring things out on the job themselves. They learn by doing, by problem-solving, by asking colleagues. This kind of growth is valuable – but invisible to the organization. It doesn't appear in any LMS report, in any training dashboard. It isn't captured, measured, or acknowledged.</p>
+
+<p>Think about the last time someone on your team found a faster way to handle customer inquiries, or taught themselves a new tool to speed up a recurring task. That's real competency development. But when it's not tied to a formal program, it remains in the blind spot between what the organization offers and what people actually learn.</p>
+
+<p>This is the skills visibility problem: when you can't see what competencies people have or how they're developing them, you can't determine whether training has made a difference. And if you can't determine that, ROI remains guesswork.</p>
+
+<h2>From activity to competency: What real measurement means</h2>
+
+<p>Measuring competency means shifting from the question "Did they complete the training?" to "Can they now do something they couldn't do before?" It's a harder question, but the only one that shows whether training works.</p>
+
+<p>What does this shift look like in practice:</p>
+
+<dl>
+<dt>From logged hours to mapped competencies:</dt>
+<dd>Instead of tracking how much time someone spent in a course, each program is linked to the specific skills it's designed to develop. If the competency can't be named, the training isn't targeted enough.</dd>
+<dt>From pass/fail to proficiency levels:</dt>
+<dd>A quiz score shows what someone remembered on a given day. Competency tracking shows whether that knowledge can be applied consistently over time. The difference is significant, especially for complex skills.</dd>
+<dt>From one-time assessment to continuous capture:</dt>
+<dd>Competencies don't develop in a single moment and don't remain static. Regular reviews provide trend data: are skills growing over time or stagnating after the initial training boost?</dd>
+<dt>From cost-per-learner to competency-per-dollar:</dt>
+<dd>When a training program can be linked to measurable improvement in a specific competency – and that competency to a business outcome like fewer errors, faster onboarding, or better sales figures – you create an ROI story that executives respond to.</dd>
+</dl>
+
+<h2>How AI-powered learning support enables skills visibility</h2>
+
+<p>The challenge described – making real competency development visible – is precisely where AI-powered learning companions demonstrate their strength. An intelligent tutor integrated directly into the learning environment captures not just whether someone completed a course. It analyzes how learners interact with content, where they struggle, what questions they ask, and how their understanding develops over time.</p>
+
+<p>This continuous analysis provides exactly the data foundation that's missing for genuine skills visibility. Instead of point-in-time snapshots, a picture of actual competency development emerges. Knowledge gaps are identified before they become performance problems. And informal learning – the 86 percent of competency building that otherwise remains invisible – becomes capturable when learners use the AI tutor as a resource for their everyday questions.</p>
+
+<p>For educational institutions and training providers, this means: demonstrating training success can shift from vague satisfaction scores to concrete competency development. This not only strengthens internal arguments for training budgets but also makes the value of the offering tangible to participants and clients.</p>
+
+<h2>Practical steps for implementation</h2>
+
+<p>The path to meaningful ROI measurement doesn't require a complete competency taxonomy or years of implementation. Four steps form the starting point:</p>
+
+<p><strong>Select one program:</strong> Start with a training initiative tied to a clear business outcome. Sales training, customer onboarding, or compliance training work particularly well because they have measurable downstream effects.</p>
+
+<p><strong>Name the competencies:</strong> Identify three to five specific skills the program should develop. Be concrete. "Better communication" is too broad. "Handles customer objections using the agreed framework" is observable and measurable.</p>
+
+<p><strong>Establish baseline and reassess:</strong> Measure where participants stand before training, and again 30 to 60 days afterward. Use manager assessments, practical exercises, or on-the-job observation.</p>
+
+<p><strong>Connect to outcomes:</strong> Track whether competency improvements show up in performance data. Have error rates decreased? Has time-to-productivity improved? Have customer satisfaction scores changed?</p>
+
+<p>The goal isn't perfect measurement from day one. It's about building a system that connects training to competency – one program at a time. Even rough competency data is more useful than polished completion reports when it comes to understanding what training delivers for the organization.</p>
+
+<p>Training ROI has always been hard to grasp. But the problem isn't that it can't be measured. It's that most organizations measure the wrong things. Completions describe activity. Satisfaction describes experience. Neither describes competency. Only when you can see what skills the workforce has, what skills they need, and whether training closes the gap, does ROI become tangible. The organizations that understand this won't just measure training better – they'll train better too.</p>
+
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="not-prose mt-6 mb-2">
+            <details class="faq-item">
+              <summary>
+                Why aren't completion rates sufficient to measure training ROI?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Completion rates only show who finished a course, not whether competencies were actually built. Studies show that many learners multitask during training, so completion says little about real learning progress.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                What does skills visibility mean in the context of training?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Skills visibility refers to an organization's ability to recognize which competencies employees currently possess and how these develop through training measures. Without this transparency, training success remains guesswork.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How can educational institutions measure actual competency development?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">By linking training programs to specific competency goals, conducting baseline measurements before training, and repeated assessments 30 to 60 days later. Practical exercises and on-the-job observations complement the evaluation.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                What role does AI play in measuring competency development?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">AI-powered systems can continuously analyze learning behavior, identify knowledge gaps, and document actual competency development over time. They also capture informal learning that traditional LMS systems miss.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How can training ROI be connected to business objectives?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">By linking specific competency improvements to measurable outcomes such as reduced error rates, shorter onboarding times, or improved customer satisfaction. This connection makes the value of training tangible for decision-makers.</div>
+            </details>
+          </div>
+
+          <div class="highlight-box mt-10">
+            <p class="text-base mb-4">Discover how the <strong>Alphabees AI Tutor</strong> intelligently extends your Moodle courses – with 24/7 learning support and no new infrastructure costs.</p>
+          </div>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 not-prose">
+            <a href="../features.html"
+               class="inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 transition text-white font-semibold font-geist text-sm rounded-xl px-6 py-3.5 shadow-lg shadow-violet-500/20">
+              Explore the Alphabees AI Tutor features
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside id="blog-sidebar" class="hidden lg:block"></aside>
+
+      </div>
+
+      <!-- Mobile back to blog -->
+      <div class="lg:hidden mt-12 pt-8 border-t border-gray-100">
+        <a href="../blog.html" class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+          Zurück zum Blog
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Newsletter Popup -->
+  <div id="newsletter-popup" class="fixed inset-0 z-[1000] hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+    <div class="animate-popup bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
+      <button onclick="closeNewsletterPopup()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+      <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Fast geschafft!</h3>
+      <p class="text-gray-600 text-center mb-6">Wir haben dir eine Bestätigungsmail gesendet. Bitte schau in deinem Posteingang nach und klicke auf den Bestätigungslink.</p>
+      <p class="text-gray-500 text-sm text-center mb-6">💡 Nicht gefunden? Schau auch im Spam-Ordner nach.</p>
+      <button onclick="closeNewsletterPopup()" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-lg transition">Verstanden</button>
+    </div>
+  </div>
+
+  <style>
+    @keyframes popupFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    .animate-popup { animation: popupFadeIn 0.3s ease-out; }
+    #newsletter-popup.flex { display: flex !important; }
+  </style>
+
+  <script>
+    function showNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.add('hidden');
+      popup.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('newsletter-popup').addEventListener('click', function(e) {
+      if (e.target === this) closeNewsletterPopup();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeNewsletterPopup();
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsletterForm = document.querySelector('form[data-sv-form="8647011"]');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('input[name="email_address"]');
+          fetch(this.action, { method: 'POST', body: new FormData(this), mode: 'no-cors' })
+            .finally(() => { showNewsletterPopup(); emailInput.value = ''; });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
