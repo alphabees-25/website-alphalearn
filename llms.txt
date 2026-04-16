@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-15
+# Last updated: 2026-04-16
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,11 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Problemlösungskompetenz trainieren | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/problemloesungskompetenz-trainieren-analytisches-denken-foerdern.html
+- Kompetenzorientiertes Lernen: Skills-Based Learning | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/kompetenzorientiertes-lernen-warum-skills-based-learning-die-zukunft-der-weiterbildung-ist.html
+- LMS-Implementierung: Checkliste für Moodle-Projekte | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/lms-implementierung-checkliste-projektplan-moodle.html
+- Kompetenzlücken schließen mit KI-Tutoren | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/kompetenzluecken-weiterbildung-ki-tutor-loesung.html
+- Khan TED Institute: Exnovation in der Hochschulbildung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/khan-ted-institute-exnovation-hochschulbildung-ki-integration.html
 - KI-Fragen richtig stellen: Leitfaden für L&D | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-fragen-richtig-stellen-leitfaden-fuer-bildungsverantwortliche.html
 - Training-ROI messen: Skills Visibility als Schlüssel | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/training-roi-skills-visibility-kompetenzentwicklung.html
 - KI-gestütztes Learning Design: Bessere Lernerfahrungen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-gestuetztes-learning-design-bessere-lernerfahrungen-schaffen.html
@@ -173,6 +178,11 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Training Problem Solving Skills Promoting Analytical Thinking: https://moodle-ai-tutor.alphalearn.ai/en/blog/training-problem-solving-skills-promoting-analytical-thinking.html
+- Skills Based Learning Why Competency Focused Training Is The Future: https://moodle-ai-tutor.alphalearn.ai/en/blog/skills-based-learning-why-competency-focused-training-is-the-future.html
+- Lms Implementation Checklist Project Plan Moodle: https://moodle-ai-tutor.alphalearn.ai/en/blog/lms-implementation-checklist-project-plan-moodle.html
+- Skills Gaps Training Ai Tutor Solution: https://moodle-ai-tutor.alphalearn.ai/en/blog/skills-gaps-training-ai-tutor-solution.html
+- Khan Ted Institute Exnovation Higher Education Ai Integration: https://moodle-ai-tutor.alphalearn.ai/en/blog/khan-ted-institute-exnovation-higher-education-ai-integration.html
 - Effective Ai Prompting Guide For Learning Professionals: https://moodle-ai-tutor.alphalearn.ai/en/blog/effective-ai-prompting-guide-for-learning-professionals.html
 - Training Roi Skills Visibility Competency Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/training-roi-skills-visibility-competency-development.html
 - Ai Powered Learning Design Creating Better Learning Experiences: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-powered-learning-design-creating-better-learning-experiences.html
