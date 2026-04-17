@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-16
+# Last updated: 2026-04-17
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,12 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Erasmus+ UK-Rückkehr 2027: Chancen für Hochschulen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/erasmus-plus-uk-rueckkehr-2027-chancen-hochschulen.html
+- Task-Analyse im Instructional Design | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/task-analyse-instructional-design-ki-tutor.html
+- Automatisierungskompetenz für Bildungsverantwortliche | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/automatisierungskompetenz-fuer-bildungsverantwortliche.html
+- Warum KI-Kompetenzprogramme scheitern | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-kompetenzprogramme-scheitern-an-fehlender-rollenklarheit.html
+- Berufliche Schulen: Fachkräftesicherung digital | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/berufliche-schulen-fachkraeftesicherung-digitale-transformation.html
+- Generative KI und die Lernillusion an Hochschulen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/generative-ki-lernillusion-hochschulbildung.html
 - Problemlösungskompetenz trainieren | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/problemloesungskompetenz-trainieren-analytisches-denken-foerdern.html
 - Kompetenzorientiertes Lernen: Skills-Based Learning | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/kompetenzorientiertes-lernen-warum-skills-based-learning-die-zukunft-der-weiterbildung-ist.html
 - LMS-Implementierung: Checkliste für Moodle-Projekte | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/lms-implementierung-checkliste-projektplan-moodle.html
@@ -178,6 +184,12 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Erasmus Plus Uk Return 2027 Opportunities Universities: https://moodle-ai-tutor.alphalearn.ai/en/blog/erasmus-plus-uk-return-2027-opportunities-universities.html
+- Task Analysis Instructional Design Ai Tutor: https://moodle-ai-tutor.alphalearn.ai/en/blog/task-analysis-instructional-design-ai-tutor.html
+- Automation Competency For Education Leaders: https://moodle-ai-tutor.alphalearn.ai/en/blog/automation-competency-for-education-leaders.html
+- Why Ai Competency Programs Fail Lack Of Role Clarity: https://moodle-ai-tutor.alphalearn.ai/en/blog/why-ai-competency-programs-fail-lack-of-role-clarity.html
+- Vocational Schools Workforce Development Digital Transformation: https://moodle-ai-tutor.alphalearn.ai/en/blog/vocational-schools-workforce-development-digital-transformation.html
+- Generative Ai Learning Illusion Higher Education: https://moodle-ai-tutor.alphalearn.ai/en/blog/generative-ai-learning-illusion-higher-education.html
 - Training Problem Solving Skills Promoting Analytical Thinking: https://moodle-ai-tutor.alphalearn.ai/en/blog/training-problem-solving-skills-promoting-analytical-thinking.html
 - Skills Based Learning Why Competency Focused Training Is The Future: https://moodle-ai-tutor.alphalearn.ai/en/blog/skills-based-learning-why-competency-focused-training-is-the-future.html
 - Lms Implementation Checklist Project Plan Moodle: https://moodle-ai-tutor.alphalearn.ai/en/blog/lms-implementation-checklist-project-plan-moodle.html
