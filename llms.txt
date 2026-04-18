@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-17
+# Last updated: 2026-04-18
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,10 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Hochschulfinanzierung: KI als Effizienzmotor | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/hochschulfinanzierung-ki-effizienz-digitale-transformation.html
+- Multiple-Choice-Fragen richtig gestalten | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/multiple-choice-fragen-richtig-gestalten.html
+- Kursabbrüche im E-Learning verhindern | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/kursabbrueche-e-learning-verhindern-strategien.html
+- Engagement im Lernmanagement: Der Erfolgsfaktor | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/engagement-lernmanagement-erfolgsfaktor.html
 - Erasmus+ UK-Rückkehr 2027: Chancen für Hochschulen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/erasmus-plus-uk-rueckkehr-2027-chancen-hochschulen.html
 - Task-Analyse im Instructional Design | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/task-analyse-instructional-design-ki-tutor.html
 - Automatisierungskompetenz für Bildungsverantwortliche | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/automatisierungskompetenz-fuer-bildungsverantwortliche.html
@@ -184,6 +188,10 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- University Funding Ai Efficiency Digital Transformation: https://moodle-ai-tutor.alphalearn.ai/en/blog/university-funding-ai-efficiency-digital-transformation.html
+- Designing Effective Multiple Choice Questions: https://moodle-ai-tutor.alphalearn.ai/en/blog/designing-effective-multiple-choice-questions.html
+- Preventing Course Dropouts E Learning Strategies: https://moodle-ai-tutor.alphalearn.ai/en/blog/preventing-course-dropouts-e-learning-strategies.html
+- Engagement Learning Management Success Factor: https://moodle-ai-tutor.alphalearn.ai/en/blog/engagement-learning-management-success-factor.html
 - Erasmus Plus Uk Return 2027 Opportunities Universities: https://moodle-ai-tutor.alphalearn.ai/en/blog/erasmus-plus-uk-return-2027-opportunities-universities.html
 - Task Analysis Instructional Design Ai Tutor: https://moodle-ai-tutor.alphalearn.ai/en/blog/task-analysis-instructional-design-ai-tutor.html
 - Automation Competency For Education Leaders: https://moodle-ai-tutor.alphalearn.ai/en/blog/automation-competency-for-education-leaders.html
