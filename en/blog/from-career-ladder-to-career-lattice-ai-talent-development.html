@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/1YIUgh4ygsMqnXfnlwCJprxKxcAojkz_9">
+  <meta property="og:image:width" content="2640">
+  <meta property="og:image:height" content="1430">
+  <meta property="og:title" content="AI in Talent Development: New Career Paths | Alphabees">
+  <meta property="og:description" content="Learn how AI-powered learning platforms enable the shift from rigid career ladders to flexible, competency-based development paths.">
+  <meta property="og:url" content="https://moodle-ai-tutor.alphalearn.ai/en/blog/from-career-ladder-to-career-lattice-ai-talent-development.html">
+  <meta name="twitter:title" content="AI in Talent Development: New Career Paths | Alphabees">
+  <meta name="twitter:description" content="Learn how AI-powered learning platforms enable the shift from rigid career ladders to flexible, competency-based development paths.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1YIUgh4ygsMqnXfnlwCJprxKxcAojkz_9">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI in Talent Development: New Career Paths | Alphabees</title>
+  <meta name="description" content="Learn how AI-powered learning platforms enable the shift from rigid career ladders to flexible, competency-based development paths.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/from-career-ladder-to-career-lattice-ai-talent-development.html">
+  <link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/von-der-karriereleiter-zum-karrieregitter-ki-personalentwicklung.html">
+  <link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/from-career-ladder-to-career-lattice-ai-talent-development.html">
+  <link rel="alternate" hreflang="x-default" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/von-der-karriereleiter-zum-karrieregitter-ki-personalentwicklung.html">
+  <meta name="geo.region" content="DE">
+  <meta name="geo.country" content="DE">
+  <meta name="geo.placename" content="Deutschland">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes fadeSlideIn {
+      0%   { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+      40%  { opacity: 0.9; transform: translateY(0); filter: blur(0px); }
+      100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+    }
+    .animate-on-scroll { animation-play-state: paused !important; }
+    .animate-on-scroll.animate { animation-play-state: running !important; }
+    html, body { overflow-x: hidden; width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* Article typography */
+    .prose h2 {
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: #111827;
+      margin-top: 2.5rem;
+      margin-bottom: 0.875rem;
+      line-height: 1.3;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose p {
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+    .prose ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .prose ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+    .prose ul li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: #6366f1;
+      margin-top: 0.6em;
+    }
+    .prose blockquote {
+      border-left: 3px solid #6366f1;
+      padding: 0.75rem 1.25rem;
+      margin: 1.75rem 0;
+      background: #f5f3ff;
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+    .prose blockquote p {
+      color: #4338ca;
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .prose .highlight-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .prose .highlight-box p {
+      margin-bottom: 0;
+      color: #1e40af;
+      font-weight: 500;
+    }
+    .prose strong {
+      color: #111827;
+      font-weight: 600;
+    }
+
+    /* FAQ Accordion */
+    .faq-item {
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      margin-bottom: 0.625rem;
+    }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1rem 1.25rem;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #111827;
+      font-family: 'Geist', sans-serif;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      user-select: none;
+      background: #f9fafb;
+      transition: background 0.15s;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary:hover { background: #f3f4f6; }
+    .faq-item[open] summary { background: #ede9fe; color: #5b21b6; }
+    .faq-item summary .faq-icon {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      border-radius: 50%;
+      background: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s, transform 0.2s;
+    }
+    .faq-item[open] summary .faq-icon {
+      background: #7c3aed;
+      transform: rotate(45deg);
+    }
+    .faq-item[open] summary .faq-icon svg { stroke: #fff; }
+    .faq-item .faq-body {
+      padding: 1rem 1.25rem 1.25rem;
+      color: #374151;
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      border-top: 1px solid #e5e7eb;
+    }
+  </style>
+  <script>
+    (function () {
+      const style = document.createElement('style');
+      style.textContent = `.animate-on-scroll { animation-play-state: paused !important; } .animate-on-scroll.animate { animation-play-state: running !important; }`;
+      document.head.appendChild(style);
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+              window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0 });
+      }
+      window.initInViewAnimations = function (selector = '.animate-on-scroll') {
+        document.querySelectorAll(selector).forEach((el) => { window.__inViewIO.observe(el); });
+      };
+      document.addEventListener('DOMContentLoaded', () => {
+        initInViewAnimations();
+        // Fallback: force-animate any elements the observer missed (iOS Safari / mobile quirks)
+        setTimeout(() => {
+          document.querySelectorAll('.animate-on-scroll:not(.animate)').forEach(el => el.classList.add('animate'));
+        }, 1000);
+      });
+    })();
+  </script>
+  <script src="/assets/js/layout.js" defer></script>
+
+  <!-- JSON-LD: Article Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI in Talent Development: New Career Paths | Alphabees",
+  "description": "Learn how AI-powered learning platforms enable the shift from rigid career ladders to flexible, competency-based development paths.",
+  "image": "https://lh3.googleusercontent.com/d/1YIUgh4ygsMqnXfnlwCJprxKxcAojkz_9",
+  "author": {
+    "@type": "Organization",
+    "name": "Alphabees",
+    "url": "https://moodle-ai-tutor.alphalearn.ai"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Alphabees",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://moodle-ai-tutor.alphalearn.ai/favicon.svg"
+    }
+  },
+  "datePublished": "2026-04-19",
+  "dateModified": "2026-04-19",
+  "inLanguage": "en",
+  "keywords": "AI talent development, competency-based careers, capability visibility, AI tutor corporate learning, Moodle learning platform",
+  "articleSection": "Analysis",
+  "url": "https://moodle-ai-tutor.alphalearn.ai/en/blog/from-career-ladder-to-career-lattice-ai-talent-development.html"
+}
+  </script>
+
+  <!-- JSON-LD: FAQ Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does the shift from career ladder to career lattice mean in practice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Instead of linear promotion paths, flexible competency-based development opportunities emerge. Employees can grow horizontally and vertically based on acquired skills rather than rigid positions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is capability visibility relevant for learning leaders?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only when competencies are systematically captured and made visible can organizations measure learning progress and provide targeted development offerings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does AI support competency-based talent development?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI systems analyze learning behavior, identify skill gaps, and enable personalized learning paths tailored to individual development goals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What role do learning management systems play in this transformation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Modern LMS with AI integration make learning progress measurable and link acquired competencies to specific organizational requirement profiles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can training providers adapt their existing systems?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Integrating AI tutors into existing Moodle environments enables gradual transformation without a complete system change."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
+
+  <!-- Global Header -->
+  <div id="site-header"></div>
+
+  <main class="relative">
+
+    <!-- Hero Banner -->
+    <div class="relative bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 overflow-hidden">
+      <!-- Decorative blobs -->
+      <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-fuchsia-400/10 blur-3xl pointer-events-none"></div>
+
+      <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 pt-24 pb-0 sm:pt-32 sm:pb-0 relative">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 mb-8 text-sm text-white/60 font-geist" style="animation: fadeSlideIn 1s ease-out 0.05s both;">
+          <a href="../index.html" class="hover:text-white transition">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <a href="../blog.html" class="hover:text-white transition">Blog</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <span class="text-white/40">Artikel</span>
+        </nav>
+
+        <!-- Category + meta -->
+        <div class="flex flex-wrap items-center gap-3 mb-6" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+          <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-white text-xs font-semibold font-geist">Analysis</span>
+          <span class="text-white/50 text-sm font-geist">April 2026</span>
+          <span class="w-1 h-1 rounded-full bg-white/30"></span>
+          <span class="text-white/50 text-sm font-geist">12 Min. Lesezeit</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white font-geist leading-[1.15] tracking-tight mb-5" style="animation: fadeSlideIn 1s ease-out 0.15s both;">
+          AI in Talent Development: New Career Paths | Alphabees
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-white/70 font-geist font-normal leading-relaxed max-w-2xl" style="animation: fadeSlideIn 1s ease-out 0.2s both;">
+          The shift from role-based to competency-based career models presents new challenges for learning leaders. AI-powered learning systems offer a way to make skills visible and measurable.
+        </p>
+
+        <!-- Hero image -->
+        <div class="mt-10" style="animation: fadeSlideIn 1s ease-out 0.25s both;">
+          <img src="https://lh3.googleusercontent.com/d/1YIUgh4ygsMqnXfnlwCJprxKxcAojkz_9"
+               alt="AI-powered talent development – networked career paths in modern organizations"
+               class="w-full rounded-t-2xl object-cover max-h-72 sm:max-h-96 shadow-2xl"
+               loading="eager">
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 py-14 sm:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 lg:gap-16">
+
+        <!-- Main Article -->
+        <article class="prose animate-on-scroll" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+
+<p>The traditional career ladder is losing its relevance. What served as a reliable model for professional growth for decades is increasingly being replaced by more flexible structures. Vertical promotions are giving way to networked development paths that focus on acquired competencies rather than rigid hierarchical levels. For decision-makers in the education sector, this shift means a fundamental realignment of their professional development strategies.</p>
+
+<p>A recent survey among employees and HR managers clearly illustrates the dynamics of this change. Nearly half of respondents are open to actively shaping personalized career paths, provided they are given an appropriate role in the process. At the same time, one-third hesitate when clear guidance is lacking. This discrepancy reveals the central problem facing many organizations: Traditional workforce systems are not designed to support the transition to competency-based models.</p>
+
+<h2>The Real Bottleneck: Lack of Competency Visibility</h2>
+
+<p>The term capability visibility describes an organization's ability to systematically capture, make visible, and strategically deploy the competencies of its employees. This is precisely where the greatest challenge lies. Most companies and educational institutions have extensive learning offerings but cannot track whether what was learned is actually being applied and what measurable impact it has on performance.</p>
+
+<p>For universities, academies, and corporate learning departments, this raises an urgent question: How can the connection between competency development and measurable impact be established? The answer lies in intelligent learning systems that not only deliver content but also analyze learning progress and place it in a broader context.</p>
+
+<h2>AI as an Enabler for Competency-Based Development</h2>
+
+<p>Artificial intelligence is changing the way learning happens in organizations. AI-powered systems can analyze individual learning journeys, identify patterns, and derive personalized recommendations from them. They detect skill gaps before they lead to performance issues and suggest targeted learning activities aligned with specific development goals.</p>
+
+<p>This is not about automating learning content but about providing intelligent support throughout the learning process. An AI tutor integrated into existing learning management systems can serve as a round-the-clock resource for learners. It answers questions, provides feedback, and helps learners understand complex concepts. For learning leaders, this creates a more complete picture of how learners interact with content and where support is needed.</p>
+
+<p>Alphabees pursues exactly this approach with an AI tutor that integrates directly into Moodle courses. As a 24/7 learning companion, it supports learners individually while simultaneously delivering valuable insights into learning patterns and competency development. For decision-makers, this means their existing Moodle infrastructure is not replaced but intelligently enhanced.</p>
+
+<h2>Recognition Becomes a Performance Indicator</h2>
+
+<p>Another aspect of this transformation concerns how performance is recognized and made visible. In traditional structures, recognition often comes through formal certificates or promotions. In the competency-based model, however, recognition becomes a continuous signal indicating whether an organization understands how its employees actually perform.</p>
+
+<p>This requires systems capable of capturing performance in a differentiated manner:</p>
+<dl>
+<dt>Confidence in the learning process:</dt>
+<dd>How confidently do learners navigate content, and where do uncertainties arise?</dd>
+<dt>Application frequency:</dt>
+<dd>Are acquired competencies actually being applied in day-to-day work?</dd>
+<dt>Decision quality:</dt>
+<dd>Is the ability to make informed decisions based on what was learned improving?</dd>
+</dl>
+
+<p>AI-powered learning systems can capture and analyze these dimensions. They provide early indicators of learning success and enable proactive management of development initiatives.</p>
+
+<h2>What Successful Organizations Do Differently</h2>
+
+<p>Organizations that successfully navigate the transition to competency-based career models share several characteristics. They have recognized that the connection between learning and measurable impact is not an optional add-on but a strategic success factor.</p>
+
+<p>In practical terms, this means:</p>
+<ul>
+<li>Learning platforms are not operated in isolation but embedded in the overall talent development strategy</li>
+<li>AI technologies are strategically deployed to make competencies visible and comparable</li>
+<li>Employees are given the tools and freedom to actively shape their own development</li>
+<li>Data-driven insights continuously feed into the optimization of learning offerings</li>
+</ul>
+
+<p>For training providers and educational institutions, this creates the necessity to evolve their technical infrastructure accordingly. Integrating AI capabilities into existing Moodle environments offers a pragmatic path that does not require a complete system migration.</p>
+
+<h2>The Limits of Current AI Implementations</h2>
+
+<p>Despite all the momentum, there is also a limit often referred to as the AI ceiling. Not all organizations can fully leverage the potential of AI in talent development. The reasons are varied: missing data foundations, lack of integration between different systems, or simply the complexity of implementation.</p>
+
+<p>Particularly for mid-sized educational institutions, the question arises of how they can benefit from AI innovations without making massive investments in new infrastructure. Solutions that seamlessly integrate into existing systems significantly lower this barrier to entry. An AI tutor that intelligently enhances existing Moodle courses enables entry into competency-based learning support without disrupting proven processes.</p>
+
+<p>The transition from career ladder to career lattice is not a short-term trend but a structural change in the world of work. For learning leaders in the DACH region, this means strategically evolving their learning infrastructure. AI-powered tutoring systems offer a concrete lever for making competencies visible, individualizing learning processes, and demonstrably measuring the value contribution of professional development.</p>
+
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="not-prose mt-6 mb-2">
+            <details class="faq-item">
+              <summary>
+                What does the shift from career ladder to career lattice mean in practice?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Instead of linear promotion paths, flexible competency-based development opportunities emerge. Employees can grow horizontally and vertically based on acquired skills rather than rigid positions.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Why is capability visibility relevant for learning leaders?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Only when competencies are systematically captured and made visible can organizations measure learning progress and provide targeted development offerings.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How does AI support competency-based talent development?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">AI systems analyze learning behavior, identify skill gaps, and enable personalized learning paths tailored to individual development goals.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                What role do learning management systems play in this transformation?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Modern LMS with AI integration make learning progress measurable and link acquired competencies to specific organizational requirement profiles.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How can training providers adapt their existing systems?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Integrating AI tutors into existing Moodle environments enables gradual transformation without a complete system change.</div>
+            </details>
+          </div>
+
+          <div class="highlight-box mt-10">
+            <p class="text-base mb-4">Discover how the <strong>Alphabees AI Tutor</strong> intelligently extends your Moodle courses – with 24/7 learning support and no new infrastructure costs.</p>
+          </div>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 not-prose">
+            <a href="../features.html"
+               class="inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 transition text-white font-semibold font-geist text-sm rounded-xl px-6 py-3.5 shadow-lg shadow-violet-500/20">
+              Explore the Alphabees AI Tutor features
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside id="blog-sidebar" class="hidden lg:block"></aside>
+
+      </div>
+
+      <!-- Mobile back to blog -->
+      <div class="lg:hidden mt-12 pt-8 border-t border-gray-100">
+        <a href="../blog.html" class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+          Zurück zum Blog
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Newsletter Popup -->
+  <div id="newsletter-popup" class="fixed inset-0 z-[1000] hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+    <div class="animate-popup bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
+      <button onclick="closeNewsletterPopup()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+      <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Fast geschafft!</h3>
+      <p class="text-gray-600 text-center mb-6">Wir haben dir eine Bestätigungsmail gesendet. Bitte schau in deinem Posteingang nach und klicke auf den Bestätigungslink.</p>
+      <p class="text-gray-500 text-sm text-center mb-6">💡 Nicht gefunden? Schau auch im Spam-Ordner nach.</p>
+      <button onclick="closeNewsletterPopup()" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-lg transition">Verstanden</button>
+    </div>
+  </div>
+
+  <style>
+    @keyframes popupFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    .animate-popup { animation: popupFadeIn 0.3s ease-out; }
+    #newsletter-popup.flex { display: flex !important; }
+  </style>
+
+  <script>
+    function showNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.add('hidden');
+      popup.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('newsletter-popup').addEventListener('click', function(e) {
+      if (e.target === this) closeNewsletterPopup();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeNewsletterPopup();
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsletterForm = document.querySelector('form[data-sv-form="8647011"]');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('input[name="email_address"]');
+          fetch(this.action, { method: 'POST', body: new FormData(this), mode: 'no-cors' })
+            .finally(() => { showNewsletterPopup(); emailInput.value = ''; });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
