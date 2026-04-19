@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-18
+# Last updated: 2026-04-19
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,9 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- KI-gestützte Lerntools in der Weiterbildung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-gestuetzte-lerntools-weiterbildung.html
+- KI in der Personalentwicklung: Neue Karrierewege | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/von-der-karriereleiter-zum-karrieregitter-ki-personalentwicklung.html
+- Cognitive Offloading Paradox: KI fördert Lernen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/cognitive-offloading-paradox-ki-lernen-bildung.html
 - Hochschulfinanzierung: KI als Effizienzmotor | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/hochschulfinanzierung-ki-effizienz-digitale-transformation.html
 - Multiple-Choice-Fragen richtig gestalten | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/multiple-choice-fragen-richtig-gestalten.html
 - Kursabbrüche im E-Learning verhindern | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/kursabbrueche-e-learning-verhindern-strategien.html
@@ -188,6 +191,9 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Ai Powered Learning Tools Corporate Training: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-powered-learning-tools-corporate-training.html
+- From Career Ladder To Career Lattice Ai Talent Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/from-career-ladder-to-career-lattice-ai-talent-development.html
+- Cognitive Offloading Paradox Ai Learning Education: https://moodle-ai-tutor.alphalearn.ai/en/blog/cognitive-offloading-paradox-ai-learning-education.html
 - University Funding Ai Efficiency Digital Transformation: https://moodle-ai-tutor.alphalearn.ai/en/blog/university-funding-ai-efficiency-digital-transformation.html
 - Designing Effective Multiple Choice Questions: https://moodle-ai-tutor.alphalearn.ai/en/blog/designing-effective-multiple-choice-questions.html
 - Preventing Course Dropouts E Learning Strategies: https://moodle-ai-tutor.alphalearn.ai/en/blog/preventing-course-dropouts-e-learning-strategies.html
