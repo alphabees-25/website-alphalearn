@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/1LXucSAFzegBwepP6bl-TCxRO40zfCSJ2">
+  <meta property="og:image:width" content="2640">
+  <meta property="og:image:height" content="1430">
+  <meta property="og:title" content="CLCamp26: The Future of Corporate Learning | Alphabees">
+  <meta property="og:description" content="CLCamp26 reveals: AI is fundamentally changing learning. Discover the trends shaping corporate learning and how education leaders are responding.">
+  <meta property="og:url" content="https://moodle-ai-tutor.alphalearn.ai/en/blog/clcamp26-future-of-corporate-learning.html">
+  <meta name="twitter:title" content="CLCamp26: The Future of Corporate Learning | Alphabees">
+  <meta name="twitter:description" content="CLCamp26 reveals: AI is fundamentally changing learning. Discover the trends shaping corporate learning and how education leaders are responding.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1LXucSAFzegBwepP6bl-TCxRO40zfCSJ2">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CLCamp26: The Future of Corporate Learning | Alphabees</title>
+  <meta name="description" content="CLCamp26 reveals: AI is fundamentally changing learning. Discover the trends shaping corporate learning and how education leaders are responding.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/clcamp26-future-of-corporate-learning.html">
+  <link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/clcamp26-zukunft-corporate-learning.html">
+  <link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/clcamp26-future-of-corporate-learning.html">
+  <link rel="alternate" hreflang="x-default" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/clcamp26-zukunft-corporate-learning.html">
+  <meta name="geo.region" content="DE">
+  <meta name="geo.country" content="DE">
+  <meta name="geo.placename" content="Deutschland">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes fadeSlideIn {
+      0%   { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+      40%  { opacity: 0.9; transform: translateY(0); filter: blur(0px); }
+      100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+    }
+    .animate-on-scroll { animation-play-state: paused !important; }
+    .animate-on-scroll.animate { animation-play-state: running !important; }
+    html, body { overflow-x: hidden; width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* Article typography */
+    .prose h2 {
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: #111827;
+      margin-top: 2.5rem;
+      margin-bottom: 0.875rem;
+      line-height: 1.3;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose p {
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+    .prose ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .prose ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+    .prose ul li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: #6366f1;
+      margin-top: 0.6em;
+    }
+    .prose blockquote {
+      border-left: 3px solid #6366f1;
+      padding: 0.75rem 1.25rem;
+      margin: 1.75rem 0;
+      background: #f5f3ff;
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+    .prose blockquote p {
+      color: #4338ca;
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .prose .highlight-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .prose .highlight-box p {
+      margin-bottom: 0;
+      color: #1e40af;
+      font-weight: 500;
+    }
+    .prose strong {
+      color: #111827;
+      font-weight: 600;
+    }
+
+    /* FAQ Accordion */
+    .faq-item {
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      margin-bottom: 0.625rem;
+    }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1rem 1.25rem;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #111827;
+      font-family: 'Geist', sans-serif;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      user-select: none;
+      background: #f9fafb;
+      transition: background 0.15s;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary:hover { background: #f3f4f6; }
+    .faq-item[open] summary { background: #ede9fe; color: #5b21b6; }
+    .faq-item summary .faq-icon {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      border-radius: 50%;
+      background: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s, transform 0.2s;
+    }
+    .faq-item[open] summary .faq-icon {
+      background: #7c3aed;
+      transform: rotate(45deg);
+    }
+    .faq-item[open] summary .faq-icon svg { stroke: #fff; }
+    .faq-item .faq-body {
+      padding: 1rem 1.25rem 1.25rem;
+      color: #374151;
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      border-top: 1px solid #e5e7eb;
+    }
+  </style>
+  <script>
+    (function () {
+      const style = document.createElement('style');
+      style.textContent = `.animate-on-scroll { animation-play-state: paused !important; } .animate-on-scroll.animate { animation-play-state: running !important; }`;
+      document.head.appendChild(style);
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+              window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0 });
+      }
+      window.initInViewAnimations = function (selector = '.animate-on-scroll') {
+        document.querySelectorAll(selector).forEach((el) => { window.__inViewIO.observe(el); });
+      };
+      document.addEventListener('DOMContentLoaded', () => {
+        initInViewAnimations();
+        // Fallback: force-animate any elements the observer missed (iOS Safari / mobile quirks)
+        setTimeout(() => {
+          document.querySelectorAll('.animate-on-scroll:not(.animate)').forEach(el => el.classList.add('animate'));
+        }, 1000);
+      });
+    })();
+  </script>
+  <script src="/assets/js/layout.js" defer></script>
+
+  <!-- JSON-LD: Article Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "CLCamp26: The Future of Corporate Learning | Alphabees",
+  "description": "CLCamp26 reveals: AI is fundamentally changing learning. Discover the trends shaping corporate learning and how education leaders are responding.",
+  "image": "https://lh3.googleusercontent.com/d/1LXucSAFzegBwepP6bl-TCxRO40zfCSJ2",
+  "author": {
+    "@type": "Organization",
+    "name": "Alphabees",
+    "url": "https://moodle-ai-tutor.alphalearn.ai"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Alphabees",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://moodle-ai-tutor.alphalearn.ai/favicon.svg"
+    }
+  },
+  "datePublished": "2026-04-20",
+  "dateModified": "2026-04-20",
+  "inLanguage": "en",
+  "keywords": "Corporate Learning, CLCamp26, AI in Learning, Professional Development, Learning Culture",
+  "articleSection": "Analysis",
+  "url": "https://moodle-ai-tutor.alphalearn.ai/en/blog/clcamp26-future-of-corporate-learning.html"
+}
+  </script>
+
+  <!-- JSON-LD: FAQ Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the key takeaways from CLCamp26 for learning and development leaders?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI is fundamentally changing learning, knowledge transfer is shifting to networks, and corporate learning faces a major realignment. The central insight: the future of learning is a matter of mindset."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is AI transforming corporate learning in organizations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI enables personalized learning support around the clock while challenging established training formats. Education leaders must decide how to meaningfully integrate AI tools into existing structures."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is there talk of network learning instead of course-based learning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Knowledge is increasingly acquired through exchange with colleagues, experts, and digital assistants rather than in isolated training sessions. Formal courses now represent just one part of the overall learning ecosystem."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the identity crisis of corporate learning mean for L&D departments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L&D teams must redefine their role: moving from pure training providers to enablers of self-directed learning processes. This requires new competencies and different success metrics."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can educational institutions practically implement AI-supported learning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The best entry point is through AI tutors that integrate into existing learning platforms like Moodle. This gives learners individual support without organizations having to overhaul their entire infrastructure."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
+
+  <!-- Global Header -->
+  <div id="site-header"></div>
+
+  <main class="relative">
+
+    <!-- Hero Banner -->
+    <div class="relative bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 overflow-hidden">
+      <!-- Decorative blobs -->
+      <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-fuchsia-400/10 blur-3xl pointer-events-none"></div>
+
+      <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 pt-24 pb-0 sm:pt-32 sm:pb-0 relative">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 mb-8 text-sm text-white/60 font-geist" style="animation: fadeSlideIn 1s ease-out 0.05s both;">
+          <a href="../index.html" class="hover:text-white transition">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <a href="../blog.html" class="hover:text-white transition">Blog</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <span class="text-white/40">Artikel</span>
+        </nav>
+
+        <!-- Category + meta -->
+        <div class="flex flex-wrap items-center gap-3 mb-6" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+          <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-white text-xs font-semibold font-geist">Analysis</span>
+          <span class="text-white/50 text-sm font-geist">April 2026</span>
+          <span class="w-1 h-1 rounded-full bg-white/30"></span>
+          <span class="text-white/50 text-sm font-geist">12 Min. Lesezeit</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white font-geist leading-[1.15] tracking-tight mb-5" style="animation: fadeSlideIn 1s ease-out 0.15s both;">
+          CLCamp26: The Future of Corporate Learning | Alphabees
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-white/70 font-geist font-normal leading-relaxed max-w-2xl" style="animation: fadeSlideIn 1s ease-out 0.2s both;">
+          Corporate Learning Camp 2026 reveals key trends: AI is asking uncomfortable questions, learning is shifting to networks, and the industry is grappling with its identity. What does this mean for education leaders?
+        </p>
+
+        <!-- Hero image -->
+        <div class="mt-10" style="animation: fadeSlideIn 1s ease-out 0.25s both;">
+          <img src="https://lh3.googleusercontent.com/d/1LXucSAFzegBwepP6bl-TCxRO40zfCSJ2"
+               alt="Corporate Learning Camp 2026 – Discussion panel on AI and learning culture"
+               class="w-full rounded-t-2xl object-cover max-h-72 sm:max-h-96 shadow-2xl"
+               loading="eager">
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 py-14 sm:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 lg:gap-16">
+
+        <!-- Main Article -->
+        <article class="prose animate-on-scroll" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+
+<p>Corporate Learning Camp 2026 in Hamburg is now history, but the discussions continue to resonate. Herwig Kummer from the CLC core team has summarized the thematic threads of the barcamp, formulating observations that extend far beyond the individual event. His analysis makes clear: the professional development industry is undergoing a profound transformation whose outcome remains uncertain.</p>
+
+<p>For education leaders at universities, academies, and in companies, a closer look at the insights from CLCamp26 is worthwhile. The trends discussed there affect not only corporate learning in the narrow sense but organized professional development throughout the German-speaking world.</p>
+
+<h2>AI poses uncomfortable questions to established learning formats</h2>
+
+<p>That artificial intelligence is changing learning is not a new insight. What is remarkable about the discussions at CLCamp26, however, is the focus on the uncomfortable questions that AI poses to established structures. If an AI tutor can provide individualized learning support around the clock, what role do traditional in-person trainings still play? If knowledge is available at any time, what do learners still need to retain?</p>
+
+<p>These questions challenge education leaders to question the justification for existing formats. This does not mean that in-person events will become obsolete. It means their function is shifting: away from pure knowledge transfer toward application, reflection, and social learning.</p>
+
+<p>For organizations using Moodle as their learning platform, integrating AI tutors opens new possibilities. An intelligent learning companion can answer repetitive questions, identify knowledge gaps, and suggest individualized learning paths. Instructors and trainers thereby gain time for tasks that require human expertise: moderating complex discussions, providing feedback, and motivating learners.</p>
+
+<h2>Learning shifts from the course to the network</h2>
+
+<p>A second central observation from CLCamp26 concerns where learning takes place. The thesis is: learning no longer happens primarily in courses but in networks. This refers both to the social network of colleagues, experts, and mentors as well as the digital network of platforms, communities, and AI assistants.</p>
+
+<p>For educational organizations, this shift has far-reaching consequences:</p>
+
+<dl>
+<dt>Formal courses become the starting point:</dt>
+<dd>Instead of isolated learning units, offerings are needed that connect learners with further resources and contacts.</dd>
+<dt>Informal learning gains importance:</dt>
+<dd>Exchange in communities, a quick check with an AI tutor, or conversations with experienced colleagues complement structured professional development.</dd>
+<dt>The learning platform becomes a hub:</dt>
+<dd>Systems like Moodle are evolving from mere course containers to ecosystems that bring together various learning sources.</dd>
+</dl>
+
+<p>Education leaders who want to shape this development must think beyond the individual course. The question is no longer just: How do we convey knowledge? But also: How do we enable continuous learning in everyday work and study?</p>
+
+<h2>Corporate learning between identity crisis and realignment</h2>
+
+<p>Herwig Kummer speaks in his retrospective of an identity crisis in corporate learning. This diagnosis strikes a nerve, as many L&D departments and professional development providers are currently struggling with their positioning. The classic role as training provider is losing importance, while new tasks are not yet clearly defined.</p>
+
+<p>At the same time, the situation can also be interpreted as a new beginning. Those who actively shape the changes can increase their relevance rather than lose it. Several directions of development are emerging:</p>
+
+<ul>
+<li>From training department to learning ecosystem designer</li>
+<li>From training planning to data-driven competency development</li>
+<li>From content production to curation and networking of learning resources</li>
+<li>From in-person didactics to hybrid learning support with AI assistance</li>
+</ul>
+
+<p>For universities and academies, similar questions arise. Here too, the role is shifting: less knowledge transfer in lecture format, more support for self-directed learning processes. AI tutors can serve as a bridge by answering standard questions and giving instructors space for more demanding support tasks.</p>
+
+<h2>Skills models meet the reality of everyday learning</h2>
+
+<p>Another area of tension that became visible at CLCamp26 concerns the gap between theoretical models and practical implementation. Skills frameworks, competency matrices, and learning experience platforms promise much but often fail due to the complexity of daily reality.</p>
+
+<p>Education leaders know the dilemma: on one hand, organizations need guidance on which competencies should be developed. On the other hand, detailed skills catalogs often prove difficult to maintain and impractical.</p>
+
+<p>The solution likely lies in pragmatic approaches that provide structure without drowning in bureaucracy. Technology can help, for example when AI systems identify learning needs and suggest suitable offerings without every single competency having to be manually recorded. What matters, however, is that technology serves learning and not the other way around.</p>
+
+<h2>Mindset as the key factor for the future of learning</h2>
+
+<p>Perhaps the most important insight from CLCamp26 is formulated by Herwig Kummer at the end of his summary: the future of learning is not just a question of new formats or technologies. It is a question of mindset.</p>
+
+<p>What does this mean concretely for education leaders? It means that introducing an AI tutor or a new learning platform alone does not bring about change. What matters is the mindset with which an organization views learning:</p>
+
+<dl>
+<dt>Learning as control versus learning as enablement:</dt>
+<dd>Is professional development primarily understood as a compliance requirement or as an investment in developing people?</dd>
+<dt>Learning as cost versus learning as value creation:</dt>
+<dd>Are training budgets under permanent pressure to justify themselves or are they treated as a strategic resource?</dd>
+<dt>Learning as event versus learning as process:</dt>
+<dd>Does professional development end with the certificate or is continuous development encouraged?</dd>
+</dl>
+
+<p>These mindset questions concern not only L&D departments but the entire leadership level of an organization. Technology like AI tutors can support a learning-conducive mindset by enabling individual learning in the flow of work. However, the fundamental decision about the importance of learning remains a human task.</p>
+
+<p>CLCamp26 has shown that the professional development industry is having these discussions. The questions have been asked, the directions are recognizable. For education leaders at universities, academies, and in companies, the task now lies in deriving concrete steps from these impulses. This is less about choosing between AI and humans, between digital and analog. It is about combining both in ways that make learning effective, accessible, and sustainable.</p>
+
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="not-prose mt-6 mb-2">
+            <details class="faq-item">
+              <summary>
+                What are the key takeaways from CLCamp26 for learning and development leaders?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">AI is fundamentally changing learning, knowledge transfer is shifting to networks, and corporate learning faces a major realignment. The central insight: the future of learning is a matter of mindset.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How is AI transforming corporate learning in organizations?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">AI enables personalized learning support around the clock while challenging established training formats. Education leaders must decide how to meaningfully integrate AI tools into existing structures.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Why is there talk of network learning instead of course-based learning?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Knowledge is increasingly acquired through exchange with colleagues, experts, and digital assistants rather than in isolated training sessions. Formal courses now represent just one part of the overall learning ecosystem.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                What does the identity crisis of corporate learning mean for L&D departments?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">L&D teams must redefine their role: moving from pure training providers to enablers of self-directed learning processes. This requires new competencies and different success metrics.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How can educational institutions practically implement AI-supported learning?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">The best entry point is through AI tutors that integrate into existing learning platforms like Moodle. This gives learners individual support without organizations having to overhaul their entire infrastructure.</div>
+            </details>
+          </div>
+
+          <div class="highlight-box mt-10">
+            <p class="text-base mb-4">Discover how the <strong>Alphabees AI Tutor</strong> intelligently extends your Moodle courses – with 24/7 learning support and no new infrastructure costs.</p>
+          </div>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 not-prose">
+            <a href="../features.html"
+               class="inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 transition text-white font-semibold font-geist text-sm rounded-xl px-6 py-3.5 shadow-lg shadow-violet-500/20">
+              Explore the Alphabees AI Tutor features
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside id="blog-sidebar" class="hidden lg:block"></aside>
+
+      </div>
+
+      <!-- Mobile back to blog -->
+      <div class="lg:hidden mt-12 pt-8 border-t border-gray-100">
+        <a href="../blog.html" class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+          Zurück zum Blog
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Newsletter Popup -->
+  <div id="newsletter-popup" class="fixed inset-0 z-[1000] hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+    <div class="animate-popup bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
+      <button onclick="closeNewsletterPopup()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+      <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Fast geschafft!</h3>
+      <p class="text-gray-600 text-center mb-6">Wir haben dir eine Bestätigungsmail gesendet. Bitte schau in deinem Posteingang nach und klicke auf den Bestätigungslink.</p>
+      <p class="text-gray-500 text-sm text-center mb-6">💡 Nicht gefunden? Schau auch im Spam-Ordner nach.</p>
+      <button onclick="closeNewsletterPopup()" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-lg transition">Verstanden</button>
+    </div>
+  </div>
+
+  <style>
+    @keyframes popupFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    .animate-popup { animation: popupFadeIn 0.3s ease-out; }
+    #newsletter-popup.flex { display: flex !important; }
+  </style>
+
+  <script>
+    function showNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.add('hidden');
+      popup.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('newsletter-popup').addEventListener('click', function(e) {
+      if (e.target === this) closeNewsletterPopup();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeNewsletterPopup();
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsletterForm = document.querySelector('form[data-sv-form="8647011"]');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('input[name="email_address"]');
+          fetch(this.action, { method: 'POST', body: new FormData(this), mode: 'no-cors' })
+            .finally(() => { showNewsletterPopup(); emailInput.value = ''; });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
