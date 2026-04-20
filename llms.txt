@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-19
+# Last updated: 2026-04-20
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,9 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Learning Design und das CCAF-Modell | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/learning-design-ccaf-modell-elearning-entwicklung.html
+- Szenariobasiertes Lernen: Skripte entwickeln | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/szenariobasiertes-lernen-skripte-entwickeln.html
+- CLCamp26: Die Zukunft des Corporate Learning | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/clcamp26-zukunft-corporate-learning.html
 - KI-gestützte Lerntools in der Weiterbildung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-gestuetzte-lerntools-weiterbildung.html
 - KI in der Personalentwicklung: Neue Karrierewege | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/von-der-karriereleiter-zum-karrieregitter-ki-personalentwicklung.html
 - Cognitive Offloading Paradox: KI fördert Lernen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/cognitive-offloading-paradox-ki-lernen-bildung.html
@@ -191,6 +194,9 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Learning Design Ccaf Model Elearning Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/learning-design-ccaf-model-elearning-development.html
+- Scenario Based Learning Developing Scripts: https://moodle-ai-tutor.alphalearn.ai/en/blog/scenario-based-learning-developing-scripts.html
+- Clcamp26 Future Of Corporate Learning: https://moodle-ai-tutor.alphalearn.ai/en/blog/clcamp26-future-of-corporate-learning.html
 - Ai Powered Learning Tools Corporate Training: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-powered-learning-tools-corporate-training.html
 - From Career Ladder To Career Lattice Ai Talent Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/from-career-ladder-to-career-lattice-ai-talent-development.html
 - Cognitive Offloading Paradox Ai Learning Education: https://moodle-ai-tutor.alphalearn.ai/en/blog/cognitive-offloading-paradox-ai-learning-education.html
