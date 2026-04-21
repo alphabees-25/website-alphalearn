@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-20
+# Last updated: 2026-04-21
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,12 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- BAföG-Reform stockt: Studienerfolg sichern | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/bafoeg-reform-stockt-wie-hochschulen-studienerfolg-sichern.html
+- Multimodale KI in der Weiterbildung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/multimodale-ki-in-der-weiterbildung-was-entscheider-wissen-muessen.html
+- KI verändert Führungskräfteentwicklung anders als erwartet | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-veraendert-fuehrungskraefteentwicklung-anders-als-erwartet.html
+- Learning Pool übernimmt WorkStep: E-Learning-Markt | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/learning-pool-uebernimmt-workstep-konsolidierung-im-e-learning-markt.html
+- KI-Skilling in der Ausbildung: NRW als Vorbild | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-skilling-ausbildung-nrw-azubitrain.html
+- Wikis in der Bildung: Wissensmanagement | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/wikis-in-der-bildung-bewaehrte-werkzeuge-fuer-modernes-wissensmanagement.html
 - Learning Design und das CCAF-Modell | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/learning-design-ccaf-modell-elearning-entwicklung.html
 - Szenariobasiertes Lernen: Skripte entwickeln | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/szenariobasiertes-lernen-skripte-entwickeln.html
 - CLCamp26: Die Zukunft des Corporate Learning | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/clcamp26-zukunft-corporate-learning.html
@@ -194,6 +200,12 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Bafoeg Reform Stalled How Universities Secure Student Success: https://moodle-ai-tutor.alphalearn.ai/en/blog/bafoeg-reform-stalled-how-universities-secure-student-success.html
+- Multimodal Ai In Continuing Education What Decision Makers Need To Know: https://moodle-ai-tutor.alphalearn.ai/en/blog/multimodal-ai-in-continuing-education-what-decision-makers-need-to-know.html
+- Ai Transforms Leadership Development Differently Than Expected: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-transforms-leadership-development-differently-than-expected.html
+- Learning Pool Acquires Workstep E Learning Market Consolidation: https://moodle-ai-tutor.alphalearn.ai/en/blog/learning-pool-acquires-workstep-e-learning-market-consolidation.html
+- Ai Skilling Vocational Training Nrw Azubitrain: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-skilling-vocational-training-nrw-azubitrain.html
+- Wikis In Education Proven Tools For Modern Knowledge Management: https://moodle-ai-tutor.alphalearn.ai/en/blog/wikis-in-education-proven-tools-for-modern-knowledge-management.html
 - Learning Design Ccaf Model Elearning Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/learning-design-ccaf-model-elearning-development.html
 - Scenario Based Learning Developing Scripts: https://moodle-ai-tutor.alphalearn.ai/en/blog/scenario-based-learning-developing-scripts.html
 - Clcamp26 Future Of Corporate Learning: https://moodle-ai-tutor.alphalearn.ai/en/blog/clcamp26-future-of-corporate-learning.html
