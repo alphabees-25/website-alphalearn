@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-21
+# Last updated: 2026-04-22
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,11 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Knowledge Pillars für strategische Lernarchitekturen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/knowledge-pillars-lernarchitektur-strategisch-aufbauen.html
+- Kontinuierliches Onboarding: KI macht es skalierbar | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/kontinuierliches-onboarding-ki-personalisierte-lernbegleitung-skalierbar.html
+- KI-gestütztes Training als strategische Notwendigkeit | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-gestuetztes-training-strategische-notwendigkeit-bildungsorganisationen.html
+- Geschlechterstereotype Ausbildung: Digitale Lernbegleitung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/geschlechterstereotype-duale-ausbildung-berufswahl-digitale-lernbegleitung.html
+- KI-generierte Hausarbeiten: Handlungsbedarf für Hochschulen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-generierte-hausarbeiten-hochschulen-handeln.html
 - BAföG-Reform stockt: Studienerfolg sichern | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/bafoeg-reform-stockt-wie-hochschulen-studienerfolg-sichern.html
 - Multimodale KI in der Weiterbildung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/multimodale-ki-in-der-weiterbildung-was-entscheider-wissen-muessen.html
 - KI verändert Führungskräfteentwicklung anders als erwartet | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-veraendert-fuehrungskraefteentwicklung-anders-als-erwartet.html
@@ -200,6 +205,11 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Knowledge Pillars Building Strategic Learning Architectures: https://moodle-ai-tutor.alphalearn.ai/en/blog/knowledge-pillars-building-strategic-learning-architectures.html
+- Continuous Onboarding Ai Personalized Learning Support Scalable: https://moodle-ai-tutor.alphalearn.ai/en/blog/continuous-onboarding-ai-personalized-learning-support-scalable.html
+- Ai Powered Training Strategic Necessity Education Organizations: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-powered-training-strategic-necessity-education-organizations.html
+- Gender Stereotypes Vocational Training Career Choice Digital Learning Support: https://moodle-ai-tutor.alphalearn.ai/en/blog/gender-stereotypes-vocational-training-career-choice-digital-learning-support.html
+- Ai Generated Term Papers Universities Must Act: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-generated-term-papers-universities-must-act.html
 - Bafoeg Reform Stalled How Universities Secure Student Success: https://moodle-ai-tutor.alphalearn.ai/en/blog/bafoeg-reform-stalled-how-universities-secure-student-success.html
 - Multimodal Ai In Continuing Education What Decision Makers Need To Know: https://moodle-ai-tutor.alphalearn.ai/en/blog/multimodal-ai-in-continuing-education-what-decision-makers-need-to-know.html
 - Ai Transforms Leadership Development Differently Than Expected: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-transforms-leadership-development-differently-than-expected.html
