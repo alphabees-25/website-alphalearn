@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/1ZRngoicGVHFoXlMoeEFpfXjyWwhmXUye">
+  <meta property="og:image:width" content="2640">
+  <meta property="og:image:height" content="1430">
+  <meta property="og:title" content="Continuous Onboarding: AI Makes It Scalable | Alphabees">
+  <meta property="og:description" content="Why traditional onboarding ends after 90 days while development needs persist – and how AI tutors make continuous learning support scalable.">
+  <meta property="og:url" content="https://moodle-ai-tutor.alphalearn.ai/en/blog/continuous-onboarding-ai-personalized-learning-support-scalable.html">
+  <meta name="twitter:title" content="Continuous Onboarding: AI Makes It Scalable | Alphabees">
+  <meta name="twitter:description" content="Why traditional onboarding ends after 90 days while development needs persist – and how AI tutors make continuous learning support scalable.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1ZRngoicGVHFoXlMoeEFpfXjyWwhmXUye">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Continuous Onboarding: AI Makes It Scalable | Alphabees</title>
+  <meta name="description" content="Why traditional onboarding ends after 90 days while development needs persist – and how AI tutors make continuous learning support scalable.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/continuous-onboarding-ai-personalized-learning-support-scalable.html">
+  <link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/kontinuierliches-onboarding-ki-personalisierte-lernbegleitung-skalierbar.html">
+  <link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/continuous-onboarding-ai-personalized-learning-support-scalable.html">
+  <link rel="alternate" hreflang="x-default" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/kontinuierliches-onboarding-ki-personalisierte-lernbegleitung-skalierbar.html">
+  <meta name="geo.region" content="DE">
+  <meta name="geo.country" content="DE">
+  <meta name="geo.placename" content="Deutschland">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes fadeSlideIn {
+      0%   { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+      40%  { opacity: 0.9; transform: translateY(0); filter: blur(0px); }
+      100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+    }
+    .animate-on-scroll { animation-play-state: paused !important; }
+    .animate-on-scroll.animate { animation-play-state: running !important; }
+    html, body { overflow-x: hidden; width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* Article typography */
+    .prose h2 {
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: #111827;
+      margin-top: 2.5rem;
+      margin-bottom: 0.875rem;
+      line-height: 1.3;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose p {
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+    .prose ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .prose ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+    .prose ul li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: #6366f1;
+      margin-top: 0.6em;
+    }
+    .prose blockquote {
+      border-left: 3px solid #6366f1;
+      padding: 0.75rem 1.25rem;
+      margin: 1.75rem 0;
+      background: #f5f3ff;
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+    .prose blockquote p {
+      color: #4338ca;
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .prose .highlight-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .prose .highlight-box p {
+      margin-bottom: 0;
+      color: #1e40af;
+      font-weight: 500;
+    }
+    .prose strong {
+      color: #111827;
+      font-weight: 600;
+    }
+
+    /* FAQ Accordion */
+    .faq-item {
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      margin-bottom: 0.625rem;
+    }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1rem 1.25rem;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #111827;
+      font-family: 'Geist', sans-serif;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      user-select: none;
+      background: #f9fafb;
+      transition: background 0.15s;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary:hover { background: #f3f4f6; }
+    .faq-item[open] summary { background: #ede9fe; color: #5b21b6; }
+    .faq-item summary .faq-icon {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      border-radius: 50%;
+      background: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s, transform 0.2s;
+    }
+    .faq-item[open] summary .faq-icon {
+      background: #7c3aed;
+      transform: rotate(45deg);
+    }
+    .faq-item[open] summary .faq-icon svg { stroke: #fff; }
+    .faq-item .faq-body {
+      padding: 1rem 1.25rem 1.25rem;
+      color: #374151;
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      border-top: 1px solid #e5e7eb;
+    }
+  </style>
+  <script>
+    (function () {
+      const style = document.createElement('style');
+      style.textContent = `.animate-on-scroll { animation-play-state: paused !important; } .animate-on-scroll.animate { animation-play-state: running !important; }`;
+      document.head.appendChild(style);
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+              window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0 });
+      }
+      window.initInViewAnimations = function (selector = '.animate-on-scroll') {
+        document.querySelectorAll(selector).forEach((el) => { window.__inViewIO.observe(el); });
+      };
+      document.addEventListener('DOMContentLoaded', () => {
+        initInViewAnimations();
+        // Fallback: force-animate any elements the observer missed (iOS Safari / mobile quirks)
+        setTimeout(() => {
+          document.querySelectorAll('.animate-on-scroll:not(.animate)').forEach(el => el.classList.add('animate'));
+        }, 1000);
+      });
+    })();
+  </script>
+  <script src="/assets/js/layout.js" defer></script>
+
+  <!-- JSON-LD: Article Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Continuous Onboarding: AI Makes It Scalable | Alphabees",
+  "description": "Why traditional onboarding ends after 90 days while development needs persist – and how AI tutors make continuous learning support scalable.",
+  "image": "https://lh3.googleusercontent.com/d/1ZRngoicGVHFoXlMoeEFpfXjyWwhmXUye",
+  "author": {
+    "@type": "Organization",
+    "name": "Alphabees",
+    "url": "https://moodle-ai-tutor.alphalearn.ai"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Alphabees",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://moodle-ai-tutor.alphalearn.ai/favicon.svg"
+    }
+  },
+  "datePublished": "2026-04-22",
+  "dateModified": "2026-04-22",
+  "inLanguage": "en",
+  "keywords": "continuous onboarding, AI tutor, personalized learning support, Moodle AI, scalable training",
+  "articleSection": "Analysis",
+  "url": "https://moodle-ai-tutor.alphalearn.ai/en/blog/continuous-onboarding-ai-personalized-learning-support-scalable.html"
+}
+  </script>
+
+  <!-- JSON-LD: FAQ Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why isn't a traditional 30-60-90-day onboarding sufficient?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Learning needs don't end after 90 days. Every promotion, role change, and new challenge creates competency gaps that need to be closed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does continuous onboarding mean in practice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Continuous onboarding treats every significant transition in a learner's journey as a new onboarding moment and provides appropriate support."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does AI make personalized learning support scalable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI tutors can simultaneously support many learners individually, respond to different experience levels, and remain available around the clock – without additional staff."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can an AI tutor be integrated into existing Moodle courses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Specialized solutions like the Alphabees AI Tutor integrate directly into Moodle and leverage existing course content for individualized learning support."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What advantages do educational institutions gain from continuous AI learning support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They can shorten time-to-competency, better support learners, and systematically close skill gaps without increasing support capacity."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
+
+  <!-- Global Header -->
+  <div id="site-header"></div>
+
+  <main class="relative">
+
+    <!-- Hero Banner -->
+    <div class="relative bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 overflow-hidden">
+      <!-- Decorative blobs -->
+      <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-fuchsia-400/10 blur-3xl pointer-events-none"></div>
+
+      <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 pt-24 pb-0 sm:pt-32 sm:pb-0 relative">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 mb-8 text-sm text-white/60 font-geist" style="animation: fadeSlideIn 1s ease-out 0.05s both;">
+          <a href="../index.html" class="hover:text-white transition">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <a href="../blog.html" class="hover:text-white transition">Blog</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <span class="text-white/40">Artikel</span>
+        </nav>
+
+        <!-- Category + meta -->
+        <div class="flex flex-wrap items-center gap-3 mb-6" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+          <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-white text-xs font-semibold font-geist">Analysis</span>
+          <span class="text-white/50 text-sm font-geist">April 2026</span>
+          <span class="w-1 h-1 rounded-full bg-white/30"></span>
+          <span class="text-white/50 text-sm font-geist">12 Min. Lesezeit</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white font-geist leading-[1.15] tracking-tight mb-5" style="animation: fadeSlideIn 1s ease-out 0.15s both;">
+          Continuous Onboarding: AI Makes It Scalable | Alphabees
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-white/70 font-geist font-normal leading-relaxed max-w-2xl" style="animation: fadeSlideIn 1s ease-out 0.2s both;">
+          Learners' development needs don't end after onboarding. AI tutors enable continuous, personalized learning support that was previously impossible with limited personnel resources.
+        </p>
+
+        <!-- Hero image -->
+        <div class="mt-10" style="animation: fadeSlideIn 1s ease-out 0.25s both;">
+          <img src="https://lh3.googleusercontent.com/d/1ZRngoicGVHFoXlMoeEFpfXjyWwhmXUye"
+               alt="Continuous onboarding with AI – person at laptop with digital learning assistant"
+               class="w-full rounded-t-2xl object-cover max-h-72 sm:max-h-96 shadow-2xl"
+               loading="eager">
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 py-14 sm:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 lg:gap-16">
+
+        <!-- Main Article -->
+        <article class="prose animate-on-scroll" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+
+<p>In many educational institutions and organizations, onboarding follows a familiar pattern: 30 days for orientation, 60 days for initial independent tasks, 90 days to full competency. This model isn't fundamentally flawed. What's problematic is the assumption that follows: once the program is complete, the person is considered fully trained. Structured support ends – but development needs do not.</p>
+
+<p>Reality paints a different picture. Those who get promoted face new demands. Those who switch to a different field must reorient themselves. Those confronted with changed circumstances need support. All these transitions create competency gaps that should be addressed just as systematically as during the initial onboarding. Yet this is precisely where most organizations lack the infrastructure.</p>
+
+<h2>Why the event-based model reaches its limits</h2>
+
+<p>Traditional professional development follows an event-based model: there are defined moments when learning content is delivered. Orientation programs, training sessions, workshops – they're all designed as self-contained units. For learning and development professionals, this model has clear advantages: it's plannable, measurable, and can be documented for leadership.</p>
+
+<p>The problem lies not in the quality of these offerings, but in the gap that emerges afterward. Between scheduled learning events, learners are left to their own devices. Managers cannot simultaneously serve as continuous coaches for all team members – especially when those members have different experience levels and face different challenges.</p>
+
+<p>The consequence is well known: completion rates get optimized because they're measurable. Whether actual competency improves often remains unclear. Research in corporate learning has shown for years that high participation rates don't automatically lead to better work outcomes. Learning infrastructure gets aligned with the metric that can be captured – not the outcome the organization actually wants to achieve.</p>
+
+<h2>The recurring need for competency development</h2>
+
+<p>Time-to-competency isn't a one-time metric relevant only in the first 90 days. It recurs with every significant transition. Those who move into a new subject area after completing a study phase functionally undergo a new onboarding process. Experienced professionals who suddenly take on leadership responsibilities face a comparable situation. Those confronted with fundamentally changed assessment formats or new technologies must reorient themselves.</p>
+
+<p>For educational institutions and training providers, this means: their learners' support needs are structurally higher than existing programs cover. This gap is rarely systematically captured because formal support ends when onboarding concludes. The costs of this gap – in the form of longer adjustment periods, higher frustration, and reduced learning effectiveness – aren't measured because no one is looking anymore.</p>
+
+<h2>What AI changes about this model</h2>
+
+<p>Artificial intelligence doesn't solve the problem of underfunded training departments. What AI does enable, however, is overcoming the personnel bottleneck that has made continuous learning support impossible until now.</p>
+
+<p>An AI-powered tutoring system can be present exactly when learners need support – when preparing for a difficult exam, when understanding complex concepts, or when transferring knowledge to new contexts. It can respond differently depending on whether the question comes from a beginning student or an advanced learner, because the support needs are fundamentally different.</p>
+
+<p>A beginner who gets stuck on an assignment needs structured guidance and reassurance that asking questions is acceptable. An advanced learner with the same question benefits more from being guided toward independent analysis before solutions are offered. The same question requires completely different answers – and an AI tutor can deliver this differentiation, for many learners simultaneously, around the clock.</p>
+
+<h2>Integration into existing learning environments</h2>
+
+<p>The decisive step isn't introducing new isolated AI tools, but anchoring intelligent support where learning already takes place. For many educational institutions in the DACH region, that means: in Moodle.</p>
+
+<p>An AI tutor that integrates directly into existing Moodle courses can leverage available content and guide learners contextually. It complements the work of instructors and advisors without replacing them. It's available when human support isn't reachable – at night, on weekends, during exam periods. And it can treat every transition in a learner's journey as what it is: a new moment where targeted support makes the difference.</p>
+
+<p>The Alphabees AI Tutor for Moodle pursues exactly this approach. It integrates seamlessly into existing learning platforms and functions as a 24/7 learning companion that responds to individual course content and each user's current learning progress. For universities, academies, and training providers, this opens the possibility of offering personalized learning support without having to proportionally increase support capacity.</p>
+
+<h2>A mindset shift for education leaders</h2>
+
+<p>The discussion about AI in education has long focused on content creation and automation: producing courses faster, generating texts, grading assignments automatically. These are legitimate applications, but they optimize the existing model. They don't change what the model can achieve.</p>
+
+<p>Continuous learning support, enabled by intelligent systems anchored in everyday learning, represents a different model. It aligns learning infrastructure with what educational institutions actually want to achieve: not completion rates, but competency – not occasionally, but continuously.</p>
+
+<p>For decision-makers in universities, academies, and training organizations, this raises a fundamental question: if learners' development needs don't end after onboarding, and if the technology for continuous support is now available – why should the support infrastructure still end on day 90?</p>
+
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="not-prose mt-6 mb-2">
+            <details class="faq-item">
+              <summary>
+                Why isn't a traditional 30-60-90-day onboarding sufficient?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Learning needs don't end after 90 days. Every promotion, role change, and new challenge creates competency gaps that need to be closed.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                What does continuous onboarding mean in practice?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Continuous onboarding treats every significant transition in a learner's journey as a new onboarding moment and provides appropriate support.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How does AI make personalized learning support scalable?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">AI tutors can simultaneously support many learners individually, respond to different experience levels, and remain available around the clock – without additional staff.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Can an AI tutor be integrated into existing Moodle courses?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Specialized solutions like the Alphabees AI Tutor integrate directly into Moodle and leverage existing course content for individualized learning support.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                What advantages do educational institutions gain from continuous AI learning support?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">They can shorten time-to-competency, better support learners, and systematically close skill gaps without increasing support capacity.</div>
+            </details>
+          </div>
+
+          <div class="highlight-box mt-10">
+            <p class="text-base mb-4">Discover how the <strong>Alphabees AI Tutor</strong> intelligently extends your Moodle courses – with 24/7 learning support and no new infrastructure costs.</p>
+          </div>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 not-prose">
+            <a href="../features.html"
+               class="inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 transition text-white font-semibold font-geist text-sm rounded-xl px-6 py-3.5 shadow-lg shadow-violet-500/20">
+              Explore the Alphabees AI Tutor features
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside id="blog-sidebar" class="hidden lg:block"></aside>
+
+      </div>
+
+      <!-- Mobile back to blog -->
+      <div class="lg:hidden mt-12 pt-8 border-t border-gray-100">
+        <a href="../blog.html" class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+          Zurück zum Blog
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Newsletter Popup -->
+  <div id="newsletter-popup" class="fixed inset-0 z-[1000] hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+    <div class="animate-popup bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
+      <button onclick="closeNewsletterPopup()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+      <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Fast geschafft!</h3>
+      <p class="text-gray-600 text-center mb-6">Wir haben dir eine Bestätigungsmail gesendet. Bitte schau in deinem Posteingang nach und klicke auf den Bestätigungslink.</p>
+      <p class="text-gray-500 text-sm text-center mb-6">💡 Nicht gefunden? Schau auch im Spam-Ordner nach.</p>
+      <button onclick="closeNewsletterPopup()" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-lg transition">Verstanden</button>
+    </div>
+  </div>
+
+  <style>
+    @keyframes popupFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    .animate-popup { animation: popupFadeIn 0.3s ease-out; }
+    #newsletter-popup.flex { display: flex !important; }
+  </style>
+
+  <script>
+    function showNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.add('hidden');
+      popup.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('newsletter-popup').addEventListener('click', function(e) {
+      if (e.target === this) closeNewsletterPopup();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeNewsletterPopup();
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsletterForm = document.querySelector('form[data-sv-form="8647011"]');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('input[name="email_address"]');
+          fetch(this.action, { method: 'POST', body: new FormData(this), mode: 'no-cors' })
+            .finally(() => { showNewsletterPopup(); emailInput.value = ''; });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
