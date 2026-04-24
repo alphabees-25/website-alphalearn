@@ -2966,4 +2966,70 @@
     <priority>0.7</priority>
   </url>
 
+
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/denkebenen-im-lerndesign-wie-ki-tutoren-tieferes-lernen-foerdern.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/denkebenen-im-lerndesign-wie-ki-tutoren-tieferes-lernen-foerdern.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/thinking-levels-in-learning-design-how-ai-tutors-promote-deeper-learning.html"/>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/thinking-levels-in-learning-design-how-ai-tutors-promote-deeper-learning.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/denkebenen-im-lerndesign-wie-ki-tutoren-tieferes-lernen-foerdern.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/thinking-levels-in-learning-design-how-ai-tutors-promote-deeper-learning.html"/>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/lernplattformen-ueberlastung-lehrende-frueh-erkennen.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/lernplattformen-ueberlastung-lehrende-frueh-erkennen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/learning-platforms-detect-teacher-burnout-early.html"/>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/learning-platforms-detect-teacher-burnout-early.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/lernplattformen-ueberlastung-lehrende-frueh-erkennen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/learning-platforms-detect-teacher-burnout-early.html"/>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-prompts-instructional-design-kreativitaet.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-prompts-instructional-design-kreativitaet.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-prompts-instructional-design-creativity.html"/>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-prompts-instructional-design-creativity.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-prompts-instructional-design-kreativitaet.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-prompts-instructional-design-creativity.html"/>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/digitale-resilienz-hochschulbildung-drei-dimensionen.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/digitale-resilienz-hochschulbildung-drei-dimensionen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/digital-resilience-higher-education-three-dimensions.html"/>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/digital-resilience-higher-education-three-dimensions.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/digitale-resilienz-hochschulbildung-drei-dimensionen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/digital-resilience-higher-education-three-dimensions.html"/>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
