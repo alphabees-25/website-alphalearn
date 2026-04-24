@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-23
+# Last updated: 2026-04-24
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,10 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Denkebenen im Lerndesign – KI-Tutoren | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/denkebenen-im-lerndesign-wie-ki-tutoren-tieferes-lernen-foerdern.html
+- Überlastung bei Lehrenden früh erkennen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/lernplattformen-ueberlastung-lehrende-frueh-erkennen.html
+- KI-Prompts im Instructional Design: Kreativität neu gedacht | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-prompts-instructional-design-kreativitaet.html
+- Digitale Resilienz in der Hochschulbildung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/digitale-resilienz-hochschulbildung-drei-dimensionen.html
 - Diagnostische Assessments in der Bildung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/diagnostische-assessments-bildung-strategie.html
 - KI-gestützte Kompetenzerkennung im E-Learning | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-gestuetzte-kompetenzerkennung-lernende-potenzial.html
 - KI-Assessment-Leitplanken: Validität sichern | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-assessment-leitplanken-validitaet-vertrauen.html
@@ -210,6 +214,10 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Thinking Levels In Learning Design How Ai Tutors Promote Deeper Learning: https://moodle-ai-tutor.alphalearn.ai/en/blog/thinking-levels-in-learning-design-how-ai-tutors-promote-deeper-learning.html
+- Learning Platforms Detect Teacher Burnout Early: https://moodle-ai-tutor.alphalearn.ai/en/blog/learning-platforms-detect-teacher-burnout-early.html
+- Ai Prompts Instructional Design Creativity: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-prompts-instructional-design-creativity.html
+- Digital Resilience Higher Education Three Dimensions: https://moodle-ai-tutor.alphalearn.ai/en/blog/digital-resilience-higher-education-three-dimensions.html
 - Diagnostic Assessments Education Strategy: https://moodle-ai-tutor.alphalearn.ai/en/blog/diagnostic-assessments-education-strategy.html
 - Ai Powered Competency Recognition Learner Potential: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-powered-competency-recognition-learner-potential.html
 - Ai Assessment Guardrails Validity Trust: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-assessment-guardrails-validity-trust.html
