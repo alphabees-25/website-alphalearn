@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-24
+# Last updated: 2026-04-25
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,11 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Bloom's Revised Taxonomy im E-Learning | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/blooms-revised-taxonomy-elearning-lernziele-moodle.html
+- KI verändert E-Learning: Transformation statt Wissen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-veraendert-e-learning-transformation-statt-wissensvermittlung.html
+- KI im E-Learning 2030: Trends für Bildungsverantwortliche | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-im-e-learning-2030-was-bildungsverantwortliche-wissen-muessen.html
+- BIBB Ausbildungsmarktregionen: Regionale Passung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/bibb-ausbildungsmarktregionen-regionale-passung-duale-ausbildung.html
+- Lebensrealitäten an Hochschulen: Wie KI-Tutoren entlasten | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/lebensrealitaeten-hochschule-ki-tutor-entlastung.html
 - Denkebenen im Lerndesign – KI-Tutoren | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/denkebenen-im-lerndesign-wie-ki-tutoren-tieferes-lernen-foerdern.html
 - Überlastung bei Lehrenden früh erkennen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/lernplattformen-ueberlastung-lehrende-frueh-erkennen.html
 - KI-Prompts im Instructional Design: Kreativität neu gedacht | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-prompts-instructional-design-kreativitaet.html
@@ -214,6 +219,11 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Blooms Revised Taxonomy Elearning Learning Objectives Moodle: https://moodle-ai-tutor.alphalearn.ai/en/blog/blooms-revised-taxonomy-elearning-learning-objectives-moodle.html
+- Ai Transforms E Learning Transformation Over Knowledge Transfer: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-transforms-e-learning-transformation-over-knowledge-transfer.html
+- Ai In E Learning 2030 What Education Leaders Need To Know: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-in-e-learning-2030-what-education-leaders-need-to-know.html
+- Bibb Training Market Regions Regional Matching Dual Vocational Training: https://moodle-ai-tutor.alphalearn.ai/en/blog/bibb-training-market-regions-regional-matching-dual-vocational-training.html
+- University Realities How Ai Tutors Provide Relief: https://moodle-ai-tutor.alphalearn.ai/en/blog/university-realities-how-ai-tutors-provide-relief.html
 - Thinking Levels In Learning Design How Ai Tutors Promote Deeper Learning: https://moodle-ai-tutor.alphalearn.ai/en/blog/thinking-levels-in-learning-design-how-ai-tutors-promote-deeper-learning.html
 - Learning Platforms Detect Teacher Burnout Early: https://moodle-ai-tutor.alphalearn.ai/en/blog/learning-platforms-detect-teacher-burnout-early.html
 - Ai Prompts Instructional Design Creativity: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-prompts-instructional-design-creativity.html
