@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-25
+# Last updated: 2026-04-26
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,8 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Wie KI E-Learning transformiert | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/wie-ki-elearning-transformiert-personalisierung-automatisierung.html
+- KI-gestütztes Lernen: Transformation der Unternehmensbildung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-gestuetztes-lernen-unternehmensbildung-transformation.html
 - Bloom's Revised Taxonomy im E-Learning | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/blooms-revised-taxonomy-elearning-lernziele-moodle.html
 - KI verändert E-Learning: Transformation statt Wissen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-veraendert-e-learning-transformation-statt-wissensvermittlung.html
 - KI im E-Learning 2030: Trends für Bildungsverantwortliche | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-im-e-learning-2030-was-bildungsverantwortliche-wissen-muessen.html
@@ -219,6 +221,8 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- How Ai Transforms Elearning Personalization Automation: https://moodle-ai-tutor.alphalearn.ai/en/blog/how-ai-transforms-elearning-personalization-automation.html
+- Ai Powered Learning Corporate Education Transformation: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-powered-learning-corporate-education-transformation.html
 - Blooms Revised Taxonomy Elearning Learning Objectives Moodle: https://moodle-ai-tutor.alphalearn.ai/en/blog/blooms-revised-taxonomy-elearning-learning-objectives-moodle.html
 - Ai Transforms E Learning Transformation Over Knowledge Transfer: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-transforms-e-learning-transformation-over-knowledge-transfer.html
 - Ai In E Learning 2030 What Education Leaders Need To Know: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-in-e-learning-2030-what-education-leaders-need-to-know.html
