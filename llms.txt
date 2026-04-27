@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-26
+# Last updated: 2026-04-27
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,8 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- KI deckt Kompetenzlücken auf – nicht nur Technologiewandel | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-deckt-kompetenzluecken-auf-nicht-nur-technologiewandel.html
+- Simulationsbasiertes Lernen in der Weiterbildung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/simulationsbasiertes-lernen-realistische-uebungsszenarien-weiterbildung.html
 - Wie KI E-Learning transformiert | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/wie-ki-elearning-transformiert-personalisierung-automatisierung.html
 - KI-gestütztes Lernen: Transformation der Unternehmensbildung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-gestuetztes-lernen-unternehmensbildung-transformation.html
 - Bloom's Revised Taxonomy im E-Learning | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/blooms-revised-taxonomy-elearning-lernziele-moodle.html
@@ -221,6 +223,8 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Ai Exposes Competency Gaps Not Just Technology Change: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-exposes-competency-gaps-not-just-technology-change.html
+- Simulation Based Learning Realistic Practice Scenarios Professional Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/simulation-based-learning-realistic-practice-scenarios-professional-development.html
 - How Ai Transforms Elearning Personalization Automation: https://moodle-ai-tutor.alphalearn.ai/en/blog/how-ai-transforms-elearning-personalization-automation.html
 - Ai Powered Learning Corporate Education Transformation: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-powered-learning-corporate-education-transformation.html
 - Blooms Revised Taxonomy Elearning Learning Objectives Moodle: https://moodle-ai-tutor.alphalearn.ai/en/blog/blooms-revised-taxonomy-elearning-learning-objectives-moodle.html
