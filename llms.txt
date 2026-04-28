@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-27
+# Last updated: 2026-04-28
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,10 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Effortful Processing: Tiefes Lernen mit KI-Tutor fördern | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/effortful-processing-tiefes-lernen-ki-tutor.html
+- KI im E-Learning: Hoher ROI durch adaptive Lernpfade | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-elearning-hoher-roi-adaptive-lernpfade.html
+- Corporate Learning 2030: Weiterbildung strategisch neu denken | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/corporate-learning-2030-ki-weiterbildung-strategisch-neu-denken.html
+- KI-Assistenten an Hochschulen: Entwickeln oder nutzen? | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-assistenten-hochschulen-entwickeln-oder-fertigloesungen-nutzen.html
 - KI deckt Kompetenzlücken auf – nicht nur Technologiewandel | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-deckt-kompetenzluecken-auf-nicht-nur-technologiewandel.html
 - Simulationsbasiertes Lernen in der Weiterbildung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/simulationsbasiertes-lernen-realistische-uebungsszenarien-weiterbildung.html
 - Wie KI E-Learning transformiert | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/wie-ki-elearning-transformiert-personalisierung-automatisierung.html
@@ -223,6 +227,10 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Effortful Processing Deep Learning Ai Tutor: https://moodle-ai-tutor.alphalearn.ai/en/blog/effortful-processing-deep-learning-ai-tutor.html
+- Ai Elearning High Roi Adaptive Learning Paths: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-elearning-high-roi-adaptive-learning-paths.html
+- Corporate Learning 2030 Rethinking Training Strategically: https://moodle-ai-tutor.alphalearn.ai/en/blog/corporate-learning-2030-rethinking-training-strategically.html
+- Ai Assistants Universities Build Or Buy: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-assistants-universities-build-or-buy.html
 - Ai Exposes Competency Gaps Not Just Technology Change: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-exposes-competency-gaps-not-just-technology-change.html
 - Simulation Based Learning Realistic Practice Scenarios Professional Development: https://moodle-ai-tutor.alphalearn.ai/en/blog/simulation-based-learning-realistic-practice-scenarios-professional-development.html
 - How Ai Transforms Elearning Personalization Automation: https://moodle-ai-tutor.alphalearn.ai/en/blog/how-ai-transforms-elearning-personalization-automation.html
