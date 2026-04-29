@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-28
+# Last updated: 2026-04-29
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,12 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Higher-Order Thinking Questions im E-Learning | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/higher-order-thinking-questions-ki-tutor-kritisches-denken.html
+- Microlearning für verteilte Teams im Unternehmen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/microlearning-fuer-verteilte-teams-skalierbare-weiterbildung.html
+- SEO und AEO für Lernplattformen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/seo-und-aeo-fuer-lernplattformen-so-werden-kursinhalte-gefunden.html
+- Demokratiebildung in der Ausbildung stärken | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/demokratiebildung-berufliche-bildung-ki-gestuetzte-lernbegleitung.html
+- KI-Kompetenzlücke in Unternehmen schließen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-kompetenzluecke-unternehmen-weiterbildung-skalieren.html
+- KI-Literacy an Hochschulen: Strategien für Entscheider | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-literacy-hochschulen-kompetenzvermittlung-strategien.html
 - Effortful Processing: Tiefes Lernen mit KI-Tutor fördern | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/effortful-processing-tiefes-lernen-ki-tutor.html
 - KI im E-Learning: Hoher ROI durch adaptive Lernpfade | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-elearning-hoher-roi-adaptive-lernpfade.html
 - Corporate Learning 2030: Weiterbildung strategisch neu denken | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/corporate-learning-2030-ki-weiterbildung-strategisch-neu-denken.html
@@ -227,6 +233,12 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Higher Order Thinking Questions Ai Tutor Critical Thinking: https://moodle-ai-tutor.alphalearn.ai/en/blog/higher-order-thinking-questions-ai-tutor-critical-thinking.html
+- Microlearning For Distributed Teams Scalable Training: https://moodle-ai-tutor.alphalearn.ai/en/blog/microlearning-for-distributed-teams-scalable-training.html
+- Seo And Aeo For Learning Platforms How Course Content Gets Found: https://moodle-ai-tutor.alphalearn.ai/en/blog/seo-and-aeo-for-learning-platforms-how-course-content-gets-found.html
+- Democracy Education Vocational Training Ai Learning Support: https://moodle-ai-tutor.alphalearn.ai/en/blog/democracy-education-vocational-training-ai-learning-support.html
+- Ai Skills Gap Companies Scaling Training: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-skills-gap-companies-scaling-training.html
+- Ai Literacy Higher Education Competency Development Strategies: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-literacy-higher-education-competency-development-strategies.html
 - Effortful Processing Deep Learning Ai Tutor: https://moodle-ai-tutor.alphalearn.ai/en/blog/effortful-processing-deep-learning-ai-tutor.html
 - Ai Elearning High Roi Adaptive Learning Paths: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-elearning-high-roi-adaptive-learning-paths.html
 - Corporate Learning 2030 Rethinking Training Strategically: https://moodle-ai-tutor.alphalearn.ai/en/blog/corporate-learning-2030-rethinking-training-strategically.html
