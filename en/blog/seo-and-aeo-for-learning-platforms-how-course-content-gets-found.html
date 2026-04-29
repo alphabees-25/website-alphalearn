@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/1Qyz0euPuFKaHUUoCH_Q_KsXY1hpV8jYO">
+  <meta property="og:image:width" content="2640">
+  <meta property="og:image:height" content="1430">
+  <meta property="og:title" content="SEO and AEO for Learning Platforms | Alphabees">
+  <meta property="og:description" content="Learn how educational institutions optimize their Moodle courses for search engines and AI answer engines to increase visibility.">
+  <meta property="og:url" content="https://moodle-ai-tutor.alphalearn.ai/en/blog/seo-and-aeo-for-learning-platforms-how-course-content-gets-found.html">
+  <meta name="twitter:title" content="SEO and AEO for Learning Platforms | Alphabees">
+  <meta name="twitter:description" content="Learn how educational institutions optimize their Moodle courses for search engines and AI answer engines to increase visibility.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1Qyz0euPuFKaHUUoCH_Q_KsXY1hpV8jYO">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SEO and AEO for Learning Platforms | Alphabees</title>
+  <meta name="description" content="Learn how educational institutions optimize their Moodle courses for search engines and AI answer engines to increase visibility.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/seo-and-aeo-for-learning-platforms-how-course-content-gets-found.html">
+  <link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/seo-und-aeo-fuer-lernplattformen-so-werden-kursinhalte-gefunden.html">
+  <link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/seo-and-aeo-for-learning-platforms-how-course-content-gets-found.html">
+  <link rel="alternate" hreflang="x-default" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/seo-und-aeo-fuer-lernplattformen-so-werden-kursinhalte-gefunden.html">
+  <meta name="geo.region" content="DE">
+  <meta name="geo.country" content="DE">
+  <meta name="geo.placename" content="Deutschland">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes fadeSlideIn {
+      0%   { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+      40%  { opacity: 0.9; transform: translateY(0); filter: blur(0px); }
+      100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+    }
+    .animate-on-scroll { animation-play-state: paused !important; }
+    .animate-on-scroll.animate { animation-play-state: running !important; }
+    html, body { overflow-x: hidden; width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* Article typography */
+    .prose h2 {
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: #111827;
+      margin-top: 2.5rem;
+      margin-bottom: 0.875rem;
+      line-height: 1.3;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose p {
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+    .prose ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .prose ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+    .prose ul li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: #6366f1;
+      margin-top: 0.6em;
+    }
+    .prose blockquote {
+      border-left: 3px solid #6366f1;
+      padding: 0.75rem 1.25rem;
+      margin: 1.75rem 0;
+      background: #f5f3ff;
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+    .prose blockquote p {
+      color: #4338ca;
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .prose .highlight-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .prose .highlight-box p {
+      margin-bottom: 0;
+      color: #1e40af;
+      font-weight: 500;
+    }
+    .prose strong {
+      color: #111827;
+      font-weight: 600;
+    }
+
+    /* FAQ Accordion */
+    .faq-item {
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      margin-bottom: 0.625rem;
+    }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1rem 1.25rem;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #111827;
+      font-family: 'Geist', sans-serif;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      user-select: none;
+      background: #f9fafb;
+      transition: background 0.15s;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary:hover { background: #f3f4f6; }
+    .faq-item[open] summary { background: #ede9fe; color: #5b21b6; }
+    .faq-item summary .faq-icon {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      border-radius: 50%;
+      background: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s, transform 0.2s;
+    }
+    .faq-item[open] summary .faq-icon {
+      background: #7c3aed;
+      transform: rotate(45deg);
+    }
+    .faq-item[open] summary .faq-icon svg { stroke: #fff; }
+    .faq-item .faq-body {
+      padding: 1rem 1.25rem 1.25rem;
+      color: #374151;
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      border-top: 1px solid #e5e7eb;
+    }
+  </style>
+  <script>
+    (function () {
+      const style = document.createElement('style');
+      style.textContent = `.animate-on-scroll { animation-play-state: paused !important; } .animate-on-scroll.animate { animation-play-state: running !important; }`;
+      document.head.appendChild(style);
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+              window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0 });
+      }
+      window.initInViewAnimations = function (selector = '.animate-on-scroll') {
+        document.querySelectorAll(selector).forEach((el) => { window.__inViewIO.observe(el); });
+      };
+      document.addEventListener('DOMContentLoaded', () => {
+        initInViewAnimations();
+        // Fallback: force-animate any elements the observer missed (iOS Safari / mobile quirks)
+        setTimeout(() => {
+          document.querySelectorAll('.animate-on-scroll:not(.animate)').forEach(el => el.classList.add('animate'));
+        }, 1000);
+      });
+    })();
+  </script>
+  <script src="/assets/js/layout.js" defer></script>
+
+  <!-- JSON-LD: Article Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "SEO and AEO for Learning Platforms | Alphabees",
+  "description": "Learn how educational institutions optimize their Moodle courses for search engines and AI answer engines to increase visibility.",
+  "image": "https://lh3.googleusercontent.com/d/1Qyz0euPuFKaHUUoCH_Q_KsXY1hpV8jYO",
+  "author": {
+    "@type": "Organization",
+    "name": "Alphabees",
+    "url": "https://moodle-ai-tutor.alphalearn.ai"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Alphabees",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://moodle-ai-tutor.alphalearn.ai/favicon.svg"
+    }
+  },
+  "datePublished": "2026-04-29",
+  "dateModified": "2026-04-29",
+  "inLanguage": "en",
+  "keywords": "SEO learning platform, AEO education, Moodle SEO, AI tutor, content discoverability",
+  "articleSection": "Strategy",
+  "url": "https://moodle-ai-tutor.alphalearn.ai/en/blog/seo-and-aeo-for-learning-platforms-how-course-content-gets-found.html"
+}
+  </script>
+
+  <!-- JSON-LD: FAQ Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between SEO and AEO for learning platforms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SEO optimizes content for traditional search engines like Google, while AEO targets AI-powered answer engines like ChatGPT or Perplexity. Both approaches require structured, easily accessible content."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why should educational institutions optimize their course content for search engines?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Optimized course content is easier for students and prospects to find. This increases the reach of educational offerings and reduces support inquiries."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can AI tutors improve the discoverability of learning content?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI tutors access structured course content directly and provide learners with precise answers within the learning platform. This eliminates the need for external searches."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which content on a Moodle platform should be publicly accessible?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Course overviews, certificate descriptions, and FAQ pages are well suited for public access. Detailed learning materials can remain protected behind a login."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should learning content be updated to remain relevant for SEO and AEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "High-traffic pages should be reviewed quarterly, standard content at least annually. Freshness is a key ranking signal for search engines and AI systems."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
+
+  <!-- Global Header -->
+  <div id="site-header"></div>
+
+  <main class="relative">
+
+    <!-- Hero Banner -->
+    <div class="relative bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 overflow-hidden">
+      <!-- Decorative blobs -->
+      <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-fuchsia-400/10 blur-3xl pointer-events-none"></div>
+
+      <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 pt-24 pb-0 sm:pt-32 sm:pb-0 relative">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 mb-8 text-sm text-white/60 font-geist" style="animation: fadeSlideIn 1s ease-out 0.05s both;">
+          <a href="../index.html" class="hover:text-white transition">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <a href="../blog.html" class="hover:text-white transition">Blog</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <span class="text-white/40">Artikel</span>
+        </nav>
+
+        <!-- Category + meta -->
+        <div class="flex flex-wrap items-center gap-3 mb-6" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+          <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-white text-xs font-semibold font-geist">Strategy</span>
+          <span class="text-white/50 text-sm font-geist">April 2026</span>
+          <span class="w-1 h-1 rounded-full bg-white/30"></span>
+          <span class="text-white/50 text-sm font-geist">12 Min. Lesezeit</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white font-geist leading-[1.15] tracking-tight mb-5" style="animation: fadeSlideIn 1s ease-out 0.15s both;">
+          SEO and AEO for Learning Platforms | Alphabees
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-white/70 font-geist font-normal leading-relaxed max-w-2xl" style="animation: fadeSlideIn 1s ease-out 0.2s both;">
+          Learning content that cannot be found cannot have an impact. This article shows how educational institutions optimize their courses for traditional search engines and AI-powered answer engines.
+        </p>
+
+        <!-- Hero image -->
+        <div class="mt-10" style="animation: fadeSlideIn 1s ease-out 0.25s both;">
+          <img src="https://lh3.googleusercontent.com/d/1Qyz0euPuFKaHUUoCH_Q_KsXY1hpV8jYO"
+               alt="SEO and AEO for learning platforms – search bar with course suggestions on screen"
+               class="w-full rounded-t-2xl object-cover max-h-72 sm:max-h-96 shadow-2xl"
+               loading="eager">
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 py-14 sm:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 lg:gap-16">
+
+        <!-- Main Article -->
+        <article class="prose animate-on-scroll" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+
+<p>Educational institutions invest significant resources in creating high-quality learning content. Courses are designed, materials prepared, certification programs developed. Yet one crucial aspect often remains overlooked: Is this content actually being found? In many cases, the answer is no. Learning content hidden behind login barriers and not optimized for search engines reaches neither prospective students nor the AI-powered assistant systems that increasingly serve as the first point of contact for knowledge queries.</p>
+
+<p>For decision-makers at universities, academies, and continuing education institutions, this represents a missed opportunity. The good news: Targeted measures can significantly increase the visibility of learning content – both in traditional search engines and in the new AI-based answer engines.</p>
+
+<h2>What SEO and AEO Mean for Education Providers</h2>
+
+<p>Search engine optimization, or SEO, is an established concept. It describes the practice of structuring and formulating web content so that it appears as high as possible in the result lists of Google and other search engines. When someone searches for a specific continuing education offering or certification, SEO determines whether your own learning platform appears in the search results.</p>
+
+<p>Answer Engine Optimization, or AEO, is a newer concept that has gained importance with the rise of AI assistants. Systems like ChatGPT, Perplexity, or AI overviews in Google work differently than traditional search engines. Instead of a list of links, they provide direct answers to natural language questions. AEO describes the optimization of content so that these AI systems recognize and cite it as a trustworthy source.</p>
+
+<p>For educational institutions, this distinction is relevant because learners use both paths. A prospective student might research continuing education opportunities in a specific field through Google. An enrolled student might ask an AI assistant at midnight how a particular concept covered in the course works. In both cases, your own learning platform's content could be the answer – provided it is discoverable and properly structured.</p>
+
+<h2>Why Invisible Learning Content Is a Strategic Problem</h2>
+
+<p>Many learning platforms are designed so that all content only becomes accessible after login. From a data protection and course management perspective, this is understandable. From a visibility perspective, it is problematic. Search engines cannot index content behind login barriers. AI assistants have no access to protected areas. The result: Your own educational offerings simply do not exist for external searchers.</p>
+
+<p>The consequences are far-reaching. When prospective students search for a topic that your institution covers excellently, they end up with the competition. When enrolled learners ask an AI assistant a question, they may receive outdated or incorrect information from other sources, even though the correct answer exists in your own course material. When questions cannot be answered by discoverable content, the volume of support inquiries increases.</p>
+
+<p>An AI tutor integrated directly into the learning platform can make a decisive difference here. Instead of querying external AI assistants, learners receive answers directly from course-specific materials. The Alphabees AI Tutor for Moodle works exactly according to this principle: It accesses the content of the respective courses and delivers context-relevant answers based on the actual teaching material.</p>
+
+<h2>Practical Steps for Optimizing Learning Content</h2>
+
+<p>Optimizing learning content for search engines and AI systems does not require a complete redesign of the learning platform. Rather, it is about making existing content more accessible and better structured.</p>
+
+<dl>
+<dt>Selective opening of content:</dt>
+<dd>Not all content needs to be public. However, course overviews, descriptions of certification programs, and FAQ pages are excellently suited for public access. They give search engines and AI systems enough material for indexing without exposing sensitive learning content.</dd>
+
+<dt>Meaningful titles and descriptions:</dt>
+<dd>Every publicly accessible page needs a title that reflects what prospective students are actually searching for. A meta description should explain in a few sentences what benefit the course provides. Internal designations like "Module 3.2" are meaningless to search engines.</dd>
+
+<dt>Structured content with clear headings:</dt>
+<dd>AI systems prefer content with a clear hierarchical structure. Headings should reflect the questions that learners actually ask. A section titled "How do I register for the exam?" is far more useful for AI assistants than "Examination modalities."</dd>
+
+<dt>One authoritative source per topic:</dt>
+<dd>When the same information is formulated differently in multiple places, AI systems cannot determine which version is correct. The learning platform should be the central source for all course-related information. Other channels should refer to this source.</dd>
+
+<dt>Regular updates:</dt>
+<dd>Search engines and AI systems evaluate the freshness of content. Pages that have not been updated for years lose relevance. A fixed update schedule – quarterly for high-traffic pages, annually for standard content – should be established.</dd>
+</dl>
+
+<h2>The AI Tutor as a Bridge Between Content and Learners</h2>
+
+<p>Optimization for external search engines and AI assistants is important. Equally important, however, is internal discoverability. When learners need to search for answers within the platform, they should find them – without detours through external search engines or AI services.</p>
+
+<p>An AI tutor integrated into Moodle solves this problem elegantly. It knows the structure and content of the courses and can answer questions directly, refers to relevant materials, and is available around the clock. For learners, this means faster answers without media breaks. For educational institutions, it means fewer support inquiries and better utilization of existing content.</p>
+
+<p>The quality of an AI tutor's answers depends directly on the quality and structure of the course content. Well-structured materials with clear headings and precise formulations deliver better results – both for external search engines and for the internal AI assistant.</p>
+
+<h2>A Strategic View of Learning Content</h2>
+
+<p>The question of learning content discoverability deserves a place in the strategic planning of educational institutions. Content that cannot be found cannot have an impact. This applies to acquiring new students just as much as to supporting enrolled learners.</p>
+
+<p>Optimization for SEO and AEO does not require radical changes. It requires a conscious approach to the structure and accessibility of existing content. Educational institutions that take this step position themselves better in the competition for students and utilize their learning content more effectively. An AI tutor integrated directly into Moodle can serve as a central tool to establish the connection between structured content and learners' questions.</p>
+
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="not-prose mt-6 mb-2">
+            <details class="faq-item">
+              <summary>
+                What is the difference between SEO and AEO for learning platforms?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">SEO optimizes content for traditional search engines like Google, while AEO targets AI-powered answer engines like ChatGPT or Perplexity. Both approaches require structured, easily accessible content.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Why should educational institutions optimize their course content for search engines?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Optimized course content is easier for students and prospects to find. This increases the reach of educational offerings and reduces support inquiries.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How can AI tutors improve the discoverability of learning content?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">AI tutors access structured course content directly and provide learners with precise answers within the learning platform. This eliminates the need for external searches.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Which content on a Moodle platform should be publicly accessible?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Course overviews, certificate descriptions, and FAQ pages are well suited for public access. Detailed learning materials can remain protected behind a login.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How often should learning content be updated to remain relevant for SEO and AEO?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">High-traffic pages should be reviewed quarterly, standard content at least annually. Freshness is a key ranking signal for search engines and AI systems.</div>
+            </details>
+          </div>
+
+          <div class="highlight-box mt-10">
+            <p class="text-base mb-4">Discover how the <strong>Alphabees AI Tutor</strong> intelligently extends your Moodle courses – with 24/7 learning support and no new infrastructure costs.</p>
+          </div>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 not-prose">
+            <a href="../features.html"
+               class="inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 transition text-white font-semibold font-geist text-sm rounded-xl px-6 py-3.5 shadow-lg shadow-violet-500/20">
+              Explore the Alphabees AI Tutor features
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside id="blog-sidebar" class="hidden lg:block"></aside>
+
+      </div>
+
+      <!-- Mobile back to blog -->
+      <div class="lg:hidden mt-12 pt-8 border-t border-gray-100">
+        <a href="../blog.html" class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+          Zurück zum Blog
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Newsletter Popup -->
+  <div id="newsletter-popup" class="fixed inset-0 z-[1000] hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+    <div class="animate-popup bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
+      <button onclick="closeNewsletterPopup()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+      <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Fast geschafft!</h3>
+      <p class="text-gray-600 text-center mb-6">Wir haben dir eine Bestätigungsmail gesendet. Bitte schau in deinem Posteingang nach und klicke auf den Bestätigungslink.</p>
+      <p class="text-gray-500 text-sm text-center mb-6">💡 Nicht gefunden? Schau auch im Spam-Ordner nach.</p>
+      <button onclick="closeNewsletterPopup()" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-lg transition">Verstanden</button>
+    </div>
+  </div>
+
+  <style>
+    @keyframes popupFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    .animate-popup { animation: popupFadeIn 0.3s ease-out; }
+    #newsletter-popup.flex { display: flex !important; }
+  </style>
+
+  <script>
+    function showNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.add('hidden');
+      popup.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('newsletter-popup').addEventListener('click', function(e) {
+      if (e.target === this) closeNewsletterPopup();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeNewsletterPopup();
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsletterForm = document.querySelector('form[data-sv-form="8647011"]');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('input[name="email_address"]');
+          fetch(this.action, { method: 'POST', body: new FormData(this), mode: 'no-cors' })
+            .finally(() => { showNewsletterPopup(); emailInput.value = ''; });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
