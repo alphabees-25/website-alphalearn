@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/1WpV3VIYEqTQ1cGnh-YBOFooPDWLTP_7q">
+  <meta property="og:image:width" content="2640">
+  <meta property="og:image:height" content="1430">
+  <meta property="og:title" content="Higher-Order Thinking Questions in E-Learning | Alphabees">
+  <meta property="og:description" content="Higher-order thinking questions promote critical thinking. Learn how AI tutors use these questioning techniques to enable deeper learning.">
+  <meta property="og:url" content="https://moodle-ai-tutor.alphalearn.ai/en/blog/higher-order-thinking-questions-ai-tutor-critical-thinking.html">
+  <meta name="twitter:title" content="Higher-Order Thinking Questions in E-Learning | Alphabees">
+  <meta name="twitter:description" content="Higher-order thinking questions promote critical thinking. Learn how AI tutors use these questioning techniques to enable deeper learning.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1WpV3VIYEqTQ1cGnh-YBOFooPDWLTP_7q">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Higher-Order Thinking Questions in E-Learning | Alphabees</title>
+  <meta name="description" content="Higher-order thinking questions promote critical thinking. Learn how AI tutors use these questioning techniques to enable deeper learning.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/higher-order-thinking-questions-ai-tutor-critical-thinking.html">
+  <link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/higher-order-thinking-questions-ki-tutor-kritisches-denken.html">
+  <link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/higher-order-thinking-questions-ai-tutor-critical-thinking.html">
+  <link rel="alternate" hreflang="x-default" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/higher-order-thinking-questions-ki-tutor-kritisches-denken.html">
+  <meta name="geo.region" content="DE">
+  <meta name="geo.country" content="DE">
+  <meta name="geo.placename" content="Deutschland">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes fadeSlideIn {
+      0%   { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+      40%  { opacity: 0.9; transform: translateY(0); filter: blur(0px); }
+      100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+    }
+    .animate-on-scroll { animation-play-state: paused !important; }
+    .animate-on-scroll.animate { animation-play-state: running !important; }
+    html, body { overflow-x: hidden; width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* Article typography */
+    .prose h2 {
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: #111827;
+      margin-top: 2.5rem;
+      margin-bottom: 0.875rem;
+      line-height: 1.3;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose p {
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+    .prose ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .prose ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+    .prose ul li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: #6366f1;
+      margin-top: 0.6em;
+    }
+    .prose blockquote {
+      border-left: 3px solid #6366f1;
+      padding: 0.75rem 1.25rem;
+      margin: 1.75rem 0;
+      background: #f5f3ff;
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+    .prose blockquote p {
+      color: #4338ca;
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .prose .highlight-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .prose .highlight-box p {
+      margin-bottom: 0;
+      color: #1e40af;
+      font-weight: 500;
+    }
+    .prose strong {
+      color: #111827;
+      font-weight: 600;
+    }
+
+    /* FAQ Accordion */
+    .faq-item {
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      margin-bottom: 0.625rem;
+    }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1rem 1.25rem;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #111827;
+      font-family: 'Geist', sans-serif;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      user-select: none;
+      background: #f9fafb;
+      transition: background 0.15s;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary:hover { background: #f3f4f6; }
+    .faq-item[open] summary { background: #ede9fe; color: #5b21b6; }
+    .faq-item summary .faq-icon {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      border-radius: 50%;
+      background: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s, transform 0.2s;
+    }
+    .faq-item[open] summary .faq-icon {
+      background: #7c3aed;
+      transform: rotate(45deg);
+    }
+    .faq-item[open] summary .faq-icon svg { stroke: #fff; }
+    .faq-item .faq-body {
+      padding: 1rem 1.25rem 1.25rem;
+      color: #374151;
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      border-top: 1px solid #e5e7eb;
+    }
+  </style>
+  <script>
+    (function () {
+      const style = document.createElement('style');
+      style.textContent = `.animate-on-scroll { animation-play-state: paused !important; } .animate-on-scroll.animate { animation-play-state: running !important; }`;
+      document.head.appendChild(style);
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+              window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0 });
+      }
+      window.initInViewAnimations = function (selector = '.animate-on-scroll') {
+        document.querySelectorAll(selector).forEach((el) => { window.__inViewIO.observe(el); });
+      };
+      document.addEventListener('DOMContentLoaded', () => {
+        initInViewAnimations();
+        // Fallback: force-animate any elements the observer missed (iOS Safari / mobile quirks)
+        setTimeout(() => {
+          document.querySelectorAll('.animate-on-scroll:not(.animate)').forEach(el => el.classList.add('animate'));
+        }, 1000);
+      });
+    })();
+  </script>
+  <script src="/assets/js/layout.js" defer></script>
+
+  <!-- JSON-LD: Article Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Higher-Order Thinking Questions in E-Learning | Alphabees",
+  "description": "Higher-order thinking questions promote critical thinking. Learn how AI tutors use these questioning techniques to enable deeper learning.",
+  "image": "https://lh3.googleusercontent.com/d/1WpV3VIYEqTQ1cGnh-YBOFooPDWLTP_7q",
+  "author": {
+    "@type": "Organization",
+    "name": "Alphabees",
+    "url": "https://moodle-ai-tutor.alphalearn.ai"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Alphabees",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://moodle-ai-tutor.alphalearn.ai/favicon.svg"
+    }
+  },
+  "datePublished": "2026-04-29",
+  "dateModified": "2026-04-29",
+  "inLanguage": "en",
+  "keywords": "Higher-Order Thinking Questions, critical thinking, AI tutor, Bloom's Taxonomy, e-learning",
+  "articleSection": "Strategy",
+  "url": "https://moodle-ai-tutor.alphalearn.ai/en/blog/higher-order-thinking-questions-ai-tutor-critical-thinking.html"
+}
+  </script>
+
+  <!-- JSON-LD: FAQ Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are higher-order thinking questions in e-learning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Higher-order thinking questions go beyond factual recall and encourage learners to analyze, evaluate, or create new ideas. They are based on the upper levels of Bloom's Taxonomy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can an AI tutor use higher-order thinking questions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An AI tutor recognizes the learner's knowledge level and poses adaptive questions that stimulate critical thinking. It automatically adjusts the question level to individual learning progress."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What benefits do higher-order thinking questions offer for universities?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They promote sustainable learning, improve problem-solving skills, and prepare students for complex professional demands. This measurably increases learning quality."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can higher-order thinking questions be integrated into Moodle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, AI tutors like the one from Alphabees integrate directly into Moodle courses and can embed higher-order thinking questions contextually into existing learning content."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do lower-order and higher-order thinking questions differ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lower-order questions test factual knowledge through simple recall. Higher-order questions require analysis, evaluation, or creative application of knowledge in new contexts."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
+
+  <!-- Global Header -->
+  <div id="site-header"></div>
+
+  <main class="relative">
+
+    <!-- Hero Banner -->
+    <div class="relative bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 overflow-hidden">
+      <!-- Decorative blobs -->
+      <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-fuchsia-400/10 blur-3xl pointer-events-none"></div>
+
+      <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 pt-24 pb-0 sm:pt-32 sm:pb-0 relative">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 mb-8 text-sm text-white/60 font-geist" style="animation: fadeSlideIn 1s ease-out 0.05s both;">
+          <a href="../index.html" class="hover:text-white transition">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <a href="../blog.html" class="hover:text-white transition">Blog</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <span class="text-white/40">Artikel</span>
+        </nav>
+
+        <!-- Category + meta -->
+        <div class="flex flex-wrap items-center gap-3 mb-6" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+          <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-white text-xs font-semibold font-geist">Strategy</span>
+          <span class="text-white/50 text-sm font-geist">April 2026</span>
+          <span class="w-1 h-1 rounded-full bg-white/30"></span>
+          <span class="text-white/50 text-sm font-geist">12 Min. Lesezeit</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white font-geist leading-[1.15] tracking-tight mb-5" style="animation: fadeSlideIn 1s ease-out 0.15s both;">
+          Higher-Order Thinking Questions in E-Learning | Alphabees
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-white/70 font-geist font-normal leading-relaxed max-w-2xl" style="animation: fadeSlideIn 1s ease-out 0.2s both;">
+          Higher-order thinking questions go beyond factual recall and promote analysis, evaluation, and creativity. Discover how modern AI tutors use these questioning techniques to enable sustainable learning outcomes.
+        </p>
+
+        <!-- Hero image -->
+        <div class="mt-10" style="animation: fadeSlideIn 1s ease-out 0.25s both;">
+          <img src="https://lh3.googleusercontent.com/d/1WpV3VIYEqTQ1cGnh-YBOFooPDWLTP_7q"
+               alt="Higher-order thinking questions – students discussing with AI tutor on screen"
+               class="w-full rounded-t-2xl object-cover max-h-72 sm:max-h-96 shadow-2xl"
+               loading="eager">
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 py-14 sm:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 lg:gap-16">
+
+        <!-- Main Article -->
+        <article class="prose animate-on-scroll" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+
+<p>Anyone who truly wants to prepare learners for complex challenges cannot avoid a central question: How can critical thinking be systematically fostered? The answer lies in how questions are asked. Higher-order thinking questions demand more than mere recall of facts. They challenge learners to analyze information, evaluate connections, and develop their own solutions. For educational institutions and training providers, these questioning techniques open a direct path to more sustainable learning – especially when AI tutors deploy them intelligently and adaptively.</p>
+
+<h2>The Fundamentals: What Distinguishes Higher-Order Thinking Questions</h2>
+
+<p>Higher-order thinking questions are based on the upper levels of Bloom's Taxonomy: Analyzing, Evaluating, and Creating. While traditional knowledge checks test whether learners can reproduce definitions or steps, higher-order thinking questions go a crucial step further. They activate deeper cognitive processes and require learners to actively apply knowledge rather than passively reproduce it.</p>
+
+<p>The difference becomes clear in practice. A lower-order question like "What is the definition of project management?" tests pure factual knowledge. A higher-order thinking question like "Which project management method would you choose for an agile software project and why?" requires analysis, weighing options, and a reasoned decision. Learners must transfer their knowledge to a specific situation while considering various factors.</p>
+
+<p>For education leaders, this distinction is central. Because only higher-order thinking questions foster the competencies that are actually in demand in professional life: problem-solving, critical evaluation of information, and the ability to develop new approaches.</p>
+
+<h2>Three Types of Higher-Order Thinking Questions</h2>
+
+<p>Depending on the intended learning objective, higher-order thinking questions can be divided into three categories, each addressing different cognitive processes:</p>
+
+<dl>
+<dt>Analytical Questions:</dt>
+<dd>These questions challenge learners to break down information, recognize patterns, and establish connections. Typical formulations include "What relationship exists between..." or "What assumptions underlie this argument?". Analytical questions are particularly suited for case studies and data-based learning scenarios.</dd>
+<dt>Evaluative Questions:</dt>
+<dd>Here, forming judgments takes center stage. Learners must evaluate options based on criteria, justify decisions, or weigh strengths and weaknesses. Questions like "Which solution is most effective and why?" train precisely the decision-making competency that leaders need daily.</dd>
+<dt>Creative Questions:</dt>
+<dd>These questions aim at innovation and redesign. "How would you improve this process?" or "What alternative approach would you suggest?" encourage thinking beyond existing solutions and developing original ideas.</dd>
+</dl>
+
+<p>A well-designed learning concept combines all three question types to guide learners progressively from analysis through evaluation to creative application.</p>
+
+<h2>Why AI Tutors Deploy Higher-Order Thinking Questions Particularly Effectively</h2>
+
+<p>The greatest challenge with higher-order thinking questions lies in their systematic and individualized application. In large learning groups, instructors often lack the time to ask each person the right questions at the right time. This is precisely where AI tutors unfold their potential.</p>
+
+<p>An intelligently designed AI tutor recognizes the current knowledge level and dynamically adjusts the question level. Once a person has understood the basics, the tutor automatically shifts to analytical or evaluative questions. If knowledge gaps appear, it first returns to fundamental concepts before stimulating higher thinking processes again.</p>
+
+<p>This adaptive approach corresponds to what cognitive research knows about effective learning. Surface learning through mere memorization produces only short-term retention. Deep learning through active knowledge application leads to lasting retention and genuine transfer ability. AI tutors can support this process around the clock without requiring additional personnel resources.</p>
+
+<p>For universities and training providers, this means: Higher-order thinking questions need not be limited to in-person phases or synchronous learning situations. Learners receive access to challenging questions that foster their critical thinking at any time – embedded in the course content they are already working through.</p>
+
+<h2>Practical Implementation: Question Stems as a Foundation</h2>
+
+<p>Developing good higher-order thinking questions follows proven patterns. So-called question stems serve as starting points for formulating effective questions. For analytical questions, formulations like "What patterns do you recognize in..." or "How does this concept relate to...?" are suitable. Evaluative questions often begin with "By what criteria would you assess...?" or "Do you agree with this assessment? Justify your position.". Creative questions use phrases like "How would you redesign...?" or "What would happen if...?".</p>
+
+<p>These structures can be systematically integrated into learning materials. An AI tutor built on such question stems can deploy them contextually while considering the specific course content. This creates not generic questions but precisely tailored prompts aligned with the learning material.</p>
+
+<p>The connection to practice is decisive. A higher-order thinking question should always have a real-world application reference. Abstract theoretical questions may be intellectually demanding but miss their goal if learners cannot recognize a connection to their actual challenges.</p>
+
+<h2>The Strategic Value for Educational Institutions</h2>
+
+<p>For decision-makers in universities, academies, and companies with training responsibilities, the question of concrete added value arises. Higher-order thinking questions not only improve learning quality but also deliver valuable insights into learners' actual competency levels.</p>
+
+<p>When learners are confronted with analytical, evaluative, or creative questions, it quickly becomes apparent whether they have truly understood content or merely memorized it superficially. This transparency enables targeted interventions and makes learning success measurable – an important factor for quality assurance and justifying educational investments.</p>
+
+<p>At the same time, higher-order thinking questions prepare learners for the demands of a changing work environment. Standard knowledge can increasingly be automated. What remains is the need for critical thinking, sound judgment, and creative problem-solving. Educational institutions that systematically foster these competencies create real value for their participants.</p>
+
+<p>An AI tutor that seamlessly integrates into existing Moodle courses makes this approach scalable. Instructors do not need to redesign every course but can rely on intelligent learning support that automatically deploys higher-order thinking questions in context. This transforms critical thinking from a pedagogical ideal into lived practice in every learning situation.</p>
+
+<p>Higher-order thinking questions are not a pedagogical fad but a well-founded approach to fostering sustainable learning processes. Their consistent application distinguishes superficial knowledge transfer from genuine competency development. With AI tutors that deploy these questioning techniques intelligently and adaptively, educational institutions can realize this quality leap without committing additional resources.</p>
+
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="not-prose mt-6 mb-2">
+            <details class="faq-item">
+              <summary>
+                What are higher-order thinking questions in e-learning?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Higher-order thinking questions go beyond factual recall and encourage learners to analyze, evaluate, or create new ideas. They are based on the upper levels of Bloom's Taxonomy.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How can an AI tutor use higher-order thinking questions?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">An AI tutor recognizes the learner's knowledge level and poses adaptive questions that stimulate critical thinking. It automatically adjusts the question level to individual learning progress.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                What benefits do higher-order thinking questions offer for universities?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">They promote sustainable learning, improve problem-solving skills, and prepare students for complex professional demands. This measurably increases learning quality.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Can higher-order thinking questions be integrated into Moodle?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Yes, AI tutors like the one from Alphabees integrate directly into Moodle courses and can embed higher-order thinking questions contextually into existing learning content.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How do lower-order and higher-order thinking questions differ?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Lower-order questions test factual knowledge through simple recall. Higher-order questions require analysis, evaluation, or creative application of knowledge in new contexts.</div>
+            </details>
+          </div>
+
+          <div class="highlight-box mt-10">
+            <p class="text-base mb-4">Discover how the <strong>Alphabees AI Tutor</strong> intelligently extends your Moodle courses – with 24/7 learning support and no new infrastructure costs.</p>
+          </div>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 not-prose">
+            <a href="../features.html"
+               class="inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 transition text-white font-semibold font-geist text-sm rounded-xl px-6 py-3.5 shadow-lg shadow-violet-500/20">
+              Explore the Alphabees AI Tutor features
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside id="blog-sidebar" class="hidden lg:block"></aside>
+
+      </div>
+
+      <!-- Mobile back to blog -->
+      <div class="lg:hidden mt-12 pt-8 border-t border-gray-100">
+        <a href="../blog.html" class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+          Zurück zum Blog
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Newsletter Popup -->
+  <div id="newsletter-popup" class="fixed inset-0 z-[1000] hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+    <div class="animate-popup bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
+      <button onclick="closeNewsletterPopup()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+      <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Fast geschafft!</h3>
+      <p class="text-gray-600 text-center mb-6">Wir haben dir eine Bestätigungsmail gesendet. Bitte schau in deinem Posteingang nach und klicke auf den Bestätigungslink.</p>
+      <p class="text-gray-500 text-sm text-center mb-6">💡 Nicht gefunden? Schau auch im Spam-Ordner nach.</p>
+      <button onclick="closeNewsletterPopup()" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-lg transition">Verstanden</button>
+    </div>
+  </div>
+
+  <style>
+    @keyframes popupFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    .animate-popup { animation: popupFadeIn 0.3s ease-out; }
+    #newsletter-popup.flex { display: flex !important; }
+  </style>
+
+  <script>
+    function showNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.add('hidden');
+      popup.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('newsletter-popup').addEventListener('click', function(e) {
+      if (e.target === this) closeNewsletterPopup();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeNewsletterPopup();
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsletterForm = document.querySelector('form[data-sv-form="8647011"]');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('input[name="email_address"]');
+          fetch(this.action, { method: 'POST', body: new FormData(this), mode: 'no-cors' })
+            .finally(() => { showNewsletterPopup(); emailInput.value = ''; });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
