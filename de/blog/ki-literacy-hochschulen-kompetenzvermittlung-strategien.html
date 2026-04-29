@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="de" class="h-full">
+<head>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/1DQIAST5wSfkOrCxbx5tl2vvWNqM0yxSz">
+  <meta property="og:image:width" content="2640">
+  <meta property="og:image:height" content="1430">
+  <meta property="og:title" content="KI-Literacy an Hochschulen: Strategien für Entscheider | Alphabees">
+  <meta property="og:description" content="KI-Literacy wird zur Pflichtaufgabe für Hochschulen. Erfahren Sie, welche Strategien und Formate den Kompetenzerwerb effektiv unterstützen.">
+  <meta property="og:url" content="https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-literacy-hochschulen-kompetenzvermittlung-strategien.html">
+  <meta name="twitter:title" content="KI-Literacy an Hochschulen: Strategien für Entscheider | Alphabees">
+  <meta name="twitter:description" content="KI-Literacy wird zur Pflichtaufgabe für Hochschulen. Erfahren Sie, welche Strategien und Formate den Kompetenzerwerb effektiv unterstützen.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1DQIAST5wSfkOrCxbx5tl2vvWNqM0yxSz">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KI-Literacy an Hochschulen: Strategien für Entscheider | Alphabees</title>
+  <meta name="description" content="KI-Literacy wird zur Pflichtaufgabe für Hochschulen. Erfahren Sie, welche Strategien und Formate den Kompetenzerwerb effektiv unterstützen.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-literacy-hochschulen-kompetenzvermittlung-strategien.html">
+  <link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-literacy-hochschulen-kompetenzvermittlung-strategien.html">
+  <link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-literacy-higher-education-competency-development-strategies.html">
+  <link rel="alternate" hreflang="x-default" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-literacy-hochschulen-kompetenzvermittlung-strategien.html">
+  <meta name="geo.region" content="DE">
+  <meta name="geo.country" content="DE">
+  <meta name="geo.placename" content="Deutschland">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes fadeSlideIn {
+      0%   { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+      40%  { opacity: 0.9; transform: translateY(0); filter: blur(0px); }
+      100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+    }
+    .animate-on-scroll { animation-play-state: paused !important; }
+    .animate-on-scroll.animate { animation-play-state: running !important; }
+    html, body { overflow-x: hidden; width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* Article typography */
+    .prose h2 {
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: #111827;
+      margin-top: 2.5rem;
+      margin-bottom: 0.875rem;
+      line-height: 1.3;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose p {
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+    .prose ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .prose ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+    .prose ul li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: #6366f1;
+      margin-top: 0.6em;
+    }
+    .prose blockquote {
+      border-left: 3px solid #6366f1;
+      padding: 0.75rem 1.25rem;
+      margin: 1.75rem 0;
+      background: #f5f3ff;
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+    .prose blockquote p {
+      color: #4338ca;
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .prose .highlight-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .prose .highlight-box p {
+      margin-bottom: 0;
+      color: #1e40af;
+      font-weight: 500;
+    }
+    .prose strong {
+      color: #111827;
+      font-weight: 600;
+    }
+
+    /* FAQ Accordion */
+    .faq-item {
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      margin-bottom: 0.625rem;
+    }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1rem 1.25rem;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #111827;
+      font-family: 'Geist', sans-serif;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      user-select: none;
+      background: #f9fafb;
+      transition: background 0.15s;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary:hover { background: #f3f4f6; }
+    .faq-item[open] summary { background: #ede9fe; color: #5b21b6; }
+    .faq-item summary .faq-icon {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      border-radius: 50%;
+      background: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s, transform 0.2s;
+    }
+    .faq-item[open] summary .faq-icon {
+      background: #7c3aed;
+      transform: rotate(45deg);
+    }
+    .faq-item[open] summary .faq-icon svg { stroke: #fff; }
+    .faq-item .faq-body {
+      padding: 1rem 1.25rem 1.25rem;
+      color: #374151;
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      border-top: 1px solid #e5e7eb;
+    }
+  </style>
+  <script>
+    (function () {
+      const style = document.createElement('style');
+      style.textContent = `.animate-on-scroll { animation-play-state: paused !important; } .animate-on-scroll.animate { animation-play-state: running !important; }`;
+      document.head.appendChild(style);
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+              window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0 });
+      }
+      window.initInViewAnimations = function (selector = '.animate-on-scroll') {
+        document.querySelectorAll(selector).forEach((el) => { window.__inViewIO.observe(el); });
+      };
+      document.addEventListener('DOMContentLoaded', () => {
+        initInViewAnimations();
+        // Fallback: force-animate any elements the observer missed (iOS Safari / mobile quirks)
+        setTimeout(() => {
+          document.querySelectorAll('.animate-on-scroll:not(.animate)').forEach(el => el.classList.add('animate'));
+        }, 1000);
+      });
+    })();
+  </script>
+  <script src="/assets/js/layout.js" defer></script>
+
+  <!-- JSON-LD: Article Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "KI-Literacy an Hochschulen: Strategien für Entscheider | Alphabees",
+  "description": "KI-Literacy wird zur Pflichtaufgabe für Hochschulen. Erfahren Sie, welche Strategien und Formate den Kompetenzerwerb effektiv unterstützen.",
+  "image": "https://lh3.googleusercontent.com/d/1DQIAST5wSfkOrCxbx5tl2vvWNqM0yxSz",
+  "author": {
+    "@type": "Organization",
+    "name": "Alphabees",
+    "url": "https://moodle-ai-tutor.alphalearn.ai"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Alphabees",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://moodle-ai-tutor.alphalearn.ai/favicon.svg"
+    }
+  },
+  "datePublished": "2026-04-29",
+  "dateModified": "2026-04-29",
+  "inLanguage": "de",
+  "keywords": "KI-Literacy, Hochschulbildung, KI-Kompetenz, Moodle KI-Tutor, Digitalisierung Hochschulen",
+  "articleSection": "Strategie",
+  "url": "https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-literacy-hochschulen-kompetenzvermittlung-strategien.html"
+}
+  </script>
+
+  <!-- JSON-LD: FAQ Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was bedeutet KI-Literacy im Hochschulkontext?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "KI-Literacy umfasst Kompetenzen zur kritischen Bewertung, effektiven Nutzung und ethischen Reflexion von KI-Technologien. Sie gilt als Querschnittskompetenz für Studium, Beruf und gesellschaftliches Engagement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum ist KI-Literacy für Hochschulen zur Pflichtaufgabe geworden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die EU-KI-Verordnung verpflichtet Hochschulen zur Vermittlung grundlegender KI-Kompetenzen, insbesondere wenn KI-Tools in Prüfungsleistungen eingesetzt werden. Zudem gehört sie zum erweiterten Bildungsauftrag."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Herausforderungen bestehen bei der Vermittlung von KI-Kompetenzen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Heterogene Vorkenntnisse der Lernenden, die rasante technologische Entwicklung und die Mehrdimensionalität von KI-Literacy erfordern flexible, interdisziplinäre Lehrformate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie können KI-Tutoren den Kompetenzerwerb unterstützen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "KI-gestützte Lernbegleiter ermöglichen individuelle Betreuung rund um die Uhr, fördern selbstgesteuertes Lernen und können Reflexionsprozesse systematisch begleiten."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Formate eignen sich für die skalierbare Vermittlung von KI-Literacy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ringvorlesungen mit wechselnden Fachexpert:innen, ergänzt durch digitale Lernbegleitung und strukturierte Reflexionsphasen, ermöglichen eine breite und dennoch tiefgehende Kompetenzvermittlung."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
+
+  <!-- Global Header -->
+  <div id="site-header"></div>
+
+  <main class="relative">
+
+    <!-- Hero Banner -->
+    <div class="relative bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 overflow-hidden">
+      <!-- Decorative blobs -->
+      <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-fuchsia-400/10 blur-3xl pointer-events-none"></div>
+
+      <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 pt-24 pb-0 sm:pt-32 sm:pb-0 relative">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 mb-8 text-sm text-white/60 font-geist" style="animation: fadeSlideIn 1s ease-out 0.05s both;">
+          <a href="../index.html" class="hover:text-white transition">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <a href="../blog.html" class="hover:text-white transition">Blog</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <span class="text-white/40">Artikel</span>
+        </nav>
+
+        <!-- Category + meta -->
+        <div class="flex flex-wrap items-center gap-3 mb-6" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+          <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-white text-xs font-semibold font-geist">Strategie</span>
+          <span class="text-white/50 text-sm font-geist">April 2026</span>
+          <span class="w-1 h-1 rounded-full bg-white/30"></span>
+          <span class="text-white/50 text-sm font-geist">12 Min. Lesezeit</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white font-geist leading-[1.15] tracking-tight mb-5" style="animation: fadeSlideIn 1s ease-out 0.15s both;">
+          KI-Literacy an Hochschulen: Strategien für Entscheider | Alphabees
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-white/70 font-geist font-normal leading-relaxed max-w-2xl" style="animation: fadeSlideIn 1s ease-out 0.2s both;">
+          Fast die Hälfte der Studierenden bewertet bestehende KI-Kompetenzangebote als unzureichend. Für Bildungsverantwortliche stellt sich die Frage, wie KI-Literacy systematisch und skalierbar vermittelt werden kann.
+        </p>
+
+        <!-- Hero image -->
+        <div class="mt-10" style="animation: fadeSlideIn 1s ease-out 0.25s both;">
+          <img src="https://lh3.googleusercontent.com/d/1DQIAST5wSfkOrCxbx5tl2vvWNqM0yxSz"
+               alt="KI-Literacy an Hochschulen – Studierende lernen den kompetenten Umgang mit künstlicher Intelligenz"
+               class="w-full rounded-t-2xl object-cover max-h-72 sm:max-h-96 shadow-2xl"
+               loading="eager">
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 py-14 sm:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 lg:gap-16">
+
+        <!-- Main Article -->
+        <article class="prose animate-on-scroll" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+
+<p>Generative KI hat sich im Hochschulalltag etabliert. Aktuelle Erhebungen zeigen, dass 65 Prozent der deutschen Studierenden KI-Werkzeuge täglich oder wöchentlich im Studium einsetzen. An einzelnen Hochschulen liegt die Nutzungsquote sogar bei über 90 Prozent. Doch während die Technologie längst angekommen ist, hinkt die systematische Kompetenzvermittlung hinterher: Fast die Hälfte der Befragten bewertet die bestehenden Angebote zum Erwerb von KI-Kompetenzen als unzureichend.</p>
+
+<p>Für Bildungsverantwortliche ergibt sich daraus eine doppelte Herausforderung. Einerseits müssen sie zeitnah handlungsfähige Konzepte entwickeln, andererseits befinden sich sowohl die Technologie als auch die regulatorischen Rahmenbedingungen in ständiger Bewegung. Die Vermittlung von KI-Literacy ist dabei keine optionale Zusatzleistung mehr, sondern rückt in den Kernauftrag von Hochschulen.</p>
+
+<h2>Rechtliche Anforderungen und erweiterter Bildungsauftrag</h2>
+
+<p>Die EU-KI-Verordnung schafft neue Verbindlichkeiten für Bildungseinrichtungen. Insbesondere dort, wo Studierende KI-Tools im Rahmen von Prüfungsleistungen nutzen sollen oder müssen, lassen sich aus der Verordnung konkrete Anforderungen an die Vermittlung grundlegender KI-Kompetenzen ableiten. Hochschulen, die diesen Anforderungen nicht nachkommen, riskieren rechtliche Unsicherheiten bei der Bewertung von Studienleistungen.</p>
+
+<p>Über die rechtliche Dimension hinaus berührt KI-Literacy den erweiterten Bildungsauftrag von Hochschulen. Dieser umfasst nicht nur die wissenschaftliche Befähigung, sondern auch die Vorbereitung auf qualifizierte Erwerbstätigkeit, gesellschaftliches Engagement und die Persönlichkeitsentwicklung der Studierenden. Der kompetente Umgang mit KI-Systemen ist in allen diesen Bereichen zunehmend relevant.</p>
+
+<h2>Die sieben Dimensionen von KI-Literacy</h2>
+
+<p>Was genau unter KI-Literacy zu verstehen ist, wird in der Fachdiskussion weiterentwickelt. Ein aktuelles Metamodell unterscheidet sieben zentrale Dimensionen:</p>
+
+<dl>
+<dt>Technisches Wissen und Fähigkeiten:</dt>
+<dd>Grundlegendes Verständnis der Funktionsweise von KI, etwa wie Systeme aus Daten lernen.</dd>
+<dt>Anwendungskompetenz:</dt>
+<dd>Die Fähigkeit, KI-Technologien effektiv für praktische Problemstellungen einzusetzen.</dd>
+<dt>Kritisches Denken:</dt>
+<dd>Die analytische Bewertung von KI-Systemen, ihren Ergebnissen und Grenzen.</dd>
+<dt>Ethisches Bewusstsein:</dt>
+<dd>Das Erkennen und Adressieren ethischer Fragen wie Fairness, Transparenz und Datenschutz.</dd>
+<dt>Gesellschaftliche Auswirkungen:</dt>
+<dd>Das Verständnis langfristiger Effekte von KI auf Gesellschaft, Politik und Wirtschaft.</dd>
+<dt>Integrationsfähigkeiten:</dt>
+<dd>Die sinnvolle Einbindung von KI in bestehende Arbeitsweisen und digitale Umgebungen.</dd>
+<dt>Rechtliches Wissen:</dt>
+<dd>Kenntnis relevanter Rahmenbedingungen wie Datenschutzgrundverordnung und EU AI Act.</dd>
+</dl>
+
+<p>Diese Mehrdimensionalität verdeutlicht, warum einzelne Lehrende mit der Vermittlung aller Facetten überfordert sind. KI-Literacy erfordert unterschiedliche fachliche Expertisen, die in der Regel nicht in einer Person vereint sind.</p>
+
+<h2>Zentrale Herausforderungen für Bildungseinrichtungen</h2>
+
+<p>Bei der Konzeption von KI-Kompetenzangeboten stehen Verantwortliche vor mehreren strukturellen Hürden. Die Heterogenität der Lernenden erschwert die Entwicklung einheitlicher Formate erheblich. Studierende bringen sehr unterschiedliche Vorkenntnisse und Nutzungspraktiken mit, was differenzierte Zugänge erfordert.</p>
+
+<p>Die Dynamik der technologischen Entwicklung verlangt eine kontinuierliche Anpassung von Inhalten und Formaten. Was heute als Best Practice gilt, kann morgen bereits überholt sein. Hinzu kommen Veränderungen im regulatorischen Bereich und in der Rechtsprechung, die ebenfalls laufende Aktualisierungen notwendig machen.</p>
+
+<p>Schließlich stellt sich die Frage der curricularen Integration. Wie lassen sich KI-Kompetenzen in bestehende Studiengänge einbetten, ohne diese zu überfrachten? Und wie können nicht nur Wissen, sondern auch Anwendungsfähigkeiten und reflektierte Haltungen adressiert werden?</p>
+
+<h2>Innovative Lehrformate als Antwort</h2>
+
+<p>Ein vielversprechender Ansatz begegnet diesen Herausforderungen mit einem offenen, iterativen und interdisziplinären Format. Das Konzept einer Ringvorlesung, bei der unterschiedliche Fachexpert:innen jeweils eine Sitzung zu verschiedenen Aspekten von KI gestalten, ermöglicht die Integration verschiedener Perspektiven ohne Überforderung einzelner Lehrender.</p>
+
+<p>Zentrale Gestaltungsprinzipien solcher Formate umfassen:</p>
+
+<ul>
+<li>Iterative Weiterentwicklung statt Anspruch auf sofortige Vollständigkeit</li>
+<li>Offenheit für alle Statusgruppen, da KI-Literacy Studierende, Mitarbeitende und Lehrende gleichermaßen betrifft</li>
+<li>Systematische Reflexion als integraler Bestandteil jeder Einheit</li>
+<li>Skalierbarkeit für große Teilnehmendenzahlen</li>
+</ul>
+
+<p>Die Reflexionskomponente verdient besondere Beachtung. Wenn Studierende zu jeder Sitzung schriftliche Reflexionen einreichen und daraus einen persönlichen Entwicklungsplan ableiten, wird der individuelle Transfer gefördert. Die Kompetenzentwicklung wird damit zu einem selbstgesteuerten Prozess.</p>
+
+<h2>Digitale Lernbegleitung als Skalierungsfaktor</h2>
+
+<p>Solche Formate entfalten ihr volles Potenzial, wenn sie durch kontinuierliche digitale Unterstützung ergänzt werden. Ein KI-gestützter Lernbegleiter, der direkt in das Lernmanagementsystem integriert ist, kann Studierende rund um die Uhr bei Verständnisfragen unterstützen, Reflexionsprozesse anregen und individuelle Lernpfade begleiten.</p>
+
+<p>Die Verbindung von strukturierten Präsenzformaten mit intelligenter digitaler Betreuung adressiert mehrere der genannten Herausforderungen gleichzeitig. Heterogene Vorkenntnisse lassen sich durch individuelle Betreuung besser auffangen. Die Skalierbarkeit wird durch automatisierte Unterstützung bei Routinefragen erhöht. Und die kontinuierliche Verfügbarkeit ermöglicht selbstgesteuertes Lernen im eigenen Tempo.</p>
+
+<p>Für Hochschulen, die Moodle als zentrale Lernplattform nutzen, bieten sich hier nahtlose Integrationsmöglichkeiten. Ein KI-Tutor, der auf den Kursinhalten basiert und die spezifischen Lernziele kennt, kann die Vermittlung von KI-Literacy wirksam unterstützen, ohne zusätzliche Systembrüche zu erzeugen.</p>
+
+<h2>Handlungsfähigkeit in einem dynamischen Feld</h2>
+
+<p>Die Vermittlung von KI-Literacy erfordert von Bildungseinrichtungen ein Umdenken. Statt auf perfekte, abgeschlossene Curricula zu warten, erscheint ein lernorientierter Ansatz zielführender. Iterative Formate, die sich mit der technologischen und regulatorischen Entwicklung weiterentwickeln, halten Hochschulen handlungsfähig.</p>
+
+<p>Die Kombination aus interdisziplinären Ringvorlesungen, strukturierter Selbstreflexion und intelligenter digitaler Lernbegleitung bietet einen erprobten Rahmen. Dieser lässt sich an unterschiedliche institutionelle Kontexte anpassen und schrittweise erweitern. Erste Erfahrungen zeigen eine positive Resonanz bei allen Beteiligten.</p>
+
+<p>KI-Literacy entwickelt sich zur zentralen Querschnittskompetenz in Studium, Beruf und Gesellschaft. Hochschulen, die jetzt systematische Konzepte entwickeln und mit geeigneten Werkzeugen kombinieren, positionieren sich als zukunftsfähige Bildungseinrichtungen und erfüllen gleichzeitig die wachsenden rechtlichen Anforderungen.</p>
+
+          <h2>Häufig gestellte Fragen</h2>
+
+          <div class="not-prose mt-6 mb-2">
+            <details class="faq-item">
+              <summary>
+                Was bedeutet KI-Literacy im Hochschulkontext?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">KI-Literacy umfasst Kompetenzen zur kritischen Bewertung, effektiven Nutzung und ethischen Reflexion von KI-Technologien. Sie gilt als Querschnittskompetenz für Studium, Beruf und gesellschaftliches Engagement.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Warum ist KI-Literacy für Hochschulen zur Pflichtaufgabe geworden?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Die EU-KI-Verordnung verpflichtet Hochschulen zur Vermittlung grundlegender KI-Kompetenzen, insbesondere wenn KI-Tools in Prüfungsleistungen eingesetzt werden. Zudem gehört sie zum erweiterten Bildungsauftrag.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Welche Herausforderungen bestehen bei der Vermittlung von KI-Kompetenzen?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Heterogene Vorkenntnisse der Lernenden, die rasante technologische Entwicklung und die Mehrdimensionalität von KI-Literacy erfordern flexible, interdisziplinäre Lehrformate.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Wie können KI-Tutoren den Kompetenzerwerb unterstützen?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">KI-gestützte Lernbegleiter ermöglichen individuelle Betreuung rund um die Uhr, fördern selbstgesteuertes Lernen und können Reflexionsprozesse systematisch begleiten.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Welche Formate eignen sich für die skalierbare Vermittlung von KI-Literacy?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Ringvorlesungen mit wechselnden Fachexpert:innen, ergänzt durch digitale Lernbegleitung und strukturierte Reflexionsphasen, ermöglichen eine breite und dennoch tiefgehende Kompetenzvermittlung.</div>
+            </details>
+          </div>
+
+          <div class="highlight-box mt-10">
+            <p class="text-base mb-4">Entdecke, wie der <strong>Alphabees KI-Tutor</strong> deine Moodle-Kurse intelligent erweitert – mit 24/7 Lernunterstützung und ohne neue Infrastrukturkosten.</p>
+          </div>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 not-prose">
+            <a href="../features.html"
+               class="inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 transition text-white font-semibold font-geist text-sm rounded-xl px-6 py-3.5 shadow-lg shadow-violet-500/20">
+              Alphabees KI-Tutor Features entdecken
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside id="blog-sidebar" class="hidden lg:block"></aside>
+
+      </div>
+
+      <!-- Mobile back to blog -->
+      <div class="lg:hidden mt-12 pt-8 border-t border-gray-100">
+        <a href="../blog.html" class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+          Zurück zum Blog
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Newsletter Popup -->
+  <div id="newsletter-popup" class="fixed inset-0 z-[1000] hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+    <div class="animate-popup bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
+      <button onclick="closeNewsletterPopup()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+      <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Fast geschafft!</h3>
+      <p class="text-gray-600 text-center mb-6">Wir haben dir eine Bestätigungsmail gesendet. Bitte schau in deinem Posteingang nach und klicke auf den Bestätigungslink.</p>
+      <p class="text-gray-500 text-sm text-center mb-6">💡 Nicht gefunden? Schau auch im Spam-Ordner nach.</p>
+      <button onclick="closeNewsletterPopup()" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-lg transition">Verstanden</button>
+    </div>
+  </div>
+
+  <style>
+    @keyframes popupFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    .animate-popup { animation: popupFadeIn 0.3s ease-out; }
+    #newsletter-popup.flex { display: flex !important; }
+  </style>
+
+  <script>
+    function showNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.add('hidden');
+      popup.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('newsletter-popup').addEventListener('click', function(e) {
+      if (e.target === this) closeNewsletterPopup();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeNewsletterPopup();
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsletterForm = document.querySelector('form[data-sv-form="8647011"]');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('input[name="email_address"]');
+          fetch(this.action, { method: 'POST', body: new FormData(this), mode: 'no-cors' })
+            .finally(() => { showNewsletterPopup(); emailInput.value = ''; });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
