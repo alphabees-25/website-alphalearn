@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/1IP4jXP8cPiFx-3YpU9xU_ywTR1AQIMTH">
+  <meta property="og:image:width" content="2640">
+  <meta property="og:image:height" content="1430">
+  <meta property="og:title" content="AI Ethics in Education: Responsible Use | Alphabees">
+  <meta property="og:description" content="What does AI mean for educational equity? The German Ethics Council warns against delegating learning. How to implement ethical AI use in education.">
+  <meta property="og:url" content="https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-ethics-education-responsible-use.html">
+  <meta name="twitter:title" content="AI Ethics in Education: Responsible Use | Alphabees">
+  <meta name="twitter:description" content="What does AI mean for educational equity? The German Ethics Council warns against delegating learning. How to implement ethical AI use in education.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1IP4jXP8cPiFx-3YpU9xU_ywTR1AQIMTH">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Ethics in Education: Responsible Use | Alphabees</title>
+  <meta name="description" content="What does AI mean for educational equity? The German Ethics Council warns against delegating learning. How to implement ethical AI use in education.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-ethics-education-responsible-use.html">
+  <link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-ethik-schule-bildungsgerechtigkeit-verantwortungsvoller-einsatz.html">
+  <link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-ethics-education-responsible-use.html">
+  <link rel="alternate" hreflang="x-default" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-ethik-schule-bildungsgerechtigkeit-verantwortungsvoller-einsatz.html">
+  <meta name="geo.region" content="DE">
+  <meta name="geo.country" content="DE">
+  <meta name="geo.placename" content="Deutschland">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes fadeSlideIn {
+      0%   { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+      40%  { opacity: 0.9; transform: translateY(0); filter: blur(0px); }
+      100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+    }
+    .animate-on-scroll { animation-play-state: paused !important; }
+    .animate-on-scroll.animate { animation-play-state: running !important; }
+    html, body { overflow-x: hidden; width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* Article typography */
+    .prose h2 {
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: #111827;
+      margin-top: 2.5rem;
+      margin-bottom: 0.875rem;
+      line-height: 1.3;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-family: 'Geist', sans-serif;
+    }
+    .prose p {
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+    .prose ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .prose ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+    .prose ul li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: #6366f1;
+      margin-top: 0.6em;
+    }
+    .prose blockquote {
+      border-left: 3px solid #6366f1;
+      padding: 0.75rem 1.25rem;
+      margin: 1.75rem 0;
+      background: #f5f3ff;
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+    .prose blockquote p {
+      color: #4338ca;
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .prose .highlight-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .prose .highlight-box p {
+      margin-bottom: 0;
+      color: #1e40af;
+      font-weight: 500;
+    }
+    .prose strong {
+      color: #111827;
+      font-weight: 600;
+    }
+
+    /* FAQ Accordion */
+    .faq-item {
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      margin-bottom: 0.625rem;
+    }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1rem 1.25rem;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #111827;
+      font-family: 'Geist', sans-serif;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      user-select: none;
+      background: #f9fafb;
+      transition: background 0.15s;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary:hover { background: #f3f4f6; }
+    .faq-item[open] summary { background: #ede9fe; color: #5b21b6; }
+    .faq-item summary .faq-icon {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      border-radius: 50%;
+      background: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s, transform 0.2s;
+    }
+    .faq-item[open] summary .faq-icon {
+      background: #7c3aed;
+      transform: rotate(45deg);
+    }
+    .faq-item[open] summary .faq-icon svg { stroke: #fff; }
+    .faq-item .faq-body {
+      padding: 1rem 1.25rem 1.25rem;
+      color: #374151;
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      border-top: 1px solid #e5e7eb;
+    }
+  </style>
+  <script>
+    (function () {
+      const style = document.createElement('style');
+      style.textContent = `.animate-on-scroll { animation-play-state: paused !important; } .animate-on-scroll.animate { animation-play-state: running !important; }`;
+      document.head.appendChild(style);
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+              window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0 });
+      }
+      window.initInViewAnimations = function (selector = '.animate-on-scroll') {
+        document.querySelectorAll(selector).forEach((el) => { window.__inViewIO.observe(el); });
+      };
+      document.addEventListener('DOMContentLoaded', () => {
+        initInViewAnimations();
+        // Fallback: force-animate any elements the observer missed (iOS Safari / mobile quirks)
+        setTimeout(() => {
+          document.querySelectorAll('.animate-on-scroll:not(.animate)').forEach(el => el.classList.add('animate'));
+        }, 1000);
+      });
+    })();
+  </script>
+  <script src="/assets/js/layout.js" defer></script>
+
+  <!-- JSON-LD: Article Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI Ethics in Education: Responsible Use | Alphabees",
+  "description": "What does AI mean for educational equity? The German Ethics Council warns against delegating learning. How to implement ethical AI use in education.",
+  "image": "https://lh3.googleusercontent.com/d/1IP4jXP8cPiFx-3YpU9xU_ywTR1AQIMTH",
+  "author": {
+    "@type": "Organization",
+    "name": "Alphabees",
+    "url": "https://moodle-ai-tutor.alphalearn.ai"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Alphabees",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://moodle-ai-tutor.alphalearn.ai/favicon.svg"
+    }
+  },
+  "datePublished": "2026-04-30",
+  "dateModified": "2026-04-30",
+  "inLanguage": "en",
+  "keywords": "AI ethics education, artificial intelligence schools, educational equity AI, intelligent tutoring systems, AI learning support",
+  "articleSection": "Analysis",
+  "url": "https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-ethics-education-responsible-use.html"
+}
+  </script>
+
+  <!-- JSON-LD: FAQ Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What danger does the German Ethics Council see in AI use in education?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The central danger lies in delegating learning processes to AI systems. Learners then use AI not to learn, but to take shortcuts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can educational institutions prevent learners from cheating with AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The focus should shift from outcomes to learning processes. More collaborative practice and process-based assessment methods reduce the incentive for pure outcome production."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What distinguishes intelligent tutoring systems from generative AI like ChatGPT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Intelligent tutoring systems are designed for structured learning support and guide learners through processes. Generative AI primarily produces content and can more easily be misused to bypass learning steps."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What role does educational equity play in AI use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI can amplify existing inequalities if not all learners have equal access. The key question is who benefits from AI tools and who does not."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How should education leaders select AI tools?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tools should actively support learning processes rather than deliver results. Systems designed for learning guidance instead of task completion promote sustainable learning."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
+
+  <!-- Global Header -->
+  <div id="site-header"></div>
+
+  <main class="relative">
+
+    <!-- Hero Banner -->
+    <div class="relative bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 overflow-hidden">
+      <!-- Decorative blobs -->
+      <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-fuchsia-400/10 blur-3xl pointer-events-none"></div>
+
+      <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 pt-24 pb-0 sm:pt-32 sm:pb-0 relative">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 mb-8 text-sm text-white/60 font-geist" style="animation: fadeSlideIn 1s ease-out 0.05s both;">
+          <a href="../index.html" class="hover:text-white transition">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <a href="../blog.html" class="hover:text-white transition">Blog</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          <span class="text-white/40">Artikel</span>
+        </nav>
+
+        <!-- Category + meta -->
+        <div class="flex flex-wrap items-center gap-3 mb-6" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+          <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-white text-xs font-semibold font-geist">Analysis</span>
+          <span class="text-white/50 text-sm font-geist">April 2026</span>
+          <span class="w-1 h-1 rounded-full bg-white/30"></span>
+          <span class="text-white/50 text-sm font-geist">12 Min. Lesezeit</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white font-geist leading-[1.15] tracking-tight mb-5" style="animation: fadeSlideIn 1s ease-out 0.15s both;">
+          AI Ethics in Education: Responsible Use | Alphabees
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-white/70 font-geist font-normal leading-relaxed max-w-2xl" style="animation: fadeSlideIn 1s ease-out 0.2s both;">
+          The German Ethics Council warns: AI must accompany learning, not replace it. Education leaders face the question of how AI tools can be deployed to strengthen learning processes rather than shortcut them.
+        </p>
+
+        <!-- Hero image -->
+        <div class="mt-10" style="animation: fadeSlideIn 1s ease-out 0.25s both;">
+          <img src="https://lh3.googleusercontent.com/d/1IP4jXP8cPiFx-3YpU9xU_ywTR1AQIMTH"
+               alt="AI ethics in education – symbolic representation of learning support and technology"
+               class="w-full rounded-t-2xl object-cover max-h-72 sm:max-h-96 shadow-2xl"
+               loading="eager">
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="sm:px-6 lg:px-8 max-w-4xl mr-auto ml-auto pr-4 pl-4 py-14 sm:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 lg:gap-16">
+
+        <!-- Main Article -->
+        <article class="prose animate-on-scroll" style="animation: fadeSlideIn 1s ease-out 0.1s both;">
+
+<p>Artificial intelligence is fundamentally transforming the educational landscape. Yet with new possibilities come growing ethical questions: How can AI be deployed to promote learning rather than replace it? Who benefits from new technologies and who gets left behind? These questions increasingly concern the German Ethics Council. Judith Simon, Professor of Ethics in Information Technology at the University of Hamburg and Vice Chair of the Ethics Council, identifies clear risks and outlines ways education leaders can use AI responsibly.</p>
+
+<h2>The Central Danger: When Learning Is Delegated to AI</h2>
+
+<p>The greatest challenge in using AI in educational contexts lies not in the technology itself, but in how it is used. Learners face a temptation: Why go through a laborious learning process when an AI system can deliver the desired result in seconds? This question becomes all the more pressing as educational institutions traditionally evaluate outcomes – homework, assignments, exam performance.</p>
+
+<p>The problem is structurally embedded: As long as assessment systems are primarily focused on end products, the incentive remains to shortcut the path to them. AI then becomes not a learning tool, but a circumvention instrument. Fundamental competencies such as independent reading, structured writing, or critical analysis risk atrophying if they are no longer actively practiced.</p>
+
+<p>For education leaders, this points to a clear course of action: The selection and implementation of AI tools must be measured by whether they strengthen or undermine learning processes. Not every technical possibility is pedagogically meaningful.</p>
+
+<h2>Process Orientation as a Strategic Response</h2>
+
+<p>A paradigm shift is emerging: Away from pure outcome assessment, toward process guidance. This shift is demanding because it challenges established examination formats and requires more time for collaborative practice. Yet it addresses the core problem at its root.</p>
+
+<p>Process-oriented approaches mean concretely:</p>
+<ul>
+<li>Learning progress is continuously observed rather than measured only at the end</li>
+<li>Intermediate steps and thinking paths are explicitly documented and discussed</li>
+<li>Collaborative practice phases gain importance over isolated individual work</li>
+<li>Formative feedback supplements or replaces summative assessments</li>
+</ul>
+
+<p>This approach requires educational institutions to rethink resource planning. More process guidance requires more supervision capacity – or intelligent technical support that enables precisely this guidance.</p>
+
+<h2>Educational Equity: Asking the Distribution Question</h2>
+
+<p>The ethical discussion around AI in education would be incomplete without addressing the question of equity. Who has access to high-quality AI tools? Who possesses the media literacy to use them meaningfully? And who ultimately benefits from efficiency gains?</p>
+
+<p>These questions are strategically relevant for decision-makers in education. AI systems can amplify existing inequalities if they are only accessible to certain groups or if their use requires certain prerequisites that not everyone brings. Conversely, AI offers the potential to scale individualized support and thereby help precisely those who previously received less assistance.</p>
+
+<p>The decision for or against specific AI solutions is therefore always also a decision about accessibility and participation. Institutions introducing AI should explicitly examine which groups benefit and whether unintended exclusions arise.</p>
+
+<h2>Intelligent Tutoring Systems: Learning Guidance Instead of Outcome Production</h2>
+
+<p>Not all AI systems are equal. Public debate frequently focuses on generative AI like ChatGPT or image generators. Yet alongside these, intelligent tutoring systems have existed for years, pursuing a fundamentally different approach. Rather than producing content on demand, they guide learners through structured learning paths and provide adaptive feedback.</p>
+
+<p>The difference is conceptually significant:</p>
+<dl>
+<dt>Generative AI:</dt>
+<dd>Produces results on request and can easily be used to bypass learning steps.</dd>
+<dt>Intelligent Tutoring Systems:</dt>
+<dd>Guide through learning processes, identify knowledge gaps, and promote active learning through targeted questions and hints.</dd>
+</dl>
+
+<p>For educational institutions that want to use AI responsibly, process-guiding systems are therefore the obvious choice. They support learning without replacing it and relieve educators in individual supervision without hollowing out the pedagogical core.</p>
+
+<h2>AI Integration in Existing Learning Environments</h2>
+
+<p>The practical implementation of ethically justifiable AI use depends significantly on how well systems can be integrated into existing learning infrastructures. Standalone solutions that exist alongside the regular learning management system complicate both use and oversight. Integration into established platforms like Moodle, by contrast, enables a coherent learning experience and gives administrators insight into actual usage.</p>
+
+<p>AI tutors embedded directly in Moodle courses can function as constantly available learning companions. They answer questions about course content, guide through exercises, and provide feedback – without delivering ready-made solutions. This type of integration addresses both the problem of learning delegation and the question of accessibility: All course participants receive the same support.</p>
+
+<p>The Alphabees AI Tutor for Moodle embodies this approach. As integrated learning support, it assists learners around the clock without taking over the learning process. Close alignment with course content ensures that assistance is context-relevant and pedagogically meaningful.</p>
+
+<h2>Decision Criteria for Education Leaders</h2>
+
+<p>The ethical classification of AI tools can be operationalized through concrete questions:</p>
+<ul>
+<li>Does the system promote active learning or primarily deliver ready-made answers?</li>
+<li>Is usage transparent and traceable for educators?</li>
+<li>Do all learners have equal access?</li>
+<li>Can the system be integrated into existing learning environments?</li>
+<li>Does it support process-oriented assessment approaches?</li>
+</ul>
+
+<p>Systems that meet these criteria contribute to AI use that satisfies ethical requirements while creating practical value. Investment in such solutions is therefore not only pedagogically but also strategically sound.</p>
+
+<p>The discussion around AI ethics in education will intensify in the coming years. Education leaders who engage early with the right questions and select AI tools according to clear criteria create the foundation for deployment that truly empowers learners. What matters is not whether AI is used, but how – as a tool for learning delegation or as a companion in the learning process.</p>
+
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="not-prose mt-6 mb-2">
+            <details class="faq-item">
+              <summary>
+                What danger does the German Ethics Council see in AI use in education?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">The central danger lies in delegating learning processes to AI systems. Learners then use AI not to learn, but to take shortcuts.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How can educational institutions prevent learners from cheating with AI?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">The focus should shift from outcomes to learning processes. More collaborative practice and process-based assessment methods reduce the incentive for pure outcome production.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                What distinguishes intelligent tutoring systems from generative AI like ChatGPT?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Intelligent tutoring systems are designed for structured learning support and guide learners through processes. Generative AI primarily produces content and can more easily be misused to bypass learning steps.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                What role does educational equity play in AI use?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">AI can amplify existing inequalities if not all learners have equal access. The key question is who benefits from AI tools and who does not.</div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How should education leaders select AI tools?
+                <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </summary>
+              <div class="faq-body">Tools should actively support learning processes rather than deliver results. Systems designed for learning guidance instead of task completion promote sustainable learning.</div>
+            </details>
+          </div>
+
+          <div class="highlight-box mt-10">
+            <p class="text-base mb-4">Discover how the <strong>Alphabees AI Tutor</strong> intelligently extends your Moodle courses – with 24/7 learning support and no new infrastructure costs.</p>
+          </div>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 not-prose">
+            <a href="../features.html"
+               class="inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 transition text-white font-semibold font-geist text-sm rounded-xl px-6 py-3.5 shadow-lg shadow-violet-500/20">
+              Explore the Alphabees AI Tutor features
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside id="blog-sidebar" class="hidden lg:block"></aside>
+
+      </div>
+
+      <!-- Mobile back to blog -->
+      <div class="lg:hidden mt-12 pt-8 border-t border-gray-100">
+        <a href="../blog.html" class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 font-geist transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+          Zurück zum Blog
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Newsletter Popup -->
+  <div id="newsletter-popup" class="fixed inset-0 z-[1000] hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+    <div class="animate-popup bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
+      <button onclick="closeNewsletterPopup()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+      <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Fast geschafft!</h3>
+      <p class="text-gray-600 text-center mb-6">Wir haben dir eine Bestätigungsmail gesendet. Bitte schau in deinem Posteingang nach und klicke auf den Bestätigungslink.</p>
+      <p class="text-gray-500 text-sm text-center mb-6">💡 Nicht gefunden? Schau auch im Spam-Ordner nach.</p>
+      <button onclick="closeNewsletterPopup()" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-lg transition">Verstanden</button>
+    </div>
+  </div>
+
+  <style>
+    @keyframes popupFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    .animate-popup { animation: popupFadeIn 0.3s ease-out; }
+    #newsletter-popup.flex { display: flex !important; }
+  </style>
+
+  <script>
+    function showNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNewsletterPopup() {
+      const popup = document.getElementById('newsletter-popup');
+      popup.classList.add('hidden');
+      popup.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('newsletter-popup').addEventListener('click', function(e) {
+      if (e.target === this) closeNewsletterPopup();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeNewsletterPopup();
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsletterForm = document.querySelector('form[data-sv-form="8647011"]');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('input[name="email_address"]');
+          fetch(this.action, { method: 'POST', body: new FormData(this), mode: 'no-cors' })
+            .finally(() => { showNewsletterPopup(); emailInput.value = ''; });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
