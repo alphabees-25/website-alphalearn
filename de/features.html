@@ -321,7 +321,389 @@
 
     </div>
 
-  </div><section class="sm:px-6 lg:px-8 max-w-7xl z-10 mr-auto ml-auto pb-24 relative">
+  </div>
+
+  <section class="sm:px-6 lg:px-8 max-w-7xl z-10 mr-auto ml-auto pb-12 relative">
+    <h2 class="mb-6 text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900 font-geist">Funktionsübersicht</h2>
+    <div id="generalFeaturesTabs" class="relative overflow-hidden rounded-[36px] border border-white/70 bg-white/65 shadow-[0_20px_80px_rgba(15,23,42,0.10)] backdrop-blur-2xl">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.16),_transparent_38%),radial-gradient(circle_at_bottom_right,_rgba(14,165,233,0.14),_transparent_34%)] pointer-events-none"></div>
+      <div class="relative grid lg:grid-cols-[340px,minmax(0,1fr)]">
+        <div class="self-stretch bg-white/92 lg:border-r lg:border-gray-200/80">
+          <div role="tablist" aria-label="Allgemeine Funktionen">
+            <button type="button" class="general-feature-tab group flex w-full items-center justify-between border-b border-gray-100 px-5 py-5 text-left font-geist transition-colors duration-200" data-general-tab="agent-templates" aria-selected="true">
+              <span class="general-feature-tab-label text-lg font-semibold text-gray-900 transition-colors duration-200 group-hover:text-blue-600">AI-Agent Templates</span>
+              <span class="general-feature-tab-icon ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gray-50 text-gray-600 transition-all duration-300 group-hover:bg-blue-50 group-hover:text-blue-600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="general-feature-tab-plus transition-transform duration-300">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5v14"></path>
+                </svg>
+              </span>
+            </button>
+            <button type="button" class="general-feature-tab group flex w-full items-center justify-between border-b border-gray-100 px-5 py-5 text-left font-geist transition-colors duration-200" data-general-tab="personalized-learning" aria-selected="false">
+              <span class="general-feature-tab-label text-lg font-semibold text-gray-900 transition-colors duration-200 group-hover:text-blue-600">Personalisiertes Lernen</span>
+              <span class="general-feature-tab-icon ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gray-50 text-gray-600 transition-all duration-300 group-hover:bg-blue-50 group-hover:text-blue-600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="general-feature-tab-plus transition-transform duration-300">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5v14"></path>
+                </svg>
+              </span>
+            </button>
+            <button type="button" class="general-feature-tab group flex w-full items-center justify-between border-b border-gray-100 px-5 py-5 text-left font-geist transition-colors duration-200" data-general-tab="teacher-assistance" aria-selected="false">
+              <span class="general-feature-tab-label text-lg font-semibold text-gray-900 transition-colors duration-200 group-hover:text-blue-600">Assistenz für Lehrkräfte</span>
+              <span class="general-feature-tab-icon ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gray-50 text-gray-600 transition-all duration-300 group-hover:bg-blue-50 group-hover:text-blue-600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="general-feature-tab-plus transition-transform duration-300">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5v14"></path>
+                </svg>
+              </span>
+            </button>
+            <button type="button" class="general-feature-tab group flex w-full items-center justify-between border-b border-gray-100 px-5 py-5 text-left font-geist transition-colors duration-200" data-general-tab="knowledge-base" aria-selected="false">
+              <span class="general-feature-tab-label text-lg font-semibold text-gray-900 transition-colors duration-200 group-hover:text-blue-600">Wissensbasis</span>
+              <span class="general-feature-tab-icon ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gray-50 text-gray-600 transition-all duration-300 group-hover:bg-blue-50 group-hover:text-blue-600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="general-feature-tab-plus transition-transform duration-300">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5v14"></path>
+                </svg>
+              </span>
+            </button>
+            <button type="button" class="general-feature-tab group flex w-full items-center justify-between border-b border-gray-100 px-5 py-5 text-left font-geist transition-colors duration-200" data-general-tab="moodle-lms" aria-selected="false">
+              <span class="general-feature-tab-label text-lg font-semibold text-gray-900 transition-colors duration-200 group-hover:text-blue-600">Moodle Integrationen</span>
+              <span class="general-feature-tab-icon ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gray-50 text-gray-600 transition-all duration-300 group-hover:bg-blue-50 group-hover:text-blue-600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="general-feature-tab-plus transition-transform duration-300">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5v14"></path>
+                </svg>
+              </span>
+            </button>
+            <button type="button" class="general-feature-tab group flex w-full items-center justify-between border-b border-gray-100 px-5 py-5 text-left font-geist transition-colors duration-200" data-general-tab="analytics-insights" aria-selected="false">
+              <span class="general-feature-tab-label text-lg font-semibold text-gray-900 transition-colors duration-200 group-hover:text-blue-600">Analytics</span>
+              <span class="general-feature-tab-icon ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gray-50 text-gray-600 transition-all duration-300 group-hover:bg-blue-50 group-hover:text-blue-600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="general-feature-tab-plus transition-transform duration-300">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5v14"></path>
+                </svg>
+              </span>
+            </button>
+            <button type="button" class="general-feature-tab group flex w-full items-center justify-between border-b border-gray-100 px-5 py-5 text-left font-geist transition-colors duration-200" data-general-tab="governance" aria-selected="false">
+              <span class="general-feature-tab-label text-lg font-semibold text-gray-900 transition-colors duration-200 group-hover:text-blue-600">Administration &amp; Governance</span>
+              <span class="general-feature-tab-icon ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gray-50 text-gray-600 transition-all duration-300 group-hover:bg-blue-50 group-hover:text-blue-600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="general-feature-tab-plus transition-transform duration-300">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5v14"></path>
+                </svg>
+              </span>
+            </button>
+            <button type="button" class="general-feature-tab group flex w-full items-center justify-between border-b border-gray-100 px-5 py-5 text-left font-geist transition-colors duration-200" data-general-tab="interactive-formats" aria-selected="false">
+              <span class="general-feature-tab-label text-lg font-semibold text-gray-900 transition-colors duration-200 group-hover:text-blue-600">Interaktive Lernformate</span>
+              <span class="general-feature-tab-icon ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gray-50 text-gray-600 transition-all duration-300 group-hover:bg-blue-50 group-hover:text-blue-600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="general-feature-tab-plus transition-transform duration-300">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5v14"></path>
+                </svg>
+              </span>
+            </button>
+            <button type="button" class="general-feature-tab group flex w-full items-center justify-between px-5 py-5 text-left font-geist transition-colors duration-200" data-general-tab="support-automation" aria-selected="false">
+              <span class="general-feature-tab-label text-lg font-semibold text-gray-900 transition-colors duration-200 group-hover:text-blue-600">Support &amp; Service</span>
+              <span class="general-feature-tab-icon ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gray-50 text-gray-600 transition-all duration-300 group-hover:bg-blue-50 group-hover:text-blue-600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="general-feature-tab-plus transition-transform duration-300">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5v14"></path>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <div class="min-w-0 p-6 sm:p-8 lg:p-10">
+          <article class="general-feature-panel" data-general-panel="agent-templates">
+            <h3 class="mt-3 text-2xl sm:text-3xl font-semibold text-gray-900 tracking-tight font-geist">Verwalte AI-Agents für jede Lern- und Support-Situation.</h3>
+            <p class="mt-4 text-base leading-relaxed text-gray-600 font-geist">Ob Lernbegleitung, Lehrkraft-Assistenz, Produktsupport oder individuelle Enterprise-Konfiguration: Konfiguriere im AlphaLearn Portal deine AI-Agents anhand verschiedener Templates und binde sie nahtlos in deine Moodle Instanz, deine Webseite oder in ein SCORM Paket ein.</p>
+            <div class="mt-8 overflow-x-auto rounded-3xl border border-white/70 bg-white/70 shadow-inner">
+              <table class="min-w-[760px] w-full text-left">
+                <tbody class="divide-y divide-slate-200/80">
+                  <tr class="align-top">
+                    <td class="px-5 py-4 text-sm font-semibold text-gray-900 font-geist align-top w-[140px]">Alpha Tutor</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist"><strong>Der klassische Lernagent für Kurse, Akademien und Hochschulen.</strong> Alpha Tutor beantwortet Fragen auf Basis deiner Kursinhalte, erstellt interaktive Übungen, unterstützt bei Recherche und begleitet Lernende kontinuierlich durch den Lernprozess.</td>
+                  </tr>
+                  <tr class="align-top">
+                    <td class="px-5 py-4 text-sm font-semibold text-gray-900 font-geist align-top">Alpha Flexible</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist"><strong>Der vollständig konfigurierbare Agent für komplexe Bildungs- und Organisationsstrukturen.</strong> Mit strukturierten Prompt-Bausteinen, kursbezogenen Wissensdatenbanken, optionalem Curriculum-Kontext und klaren Nutzungsgrenzen entsteht ein Agent, der exakt zu deinem Setup passt.</td>
+                  </tr>
+                  <tr class="align-top">
+                    <td class="px-5 py-4 text-sm font-semibold text-gray-900 font-geist align-top">Alpha Assist</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist"><strong>Der digitale Zwilling für Lehrkräfte und Trainer.</strong> Alpha Assist beantwortet Fragen im Stil der Lehrkraft, unterstützt Studierende individuell und leitet komplexe oder ungelöste Fragen automatisch an die verantwortliche Person weiter.</td>
+                  </tr>
+                  <tr class="align-top">
+                    <td class="px-5 py-4 text-sm font-semibold text-gray-900 font-geist align-top">Alpha Support</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist"><strong>Der KI-Support für Produkte, Plattformen und Lernumgebungen.</strong> Alpha Support durchsucht Wissensdatenbanken, beantwortet FAQs und hilft Nutzern bei Navigation, Orientierung und wiederkehrenden Support-Anfragen.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="general-feature-panel hidden" data-general-panel="personalized-learning">
+            <h3 class="mt-3 text-2xl sm:text-3xl font-semibold text-gray-900 tracking-tight font-geist">KI-Lernbegleitung die sich an jeden Lernenden anpasst.</h3>
+            <p class="mt-4 text-base leading-relaxed text-gray-600 font-geist">AlphaLearn AI-Agents begleiten Lernende über den gesamten Lernprozess hinweg - bei Bedarf sogar über mehrere Jahre. Durch die Kombination aus Dialog, Curriculum und Langzeitgedächtnis entsteht eine adaptive Lernerfahrung, individuell pro Moodle User und über einzelne Kurse hinaus.</p>
+            <div class="mt-8 rounded-3xl border border-white/70 bg-white/72 shadow-inner">
+              <ul class="list-disc space-y-4 px-8 py-7 pl-12 text-base leading-relaxed text-gray-600 font-geist marker:text-blue-600">
+                <li>Die Agents erkennen individuelle Stärken, Schwächen und Fortschritte und passen Übungen, Hinweise und Erklärungen kontinuierlich an den Lernstand an.</li>
+                <li>Die Agents verstehen nicht nur die aktuelle Frage, sondern berücksichtigen auch frühere Interaktionen, Lernmuster und wiederkehrende Schwierigkeiten.</li>
+                <li>Lernende erhalten Unterstützung in ihrer Sprache und auf einem passenden Erklärniveau.</li>
+                <li>Coming Soon: Integration des Moodle Kalenders, Prüfungsergebnisse und individueller Karriere- oder Lernpfade in das Learner Profil.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="general-feature-panel hidden" data-general-panel="teacher-assistance">
+            <h3 class="mt-3 text-2xl sm:text-3xl font-semibold text-gray-900 tracking-tight font-geist">AI-Agents arbeiten Hand in Hand mit Lehrkräften</h3>
+            <p class="mt-4 text-base leading-relaxed text-gray-600 font-geist">Mit dem AlphaAssist Template können Lehrkräfte ihren eigenen Digital Twin erstellen. Dieser vermittelt Inhalte im individuellen Stil der Lehrkraft, beantwortet wiederkehrende Fragen und erkennt, wann menschliche Unterstützung erforderlich ist - und leitet diese gezielt weiter.</p>
+            <p class="mt-3 text-base leading-relaxed text-gray-500 font-geist">Im AlphaLearn Portal sehen Lehrkräfte, welche Lernenden individuelle Unterstützung benötigen, und können gezielt eingreifen. Während der AI-Agent allgemeine und kursspezifische Fragen übernimmt, bleibt mehr Zeit für persönliche Betreuung und fachliche Expertise.</p>
+            <div class="mt-8 rounded-3xl border border-white/70 bg-white/72 shadow-inner">
+              <ul class="list-disc space-y-4 px-8 py-7 pl-12 text-base leading-relaxed text-gray-600 font-geist marker:text-blue-600">
+                <li>Lehrkräfte erstellen einen AI-Agent, der auf Basis ihrer Inhalte und ihres Kommunikationsstils antwortet.</li>
+                <li>Komplexe oder ungeklärte Fragen werden automatisch an die Lehrkraft weitergeleitet.</li>
+                <li>Lernende sehen direkte Nachrichten, Aufgaben oder Prüfungen übersichtlich im Chat.</li>
+                <li>Lehrkräfte sehen, wer individuelle Unterstützung benötigt, beantworten private Nachrichten und können hilfreiche Antworten in die Wissensbasis übernehmen.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="general-feature-panel hidden" data-general-panel="knowledge-base">
+            <h3 class="mt-3 text-2xl sm:text-3xl font-semibold text-gray-900 tracking-tight font-geist">Eine Wissensbasis, die sich automatisch mit deinen Inhalten synchronisiert.</h3>
+            <p class="mt-4 text-base leading-relaxed text-gray-600 font-geist">AlphaLearn integriert sich nahtlos in Moodle-Kurse, Google Drive, Microsoft SharePoint und Dropbox. Zusätzlich können Webseiten, Notizen, Übungsaufgaben oder transkribierte Videos einfach in die Wissensbasis eingebunden und zentral verwaltet werden.</p>
+            <p class="mt-3 text-base leading-relaxed text-gray-500 font-geist">Optional lassen sich Quellenangaben aktivieren, die unter jeder Antwort angezeigt werden und für Transparenz sorgen. Lehrkräfte können außerdem eigene Inhalte wie Prüfungen oder persönliche Notizen erstellen, direkt an Lernende senden oder gezielt in die Wissensbasis integrieren.</p>
+            <div class="mt-8 overflow-x-auto rounded-3xl border border-white/70 bg-white/70 shadow-inner">
+              <table class="min-w-[760px] w-full text-left">
+                <tbody class="divide-y divide-slate-200/80">
+                  <tr class="align-top">
+                    <td class="px-5 py-4 text-sm font-semibold text-gray-900 font-geist align-top w-[220px]">Automatische Synchronisation</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">Inhalte aus Moodle, Google Drive, SharePoint und Dropbox werden direkt angebunden - ohne manuelle Pflege.</td>
+                  </tr>
+                  <tr class="align-top">
+                    <td class="px-5 py-4 text-sm font-semibold text-gray-900 font-geist align-top">Zentrale Wissensbasis</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">Alle Inhalte bleiben in ihren Ursprungssystemen und werden als einheitliche Datenquelle genutzt.</td>
+                  </tr>
+                  <tr class="align-top">
+                    <td class="px-5 py-4 text-sm font-semibold text-gray-900 font-geist align-top">Volle Transparenz</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">Quellenangaben werden bei Antworten angezeigt und schaffen Vertrauen.</td>
+                  </tr>
+                  <tr class="align-top">
+                    <td class="px-5 py-4 text-sm font-semibold text-gray-900 font-geist align-top">Flexible Content-Erweiterung</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">Webseiten, Dokumente, Notizen und transkribierte Videos können einfach integriert werden.</td>
+                  </tr>
+                  <tr class="align-top">
+                    <td class="px-5 py-4 text-sm font-semibold text-gray-900 font-geist align-top">Prüfungen &amp; Inhalte kombinieren</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">Lehrkräfte können Prüfungen erstellen und relevante Inhalte direkt in die Wissensbasis übernehmen.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="general-feature-panel hidden" data-general-panel="moodle-lms">
+            <h3 class="mt-3 text-2xl sm:text-3xl font-semibold text-gray-900 tracking-tight font-geist">Nahtlos in Moodle integriert – vom Kurswissen bis zur Mobile App.</h3>
+            <p class="mt-4 text-base leading-relaxed text-gray-600 font-geist">Mit dem Alphabees Moodle Block Plugin integrierst du AI-Agents direkt in deine Moodle-Instanz. Lernende erhalten Unterstützung dort, wo sie lernen: im Kurs, am Desktop oder in der Moodle Mobile App.</p>
+            <div class="mt-8 overflow-x-auto rounded-3xl border border-white/70 bg-white/70 shadow-inner">
+              <table class="min-w-[760px] w-full text-left">
+                <tbody class="divide-y divide-slate-200/80">
+                  <tr class="align-top">
+                    <td class="px-5 py-4 text-sm font-semibold text-gray-900 font-geist align-top w-[240px]">Moodle Block Plugin</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">live</td>
+                  </tr>
+                  <tr class="align-top">
+                    <td class="px-5 py-4 text-sm font-semibold text-gray-900 font-geist align-top">Moodle Mobile App</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">live</td>
+                  </tr>
+                  <tr class="align-top">
+                    <td class="px-5 py-4 text-sm font-semibold text-gray-900 font-geist align-top">Moodle Kurs Synchronisation</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">live</td>
+                  </tr>
+                  <tr class="align-top">
+                    <td class="px-5 py-4 text-sm font-semibold text-gray-900 font-geist align-top">Moodle Kalender Synchronisation</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">coming soon</td>
+                  </tr>
+                  <tr class="align-top">
+                    <td class="px-5 py-4 text-sm font-semibold text-gray-900 font-geist align-top">Kursübergreifende Moodle Verweise</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">coming soon</td>
+                  </tr>
+                  <tr class="align-top">
+                    <td class="px-5 py-4 text-sm font-semibold text-gray-900 font-geist align-top">Fortführung von Moodle-Lernaktivitäten</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">coming soon</td>
+                  </tr>
+                  <tr class="align-top">
+                    <td class="px-5 py-4 text-sm font-semibold text-gray-900 font-geist align-top">Enrolled Courses, Exam Results</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">coming soon</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="general-feature-panel hidden" data-general-panel="analytics-insights">
+            <h3 class="mt-3 text-2xl sm:text-3xl font-semibold text-gray-900 tracking-tight font-geist">Die Interaktionen mit den AI-Agents liefern wertvolle Einblicke.</h3>
+            <p class="mt-4 text-base leading-relaxed text-gray-600 font-geist">Das Alphalytics Portal macht sichtbar, welche Fragen Lernende stellen, wo Verständnisprobleme auftreten und welche Inhalte besonders häufig Unterstützung erfordern.</p>
+            <p class="mt-3 text-base leading-relaxed text-gray-500 font-geist">Ein AI-Analytics Assistent hilft dir direkt im Alphalytics Portal dabei, aus allen Metriken die wichtigsten herauszufiltern und liefert dir sogar punktgenaue Analysen und Handlungsempfehlungen.</p>
+            <div class="mt-8 overflow-x-auto rounded-3xl border border-white/70 bg-white/70 shadow-inner">
+              <table class="min-w-[760px] w-full text-left">
+                <tbody class="divide-y divide-slate-200/80">
+                  <tr class="align-top">
+                    <td class="px-5 py-4 text-sm font-semibold text-gray-900 font-geist align-top w-[220px]">AI-Analytics Portal</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">Das Alphalytics Portal zeigt, wie Lernende mit AI-Agents interagieren, wo Unterstützungsbedarf entsteht und welche Entwicklungen besonders relevant sind.</td>
+                  </tr>
+                  <tr class="align-top">
+                    <td class="px-5 py-4 text-sm font-semibold text-gray-900 font-geist align-top">Learner Profiles</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">Fortschritte, Stärken und Schwächen lassen sich pro Moodle User nachvollziehen und im Zeitverlauf einordnen.</td>
+                  </tr>
+                  <tr class="align-top">
+                    <td class="px-5 py-4 text-sm font-semibold text-gray-900 font-geist align-top">Benachrichtigungen fuer Lehrkraefte</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">Ein Glocken-Symbol haelt die Lehrkraefte immer auf dem Laufenden, falls individueller Hilfebedarf der Lernenden benoetigt wird.</td>
+                  </tr>
+                  <tr class="align-top">
+                    <td class="px-5 py-4 text-sm font-semibold text-gray-900 font-geist align-top">Dashboard fuer Lehrkraefte</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">Im Dozierenden Bereich des AlphaLearn Portals koennen Lehrkraefte individuelle Unterstuetzung leisten und ihre eigene Wissensbasis anhand der Analytics Metriken oder auf Basis von Feedback der Lernenden anpassen.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="general-feature-panel hidden" data-general-panel="governance">
+            <h3 class="mt-3 text-2xl sm:text-3xl font-semibold text-gray-900 tracking-tight font-geist">Kontrollierbar, sicher und skalierbar für professionelle Lernumgebungen.</h3>
+            <p class="mt-4 text-base leading-relaxed text-gray-600 font-geist">Im AlphaLearn Portal können Admins Agenten strukturieren, Kursen und Wissensdatenbanken zuweisen, Nutzungslimits festlegen und Mitarbeitende über ein Rollenmanagement zur gemeinsamen Verwaltung einladen.</p>
+            <p class="mt-3 text-base leading-relaxed text-gray-500 font-geist">Hosting auf deutschen Servern, DSGVO-konforme Prozesse und transparente Quellenangaben sorgen für volle Transparenz und maximalen Datenschutz.</p>
+            <div class="mt-8 rounded-3xl border border-white/70 bg-white/72 shadow-inner">
+              <ul class="list-disc space-y-4 px-8 py-7 pl-12 text-base leading-relaxed text-gray-600 font-geist marker:text-blue-600">
+                <li>100% DSGVO konform, Serverstandort Deutschland, AVV</li>
+                <li>Guided Setup Wizard</li>
+                <li>Chat-Styling Editor</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="general-feature-panel hidden" data-general-panel="interactive-formats">
+            <h3 class="mt-3 text-2xl sm:text-3xl font-semibold text-gray-900 tracking-tight font-geist">Mehr als Antworten: Lernen im Dialog.</h3>
+            <p class="mt-4 text-base leading-relaxed text-gray-600 font-geist">Alphabees AI-Agents aktivieren Lernende durch interaktive Übungen, Debatten, Rechercheaufgaben und kontextbezogenes Feedback. Statt nur Antworten zu liefern, fördern sie Verständnis, Reflexion und Anwendung.</p>
+            <p class="mt-3 text-base leading-relaxed text-gray-500 font-geist">So wird aus einer statischen Lernaktivität ein dynamischer Dialog, der zum Denken, Üben und Vertiefen anregt.</p>
+            <div class="mt-8 overflow-x-auto rounded-3xl border border-white/70 bg-white/70 shadow-inner">
+              <table class="min-w-[760px] w-full text-left">
+                <thead class="bg-slate-900 text-white">
+                  <tr>
+                    <th class="px-5 py-4 text-sm font-semibold font-geist">Feature</th>
+                    <th class="px-5 py-4 text-sm font-semibold font-geist">Nutzen für Lernende</th>
+                    <th class="px-5 py-4 text-sm font-semibold font-geist">Website-Formulierung</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200/80">
+                  <tr class="align-top">
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">Debate Mode</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">Aktives Denken statt passives Fragen.</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">Lernende können Argumente testen, Perspektiven wechseln und Wissen im Dialog vertiefen.</td>
+                  </tr>
+                  <tr class="align-top">
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">Interaktive Übungen</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">Üben mit Feedback.</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">Der Agent erstellt Aufgaben auf Basis des Kursinhalts und gibt konkrete Verbesserungsvorschläge.</td>
+                  </tr>
+                  <tr class="align-top">
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">Research und Web Search</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">Erweiterte Recherche.</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">Lernende können Themen vertiefen und relevante Informationen strukturiert erarbeiten.</td>
+                  </tr>
+                  <tr class="align-top">
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">Fortführung von Lernaktivitäten</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">Verständnis statt Ergebnisanzeige.</td>
+                    <td class="px-5 py-4 text-sm text-gray-600 font-geist">Der Agent erklärt, warum Antworten richtig oder falsch sind, und ermöglicht gezielte Rückfragen.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="general-feature-panel hidden" data-general-panel="support-automation">
+            <h3 class="mt-3 text-2xl sm:text-3xl font-semibold text-gray-900 tracking-tight font-geist">KI-Support für Lernplattformen, Produkte und interne Wissensfragen.</h3>
+            <p class="mt-4 text-base leading-relaxed text-gray-600 font-geist">Alpha Support beantwortet wiederkehrende Fragen, durchsucht Wissensdatenbanken und hilft Nutzern bei der Navigation durch Plattformen, Kurse oder Produkte. So werden Support-Teams entlastet, während Nutzer schneller die richtige Antwort finden.</p>
+            <div class="mt-8 grid gap-4 md:grid-cols-3">
+              <div class="rounded-3xl border border-white/70 bg-white/75 p-5 shadow-sm">
+                <p class="text-sm font-semibold text-gray-900 font-geist">FAQ &amp; Wissensdatenbanken</p>
+                <p class="mt-2 text-sm leading-relaxed text-gray-600 font-geist">Wiederkehrende Fragen werden automatisch beantwortet und Informationen aus bestehenden Wissensquellen konsistent zugänglich gemacht.</p>
+              </div>
+              <div class="rounded-3xl border border-white/70 bg-white/75 p-5 shadow-sm">
+                <p class="text-sm font-semibold text-gray-900 font-geist">Navigation &amp; Orientierung</p>
+                <p class="mt-2 text-sm leading-relaxed text-gray-600 font-geist">Nutzer erhalten schnelle Hilfe beim Finden von Kursen, Produkten, Inhalten oder den nächsten sinnvollen Schritten innerhalb der Plattform.</p>
+              </div>
+              <div class="rounded-3xl border border-white/70 bg-white/75 p-5 shadow-sm">
+                <p class="text-sm font-semibold text-gray-900 font-geist">Entlastung für Teams</p>
+                <p class="mt-2 text-sm leading-relaxed text-gray-600 font-geist">Support-Prozesse werden skalierbarer, weil häufige Anfragen direkt bearbeitet werden und Teams sich auf komplexere Fälle konzentrieren können.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function initGeneralFeatureTabs(containerId) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      const tabs = Array.from(container.querySelectorAll('[data-general-tab]'));
+      const panels = Array.from(container.querySelectorAll('[data-general-panel]'));
+
+      function activate(panelId) {
+        tabs.forEach((tab) => {
+          const isActive = tab.dataset.generalTab === panelId;
+          const label = tab.querySelector('.general-feature-tab-label');
+          const icon = tab.querySelector('.general-feature-tab-icon');
+          const plus = tab.querySelector('.general-feature-tab-plus');
+          tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          tab.classList.add('bg-white');
+          if (label) {
+            label.classList.toggle('text-blue-600', isActive);
+            label.classList.toggle('text-gray-500', !isActive);
+          }
+          if (icon) {
+            icon.classList.toggle('bg-blue-50', isActive);
+            icon.classList.toggle('text-blue-600', isActive);
+            icon.classList.toggle('bg-gray-50', !isActive);
+            icon.classList.toggle('text-gray-600', !isActive);
+          }
+          if (plus) {
+            plus.style.transform = isActive ? 'rotate(45deg)' : 'rotate(0deg)';
+          }
+        });
+
+        panels.forEach((panel) => {
+          panel.classList.toggle('hidden', panel.dataset.generalPanel !== panelId);
+        });
+      }
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => activate(tab.dataset.generalTab));
+        tab.addEventListener('keydown', (event) => {
+          if (event.key !== 'ArrowDown' && event.key !== 'ArrowRight' && event.key !== 'ArrowUp' && event.key !== 'ArrowLeft') {
+            return;
+          }
+          event.preventDefault();
+          const direction = event.key === 'ArrowDown' || event.key === 'ArrowRight' ? 1 : -1;
+          const nextIndex = (index + direction + tabs.length) % tabs.length;
+          tabs[nextIndex].focus();
+          activate(tabs[nextIndex].dataset.generalTab);
+        });
+      });
+
+      activate(tabs[0].dataset.generalTab);
+    }
+
+    initGeneralFeatureTabs('generalFeaturesTabs');
+  </script>
+
+  <section class="sm:px-6 lg:px-8 max-w-7xl z-10 mr-auto ml-auto pt-14 pb-10 relative">
+    <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900 font-geist">Alle Features im Detail</h2>
+  </section>
+
+  <section class="sm:px-6 lg:px-8 max-w-7xl z-10 mr-auto ml-auto pb-24 relative">
   <div class="bg-white rounded-[32px] ring-1 ring-gray-200 shadow-[0_8px_30px_rgba(0,0,0,0.04)] overflow-hidden grid lg:grid-cols-12 min-h-[600px]">
 
     <!-- Left Side: Accordion -->
@@ -514,12 +896,14 @@
                     wrapper.classList.add('grid-rows-[1fr]');
                     icon.style.transform = 'rotate(45deg)';
                     title.classList.add('text-blue-600');
+                    title.classList.remove('text-gray-500');
                 } else {
                     // Deactivate
                     wrapper.classList.add('grid-rows-[0fr]');
                     wrapper.classList.remove('grid-rows-[1fr]');
                     icon.style.transform = 'rotate(0deg)';
                     title.classList.remove('text-blue-600');
+                    title.classList.add('text-gray-500');
                 }
             });
 
@@ -733,12 +1117,14 @@
                     wrapper.classList.add('grid-rows-[1fr]');
                     icon.style.transform = 'rotate(45deg)';
                     title.classList.add('text-blue-600');
+                    title.classList.remove('text-gray-500');
                 } else {
                     // Deactivate
                     wrapper.classList.add('grid-rows-[0fr]');
                     wrapper.classList.remove('grid-rows-[1fr]');
                     icon.style.transform = 'rotate(0deg)';
                     title.classList.remove('text-blue-600');
+                    title.classList.add('text-gray-500');
                 }
             });
 
@@ -956,12 +1342,14 @@
                     wrapper.classList.add('grid-rows-[1fr]');
                     icon.style.transform = 'rotate(45deg)';
                     title.classList.add('text-blue-600');
+                    title.classList.remove('text-gray-500');
                 } else {
                     // Deactivate
                     wrapper.classList.add('grid-rows-[0fr]');
                     wrapper.classList.remove('grid-rows-[1fr]');
                     icon.style.transform = 'rotate(0deg)';
                     title.classList.remove('text-blue-600');
+                    title.classList.add('text-gray-500');
                 }
             });
 
