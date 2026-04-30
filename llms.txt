@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://moodle-ai-tutor.alphalearn.ai/
-# Last updated: 2026-04-29
+# Last updated: 2026-04-30
 
 Site: AlphaLearn
 Domain: https://moodle-ai-tutor.alphalearn.ai/
@@ -28,6 +28,10 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (German)
 
+- Podcast-E-Learning: Audio-Lernen als Alternative | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/podcast-elearning-audio-lernen-als-alternative-zu-powerpoint.html
+- Thought Leadership im Bildungsbereich | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/thought-leadership-im-bildungsbereich-entscheider-ueberzeugen.html
+- jakobb Berlin: Impulse für die duale Ausbildung | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/jakobb-berlin-zukunft-duale-ausbildung-ki-digitalisierung.html
+- KI-Ethik in der Schule: Verantwortungsvoller Einsatz | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-ethik-schule-bildungsgerechtigkeit-verantwortungsvoller-einsatz.html
 - Higher-Order Thinking Questions im E-Learning | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/higher-order-thinking-questions-ki-tutor-kritisches-denken.html
 - Microlearning für verteilte Teams im Unternehmen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/microlearning-fuer-verteilte-teams-skalierbare-weiterbildung.html
 - SEO und AEO für Lernplattformen | Alphabees: https://moodle-ai-tutor.alphalearn.ai/de/blog/seo-und-aeo-fuer-lernplattformen-so-werden-kursinhalte-gefunden.html
@@ -233,6 +237,10 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 
 ## Blog articles (English)
 
+- Podcast Elearning Audio Learning Alternative To Powerpoint: https://moodle-ai-tutor.alphalearn.ai/en/blog/podcast-elearning-audio-learning-alternative-to-powerpoint.html
+- Thought Leadership In Education Convincing Decision Makers: https://moodle-ai-tutor.alphalearn.ai/en/blog/thought-leadership-in-education-convincing-decision-makers.html
+- Jakobb Berlin Dual Vocational Training Ai Digitalization: https://moodle-ai-tutor.alphalearn.ai/en/blog/jakobb-berlin-dual-vocational-training-ai-digitalization.html
+- Ai Ethics Education Responsible Use: https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-ethics-education-responsible-use.html
 - Higher Order Thinking Questions Ai Tutor Critical Thinking: https://moodle-ai-tutor.alphalearn.ai/en/blog/higher-order-thinking-questions-ai-tutor-critical-thinking.html
 - Microlearning For Distributed Teams Scalable Training: https://moodle-ai-tutor.alphalearn.ai/en/blog/microlearning-for-distributed-teams-scalable-training.html
 - Seo And Aeo For Learning Platforms How Course Content Gets Found: https://moodle-ai-tutor.alphalearn.ai/en/blog/seo-and-aeo-for-learning-platforms-how-course-content-gets-found.html
