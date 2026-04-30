@@ -3346,4 +3346,70 @@
     <priority>0.7</priority>
   </url>
 
+
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/podcast-elearning-audio-lernen-als-alternative-zu-powerpoint.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/podcast-elearning-audio-lernen-als-alternative-zu-powerpoint.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/podcast-elearning-audio-learning-alternative-to-powerpoint.html"/>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/podcast-elearning-audio-learning-alternative-to-powerpoint.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/podcast-elearning-audio-lernen-als-alternative-zu-powerpoint.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/podcast-elearning-audio-learning-alternative-to-powerpoint.html"/>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/thought-leadership-im-bildungsbereich-entscheider-ueberzeugen.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/thought-leadership-im-bildungsbereich-entscheider-ueberzeugen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/thought-leadership-in-education-convincing-decision-makers.html"/>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/thought-leadership-in-education-convincing-decision-makers.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/thought-leadership-im-bildungsbereich-entscheider-ueberzeugen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/thought-leadership-in-education-convincing-decision-makers.html"/>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/jakobb-berlin-zukunft-duale-ausbildung-ki-digitalisierung.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/jakobb-berlin-zukunft-duale-ausbildung-ki-digitalisierung.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/jakobb-berlin-dual-vocational-training-ai-digitalization.html"/>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/jakobb-berlin-dual-vocational-training-ai-digitalization.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/jakobb-berlin-zukunft-duale-ausbildung-ki-digitalisierung.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/jakobb-berlin-dual-vocational-training-ai-digitalization.html"/>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-ethik-schule-bildungsgerechtigkeit-verantwortungsvoller-einsatz.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-ethik-schule-bildungsgerechtigkeit-verantwortungsvoller-einsatz.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-ethics-education-responsible-use.html"/>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-ethics-education-responsible-use.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://moodle-ai-tutor.alphalearn.ai/de/blog/ki-ethik-schule-bildungsgerechtigkeit-verantwortungsvoller-einsatz.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moodle-ai-tutor.alphalearn.ai/en/blog/ai-ethics-education-responsible-use.html"/>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
