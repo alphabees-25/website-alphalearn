@@ -212,16 +212,8 @@
     return;
   }
 
-  if (!storedLang && tempLang && currentLang !== tempLang) {
-    redirectToLang(tempLang);
-    return;
-  }
-
-  if (storedLang && currentLang !== storedLang) {
-    redirectToLang(storedLang);
-    return;
-  }
-
+  // Explicit language URLs should remain stable. Stored or detected language is
+  // only used for unprefixed URLs such as "/" or "/features.html".
   document.documentElement.lang = currentLang;
 
   const loadPartial = async (target, url) => {
