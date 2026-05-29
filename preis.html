@@ -890,8 +890,7 @@
             Pricing
           </div>
           <h2 class="text-4xl font-semibold text-gray-900 tracking-tight font-geist mb-4">Wähle den passenden Plan</h2>
-          <p class="text-lg text-gray-500 font-geist">Transparente Preise für Teams jeder Größe. Starte noch heute
-            kostenlos. </p>
+          <p class="text-lg text-gray-500 font-geist">Transparente Netto-Preise für Teams jeder Größe. Angebot ausschließlich für Unternehmen. Starte noch heute kostenlos.</p>
         </div>
 
         <!-- Pricing Grid -->
@@ -1163,7 +1162,7 @@
                 <span id="price-basic"
                   class="tabular-nums text-5xl font-bold text-gray-900 tracking-tighter font-geist">79 €</span>
               </div>
-              <p class="text-xs text-gray-400 font-geist">pro Monat</p>
+              <p class="text-xs text-gray-400 font-geist">pro Monat, netto zzgl. USt.</p>
             </div>
 
             <a href="https://calendly.com/demo-alphabees/austausch-anfragen-alphabees"
@@ -1267,7 +1266,7 @@
                 <span id="price-pro"
                   class="tabular-nums text-5xl font-bold text-gray-900 tracking-tighter font-geist">199 €</span>
               </div>
-              <p class="text-xs text-gray-400 font-geist">pro Monat</p>
+              <p class="text-xs text-gray-400 font-geist">pro Monat, netto zzgl. USt.</p>
             </div>
 
             <a href="https://calendly.com/demo-alphabees/austausch-anfragen-alphabees"
@@ -1370,7 +1369,7 @@
 
                 <span id="price-api-deal" class="tabular-nums text-5xl font-bold text-gray-900 tracking-tighter font-geist">500 €</span>
               </div>
-              <p class="text-xs text-gray-400 font-geist">pro Monat</p>
+              <p class="text-xs text-gray-400 font-geist">pro Monat, netto zzgl. USt.</p>
             </div>
 
             <a href="https://calendly.com/demo-alphabees/austausch-anfragen-alphabees"
@@ -1568,7 +1567,7 @@
                       <div class="flex flex-col text-center gap-x-4 gap-y-4 items-center">
                         <div class="">
                           <div class="text-xl font-bold text-gray-900 font-geist mb-1">Kostenlos</div>
-                          <div class="text-xs text-gray-500 font-geist">0 € / Monat</div>
+                          <div class="text-xs text-gray-500 font-geist">0 € / Monat netto</div>
                         </div>
                         <a href="https://portal.alphabees.de/auth/register"
                           class="inline-flex items-center justify-center hover:bg-gray-50 hover:text-gray-900 transition-all whitespace-nowrap text-xs font-medium text-gray-700 bg-white border-gray-200 border rounded-lg pt-1.5 pr-3 pb-1.5 pl-3 shadow-sm">kostenlos
@@ -1582,7 +1581,7 @@
                       <div class="flex flex-col text-center gap-x-4 gap-y-4 items-center">
                         <div class="">
                           <div class="text-xl font-bold text-gray-900 font-geist mb-1">Basic</div>
-                          <div id="table-price-basic" class="text-xs text-gray-500 font-geist">79 € / Monat</div>
+                          <div id="table-price-basic" class="text-xs text-gray-500 font-geist">79 € / Monat netto</div>
                         </div>
                         <a href="https://calendly.com/demo-alphabees/austausch-anfragen-alphabees"
                           class="inline-flex items-center justify-center hover:bg-gray-50 hover:text-gray-900 transition-all whitespace-nowrap text-xs font-medium text-gray-700 bg-white border-gray-200 border rounded-lg pt-1.5 pr-3 pb-1.5 pl-3 shadow-sm">Demo
@@ -1597,7 +1596,7 @@
                         <div class="flex flex-col text-center gap-x-4 gap-y-4 items-center">
                           <div class="">
                             <div class="text-xl font-bold text-gray-900 font-geist mb-1">Professional</div>
-                            <div id="table-price-pro" class="text-xs text-gray-500 font-geist">199 € / Monat</div>
+                            <div id="table-price-pro" class="text-xs text-gray-500 font-geist">199 € / Monat netto</div>
                           </div>
                           <a href="https://calendly.com/demo-alphabees/austausch-anfragen-alphabees"
                             class="inline-flex items-center justify-center hover:bg-gray-50 hover:text-gray-900 transition-all whitespace-nowrap text-xs font-medium text-gray-700 bg-white border-gray-200 border rounded-lg pt-1.5 pr-3 pb-1.5 pl-3 shadow-sm">Demo
@@ -1612,7 +1611,7 @@
                       <div class="flex flex-col text-center gap-x-4 gap-y-4 items-center">
                         <div class="">
                           <div class="text-xl font-bold text-gray-900 font-geist mb-1">API-Deal</div>
-                          <div id="table-price-api-deal" class="text-xs text-gray-500 font-geist">500 € / Monat</div>
+                          <div id="table-price-api-deal" class="text-xs text-gray-500 font-geist">500 € / Monat netto</div>
                         </div>
                         <a href="https://calendly.com/demo-alphabees/austausch-anfragen-alphabees"
                           class="inline-flex items-center justify-center hover:bg-gray-50 hover:text-gray-900 transition-all whitespace-nowrap text-xs font-medium text-gray-700 bg-white border-gray-200 border rounded-lg pt-1.5 pr-3 pb-1.5 pl-3 shadow-sm">Demo
@@ -2816,13 +2815,13 @@
 
               // Preise setzen
               if (isMonthly) {
-                priceBasic.innerHTML = '99 € / Monat';
-                pricePro.innerHTML = '249 € / Monat';
-                if (priceApiDeal) priceApiDeal.innerHTML = '625 € / Monat';
+                priceBasic.innerHTML = '99 € / Monat netto';
+                pricePro.innerHTML = '249 € / Monat netto';
+                if (priceApiDeal) priceApiDeal.innerHTML = '625 € / Monat netto';
               } else {
-                priceBasic.innerHTML = '79 € / Monat';
-                pricePro.innerHTML = '199 € / Monat';
-                if (priceApiDeal) priceApiDeal.innerHTML = '500 € / Monat';
+                priceBasic.innerHTML = '79 € / Monat netto';
+                pricePro.innerHTML = '199 € / Monat netto';
+                if (priceApiDeal) priceApiDeal.innerHTML = '500 € / Monat netto';
               }
             };
 
@@ -3006,15 +3005,15 @@
                   Du kannst den Alphabees KI-Tutor kostenlos testen und sofort in deinem LMS einsetzen. Unsere Pläne
                   starten
                   ab
-                  99 € pro Monat für bis zu 20 KI-Tutoren, ca. 10.000 Chat-Antworten und 100 Lernende.
+                  99 € pro Monat netto für bis zu 20 KI-Tutoren, ca. 10.000 Chat-Antworten und 100 Lernende.
 
                   Für größere Anforderungen gibt es den Professional-Tarif mit 50 KI-Tutoren, ca. 25.000 Chat-Antworten
                   und
                   250
-                  Lernenden für 249 € pro Monat.
+                  Lernenden für 249 € pro Monat netto.
 
                   Beide Tarife beinhalten unbegrenzte Kurse, ein Moodle-Block-Plugin, das Alphabees Analytics Portal und
-                  E-Mail-Support.
+                  E-Mail-Support. Alle genannten Preise sind Nettopreise zuzüglich gesetzlicher Umsatzsteuer.
                 </div>
               </div>
             </div>
