@@ -237,11 +237,13 @@
   const setActiveNav = () => {
     const currentPage = getCurrentPage();
     const currentPath = window.location.pathname.replace(/\/$/, '');
+    const academyPaths = new Set(['/academy', '/academy.html', '/de/academy.html', '/en/academy.html']);
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach((link) => {
       const href = link.getAttribute('href');
       const linkPath = new URL(href, window.location.origin).pathname.replace(/\/$/, '');
-      if (href === currentPage || linkPath === currentPath || `${linkPath}.html` === currentPath) {
+      const isAcademyAlias = academyPaths.has(currentPath) && academyPaths.has(linkPath);
+      if (href === currentPage || linkPath === currentPath || `${linkPath}.html` === currentPath || isAcademyAlias) {
         link.classList.add('active');
       }
     });

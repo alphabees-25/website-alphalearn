@@ -228,6 +228,7 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 - Features: https://alphalearn.ai/en/features.html
 - Pricing: https://alphalearn.ai/en/pricing.html
 - Demos: https://alphalearn.ai/en/demos.html
+- Academy: https://alphalearn.ai/en/academy.html
 - Moodle Plugin: https://alphalearn.ai/en/moodle-plugin.html
 - Moodle Mobile App: https://alphalearn.ai/en/moodle-mobile-app.html
 - Partner Program: https://alphalearn.ai/en/partner-program.html
