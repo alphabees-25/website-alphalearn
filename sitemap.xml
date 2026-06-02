@@ -142,6 +142,14 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://alphalearn.ai/academy</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alphalearn.ai/academy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alphalearn.ai/academy"/>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://alphalearn.ai/de/privacy.html</loc>
     <xhtml:link rel="alternate" hreflang="de" href="https://alphalearn.ai/de/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://alphalearn.ai/en/privacy.html"/>

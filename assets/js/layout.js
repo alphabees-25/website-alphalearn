@@ -159,6 +159,7 @@
 
   const getCurrentLangFromPath = () => {
     const parts = window.location.pathname.split('/').filter(Boolean);
+    if (parts[0] === 'academy' || parts[0] === 'academy.html') return 'de';
     if (parts[0] === 'de' || parts[0] === 'en') return parts[0];
     const idx = parts.findIndex((part) => part === 'de' || part === 'en');
     if (idx !== -1) return parts[idx];
@@ -235,10 +236,12 @@
 
   const setActiveNav = () => {
     const currentPage = getCurrentPage();
+    const currentPath = window.location.pathname.replace(/\/$/, '');
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach((link) => {
       const href = link.getAttribute('href');
-      if (href === currentPage) {
+      const linkPath = new URL(href, window.location.origin).pathname.replace(/\/$/, '');
+      if (href === currentPage || linkPath === currentPath || `${linkPath}.html` === currentPath) {
         link.classList.add('active');
       }
     });

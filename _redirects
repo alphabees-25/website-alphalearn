@@ -1,4 +1,6 @@
 # EN URL slug redirects — old German slugs → new English slugs (301 permanent)
+/academy                                                /academy.html                                  200
+/de/academy                                             /de/academy.html                               200
 /en/preis.html                                           /en/pricing.html                              301
 /en/ueber-uns.html                                       /en/about.html                                301
 /en/kontakt.html                                         /en/contact.html                              301

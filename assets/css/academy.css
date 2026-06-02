@@ -1,0 +1,25 @@
+.font-geist {
+  font-family: "Geist", "Inter", sans-serif;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.video-card iframe {
+  color-scheme: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [style*="fadeSlideIn"] {
+    animation: none !important;
+  }
+}
