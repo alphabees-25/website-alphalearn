@@ -21,6 +21,14 @@
 
 .video-card {
   cursor: pointer;
+  border-radius: 1.5rem !important;
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease !important;
+  transform-origin: center;
+}
+
+.video-card:hover {
+  transform: translateY(-6px) scale(1.035) !important;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.18), 0 8px 24px rgba(15, 23, 42, 0.12) !important;
 }
 
 .video-card h3 {
