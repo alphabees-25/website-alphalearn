@@ -159,7 +159,7 @@
 
   const getCurrentLangFromPath = () => {
     const parts = window.location.pathname.split('/').filter(Boolean);
-    if (parts[0] === 'academy' || parts[0] === 'academy.html') return 'de';
+    if (parts[0] === 'academy' || parts[0] === 'academy.html' || parts[0] === 'helpcenter' || parts[0] === 'helpcenter.html') return 'de';
     if (parts[0] === 'de' || parts[0] === 'en') return parts[0];
     const idx = parts.findIndex((part) => part === 'de' || part === 'en');
     if (idx !== -1) return parts[idx];
@@ -227,7 +227,7 @@
 
   const loadPartial = async (target, url) => {
     if (!target) return;
-    const res = await fetch(url);
+    const res = await fetch(url, { cache: 'no-cache' });
     if (!res.ok) {
       throw new Error(`Failed to load ${url}: ${res.status}`);
     }

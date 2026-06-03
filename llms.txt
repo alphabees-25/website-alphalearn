@@ -1,7 +1,7 @@
 # llms.txt — AlphaLearn
 # Purpose: Help LLMs and AI assistants find authoritative, public pages for citation.
 # Canonical: https://alphalearn.ai/
-# Last updated: 2026-04-30
+# Last updated: 2026-06-03
 
 Site: AlphaLearn
 Domain: https://alphalearn.ai/
@@ -19,6 +19,7 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 - Pricing: https://alphalearn.ai/de/preis.html
 - Demos: https://alphalearn.ai/de/demos.html
 - Academy: https://alphalearn.ai/academy
+- Help Center: https://alphalearn.ai/helpcenter
 - Moodle Plugin: https://alphalearn.ai/de/moodle-plugin.html
 - Moodle Mobile App: https://alphalearn.ai/de/moodle-mobile-app.html
 - Partner Program: https://alphalearn.ai/de/partner-program.html
@@ -229,6 +230,7 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 - Pricing: https://alphalearn.ai/en/pricing.html
 - Demos: https://alphalearn.ai/en/demos.html
 - Academy: https://alphalearn.ai/en/academy.html
+- Help Center: https://alphalearn.ai/en/helpcenter.html
 - Moodle Plugin: https://alphalearn.ai/en/moodle-plugin.html
 - Moodle Mobile App: https://alphalearn.ai/en/moodle-mobile-app.html
 - Partner Program: https://alphalearn.ai/en/partner-program.html
