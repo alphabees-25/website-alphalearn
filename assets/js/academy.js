@@ -14,7 +14,7 @@ function toggleFaq(btn) {
   btn.parentElement.classList.toggle('bg-gray-50/30', isExpanded);
 }
 
-const ACADEMY_FALLBACK_VIDEO_SRC = 'https://www.youtube.com/embed/Ei57rgH9mXg?si=dP3wbafCZsJ5Xck-';
+const ACADEMY_FALLBACK_VIDEO_SRC = 'https://www.youtube.com/embed/5akU8kx6fEE?si=9xWpGhnCGMWmJ9bA';
 let academyVideoLastTrigger = null;
 
 function getAcademyVideoModal() {
