@@ -146,7 +146,16 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://alphalearn.ai/de/academy.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://alphalearn.ai/en/academy.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://alphalearn.ai/academy"/>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://alphalearn.ai/de/academy.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alphalearn.ai/de/academy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alphalearn.ai/en/academy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alphalearn.ai/academy"/>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -507,7 +516,7 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://alphalearn.ai/de/academy.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://alphalearn.ai/en/academy.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://alphalearn.ai/academy"/>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

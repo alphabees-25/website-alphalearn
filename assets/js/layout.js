@@ -144,22 +144,25 @@
   };
 
   const getAutoLang = () => {
-    const navLang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
-    const navLower = navLang.toLowerCase();
-    if (navLower.startsWith('de') || navLower.includes('-de') || navLower.includes('-at') || navLower.includes('-ch')) {
-      return 'de';
-    }
+    try {
+      const navLang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+      const navLower = navLang.toLowerCase();
+      if (navLower.startsWith('de') || navLower.includes('-de') || navLower.includes('-at') || navLower.includes('-ch')) {
+        return 'de';
+      }
 
-    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-    const deTimezones = new Set(['Europe/Berlin', 'Europe/Vienna', 'Europe/Zurich']);
-    if (deTimezones.has(tz)) return 'de';
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+      const deTimezones = new Set(['Europe/Berlin', 'Europe/Vienna', 'Europe/Zurich']);
+      if (deTimezones.has(tz)) return 'de';
+    } catch (err) {
+      console.warn('[layout] Failed to detect preferred language', err);
+    }
 
     return 'en';
   };
 
   const getCurrentLangFromPath = () => {
     const parts = window.location.pathname.split('/').filter(Boolean);
-    if (parts[0] === 'academy' || parts[0] === 'academy.html' || parts[0] === 'helpcenter' || parts[0] === 'helpcenter.html') return 'de';
     if (parts[0] === 'de' || parts[0] === 'en') return parts[0];
     const idx = parts.findIndex((part) => part === 'de' || part === 'en');
     if (idx !== -1) return parts[idx];
