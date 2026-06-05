@@ -103,9 +103,14 @@ function showNewsletterPopup() {
 
 document.addEventListener('DOMContentLoaded', function () {
   const videoActionLabel = document.documentElement.lang === 'en' ? 'Play video' : 'Video ansehen';
+  const videoPendingLabel = document.documentElement.lang === 'en' ? 'Video in progress' : 'Video in Bearbeitung';
   const videoCards = document.querySelectorAll('.video-card');
   videoCards.forEach(function (card) {
     const title = card.querySelector('h3')?.textContent.trim() || 'Academy Video';
+    if (card.hasAttribute('data-video-pending')) {
+      card.setAttribute('aria-label', `${videoPendingLabel}: ${title}`);
+      return;
+    }
     card.setAttribute('role', 'button');
     card.setAttribute('tabindex', '0');
     card.setAttribute('aria-label', `${videoActionLabel}: ${title}`);
