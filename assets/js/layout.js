@@ -7,6 +7,26 @@
   const GA_MEASUREMENT_ID = 'G-R1NYZ0V0HK';
   let activeConsent = null;
 
+  const isCrawlerRender = () =>
+    /googlebot|google-inspectiontool|adsbot-google|mediapartners-google/i.test(navigator.userAgent || '');
+
+  const runWhenReady = (callback) => {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', callback, { once: true });
+    } else {
+      callback();
+    }
+  };
+
+  const hydrateDeferredChatIframes = () => {
+    if (isCrawlerRender()) return;
+    document.querySelectorAll('iframe[data-crawler-src]').forEach((iframe) => {
+      if (!iframe.getAttribute('src')) {
+        iframe.setAttribute('src', iframe.getAttribute('data-crawler-src'));
+      }
+    });
+  };
+
   const getCookie = (name) => {
     const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
     return match ? decodeURIComponent(match[2]) : null;
@@ -420,6 +440,8 @@
         .catch((err) => console.error('[layout] sidebar load failed', err));
     }
   }
+
+  runWhenReady(hydrateDeferredChatIframes);
 
   Promise.all([
     loadPartial(headerTarget, normalizePath(`${getBasePath()}/${currentLang}/partials/header.html`)),
