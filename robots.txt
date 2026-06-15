@@ -1,9 +1,6 @@
 User-agent: *
 Allow: /
 
-# Partials are HTML fragments, not standalone pages
-Disallow: /partials/
-Disallow: /de/partials/
-Disallow: /en/partials/
+# Header/footer partials are loaded by JavaScript and must remain crawlable for rendering.
 
 Sitemap: https://alphalearn.ai/sitemap.xml
