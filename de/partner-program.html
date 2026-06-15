@@ -474,7 +474,7 @@ opacity: 0 !important;
     
   </div>
 <script>
-  const progress = 76; const rings = document.querySelectorAll('[data-ring]'); rings.forEach((ring, idx) => { const r = parseFloat(ring.getAttribute('data-radius')); const circumference = 2 * Math.PI * r; const pct = progress / 100; const dash = Math.max(0, circumference * pct - 2); ring.style.transition = 'stroke-dasharray 1200ms cubic-bezier(0.22, 1, 0.36, 1), stroke-dashoffset 1200ms cubic-bezier(0.22, 1, 0.36, 1)'; ring.style.strokeDasharray = `0 ${circumference}`; ring.style.strokeDashoffset = '0'; setTimeout(() => { ring.style.strokeDasharray = `${dash} ${circumference}`; ring.style.strokeDashoffset = '0'; }, 120 + idx * 80); }); document.getElementById('percentValue')?.textContent = progress;
+  const progress = 76; const rings = document.querySelectorAll('[data-ring]'); rings.forEach((ring, idx) => { const r = parseFloat(ring.getAttribute('data-radius')); const circumference = 2 * Math.PI * r; const pct = progress / 100; const dash = Math.max(0, circumference * pct - 2); ring.style.transition = 'stroke-dasharray 1200ms cubic-bezier(0.22, 1, 0.36, 1), stroke-dashoffset 1200ms cubic-bezier(0.22, 1, 0.36, 1)'; ring.style.strokeDasharray = `0 ${circumference}`; ring.style.strokeDashoffset = '0'; setTimeout(() => { ring.style.strokeDasharray = `${dash} ${circumference}`; ring.style.strokeDashoffset = '0'; }, 120 + idx * 80); }); ((el) => { if (el) el.textContent = progress; })(document.getElementById('percentValue'));
 </script>
 </div>
     </main><section aria-labelledby="ai-section" class="overflow-hidden border-black/5 border-t relative">
