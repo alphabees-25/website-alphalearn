@@ -1183,7 +1183,7 @@ font-family: 'Cormorant Garamond', serif !important;
             <!-- Chat Container -->
             <div class="rounded-xl bg-white ring-1 ring-white/10 overflow-hidden relative">
               <div class="h-[450px] w-full">
-                <iframe title="Alphabees KI Tutor" class="w-full h-full border-0" src="https://chat.alphabees.de/production/index.html?botId=355cb97f-f076-42b7-8aac-b0dfb8e4a236&amp;apiKey=359ea983-451c-4c2a-bbf1-ea467946e84f&amp;isFullscreen=true" allow="clipboard-read; clipboard-write; microphone; camera"></iframe>
+                <iframe title="Alphabees KI Tutor" class="w-full h-full border-0" data-src="https://chat.alphabees.de/production/index.html?botId=355cb97f-f076-42b7-8aac-b0dfb8e4a236&amp;apiKey=359ea983-451c-4c2a-bbf1-ea467946e84f&amp;isFullscreen=true" allow="clipboard-read; clipboard-write; microphone; camera"></iframe>
               </div>
             </div>
 
@@ -1374,4 +1374,28 @@ font-family: 'Cormorant Garamond', serif !important;
 </script>
 
 
+<script>
+  // Chat iframe loads on visibility; the chat app focuses its input on load,
+  // which would otherwise scroll the page down to it on reload.
+  (function () {
+    var frames = document.querySelectorAll('iframe[data-src^="https://chat.alphabees.de"]');
+    if (!frames.length) return;
+    function loadFrame(frame) {
+      if (!frame.getAttribute('src')) frame.setAttribute('src', frame.getAttribute('data-src'));
+    }
+    if (!('IntersectionObserver' in window)) {
+      frames.forEach(loadFrame);
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          loadFrame(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+    frames.forEach(function (frame) { observer.observe(frame); });
+  })();
+</script>
 </body></html>

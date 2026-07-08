@@ -421,6 +421,40 @@
     }
   }
 
+  // Chat iframes use data-src and load on visibility. The embedded chat app
+  // focuses its input on load, which scrolls the page down to the iframe on
+  // reload if the iframe loads while offscreen.
+  const initChatIframeLazyLoad = () => {
+    const frames = document.querySelectorAll('iframe[data-src^="https://chat.alphabees.de"]');
+    if (!frames.length) return;
+    const loadFrame = (frame) => {
+      if (!frame.getAttribute('src')) {
+        frame.setAttribute('src', frame.getAttribute('data-src'));
+      }
+    };
+    if (!('IntersectionObserver' in window)) {
+      frames.forEach(loadFrame);
+      return;
+    }
+    // No ratio threshold: nested overflow-hidden wrappers make Chrome report
+    // intersectionRatio 0 for these iframes even when they are fully visible.
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          loadFrame(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+    frames.forEach((frame) => observer.observe(frame));
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initChatIframeLazyLoad, { once: true });
+  } else {
+    initChatIframeLazyLoad();
+  }
+
   Promise.all([
     loadPartial(headerTarget, normalizePath(`${getBasePath()}/${currentLang}/partials/header.html`)),
     loadPartial(footerTarget, normalizePath(`${getBasePath()}/${currentLang}/partials/footer.html`))
