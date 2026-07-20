@@ -211,22 +211,9 @@
   const preferLang = storedLang || tempLang || autoLang;
   const currentLang = getCurrentLangFromPath();
 
-  if (!currentLang) {
-    redirectToLang(preferLang);
-    return;
-  }
-
-  if (!storedLang && tempLang && currentLang !== tempLang) {
-    redirectToLang(tempLang);
-    return;
-  }
-
-  if (storedLang && currentLang !== storedLang) {
-    redirectToLang(storedLang);
-    return;
-  }
-
-  document.documentElement.lang = currentLang;
+  // SEO: no automatic client-side language redirects on page load.
+  // Language switching happens only via the explicit DE/EN toggle.
+  document.documentElement.lang = currentLang || 'de';
 
   const loadPartial = async (target, url) => {
     if (!target) return;
