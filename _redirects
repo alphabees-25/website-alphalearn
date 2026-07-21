@@ -1,0 +1,14 @@
+# EN URL slug redirects — old German slugs → new English slugs (301 permanent)
+/academy                                                /academy.html                                  200
+/de/academy                                             /de/academy.html                               200
+/en/academy                                             /en/academy.html                               200
+/helpcenter                                             /helpcenter.html                               200
+/de/helpcenter                                          /de/helpcenter.html                            200
+/en/helpcenter                                          /en/helpcenter.html                            200
+/en/preis.html                                           /en/pricing.html                              301
+/en/ueber-uns.html                                       /en/about.html                                301
+/en/kontakt.html                                         /en/contact.html                              301
+/en/agb.html                                             /en/terms.html                                301
+/en/impressum.html                                       /en/imprint.html                              301
+/en/ki-tutor-guide-bildungsanbieter-deutschland-2026.html  /en/ai-tutor-guide-education-providers-2026.html  301
+/en/wann-lohnt-sich-self-hosting-ki-tutoren.html         /en/self-hosting-ai-tutors-worth-it.html      301

@@ -12,10 +12,7 @@
       "Bash(else)",
       "Bash(fi)",
       "Bash(grep:*)",
-      "Bash(ls:*)",
-      "Bash(git add *)",
-      "Bash(git commit -m 'Fix video 6 embed link on academy pages *)",
-      "Bash(git push *)"
+      "Bash(ls:*)"
     ]
   }
 }
