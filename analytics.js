@@ -72,7 +72,12 @@
 
     // -- Calendly / Demo-Termin (Makro-Conversion 2) --
     if (href.indexOf('calendly.com') !== -1) {
-      track('demo_booking_click', { source_page: path, page_role: ROLE, cta_id: ctaId || 'auto_calendly' });
+      track('demo_booking_click', {
+        source_page: path,
+        page_role: ROLE,
+        cta_id: ctaId || 'auto_calendly',
+        plan: a.getAttribute('data-plan') || undefined
+      });
       return;
     }
 
