@@ -935,7 +935,7 @@
               <h3 class="text-3xl font-bold text-gray-900 tracking-tight font-geist mb-2">Free</h3>
               <p class="text-sm text-gray-400 font-geist">Ohne Kreditkarte</p>
             </div>
-            <button type="button" class="button w-full"
+            <button data-plan="free" type="button" class="button w-full"
               onclick="window.location.href='https://portal.alphabees.de/auth/register'" role="button">
               <div class="points_wrapper">
                 <i class="point"></i><i class="point"></i><i class="point"></i><i class="point"></i><i
@@ -1174,7 +1174,7 @@
               <p class="text-xs text-gray-400 font-geist">pro Monat, netto</p>
             </div>
 
-            <a href="https://calendly.com/demo-alphabees/austausch-anfragen-alphabees"
+            <a data-cta="pricing_booking" data-plan="basic" href="https://calendly.com/demo-alphabees/austausch-anfragen-alphabees"
               class="inline-flex justify-center items-center hover:bg-gray-800 transition-all hover:shadow-md hover:-translate-y-0.5 text-sm font-medium text-white font-geist bg-gray-900 w-full rounded-full mb-10 pt-3 pr-6 pb-3 pl-6 shadow-sm">
               Demo vereinbaren
             </a>
@@ -1273,7 +1273,7 @@
               <p class="text-xs text-gray-400 font-geist">pro Monat, netto</p>
             </div>
 
-            <a href="https://calendly.com/demo-alphabees/austausch-anfragen-alphabees"
+            <a data-cta="pricing_booking" data-plan="professional" href="https://calendly.com/demo-alphabees/austausch-anfragen-alphabees"
               class="inline-flex justify-center items-center hover:bg-gray-800 transition-all hover:shadow-lg hover:-translate-y-0.5 text-sm font-medium text-white font-geist bg-gray-900 w-full rounded-full mb-10 pt-3 pr-6 pb-3 pl-6 shadow-md">
               Demo vereinbaren
             </a>
@@ -1368,7 +1368,7 @@
               <p class="text-xs text-gray-400 font-geist">pro Monat, netto</p>
             </div>
 
-            <a href="https://calendly.com/demo-alphabees/austausch-anfragen-alphabees"
+            <a data-cta="pricing_booking" data-plan="api" href="https://calendly.com/demo-alphabees/austausch-anfragen-alphabees"
               class="inline-flex justify-center items-center hover:bg-gray-800 transition-all hover:shadow-md hover:-translate-y-0.5 text-sm font-medium text-white font-geist bg-gray-900 w-full rounded-full mb-10 pt-3 pr-6 pb-3 pl-6 shadow-sm">
               Demo vereinbaren
             </a>
@@ -1446,7 +1446,7 @@
           </div>
 
           <div class="col-span-1 md:col-span-2 lg:col-span-4 flex justify-center mt-2">
-            <button
+            <button data-cta="pricing_custom_quote"
               class="inline-flex hover:bg-white/10 transition-all duration-300 ease-out cursor-pointer hover:shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_20px_40px_-5px_rgba(15,23,42,0.2),0px_10px_10px_-5px_rgba(0,0,0,0.04)] hover:scale-105 active:scale-95 text-sm font-medium text-gray-900 font-geist bg-white/10 w-[260px] border-white/20 border rounded-full pt-3 pr-5 pb-3 pl-5 shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(15,23,42,0.18),0px_12px_12px_-6px_rgba(0,0,0,0.06)] backdrop-blur-md gap-x-2 gap-y-x-2 items-center justify-center"
               onclick="window.location.href='mailto:info@alphabees.de?subject=Individuelles%20Angebot&body=Liebes%20Alphabees%20Team%2C%0A%0AWir%20bitten%20um%20ein%20individuelles%20Angebot%20f%C3%BCr%3A%0A5.000%20Learners%0A...'" role="button">Individuelles Angebot
               einholen</button>
@@ -1563,7 +1563,7 @@
                           <div class="text-xl font-bold text-gray-900 font-geist mb-1">Kostenlos</div>
                           <div class="text-xs text-gray-500 font-geist">0 € / Monat netto</div>
                         </div>
-                        <a href="https://portal.alphabees.de/auth/register"
+                        <a data-plan="free" href="https://portal.alphabees.de/auth/register"
                           class="inline-flex items-center justify-center hover:bg-gray-50 hover:text-gray-900 transition-all whitespace-nowrap text-xs font-medium text-gray-700 bg-white border-gray-200 border rounded-lg pt-1.5 pr-3 pb-1.5 pl-3 shadow-sm">kostenlos
                           starten</a>
                       </div>
@@ -1577,7 +1577,7 @@
                           <div class="text-xl font-bold text-gray-900 font-geist mb-1">Basic</div>
                           <div id="table-price-basic" class="text-xs text-gray-500 font-geist">79 € / Monat netto</div>
                         </div>
-                        <a href="https://calendly.com/demo-alphabees/austausch-anfragen-alphabees"
+                        <a data-cta="pricing_booking" data-plan="basic" href="https://calendly.com/demo-alphabees/austausch-anfragen-alphabees"
                           class="inline-flex items-center justify-center hover:bg-gray-50 hover:text-gray-900 transition-all whitespace-nowrap text-xs font-medium text-gray-700 bg-white border-gray-200 border rounded-lg pt-1.5 pr-3 pb-1.5 pl-3 shadow-sm">Demo
                           vereinbaren</a>
                       </div>
@@ -1592,7 +1592,7 @@
                             <div class="text-xl font-bold text-gray-900 font-geist mb-1">Professional</div>
                             <div id="table-price-pro" class="text-xs text-gray-500 font-geist">199 € / Monat netto</div>
                           </div>
-                          <a href="https://calendly.com/demo-alphabees/austausch-anfragen-alphabees"
+                          <a data-cta="pricing_booking" data-plan="professional" href="https://calendly.com/demo-alphabees/austausch-anfragen-alphabees"
                             class="inline-flex items-center justify-center hover:bg-gray-50 hover:text-gray-900 transition-all whitespace-nowrap text-xs font-medium text-gray-700 bg-white border-gray-200 border rounded-lg pt-1.5 pr-3 pb-1.5 pl-3 shadow-sm">Demo
                             vereinbaren</a>
                         </div>
@@ -1607,7 +1607,7 @@
                           <div class="text-xl font-bold text-gray-900 font-geist mb-1">API-Deal</div>
                           <div id="table-price-api-deal" class="text-xs text-gray-500 font-geist">500 € / Monat netto</div>
                         </div>
-                        <a href="https://calendly.com/demo-alphabees/austausch-anfragen-alphabees"
+                        <a data-cta="pricing_booking" data-plan="api" href="https://calendly.com/demo-alphabees/austausch-anfragen-alphabees"
                           class="inline-flex items-center justify-center hover:bg-gray-50 hover:text-gray-900 transition-all whitespace-nowrap text-xs font-medium text-gray-700 bg-white border-gray-200 border rounded-lg pt-1.5 pr-3 pb-1.5 pl-3 shadow-sm">Demo
                           vereinbaren</a>
                       </div>
@@ -2993,7 +2993,7 @@
           <!-- Item 1 -->
           <div
             class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
-            <button onclick="toggleFaq(this)"
+            <button data-faq="Was macht ein KI-Tutor?" onclick="toggleFaq(this)"
               class="flex focus:outline-none text-left w-full pt-6 pr-6 pb-6 pl-6 items-center justify-between"
               aria-expanded="false">
               <span class="text-base font-semibold text-gray-900">Was macht ein KI-Tutor? </span>
@@ -3029,7 +3029,7 @@
           <!-- Item 2 -->
           <div
             class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
-            <button onclick="toggleFaq(this)"
+            <button data-faq="Was kostet ein KI-Tutor?" onclick="toggleFaq(this)"
               class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
               <span class="text-base font-semibold text-gray-900">Was kostet ein KI-Tutor?</span>
               <span
@@ -3065,7 +3065,7 @@
           <!-- Item 3 -->
           <div
             class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
-            <button onclick="toggleFaq(this)"
+            <button data-faq="Welche KI-Modelle bietet Alphabees an?" onclick="toggleFaq(this)"
               class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
               <span class="text-base font-semibold text-gray-900">Welche KI-Modelle bietet Alphabees an?</span>
               <span
@@ -3100,7 +3100,7 @@
           <!-- Item 4 -->
           <div
             class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
-            <button onclick="toggleFaq(this)"
+            <button data-faq="Brauche ich zusätzlich ein Abo bei einem KI-Anbieter?" onclick="toggleFaq(this)"
               class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
               <span class="text-base font-semibold text-gray-900">Brauche ich zusätzlich ein Abo bei einem
                 KI-Anbieter?</span>
@@ -3133,7 +3133,7 @@
           <!-- Item 5 -->
           <div
             class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
-            <button onclick="toggleFaq(this)"
+            <button data-faq="Kann ich den KI-Tutor in meine e-Learnings und mein LMS integrieren?" onclick="toggleFaq(this)"
               class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
               <span class="text-base font-semibold text-gray-900">Kann ich den KI-Tutor in meine e-Learnings und mein
                 LMS integrieren?</span>
@@ -3164,7 +3164,7 @@
           <!-- Item 6 -->
           <div
             class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
-            <button onclick="toggleFaq(this)"
+            <button data-faq="Wo werden meine Daten gehostet?" onclick="toggleFaq(this)"
               class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
               <span class="text-base font-semibold text-gray-900">Wo werden meine Daten gehostet?</span>
               <span
@@ -3192,7 +3192,7 @@
           <!-- Item 7 -->
           <div
             class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
-            <button onclick="toggleFaq(this)"
+            <button data-faq="Ist der Tutor konform gemäß DSGVO, EU AI Act und WCAG?" onclick="toggleFaq(this)"
               class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
               <span class="text-base font-semibold text-gray-900">Ist der Tutor konform gemäß DSGVO, EU AI Act und WCAG?</span>
               <span
@@ -3226,7 +3226,7 @@
           <!-- Item 8 -->
           <div
             class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
-            <button onclick="toggleFaq(this)"
+            <button data-faq="Funktioniert der KI-Tutor auch in der Moodle Mobile App?" onclick="toggleFaq(this)"
               class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
               <span class="text-base font-semibold text-gray-900">Funktioniert der KI-Tutor auch in der Moodle Mobile
                 App?</span>
@@ -3294,7 +3294,7 @@
               </p>
             </div>
             <div class="flex-shrink-0">
-              <button onclick="toggleContactForm(this)"
+              <button data-cta="support_chat" onclick="toggleContactForm(this)"
                 class="inline-flex gap-2 hover:bg-gray-50 hover:scale-[1.02] transition-all duration-200 text-sm font-semibold text-gray-900 bg-white rounded-full pt-3 pr-6 pb-3 pl-6 shadow-sm gap-x-2 gap-y-2 items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
                   style="width: 18px; height: 18px; color: rgb(17, 24, 39)" class="lucide lucide-mail w-[18px] h-[18px]"

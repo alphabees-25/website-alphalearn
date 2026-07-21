@@ -7,6 +7,22 @@
   const GA_MEASUREMENT_ID = 'G-R1NYZ0V0HK';
   let activeConsent = null;
 
+  // Consent Mode v2: Default "denied" in den dataLayer pushen, BEVOR gtag.js
+  // geladen/konfiguriert wird (Laden passiert weiterhin erst nach Zustimmung
+  // über loadAnalytics — der bestehende Banner-Mechanismus bleibt unverändert).
+  // Bewusst KEIN window.gtag-Stub: analytics.js prüft auf window.gtag und soll
+  // vor erteilter Zustimmung keine Events in den dataLayer schreiben.
+  window.dataLayer = window.dataLayer || [];
+  function gtagPush() {
+    window.dataLayer.push(arguments);
+  }
+  gtagPush('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied'
+  });
+
   const getCookie = (name) => {
     const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
     return match ? decodeURIComponent(match[2]) : null;
@@ -85,9 +101,13 @@
   const applyConsent = (consent) => {
     if (consent && consent.analytics) {
       window[`ga-disable-${GA_MEASUREMENT_ID}`] = false;
+      gtagPush('consent', 'update', { analytics_storage: 'granted' });
       loadAnalytics();
     } else {
       window[`ga-disable-${GA_MEASUREMENT_ID}`] = true;
+      if (window.__abAnalyticsLoaded) {
+        gtagPush('consent', 'update', { analytics_storage: 'denied' });
+      }
       clearAnalyticsCookies();
     }
 
@@ -214,6 +234,14 @@
   // SEO: no automatic client-side language redirects on page load.
   // Language switching happens only via the explicit DE/EN toggle.
   document.documentElement.lang = currentLang || 'de';
+
+  // Funnel-Event-Tracking zentral nachladen (statt auf jeder HTML-Seite).
+  // analytics.js sendet nur, wenn window.gtag existiert — also erst nachdem
+  // loadAnalytics() nach Analytics-Zustimmung gelaufen ist.
+  const analyticsScript = document.createElement('script');
+  analyticsScript.src = normalizePath(`${getBasePath()}/analytics.js`);
+  analyticsScript.defer = true;
+  document.head.appendChild(analyticsScript);
 
   const loadPartial = async (target, url) => {
     if (!target) return;
