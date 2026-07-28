@@ -310,105 +310,109 @@
     });
   };
 
+  // Consent-Dialog: drei Stufen (alle / nur Statistik / keine). Die Texte
+  // stehen sprachspezifisch im jeweiligen footer.html-Partial, hier nur Logik.
   const initCookieBanner = () => {
     const banner = document.getElementById('cookie-banner');
     if (!banner) return;
-    const settingsPanel = document.getElementById('cookie-settings-panel');
-    const acceptBtn = document.getElementById('cookie-accept');
-    const rejectBtn = document.getElementById('cookie-reject');
-    const saveBtn = document.getElementById('cookie-save');
-    const settingsBtn = document.getElementById('cookie-settings-toggle');
-    const functionalToggle = document.getElementById('cookie-functional');
-    const analyticsToggle = document.getElementById('cookie-analytics');
-    const messageEl = banner.querySelector('[data-cookie-message]');
-    const functionalLabel = banner.querySelector('[data-cookie-functional-label]');
-    const analyticsLabel = banner.querySelector('[data-cookie-analytics-label]');
-    const messageLink = messageEl ? messageEl.querySelector('a') : null;
 
-    const applyBannerLanguage = () => {
-      const isEn = currentLang === 'en';
-      banner.setAttribute('aria-label', isEn ? 'Cookie Settings' : 'Cookie-Einstellungen');
-      if (messageEl) {
-        const text = isEn
-          ? 'We use cookies for analytics (Google Analytics) and to remember your language. You can consent or use only essential cookies.'
-          : 'Wir verwenden Cookies für Statistik (Google Analytics) und um Ihre Sprache zu speichern. Sie können zustimmen oder nur notwendige Cookies nutzen.';
-        if (messageLink) {
-          const linkHtml = messageLink.outerHTML;
-          messageEl.innerHTML = `${text} ${linkHtml}.`;
-        } else {
-          messageEl.textContent = text;
-        }
-      }
-      if (acceptBtn) acceptBtn.textContent = isEn ? 'Accept all' : 'Alle akzeptieren';
-      if (rejectBtn) rejectBtn.textContent = isEn ? 'Essential only' : 'Nur notwendige';
-      if (settingsBtn) settingsBtn.textContent = isEn ? 'Settings' : 'Einstellungen';
-      if (saveBtn) saveBtn.textContent = isEn ? 'Save selection' : 'Auswahl speichern';
-      if (functionalLabel) functionalLabel.textContent = isEn ? 'Functional (language)' : 'Funktional (Sprache)';
-      if (analyticsLabel) analyticsLabel.textContent = isEn ? 'Analytics' : 'Analytics';
+    const options = Array.from(banner.querySelectorAll('[data-choice]'));
+    const confirmBtn = document.getElementById('cookie-confirm');
+    const thumb = document.getElementById('cookie-track-thumb');
+    const backdrop = banner.querySelector('[data-cookie-backdrop]');
+
+    const CHOICES = {
+      all: { functional: true, analytics: true },
+      stats: { functional: false, analytics: true },
+      none: { functional: false, analytics: false }
+    };
+    const POSITIONS = { all: '0%', stats: '50%', none: '100%' };
+    const ORDER = ['all', 'stats', 'none'];
+
+    let choice = 'stats';
+    // Nur schließbar, wenn bereits eine Entscheidung vorliegt (Widerruf über Footer).
+    let dismissible = false;
+
+    const select = (next) => {
+      if (!CHOICES[next]) return;
+      choice = next;
+      options.forEach((opt) => {
+        opt.setAttribute('aria-checked', String(opt.dataset.choice === next));
+      });
+      if (thumb) thumb.style.left = POSITIONS[next];
     };
 
-    const updateToggles = () => {
-      const consent = activeConsent || readConsent();
-      if (!consent) return;
-      if (functionalToggle) functionalToggle.checked = !!consent.functional;
-      if (analyticsToggle) analyticsToggle.checked = !!consent.analytics;
+    const choiceFromConsent = (consent) => {
+      if (!consent || !consent.analytics) return 'none';
+      return consent.functional ? 'all' : 'stats';
     };
 
-    const showBanner = (openSettings = false) => {
+    const showBanner = () => {
       banner.classList.remove('hidden');
-      if (settingsPanel) {
-        settingsPanel.classList.toggle('hidden', !openSettings);
-        if (settingsBtn) {
-          settingsBtn.setAttribute('aria-expanded', openSettings ? 'true' : 'false');
-        }
-      }
+      document.body.style.overflowY = 'hidden';
+      if (confirmBtn) confirmBtn.focus({ preventScroll: true });
     };
 
     const hideBanner = () => {
       banner.classList.add('hidden');
-      if (settingsPanel) settingsPanel.classList.add('hidden');
-      if (settingsBtn) settingsBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflowY = '';
     };
 
-    acceptBtn?.addEventListener('click', () => {
-      setConsent({ functional: true, analytics: true });
-      hideBanner();
-    });
-
-    rejectBtn?.addEventListener('click', () => {
-      setConsent({ functional: false, analytics: false });
-      hideBanner();
-    });
-
-    saveBtn?.addEventListener('click', () => {
-      setConsent({
-        functional: !!functionalToggle?.checked,
-        analytics: !!analyticsToggle?.checked
+    const trackConsentGranted = () => {
+      if (typeof window.gtag !== 'function') return;
+      window.gtag('event', 'consent_granted', {
+        source_page: window.location.pathname
       });
-      hideBanner();
+    };
+
+    options.forEach((opt) => {
+      opt.addEventListener('click', () => select(opt.dataset.choice));
+      opt.addEventListener('keydown', (event) => {
+        const index = ORDER.indexOf(choice);
+        if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+          event.preventDefault();
+          const next = Math.min(index + 1, ORDER.length - 1);
+          select(ORDER[next]);
+          options[next]?.focus({ preventScroll: true });
+        }
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+          event.preventDefault();
+          const next = Math.max(index - 1, 0);
+          select(ORDER[next]);
+          options[next]?.focus({ preventScroll: true });
+        }
+      });
     });
 
-    settingsBtn?.addEventListener('click', () => {
-      const isHidden = settingsPanel?.classList.contains('hidden');
-      if (!settingsPanel) return;
-      settingsPanel.classList.toggle('hidden');
-      settingsBtn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+    confirmBtn?.addEventListener('click', () => {
+      const consent = CHOICES[choice];
+      setConsent(consent);
+      hideBanner();
+      if (consent.analytics) trackConsentGranted();
+    });
+
+    backdrop?.addEventListener('click', () => {
+      if (dismissible) hideBanner();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      if (dismissible && !banner.classList.contains('hidden')) hideBanner();
     });
 
     document.querySelectorAll('[data-cookie-settings]').forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        updateToggles();
-        showBanner(true);
+      btn.addEventListener('click', (event) => {
+        event.preventDefault();
+        dismissible = true;
+        select(choiceFromConsent(activeConsent || readConsent()));
+        showBanner();
       });
     });
 
-    applyBannerLanguage();
-
     if (!activeConsent) {
-      showBanner(false);
-    } else {
-      updateToggles();
+      dismissible = false;
+      select('stats');
+      showBanner();
     }
   };
 
