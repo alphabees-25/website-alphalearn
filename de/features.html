@@ -408,7 +408,9 @@
       /* Box = Viewport minus sticky Leiste; das Bild nimmt die Resthöhe, der Text bleibt unten sichtbar */
       /* kompakt: nie höher als 720px, auf kleinen Bildschirmen an den Viewport gebunden */
       .tg { height: min(calc(100vh - var(--ft-bar-h, 90px) - 2rem), 660px); min-height: 520px; }
-      .tg-panel { display: flex; flex-direction: column; min-height: 0; }
+      /* Desktop: Panels liegen untereinander, ein Tab-Wechsel rollt den Inhalt vertikal (JS animiert scrollTop) */
+      .tg-track { flex-direction: column; overflow: hidden; scroll-snap-type: none; scroll-behavior: auto; }
+      .tg-panel { display: flex; flex-direction: column; min-height: 0; flex: 0 0 100%; height: 100%; scroll-snap-align: none; }
       .tg-media { flex: 1 1 0; min-height: 160px; display: flex; align-items: center; justify-content: center; overflow: hidden; }   /* Bild nimmt den Rest, Text behält seine Höhe */
       .tg-media img, .tg-media video { width: auto; height: auto; max-width: 100%; max-height: 100%; }
       .tg-media .tg-ph { width: auto; height: 100%; max-width: 100%; }
@@ -2931,11 +2933,11 @@
   <!-- ================= BEREICH 1 · Lernen im Dialog ================= -->
   <section id="area-lernen-dialog" data-area role="tabpanel" aria-labelledby="ft-abtn-lernen-dialog" class="ft-area-panel w-full shrink-0 pt-4 pb-4">
 
-      <!-- TAB-GALLERY (12 Features mit Bild) -->
+      <!-- TAB-GALLERY (10 Features mit Bild) -->
       <div class="tg relative overflow-hidden lg:grid lg:grid-cols-12" data-tab-gallery>
         <div class="tg-tabs-wrap relative lg:col-span-3 lg:min-h-0 lg:overflow-y-auto lg:border-r lg:border-gray-200/80 lg:bg-white/90 lg:p-4 xl:p-5">
           <div role="tablist" aria-label="Funktionen" class="no-scrollbar flex gap-2 overflow-x-auto px-4 pt-4 pb-3 lg:flex-col lg:gap-1 lg:overflow-visible lg:p-0">
-            <button type="button" role="tab" aria-selected="true" data-tg-tab="0" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Geführter Lernmodus</button><button type="button" role="tab" aria-selected="false" data-tg-tab="1" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Intelligenter KI-Chat</button><button type="button" role="tab" aria-selected="false" data-tg-tab="2" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Personalisierte Übungen</button><button type="button" role="tab" aria-selected="false" data-tg-tab="3" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Aktive Lernbegleitung</button><button type="button" role="tab" aria-selected="false" data-tg-tab="4" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Konfigurierbare Tutor-Modi</button><button type="button" role="tab" aria-selected="false" data-tg-tab="5" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Über 80 Sprachen</button><button type="button" role="tab" aria-selected="false" data-tg-tab="6" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Langzeitgedächtnis &amp; Adaption</button><button type="button" role="tab" aria-selected="false" data-tg-tab="7" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Täglicher &amp; wöchentlicher Lehrplan</button><button type="button" role="tab" aria-selected="false" data-tg-tab="8" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Sokratischer Modus &amp; Reflexion</button><button type="button" role="tab" aria-selected="false" data-tg-tab="9" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Debattier-Modus</button><button type="button" role="tab" aria-selected="false" data-tg-tab="10" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Recherche &amp; Websuche</button><button type="button" role="tab" aria-selected="false" data-tg-tab="11" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Praxisbeispiele</button>
+            <button type="button" role="tab" aria-selected="true" data-tg-tab="0" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Geführter Lernmodus</button><button type="button" role="tab" aria-selected="false" data-tg-tab="1" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Intelligenter KI-Chat</button><button type="button" role="tab" aria-selected="false" data-tg-tab="2" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Personalisierte Übungen</button><button type="button" role="tab" aria-selected="false" data-tg-tab="3" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Aktive Lernbegleitung</button><button type="button" role="tab" aria-selected="false" data-tg-tab="4" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Konfigurierbare Tutor-Modi</button><button type="button" role="tab" aria-selected="false" data-tg-tab="5" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Über 80 Sprachen</button><button type="button" role="tab" aria-selected="false" data-tg-tab="6" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Adaptive Lernerprofile</button><button type="button" role="tab" aria-selected="false" data-tg-tab="7" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Individueller Lehrplan</button><button type="button" role="tab" aria-selected="false" data-tg-tab="8" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Didaktische Dialog-Modi</button><button type="button" role="tab" aria-selected="false" data-tg-tab="9" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Recherche &amp; Websuche</button>
           </div>
         </div>
         <div class="relative lg:col-span-9 lg:flex lg:min-h-0 lg:flex-col">
@@ -3003,55 +3005,44 @@
                 <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Über 80 Sprachen</h3>
                 
               </div>
-              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Der KI-Tutor spricht über 80 Sprachen und passt sich automatisch an die Sprache und das Sprachniveau jedes Lernenden an – Unterstützung in der eigenen Sprache und auf einem passenden Erklärniveau.</p>
+              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Der KI-Tutor spricht über 80 Sprachen und passt sich automatisch an die Sprache und das Sprachniveau jedes Lernenden an. Er nutzt die voreingestellte Browser-Sprache als Standard-Sprache und reagiert auch auf Sprachwechsel.</p>
             </div>
           </article>
-          <!-- GALLERY-ITEM: Langzeitgedächtnis &amp; Adaption -->
+          <!-- GALLERY-ITEM: Adaptive Lernerprofile -->
           <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="6">
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Langzeitgedächtnis &amp; Adaption</h3>
+                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Adaptive Lernerprofile</h3>
                 
               </div>
-              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Der KI-Tutor erkennt individuelle Stärken, Schwächen und Fortschritte und passt Übungen, Hinweise und Erklärungen kontinuierlich an den Lernstand an. Dank Langzeitgedächtnis berücksichtigt er auch frühere Interaktionen, Lernmuster und wiederkehrende Schwierigkeiten – über einzelne Kurse hinaus und bei Bedarf über mehrere Jahre.</p>
+              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Der KI-Tutor erkennt individuelle Stärken, Schwächen und Fortschritte und passt Übungen, Hinweise und Erklärungen kontinuierlich an den Lernstand an. Dank Langzeitgedächtnis berücksichtigt er auch frühere Interaktionen, Lernmuster und wiederkehrende Schwierigkeiten – über einzelne Kurse hinaus und bei Bedarf über mehrere Jahre. Die Lernenden können ihr Lernerprofil selbst einsehen, ihren Lernfortschritt nachverfolgen und gezielt an ihren Schwächen arbeiten.</p>
             </div>
           </article>
-          <!-- GALLERY-ITEM: Täglicher &amp; wöchentlicher Lehrplan -->
+          <!-- GALLERY-ITEM: Individueller Lehrplan -->
           <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="7">
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Täglicher &amp; wöchentlicher Lehrplan</h3>
+                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Individueller Lehrplan</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Der Lehrplan-Modus strukturiert das Lernen in tägliche und wöchentliche Einheiten. Ein eigener Tab zeigt den Plan, und eine Benachrichtigung erinnert Lernende beim Einloggen an ihre Tageseinheit.</p>
             </div>
           </article>
-          <!-- GALLERY-ITEM: Sokratischer Modus &amp; Reflexion -->
+          <!-- GALLERY-ITEM: Didaktische Dialog-Modi -->
           <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="8">
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Sokratischer Modus &amp; Reflexion</h3>
+                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Didaktische Dialog-Modi</h3>
                 
               </div>
-              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Im Sokratischen Modus führt der KI-Tutor durch gezielte Fragen zum eigenen Verständnis. Reflexionsfragen regen zum Nachdenken über das Gelernte an – was wurde verstanden, wo bleiben Unsicherheiten?</p>
-            </div>
-          </article>
-          <!-- GALLERY-ITEM: Debattier-Modus -->
-          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="9">
-            
-            <div class="tg-text tg-text--only">
-              <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Debattier-Modus</h3>
-                
-              </div>
-              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Im Debattier-Modus testen Lernende Argumente, wechseln Perspektiven und vertiefen ihr Wissen im Dialog mit dem KI-Tutor.</p>
+              <p class="mt-2 text-[15px] leading-relaxed text-gray-700 font-geist">Der KI-Tutor beherrscht mehrere didaktische Dialog-Modi, die du je nach Lernziel einsetzt:</p><ul class="mt-3 space-y-1.5 text-[14px] leading-relaxed text-gray-600 font-geist"><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500"></span><span><strong class="font-semibold text-gray-900">Deklarativer Modus</strong> – Antwort als didaktische Klammer mit Einleitung, Hauptteil und Zusammenfassung.</span></li><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500"></span><span><strong class="font-semibold text-gray-900">Sokratischer Modus</strong> – Der Tutor antwortet mit gezielten Gegenfragen und führt so zum eigenen Verständnis.</span></li><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500"></span><span><strong class="font-semibold text-gray-900">Debattiermodus</strong> – Lernende testen Argumente, wechseln Perspektiven und vertiefen ihr Wissen im Dialog.</span></li><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500"></span><span><strong class="font-semibold text-gray-900">Reflexionsfragen</strong> – Fragen zum Gelernten regen zum Nachdenken an – was wurde verstanden, wo bleiben Unsicherheiten?</span></li><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500"></span><span><strong class="font-semibold text-gray-900">Praxisbeispiele</strong> – Konkrete Anwendungsfälle und Szenarien machen abstraktes Wissen greifbar und erleichtern den Transfer in die Praxis.</span></li></ul>
             </div>
           </article>
           <!-- GALLERY-ITEM: Recherche &amp; Websuche -->
-          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="10">
+          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="9">
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
@@ -3061,22 +3052,11 @@
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Lernende vertiefen Themen eigenständig und erarbeiten sie strukturiert – der KI-Tutor unterstützt bei Recherche und Websuche.</p>
             </div>
           </article>
-          <!-- GALLERY-ITEM: Praxisbeispiele -->
-          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="11">
-            
-            <div class="tg-text tg-text--only">
-              <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Praxisbeispiele</h3>
-                
-              </div>
-              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Konkrete Anwendungsfälle und Szenarien machen abstraktes Wissen greifbar und erleichtern den Transfer in die Praxis.</p>
-            </div>
-          </article>
           </div>
           <div class="flex items-center justify-between px-4 pb-4 lg:hidden">
             <div class="flex items-center gap-1.5" data-tg-dots></div>
             <div class="flex items-center gap-2">
-              <span class="text-xs tabular-nums text-gray-400 font-geist" data-tg-counter>1 / 12</span>
+              <span class="text-xs tabular-nums text-gray-400 font-geist" data-tg-counter>1 / 10</span>
               <button type="button" data-tg-prev aria-label="Zurück" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 active:scale-95"><i data-lucide="chevron-left" class="h-4 w-4"></i></button>
               <button type="button" data-tg-next aria-label="Weiter" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 active:scale-95"><i data-lucide="chevron-right" class="h-4 w-4"></i></button>
             </div>
@@ -3150,7 +3130,7 @@
       <div class="tg relative overflow-hidden lg:grid lg:grid-cols-12" data-tab-gallery>
         <div class="tg-tabs-wrap relative lg:col-span-3 lg:min-h-0 lg:overflow-y-auto lg:border-r lg:border-gray-200/80 lg:bg-white/90 lg:p-4 xl:p-5">
           <div role="tablist" aria-label="Funktionen" class="no-scrollbar flex gap-2 overflow-x-auto px-4 pt-4 pb-3 lg:flex-col lg:gap-1 lg:overflow-visible lg:p-0">
-            <button type="button" role="tab" aria-selected="true" data-tg-tab="0" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Nie wieder doppelte Datenpflege</button><button type="button" role="tab" aria-selected="false" data-tg-tab="1" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Kurs als Wissensbasis</button><button type="button" role="tab" aria-selected="false" data-tg-tab="2" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Quellenangaben</button><button type="button" role="tab" aria-selected="false" data-tg-tab="3" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Alle Moodle-Aktivitäten</button><button type="button" role="tab" aria-selected="false" data-tg-tab="4" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Direkte Integrationen</button><button type="button" role="tab" aria-selected="false" data-tg-tab="5" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Flexible Content-Erweiterung</button>
+            <button type="button" role="tab" aria-selected="true" data-tg-tab="0" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Automatische Synchronisation</button><button type="button" role="tab" aria-selected="false" data-tg-tab="1" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Kurs als Wissensbasis</button><button type="button" role="tab" aria-selected="false" data-tg-tab="2" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Quellenangaben</button><button type="button" role="tab" aria-selected="false" data-tg-tab="3" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Alle Moodle-Aktivitäten</button><button type="button" role="tab" aria-selected="false" data-tg-tab="4" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Integrationen</button><button type="button" role="tab" aria-selected="false" data-tg-tab="5" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Flexible Content-Erweiterung</button>
           </div>
         </div>
         <div class="relative lg:col-span-9 lg:flex lg:min-h-0 lg:flex-col">
@@ -3314,7 +3294,7 @@
                 <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Quellenangaben</h3>
                 
               </div>
-              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Unter jeder Antwort des KI-Tutors wird die verwendete Quelle angezeigt – so ist nachvollziehbar, aus welchem Dokument der Wissensbasis die Antwort stammt. Das schafft Vertrauen; der Admin kann die Anzeige ein- oder ausschalten.</p>
+              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Unter jeder Antwort des KI-Tutors wird die verwendete Quelle angezeigt – so ist nachvollziehbar, aus welchem Dokument der Wissensbasis die Antwort stammt. Dokumentquellen öffnen sich als Originaldokument direkt im KI-Chat, aufgeschlagen an der richtigen Stelle; Kurs- oder Web-Quellen lassen sich als Hyperlink öffnen. Das schafft Vertrauen; der Admin kann die Anzeige ein- oder ausschalten.</p>
             </div>
           </article>
           <!-- GALLERY-ITEM: Alle Moodle-Aktivitäten -->
@@ -3328,12 +3308,12 @@
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Nicht nur Seiten und PDFs: Alphalearn synchronisiert alle Aktivitäten deines Moodle-Kurses – Quizze, Lektionen, Foren, Kalender, Videos, H5P, SCORM-Pakete sowie Articulate- und iSpring-Kurse. Auch Forendiskussionen fließen ins Wissen des KI-Tutors ein.</p>
             </div>
           </article>
-          <!-- GALLERY-ITEM: Direkte Integrationen -->
+          <!-- GALLERY-ITEM: Integrationen -->
           <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="4">
-            
-            <div class="tg-text tg-text--only">
-              <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Direkte Integrationen</h3>
+            <div class="tg-media"><video class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" autoplay muted loop playsinline preload="metadata" aria-label="Integrationen"><source src="/assets/features/integrationen.mp4" type="video/mp4"></video></div>
+            <div class="tg-text">
+              <div class="mt-5 flex flex-wrap items-center gap-2">
+                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Integrationen</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Neben Moodle verbindest du dein Alphalearn Portal direkt mit Microsoft SharePoint, Google Drive oder Dropbox – für einen nahtlosen Wissensfluss ohne manuelle Uploads oder doppelte Datenpflege. Alle Inhalte bleiben in ihren Ursprungssystemen und werden als einheitliche Datenquelle genutzt.</p>
@@ -3468,11 +3448,11 @@
   <!-- ================= BEREICH 5 · Analytics, Sicherheit &amp; Betrieb ================= -->
   <section id="area-analytics-sicherheit-betrieb" data-area role="tabpanel" aria-labelledby="ft-abtn-analytics-sicherheit-betrieb" class="ft-area-panel w-full shrink-0 pt-4 pb-4">
 
-      <!-- TAB-GALLERY (7 Features mit Bild) -->
+      <!-- TAB-GALLERY (5 Features mit Bild) -->
       <div class="tg relative overflow-hidden lg:grid lg:grid-cols-12" data-tab-gallery>
         <div class="tg-tabs-wrap relative lg:col-span-3 lg:min-h-0 lg:overflow-y-auto lg:border-r lg:border-gray-200/80 lg:bg-white/90 lg:p-4 xl:p-5">
           <div role="tablist" aria-label="Funktionen" class="no-scrollbar flex gap-2 overflow-x-auto px-4 pt-4 pb-3 lg:flex-col lg:gap-1 lg:overflow-visible lg:p-0">
-            <button type="button" role="tab" aria-selected="true" data-tg-tab="0" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Alphalytics Portal</button><button type="button" role="tab" aria-selected="false" data-tg-tab="1" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">DSGVO &amp; Hosting in Deutschland</button><button type="button" role="tab" aria-selected="false" data-tg-tab="2" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Learner Profile</button><button type="button" role="tab" aria-selected="false" data-tg-tab="3" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Ethische Guardrails</button><button type="button" role="tab" aria-selected="false" data-tg-tab="4" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Agenten &amp; Nutzungslimits</button><button type="button" role="tab" aria-selected="false" data-tg-tab="5" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Rollen &amp; Rechte</button><button type="button" role="tab" aria-selected="false" data-tg-tab="6" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Alpha Flexible</button>
+            <button type="button" role="tab" aria-selected="true" data-tg-tab="0" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Alphalytics Portal</button><button type="button" role="tab" aria-selected="false" data-tg-tab="1" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">DSGVO &amp; Hosting in Deutschland</button><button type="button" role="tab" aria-selected="false" data-tg-tab="2" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Ethische Guardrails</button><button type="button" role="tab" aria-selected="false" data-tg-tab="3" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Agenten &amp; Nutzungslimits</button><button type="button" role="tab" aria-selected="false" data-tg-tab="4" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Rollen &amp; Rechte</button>
           </div>
         </div>
         <div class="relative lg:col-span-9 lg:flex lg:min-h-0 lg:flex-col">
@@ -3499,19 +3479,8 @@
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Hosting auf vertrauenswürdigen deutschen Servern, DSGVO-konforme Architektur und höchste Datenschutzstandards. Deine Rechte bleiben bei dir; eine Auftragsverarbeitungsvereinbarung (AVV) wird bereitgestellt.</p>
             </div>
           </article>
-          <!-- GALLERY-ITEM: Learner Profile -->
-          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="2">
-            
-            <div class="tg-text tg-text--only">
-              <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Learner Profile</h3>
-                
-              </div>
-              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Im Learner Profile lassen sich Fortschritte, Stärken und Schwächen pro Moodle-User nachvollziehen und im Zeitverlauf einordnen. Es ist auch für Lernende selbst einsehbar – so sehen sie ihre Erfolge und ihre Entwicklung und bleiben motiviert, besser zu werden.</p>
-            </div>
-          </article>
           <!-- GALLERY-ITEM: Ethische Guardrails -->
-          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="3">
+          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="2">
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
@@ -3522,7 +3491,7 @@
             </div>
           </article>
           <!-- GALLERY-ITEM: Agenten &amp; Nutzungslimits -->
-          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="4">
+          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="3">
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
@@ -3533,7 +3502,7 @@
             </div>
           </article>
           <!-- GALLERY-ITEM: Rollen &amp; Rechte -->
-          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="5">
+          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="4">
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
@@ -3543,22 +3512,11 @@
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Im Alphalearn Portal vergibst du Rollen und Rechte so, dass Dozierende und Trainer nur die Kurse und Teilnehmenden sehen, für die sie verantwortlich sind. Über das Rollenmanagement lädst du Mitarbeitende zur gemeinsamen Verwaltung ein.</p>
             </div>
           </article>
-          <!-- GALLERY-ITEM: Alpha Flexible -->
-          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="6">
-            
-            <div class="tg-text tg-text--only">
-              <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Alpha Flexible</h3>
-                
-              </div>
-              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Das Template für Bildungsanbieter mit individuellem Konfigurationsbedarf: stelle jedes Detail granular ein – von strukturierten Prompt-Bausteinen über kursbezogene Wissensdatenbanken und optionalen Curriculum-Kontext bis zu klaren Nutzungsgrenzen – für einen Agenten, der exakt zu deinem Setup passt.</p>
-            </div>
-          </article>
           </div>
           <div class="flex items-center justify-between px-4 pb-4 lg:hidden">
             <div class="flex items-center gap-1.5" data-tg-dots></div>
             <div class="flex items-center gap-2">
-              <span class="text-xs tabular-nums text-gray-400 font-geist" data-tg-counter>1 / 7</span>
+              <span class="text-xs tabular-nums text-gray-400 font-geist" data-tg-counter>1 / 5</span>
               <button type="button" data-tg-prev aria-label="Zurück" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 active:scale-95"><i data-lucide="chevron-left" class="h-4 w-4"></i></button>
               <button type="button" data-tg-next aria-label="Weiter" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 active:scale-95"><i data-lucide="chevron-right" class="h-4 w-4"></i></button>
             </div>
@@ -3747,6 +3705,22 @@
       if (dotsEl) panels.forEach((_, i) => { const d = document.createElement('span'); d.className = 'tg-dot'; d.dataset.active = String(i === 0); dotsEl.appendChild(d); });
       const dots = dotsEl ? [...dotsEl.children] : [];
       const left = (i) => panels[i].offsetLeft - panels[0].offsetLeft;
+      const top = (i) => panels[i].offsetTop - panels[0].offsetTop;
+      const lg = window.matchMedia('(min-width: 1024px)');
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let anim = null;
+      // Desktop: Inhalt rollt wie eine Tapete nach oben/unten – je nachdem, ob der neue Tab unter oder über dem alten liegt
+      const rollTo = (i) => {
+        cancelAnimationFrame(anim);
+        const from = track.scrollTop, to = top(i), D = reduce ? 0 : 550, t0 = performance.now();
+        if (!D) { track.scrollTop = to; return; }
+        const step = (now) => {
+          const p = Math.min(1, (now - t0) / D), e = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+          track.scrollTop = from + (to - from) * e;
+          if (p < 1) anim = requestAnimationFrame(step);
+        };
+        anim = requestAnimationFrame(step);
+      };
       const render = () => {
         tabs.forEach((t, i) => t.setAttribute('aria-selected', String(i === index)));
         dots.forEach((d, i) => d.dataset.active = String(i === index));
@@ -3755,15 +3729,17 @@
       };
       const goTo = (i) => {
         index = Math.max(0, Math.min(panels.length - 1, i));
+        render();
+        if (lg.matches) { rollTo(index); return; }
         programmatic = true; clearTimeout(safety);
         safety = setTimeout(() => { programmatic = false; }, 1500);
-        render();
         track.scrollTo({ left: left(index), behavior: 'smooth' });
       };
       tabs.forEach((t, i) => t.addEventListener('click', () => goTo(i)));
       root.querySelector('[data-tg-prev]')?.addEventListener('click', () => goTo(index - 1));
       root.querySelector('[data-tg-next]')?.addEventListener('click', () => goTo(index + 1));
       track.addEventListener('scroll', () => {
+        if (lg.matches) return;                                   // Desktop: kein Wischen, nur Rollen per Klick
         cancelAnimationFrame(raf);
         raf = requestAnimationFrame(() => {
           if (programmatic) { if (Math.abs(track.scrollLeft - left(index)) < 2) { programmatic = false; clearTimeout(safety); } return; }
@@ -3772,8 +3748,13 @@
           if (i !== index) { index = i; render(); }
         });
       }, { passive: true });
-      root.addEventListener('keydown', (e) => { if (e.key === 'ArrowRight') goTo(index + 1); if (e.key === 'ArrowLeft') goTo(index - 1); });
-      window.addEventListener('resize', () => { track.scrollLeft = left(index); });
+      root.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); goTo(index + 1); }
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); goTo(index - 1); }
+      });
+      const relayout = () => { if (lg.matches) { track.scrollLeft = 0; track.scrollTop = top(index); } else { track.scrollTop = 0; track.scrollLeft = left(index); } };
+      window.addEventListener('resize', relayout);
+      lg.addEventListener ? lg.addEventListener('change', relayout) : lg.addListener(relayout);
       render();
     });
 
