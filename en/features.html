@@ -383,6 +383,19 @@
     }
     .tg-track { scroll-snap-type: x mandatory; scroll-behavior: smooth; overscroll-behavior-x: contain; }
     .tg-ph { width: 100%; aspect-ratio: 16 / 10; }
+    .tg-thumbs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; }
+    .tg-thumb { display: block; width: 100%; aspect-ratio: 4 / 5; cursor: zoom-in; }
+    .tg-thumb img { display: block; }
+    /* Lightbox */
+    .ft-lightbox { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgba(15,23,42,.82); backdrop-filter: blur(6px); opacity: 0; transition: opacity .25s ease; }
+    .ft-lightbox[hidden] { display: none; }
+    .ft-lightbox.is-open { opacity: 1; }
+    .ft-lightbox figure { margin: 0; max-width: min(92vw, 1100px); max-height: 92vh; display: flex; flex-direction: column; align-items: center; gap: 12px; transform: scale(.96); transition: transform .25s ease; }
+    .ft-lightbox.is-open figure { transform: scale(1); }
+    .ft-lightbox img { display: block; max-width: 100%; max-height: calc(92vh - 48px); border-radius: 20px; box-shadow: 0 40px 90px rgba(0,0,0,.5); background: #fff; }
+    .ft-lightbox figcaption { color: #fff; font-size: 13px; font-weight: 600; }
+    .ft-lightbox-close { position: absolute; top: 20px; right: 20px; display: flex; height: 44px; width: 44px; align-items: center; justify-content: center; border-radius: 9999px; background: rgba(255,255,255,.12); color: #fff; }
+    .ft-lightbox-close:hover { background: rgba(255,255,255,.22); }
     .ft-lm-media img, .ft-lm-media video { display: block; width: 100%; height: auto; }
     .ft-lm-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .45s ease; }
     .ft-lm-card.is-playing .ft-lm-video { opacity: 1; }
@@ -413,6 +426,9 @@
       .tg-panel { display: flex; flex-direction: column; min-height: 0; flex: 0 0 100%; height: 100%; scroll-snap-align: none; }
       .tg-media { flex: 1 1 0; min-height: 160px; display: flex; align-items: center; justify-content: center; overflow: hidden; }   /* Bild nimmt den Rest, Text behält seine Höhe */
       .tg-media img, .tg-media video { width: auto; height: auto; max-width: 100%; max-height: 100%; }
+      .tg-media .tg-thumbs { display: flex; justify-content: center; gap: 16px; width: auto; height: 100%; max-width: 100%; }
+      .tg-media .tg-thumb { width: auto; height: 100%; max-width: 100%; }
+      .tg-media .tg-thumb img { width: 100%; height: 100%; max-width: none; max-height: none; }
       .tg-media .tg-ph { width: auto; height: 100%; max-width: 100%; }
       .tg-text { flex: 0 1 auto; min-height: 0; overflow-y: auto; }
       .tg-text--only { max-width: 40rem; }
@@ -2867,23 +2883,23 @@
         <nav role="tablist" aria-label="Feature areas" class="no-scrollbar flex gap-2 overflow-x-auto px-4 py-3 lg:grid lg:grid-cols-5 lg:overflow-visible">
         <button type="button" role="tab" id="ft-abtn-lernen-dialog" aria-controls="area-lernen-dialog" aria-selected="true" data-area-btn="area-lernen-dialog"
           class="ft-abtn flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:whitespace-normal lg:rounded-2xl lg:px-3 lg:py-3 lg:text-center lg:text-[13px] xl:text-sm">
-          <i data-lucide="message-circle" class="h-4 w-4 shrink-0"></i><span>Learning in Dialogue</span>
+          <i data-lucide="message-circle" class="h-4 w-4 shrink-0"></i><span>Learning</span>
         </button>
         <button type="button" role="tab" id="ft-abtn-lehren-betreuen" aria-controls="area-lehren-betreuen" aria-selected="false" data-area-btn="area-lehren-betreuen"
           class="ft-abtn flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:whitespace-normal lg:rounded-2xl lg:px-3 lg:py-3 lg:text-center lg:text-[13px] xl:text-sm">
-          <i data-lucide="graduation-cap" class="h-4 w-4 shrink-0"></i><span>Teaching &amp; Mentoring</span>
+          <i data-lucide="graduation-cap" class="h-4 w-4 shrink-0"></i><span>Teaching</span>
         </button>
         <button type="button" role="tab" id="ft-abtn-wissensbasis-autosync" aria-controls="area-wissensbasis-autosync" aria-selected="false" data-area-btn="area-wissensbasis-autosync"
           class="ft-abtn flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:whitespace-normal lg:rounded-2xl lg:px-3 lg:py-3 lg:text-center lg:text-[13px] xl:text-sm">
-          <i data-lucide="database" class="h-4 w-4 shrink-0"></i><span>Knowledge Base &amp; Auto-Sync</span>
+          <i data-lucide="database" class="h-4 w-4 shrink-0"></i><span>Knowledge Base</span>
         </button>
         <button type="button" role="tab" id="ft-abtn-moodle-integrationen" aria-controls="area-moodle-integrationen" aria-selected="false" data-area-btn="area-moodle-integrationen"
           class="ft-abtn flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:whitespace-normal lg:rounded-2xl lg:px-3 lg:py-3 lg:text-center lg:text-[13px] xl:text-sm">
-          <i data-lucide="plug" class="h-4 w-4 shrink-0"></i><span>Moodle &amp; Integrations</span>
+          <i data-lucide="plug" class="h-4 w-4 shrink-0"></i><span>Integrations</span>
         </button>
         <button type="button" role="tab" id="ft-abtn-analytics-sicherheit-betrieb" aria-controls="area-analytics-sicherheit-betrieb" aria-selected="false" data-area-btn="area-analytics-sicherheit-betrieb"
           class="ft-abtn flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:whitespace-normal lg:rounded-2xl lg:px-3 lg:py-3 lg:text-center lg:text-[13px] xl:text-sm">
-          <i data-lucide="shield-check" class="h-4 w-4 shrink-0"></i><span>Analytics, Security &amp; Operations</span>
+          <i data-lucide="shield-check" class="h-4 w-4 shrink-0"></i><span>Administration</span>
         </button>
         </nav>
       </div>
@@ -2892,7 +2908,7 @@
       <div class="sm:px-6 lg:px-8 max-w-7xl mx-auto px-4">
         <div class="ft-areas-track no-scrollbar overflow-x-auto" data-areas-track>
           <div class="ft-areas-rail flex" data-areas-rail>
-  <!-- ================= BEREICH 1 · Learning in Dialogue ================= -->
+  <!-- ================= BEREICH 1 · Learning ================= -->
   <section id="area-lernen-dialog" data-area role="tabpanel" aria-labelledby="ft-abtn-lernen-dialog" class="ft-area-panel w-full shrink-0 pt-4 pb-4">
 
       <!-- TAB-GALLERY (10 Features mit Bild) -->
@@ -2994,9 +3010,9 @@
           </article>
           <!-- GALLERY-ITEM: Didactic dialogue modes -->
           <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="8">
-            
-            <div class="tg-text tg-text--only">
-              <div class="flex flex-wrap items-center gap-2">
+            <div class="tg-media"><div class="tg-thumbs"><button type="button" class="tg-thumb group relative overflow-hidden rounded-2xl ring-1 ring-gray-200 bg-white shadow-sm" data-lightbox="/assets/features/dialog-modus-sokratisch.png" data-lightbox-caption="Example: Socratic mode" aria-label="Enlarge image: Example: Socratic mode"><img src="/assets/features/dialog-modus-sokratisch.png" alt="AI tutor chat in Socratic mode: answer with a counter-question" class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy"><span class="absolute left-2.5 top-2.5 rounded-full bg-gray-900/85 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur font-geist">Example: Socratic mode</span><span class="absolute bottom-2.5 right-2.5 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-gray-800 shadow ring-1 ring-black/5 transition-colors group-hover:bg-white"><i data-lucide="maximize-2" class="h-4 w-4"></i></span></button><button type="button" class="tg-thumb group relative overflow-hidden rounded-2xl ring-1 ring-gray-200 bg-white shadow-sm" data-lightbox="/assets/features/dialog-modus-deklarativ.png" data-lightbox-caption="Example: Declarative mode" aria-label="Enlarge image: Example: Declarative mode"><img src="/assets/features/dialog-modus-deklarativ.png" alt="AI tutor chat in declarative mode: structured explanation with introduction, main part and example" class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy"><span class="absolute left-2.5 top-2.5 rounded-full bg-gray-900/85 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur font-geist">Example: Declarative mode</span><span class="absolute bottom-2.5 right-2.5 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-gray-800 shadow ring-1 ring-black/5 transition-colors group-hover:bg-white"><i data-lucide="maximize-2" class="h-4 w-4"></i></span></button></div></div>
+            <div class="tg-text">
+              <div class="mt-5 flex flex-wrap items-center gap-2">
                 <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Didactic dialogue modes</h3>
                 
               </div>
@@ -3027,56 +3043,78 @@
       </div>
   </section>
 
-  <!-- ================= BEREICH 2 · Teaching &amp; Mentoring ================= -->
+  <!-- ================= BEREICH 2 · Teaching ================= -->
   <section id="area-lehren-betreuen" data-area role="tabpanel" aria-labelledby="ft-abtn-lehren-betreuen" class="ft-area-panel w-full shrink-0 pt-4 pb-4">
 
-      <!-- TAB-GALLERY (3 Features mit Bild) -->
+      <!-- TAB-GALLERY (5 Features mit Bild) -->
       <div class="tg relative overflow-hidden lg:grid lg:grid-cols-12" data-tab-gallery>
         <div class="tg-tabs-wrap relative lg:col-span-3 lg:min-h-0 lg:overflow-y-auto lg:border-r lg:border-gray-200/80 lg:bg-white/90 lg:p-4 xl:p-5">
           <div role="tablist" aria-label="Features" class="no-scrollbar flex gap-2 overflow-x-auto px-4 pt-4 pb-3 lg:flex-col lg:gap-1 lg:overflow-visible lg:p-0">
-            <button type="button" role="tab" aria-selected="true" data-tg-tab="0" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Verified Exercises</button><button type="button" role="tab" aria-selected="false" data-tg-tab="1" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Intelligent Handover</button><button type="button" role="tab" aria-selected="false" data-tg-tab="2" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Educator Dashboard</button>
+            <button type="button" role="tab" aria-selected="true" data-tg-tab="0" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Generate exercises</button><button type="button" role="tab" aria-selected="false" data-tg-tab="1" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Verify exercises</button><button type="button" role="tab" aria-selected="false" data-tg-tab="2" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Distribute exercises</button><button type="button" role="tab" aria-selected="false" data-tg-tab="3" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Intelligent Handover</button><button type="button" role="tab" aria-selected="false" data-tg-tab="4" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Individual support</button>
           </div>
         </div>
         <div class="relative lg:col-span-9 lg:flex lg:min-h-0 lg:flex-col">
           <div class="tg-track no-scrollbar flex overflow-x-auto lg:min-h-0 lg:flex-1 lg:overflow-hidden" data-tg-track>
-          <!-- GALLERY-ITEM: Verified Exercises -->
+          <!-- GALLERY-ITEM: Generate exercises -->
           <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="0">
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Verified Exercises</h3>
+                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Generate exercises</h3>
+                
+              </div>
+              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Educators, trainers and admins create exercises in the Alphalearn Portal in three ways: generate them with AI from their own knowledge base, build them from scratch or upload existing exercises.</p>
+            </div>
+          </article>
+          <!-- GALLERY-ITEM: Verify exercises -->
+          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="1">
+            
+            <div class="tg-text tg-text--only">
+              <div class="flex flex-wrap items-center gap-2">
+                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Verify exercises</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Our AI tutors generate exercises from your knowledge base and check results on their own – some education providers, however, prefer a human-in-the-loop approach. That is why you can upload your own exercises to the Alphalearn Portal, generate them with AI or create them manually. Send your verified exercises to entire Moodle courses or individual learners, who see them clearly in the chat, give them to your AI tutors as a teaching tool or move them directly into the knowledge base.</p>
             </div>
           </article>
-          <!-- GALLERY-ITEM: Intelligent Handover -->
-          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="1">
+          <!-- GALLERY-ITEM: Distribute exercises -->
+          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="2">
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
+                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Distribute exercises</h3>
+                
+              </div>
+              <p class="mt-2 text-[15px] leading-relaxed text-gray-700 font-geist">Finished exercises reach learners in two ways:</p><ul class="mt-3 space-y-1.5 text-[14px] leading-relaxed text-gray-600 font-geist"><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500"></span><span><strong class="font-semibold text-gray-900">Release to the AI tutor</strong> – Released as a verified exercise, learners can call it up at any time in practice mode.</span></li><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500"></span><span><strong class="font-semibold text-gray-900">Send it directly</strong> – Alternatively, send the exercise to individual learners or a whole Moodle course – it appears right in the chat, where learners work on it and the AI checks it.</span></li></ul>
+            </div>
+          </article>
+          <!-- GALLERY-ITEM: Intelligent Handover -->
+          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="3">
+            <div class="tg-media"><video class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" autoplay muted loop playsinline preload="metadata" aria-label="Intelligent Handover"><source src="/assets/features/intelligente-uebergabe.mp4" type="video/mp4"></video></div>
+            <div class="tg-text">
+              <div class="mt-5 flex flex-wrap items-center gap-2">
                 <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Intelligent Handover</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Learners use the AI tutor not only for questions about course content, but also for study organization or technical problems. You decide whether another AI agent takes over or the question is forwarded to a real teacher. Complex or unresolved requests thus automatically reach the teacher or the support team.</p>
             </div>
           </article>
-          <!-- GALLERY-ITEM: Educator Dashboard -->
-          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="2">
-            
-            <div class="tg-text tg-text--only">
-              <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Educator Dashboard</h3>
+          <!-- GALLERY-ITEM: Individual support -->
+          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="4">
+            <div class="tg-media"><video class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" autoplay muted loop playsinline preload="metadata" aria-label="Individual support"><source src="/assets/features/individuelle-betreuung.mp4" type="video/mp4"></video></div>
+            <div class="tg-text">
+              <div class="mt-5 flex flex-wrap items-center gap-2">
+                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Individual support</h3>
                 
               </div>
-              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">In the educator area of the Alphalearn Portal you see which learners need individual support, answer private messages and move useful responses into the knowledge base. A bell icon alerts you the moment learners need help. You refine your knowledge base based on analytics metrics or learner feedback.</p>
+              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">If the AI cannot find an answer in its knowledge base, you can allow the AI tutor to forward the learner&#x27;s request to the educators or trainers. This individual need for support then lands in the inbox of the responsible teacher.</p>
             </div>
           </article>
           </div>
           <div class="flex items-center justify-between px-4 pb-4 lg:hidden">
             <div class="flex items-center gap-1.5" data-tg-dots></div>
             <div class="flex items-center gap-2">
-              <span class="text-xs tabular-nums text-gray-400 font-geist" data-tg-counter>1 / 3</span>
+              <span class="text-xs tabular-nums text-gray-400 font-geist" data-tg-counter>1 / 5</span>
               <button type="button" data-tg-prev aria-label="Previous" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 active:scale-95"><i data-lucide="chevron-left" class="h-4 w-4"></i></button>
               <button type="button" data-tg-next aria-label="Next" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 active:scale-95"><i data-lucide="chevron-right" class="h-4 w-4"></i></button>
             </div>
@@ -3085,14 +3123,14 @@
       </div>
   </section>
 
-  <!-- ================= BEREICH 3 · Knowledge Base &amp; Auto-Sync ================= -->
+  <!-- ================= BEREICH 3 · Knowledge Base ================= -->
   <section id="area-wissensbasis-autosync" data-area role="tabpanel" aria-labelledby="ft-abtn-wissensbasis-autosync" class="ft-area-panel w-full shrink-0 pt-4 pb-4">
 
-      <!-- TAB-GALLERY (6 Features mit Bild) -->
+      <!-- TAB-GALLERY (7 Features mit Bild) -->
       <div class="tg relative overflow-hidden lg:grid lg:grid-cols-12" data-tab-gallery>
         <div class="tg-tabs-wrap relative lg:col-span-3 lg:min-h-0 lg:overflow-y-auto lg:border-r lg:border-gray-200/80 lg:bg-white/90 lg:p-4 xl:p-5">
           <div role="tablist" aria-label="Features" class="no-scrollbar flex gap-2 overflow-x-auto px-4 pt-4 pb-3 lg:flex-col lg:gap-1 lg:overflow-visible lg:p-0">
-            <button type="button" role="tab" aria-selected="true" data-tg-tab="0" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Automatic synchronisation</button><button type="button" role="tab" aria-selected="false" data-tg-tab="1" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Course as Knowledge Base</button><button type="button" role="tab" aria-selected="false" data-tg-tab="2" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Source Citations</button><button type="button" role="tab" aria-selected="false" data-tg-tab="3" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">All Moodle Activities</button><button type="button" role="tab" aria-selected="false" data-tg-tab="4" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Integrations</button><button type="button" role="tab" aria-selected="false" data-tg-tab="5" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Flexible Content Expansion</button>
+            <button type="button" role="tab" aria-selected="true" data-tg-tab="0" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Automatic synchronisation</button><button type="button" role="tab" aria-selected="false" data-tg-tab="1" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Course synchronisation</button><button type="button" role="tab" aria-selected="false" data-tg-tab="2" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Extending the knowledge base</button><button type="button" role="tab" aria-selected="false" data-tg-tab="3" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Various Moodle activities</button><button type="button" role="tab" aria-selected="false" data-tg-tab="4" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Source Citations</button><button type="button" role="tab" aria-selected="false" data-tg-tab="5" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Didactic parsing</button><button type="button" role="tab" aria-selected="false" data-tg-tab="6" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Integrations</button>
           </div>
         </div>
         <div class="relative lg:col-span-9 lg:flex lg:min-h-0 lg:flex-col">
@@ -3237,19 +3275,41 @@
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">With Alphalearn Auto-Sync you only maintain your Moodle course — the AI tutor keeps itself up to date. It automatically reads all content of your Moodle course.</p>
             </div>
           </article>
-          <!-- GALLERY-ITEM: Course as Knowledge Base -->
+          <!-- GALLERY-ITEM: Course synchronisation -->
           <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="1">
-            <div class="tg-media"><img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/9de9ef5c-cf60-46a5-be01-062f6dd80468_1600w.png" alt="Course as Knowledge Base" class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" loading="lazy"></div>
+            <div class="tg-media"><video class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" autoplay muted loop playsinline preload="metadata" aria-label="Course synchronisation"><source src="/assets/features/kurs-synchronisation.mp4" type="video/mp4"></video></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Course as Knowledge Base</h3>
+                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Course synchronisation</h3>
                 
               </div>
-              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">An all-knowing AI tutor knows too much. With Moodle Course Sync, two clicks give you course-specific AI tutors that know exactly the right course knowledge: connect your Moodle platform to the Alphalearn Portal and use your existing Moodle courses as the knowledge base. It is built automatically in the background – no uploads, no technical setup.</p>
+              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Even with just 10 courses, you do not want to manage 10 different AI tutors with 10 different knowledge bases. Nor do you want one (all-knowing) AI tutor placed in all 10 e-learnings. The solution: Alphalearn course synchronisation. Create an AI tutor template once and link it to any number of Moodle courses. With two clicks you get, say, 10,000 AI tutors with individual course knowledge, placed right inside each course.</p>
+            </div>
+          </article>
+          <!-- GALLERY-ITEM: Extending the knowledge base -->
+          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="2">
+            
+            <div class="tg-text tg-text--only">
+              <div class="flex flex-wrap items-center gap-2">
+                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Extending the knowledge base</h3>
+                
+              </div>
+              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">A placed AI tutor automatically synchronises the knowledge of its Moodle course. Beyond that, you can enrich the knowledge base of an AI tutor template or of a single tutor placed in a specific course – with text documents, web sources and additional Moodle courses. All managed centrally in the Alphalearn Portal.</p>
+            </div>
+          </article>
+          <!-- GALLERY-ITEM: Various Moodle activities -->
+          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="3">
+            <div class="tg-media"><img src="/assets/features/moodle-aktivitaeten.jpg" alt="Various Moodle activities" class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" loading="lazy"></div>
+            <div class="tg-text">
+              <div class="mt-5 flex flex-wrap items-center gap-2">
+                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Various Moodle activities</h3>
+                
+              </div>
+              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Not just pages and PDFs: Alphalearn synchronizes every activity in your Moodle course – quizzes, lessons, forums, calendar, videos, H5P, SCORM packages plus Articulate and iSpring courses. Forum discussions flow into the AI tutor&#x27;s knowledge as well.</p>
             </div>
           </article>
           <!-- GALLERY-ITEM: Source Citations -->
-          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="2">
+          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="4">
             <div class="tg-media"><img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c546deb5-a0d1-4095-aad0-a790bfea113e_1600w.png" alt="Source Citations" class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" loading="lazy"></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
@@ -3259,19 +3319,19 @@
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Below every answer, the AI tutor shows the source it used – so it is transparent which document in the knowledge base the answer comes from. Document sources open as the original document right inside the AI chat, at exactly the relevant passage; course or web sources open as hyperlinks. That builds trust; the admin can switch the display on or off.</p>
             </div>
           </article>
-          <!-- GALLERY-ITEM: All Moodle Activities -->
-          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="3">
+          <!-- GALLERY-ITEM: Didactic parsing -->
+          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="5">
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">All Moodle Activities</h3>
+                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Didactic parsing</h3>
                 
               </div>
-              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Not just pages and PDFs: Alphalearn synchronizes every activity in your Moodle course – quizzes, lessons, forums, calendar, videos, H5P, SCORM packages plus Articulate and iSpring courses. Forum discussions flow into the AI tutor&#x27;s knowledge as well.</p>
+              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Alphalearn reads your Moodle course didactically – or just the PDFs you have uploaded there. The AI tutor recognises course structure, learning objectives and exercises and understands how the content builds on itself. This is the foundation of guided learning mode: from the parsed material the tutor creates a guided learning journey – without you having to rebuild the course.</p>
             </div>
           </article>
           <!-- GALLERY-ITEM: Integrations -->
-          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="4">
+          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="6">
             <div class="tg-media"><video class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" autoplay muted loop playsinline preload="metadata" aria-label="Integrations"><source src="/assets/features/integrationen.mp4" type="video/mp4"></video></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
@@ -3281,22 +3341,11 @@
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Besides Moodle, you connect your Alphalearn Portal directly to Microsoft SharePoint, Google Drive or Dropbox – for a seamless knowledge flow without manual uploads or duplicate data maintenance. All content remains in its source systems and is used as one unified data source.</p>
             </div>
           </article>
-          <!-- GALLERY-ITEM: Flexible Content Expansion -->
-          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="5">
-            
-            <div class="tg-text tg-text--only">
-              <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Flexible Content Expansion</h3>
-                
-              </div>
-              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Expand the knowledge base in the Alphalearn Portal with websites, documents, notes, exercises or transcribed videos – all managed centrally.</p>
-            </div>
-          </article>
           </div>
           <div class="flex items-center justify-between px-4 pb-4 lg:hidden">
             <div class="flex items-center gap-1.5" data-tg-dots></div>
             <div class="flex items-center gap-2">
-              <span class="text-xs tabular-nums text-gray-400 font-geist" data-tg-counter>1 / 6</span>
+              <span class="text-xs tabular-nums text-gray-400 font-geist" data-tg-counter>1 / 7</span>
               <button type="button" data-tg-prev aria-label="Previous" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 active:scale-95"><i data-lucide="chevron-left" class="h-4 w-4"></i></button>
               <button type="button" data-tg-next aria-label="Next" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 active:scale-95"><i data-lucide="chevron-right" class="h-4 w-4"></i></button>
             </div>
@@ -3305,7 +3354,7 @@
       </div>
   </section>
 
-  <!-- ================= BEREICH 4 · Moodle &amp; Integrations ================= -->
+  <!-- ================= BEREICH 4 · Integrations ================= -->
   <section id="area-moodle-integrationen" data-area role="tabpanel" aria-labelledby="ft-abtn-moodle-integrationen" class="ft-area-panel w-full shrink-0 pt-4 pb-4">
 
       <!-- TAB-GALLERY (7 Features mit Bild) -->
@@ -3407,7 +3456,7 @@
       </div>
   </section>
 
-  <!-- ================= BEREICH 5 · Analytics, Security &amp; Operations ================= -->
+  <!-- ================= BEREICH 5 · Administration ================= -->
   <section id="area-analytics-sicherheit-betrieb" data-area role="tabpanel" aria-labelledby="ft-abtn-analytics-sicherheit-betrieb" class="ft-area-panel w-full shrink-0 pt-4 pb-4">
 
       <!-- TAB-GALLERY (5 Features mit Bild) -->
@@ -3647,6 +3696,7 @@
 
 
   <script>
+    const LIGHTBOX_CLOSE = 'Close';
     // Nur den horizontalen Container scrollen – NIE die Seite (scrollIntoView
     // würde beim Initialisieren die Seite zu den Tabs springen lassen).
     const ftCenterIn = (el, scroller) => {
@@ -3719,6 +3769,27 @@
       lg.addEventListener ? lg.addEventListener('change', relayout) : lg.addListener(relayout);
       render();
     });
+
+    // ---- Lightbox für Beispiel-Screenshots ([data-lightbox]) ----
+    (() => {
+      const triggers = document.querySelectorAll('[data-lightbox]');
+      if (!triggers.length) return;
+      const box = document.createElement('div');
+      box.className = 'ft-lightbox'; box.hidden = true; box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true');
+      box.innerHTML = '<button type="button" class="ft-lightbox-close" aria-label="' + LIGHTBOX_CLOSE + '"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button><figure><img alt=""><figcaption></figcaption></figure>';
+      document.body.appendChild(box);
+      const img = box.querySelector('img'), cap = box.querySelector('figcaption');
+      let lastFocus = null, prevOverflow = '';
+      const close = () => { box.classList.remove('is-open'); setTimeout(() => { box.hidden = true; img.src = ''; }, 250); document.body.style.overflow = prevOverflow; lastFocus && lastFocus.focus(); };
+      const open = (el) => {
+        lastFocus = el; img.src = el.dataset.lightbox; img.alt = (el.querySelector('img') || {}).alt || ''; cap.textContent = el.dataset.lightboxCaption || '';
+        prevOverflow = document.body.style.overflow; document.body.style.overflow = 'hidden';
+        box.hidden = false; requestAnimationFrame(() => box.classList.add('is-open')); box.querySelector('.ft-lightbox-close').focus();
+      };
+      triggers.forEach((el) => el.addEventListener('click', () => open(el)));
+      box.addEventListener('click', (e) => { if (!e.target.closest('img')) close(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !box.hidden) close(); });
+    })();
 
     // ---- Zwei Lernmethoden: Kachel folgt dem Mauszeiger (leichter Tilt + Glanzpunkt) ----
     document.querySelectorAll('[data-lm-card]').forEach((card) => {
