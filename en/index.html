@@ -227,6 +227,18 @@ opacity: 0 !important;
     overflow: hidden;
   }
 </style>
+  <style id="hero-h1-fit">
+    /* Hero-Headline: ab Desktop (13") genau zwei Zeilen – die Schriftgröße folgt der Spaltenbreite,
+       damit "Auch für Moodle und ILIAS." nie zusätzlich umbricht. Höhere Spezifität als die
+       Tailwind-Textklassen (die per CDN nachträglich eingefügt werden). */
+    @media (min-width: 1024px) {
+      .hero-h1-col { container-type: inline-size; }
+      h1.hero-h1 { font-size: min(8.1cqi, 3.75rem); white-space: nowrap; }
+    }
+    @supports not (container-type: inline-size) {
+      @media (min-width: 1024px) { h1.hero-h1 { font-size: min(3.6vw, 3.75rem); } }
+    }
+  </style>
 </head>
   <body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
 
@@ -314,13 +326,13 @@ opacity: 0 !important;
     <!-- Hero -->
     <main class="relative">
       <div class="sm:px-6 lg:px-8 sm:pt-24 lg:pt-32 xl:pt-40 sm:pb-24 lg:pb-32 xl:pb-40 max-w-7xl mr-auto ml-auto pt-24 pr-4 pb-24 pl-4">
-  <div class="grid grid-cols-1 lg:grid-cols-2 sm:gap-12 lg:gap-16 xl:gap-20 gap-x-0 gap-y-8 items-center">
+  <div class="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] sm:gap-12 lg:gap-16 xl:gap-20 gap-x-0 gap-y-8 items-center">
   <!-- Left: Copy -->
   <section class="order-1 lg:order-2 lg:mt-32 mt-24 relative">
-    <div class="lg:max-w-6xl w-full max-w-[772px]">
+    <div class="hero-h1-col lg:max-w-6xl w-full max-w-[772px]">
 
 
-      <h1 class="2xl:text-7xl leading-[0.95] sm:mt-6 sm:text-5xl md:text-6xl xl:text-6xl lg:mt-6 lg:text-5xl text-4xl tracking-tight font-geist mt-6" style="animation: 1s ease-out 0.2s 1 normal both running fadeSlideIn">The AI tutor for Moodle — right inside your course.</h1>
+      <h1 class="hero-h1 leading-[0.95] sm:mt-6 sm:text-5xl md:text-6xl text-4xl tracking-tight font-geist mt-6" style="animation: 1s ease-out 0.2s 1 normal both running fadeSlideIn">AI tutor as a plugin.<br>Also for Moodle and ILIAS.</h1>
 
       <p class="sm:mt-6 sm:text-lg lg:text-base xl:text-lg lg:max-w-none -multi text-base text-gray-600 font-geist max-w-[676px] mt-6" style="animation: 1s ease-out 0.2s 1 normal both running fadeSlideIn">More support for learners. Less work for instructors.</p>
 
