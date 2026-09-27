@@ -21,7 +21,7 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 - Academy: https://alphalearn.ai/academy
 - Help Center: https://alphalearn.ai/helpcenter
 - Moodle Plugin: https://alphalearn.ai/de/moodle-plugin.html
-- Moodle Mobile App: https://alphalearn.ai/de/moodle-mobile-app.html
+- ILIAS Plugin: https://alphalearn.ai/de/ilias-plugin.html
 - Partner Program: https://alphalearn.ai/de/partner-program.html
 - About: https://alphalearn.ai/de/ueber-uns.html
 - Contact: https://alphalearn.ai/de/kontakt.html
@@ -37,7 +37,7 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 - Academy: https://alphalearn.ai/en/academy.html
 - Help Center: https://alphalearn.ai/en/helpcenter.html
 - Moodle Plugin: https://alphalearn.ai/en/moodle-plugin.html
-- Moodle Mobile App: https://alphalearn.ai/en/moodle-mobile-app.html
+- ILIAS Plugin: https://alphalearn.ai/en/ilias-plugin.html
 - Partner Program: https://alphalearn.ai/en/partner-program.html
 - About: https://alphalearn.ai/en/about.html
 - Contact: https://alphalearn.ai/en/contact.html
