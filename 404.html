@@ -3,6 +3,20 @@
 <head>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <meta charset="utf-8">
+  <script>
+    // Catch-all für alte /blog/-URLs, die keinen eigenen Redirect-Stub haben
+    // (z. B. vertippte oder abgeschnittene Citation-Links). GitHub Pages kennt
+    // keine Server-Redirects — bekannte Alt-URLs haben statische Stubs in
+    // de/blog/ bzw. en/blog/, dieser Fallback fängt nur den Rest.
+    (function () {
+      var p = location.pathname;
+      if (p.indexOf('/de/blog') === 0) {
+        location.replace('/de/ki-tutor-guide-bildungsanbieter-deutschland-2026.html');
+      } else if (p.indexOf('/en/blog') === 0) {
+        location.replace('/en/ai-tutor-guide-education-providers-2026.html');
+      }
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>404 – Seite nicht gefunden | Alphabees</title>
   <meta name="robots" content="noindex, nofollow">
