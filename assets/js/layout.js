@@ -243,8 +243,12 @@
   analyticsScript.defer = true;
   document.head.appendChild(analyticsScript);
 
+  // Header/Footer stehen seit 10/2026 statisch im HTML (scripts/seo_build.py),
+  // damit Suchmaschinen Navigation und Footer-Links ohne JavaScript sehen.
+  // Nachgeladen wird nur noch, wenn ein Container leer ist (Fallback).
   const loadPartial = async (target, url) => {
     if (!target) return;
+    if (target.firstElementChild) return;
     const res = await fetch(url, { cache: 'no-cache' });
     if (!res.ok) {
       throw new Error(`Failed to load ${url}: ${res.status}`);

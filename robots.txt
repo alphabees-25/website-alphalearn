@@ -1,6 +1,10 @@
 User-agent: *
 Allow: /
 
-# Header/footer partials are loaded by JavaScript and must remain crawlable for rendering.
+# Header/footer are written statically into every page (scripts/seo_build.py).
+# The partial fragments are no longer needed for rendering and should not use crawl budget.
+Disallow: /partials/
+Disallow: /de/partials/
+Disallow: /en/partials/
 
 Sitemap: https://alphalearn.ai/sitemap.xml

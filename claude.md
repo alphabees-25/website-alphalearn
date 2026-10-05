@@ -316,3 +316,20 @@ Kontext: GSC zeigte 231 nicht indexierte Seiten ("Crawled - currently not indexe
 - Off-Page: moodle.org-Plugin-Eintrag, Community, Partner-Backlinks = wichtigster Hebel.
 
 Vollständige Analyse: Claude-Projekt "Marketing Alphabees", Doc `claude/seo-indexierungsanalyse-alphalearn-2026-07.md`.
+
+## SEO-Umbau Oktober 2026 (Indexierung)
+
+Hintergrund: Google hat Header/Footer (per `fetch()` nachgeladen) nicht zuverlässig gerendert, 28 von 48 Seiten hatten im Roh-HTML keinen internen Link, und ein identischer FAQ-Block stand auf fast allen Seiten. Details: Projekt-Doc `seo-tiefenanalyse-alphalearn-2026-10-05.md`.
+
+Regeln ab jetzt:
+
+- **Vor jedem Commit/Deploy:** `python3 scripts/seo_build.py`
+  - schreibt `de|en/partials/header.html`, `footer.html`, `logo-banner.html` statisch in alle Seiten unter `de/` und `en/` (zwischen `<!-- partial:NAME:start -->` / `<!-- partial:NAME:end -->`). Partials also weiter zentral bearbeiten und danach das Skript laufen lassen.
+  - setzt `<lastmod>` in `sitemap.xml` aus dem letzten git-Commit der jeweiligen Datei.
+- `layout.js` lädt Partials nur noch, wenn ein Container leer ist (Fallback). Neue Seiten: leere `<div id="site-header"></div>` / `<div id="site-footer"></div>` anlegen und das Skript ausführen.
+- Keine versteckten Ersatz-Navigationen (1px/clip) und keine User-Agent-Weichen für Googlebot mehr einbauen.
+- Globaler FAQ („Was macht ein KI-Tutor?“) nur noch auf `de/index.html` und `en/index.html`. Core-Seiten haben seitenspezifische FAQs, Rechtsseiten keinen FAQ.
+- `noindex, follow` + nicht in der Sitemap: `blog.html`, `helpcenter.html`, `press.html`, `partner-program.html`, `careers.html` (DE+EN) – bis dort eigener Inhalt steht.
+- `robots.txt` sperrt `/partials/`, `/de/partials/`, `/en/partials/` (werden nicht mehr zum Rendern gebraucht).
+- `sitemap-altlasten.xml`: temporär (ca. 8 Wochen ab Okt. 2026) mit den alten Blog-URLs, nur in der GSC einreichen, danach löschen.
+- JSON-LD: Organization + WebSite auf den Startseiten, SoftwareApplication auf `de/preis.html` / `en/pricing.html`.
