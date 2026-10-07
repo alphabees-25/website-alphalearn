@@ -291,6 +291,45 @@ opacity: 0 !important;
   }
  ]
 }</script>
+  <link rel="stylesheet" href="/assets/css/design-2026.css">
+<style id="hero-video-css">
+  /* Hero-Video – im <head>, damit das Video schon beim ersten Zeichnen richtig (volle Breite, zugeschnitten) erscheint */
+  /* AI-Gradient der Marke: CI-Blue #3B82F6, Purple #B47FFF, Lobster #FF8093, Pink #FF7EAF, Orange #FFAF85.
+     Aufbau: Farbverlauf als Basis, darüber das entfärbte Video als bewegte Licht-Textur, darüber ein optionaler Verlauf für die Lesbarkeit. */
+  /* Gewählt am 06.10.: Voreinstellung „AI kräftig“ */
+  :root { --hv-vop:.7; --hv-vblend:overlay; --hv-gray:1; --hv-con:1.3; --hv-dark:0; --hv-grad:.3; --hv-blur:0px; --hv-sat:1.3;
+    --hv-mesh:
+      radial-gradient(38% 60% at 18% 72%, #3B82F6 0%, rgba(59,130,246,0) 72%),
+      radial-gradient(40% 55% at 38% 48%, #B47FFF 0%, rgba(180,127,255,0) 72%),
+      radial-gradient(34% 50% at 62% 78%, #FFAF85 0%, rgba(255,175,133,0) 72%),
+      radial-gradient(36% 50% at 88% 18%, #FF8093 0%, rgba(255,128,147,0) 72%),
+      radial-gradient(42% 55% at 26% 6%, #FF7EAF 0%, rgba(255,126,175,0) 72%),
+      radial-gradient(30% 45% at 100% 100%, #ffffff 0%, rgba(255,255,255,0) 70%),
+      linear-gradient(135deg, #FF7EAF 0%, #FF8093 45%, #FFAF85 85%, #FFE4D6 100%); }
+
+  /* Größere Hero-Schrift, Verhältnis H1 : Unterzeile wie bisher (Faktor ~1,2 mobil bis 1,4 Desktop) */
+  .hv-band h1.hero-h1 { font-size:2.7rem; }
+  .hv-band h1.hero-h1 + p { font-size:1.2rem; line-height:1.45; }
+  @media (min-width:640px) { .hv-band h1.hero-h1 { font-size:3.6rem; } .hv-band h1.hero-h1 + p { font-size:1.35rem; } }
+  @media (min-width:768px) { .hv-band h1.hero-h1 { font-size:4.5rem; } }
+  @media (min-width:1024px) { .hv-band h1.hero-h1 { font-size:min(8.1cqi, 5.25rem); } .hv-band h1.hero-h1 + p { font-size:1.4rem; } }
+  @media (min-width:1280px) { .hv-band h1.hero-h1 + p { font-size:1.575rem; } }
+  .hv-band { position:relative; isolation:isolate; padding:4rem 0 4.5rem; }
+  @media (min-width:640px) { .hv-band { padding:5rem 0 5.5rem; } }
+  @media (min-width:1024px) { .hv-band { padding:6.5rem 0 7rem; min-height:min(82vh, 820px); display:flex; align-items:center; } .hv-band > .grid { width:100%; } }
+  .hv-media { position:absolute; top:0; bottom:0; left:50%; width:var(--hv-vw,100vw); transform:translateX(-50%); z-index:-1; overflow:hidden; background:var(--hv-mesh); filter:saturate(var(--hv-sat)); }
+  .hv-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform:scale(1.04); mix-blend-mode:var(--hv-vblend); opacity:var(--hv-vop); filter:blur(var(--hv-blur)) grayscale(var(--hv-gray)) contrast(var(--hv-con)); }
+  .hv-shade { position:absolute; inset:0; background:linear-gradient(90deg, rgba(30,27,75,var(--hv-grad)) 0%, rgba(30,27,75,calc(var(--hv-grad) * .45)) 55%, rgba(30,27,75,0) 100%), rgba(30,27,75,var(--hv-dark)); }
+  @media (max-width:1023px) { .hv-shade { background:linear-gradient(180deg, rgba(30,27,75,var(--hv-grad)) 0%, rgba(30,27,75,calc(var(--hv-grad) * .45)) 60%, rgba(30,27,75,0) 100%), rgba(30,27,75,var(--hv-dark)); } }
+  .hv-controls { position:absolute; top:0; bottom:0; left:50%; width:var(--hv-vw,100vw); transform:translateX(-50%); z-index:5; pointer-events:none; }
+  .hv-pause { position:absolute; right:12px; bottom:12px; pointer-events:auto; width:2rem; height:2rem; border-radius:9999px; display:inline-flex; align-items:center; justify-content:center; color:#fff; background:rgba(255,255,255,.08); border:1.5px solid #fff; box-shadow:0 1px 4px rgba(15,23,42,.18); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); transition:background .2s; }
+  .hv-pause::before { content:''; position:absolute; inset:-6px; border-radius:9999px; } /* größere Klickfläche (44 px), sichtbar bleiben 32 px */
+  @media (min-width:640px) { .hv-pause { right:16px; bottom:16px; } }
+  .hv-pause:hover { background:rgba(255,255,255,.22); }
+  .hv-pause svg { filter:drop-shadow(0 1px 1px rgba(15,23,42,.25)); }
+  .hv-pause:focus-visible { outline:2px solid #fff; outline-offset:2px; }
+  .hv-pause .hv-ico-play { display:none; } .hv-pause[aria-pressed="true"] .hv-ico-play { display:block; } .hv-pause[aria-pressed="true"] .hv-ico-pause { display:none; }
+</style>
 </head>
   <body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
 
@@ -367,7 +406,7 @@ opacity: 0 !important;
 
 <!-- TEST: Unicorn-Hintergrund entfernt, Video im Hero -->
     <!-- Global Header -->
-<div id="site-header-2026"><!-- Header neues Design 2026 (eigenständig, bis die Partials umgestellt sind) -->
+<div id="site-header"><!-- partial:header:start -->
 <!-- Top Navigation -->
     <header class="relative z-20 border-b border-gray-100 bg-white">
       <div class="px-4 sm:px-6">
@@ -466,15 +505,16 @@ opacity: 0 !important;
         </div>
       </div>
     </header>
-<!-- /Header-Entwurf --></div>
+<!-- partial:header:end --></div>
 
     <!-- Hero -->
     <main class="relative">
       <div class="sm:px-6 lg:px-8 max-w-7xl mr-auto ml-auto pr-4 pl-4">
+  <script>document.documentElement.style.setProperty("--hv-vw", document.documentElement.clientWidth + "px");</script>
   <div class="hv-band">
     <div class="hv-media" aria-hidden="true">
-      <video class="hv-video" autoplay muted loop playsinline preload="auto" poster="/assets/video/hero-ai-gradient-poster.jpg">
-        <source src="/assets/video/hero-ai-gradient.mp4" type="video/mp4">
+      <video class="hv-video" autoplay muted loop playsinline preload="auto" poster="/assets/video/Alphalearn_Hero_Background_Video_Poster.jpg">
+        <source src="/assets/video/Alphalearn_Hero_Background_Video.mp4" type="video/mp4">
       </video>
       <div class="hv-shade"></div>
     </div>
@@ -843,8 +883,10 @@ opacity: 0 !important;
         <div class="bn-icon bn-icon--lg" aria-hidden="true"><svg viewBox="0 0 260 244" class="bn-ic bn-ic--brain" role="presentation" focusable="false">
   <defs><linearGradient id="bnB3" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="244"><stop offset="0" stop-color="#3B82F6"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient></defs>
   <g fill="none" stroke="url(#bnB3)" stroke-linecap="round" stroke-linejoin="round">
-    <g class="bn-br-echo" style="transform-origin:130.0px 122.0px"><path d="M63.1 146.4C42.4 147.8 24.2 118.5 34.7 100.6C18.9 74.0 45.4 32.8 76.1 36.1C82.2 30.6 90.7 25.0 98.2 27.4C100.3 22.1 109.0 21.8 114.6 22.6C120.2 23.4 128.6 26.5 131.9 32.2C138.5 18.6 163.1 18.0 170.4 31.3C183.4 22.6 205.6 34.9 205.1 50.5C223.2 51.7 234.9 78.8 223.3 92.9C237.7 108.2 227.2 145.1 207.0 150.6C218.1 152.7 223.0 169.9 214.7 177.5C213.4 196.0 185.3 208.5 170.8 197.2C170.3 199.0 169.8 200.8 169.4 202.6C168.2 207.7 167.5 212.2 166.6 217.0C166.6 224.2 155.0 224.2 155.0 217.0C154.4 212.2 153.7 207.2 153.1 202.6C152.4 197.9 151.8 193.6 151.2 189.1C148.5 195.1 133.8 200.0 128.1 196.8C121.9 202.3 105.3 198.6 102.1 191.0C92.4 190.0 84.9 173.9 90.4 165.8C86.7 165.3 83.3 164.0 79.9 162.1C74.5 159.3 68.5 154.8 64.5 148.7C64.1 148.0 63.6 147.2 63.1 146.4Z"/></g>
-    <g class="bn-br-beat" style="transform-origin:130.0px 122.0px"><path d="M63.1 146.4C42.4 147.8 24.2 118.5 34.7 100.6C18.9 74.0 45.4 32.8 76.1 36.1C82.2 30.6 90.7 25.0 98.2 27.4C100.3 22.1 109.0 21.8 114.6 22.6C120.2 23.4 128.6 26.5 131.9 32.2C138.5 18.6 163.1 18.0 170.4 31.3C183.4 22.6 205.6 34.9 205.1 50.5C223.2 51.7 234.9 78.8 223.3 92.9C237.7 108.2 227.2 145.1 207.0 150.6C212.4 158.4 191.6 176.9 173.7 186.1C163.5 191.3 154.2 193.6 151.2 189.1C148.5 195.1 133.8 200.0 128.1 196.8C121.9 202.3 105.3 198.6 102.1 191.0C92.4 190.0 84.9 173.9 90.4 165.8C86.7 165.3 83.3 164.0 79.9 162.1C74.5 159.3 68.5 154.8 64.5 148.7C64.1 148.0 63.6 147.2 63.1 146.4Z"/><path d="M76.1 36.1C76.1 36.1 76.1 36.1 76.1 36.1C70.0 41.5 64.9 50.0 61.6 60.1C58.4 70.2 52.8 85.1 56.8 96.7C53.3 105.6 54.6 116.9 55.9 125.6C57.0 133.2 59.8 140.6 63.1 146.4"/><path d="M90.4 165.8C92.6 166.2 94.8 166.2 97.3 166.0C103.7 165.4 111.0 160.9 118.4 158.3C125.8 155.7 134.1 151.9 141.5 150.6C148.9 149.3 156.3 152.0 162.7 150.6C169.1 149.2 175.5 145.8 180.0 141.9C184.5 138.1 186.4 132.3 189.7 127.5"/><path d="M207.0 150.6C218.1 152.7 223.0 169.9 214.7 177.5C213.4 196.0 185.3 208.5 170.8 197.2"/><path d="M173.7 186.1C172.8 189.7 171.7 193.5 170.8 197.2C170.3 199.0 169.8 200.8 169.4 202.6C168.2 207.7 167.5 212.2 166.6 217.0C166.6 224.2 155.0 224.2 155.0 217.0C154.4 212.2 153.7 207.2 153.1 202.6C152.4 197.9 151.8 193.6 151.2 189.1"/><path d="M131.9 32.2C130.9 39.6 130.9 47.1 129.0 54.4C127.1 61.6 122.0 68.8 120.4 75.5C118.7 82.3 118.4 89.6 119.4 94.8C120.4 99.9 123.9 102.5 126.1 106.3"/><path d="M98.2 27.4C97.9 32.5 98.7 38.3 97.3 42.8C95.8 47.3 91.2 50.5 89.6 54.4C88.0 58.2 88.3 62.1 87.6 65.9"/><path d="M56.8 96.7C62.0 99.9 67.4 105.0 72.2 106.3C77.0 107.6 81.5 103.1 85.7 104.4C89.9 105.7 93.4 110.8 97.3 114.0"/><path d="M78.0 144.8C83.1 143.5 88.9 143.5 93.4 141.0C97.9 138.4 102.7 133.3 105.0 129.4C107.2 125.6 106.2 121.7 106.9 117.9"/><path d="M170.4 31.3C169.1 37.0 168.8 43.8 166.6 48.6C164.3 53.4 160.5 57.9 156.9 60.1C153.4 62.4 149.2 61.4 145.4 62.1"/><path d="M223.3 92.9C217.9 94.8 211.1 95.4 207.0 98.6C202.8 101.8 199.3 107.6 198.3 112.1C197.4 116.6 200.2 121.1 201.2 125.6"/><path d="M122.3 176.6C129.3 177.2 136.7 179.2 143.5 178.5C150.2 177.9 157.9 175.5 162.7 172.7C167.5 170.0 169.1 165.7 172.3 162.1"/></g>
+    <g class="bn-br-echo" style="transform-origin:130.0px 122.0px"><path d="M76.5 48.0 C69.8 52.0 69.0 53.0 64.0 57.7 C58.9 62.4 50.7 70.7 46.3 76.3 C41.9 81.9 40.1 85.9 37.5 91.4 C35.0 97.0 32.3 104.2 31.0 109.6 C29.7 115.0 29.5 118.9 29.8 123.9 C30.1 128.9 31.2 134.9 32.7 139.7 C34.2 144.4 36.3 148.6 38.7 152.5 C41.0 156.3 43.8 159.9 46.9 162.9 C50.0 166.0 53.1 168.5 57.3 170.6 C61.4 172.8 60.5 173.2 72.0 175.8 C83.6 178.3 113.9 182.1 126.7 185.8 C139.5 189.6 143.6 195.9 148.8 198.5 C154.0 201.2 153.8 200.9 157.9 201.6 C162.0 202.2 165.8 205.5 173.5 202.2 C181.1 198.9 196.9 187.6 203.7 181.9 C210.5 176.2 211.2 172.9 214.2 168.0 C217.3 163.0 219.7 161.9 222.1 152.1 C224.6 142.2 228.7 119.6 229.0 109.0 C229.4 98.5 228.5 96.9 224.4 88.7 C220.2 80.5 211.8 68.1 204.1 59.8 C196.5 51.6 185.5 43.8 178.4 39.4 C171.3 34.9 167.5 34.8 161.5 33.3 C155.5 31.9 148.0 31.2 142.4 30.6 C136.8 30.0 134.5 29.3 128.1 29.8 C121.7 30.3 112.8 30.8 104.2 33.8 C95.6 36.9 83.2 44.0 76.5 48.0 Z"/></g>
+    <g class="bn-br-beat" style="transform-origin:130.0px 122.0px">
+      <path d="M195.6 54.9 C195.2 54.0 194.4 51.4 193.1 49.6 C191.8 47.8 189.2 45.6 187.6 44.2 C186.0 42.8 185.4 42.4 183.4 41.3 C181.5 40.1 178.9 38.6 175.9 37.5 C173.0 36.5 168.4 35.4 165.8 34.9 C163.1 34.4 163.4 34.2 160.2 34.6 C157.1 34.9 149.5 36.1 146.8 36.9 C144.1 37.7 145.7 38.4 144.1 39.2 C142.6 39.9 140.0 40.2 137.5 41.3 C135.0 42.3 131.3 44.4 129.3 45.6 C127.4 46.7 127.6 46.5 125.6 48.1 C123.6 49.6 119.8 52.6 117.4 54.8 C115.0 56.9 113.2 58.9 111.4 61.1 C109.5 63.3 107.6 66.1 106.5 67.9 C105.3 69.7 105.0 70.5 104.6 71.9 C104.1 73.3 104.1 75.8 104.0 76.5"/><path d="M145.9 37.2 C145.7 36.8 145.1 35.4 144.7 34.8 C144.3 34.3 145.1 34.5 143.7 33.8 C142.2 33.2 138.0 31.5 136.0 30.8 C133.9 30.2 133.5 30.1 131.3 29.9 C129.1 29.8 125.2 29.7 122.7 29.9 C120.3 30.2 118.7 30.6 116.5 31.2 C114.4 31.9 111.8 33.1 109.9 34.1 C108.0 35.1 106.1 36.2 105.1 37.3 C104.0 38.3 103.8 40.0 103.5 40.5"/><path d="M109.2 44.5 C108.1 43.8 104.7 41.2 102.6 40.4 C100.6 39.7 99.3 39.9 96.9 40.1 C94.5 40.3 91.2 40.4 88.3 41.4 C85.3 42.3 81.9 44.0 79.2 45.8 C76.5 47.7 73.9 50.5 72.2 52.2 C70.4 54.0 70.8 54.9 68.8 56.3 C66.9 57.7 62.7 59.2 60.5 60.5 C58.3 61.9 57.4 62.6 55.6 64.4 C53.8 66.2 51.1 69.6 49.7 71.4 C48.4 73.3 48.3 73.8 47.5 75.6 C46.8 77.5 46.6 80.2 45.2 82.5 C43.8 84.7 40.7 86.9 39.1 89.1 C37.5 91.4 36.3 93.7 35.3 96.0 C34.4 98.2 33.9 100.6 33.5 102.6 C33.2 104.6 33.2 106.2 33.3 108.1 C33.4 110.0 34.0 113.1 34.2 114.1"/><path d="M162.5 48.0 C163.3 48.5 166.4 49.8 167.7 50.8 C169.1 51.8 170.0 52.8 170.8 53.8 C171.5 54.7 171.9 55.3 172.2 56.4 C172.6 57.5 172.8 59.2 172.7 60.4 C172.6 61.6 172.1 62.8 171.7 63.7 C171.3 64.6 170.6 65.6 170.4 65.9"/><path d="M195.6 54.9 C196.6 55.1 199.9 55.5 201.5 56.1 C203.1 56.6 203.4 56.6 205.3 58.2 C207.2 59.8 211.0 63.8 212.9 65.9 C214.8 68.1 215.1 68.5 216.6 71.2 C218.1 74.0 220.8 79.7 222.0 82.5 C223.1 85.3 223.1 86.2 223.5 88.2 C223.9 90.2 224.3 92.6 224.2 94.6 C224.2 96.6 223.5 99.2 223.4 100.1"/><path d="M195.6 54.9 C195.5 55.1 195.0 55.8 194.9 56.0"/><path d="M84.7 56.4 C84.4 56.7 83.8 57.1 82.8 58.2 C81.9 59.3 79.9 61.6 79.0 63.3 C78.0 64.9 77.4 66.7 77.1 68.1 C76.9 69.5 77.2 70.8 77.4 71.7 C77.6 72.5 77.9 72.6 78.6 73.1 C79.2 73.5 79.7 74.0 81.2 74.3 C82.7 74.6 85.9 74.7 87.6 75.0 C89.3 75.3 90.6 75.8 91.6 76.2 C92.6 76.6 93.1 76.9 93.8 77.4 C94.5 77.9 95.5 79.1 95.8 79.4"/><path d="M137.7 60.2 C138.8 59.9 141.8 58.9 144.1 58.6 C146.4 58.4 149.1 58.5 151.4 58.7 C153.8 59.0 156.3 59.7 158.3 60.3 C160.2 61.0 161.9 61.9 163.3 62.6 C164.7 63.3 165.5 64.1 166.6 64.7 C167.8 65.2 169.8 65.7 170.4 65.9"/><path d="M170.4 65.9 C170.6 66.4 170.5 67.3 171.7 69.0 C172.9 70.7 176.2 74.1 177.8 76.3 C179.3 78.5 180.0 80.4 180.7 82.5 C181.5 84.6 182.0 86.2 182.1 88.9 C182.2 91.6 181.9 96.0 181.4 98.8 C180.9 101.7 179.9 104.2 179.1 106.1 C178.3 108.0 177.4 108.9 176.6 110.1 C175.7 111.2 175.0 112.0 173.9 112.9 C172.9 113.8 171.6 114.8 170.4 115.5 C169.2 116.2 168.6 116.6 166.9 117.1 C165.1 117.5 161.2 118.1 160.0 118.2"/><path d="M204.2 75.2 C204.3 75.9 204.9 78.1 204.8 79.4 C204.8 80.6 204.4 81.7 203.9 82.7 C203.5 83.7 203.3 84.2 202.2 85.4 C201.1 86.5 198.1 89.0 197.3 89.8"/><path d="M104.0 76.5 C105.6 76.8 111.1 77.3 113.7 78.0 C116.2 78.8 117.7 79.8 119.4 80.9 C121.1 82.1 122.3 83.1 123.7 85.1 C125.1 87.1 127.1 91.6 127.8 92.9"/><path d="M104.0 76.5 C103.4 76.8 102.0 78.0 100.6 78.4 C99.3 78.9 96.8 79.2 96.0 79.4"/><path d="M58.7 78.7 C58.5 79.4 57.9 81.5 57.8 82.7 C57.6 83.9 57.6 84.9 57.7 85.8 C57.8 86.7 57.9 87.3 58.4 88.2 C59.0 89.2 60.6 90.7 61.1 91.4 C61.5 92.1 61.5 91.7 61.4 92.4 C61.3 93.1 60.8 94.7 60.3 95.7 C59.7 96.7 58.4 97.9 58.0 98.4"/><path d="M95.8 79.6 C95.5 80.2 95.2 81.6 94.1 83.1 C92.9 84.7 90.4 86.8 88.9 88.7 C87.4 90.6 86.3 92.5 85.2 94.6 C84.0 96.8 83.2 98.6 82.0 101.5 C80.9 104.3 79.2 109.2 78.3 111.8 C77.5 114.5 77.6 115.7 77.1 117.1 C76.6 118.6 76.1 117.1 75.5 120.5 C75.0 123.8 74.1 132.4 73.9 137.0 C73.7 141.6 74.0 144.7 74.4 148.0 C74.7 151.4 75.2 154.3 76.1 157.3 C77.0 160.3 78.8 163.7 79.6 165.9 C80.4 168.2 80.6 170.0 80.8 170.8"/><path d="M152.3 83.6 C151.7 83.4 150.1 82.6 148.5 82.7 C147.0 82.8 145.0 83.4 143.2 84.1 C141.4 84.9 139.6 85.8 137.7 87.0 C135.8 88.3 133.4 90.5 131.8 91.5 C130.1 92.5 128.5 92.6 127.8 92.9"/><path d="M182.3 88.2 C184.8 88.5 194.8 89.5 197.3 89.8"/><path d="M197.3 89.8 C197.6 90.3 197.8 91.6 198.7 93.1 C199.6 94.6 201.6 96.6 202.6 98.6 C203.6 100.6 204.5 102.7 205.0 105.0 C205.5 107.3 205.7 109.0 205.5 112.3 C205.3 115.5 203.8 122.4 203.5 124.4"/><path d="M127.8 92.9 C127.5 93.9 126.9 96.9 126.2 99.0 C125.5 101.1 124.0 104.4 123.6 105.4"/><path d="M216.8 97.3 C217.0 97.5 217.2 98.1 218.3 98.7 C219.4 99.2 222.2 99.5 223.6 100.4 C225.0 101.3 225.6 102.3 226.5 104.1 C227.5 106.0 228.6 108.8 229.2 111.6 C229.8 114.5 230.0 118.4 230.0 121.1 C230.0 123.8 229.7 125.7 229.3 127.7 C228.9 129.8 228.7 131.0 227.8 133.5 C226.9 136.0 225.3 140.2 224.1 142.8 C222.8 145.3 222.0 146.4 220.4 148.5 C218.7 150.6 215.3 153.5 214.0 155.1 C212.7 156.8 212.8 157.9 212.6 158.4"/><path d="M123.6 105.4 C123.8 105.7 123.4 105.7 124.6 106.9 C125.8 108.2 129.6 111.2 131.0 112.9 C132.3 114.7 132.3 115.9 132.7 117.4 C133.1 118.8 133.2 120.4 133.1 121.8 C133.0 123.2 132.7 124.6 132.3 125.8 C131.9 126.9 131.5 127.5 130.6 128.6 C129.6 129.8 127.3 131.9 126.7 132.6"/><path d="M123.6 105.4 C122.2 105.4 117.0 105.1 115.0 105.2 C112.9 105.3 112.5 105.5 111.2 106.0 C109.9 106.4 108.6 106.9 107.3 107.8 C106.0 108.7 104.3 110.3 103.4 111.2 C102.5 112.1 102.2 112.8 102.0 113.2"/><path d="M156.0 108.1 C156.1 109.0 156.2 112.2 156.6 113.6 C156.9 115.0 157.6 115.9 158.2 116.7 C158.7 117.5 159.7 118.0 160.0 118.2"/><path d="M43.5 109.6 C43.1 110.1 42.1 111.6 41.5 112.3 C40.9 112.9 40.7 113.1 39.9 113.5 C39.2 113.8 38.0 114.3 37.1 114.4 C36.1 114.6 34.9 114.3 34.4 114.3"/><path d="M34.2 114.3 C33.8 114.8 32.6 115.7 31.9 117.1 C31.3 118.6 30.7 121.2 30.4 122.9 C30.0 124.5 30.0 125.5 30.0 127.1 C30.0 128.7 29.9 129.8 30.3 132.4 C30.8 134.9 32.2 140.0 32.9 142.3 C33.6 144.6 33.7 144.7 34.5 146.3 C35.2 147.9 35.9 149.7 37.2 151.8 C38.5 153.9 40.1 156.5 42.2 158.9 C44.3 161.2 47.6 164.3 49.6 166.0 C51.7 167.7 52.9 168.2 54.7 169.2 C56.5 170.1 58.3 171.1 60.5 171.7 C62.6 172.4 65.7 173.0 67.5 173.3 C69.4 173.5 69.8 173.6 71.5 173.4 C73.2 173.3 76.1 172.8 77.7 172.4 C79.2 172.0 80.3 171.2 80.8 171.0"/><path d="M160.0 118.2 C160.1 119.4 160.5 123.1 160.8 124.9 C161.0 126.6 161.5 127.1 161.7 128.6 C161.8 130.1 162.2 130.9 161.9 133.9 C161.6 137.0 160.5 144.5 159.9 146.9 C159.3 149.4 159.3 147.1 158.3 148.7 C157.3 150.3 155.5 154.3 154.0 156.7 C152.6 159.0 151.4 160.5 149.4 162.6 C147.4 164.7 144.0 167.7 142.1 169.2 C140.3 170.7 140.3 170.7 138.4 171.8 C136.5 172.9 132.2 174.9 130.7 176.0 C129.1 177.0 129.2 177.9 128.9 178.3"/><path d="M75.7 119.6 C74.3 119.2 69.5 117.9 67.3 117.5 C65.1 117.0 64.0 117.0 62.7 116.9 C61.4 116.9 60.6 117.0 59.6 117.2 C58.6 117.4 57.6 117.5 56.5 118.1 C55.4 118.7 54.1 119.6 53.0 120.7 C51.8 121.8 50.5 122.8 49.4 124.6 C48.3 126.5 46.7 130.7 46.1 131.9"/><path d="M203.5 124.4 C204.2 124.6 206.3 124.8 207.5 125.2 C208.7 125.6 209.9 126.1 210.8 126.7 C211.7 127.2 212.3 127.9 212.9 128.6 C213.6 129.4 214.3 130.6 214.5 131.1"/><path d="M203.5 124.4 C202.1 125.6 197.8 129.5 194.9 131.3 C192.0 133.2 188.7 133.5 185.8 135.6 C183.0 137.8 179.6 142.3 177.7 144.1 C175.7 145.9 175.2 145.9 174.2 146.5 C173.1 147.1 172.4 147.3 171.3 147.5 C170.2 147.8 169.2 148.0 167.5 148.0 C165.9 148.1 162.6 147.8 161.3 147.7 C160.1 147.5 160.2 147.2 160.0 147.2"/><path d="M95.8 138.3 C96.2 138.3 97.1 137.9 98.0 137.9 C98.8 137.8 99.9 137.9 100.9 138.0 C101.8 138.1 102.9 138.2 103.7 138.5 C104.6 138.8 105.0 138.8 105.9 139.6 C106.9 140.4 108.1 141.2 109.6 143.4 C111.1 145.7 113.3 151.0 114.8 153.1 C116.2 155.2 117.0 155.3 118.3 156.1 C119.6 156.9 121.8 157.7 122.5 158.0"/><path d="M53.0 147.4 C52.7 148.3 51.8 151.6 51.4 152.7 C51.0 153.8 50.7 153.8 50.5 154.0"/><path d="M198.0 153.3 C197.4 154.2 195.7 156.8 194.2 158.4 C192.8 160.0 190.8 161.8 189.2 163.1 C187.5 164.3 186.5 165.0 184.3 165.8 C182.1 166.7 177.3 167.7 175.9 168.1"/><path d="M212.3 158.6 C211.5 158.9 208.8 159.5 207.5 160.0 C206.2 160.5 206.4 160.3 204.4 161.8 C202.4 163.2 200.5 165.2 195.6 168.6 C190.6 171.9 178.8 178.7 174.8 181.9 C170.7 185.1 171.7 186.1 171.2 188.0 C170.7 189.9 171.2 190.4 171.6 193.5 C172.0 196.6 173.5 203.7 173.7 206.5 C173.9 209.4 173.4 209.4 172.8 210.5 C172.2 211.6 171.1 212.4 170.2 213.0 C169.2 213.6 168.1 213.9 167.1 214.1 C166.1 214.3 165.1 214.3 164.2 214.1 C163.3 214.0 162.5 213.8 161.6 213.3 C160.7 212.9 160.0 212.4 158.9 211.2 C157.9 210.0 156.6 208.5 155.3 206.3 C154.0 204.1 152.0 199.9 151.1 197.9 C150.1 196.0 150.1 196.0 149.7 194.6 C149.3 193.3 148.9 190.6 148.8 189.8"/><path d="M212.6 158.6 C212.8 158.9 213.5 159.6 213.8 160.4 C214.1 161.2 214.4 162.1 214.3 163.5 C214.3 164.9 214.0 167.4 213.6 169.0 C213.3 170.7 212.8 172.0 212.1 173.4 C211.3 174.9 210.2 176.6 209.2 177.8 C208.1 179.1 207.0 180.1 205.9 181.2 C204.9 182.2 203.8 183.2 202.6 184.1 C201.4 184.9 200.5 185.5 198.9 186.2 C197.3 187.0 195.2 188.0 192.9 188.5 C190.6 189.1 188.0 189.7 185.0 189.6 C181.9 189.5 177.2 188.4 174.8 187.7 C172.5 187.0 173.7 185.2 170.8 185.3 C168.0 185.3 161.3 187.5 157.8 188.1 C154.4 188.7 151.6 188.7 150.1 188.9 C148.6 189.2 149.0 189.4 148.8 189.5"/><path d="M81.0 171.0 C81.4 171.2 82.1 171.1 83.4 171.9 C84.7 172.8 87.3 175.1 88.9 176.2 C90.6 177.3 91.2 177.8 93.4 178.5 C95.5 179.3 99.0 180.2 101.7 180.7 C104.5 181.1 107.5 181.4 109.9 181.4 C112.3 181.4 113.3 181.1 116.1 180.6 C118.9 180.1 124.8 178.6 126.9 178.2 C129.0 177.8 128.6 178.3 128.9 178.3"/><path d="M128.9 178.3 C129.2 178.8 129.5 180.5 130.5 181.6 C131.4 182.7 133.1 184.1 134.6 185.1 C136.2 186.0 137.9 186.8 139.9 187.4 C141.9 188.0 145.1 188.1 146.6 188.4 C148.0 188.8 148.2 189.4 148.5 189.5"/>
+    </g>
   </g>
 </svg>
 </div>
@@ -1477,7 +1519,7 @@ opacity: 0 !important;
     <!-- CTA: Kostenlos testen -->
     <div class="animate-on-scroll ft-cta" style="animation: fadeSlideIn 1s ease-out 0.1s both">
       <h3 class="bn-h2 text-left font-normal tracking-tight text-gray-950 font-geist">Teste den KI-Tutor mit deinen eigenen Kursinhalten.</h3>
-      <p class="ft-sub font-geist">Der Free-Plan kostet nichts, braucht keine Kreditkarte — und dein erster Tutor steht in wenigen Minuten.</p>
+      <p class="ft-sub font-geist">Starte im Free-Plan ohne Kreditkarte oder teste den Professional-Plan 14 Tage kostenlos. Dein erster Tutor steht in wenigen Minuten.</p>
       <div class="kb-ctas ft-ctas">
         <a href="https://portal.alphalearn.ai/auth/register" class="kb-cta kb-cta--arrow font-geist">Kostenlos testen<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
         <a href="/de/preis.html" class="kb-cta kb-cta--ghost font-geist">Preise ansehen</a>
@@ -1719,7 +1761,7 @@ opacity: 0 !important;
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
             <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-              <p>Du startest kostenlos und wählst später den Plan, der zu dir passt. Preise pro Monat bei jährlicher Abrechnung, zzgl. USt.:</p><ul><li><strong>Free:</strong> 0 €</li><li><strong>Basic:</strong> 79 €</li><li><strong>Professional:</strong> 199 €</li><li><strong>API-Deal:</strong> 500 €</li></ul><p><a href="/de/preis.html" class="ab-more-inline">Details zu den Plänen und Preisen</a></p>
+              <p>Du startest kostenlos: im Free-Plan ohne Kreditkarte oder mit dem 14-Tage-Test des Professional-Plans. Danach wählst du den Plan, der zu dir passt. Preise pro Monat bei jährlicher Abrechnung, zzgl. USt.:</p><ul><li><strong>Free:</strong> 0 € (100 Credits pro Monat, zum Kennenlernen des Portals)</li><li><strong>Basic:</strong> 79 € (bis zu 100 Lernende, 1.000 Credits pro Monat)</li><li><strong>Professional:</strong> 199 € (bis zu 250 Lernende, 2.500 Credits pro Monat)</li><li><strong>Enterprise:</strong> individuell kalkuliert, für mehr als 250 Lernende</li></ul><p>Bei monatlicher Abrechnung kosten Basic 99 € und Professional 249 €. Weitere Credits kannst du bei Bedarf dazukaufen.</p><p><a href="/de/preis.html" class="ab-more-inline">Details zu den Plänen und Preisen</a></p>
             </div>
           </div>
         </div>
@@ -1753,7 +1795,7 @@ opacity: 0 !important;
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
             <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-              <p>Nein, nicht in den Plänen Free, Basic und Professional. Dort ist die KI-Nutzung bis zum Token-Limit deines Plans enthalten, einen eigenen Vertrag mit einem KI-Anbieter brauchst du nicht. Nur im API-Deal nutzt du deinen eigenen API-Key. Dann zahlst du den Token-Verbrauch selbst beim Anbieter und hast dafür kein Token-Limit.</p><p><a href="/de/preis.html" class="ab-more-inline">Pläne vergleichen</a></p>
+              <p>Nein. Die KI-Nutzung ist über das monatliche Credit-Kontingent deines Plans enthalten, einen eigenen Vertrag mit einem KI-Anbieter brauchst du nicht. Im Enterprise-Plan kannst du optional deinen eigenen API-Key nutzen (Bring your own API Key). Dann zahlst du die KI-Nutzung direkt beim Anbieter.</p><p><a href="/de/preis.html" class="ab-more-inline">Pläne vergleichen</a></p>
             </div>
           </div>
         </div>
@@ -1787,7 +1829,7 @@ opacity: 0 !important;
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
             <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-              <p>Die Alphalearn-Plattform wird in Deutschland gehostet, hochgeladene Dateien deiner Wissensbasis liegen verschlüsselt in EU-Rechenzentren. Für eine Antwort übermitteln wir Chat-Inhalte und Inhalte aus deiner Wissensbasis nur temporär und pseudonymisiert an das gewählte KI-Modell. Je nach Anbieter läuft das Modell in der EU oder in den USA, abgesichert über Standardvertragsklauseln. Deine Inhalte werden nicht zum Training von KI-Modellen genutzt. Nutzt du im API-Deal deinen eigenen API-Key, gelten für die Modellnutzung zusätzlich die Bedingungen deines Vertrags mit dem KI-Anbieter.</p><p><a href="/de/privacy.html" class="ab-more-inline">Zur Datenschutzerklärung</a></p>
+              <p>Die Alphalearn-Plattform wird in Deutschland gehostet, hochgeladene Dateien deiner Wissensbasis liegen verschlüsselt in EU-Rechenzentren. Für eine Antwort übermitteln wir Chat-Inhalte und Inhalte aus deiner Wissensbasis nur temporär und pseudonymisiert an das gewählte KI-Modell. Je nach Anbieter läuft das Modell in der EU oder in den USA, abgesichert über Standardvertragsklauseln. Deine Inhalte werden nicht zum Training von KI-Modellen genutzt. Nutzt du im Enterprise-Plan deinen eigenen API-Key, gelten für die Modellnutzung zusätzlich die Bedingungen deines Vertrags mit dem KI-Anbieter.</p><p><a href="/de/privacy.html" class="ab-more-inline">Zur Datenschutzerklärung</a></p>
             </div>
           </div>
         </div>
@@ -1905,34 +1947,8 @@ opacity: 0 !important;
     }
   </script>
 </section><!-- Global Footer -->
-<!-- Footer neues Design 2026: Stile -->
-<style>
-  /* Footer: schwarz wie das Band, keine Leuchtflecken, keine Trennlinien, ruhigere Typo */
-  #site-footer-2026 > footer { background:#0a0a0f; border-top:0; }
-  #site-footer-2026 > footer > .absolute { display:none; }
-  #site-footer-2026 > footer .border-t { border-top-color:transparent; }
-  #site-footer-2026 > footer h3 { font-size:.8rem; font-weight:500; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.45); }
-  #site-footer-2026 > footer ul a { font-size:.98rem; color:#e5e7eb; transition:color .2s; }
-  #site-footer-2026 > footer ul a:hover { color:#fff; text-decoration:underline; text-underline-offset:.25em; text-decoration-thickness:1px; }
-  #site-footer-2026 > footer .lg\:col-span-4 a.rounded-lg { border-radius:9999px; background:transparent; border:1.5px solid rgba(255,255,255,.35); backdrop-filter:none; }
-  #site-footer-2026 > footer .lg\:col-span-4 a.rounded-lg:hover { border-color:#fff; background:rgba(255,255,255,.08); }
-  #site-footer-2026 > footer form input[type=email] { border-radius:9999px; background:transparent; border:1.5px solid rgba(255,255,255,.35); padding:.85rem 1.25rem; }
-  #site-footer-2026 > footer form input[type=email]:focus { border-color:#fff; box-shadow:none; }
-  #site-footer-2026 > footer form button[type=submit] { border-radius:9999px; margin-left:.6rem; padding:.85rem 1.6rem; font-weight:600; }
-  #site-footer-2026 > footer form button[type=submit] { color:#fff; border:0; text-shadow:0 1px 2px rgba(10,10,15,.22);
-    background:
-      radial-gradient(55% 150% at 8% 100%, #3B82F6 0%, rgba(59,130,246,0) 72%),
-      radial-gradient(45% 150% at 36% 0%, #B47FFF 0%, rgba(180,127,255,0) 72%),
-      radial-gradient(45% 150% at 70% 100%, #FF8093 0%, rgba(255,128,147,0) 72%),
-      radial-gradient(40% 150% at 96% 0%, #FFAF85 0%, rgba(255,175,133,0) 72%),
-      linear-gradient(100deg, #3B82F6 0%, #B47FFF 36%, #FF7EAF 64%, #FFAF85 100%);
-    background-size:200% 100%; animation:kbFlow 6s ease-in-out infinite alternate; transition:transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .4s; }
-  #site-footer-2026 > footer form button[type=submit]:hover { transform:translateY(-1px); box-shadow:0 14px 32px -14px rgba(180,127,255,.85); }
-  @media (prefers-reduced-motion: reduce) { #site-footer-2026 > footer form button[type=submit] { animation:none; } }
-  #site-footer-2026 > footer .lg\:col-span-4 > p { margin-top:1.25rem; }
-  #site-footer-2026 > footer .max-w-xl h3 { font-size:1.6rem; font-weight:400; letter-spacing:-.02em; text-transform:none; color:#fff; }
-</style>
-<div id="site-footer-2026"><!-- partial:footer:start -->
+<!-- Footer-Stile: /assets/css/design-2026.css -->
+<div id="site-footer"><!-- partial:footer:start -->
 <footer class="text-white bg-gray-900 border-black/5 border-t relative">
   <div class="absolute inset-0 pointer-events-none">
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
@@ -2020,7 +2036,7 @@ opacity: 0 !important;
           <ul class="mt-4 space-y-3">
             <li class=""><a href="/de/academy.html" class="hover:text-white transition text-sm text-gray-400 font-geist">Academy</a></li>
             <li class=""><a href="/de/helpcenter.html" class="text-sm text-gray-400 hover:text-white transition font-geist" style="">Hilfe-Center</a></li>
-            <li class=""><a href="https://portal.alphabees.de/auth/register" class="hover:text-white transition text-sm text-gray-400 font-geist">Alphabees-Portal</a></li>
+            <li class=""><a href="https://portal.alphabees.de/auth/register" class="hover:text-white transition text-sm text-gray-400 font-geist">Alphalearn Portal</a></li>
             <li class=""><a href="/de/blog.html" class="hover:text-white transition text-sm text-gray-400 font-geist">Blog</a></li>
             <li class=""><a href="/de/ki-tutor-guide-bildungsanbieter-deutschland-2026.html" class="hover:text-white transition text-sm text-gray-400 font-geist">KI-Tutor-Guide 2026</a></li>
           </ul>
@@ -2544,112 +2560,19 @@ opacity: 0 !important;
 })();
 </script>
 
-<!-- ===================== TEST: Hero-Video + Filter-Panel (nur lokal) ===================== -->
-<style>
-  /* AI-Gradient der Marke: CI-Blue #3B82F6, Purple #B47FFF, Lobster #FF8093, Pink #FF7EAF, Orange #FFAF85.
-     Aufbau: Farbverlauf als Basis, darüber das entfärbte Video als bewegte Licht-Textur, darüber ein optionaler Verlauf für die Lesbarkeit. */
-  /* Gewählt am 06.10.: Voreinstellung „AI kräftig“ */
-  :root { --hv-vop:.7; --hv-vblend:overlay; --hv-gray:1; --hv-con:1.3; --hv-dark:0; --hv-grad:.3; --hv-blur:0px; --hv-sat:1.3;
-    --hv-mesh:
-      radial-gradient(38% 60% at 18% 72%, #3B82F6 0%, rgba(59,130,246,0) 72%),
-      radial-gradient(40% 55% at 38% 48%, #B47FFF 0%, rgba(180,127,255,0) 72%),
-      radial-gradient(34% 50% at 62% 78%, #FFAF85 0%, rgba(255,175,133,0) 72%),
-      radial-gradient(36% 50% at 88% 18%, #FF8093 0%, rgba(255,128,147,0) 72%),
-      radial-gradient(42% 55% at 26% 6%, #FF7EAF 0%, rgba(255,126,175,0) 72%),
-      radial-gradient(30% 45% at 100% 100%, #ffffff 0%, rgba(255,255,255,0) 70%),
-      linear-gradient(135deg, #FF7EAF 0%, #FF8093 45%, #FFAF85 85%, #FFE4D6 100%); }
-
-  /* Größere Hero-Schrift, Verhältnis H1 : Unterzeile wie bisher (Faktor ~1,2 mobil bis 1,4 Desktop) */
-  .hv-band h1.hero-h1 { font-size:2.7rem; }
-  .hv-band h1.hero-h1 + p { font-size:1.2rem; line-height:1.45; }
-  @media (min-width:640px) { .hv-band h1.hero-h1 { font-size:3.6rem; } .hv-band h1.hero-h1 + p { font-size:1.35rem; } }
-  @media (min-width:768px) { .hv-band h1.hero-h1 { font-size:4.5rem; } }
-  @media (min-width:1024px) { .hv-band h1.hero-h1 { font-size:min(8.1cqi, 5.25rem); } .hv-band h1.hero-h1 + p { font-size:1.4rem; } }
-  @media (min-width:1280px) { .hv-band h1.hero-h1 + p { font-size:1.575rem; } }
-  .hv-band { position:relative; isolation:isolate; padding:4rem 0 4.5rem; }
-  @media (min-width:640px) { .hv-band { padding:5rem 0 5.5rem; } }
-  @media (min-width:1024px) { .hv-band { padding:6.5rem 0 7rem; min-height:min(82vh, 820px); display:flex; align-items:center; } .hv-band > .grid { width:100%; } }
-  .hv-media { position:absolute; top:0; bottom:0; left:50%; width:var(--hv-vw,100vw); transform:translateX(-50%); z-index:-1; overflow:hidden; background:var(--hv-mesh); filter:saturate(var(--hv-sat)); }
-  .hv-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform:scale(1.04); mix-blend-mode:var(--hv-vblend); opacity:var(--hv-vop); filter:blur(var(--hv-blur)) grayscale(var(--hv-gray)) contrast(var(--hv-con)); }
-  .hv-shade { position:absolute; inset:0; background:linear-gradient(90deg, rgba(30,27,75,var(--hv-grad)) 0%, rgba(30,27,75,calc(var(--hv-grad) * .45)) 55%, rgba(30,27,75,0) 100%), rgba(30,27,75,var(--hv-dark)); }
-  @media (max-width:1023px) { .hv-shade { background:linear-gradient(180deg, rgba(30,27,75,var(--hv-grad)) 0%, rgba(30,27,75,calc(var(--hv-grad) * .45)) 60%, rgba(30,27,75,0) 100%), rgba(30,27,75,var(--hv-dark)); } }
-  .hv-controls { position:absolute; top:0; bottom:0; left:50%; width:var(--hv-vw,100vw); transform:translateX(-50%); z-index:5; pointer-events:none; }
-  .hv-pause { position:absolute; right:12px; bottom:12px; pointer-events:auto; width:2rem; height:2rem; border-radius:9999px; display:inline-flex; align-items:center; justify-content:center; color:#fff; background:rgba(255,255,255,.08); border:1.5px solid #fff; box-shadow:0 1px 4px rgba(15,23,42,.18); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); transition:background .2s; }
-  .hv-pause::before { content:''; position:absolute; inset:-6px; border-radius:9999px; } /* größere Klickfläche (44 px), sichtbar bleiben 32 px */
-  @media (min-width:640px) { .hv-pause { right:16px; bottom:16px; } }
-  .hv-pause:hover { background:rgba(255,255,255,.22); }
-  .hv-pause svg { filter:drop-shadow(0 1px 1px rgba(15,23,42,.25)); }
-  .hv-pause:focus-visible { outline:2px solid #fff; outline-offset:2px; }
-  .hv-pause .hv-ico-play { display:none; } .hv-pause[aria-pressed="true"] .hv-ico-play { display:block; } .hv-pause[aria-pressed="true"] .hv-ico-pause { display:none; }
-  /* Test-Panel */
-  .hv-panel { position:fixed; left:12px; bottom:12px; z-index:9999; width:280px; font:13px/1.4 Inter, system-ui, sans-serif; color:#111827; background:rgba(255,255,255,.97); border:1px solid #e5e7eb; border-radius:14px; box-shadow:0 20px 40px -12px rgba(15,23,42,.35); }
-  .hv-panel summary { cursor:pointer; list-style:none; padding:10px 14px; font-weight:600; display:flex; justify-content:space-between; }
-  .hv-panel summary::-webkit-details-marker { display:none; }
-  .hv-panel .b { padding:0 14px 14px; max-height:70vh; overflow:auto; }
-  .hv-panel .presets { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:6px; }
-  .hv-panel .presets button { border:1px solid #e5e7eb; border-radius:9999px; padding:4px 10px; background:#fff; font-size:12px; }
-  .hv-panel .presets button.on { background:#111827; color:#fff; border-color:#111827; }
-  .hv-panel label { display:block; margin-top:7px; font-size:12px; color:#374151; }
-  .hv-panel input[type=range] { width:100%; accent-color:#3B82F6; }
-  .hv-panel .row { display:flex; align-items:center; gap:8px; margin-top:8px; font-size:12px; }
-  .hv-panel select { flex:1; border:1px solid #e5e7eb; border-radius:8px; padding:3px 6px; background:#fff; font-size:12px; }
-  .hv-panel code { display:block; margin-top:10px; padding:6px 8px; background:#f3f4f6; border-radius:8px; font-size:11px; word-break:break-word; }
-</style>
-<details class="hv-panel" hidden>
-  <summary>Video-Filter (Test) <span>▴▾</span></summary>
-  <div class="b">
-    <div class="presets">
-      <button type="button" data-p="original">Original</button>
-      <button type="button" data-p="ai">AI-Gradient</button>
-      <button type="button" data-p="kraeftig">AI kräftig</button>
-      <button type="button" data-p="pastell">AI pastell</button>
-    </div>
-    <label>Video-Stärke <span data-v="vop"></span><input type="range" min="0" max="1" step="0.05" data-k="vop"></label>
-    <div class="row">Video-Mischung <select data-k="vblend"><option value="soft-light">Weiches Licht</option><option value="overlay">Überlagern</option><option value="multiply">Multiplizieren</option><option value="screen">Negativ multiplizieren</option><option value="luminosity">Luminanz</option><option value="normal">Normal</option></select></div>
-    <label>Video entfärben <span data-v="gray"></span><input type="range" min="0" max="1" step="0.05" data-k="gray"></label>
-    <label>Video-Kontrast <span data-v="con"></span><input type="range" min="0.5" max="2" step="0.05" data-k="con"></label>
-    <label>Verlauf hinter dem Text <span data-v="grad"></span><input type="range" min="0" max="0.9" step="0.05" data-k="grad"></label>
-    <label>Abdunkeln <span data-v="dark"></span><input type="range" min="0" max="0.8" step="0.05" data-k="dark"></label>
-    <label>Sättigung <span data-v="sat"></span><input type="range" min="0" max="2" step="0.05" data-k="sat"></label>
-    <label>Weichzeichnen <span data-v="blur"></span><input type="range" min="0" max="30" step="1" data-k="blur"></label>
-    <code data-out></code>
-  </div>
-</details>
 <script>
+/* Hero-Video: Breite ohne Scrollbalken messen, Pause-Knopf, reduzierte Bewegung */
 (function () {
   var root = document.documentElement, video = document.querySelector('.hv-video'), btn = document.querySelector('.hv-pause');
   function vw() { root.style.setProperty('--hv-vw', root.clientWidth + 'px'); }
   vw(); window.addEventListener('resize', vw);
-  var P = {
-    original: { vop: 1, vblend: 'normal', gray: 0, con: 1, grad: 0, dark: 0, sat: 1, blur: 0 },
-    ai:       { vop: .55, vblend: 'soft-light', gray: 1, con: 1.2, grad: .35, dark: 0, sat: 1.1, blur: 0 },
-    kraeftig: { vop: .7, vblend: 'overlay', gray: 1, con: 1.3, grad: .3, dark: 0, sat: 1.3, blur: 0 },
-    pastell:  { vop: .4, vblend: 'soft-light', gray: 1, con: 1, grad: 0, dark: 0, sat: 1, blur: 0 }
-  };
-  var K = ['vop', 'vblend', 'gray', 'con', 'grad', 'dark', 'sat', 'blur'];
-  var st; try { st = JSON.parse(localStorage.getItem('hv-test3')) || P.kraeftig; } catch (e) { st = P.kraeftig; }
-  function fmt(k, v) { return k === 'blur' ? v + ' px' : (k === 'sat' || k === 'con') ? v : k === 'vblend' ? v : Math.round(v * 100) + ' %'; }
-  function apply() {
-    K.forEach(function (k) { root.style.setProperty('--hv-' + k, k === 'blur' ? st[k] + 'px' : st[k]); });
-    document.querySelectorAll('.hv-panel [data-k]').forEach(function (i) { i.value = st[i.dataset.k]; });
-    document.querySelectorAll('.hv-panel [data-v]').forEach(function (s) { s.textContent = fmt(s.dataset.v, st[s.dataset.v]); });
-    document.querySelectorAll('.hv-panel [data-p]').forEach(function (b) { var p = P[b.dataset.p]; b.classList.toggle('on', K.every(function (k) { return String(p[k]) === String(st[k]); })); });
-    document.querySelector('.hv-panel [data-out]').textContent = K.map(function (k) { return k + ' ' + fmt(k, st[k]); }).join(' · ');
-    try { localStorage.setItem('hv-test3', JSON.stringify(st)); } catch (e) {}
-  }
-  document.querySelectorAll('.hv-panel [data-p]').forEach(function (b) { b.addEventListener('click', function () { st = Object.assign({}, P[b.dataset.p]); apply(); }); });
-  document.querySelectorAll('.hv-panel [data-k]').forEach(function (i) { i.addEventListener('input', function () { st[i.dataset.k] = i.dataset.k === 'vblend' ? i.value : parseFloat(i.value); apply(); }); });
-  apply();
-  var panel = document.querySelector('.hv-panel');
-  if (/[?&]filter\b/.test(location.search)) panel.hidden = false; else { try { localStorage.removeItem('hv-test3'); } catch (e) {} st = Object.assign({}, P.kraeftig); apply(); }
-  try { if (localStorage.getItem('hv-open') === '1') panel.open = true; } catch (e) {}
-  panel.addEventListener('toggle', function () { try { localStorage.setItem('hv-open', panel.open ? '1' : '0'); } catch (e) {} });
+  if ('ResizeObserver' in window) new ResizeObserver(vw).observe(root);
+  if (!video || !btn) return;
   function setPaused(p) { if (p) video.pause(); else video.play().catch(function () {}); btn.setAttribute('aria-pressed', p ? 'true' : 'false'); btn.setAttribute('aria-label', p ? 'Hintergrundvideo abspielen' : 'Hintergrundvideo anhalten'); }
   btn.addEventListener('click', function () { setPaused(!video.paused); });
   if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) setPaused(true);
 })();
 </script>
-<!-- =================== /TEST ===================== -->
 <!-- Alphalearn Chat-Widget (Orbi) -->
 <script>(function(){var e=document,t=e.createElement("script");t.src="https://chat.alphalearn.ai/chat-widget.js",t.onload=function(){_loadAlChat({apiKey:"359ea983-451c-4c2a-bbf1-ea467946e84f",botId:"355cb97f-f076-42b7-8aac-b0dfb8e4a236"})},e.body.appendChild(t);})();</script>
 </body></html>
