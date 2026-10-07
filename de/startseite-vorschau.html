@@ -1616,6 +1616,13 @@ opacity: 0 !important;
     .faq-sec .grid > .group.rounded-2xl { border:1.5px solid #0a0a0f; background:#fff; box-shadow:none; }
     .faq-sec .grid > .group.rounded-2xl > button > span:first-child { font-size:1.08rem; font-weight:500; color:#0a0a0f; letter-spacing:-.01em; }
     .faq-sec .grid > .group.rounded-2xl .faq-content > div > div { font-size:1rem; line-height:1.65; color:#4b5563; }
+    .faq-sec .faq-content p + p, .faq-sec .faq-content p + ul, .faq-sec .faq-content ul + p { margin-top:.85rem; }
+    .faq-sec .faq-content ul { list-style:disc; padding-left:1.25rem; }
+    .faq-sec .faq-content li + li { margin-top:.35rem; }
+    .faq-sec .faq-content li::marker { color:#0a0a0f; }
+    .faq-sec .faq-content strong { font-weight:600; color:#0a0a0f; }
+    .ab-more-inline { color:#2563eb; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:.2em; }
+    .ab-more-inline:hover { color:#1d4ed8; }
     .faq-sec .faq-icon { width:2.25rem; height:2.25rem; border:1.5px solid #0a0a0f; background:#fff; color:#0a0a0f; transition:background-color .25s, color .25s; }
     .faq-sec .faq-icon svg { color:currentColor !important; }
     .faq-sec .group.rounded-2xl:hover .faq-icon, .faq-sec button[aria-expanded="true"] .faq-icon { background:#0a0a0f; color:#fff; border-color:#0a0a0f; }
@@ -1644,14 +1651,7 @@ opacity: 0 !important;
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
             <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-              Ein <span class="whitespace-nowrap">KI-Tutor</span> unterstützt Lernende direkt im Kurs – mit sofortigen Antworten, Zusammenfassungen,
-              Praxisbeispielen, personalisierten Übungen und klaren Erklärungen. Er nutzt die Kursinhalte, oder andere,
-              von
-              dir zur Verfügung gestellten Quellen als Wissensbasis, sodass alle Antworten inhaltlich zu deinen
-              e-Learnings
-              passen und den Lernfortschritt fördern. So erhalten Lernende genau die Unterstützung, die sie brauchen,
-              ohne
-              die Lernplattform verlassen zu müssen.
+              <p>Ein <span class="whitespace-nowrap">KI-Tutor</span> begleitet deine Lernenden direkt im Kurs, zum Beispiel in Moodle oder ILIAS. Er nutzt deine Kursinhalte und weitere Quellen, die du hinzufügst, als Wissensbasis. Die wichtigsten Funktionen:</p><ul><li><strong>Intelligenter KI-Chat:</strong> beantwortet Fragen auf Basis deiner Kursinhalte, mit Quellenangabe unter der Antwort (abschaltbar).</li><li><strong>Personalisierte Übungen:</strong> Aufgaben in verschiedenen Formaten, passend zum Lernstand, mit individuellem Feedback.</li><li><strong>Didaktische Dialog-Modi:</strong> etwa sokratische Gegenfragen, Debatte, Reflexionsfragen oder Praxisbeispiele.</li><li><strong>Aktive Lernbegleitung:</strong> gibt in Moodle von sich aus Impulse, passend zum geöffneten Kursabschnitt.</li><li><strong>Geführter Lernmodus:</strong> arbeitet in Moodle einen Kurs oder ein PDF Schritt für Schritt mit den Lernenden durch.</li><li><strong>Adaptive Lernerprofile (optional):</strong> erkennt Stärken und Schwächen und passt Übungen und Erklärungen daran an.</li><li><strong>Über 80 Sprachen:</strong> passt sich an Sprache und Sprachniveau der Lernenden an.</li></ul><p><a href="/de/features.html" class="ab-more-inline">Alle Funktionen ansehen</a></p>
             </div>
           </div>
         </div>
@@ -1668,7 +1668,7 @@ opacity: 0 !important;
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
             <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-              Du kannst den Alphabees <span class="whitespace-nowrap">KI-Tutor</span> kostenlos testen und sofort in deinem LMS einsetzen. Unsere Pläne starten ab 79 € pro Monat. Für detaillierte Preis-Informationen besuche: <a href="/de/preis.html" class="text-blue-600 hover:underline">alphalearn.ai/de/preis.html</a>
+              <p>Mit dem Free-Plan testest du Alphalearn kostenlos und ohne Kreditkarte: ein <span class="whitespace-nowrap">KI-Tutor</span>, drei Datenquellen und ein Lernender – du selbst. Bezahlte Pläne starten bei 79 € pro Monat zzgl. USt. bei jährlicher Abrechnung (bei monatlicher Abrechnung 99 €), für bis zu 100 Lernende pro Monat. Das Angebot richtet sich ausschließlich an Unternehmen. Beide Plugins, für Moodle und ILIAS, sind kostenlos, das ILIAS Plugin ist zudem Open Source (GPL-3.0). Die KI-Funktionen laufen über deinen Alphalearn-Plan.</p><p><a href="/de/preis.html" class="ab-more-inline">Alle Pläne und Preise</a></p>
             </div>
           </div>
         </div>
@@ -1685,14 +1685,7 @@ opacity: 0 !important;
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
             <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-              Alphabees bietet dir bereits eine große Auswahl der beliebtesten KI-Anbieter und neusten und
-              leistungsstärksten KI-Modelle. Wähle zwischen Open-Source- und Closed-Source-KI-Modellen. Aktuell bieten
-              wir:
-              OpenAI, Anthropic, Google, Meta, Mistral, Groq, DeepSeek. Du kannst deinen favorisierten KI-Anbieter aus
-              dieser Liste wählen und benötigst keinen eigenen Vertrag mit dem Anbieter (z.B. OpenAI account).
-
-              Solltest du dennoch dein eigenes KI-Modell oder ein selbst-gehostetes open-weight Modell wie z.B. LLaMA 3
-              mitbringen wollen, kontaktiere uns gerne. Wir finden einen Weg, deinen API-Key einzubinden.
+              <p>Du wählst im Alphalearn Portal für jeden Tutor das passende KI-Modell. Zur Wahl stehen Modelle von OpenAI und Google sowie offene Modelle (Open-Weight). Es gibt sie in verschiedenen Intelligenz-Stufen, von schnellen, günstigen Modellen für einfache Fragen bis zu Premium-Modellen für anspruchsvolle Aufgaben – die Kosten siehst du direkt daneben. Im API-Deal nutzt du deinen eigenen API-Key und zahlst den Token-Verbrauch direkt beim Anbieter. Für ein eigenes oder selbst gehostetes Modell sprich uns gern an.</p>
             </div>
           </div>
         </div>
@@ -1709,13 +1702,7 @@ opacity: 0 !important;
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
             <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-              Nein, du brauchst keinen zusätzlichen KI-Anbieter. Alphabees bietet dir bereits eine große Auswahl der
-              beliebtesten
-              KI-Anbieter und neusten und leistungsstärksten KI-Modelle. Wähle einfach einen KI-Anbieter im Alphabees
-              Portal
-              bei der Konfiguration deines <span class="whitespace-nowrap">KI-Tutors</span>. Alle Kosten für die KI-Nutzung sind in deinem Alphabees Paket
-              bereits
-              enthalten.
+              <p>Nein, nicht in den Plänen Free, Basic und Professional. Dort ist die KI-Nutzung bis zum Token-Limit deines Plans enthalten, einen eigenen Vertrag mit einem KI-Anbieter brauchst du nicht. Nur im API-Deal nutzt du deinen eigenen API-Key. Dann zahlst du den Token-Verbrauch selbst beim Anbieter und hast dafür kein Token-Limit.</p><p><a href="/de/preis.html" class="ab-more-inline">Pläne vergleichen</a></p>
             </div>
           </div>
         </div>
@@ -1723,8 +1710,8 @@ opacity: 0 !important;
 
       <!-- Item 5 -->
       <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
-        <button data-faq="Kann ich den KI-Tutor in meine e-Learnings und mein LMS integrieren?" onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
-          <span class="text-base font-semibold text-gray-900">Kann ich den <span class="whitespace-nowrap">KI-Tutor</span> in meine e-Learnings und mein LMS integrieren?</span>
+        <button data-faq="Kann ich den KI-Tutor in meine e-Learnings und mein LMS, z. B. Moodle oder ILIAS, integrieren?" onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
+          <span class="text-base font-semibold text-gray-900">Kann ich den <span class="whitespace-nowrap">KI-Tutor</span> in meine e-Learnings und mein LMS, z.&nbsp;B. Moodle oder ILIAS, integrieren?</span>
           <span class="ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-blue-600 transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
           </span>
@@ -1732,12 +1719,7 @@ opacity: 0 !important;
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
             <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-              Ja, unsere KI-Tutoren lassen sich in verschiedene Lernmanagementsysteme (LMS) integrieren, sodass sie
-              nahtlos
-              in deine
-              bestehenden Lernprozesse eingebunden werden können. Für Moodle haben wir sogar ein eigenes Plugin
-              entwickelt.
-              Für kinderleichte Integration ohne technische Vorkenntnisse.
+              <p>Ja, für Moodle gibt es das kostenlose Moodle Plugin aus dem offiziellen Moodle-Plugin-Verzeichnis, auch für die Moodle Mobile App. Es bezieht Kursinhalte wie Seiten, PDFs, Quizze, Foren, Kalender, H5P und SCORM-Pakete automatisch ein. Für ILIAS 11 gibt es das ILIAS Plugin: Es zeigt den Chat in deinen Kursen und gleicht Kursstruktur, Mitgliedschaften, Lernstand und hochgeladene Kursdateien per Cron-Job mit dem Alphalearn Portal ab, Kursdateien standardmäßig alle 12 Stunden. Für Installation und Updates des ILIAS Plugins brauchst du Server-Zugang. Andere Lernplattformen bindest du über LTI 1.3 an, Webseiten und e-Learnings per Einbettung, etwa als SCORM-Paket.</p><p><a href="/de/moodle-plugin.html" class="ab-more-inline">Moodle Plugin</a> · <a href="/de/ilias-plugin.html" class="ab-more-inline">ILIAS Plugin</a></p>
             </div>
           </div>
         </div>
@@ -1754,9 +1736,7 @@ opacity: 0 !important;
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
             <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-              Alle Daten werden sicher auf unseren Servern in Deutschland gehostet. Dies gewährleistet die Einhaltung
-              der
-              DSGVO-Richtlinien.
+              <p>Die Alphalearn-Plattform wird in Deutschland gehostet, hochgeladene Dateien deiner Wissensbasis liegen verschlüsselt in EU-Rechenzentren. Für eine Antwort übermitteln wir Chat-Inhalte und Inhalte aus deiner Wissensbasis nur temporär und pseudonymisiert an das gewählte KI-Modell. Je nach Anbieter läuft das Modell in der EU oder in den USA, abgesichert über Standardvertragsklauseln. Deine Inhalte werden nicht zum Training von KI-Modellen genutzt. Nutzt du im API-Deal deinen eigenen API-Key, gelten für die Modellnutzung zusätzlich die Bedingungen deines Vertrags mit dem KI-Anbieter.</p><p><a href="/de/privacy.html" class="ab-more-inline">Zur Datenschutzerklärung</a></p>
             </div>
           </div>
         </div>
@@ -1773,12 +1753,7 @@ opacity: 0 !important;
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
             <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-              Ja. Der Alphabees <span class="whitespace-nowrap">KI-Tutor</span> ist DSGVO-konform und auf die Anforderungen des EU AI Act ausgelegt. Sofern keine Profilbildung für ein adaptives, lernerspezifisches KI-Tutoring im Alphalearn Portal aktiviert wird, werden keine personenbezogene Daten gespeichert und keine Daten zum Training der KI genutzt. Eine DSGVO-konforme
-              Auftragsverarbeitungsvereinbarung (AVV) besteht zwischen Alphabees und jedem angebotenen KI-Anbieter. Mit
-              jedem Kunden wird ebenfalls eine AVV geschlossen.
-
-              Im Sinne des EU AI Act wird der Tutor als unterstützendes Lernwerkzeug eingesetzt, über einen Disclaimer
-              Banner klar als KI gekennzeichnet und ohne automatisierte Entscheidungen mit Rechts- oder Leistungsfolgen. Darüber hinaus ist der Tutor barrierefrei gemäß WCAG 2.2 (Konformitätsstufe AA) gestaltet.
+              <p>Alphalearn ist auf den Einsatz nach DSGVO und EU AI Act ausgelegt: Du erhältst einen Auftragsverarbeitungsvertrag (AVV), und deine Inhalte werden nicht zum Training von KI-Modellen genutzt. Chatverläufe speichern wir standardmäßig nicht langfristig; die Ausnahmen, etwa beim Lernerprofil, nennt unsere <a href="/de/privacy.html" class="ab-more-inline">Datenschutzerklärung</a>. Für die Lernbegleitung stufen wir die Tutoren nach dem EU AI Act als Systeme mit begrenztem Risiko ein, sie sind klar als KI gekennzeichnet. Nutzt du den Tutor, um Lernergebnisse zu bewerten, prüfe die Einstufung für deinen Einsatz – unser <a href="/de/ki-compliance-check.html" class="ab-more-inline">KI-Check</a> hilft dabei. Zur Barrierefreiheit nach WCAG geben wir dir gern <a href="/de/kontakt.html" class="ab-more-inline">direkt Auskunft</a>.</p><p><a href="/de/compliance.html" class="ab-more-inline">Mehr zu Compliance</a></p>
             </div>
           </div>
         </div>
@@ -1795,11 +1770,7 @@ opacity: 0 !important;
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
             <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-              Ja. Der Alphabees <span class="whitespace-nowrap">KI-Tutor</span> ist der weltweit einzige <span class="whitespace-nowrap">KI-Tutor</span>, der auch in der Moodle Mobile App
-              funktioniert.
-              Durch unser speziell entwickeltes Plugin, können Lernende auch von unterwegs die KI-Lernhilfen direkt in
-              ihrem
-              Moodle Kurs auf ihren Mobilgeräten im vollen Umfang nutzen.
+              <p>Ja. Sobald der Tutor in einem Moodle-Kurs aktiv ist, erscheint er automatisch als Chat in der offiziellen Moodle Mobile App, ohne zusätzliche App und ohne zusätzlichen Login. Auf dem Smartphone öffnet sich der Chat im Vollbild wie ein Messenger. So bekommen Lernende auch unterwegs Unterstützung direkt im Kurs. In ILIAS erscheint der Tutor als Chat auf den Kursseiten im Browser.</p><p><a href="/de/moodle-plugin.html" class="ab-more-inline">Mehr zum Moodle Plugin</a></p>
             </div>
           </div>
         </div>
