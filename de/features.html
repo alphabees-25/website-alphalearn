@@ -215,10 +215,42 @@
     height: auto;
   }
 
-  .aura-background-component {
-    max-width: 100vw;
-    overflow: hidden;
-  }
+</style>
+  <link rel="stylesheet" href="/assets/css/design-2026.css">
+<style id="hero-video-css">
+  /* Hero-Video wie auf der Startseite (de/index.html), Text darauf: .ft-hero-h1 */
+  /* Hero-Video – im <head>, damit das Video schon beim ersten Zeichnen richtig (volle Breite, zugeschnitten) erscheint */
+  /* AI-Gradient der Marke: CI-Blue #3B82F6, Purple #B47FFF, Lobster #FF8093, Pink #FF7EAF, Orange #FFAF85.
+     Aufbau: Farbverlauf als Basis, darüber das entfärbte Video als bewegte Licht-Textur, darüber ein optionaler Verlauf für die Lesbarkeit. */
+  /* Gewählt am 06.10.: Voreinstellung „AI kräftig“ */
+  :root { --hv-vop:.7; --hv-vblend:overlay; --hv-gray:1; --hv-con:1.3; --hv-dark:0; --hv-grad:.3; --hv-blur:0px; --hv-sat:1.3;
+    --hv-mesh:
+      radial-gradient(38% 60% at 18% 72%, #3B82F6 0%, rgba(59,130,246,0) 72%),
+      radial-gradient(40% 55% at 38% 48%, #B47FFF 0%, rgba(180,127,255,0) 72%),
+      radial-gradient(34% 50% at 62% 78%, #FFAF85 0%, rgba(255,175,133,0) 72%),
+      radial-gradient(36% 50% at 88% 18%, #FF8093 0%, rgba(255,128,147,0) 72%),
+      radial-gradient(42% 55% at 26% 6%, #FF7EAF 0%, rgba(255,126,175,0) 72%),
+      radial-gradient(30% 45% at 100% 100%, #ffffff 0%, rgba(255,255,255,0) 70%),
+      linear-gradient(135deg, #FF7EAF 0%, #FF8093 45%, #FFAF85 85%, #FFE4D6 100%); }
+
+  .hv-band { position:relative; isolation:isolate; padding:4rem 0 4.5rem; }
+  @media (min-width:640px) { .hv-band { padding:5rem 0 5.5rem; } }
+  @media (min-width:1024px) { .hv-band { padding:6.5rem 0 7rem; min-height:min(82vh, 820px); display:flex; align-items:center; } .hv-band > .grid { width:100%; } }
+  .hv-media { position:absolute; top:0; bottom:0; left:50%; width:var(--hv-vw,100vw); transform:translateX(-50%); z-index:-1; overflow:hidden; background:var(--hv-mesh); filter:saturate(var(--hv-sat)); }
+  .hv-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform:scale(1.04); mix-blend-mode:var(--hv-vblend); opacity:var(--hv-vop); filter:blur(var(--hv-blur)) grayscale(var(--hv-gray)) contrast(var(--hv-con)); }
+  .hv-shade { position:absolute; inset:0; background:linear-gradient(90deg, rgba(30,27,75,var(--hv-grad)) 0%, rgba(30,27,75,calc(var(--hv-grad) * .45)) 55%, rgba(30,27,75,0) 100%), rgba(30,27,75,var(--hv-dark)); }
+  @media (max-width:1023px) { .hv-shade { background:linear-gradient(180deg, rgba(30,27,75,var(--hv-grad)) 0%, rgba(30,27,75,calc(var(--hv-grad) * .45)) 60%, rgba(30,27,75,0) 100%), rgba(30,27,75,var(--hv-dark)); } }
+  .hv-controls { position:absolute; top:0; bottom:0; left:50%; width:var(--hv-vw,100vw); transform:translateX(-50%); z-index:5; pointer-events:none; }
+  .hv-pause { position:absolute; right:12px; bottom:12px; pointer-events:auto; width:2rem; height:2rem; border-radius:9999px; display:inline-flex; align-items:center; justify-content:center; color:#fff; background:rgba(255,255,255,.08); border:1.5px solid #fff; box-shadow:0 1px 4px rgba(15,23,42,.18); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); transition:background .2s; }
+  .hv-pause::before { content:''; position:absolute; inset:-6px; border-radius:9999px; } /* größere Klickfläche (44 px), sichtbar bleiben 32 px */
+  @media (min-width:640px) { .hv-pause { right:16px; bottom:16px; } }
+  .hv-pause:hover { background:rgba(255,255,255,.22); }
+  .hv-pause svg { filter:drop-shadow(0 1px 1px rgba(15,23,42,.25)); }
+  .hv-pause:focus-visible { outline:2px solid #fff; outline-offset:2px; }
+  .hv-pause .hv-ico-play { display:none; } .hv-pause[aria-pressed="true"] .hv-ico-play { display:block; } .hv-pause[aria-pressed="true"] .hv-ico-pause { display:none; }
+  .ft-hero-h1 { font-family:'Geist', sans-serif; font-weight:400; color:#fff; text-align:left; letter-spacing:-.03em; line-height:1.08;
+                font-size:clamp(2.1rem, 4.6vw, 4.4rem); max-width:22ch; text-shadow:0 1px 18px rgba(30,27,75,.18); }
+  @media (min-width:1024px) { .ft-hero-h1 { max-width:24ch; } }
 </style>
 </head>
   <body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
@@ -294,38 +326,28 @@
   })();
 </script>
 
-<!-- Background (component) added by Aura -->
-<div class="aura-background-component top-0 w-full -z-10 h-screen absolute" data-alpha-mask="80" style="; mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)"><div class="aura-background-component top-0 w-full -z-10 absolute h-full">
-  <div data-us-project="yACzULFKkgXAmEcep6hu" data-us-scale="0.5" data-us-dpi="1" data-us-fps="30" class="absolute w-full h-full left-0 top-0 -z-10"></div>
-  <script type="text/javascript">
-    !function(){function u(){try{var c=document.createElement("canvas");return !!(window.WebGLRenderingContext&&(c.getContext("webgl")||c.getContext("experimental-webgl")))}catch(e){return!1}}if(u()&&!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head || document.body).appendChild(i)}}();
-  </script>
-</div></div>
     <!-- Global Header -->
 <div id="site-header"><!-- partial:header:start -->
 <!-- Top Navigation -->
-    <header class="relative z-20 border-b border-gray-100">
-      <div class="sm:px-6 lg:px-8 max-w-7xl mr-auto ml-auto pr-4 pl-4">
-        <div class="flex sm:py-6 pt-4 pb-4 relative items-center justify-between">
+    <header class="relative z-20 border-b border-gray-100 bg-white">
+      <div class="px-4 sm:px-6">
+        <div class="flex py-2.5 sm:py-3 relative items-center">
   <!-- Brand -->
   <a href="/de/" class="flex gap-x-3 gap-y-3 items-center shrink-0 relative">
-    <img src="/assets/images/Logo_Alphalearn_outlines_fluid_animated.svg" alt="Alphalearn" class="h-[43px] w-auto max-w-[198px] object-contain" loading="eager" decoding="async">
+    <img src="/assets/images/Logo_Alphalearn_outlines_fluid_animated.svg" alt="Alphalearn" class="h-[30px] sm:h-[34px] w-auto max-w-[157px] object-contain" loading="eager" decoding="async">
     <span class="sr-only font-geist">Alphalearn</span>
   </a>
 
   <!-- Centered Navigation Group (Desktop) -->
-  <nav class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-8">
+  <nav class="hidden md:flex items-center gap-7 ml-10 lg:ml-12" style="position:relative; top:3px">
     <a href="/de/demos.html" class="nav-link hover:text-blue-600 transition-colors group text-sm font-medium text-gray-600 font-geist relative">
       Demos
-      <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
     </a>
     <a href="/de/preis.html" class="nav-link text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors font-geist relative group">
       Preis
-      <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
     </a>
     <a href="/de/features.html" class="nav-link hover:text-blue-600 transition-colors group text-sm font-medium text-gray-600 font-geist relative">
     Funktionen
-    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
   </a>
   </nav>
 
@@ -348,7 +370,7 @@
 
 
   <!-- Right Actions (Desktop & Mobile Toggle) -->
-  <div class="flex items-center gap-3 sm:gap-4 z-10 shrink-0 relative">
+  <div class="flex items-center gap-3 sm:gap-4 z-10 shrink-0 relative ml-auto">
     
     <!-- Language Toggle (Desktop) -->
     <div class="hidden md:flex items-center bg-gray-100/80 ring-1 ring-gray-200 rounded-lg p-0.5">
@@ -360,12 +382,12 @@
     <div class="hidden md:flex gap-1 border-gray-200 border-l ml-1 pl-2 gap-x-1 gap-y-1 items-center">
         <!-- Login Icon -->
         <a href="https://portal.alphabees.de/auth/login" class="group hover:bg-blue-50 transition-all duration-300 rounded-full pt-2 pr-2 pb-2 pl-2 relative" aria-label="Login">
-           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-x-0.5 w-[20px] h-[20px]" data-icon-replaced="true" style="width: 20px; height: 20px; color: rgb(37, 99, 235);"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" class=""></path><polyline points="10 17 15 12 10 7" class=""></polyline><line x1="15" x2="3" y1="12" y2="12" class=""></line></svg>
+           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in text-gray-600 group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-x-0.5 w-[20px] h-[20px]" data-icon-replaced="true" style="width: 20px; height: 20px;"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" class=""></path><polyline points="10 17 15 12 10 7" class=""></polyline><line x1="15" x2="3" y1="12" y2="12" class=""></line></svg>
            <span class="absolute top-full mt-2 left-1/2 -translate-x-1/2 px-2 py-1 bg-gray-900 text-white text-[10px] font-medium rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap font-geist shadow-lg transform translate-y-1 group-hover:translate-y-0">login</span>
         </a>
         <!-- Register Icon -->
         <a href="https://portal.alphabees.de/auth/register" class="group hover:bg-blue-50 transition-all duration-300 rounded-full pt-2 pr-2 pb-2 pl-2 relative" aria-label="Register">
-           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-plus group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 w-[20px] h-[20px]" data-icon-replaced="true" style="color: rgb(37, 99, 235); width: 20px; height: 20px;">
+           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-plus text-gray-600 group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 w-[20px] h-[20px]" data-icon-replaced="true" style="width: 20px; height: 20px;">
              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" class=""></path>
              <circle cx="9" cy="7" r="4" class=""></circle>
              <line x1="19" x2="19" y1="8" y2="14"></line>
@@ -391,7 +413,7 @@
       </div>
       <!-- Mobile Menu -->
       <div id="mobileMenu" class="md:hidden hidden">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="px-4 sm:px-6">
           <div class="border-t border-gray-100"></div>
           <div class="py-3 space-y-1 divide-y divide-gray-100 border-b border-gray-100">
             <a href="/de/demos.html" class="nav-link block hover:text-gray-900 text-sm text-gray-700 font-geist pt-3 pr-2 pb-3 pl-2">Demos</a>
@@ -408,23 +430,23 @@
 
     <!-- Hero -->
     <main class="relative">
-  <div class="sm:px-6 sm:pt-24 xl:pt-40 sm:pb-24 xl:pb-40 lg:px-8 lg:pb-4 max-w-7xl mr-auto ml-auto pt-24 pr-4 pb-24 pl-4">
-    <div class="flex flex-col sm:pt-16 sm:pb-6 z-10 text-center max-w-5xl mr-auto ml-auto pt-12 pr-6 pb-16 pl-6 relative items-center justify-center">
-
-      <!-- Background Gradient for subtle depth -->
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-blue-50/40 via-indigo-50/40 to-purple-50/40 rounded-full blur-3xl -z-10 pointer-events-none opacity-60">
-      </div>
-
-      <h1 class="leading-[1.1] text-balance sm:text-5xl lg:text-6xl text-4xl font-semibold text-gray-900 tracking-tight font-geist max-w-4xl mb-6" style="animation: fadeSlideIn 1s ease-out 0.1s both">Features</h1>
-
-      <p class="sm:text-xl leading-relaxed text-balance text-lg text-gray-600 font-geist max-w-2xl mr-auto mb-10 ml-auto" style="animation: fadeSlideIn 1s ease-out 0.2s both">Die KI-Agenten von Alphalearn wurden speziell für die digitale Bildung entwickelt. Schau dir an, was sie können...</p>
-
-      <div style="animation: fadeSlideIn 1s ease-out 0.3s both;" class="">
-
-      </div>
-
+  <div class="sm:px-6 lg:px-8 max-w-7xl mx-auto px-4">
+  <script>document.documentElement.style.setProperty("--hv-vw", document.documentElement.clientWidth + "px");</script>
+  <div class="hv-band">
+    <div class="hv-media" aria-hidden="true">
+      <video class="hv-video" autoplay muted loop playsinline preload="auto" poster="/assets/video/Alphalearn_Hero_Background_Video_Poster.jpg">
+        <source src="/assets/video/Alphalearn_Hero_Background_Video.mp4" type="video/mp4">
+      </video>
+      <div class="hv-shade"></div>
     </div>
-
+    <div class="hv-controls"><button type="button" class="hv-pause" aria-label="Hintergrundvideo anhalten" aria-pressed="false">
+      <svg class="hv-ico-pause" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+      <svg class="hv-ico-play" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>
+    </button></div>
+    <div class="relative z-10 w-full">
+      <h1 class="ft-hero-h1" style="animation: fadeSlideIn 1s ease-out 0.1s both">Die KI-Agenten von Alphalearn wurden speziell für die digitale Bildung entwickelt. Schau dir an, was sie können...</h1>
+    </div>
+  </div><!-- /hv-band -->
   </div>
 
 
@@ -438,14 +460,21 @@
 
     /* Agent-Kacheln: heben sich bei Mouseover deutlich ab (größer, tiefer Schatten, nach vorn) */
     .ft-agent-card { transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, border-color .35s ease; will-change: transform; }
-    .ft-agent-card:hover { z-index: 2; transform: translateY(-8px) scale(1.04); border-color: #e0e7ff;
-                           box-shadow: 0 30px 60px -20px rgba(15,23,42,.35), 0 12px 32px -12px rgba(79,70,229,.25), 0 0 0 1px rgba(99,102,241,.08); }
+    .ft-agent-card:hover { z-index: 2; transform: translateY(-8px) scale(1.04);
+                           box-shadow: 0 30px 60px -24px rgba(10,10,15,.4); }
     @media (prefers-reduced-motion: reduce) { .ft-agent-card:hover { transform: none; } }
+    /* Agent-Kacheln schwarz gefüllt (Design 2026), Texte und Chips hell */
+    .ft-agent-card.ds-card { background: #0a0a0f; border-color: #0a0a0f; }
+    .ft-agent-card:hover { box-shadow: 0 30px 60px -24px rgba(180,127,255,.55); }
+    .ft-agent-card h3 { color: #fff; }
+    .ft-agent-card p.text-gray-400 { color: rgba(255,255,255,.55); }
+    .ft-agent-card p.text-gray-600 { color: #d1d5db; }
+    .ft-agent-card li { background: rgba(255,255,255,.1); color: #e5e7eb; }
 
     /* Bereichs-Leiste (sticky) + Tab-Panels */
-    .ft-abtn { background: #f3f4f6; color: #374151; transition: background-color .2s, color .2s, box-shadow .2s; }
-    .ft-abtn:hover { background: #e5e7eb; }
-    .ft-abtn[aria-selected="true"] { background: #111827; color: #fff; box-shadow: 0 6px 20px -8px rgba(17,24,39,.6); }
+    .ft-abtn { background: #fff; color: #0a0a0f; box-shadow: inset 0 0 0 1.5px #0a0a0f; transition: background-color .2s, color .2s, box-shadow .2s; }
+    .ft-abtn:hover { background: #f3f4f6; }
+    .ft-abtn[aria-selected="true"] { background: #0a0a0f; color: #fff; }
     .ft-areas-track { overflow-y: hidden; scroll-snap-type: x mandatory; scroll-behavior: smooth; overscroll-behavior-x: contain; transition: height .35s ease; }
     .ft-areas-rail { align-items: flex-start; }
     .ft-area-panel { scroll-snap-align: start; scroll-snap-stop: always; }
@@ -464,9 +493,7 @@
 
     /* Tab-Gallery: Box mit grauem Rahmen, Glas-Weiß und leichtem AI-Verlauf (wie die frühere Funktionsübersicht) */
     /* kein weicher Schatten (würde von der Bereichs-Spur seitlich abgeschnitten) – stattdessen klare Outline */
-    .tg { border-radius: 36px; border: 1.5px solid #d1d5db; background: rgba(255,255,255,.72); box-shadow: 0 1px 2px rgba(15,23,42,.04); }
-    .tg::before { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
-                  background: radial-gradient(circle at top left, rgba(59,130,246,.16), transparent 38%), radial-gradient(circle at bottom right, rgba(14,165,233,.14), transparent 34%); }
+    .tg { border-radius: 28px; border: 1.5px solid #0a0a0f; background: #fff; }
     .tg > * { position: relative; z-index: 1; }
     .tg-tabs-wrap { position: relative; }
     .tg-tabs-wrap::before, .tg-tabs-wrap::after { content: ""; position: absolute; top: 0; bottom: 0; width: 28px; pointer-events: none; z-index: 2; }
@@ -474,14 +501,14 @@
     .tg-tabs-wrap::after { right: 0; background: linear-gradient(to left, #fff, rgba(255,255,255,0)); }
     @media (min-width: 1024px) { .tg-tabs-wrap::before, .tg-tabs-wrap::after { display: none; } }
     .tg-tab { transition: background-color .2s, color .2s, box-shadow .2s; }
-    .tg-tab[aria-selected="true"] { background: #111827; color: #fff; box-shadow: 0 6px 20px -8px rgba(17,24,39,.6); }
+    .tg-tab[aria-selected="true"] { background: #0a0a0f; color: #fff; }
     .tg-tab[aria-selected="false"] { background: #f3f4f6; color: #374151; }
     .tg-tab[aria-selected="false"]:hover { background: #e5e7eb; }
     @media (min-width: 1024px) {
       .tg-tab { border-radius: 14px; }
-      .tg-tab[aria-selected="true"] { background: #fff; color: #1d4ed8; box-shadow: 0 8px 30px -12px rgba(29,78,216,.35), 0 0 0 1px #bfdbfe inset; }
+      .tg-tab[aria-selected="true"] { background: #fff; color: #0a0a0f; box-shadow: inset 0 0 0 1.5px #0a0a0f; }
       .tg-tab[aria-selected="false"] { background: transparent; color: #4b5563; }
-      .tg-tab[aria-selected="false"]:hover { background: #f9fafb; }
+      .tg-tab[aria-selected="false"]:hover { background: #f3f4f6; color: #0a0a0f; }
     }
     .tg-track { scroll-snap-type: x mandatory; scroll-behavior: smooth; overscroll-behavior-x: contain; }
     .tg-ph { width: 100%; aspect-ratio: 16 / 10; }
@@ -538,7 +565,9 @@
     }
     .tg-panel { scroll-snap-align: center; scroll-snap-stop: always; }
     .tg-dot { width: 6px; height: 6px; border-radius: 9999px; background: #d1d5db; transition: width .25s, background-color .25s; }
-    .tg-dot[data-active="true"] { width: 20px; background: #111827; }
+    .tg-dot[data-active="true"] { width: 20px; background: #0a0a0f; }
+    /* Auto-Sync-Grafik: Quellen-Kacheln auf schmalen Screens verkleinern, damit sie sich nicht überlappen (wie auf der Startseite) */
+    @media (max-width: 479px) { .tg-media .grid-cols-5 .w-20.h-20 { width: 3.3rem; height: 3.3rem; border-radius: .8rem; } .tg-media .grid-cols-5 .w-20.h-20 img { max-width: 78%; } .tg-media .grid-cols-5 .w-20.h-20 span { font-size: .6rem; letter-spacing: 0; } }
     @media (prefers-reduced-motion: reduce) { .tg-track, .ft-areas-track { scroll-behavior: auto; } .ft-areas-track { transition: none; } }
 
     /* ---- ORBI: animierte Agent-Maskottchen (aus dem Alphalearn Portal) ---- */
@@ -668,11 +697,11 @@
   <style>
     /* ---- Architektur: Förderband → Moodle ---- */
     .ft-arch-panel { position: relative; overflow: hidden; background: #fff; border-radius: 24px; padding: 22px 22px 24px; }
-    .ft-arch-panel--portal { border: 1.5px solid rgba(124,58,237,.13); box-shadow: 0 4px 28px rgba(109,40,217,.10), 0 1px 4px rgba(0,0,0,.05); }
-    .ft-arch-panel--moodle { border: 1.5px solid rgba(249,128,18,.15); box-shadow: 0 4px 28px rgba(249,128,18,.10), 0 1px 4px rgba(0,0,0,.05); overflow: visible; display: flex; flex-direction: column; }
+    .ft-arch-panel--portal { border: 1.5px solid #0a0a0f; }
+    .ft-arch-panel--moodle { border: 1.5px solid #0a0a0f; overflow: visible; display: flex; flex-direction: column; }
     .ft-arch-panel--moodle.is-flash { animation: ft-flash 1s ease-out both; }
 
-    .ft-belt-box { position: relative; background: #F9F7FF; border: 1px solid rgba(124,58,237,.08); border-radius: 16px; padding: 32px 0 10px; margin-bottom: 18px; }
+    .ft-belt-box { position: relative; background: #f6f6f7; border: 1px solid #ececef; border-radius: 16px; padding: 32px 0 10px; margin-bottom: 18px; }
     .ft-belt-window { position: relative; width: 100%; max-width: 324px; margin: 0 auto; }
     .ft-belt-clip { overflow: hidden; }
     .ft-belt { display: flex; width: 233.3333%; transform: translateX(-57.142857%); will-change: transform; }
@@ -688,20 +717,20 @@
     .ft-gear--b { width: 20px; height: 20px; margin: 22px 0 0 -48px; box-shadow: 0 2px 8px rgba(0,0,0,.11); }
     .ft-gear--a svg { animation: ft-wrench 1.4s ease-in-out infinite; transform-origin: 50% 50%; }
     .ft-gear--b svg { animation: ft-gear-spin-rev 3.5s linear infinite; }
-    .ft-belt-fade { position: absolute; inset: 0; pointer-events: none; z-index: 6; background: linear-gradient(to right, #F9F7FF 0%, transparent 28%, transparent 72%, #F9F7FF 100%); }
+    .ft-belt-fade { position: absolute; inset: 0; pointer-events: none; z-index: 6; background: linear-gradient(to right, #f6f6f7 0%, transparent 28%, transparent 72%, #f6f6f7 100%); }
     /* Verbindung: von der Unterkante des Halos (32 + 46 + 45 + Rahmen) bis zur Oberkante des Panels */
     .ft-link { position: absolute; left: 50%; top: 126px; width: 12px; height: 48px; margin-left: -6px; color: var(--accent, #9F8CFF); transition: color .5s; pointer-events: none; }
     .ft-link svg { display: block; width: 100%; height: 100%; overflow: visible; }
 
-    .ft-cfg { position: relative; background: #F9F7FF; border: 1px solid var(--accent-edge, rgba(124,58,237,.08)); border-radius: 14px; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; transition: border-color .5s; }
-    .ft-cfg::before { content: ""; position: absolute; top: -6px; left: 50%; width: 10px; height: 10px; margin-left: -5px; transform: rotate(45deg); background: #F9F7FF;
-                      border-left: 1px solid var(--accent-edge, rgba(124,58,237,.08)); border-top: 1px solid var(--accent-edge, rgba(124,58,237,.08)); transition: border-color .5s; }
+    .ft-cfg { position: relative; background: #f6f6f7; border: 1px solid var(--accent-edge, #ececef); border-radius: 14px; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; transition: border-color .5s; }
+    .ft-cfg::before { content: ""; position: absolute; top: -6px; left: 50%; width: 10px; height: 10px; margin-left: -5px; transform: rotate(45deg); background: #f6f6f7;
+                      border-left: 1px solid var(--accent-edge, #ececef); border-top: 1px solid var(--accent-edge, #ececef); transition: border-color .5s; }
     .ft-cfg-title { display: flex; align-items: center; gap: 5px; font-size: 9.5px; font-weight: 700; color: #9CA3AF; letter-spacing: .09em; text-transform: uppercase; margin-bottom: 2px; }
     .ft-cfg-title i { width: 6px; height: 6px; border-radius: 50%; animation: ft-config-pulse 1.6s ease-in-out infinite; transition: background .5s; }
     .ft-cfg-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
     .ft-cfg-row > span:first-child { font-size: 12px; font-weight: 500; color: #374151; flex-shrink: 0; }
     .ft-cfg-val { font-size: 11.5px; font-weight: 600; border-radius: 6px; padding: 2px 9px; min-width: 100px; text-align: center; display: inline-block; white-space: nowrap;
-                  background: #fff; border: 1px solid #E5E0F8; color: #6D28D9; font-variant-numeric: tabular-nums; transition: background .5s, border-color .5s, color .5s; }
+                  background: #fff; border: 1px solid #e5e7eb; color: #0a0a0f; font-variant-numeric: tabular-nums; transition: background .5s, border-color .5s, color .5s; }
     .ft-cfg-val--accent { background: var(--tint); border-color: var(--edge); color: var(--ink); }
 
     .ft-foot { margin-top: 12px; display: flex; align-items: center; gap: 6px; font-size: 11px; color: #6B7280; }
@@ -756,21 +785,20 @@
     @keyframes ft-travel-h { 0% { left: -6%; opacity: 0; transform: scale(.6); } 18% { opacity: 1; transform: scale(1); } 82% { opacity: 1; transform: scale(1); } 100% { left: 106%; opacity: 0; transform: scale(.6); } }
     @keyframes ft-travel-v { 0% { top: -10%; opacity: 0; transform: scale(.6); } 18% { opacity: 1; transform: scale(1); } 82% { opacity: 1; transform: scale(1); } 100% { top: 110%; opacity: 0; transform: scale(.6); } }
     @keyframes ft-flash {
-      0%   { box-shadow: 0 4px 28px rgba(249,128,18,.10), 0 1px 4px rgba(0,0,0,.05), 0 0 0 0 var(--flash-ring); border-color: rgba(249,128,18,.15); }
-      25%  { box-shadow: 0 6px 44px var(--flash-glow), 0 1px 4px rgba(0,0,0,.05), 0 0 0 5px var(--flash-ring); border-color: var(--flash); }
-      100% { box-shadow: 0 4px 28px rgba(249,128,18,.10), 0 1px 4px rgba(0,0,0,.05), 0 0 0 0 transparent; border-color: rgba(249,128,18,.15); }
+      0%   { box-shadow: 0 0 0 0 var(--flash-ring); border-color: #0a0a0f; }
+      25%  { box-shadow: 0 6px 44px var(--flash-glow), 0 0 0 5px var(--flash-ring); border-color: var(--flash); }
+      100% { box-shadow: 0 0 0 0 transparent; border-color: #0a0a0f; }
     }
     @media (prefers-reduced-motion: reduce) {
       .ft-belt.is-sliding { transition: none; }
       .ft-gear svg, .ft-halo, .ft-cfg-title i, .ft-foot--moodle i, .ft-moodle-orb, .ft-chat, .ft-arch-panel--moodle.is-flash { animation: none; }
     }
   </style>
-  <section id="architektur" class="sm:px-6 lg:px-8 max-w-7xl mx-auto px-4 pb-16 sm:pb-[120px] relative scroll-mt-24">
+  <section id="architektur" class="sm:px-6 lg:px-8 max-w-7xl mx-auto px-4 pt-20 sm:pt-28 pb-24 sm:pb-32 relative scroll-mt-24">
     
-    <div class="animate-on-scroll text-center max-w-2xl mx-auto mb-10" style="animation: fadeSlideIn 1s ease-out 0.1s both">
-      <div class="mb-4"><div class="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-medium text-blue-600 font-geist"><i data-lucide="git-branch" class="h-3 w-3"></i>So funktioniert Alphalearn</div></div>
-      <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900 font-geist">Alphalearn Portal: Die Steuerzentrale für dein Moodle Plugin</h2>
-      <p class="mt-4 text-lg leading-relaxed text-gray-500 font-geist">Im Alphalearn Portal richtest du deine KI-Tutoren ein und platzierst sie mit dem zugehörigen Moodle Plugin direkt in deiner Moodle Plattform.</p>
+    <div class="animate-on-scroll max-w-5xl mb-12 sm:mb-16" style="animation: fadeSlideIn 1s ease-out 0.1s both">
+      <h2 class="ds-h2">Alphalearn Portal: Die Steuerzentrale für dein Moodle Plugin</h2>
+      <p class="ds-sub mt-6 sm:mt-8">Im Alphalearn Portal richtest du deine KI-Tutoren ein und platzierst sie mit dem zugehörigen Moodle Plugin direkt in deiner Moodle Plattform.</p>
     </div>
     <div class="grid gap-4 lg:grid-cols-[minmax(0,1fr)_110px_minmax(0,1fr)] lg:items-stretch" data-arch>
       <script type="application/json" data-arch-cfg>{"tutor": {"label": "Tutor", "color": "#9F8CFF", "ink": "#6D4AFF", "values": {"didaktik": "Geführter Lernmodus", "wissen": "Moodle-Kurs", "profil": "aktiv"}, "hi": "Ich begleite dich durch den Kurs."}, "twin": {"label": "Twin", "color": "#5B78E8", "ink": "#3554D6", "values": {"didaktik": "Sokratischer Dialog", "wissen": "Skripte & PDFs", "profil": "Lernfortschritt"}, "hi": "Soll ich das an die Lehrkraft weiterleiten?"}, "support": {"label": "Support", "color": "#5FD4D8", "ink": "#149FA6", "values": {"didaktik": "Chat", "wissen": "FAQ & Webseite", "profil": "anonym"}, "hi": "Hast du technische Probleme?"}, "assist": {"label": "Assist", "color": "#FFAB6A", "ink": "#E07A2E", "values": {"didaktik": "Chat", "wissen": "LMS-Hilfe & FAQ", "profil": "anonym"}, "hi": "Ich bin dein Moodle Assistent."}}</script>
@@ -1364,16 +1392,16 @@
         <div class="ft-bridge">
           <div class="ft-track">
             <svg class="ft-track-h" viewBox="0 0 110 20" preserveAspectRatio="none" aria-hidden="true">
-              <line x1="4" y1="10" x2="96" y2="10" stroke="#A78BFA" stroke-width="2" stroke-dasharray="6 4" class="animate-flow"/>
-              <polygon points="97,5 110,10 97,15" fill="#7C3AED" opacity=".75"/>
+              <line x1="4" y1="10" x2="96" y2="10" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6 4" class="animate-flow"/>
+              <polygon points="97,5 110,10 97,15" fill="#0a0a0f"/>
             </svg>
             <svg class="ft-track-v" viewBox="0 0 20 72" aria-hidden="true">
-              <line x1="10" y1="2" x2="10" y2="58" stroke="#A78BFA" stroke-width="2" stroke-dasharray="6 4" class="animate-flow"/>
-              <polygon points="5,59 10,72 15,59" fill="#7C3AED" opacity=".75"/>
+              <line x1="10" y1="2" x2="10" y2="58" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6 4" class="animate-flow"/>
+              <polygon points="5,59 10,72 15,59" fill="#0a0a0f"/>
             </svg>
             <div class="ft-traveler" data-traveler></div>
           </div>
-          <span class="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-gray-200 bg-white px-2.5 py-1 text-[10px] font-semibold text-gray-700 shadow-sm font-geist"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></svg>Moodle Plugin</span>
+          <span class="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-gray-200 bg-white px-2.5 py-1 text-[10px] font-semibold text-gray-700 shadow-sm font-geist"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></svg>Plugin</span>
         </div>
       
         <!-- ARCHITEKTUR · RECHTS: Moodle-Plattform — der gelandete Orbi taucht im Kurs auf -->
@@ -2620,16 +2648,15 @@
 
 
   <!-- ================= M1 · DIE VIER AGENTS (Orbis aus dem Portal) ================= -->
-  <section id="agents" class="sm:px-6 lg:px-8 max-w-7xl mx-auto px-4 pt-16 sm:pt-[120px] pb-16 sm:pb-[120px] relative scroll-mt-24">
+  <section id="agents" class="sm:px-6 lg:px-8 max-w-7xl mx-auto px-4 pt-24 sm:pt-32 pb-24 sm:pb-32 relative scroll-mt-24">
     
-    <div class="animate-on-scroll text-center max-w-2xl mx-auto mb-10" style="animation: fadeSlideIn 1s ease-out 0.1s both">
-      <div class="mb-4"><div class="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-medium text-blue-600 font-geist"><i data-lucide="bot" class="h-3 w-3"></i>Die vier Agents</div></div>
-      <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900 font-geist">Vier KI-Agenten unterstützen Lernende und Lehrende</h2>
-      <p class="mt-4 text-lg leading-relaxed text-gray-500 font-geist">Vier vorkonfigurierte Templates, die du im Alphalearn Portal individuell anpasst. Jeder Agent übernimmt eine eigene Aufgabe für dich als Bildungsanbieter – und alle arbeiten Hand in Hand mit Lernenden und Lehrenden: für eine bessere Lernerfahrung und mehr Zeit für die persönliche Betreuung.</p>
+    <div class="animate-on-scroll max-w-5xl mb-12 sm:mb-16" style="animation: fadeSlideIn 1s ease-out 0.1s both">
+      <h2 class="ds-h2">Vier KI-Agenten unterstützen Lernende und Lehrende</h2>
+      <p class="ds-sub mt-6 sm:mt-8">Vier vorkonfigurierte Templates, die du im Alphalearn Portal individuell anpasst. Jeder Agent übernimmt eine eigene Aufgabe für dich als Bildungsanbieter – und alle arbeiten Hand in Hand mit Lernenden und Lehrenden: für eine bessere Lernerfahrung und mehr Zeit für die persönliche Betreuung.</p>
     </div>
     <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       <!-- AGENT: Alpha Tutor -->
-      <div class="ft-agent-card relative flex flex-col items-center rounded-3xl border border-gray-200 bg-white p-6 text-center shadow-sm">
+      <div class="ft-agent-card ds-card relative flex flex-col items-center p-6 text-center">
         <div class="orbi agent-tutor" aria-hidden="true"><svg class="bubble-glass" xmlns="http://www.w3.org/2000/svg" viewBox="20 20 88 88" role="img" aria-label="Tutor-Agent">
               <defs>
                 <clipPath id="clip-tut-de-0"><circle cx="64" cy="64" r="43"/></clipPath>
@@ -2713,13 +2740,13 @@
                   transform="rotate(-45 89 49)" filter="url(#blur-tut-de-0)"/>
               </g>
             </svg></div>
-        <h3 class="mt-4 text-lg font-semibold tracking-tight text-gray-900 font-geist">Alpha Tutor</h3>
+        <h3 class="mt-4 text-2xl font-normal tracking-tight text-[#0a0a0f] font-geist">Alpha Tutor</h3>
         <p class="mt-1 text-xs font-medium uppercase tracking-wide text-gray-400 font-geist">Für Kurse, Akademien und Hochschulen</p>
         <p class="mt-3 text-sm leading-relaxed text-gray-600 font-geist">Ich begleite Lernende durch den Kurs, beantworte Fragen zum Kursinhalt, unterstütze mit Übungen, Recherche und Lernerprofilen.</p>
         <ul class="mt-auto flex flex-wrap justify-center gap-1.5 pt-5"><li class="rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-medium text-gray-700 font-geist">Kurs-Sync</li><li class="rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-medium text-gray-700 font-geist">Didaktik</li><li class="rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-medium text-gray-700 font-geist">Übungsmodus</li><li class="rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-medium text-gray-700 font-geist">Lernerprofil</li><li class="rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-medium text-gray-700 font-geist">Wissensbasis</li></ul>
       </div>
       <!-- AGENT: Alpha Twin -->
-      <div class="ft-agent-card relative flex flex-col items-center rounded-3xl border border-gray-200 bg-white p-6 text-center shadow-sm">
+      <div class="ft-agent-card ds-card relative flex flex-col items-center p-6 text-center">
         <div class="orbi agent-dozent" aria-hidden="true"><svg class="bubble-glass" xmlns="http://www.w3.org/2000/svg" viewBox="20 20 88 88" role="img" aria-label="Twin-Agent">
               <defs>
                 <clipPath id="clip-doz-de-1"><circle cx="64" cy="64" r="43"/></clipPath>
@@ -2797,13 +2824,13 @@
                   transform="rotate(-45 89 49)" filter="url(#blur-doz-de-1)"/>
               </g>
             </svg></div>
-        <h3 class="mt-4 text-lg font-semibold tracking-tight text-gray-900 font-geist">Alpha Twin</h3>
+        <h3 class="mt-4 text-2xl font-normal tracking-tight text-[#0a0a0f] font-geist">Alpha Twin</h3>
         <p class="mt-1 text-xs font-medium uppercase tracking-wide text-gray-400 font-geist">Für Lehrkräfte, die ihre eigene Assistenz wollen</p>
         <p class="mt-3 text-sm leading-relaxed text-gray-600 font-geist">Ich bin der digitale Zwilling einer Lehrperson: Ich antworte auf Basis deiner Inhalte und in deinem Stil, arbeite mit einem Alpha Tutor zusammen und leite an dich weiter, wenn dein Wissen gefragt ist.</p>
         <ul class="mt-auto flex flex-wrap justify-center gap-1.5 pt-5"><li class="rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-medium text-gray-700 font-geist">Tutor Link</li><li class="rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-medium text-gray-700 font-geist">Weiterleitung</li><li class="rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-medium text-gray-700 font-geist">Eskalation</li><li class="rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-medium text-gray-700 font-geist">Wissensbasis</li><li class="rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-medium text-gray-700 font-geist">Dozierenden-Verwaltung</li></ul>
       </div>
       <!-- AGENT: Alpha Support -->
-      <div class="ft-agent-card relative flex flex-col items-center rounded-3xl border border-gray-200 bg-white p-6 text-center shadow-sm">
+      <div class="ft-agent-card ds-card relative flex flex-col items-center p-6 text-center">
         <div class="orbi agent-support" aria-hidden="true"><svg class="bubble-glass" xmlns="http://www.w3.org/2000/svg" viewBox="20 20 88 88" role="img" aria-label="Support-Agent">
               <defs>
                 <clipPath id="clip-sup-de-2"><circle cx="64" cy="64" r="43"/></clipPath>
@@ -2881,13 +2908,13 @@
                   transform="rotate(-45 89 49)" filter="url(#blur-sup-de-2)"/>
               </g>
             </svg></div>
-        <h3 class="mt-4 text-lg font-semibold tracking-tight text-gray-900 font-geist">Alpha Support</h3>
+        <h3 class="mt-4 text-2xl font-normal tracking-tight text-[#0a0a0f] font-geist">Alpha Support</h3>
         <p class="mt-1 text-xs font-medium uppercase tracking-wide text-gray-400 font-geist">Für Support, Sales und Beratung</p>
         <p class="mt-3 text-sm leading-relaxed text-gray-600 font-geist">Meine Expertise liegt im Technical Support, Sales und Beratung auf Basis deiner FAQs. Integriere mich in deine Webseite, damit ich Interessenten betreue, E-Mails und Tickets schreibe.</p>
         <ul class="mt-auto flex flex-wrap justify-center gap-1.5 pt-5"><li class="rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-medium text-gray-700 font-geist">Wissensbasis</li><li class="rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-medium text-gray-700 font-geist">FAQ</li><li class="rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-medium text-gray-700 font-geist">Webseiten</li><li class="rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-medium text-gray-700 font-geist">Lead-Erfassung</li><li class="rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-medium text-gray-700 font-geist">E-Mail &amp; Tickets</li></ul>
       </div>
       <!-- AGENT: Alpha Assist -->
-      <div class="ft-agent-card relative flex flex-col items-center rounded-3xl border border-gray-200 bg-white p-6 text-center shadow-sm">
+      <div class="ft-agent-card ds-card relative flex flex-col items-center p-6 text-center">
         <div class="orbi agent-assist" aria-hidden="true"><svg class="bubble-glass" xmlns="http://www.w3.org/2000/svg" viewBox="20 20 88 88" role="img" aria-label="Assistenz-Agent">
               <defs>
                 <clipPath id="clip-ass-de-3"><circle cx="64" cy="64" r="43"/></clipPath>
@@ -2965,7 +2992,7 @@
                   transform="rotate(-45 89 49)" filter="url(#blur-ass-de-3)"/>
               </g>
             </svg></div>
-        <h3 class="mt-4 text-lg font-semibold tracking-tight text-gray-900 font-geist">Alpha Assist</h3>
+        <h3 class="mt-4 text-2xl font-normal tracking-tight text-[#0a0a0f] font-geist">Alpha Assist</h3>
         <p class="mt-1 text-xs font-medium uppercase tracking-wide text-gray-400 font-geist">Für Lernmanagementsysteme wie Moodle</p>
         <p class="mt-3 text-sm leading-relaxed text-gray-600 font-geist">Ich bin im Dashboard deiner Moodle-Plattform zu Hause. Füttere mich mit FAQs und ich erstelle Klick-Pfade, damit sich Lernende in deiner Moodle-Plattform orientieren können.</p>
         <ul class="mt-auto flex flex-wrap justify-center gap-1.5 pt-5"><li class="rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-medium text-gray-700 font-geist">Wissensbasis</li><li class="rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-medium text-gray-700 font-geist">FAQ</li><li class="rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-medium text-gray-700 font-geist">LMS-Integration</li><li class="rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-medium text-gray-700 font-geist">First-Level</li></ul>
@@ -2975,29 +3002,28 @@
 
 
   <!-- ================= M1.5 · LERNMETHODEN: Widget im Kurs vs. geführter Lernmodus ================= -->
-  <section id="lernmethoden" class="sm:px-6 lg:px-8 max-w-7xl mx-auto px-4 pt-16 sm:pt-[120px] pb-16 sm:pb-[120px] relative scroll-mt-24">
+  <section id="lernmethoden" class="sm:px-6 lg:px-8 max-w-7xl mx-auto px-4 pt-24 sm:pt-32 pb-24 sm:pb-32 relative scroll-mt-24">
     
-    <div class="animate-on-scroll text-center max-w-2xl mx-auto mb-10" style="animation: fadeSlideIn 1s ease-out 0.1s both">
-      <div class="mb-4"><div class="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-medium text-blue-600 font-geist"><i data-lucide="split" class="h-3 w-3"></i>Zwei Lernmethoden</div></div>
-      <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900 font-geist">Du entscheidest, wie autonom die KI den Lernprozess gestaltet</h2>
-      <p class="mt-4 text-lg leading-relaxed text-gray-500 font-geist">Erweitere deine bestehenden Moodle und ILIAS Kurse durch einen KI-Lernbegleiter oder lass den Tutor im geführten Lernmodus selbst übernehmen.</p>
+    <div class="animate-on-scroll max-w-5xl mb-12 sm:mb-16" style="animation: fadeSlideIn 1s ease-out 0.1s both">
+      <h2 class="ds-h2">Du entscheidest, wie autonom die KI den Lernprozess gestaltet</h2>
+      <p class="ds-sub mt-6 sm:mt-8">Erweitere deine bestehenden Moodle und ILIAS Kurse durch einen KI-Lernbegleiter oder lass den Tutor im geführten Lernmodus selbst übernehmen.</p>
     </div>
     <div class="ft-lm-stage grid gap-5 md:grid-cols-2">
       <!-- LERNMETHODE: Kursbegleitende Lernunterstützung -->
-      <article class="ft-lm-card flex flex-col overflow-hidden rounded-[28px] bg-white ring-1 ring-gray-200 shadow-[0_8px_30px_rgba(0,0,0,0.04)]" data-method="lernbegleitung-widget" data-lm-card>
+      <article class="ft-lm-card flex flex-col overflow-hidden rounded-[28px] bg-white border-[1.5px] border-[#0a0a0f]" data-method="lernbegleitung-widget" data-lm-card>
         <div class="ft-lm-media relative aspect-[1310/720]"><img src="/assets/features/lernbegleitung-widget.png" alt="Kursbegleitende Lernunterstützung" class="block h-full w-full object-cover" loading="lazy"><video class="ft-lm-video" muted loop playsinline preload="metadata" aria-hidden="true" data-lm-video><source src="/assets/features/lernbegleitung-widget.mp4" type="video/mp4"></video></div>
         <div class="p-6 sm:p-7">
-          <span class="inline-flex items-center rounded-full bg-indigo-50 px-2.5 py-1 text-[11px] font-semibold text-indigo-700 font-geist">Dein Moodle-Kurs + KI-Tutor</span>
-          <h3 class="mt-3 text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Kursbegleitende Lernunterstützung</h3>
+          <span class="ds-label">Dein Moodle-Kurs + KI-Tutor</span>
+          <h3 class="ds-h3 mt-3">Kursbegleitende Lernunterstützung</h3>
           <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Deine Lernenden folgen wie gewohnt deinem Moodle-Kurs. Der KI-Tutor begleitet sie dabei, beantwortet Fragen, erklärt Inhalte, erstellt Übungen, liefert passende Praxisbeispiele, u.v.m. Der Kurs gibt weiterhin den Lernweg vor.</p>
         </div>
       </article>
       <!-- LERNMETHODE: Geführter Lernmodus -->
-      <article class="ft-lm-card flex flex-col overflow-hidden rounded-[28px] bg-white ring-1 ring-gray-200 shadow-[0_8px_30px_rgba(0,0,0,0.04)]" data-method="gefuehrter-lernmodus-ai-first" data-lm-card>
+      <article class="ft-lm-card flex flex-col overflow-hidden rounded-[28px] bg-white border-[1.5px] border-[#0a0a0f]" data-method="gefuehrter-lernmodus-ai-first" data-lm-card>
         <div class="ft-lm-media relative aspect-[1310/720]"><img src="/assets/features/gefuehrter-lernmodus.png" alt="Geführter Lernmodus" class="block h-full w-full object-cover" loading="lazy"><video class="ft-lm-video" muted loop playsinline preload="metadata" aria-hidden="true" data-lm-video><source src="/assets/features/gefuehrter-lernmodus.mp4" type="video/mp4"></video></div>
         <div class="p-6 sm:p-7">
-          <span class="inline-flex items-center rounded-full bg-indigo-50 px-2.5 py-1 text-[11px] font-semibold text-indigo-700 font-geist">AI-First Mode</span>
-          <h3 class="mt-3 text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Geführter Lernmodus</h3>
+          <span class="ds-label">AI-First Mode</span>
+          <h3 class="ds-h3 mt-3">Geführter Lernmodus</h3>
           <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Der KI-Tutor startet den Moodle Kurs im Vollbild: Er strukturiert den Lernweg, setzt Lernziele, erstellt Übungen und passt die Inhalte an den individuellen Lernfortschritt an. Dein Moodle-Kurs oder eine PDF dient dabei als Wissensgrundlage und kann jederzeit im Seitenpanel eingeblendet werden.</p>
         </div>
       </article>
@@ -3006,12 +3032,11 @@
 
 
   <!-- ================= M2 · ÜBERBLICK (Einleitung zur Bereichs-Leiste) ================= -->
-  <section id="ueberblick" class="sm:px-6 lg:px-8 max-w-7xl mx-auto px-4 pt-16 sm:pt-[120px] pb-6 sm:pb-8 relative scroll-mt-24">
+  <section id="ueberblick" class="sm:px-6 lg:px-8 max-w-7xl mx-auto px-4 pt-24 sm:pt-32 pb-2 sm:pb-4 relative scroll-mt-24">
     
-    <div class="animate-on-scroll text-center max-w-2xl mx-auto mb-10" style="animation: fadeSlideIn 1s ease-out 0.1s both">
-      <div class="mb-4"><div class="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-medium text-blue-600 font-geist"><i data-lucide="layout-grid" class="h-3 w-3"></i>Überblick</div></div>
-      <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900 font-geist">Erkunde die Möglichkeiten von Alphalearn</h2>
-      <p class="mt-4 text-lg leading-relaxed text-gray-500 font-geist">Klicke auf einen Fachbereich um mehr darüber zu erfahren.</p>
+    <div class="animate-on-scroll max-w-5xl mb-12 sm:mb-16" style="animation: fadeSlideIn 1s ease-out 0.1s both">
+      <h2 class="ds-h2">Erkunde die Möglichkeiten von Alphalearn</h2>
+      <p class="ds-sub mt-6 sm:mt-8">Klicke auf einen Fachbereich um mehr darüber zu erfahren.</p>
     </div>
   </section>
 
@@ -3021,27 +3046,27 @@
     <div class="ft-areas-sticky">
       
     <!-- STICKY BEREICHS-LEISTE: bleibt beim Erkunden der Bereiche oben sichtbar -->
-    <div data-area-bar class="sticky top-0 z-30 border-y border-gray-100 bg-white/90 backdrop-blur">
+    <div data-area-bar class="sticky top-0 z-30 bg-white/90 backdrop-blur">
       <div class="ft-chip-wrap sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
         <nav role="tablist" aria-label="Funktionsbereiche" class="no-scrollbar flex gap-2 overflow-x-auto px-4 py-3 lg:grid lg:grid-cols-5 lg:overflow-visible">
         <button type="button" role="tab" id="ft-abtn-lernen-dialog" aria-controls="area-lernen-dialog" aria-selected="true" data-area-btn="area-lernen-dialog"
-          class="ft-abtn flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:whitespace-normal lg:rounded-2xl lg:px-3 lg:py-3 lg:text-center lg:text-[13px] xl:text-sm">
+          class="ft-abtn flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:whitespace-normal lg:rounded-full lg:px-3 lg:py-3 lg:text-center lg:text-[13px] xl:text-sm">
           <i data-lucide="message-circle" class="h-4 w-4 shrink-0"></i><span>Lernen</span>
         </button>
         <button type="button" role="tab" id="ft-abtn-lehren-betreuen" aria-controls="area-lehren-betreuen" aria-selected="false" data-area-btn="area-lehren-betreuen"
-          class="ft-abtn flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:whitespace-normal lg:rounded-2xl lg:px-3 lg:py-3 lg:text-center lg:text-[13px] xl:text-sm">
+          class="ft-abtn flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:whitespace-normal lg:rounded-full lg:px-3 lg:py-3 lg:text-center lg:text-[13px] xl:text-sm">
           <i data-lucide="graduation-cap" class="h-4 w-4 shrink-0"></i><span>Lehren</span>
         </button>
         <button type="button" role="tab" id="ft-abtn-wissensbasis-autosync" aria-controls="area-wissensbasis-autosync" aria-selected="false" data-area-btn="area-wissensbasis-autosync"
-          class="ft-abtn flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:whitespace-normal lg:rounded-2xl lg:px-3 lg:py-3 lg:text-center lg:text-[13px] xl:text-sm">
+          class="ft-abtn flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:whitespace-normal lg:rounded-full lg:px-3 lg:py-3 lg:text-center lg:text-[13px] xl:text-sm">
           <i data-lucide="database" class="h-4 w-4 shrink-0"></i><span>Wissensbasis</span>
         </button>
         <button type="button" role="tab" id="ft-abtn-moodle-integrationen" aria-controls="area-moodle-integrationen" aria-selected="false" data-area-btn="area-moodle-integrationen"
-          class="ft-abtn flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:whitespace-normal lg:rounded-2xl lg:px-3 lg:py-3 lg:text-center lg:text-[13px] xl:text-sm">
+          class="ft-abtn flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:whitespace-normal lg:rounded-full lg:px-3 lg:py-3 lg:text-center lg:text-[13px] xl:text-sm">
           <i data-lucide="plug" class="h-4 w-4 shrink-0"></i><span>Integrationen</span>
         </button>
         <button type="button" role="tab" id="ft-abtn-analytics-sicherheit-betrieb" aria-controls="area-analytics-sicherheit-betrieb" aria-selected="false" data-area-btn="area-analytics-sicherheit-betrieb"
-          class="ft-abtn flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:whitespace-normal lg:rounded-2xl lg:px-3 lg:py-3 lg:text-center lg:text-[13px] xl:text-sm">
+          class="ft-abtn flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:whitespace-normal lg:rounded-full lg:px-3 lg:py-3 lg:text-center lg:text-[13px] xl:text-sm">
           <i data-lucide="shield-check" class="h-4 w-4 shrink-0"></i><span>Administration</span>
         </button>
         </nav>
@@ -3058,7 +3083,7 @@
       <div class="tg relative overflow-hidden lg:grid lg:grid-cols-12" data-tab-gallery>
         <div class="tg-tabs-wrap relative lg:col-span-3 lg:min-h-0 lg:overflow-y-auto lg:border-r lg:border-gray-200/80 lg:bg-white/90 lg:p-4 xl:p-5">
           <div role="tablist" aria-label="Funktionen" class="no-scrollbar flex gap-2 overflow-x-auto px-4 pt-4 pb-3 lg:flex-col lg:gap-1 lg:overflow-visible lg:p-0">
-            <button type="button" role="tab" aria-selected="true" data-tg-tab="0" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Geführter Lernmodus</button><button type="button" role="tab" aria-selected="false" data-tg-tab="1" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Intelligenter KI-Chat</button><button type="button" role="tab" aria-selected="false" data-tg-tab="2" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Personalisierte Übungen</button><button type="button" role="tab" aria-selected="false" data-tg-tab="3" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Aktive Lernbegleitung</button><button type="button" role="tab" aria-selected="false" data-tg-tab="4" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Über 80 Sprachen</button><button type="button" role="tab" aria-selected="false" data-tg-tab="5" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Adaptive Lernerprofile</button><button type="button" role="tab" aria-selected="false" data-tg-tab="6" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Individueller Lehrplan</button><button type="button" role="tab" aria-selected="false" data-tg-tab="7" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Didaktische Dialog-Modi</button><button type="button" role="tab" aria-selected="false" data-tg-tab="8" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Recherche &amp; Websuche</button>
+            <button type="button" role="tab" aria-selected="true" data-tg-tab="0" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Geführter Lernmodus</button><button type="button" role="tab" aria-selected="false" data-tg-tab="1" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Intelligenter KI-Chat</button><button type="button" role="tab" aria-selected="false" data-tg-tab="2" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Personalisierte Übungen</button><button type="button" role="tab" aria-selected="false" data-tg-tab="3" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Aktive Lernbegleitung</button><button type="button" role="tab" aria-selected="false" data-tg-tab="4" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Über 80 Sprachen</button><button type="button" role="tab" aria-selected="false" data-tg-tab="5" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Adaptive Lernerprofile</button><button type="button" role="tab" aria-selected="false" data-tg-tab="6" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Individueller Lehrplan</button><button type="button" role="tab" aria-selected="false" data-tg-tab="7" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Didaktische Dialog-Modi</button><button type="button" role="tab" aria-selected="false" data-tg-tab="8" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Hausaufgabenschutz</button><button type="button" role="tab" aria-selected="false" data-tg-tab="9" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Recherche &amp; Websuche</button>
           </div>
         </div>
         <div class="relative lg:col-span-9 lg:flex lg:min-h-0 lg:flex-col">
@@ -3068,10 +3093,10 @@
             <div class="tg-media"><video class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" autoplay muted loop playsinline preload="metadata" aria-label="Geführter Lernmodus"><source src="/assets/features/gefuehrter-lernmodus.mp4" type="video/mp4"></video></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Geführter Lernmodus</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Geführter Lernmodus</h3>
                 
               </div>
-              <p class="mt-2 text-[15px] leading-relaxed text-gray-700 font-geist">Der KI-Tutor arbeitet den Kurs wie ein Privatlehrer mit den Lernenden durch – Schritt für Schritt, im Vollbild mit Fortschrittsanzeige, angepasst an ihre Stärken und Schwächen.</p><ul class="mt-3 space-y-1.5 text-[14px] leading-relaxed text-gray-600 font-geist"><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500"></span><span>Er leitet an, stellt Fragen, prüft Wissen, merkt sich Lücken, wiederholt und gleicht sie aus – und geht erst weiter, wenn ein Kapitel wirklich sitzt.</span></li><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500"></span><span>Ein PDF-Upload in Moodle genügt: Alphalearn erkennt Struktur und Lernziele des Dokuments automatisch – ein klassischer Moodle-Kurs ist nicht mehr nötig.</span></li><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500"></span><span>Jede Session lässt sich jederzeit beenden und an gleicher Stelle fortsetzen. Optional durchsucht der Tutor dabei auch die Moodle-Foren nach Antworten.</span></li></ul>
+              <p class="mt-2 text-[15px] leading-relaxed text-gray-700 font-geist">Der KI-Tutor arbeitet den Kurs wie ein Privatlehrer mit den Lernenden durch – Schritt für Schritt, im Vollbild mit Fortschrittsanzeige, angepasst an ihre Stärken und Schwächen.</p><ul class="mt-3 space-y-1.5 text-[14px] leading-relaxed text-gray-600 font-geist"><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0a0a0f]"></span><span>Er leitet an, stellt Fragen, prüft Wissen, merkt sich Lücken, wiederholt und gleicht sie aus – und geht erst weiter, wenn ein Kapitel wirklich sitzt.</span></li><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0a0a0f]"></span><span>Ein PDF-Upload in Moodle genügt: Alphalearn erkennt Struktur und Lernziele des Dokuments automatisch – ein klassischer Moodle-Kurs ist nicht mehr nötig.</span></li><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0a0a0f]"></span><span>Jede Session lässt sich jederzeit beenden und an gleicher Stelle fortsetzen. Optional durchsucht der Tutor dabei auch die Moodle-Foren nach Antworten.</span></li></ul>
             </div>
           </article>
           <!-- GALLERY-ITEM: Intelligenter KI-Chat -->
@@ -3079,7 +3104,7 @@
             <div class="tg-media"><video class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" autoplay muted loop playsinline preload="metadata" aria-label="Intelligenter KI-Chat"><source src="/assets/features/intelligenter-ki-chat.mp4" type="video/mp4"></video></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Intelligenter KI-Chat</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Intelligenter KI-Chat</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Der KI-Tutor beantwortet Fragen auf Basis deiner Kursinhalte in Echtzeit. Er versteht Kontext, Nuancen und pädagogische Ziele.</p>
@@ -3090,7 +3115,7 @@
             <div class="tg-media"><video class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" autoplay muted loop playsinline preload="metadata" aria-label="Personalisierte Übungen"><source src="/assets/features/personalisierte-uebungen.mp4" type="video/mp4"></video></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Personalisierte Übungen</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Personalisierte Übungen</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Der KI-Tutor erstellt personalisierte Übungen auf Basis des Kursinhalts und des individuellen Lernstands – in unterschiedlichen Aufgabenformaten. Nach jeder Übung erhalten Lernende eine Auswertung und individuelles Feedback mit konkreten Verbesserungsvorschlägen.</p>
@@ -3101,7 +3126,7 @@
             <div class="tg-media"><video class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" autoplay muted loop playsinline preload="metadata" aria-label="Aktive Lernbegleitung"><source src="/assets/features/aktive-lernbegleitung.mp4" type="video/mp4"></video></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Aktive Lernbegleitung</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Aktive Lernbegleitung</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Der KI-Tutor übernimmt eine aktive Rolle im Lernprozess, gibt proaktiv Impulse und bietet gezielt Unterstützung an, sobald sie benötigt wird. Alle Hinweise sind kontextbezogen und passen zum aktuell geöffneten Kursabschnitt.</p>
@@ -3112,7 +3137,7 @@
             <div class="tg-media"><img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c089e757-9e70-4ec0-a2e9-d92134d6703e_1600w.png" alt="Über 80 Sprachen" class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" loading="lazy"></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Über 80 Sprachen</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Über 80 Sprachen</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Der KI-Tutor spricht über 80 Sprachen und passt sich automatisch an die Sprache und das Sprachniveau jedes Lernenden an. Er nutzt die voreingestellte Browser-Sprache als Standard-Sprache und reagiert auch auf Sprachwechsel.</p>
@@ -3123,7 +3148,7 @@
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Adaptive Lernerprofile</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Adaptive Lernerprofile</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Der KI-Tutor erkennt individuelle Stärken, Schwächen und Fortschritte und passt Übungen, Hinweise und Erklärungen kontinuierlich an den Lernstand an. Dank Langzeitgedächtnis berücksichtigt er auch frühere Interaktionen, Lernmuster und wiederkehrende Schwierigkeiten – über einzelne Kurse hinaus und bei Bedarf über mehrere Jahre. Die Lernenden können ihr Lernerprofil selbst einsehen, ihren Lernfortschritt nachverfolgen und gezielt an ihren Schwächen arbeiten.</p>
@@ -3134,7 +3159,7 @@
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Individueller Lehrplan</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Individueller Lehrplan</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Der Lehrplan-Modus strukturiert das Lernen in tägliche und wöchentliche Einheiten. Ein eigener Tab zeigt den Plan, und eine Benachrichtigung erinnert Lernende beim Einloggen an ihre Tageseinheit.</p>
@@ -3145,18 +3170,29 @@
             <div class="tg-media"><div class="tg-thumbs"><button type="button" class="tg-thumb group relative overflow-hidden rounded-2xl ring-1 ring-gray-200 bg-white shadow-sm" data-lightbox="/assets/features/dialog-modus-sokratisch.png" data-lightbox-caption="Beispiel Sokratischer Modus" aria-label="Bild vergrößern: Beispiel Sokratischer Modus"><img src="/assets/features/dialog-modus-sokratisch.png" alt="KI-Tutor-Chat im Sokratischen Modus: Antwort mit Gegenfrage" class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy"><span class="absolute left-2.5 top-2.5 rounded-full bg-gray-900/85 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur font-geist">Beispiel Sokratischer Modus</span><span class="absolute bottom-2.5 right-2.5 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-gray-800 shadow ring-1 ring-black/5 transition-colors group-hover:bg-white"><i data-lucide="maximize-2" class="h-4 w-4"></i></span></button><button type="button" class="tg-thumb group relative overflow-hidden rounded-2xl ring-1 ring-gray-200 bg-white shadow-sm" data-lightbox="/assets/features/dialog-modus-deklarativ.png" data-lightbox-caption="Beispiel Deklarativer Modus" aria-label="Bild vergrößern: Beispiel Deklarativer Modus"><img src="/assets/features/dialog-modus-deklarativ.png" alt="KI-Tutor-Chat im Deklarativen Modus: strukturierte Erklärung mit Einleitung, Hauptteil und Beispiel" class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy"><span class="absolute left-2.5 top-2.5 rounded-full bg-gray-900/85 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur font-geist">Beispiel Deklarativer Modus</span><span class="absolute bottom-2.5 right-2.5 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-gray-800 shadow ring-1 ring-black/5 transition-colors group-hover:bg-white"><i data-lucide="maximize-2" class="h-4 w-4"></i></span></button></div></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Didaktische Dialog-Modi</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Didaktische Dialog-Modi</h3>
                 
               </div>
-              <p class="mt-2 text-[15px] leading-relaxed text-gray-700 font-geist">Der KI-Tutor beherrscht mehrere didaktische Dialog-Modi, die du je nach Lernziel einsetzt:</p><ul class="mt-3 space-y-1.5 text-[14px] leading-relaxed text-gray-600 font-geist"><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500"></span><span><strong class="font-semibold text-gray-900">Deklarativer Modus</strong> – Antwort als didaktische Klammer mit Einleitung, Hauptteil und Zusammenfassung.</span></li><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500"></span><span><strong class="font-semibold text-gray-900">Sokratischer Modus</strong> – Der Tutor antwortet mit gezielten Gegenfragen und führt so zum eigenen Verständnis.</span></li><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500"></span><span><strong class="font-semibold text-gray-900">Debattiermodus</strong> – Lernende testen Argumente, wechseln Perspektiven und vertiefen ihr Wissen im Dialog.</span></li><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500"></span><span><strong class="font-semibold text-gray-900">Reflexionsfragen</strong> – Fragen zum Gelernten regen zum Nachdenken an – was wurde verstanden, wo bleiben Unsicherheiten?</span></li><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500"></span><span><strong class="font-semibold text-gray-900">Praxisbeispiele</strong> – Konkrete Anwendungsfälle und Szenarien machen abstraktes Wissen greifbar und erleichtern den Transfer in die Praxis.</span></li></ul>
+              <p class="mt-2 text-[15px] leading-relaxed text-gray-700 font-geist">Der KI-Tutor beherrscht mehrere didaktische Dialog-Modi, die du je nach Lernziel einsetzt:</p><ul class="mt-3 space-y-1.5 text-[14px] leading-relaxed text-gray-600 font-geist"><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0a0a0f]"></span><span><strong class="font-semibold text-gray-900">Deklarativer Modus</strong> – Antwort als didaktische Klammer mit Einleitung, Hauptteil und Zusammenfassung.</span></li><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0a0a0f]"></span><span><strong class="font-semibold text-gray-900">Sokratischer Modus</strong> – Der Tutor antwortet mit gezielten Gegenfragen und führt so zum eigenen Verständnis.</span></li><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0a0a0f]"></span><span><strong class="font-semibold text-gray-900">Debattiermodus</strong> – Lernende testen Argumente, wechseln Perspektiven und vertiefen ihr Wissen im Dialog.</span></li><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0a0a0f]"></span><span><strong class="font-semibold text-gray-900">Reflexionsfragen</strong> – Fragen zum Gelernten regen zum Nachdenken an – was wurde verstanden, wo bleiben Unsicherheiten?</span></li><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0a0a0f]"></span><span><strong class="font-semibold text-gray-900">Praxisbeispiele</strong> – Konkrete Anwendungsfälle und Szenarien machen abstraktes Wissen greifbar und erleichtern den Transfer in die Praxis.</span></li></ul>
             </div>
           </article>
-          <!-- GALLERY-ITEM: Recherche &amp; Websuche -->
+          <!-- GALLERY-ITEM: Hausaufgabenschutz -->
           <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="8">
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Recherche &amp; Websuche</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Hausaufgabenschutz</h3>
+                
+              </div>
+              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Der KI-Tutor liefert keine fertigen Lösungen für Hausaufgaben, Einsendeaufgaben oder Prüfungsaufgaben. Stattdessen führt er Lernende mit Hinweisen und Gegenfragen Schritt für Schritt zur eigenen Lösung – so bleibt der Lerneffekt erhalten.</p>
+            </div>
+          </article>
+          <!-- GALLERY-ITEM: Recherche &amp; Websuche -->
+          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="9">
+            
+            <div class="tg-text tg-text--only">
+              <div class="flex flex-wrap items-center gap-2">
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Recherche &amp; Websuche</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Lernende vertiefen Themen eigenständig und erarbeiten sie strukturiert – der KI-Tutor unterstützt bei Recherche und Websuche.</p>
@@ -3166,9 +3202,9 @@
           <div class="flex items-center justify-between px-4 pb-4 lg:hidden">
             <div class="flex items-center gap-1.5" data-tg-dots></div>
             <div class="flex items-center gap-2">
-              <span class="text-xs tabular-nums text-gray-400 font-geist" data-tg-counter>1 / 9</span>
-              <button type="button" data-tg-prev aria-label="Zurück" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 active:scale-95"><i data-lucide="chevron-left" class="h-4 w-4"></i></button>
-              <button type="button" data-tg-next aria-label="Weiter" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 active:scale-95"><i data-lucide="chevron-right" class="h-4 w-4"></i></button>
+              <span class="text-xs tabular-nums text-gray-400 font-geist" data-tg-counter>1 / 10</span>
+              <button type="button" data-tg-prev aria-label="Zurück" class="flex h-9 w-9 items-center justify-center rounded-full border-[1.5px] border-[#0a0a0f] bg-white text-[#0a0a0f] active:scale-95"><i data-lucide="chevron-left" class="h-4 w-4"></i></button>
+              <button type="button" data-tg-next aria-label="Weiter" class="flex h-9 w-9 items-center justify-center rounded-full border-[1.5px] border-[#0a0a0f] bg-white text-[#0a0a0f] active:scale-95"><i data-lucide="chevron-right" class="h-4 w-4"></i></button>
             </div>
           </div>
         </div>
@@ -3182,7 +3218,7 @@
       <div class="tg relative overflow-hidden lg:grid lg:grid-cols-12" data-tab-gallery>
         <div class="tg-tabs-wrap relative lg:col-span-3 lg:min-h-0 lg:overflow-y-auto lg:border-r lg:border-gray-200/80 lg:bg-white/90 lg:p-4 xl:p-5">
           <div role="tablist" aria-label="Funktionen" class="no-scrollbar flex gap-2 overflow-x-auto px-4 pt-4 pb-3 lg:flex-col lg:gap-1 lg:overflow-visible lg:p-0">
-            <button type="button" role="tab" aria-selected="true" data-tg-tab="0" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Agent-Konfiguration</button><button type="button" role="tab" aria-selected="false" data-tg-tab="1" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Übungen generieren</button><button type="button" role="tab" aria-selected="false" data-tg-tab="2" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Übungen verifizieren</button><button type="button" role="tab" aria-selected="false" data-tg-tab="3" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Übungen verteilen</button><button type="button" role="tab" aria-selected="false" data-tg-tab="4" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Intelligente Übergabe</button><button type="button" role="tab" aria-selected="false" data-tg-tab="5" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Individuelle Betreuung</button><button type="button" role="tab" aria-selected="false" data-tg-tab="6" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Moodle-Kurse generieren</button>
+            <button type="button" role="tab" aria-selected="true" data-tg-tab="0" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Agent-Konfiguration</button><button type="button" role="tab" aria-selected="false" data-tg-tab="1" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Agent Learnings</button><button type="button" role="tab" aria-selected="false" data-tg-tab="2" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Übungen generieren</button><button type="button" role="tab" aria-selected="false" data-tg-tab="3" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Übungen verifizieren</button><button type="button" role="tab" aria-selected="false" data-tg-tab="4" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Übungen verteilen</button><button type="button" role="tab" aria-selected="false" data-tg-tab="5" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Intelligente Übergabe</button><button type="button" role="tab" aria-selected="false" data-tg-tab="6" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Individuelle Betreuung</button><button type="button" role="tab" aria-selected="false" data-tg-tab="7" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Moodle-Kurse generieren</button>
           </div>
         </div>
         <div class="relative lg:col-span-9 lg:flex lg:min-h-0 lg:flex-col">
@@ -3192,73 +3228,84 @@
             <div class="tg-media"><video class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" autoplay muted loop playsinline preload="metadata" aria-label="Agent-Konfiguration"><source src="/assets/features/agent-konfiguration.mp4" type="video/mp4"></video></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Agent-Konfiguration</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Agent-Konfiguration</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Im Alphalearn Portal legst du fest, wie sich der KI-Tutor verhält. Vorgefertigte Templates bilden bewährte didaktische Szenarien ab und lassen sich flexibel an dein Lehr- und Lernkonzept anpassen.</p>
             </div>
           </article>
-          <!-- GALLERY-ITEM: Übungen generieren -->
+          <!-- GALLERY-ITEM: Agent Learnings -->
           <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="1">
+            
+            <div class="tg-text tg-text--only">
+              <div class="flex flex-wrap items-center gap-2">
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Agent Learnings</h3>
+                
+              </div>
+              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Deine KI-Agenten lernen aus dem Einsatz dazu: Erkenntnisse aus Gesprächen und Rückmeldungen halten sie als Learnings fest und berücksichtigen sie in künftigen Antworten. So werden sie mit der Zeit immer besser auf deine Lernenden und Kurse abgestimmt.</p>
+            </div>
+          </article>
+          <!-- GALLERY-ITEM: Übungen generieren -->
+          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="2">
             <div class="tg-media"><video class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" autoplay muted loop playsinline preload="metadata" aria-label="Übungen generieren"><source src="/assets/features/uebungen-generieren.mp4" type="video/mp4"></video></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Übungen generieren</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Übungen generieren</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Dozierende, Trainer und Admins erstellen Übungen im Alphalearn Portal auf drei Wegen: mit KI aus der eigenen Wissensbasis generieren, von Grund auf selbst anlegen oder vorhandene Übungen hochladen.</p>
             </div>
           </article>
           <!-- GALLERY-ITEM: Übungen verifizieren -->
-          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="2">
+          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="3">
             <div class="tg-media"><video class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" autoplay muted loop playsinline preload="metadata" aria-label="Übungen verifizieren"><source src="/assets/features/uebungen-verifizieren.mp4" type="video/mp4"></video></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Übungen verifizieren</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Übungen verifizieren</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Unsere KI-Tutoren generieren Übungen aus deiner Wissensbasis und prüfen Ergebnisse eigenständig – manche Bildungsanbieter bevorzugen jedoch den Human-in-the-Loop-Ansatz. Deshalb kannst du eigene Übungen im Alphalearn Portal hochladen, mit KI generieren oder manuell erstellen. Sende deine verifizierten Übungen an ganze Moodle-Kurse oder einzelne Lernende, die sie übersichtlich im Chat sehen, gib sie deinen KI-Tutoren als Lehrwerkzeug oder übernimm sie direkt in die Wissensbasis.</p>
             </div>
           </article>
           <!-- GALLERY-ITEM: Übungen verteilen -->
-          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="3">
+          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="4">
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Übungen verteilen</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Übungen verteilen</h3>
                 
               </div>
-              <p class="mt-2 text-[15px] leading-relaxed text-gray-700 font-geist">Fertige Übungen bringst du auf zwei Wegen zu den Lernenden:</p><ul class="mt-3 space-y-1.5 text-[14px] leading-relaxed text-gray-600 font-geist"><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500"></span><span><strong class="font-semibold text-gray-900">Für den KI-Tutor freigeben</strong> – Als verifizierte Übung freigegeben, können Lernende sie jederzeit im Übungsmodus abrufen.</span></li><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500"></span><span><strong class="font-semibold text-gray-900">Gezielt zusenden</strong> – Alternativ geht die Übung an einzelne Lernende oder einen ganzen Moodle-Kurs – sie erscheint direkt im Chat, wird dort bearbeitet und von der KI geprüft.</span></li></ul>
+              <p class="mt-2 text-[15px] leading-relaxed text-gray-700 font-geist">Fertige Übungen bringst du auf zwei Wegen zu den Lernenden:</p><ul class="mt-3 space-y-1.5 text-[14px] leading-relaxed text-gray-600 font-geist"><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0a0a0f]"></span><span><strong class="font-semibold text-gray-900">Für den KI-Tutor freigeben</strong> – Als verifizierte Übung freigegeben, können Lernende sie jederzeit im Übungsmodus abrufen.</span></li><li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0a0a0f]"></span><span><strong class="font-semibold text-gray-900">Gezielt zusenden</strong> – Alternativ geht die Übung an einzelne Lernende oder einen ganzen Moodle-Kurs – sie erscheint direkt im Chat, wird dort bearbeitet und von der KI geprüft.</span></li></ul>
             </div>
           </article>
           <!-- GALLERY-ITEM: Intelligente Übergabe -->
-          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="4">
+          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="5">
             <div class="tg-media"><video class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" autoplay muted loop playsinline preload="metadata" aria-label="Intelligente Übergabe"><source src="/assets/features/intelligente-uebergabe.mp4" type="video/mp4"></video></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Intelligente Übergabe</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Intelligente Übergabe</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Lernende nutzen den KI-Tutor nicht nur für Fragen zu Kursinhalten, sondern auch zur Studienorganisation oder bei technischen Problemen. Du bestimmst, ob dann ein anderer KI-Agent übernimmt oder die Frage an eine echte Lehrperson weitergeleitet wird. Komplexe oder ungeklärte Anfragen landen so automatisch bei der Lehrkraft oder beim Support.</p>
             </div>
           </article>
           <!-- GALLERY-ITEM: Individuelle Betreuung -->
-          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="5">
+          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="6">
             <div class="tg-media"><video class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" autoplay muted loop playsinline preload="metadata" aria-label="Individuelle Betreuung"><source src="/assets/features/individuelle-betreuung.mp4" type="video/mp4"></video></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Individuelle Betreuung</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Individuelle Betreuung</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Wenn die KI keine Antwort in ihrer Wissensbasis findet, kannst du erlauben, dass der KI-Tutor die Anfrage der Lernenden an die Dozierenden oder Trainer weiterleitet. Dieser individuelle Unterstützungsbedarf landet dann in der Inbox der zuständigen Lehrperson.</p>
             </div>
           </article>
           <!-- GALLERY-ITEM: Moodle-Kurse generieren -->
-          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="6">
+          <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="7">
             <div class="tg-media"><video class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" autoplay muted loop playsinline preload="metadata" aria-label="Moodle-Kurse generieren"><source src="/assets/features/moodle-kurse-generieren.mp4" type="video/mp4"></video></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Moodle-Kurse generieren</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Moodle-Kurse generieren</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Mit dem Alphalearn Course Creator beschreibst du im Chat, welchen Kurs du brauchst – die KI erstellt daraus einen kompletten Moodle-Kurs: Kursname, Beschreibung, Lernziele und eine Kursstruktur aus Abschnitten mit Seiten, Labels, Foren, Aufgaben und Tests. Struktur und Inhalte passt du direkt im Editor an. Den fertigen Kurs platzierst du anschließend mit einem Klick direkt in deiner Moodle-Instanz – perfekt formatiert und sofort einsatzbereit.</p>
@@ -3268,9 +3315,9 @@
           <div class="flex items-center justify-between px-4 pb-4 lg:hidden">
             <div class="flex items-center gap-1.5" data-tg-dots></div>
             <div class="flex items-center gap-2">
-              <span class="text-xs tabular-nums text-gray-400 font-geist" data-tg-counter>1 / 7</span>
-              <button type="button" data-tg-prev aria-label="Zurück" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 active:scale-95"><i data-lucide="chevron-left" class="h-4 w-4"></i></button>
-              <button type="button" data-tg-next aria-label="Weiter" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 active:scale-95"><i data-lucide="chevron-right" class="h-4 w-4"></i></button>
+              <span class="text-xs tabular-nums text-gray-400 font-geist" data-tg-counter>1 / 8</span>
+              <button type="button" data-tg-prev aria-label="Zurück" class="flex h-9 w-9 items-center justify-center rounded-full border-[1.5px] border-[#0a0a0f] bg-white text-[#0a0a0f] active:scale-95"><i data-lucide="chevron-left" class="h-4 w-4"></i></button>
+              <button type="button" data-tg-next aria-label="Weiter" class="flex h-9 w-9 items-center justify-center rounded-full border-[1.5px] border-[#0a0a0f] bg-white text-[#0a0a0f] active:scale-95"><i data-lucide="chevron-right" class="h-4 w-4"></i></button>
             </div>
           </div>
         </div>
@@ -3423,7 +3470,7 @@
     </div></div></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Nie wieder doppelte Datenpflege</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Nie wieder doppelte Datenpflege</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Mit Alphalearn Auto-Sync pflegst du nur noch deinen Moodle-Kurs — der KI-Tutor hält sich selbstständig auf dem aktuellen Stand. Er liest alle Inhalte deines Moodle Kurses automatisch.</p>
@@ -3434,7 +3481,7 @@
             <div class="tg-media"><video class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" autoplay muted loop playsinline preload="metadata" aria-label="Kurs-Synchronisation"><source src="/assets/features/kurs-synchronisation.mp4" type="video/mp4"></video></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Kurs-Synchronisation</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Kurs-Synchronisation</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Selbst bei der Verwaltung von nur 10 Kursen willst du nicht 10 verschiedene KI-Tutoren mit 10 unterschiedlichen Wissensbasen verwalten. Ebenso wenig willst du einen (allwissenden) KI-Tutor in allen 10 E-Learnings platzieren. Die Lösung: Alphalearn Kurs-Synchronisation. Du erstellst einmal ein KI-Tutor-Template und verknüpfst es mit beliebig vielen Moodle-Kursen. Mit zwei Klicks entstehen so z. B. 10.000 KI-Tutoren mit individuellem Kurswissen, direkt im jeweiligen Kurs platziert.</p>
@@ -3445,7 +3492,7 @@
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Erweiterung der Wissensbasis</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Erweiterung der Wissensbasis</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Ein platzierter KI-Tutor synchronisiert automatisch das Wissen seines Moodle-Kurses. Darüber hinaus kannst du die Wissensbasis eines KI-Tutor-Templates oder eines einzelnen, in einem Kurs platzierten Tutors gezielt anreichern – mit Text-Dokumenten, Web-Quellen und weiteren Moodle-Kursen. Alles zentral im Alphalearn Portal verwaltet.</p>
@@ -3456,7 +3503,7 @@
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Kurse verknüpfen</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Kurse verknüpfen</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Auto-Sync funktioniert auch über mehrere Kurse hinweg: Verknüpfe einfach die Kurse, deren Wissen ein KI-Tutor kennen soll. Steht er zum Beispiel in Modul 3, greift er zusätzlich auf die Inhalte aus Modul 1 und 2 zu und beantwortet Fragen, die auf früherem Stoff aufbauen – alle verknüpften Kurse bleiben dabei automatisch aktuell.</p>
@@ -3467,7 +3514,7 @@
             <div class="tg-media"><img src="/assets/features/moodle-aktivitaeten.jpg" alt="Diverse Moodle-Aktivitäten" class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" loading="lazy"></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Diverse Moodle-Aktivitäten</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Diverse Moodle-Aktivitäten</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Nicht nur Seiten und PDFs: Alphalearn synchronisiert alle Aktivitäten deines Moodle-Kurses – Quizze, Lektionen, Foren, Kalender, Videos, H5P, SCORM-Pakete sowie Articulate- und iSpring-Kurse. Auch Forendiskussionen fließen ins Wissen des KI-Tutors ein.</p>
@@ -3478,7 +3525,7 @@
             <div class="tg-media"><img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c546deb5-a0d1-4095-aad0-a790bfea113e_1600w.png" alt="Quellenangaben" class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" loading="lazy"></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Quellenangaben</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Quellenangaben</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Unter jeder Antwort des KI-Tutors wird die verwendete Quelle angezeigt – so ist nachvollziehbar, aus welchem Dokument der Wissensbasis die Antwort stammt. Dokumentquellen öffnen sich als Originaldokument direkt im KI-Chat, aufgeschlagen an der richtigen Stelle; Kurs- oder Web-Quellen lassen sich als Hyperlink öffnen. Das schafft Vertrauen; der Admin kann die Anzeige ein- oder ausschalten.</p>
@@ -3489,7 +3536,7 @@
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Didaktisches Parsing</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Didaktisches Parsing</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Alphalearn liest deinen Moodle-Kurs didaktisch aus – oder auch nur die PDFs, die du dort hochgeladen hast. Der KI-Tutor erkennt dabei Kursstruktur, Lernziele und Übungsaufgaben und versteht, wie die Inhalte aufeinander aufbauen. Das ist die Grundlage für den Geführten Lernmodus: Aus dem geparsten Material erstellt der Tutor eine geführte Lernreise – ohne dass du den Kurs dafür umbauen musst.</p>
@@ -3500,7 +3547,7 @@
             <div class="tg-media"><video class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" autoplay muted loop playsinline preload="metadata" aria-label="Integrationen"><source src="/assets/features/integrationen.mp4" type="video/mp4"></video></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Integrationen</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Integrationen</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Neben Moodle verbindest du dein Alphalearn Portal direkt mit Microsoft SharePoint, Google Drive oder Dropbox – für einen nahtlosen Wissensfluss ohne manuelle Uploads oder doppelte Datenpflege. Alle Inhalte bleiben in ihren Ursprungssystemen und werden als einheitliche Datenquelle genutzt.</p>
@@ -3511,8 +3558,8 @@
             <div class="flex items-center gap-1.5" data-tg-dots></div>
             <div class="flex items-center gap-2">
               <span class="text-xs tabular-nums text-gray-400 font-geist" data-tg-counter>1 / 8</span>
-              <button type="button" data-tg-prev aria-label="Zurück" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 active:scale-95"><i data-lucide="chevron-left" class="h-4 w-4"></i></button>
-              <button type="button" data-tg-next aria-label="Weiter" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 active:scale-95"><i data-lucide="chevron-right" class="h-4 w-4"></i></button>
+              <button type="button" data-tg-prev aria-label="Zurück" class="flex h-9 w-9 items-center justify-center rounded-full border-[1.5px] border-[#0a0a0f] bg-white text-[#0a0a0f] active:scale-95"><i data-lucide="chevron-left" class="h-4 w-4"></i></button>
+              <button type="button" data-tg-next aria-label="Weiter" class="flex h-9 w-9 items-center justify-center rounded-full border-[1.5px] border-[#0a0a0f] bg-white text-[#0a0a0f] active:scale-95"><i data-lucide="chevron-right" class="h-4 w-4"></i></button>
             </div>
           </div>
         </div>
@@ -3536,7 +3583,7 @@
             <div class="tg-media"><img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/11730369-76f7-4087-9daa-b23610a173b1_1600w.png" alt="Moodle Block Plugin" class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" loading="lazy"></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Moodle Block Plugin</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Moodle Block Plugin</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Erstelle einen KI-Tutor mit deinem Kurswissen und integriere ihn über das Alphabees Moodle-Block-Plugin direkt in deine Moodle-Instanz – Plug and Play. Lernende erhalten Unterstützung dort, wo sie lernen: im Kurs, am Desktop und in der Moodle Mobile App.</p>
@@ -3547,7 +3594,7 @@
             <div class="tg-media"><img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/5075bccc-93c7-494d-897a-acae936a01b7_1600w.png" alt="Moodle Kalender" class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" loading="lazy"></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Moodle Kalender</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Moodle Kalender</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Verknüpfe den KI-Tutor mit den Moodle-Kalendern der Lernenden, damit er sie auf anstehende Termine hinweist. Die Kalenderdaten fließen dabei in die Wissensbasis ein.</p>
@@ -3558,7 +3605,7 @@
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Moodle Forum</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Moodle Forum</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Der KI-Tutor liest die Forendiskussionen deines Kurses mit: Fragen, Antworten und Hinweise aus dem Forum fließen in seine Wissensbasis ein, sodass er auch Themen kennt, die erst im Kursverlauf entstanden sind – und Lernende bei Bedarf auf den passenden Forenbeitrag verweist.</p>
@@ -3569,7 +3616,7 @@
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Moodle Kursraum</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Moodle Kursraum</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Der KI-Tutor kennt den Kursraum, in dem er platziert ist: Abschnitte, Aktivitäten, Materialien und Termine. So kann er Lernende gezielt zur richtigen Stelle im Kurs führen und Fragen im Kontext des jeweiligen Kurses beantworten.</p>
@@ -3580,7 +3627,7 @@
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Noten</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Noten</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Der KI-Tutor kann die Moodle-Bewertungen der Lernenden einbeziehen: Er sieht, wo Ergebnisse schwach ausfallen, und richtet Erklärungen und Übungen gezielt darauf aus. Lehrende behalten die Hoheit über die Noten – der Tutor nutzt sie nur zur Unterstützung.</p>
@@ -3591,7 +3638,7 @@
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Kurs-Fortschritt</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Kurs-Fortschritt</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Der Kurs-Fortschritt aus Moodle steht dem KI-Tutor zur Verfügung: Er weiß, welche Abschnitte und Aktivitäten Lernende bereits abgeschlossen haben, holt sie an genau dieser Stelle ab und erinnert an offene Aufgaben.</p>
@@ -3602,7 +3649,7 @@
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">LTI 1.3 Schnittstelle</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">LTI 1.3 Schnittstelle</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Über die LTI-1.3-Schnittstelle bindest du Alphalearn KI-Tutoren standardkonform in Lernplattformen ein – mit sicherem Single Sign-on und automatischer Übergabe von Kurs- und Nutzerkontext, ohne eigenes Plugin.</p>
@@ -3613,7 +3660,7 @@
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">ILIAS Integration</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">ILIAS Integration</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Alphalearn gibt es auch für ILIAS: Der KI-Tutor wird in deine ILIAS-Kurse eingebunden und nutzt die dortigen Kursinhalte als Wissensbasis – mit denselben Funktionen wie in Moodle.</p>
@@ -3624,7 +3671,7 @@
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Cloud-Dienste</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Cloud-Dienste</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Deine Inhalte kommen dorthin, wo der KI-Tutor sie braucht – ganz gleich, wo sie liegen: Lade Dokumente direkt im Alphalearn Portal hoch, synchronisiere sie aus Moodle oder verbinde den Cloud-Speicher, den dein Team ohnehin nutzt. Aktuell unterstützen wir Google Drive, Microsoft SharePoint und Dropbox – die Wissensbasis bleibt automatisch auf dem Stand der Quelle. Du nutzt einen anderen Dienst? Auch spezielle Cloud-Anbindungen setzen wir gern für dich um.</p>
@@ -3635,7 +3682,7 @@
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Web &amp; SCORM Einbettung</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Web &amp; SCORM Einbettung</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Deine KI-Agenten bindest du nahtlos in deine Moodle-Instanz, andere LMS, deine Webseite oder ein SCORM-Paket ein – zum Beispiel als Sales- oder Beratungs-Assistent auf deiner Website.</p>
@@ -3646,8 +3693,8 @@
             <div class="flex items-center gap-1.5" data-tg-dots></div>
             <div class="flex items-center gap-2">
               <span class="text-xs tabular-nums text-gray-400 font-geist" data-tg-counter>1 / 10</span>
-              <button type="button" data-tg-prev aria-label="Zurück" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 active:scale-95"><i data-lucide="chevron-left" class="h-4 w-4"></i></button>
-              <button type="button" data-tg-next aria-label="Weiter" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 active:scale-95"><i data-lucide="chevron-right" class="h-4 w-4"></i></button>
+              <button type="button" data-tg-prev aria-label="Zurück" class="flex h-9 w-9 items-center justify-center rounded-full border-[1.5px] border-[#0a0a0f] bg-white text-[#0a0a0f] active:scale-95"><i data-lucide="chevron-left" class="h-4 w-4"></i></button>
+              <button type="button" data-tg-next aria-label="Weiter" class="flex h-9 w-9 items-center justify-center rounded-full border-[1.5px] border-[#0a0a0f] bg-white text-[#0a0a0f] active:scale-95"><i data-lucide="chevron-right" class="h-4 w-4"></i></button>
             </div>
           </div>
         </div>
@@ -3661,7 +3708,7 @@
       <div class="tg relative overflow-hidden lg:grid lg:grid-cols-12" data-tab-gallery>
         <div class="tg-tabs-wrap relative lg:col-span-3 lg:min-h-0 lg:overflow-y-auto lg:border-r lg:border-gray-200/80 lg:bg-white/90 lg:p-4 xl:p-5">
           <div role="tablist" aria-label="Funktionen" class="no-scrollbar flex gap-2 overflow-x-auto px-4 pt-4 pb-3 lg:flex-col lg:gap-1 lg:overflow-visible lg:p-0">
-            <button type="button" role="tab" aria-selected="true" data-tg-tab="0" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">KI-Modelle und Limits</button><button type="button" role="tab" aria-selected="false" data-tg-tab="1" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Alphalytics Portal</button><button type="button" role="tab" aria-selected="false" data-tg-tab="2" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">DSGVO &amp; Hosting in Deutschland</button><button type="button" role="tab" aria-selected="false" data-tg-tab="3" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Ethische Guardrails</button><button type="button" role="tab" aria-selected="false" data-tg-tab="4" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Qualitätskontrolle</button><button type="button" role="tab" aria-selected="false" data-tg-tab="5" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Rollen &amp; Rechte</button><button type="button" role="tab" aria-selected="false" data-tg-tab="6" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Freigabeprozesse</button>
+            <button type="button" role="tab" aria-selected="true" data-tg-tab="0" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">KI-Modelle und Limits</button><button type="button" role="tab" aria-selected="false" data-tg-tab="1" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Analytics</button><button type="button" role="tab" aria-selected="false" data-tg-tab="2" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">DSGVO &amp; Hosting in Deutschland</button><button type="button" role="tab" aria-selected="false" data-tg-tab="3" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Ethische Guardrails</button><button type="button" role="tab" aria-selected="false" data-tg-tab="4" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Qualitätskontrolle</button><button type="button" role="tab" aria-selected="false" data-tg-tab="5" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Rollen &amp; Rechte</button><button type="button" role="tab" aria-selected="false" data-tg-tab="6" class="tg-tab shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium font-geist lg:w-full lg:whitespace-normal lg:px-3 lg:py-2.5 lg:text-left lg:text-[14px]">Freigabeprozesse</button>
           </div>
         </div>
         <div class="relative lg:col-span-9 lg:flex lg:min-h-0 lg:flex-col">
@@ -3671,21 +3718,21 @@
             <div class="tg-media"><video class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" autoplay muted loop playsinline preload="metadata" aria-label="KI-Modelle und Limits"><source src="/assets/features/ki-modelle-limits.mp4" type="video/mp4"></video></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">KI-Modelle und Limits</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">KI-Modelle und Limits</h3>
                 
               </div>
-              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Wähle je Agent das passende KI-Modell in unterschiedlichen Intelligenz-Stufen – von schnellen, günstigen Modellen für einfache Fragen und hohes Volumen bis zu Premium-Modellen für anspruchsvolle Aufgaben; die Credit-Kosten siehst du direkt daneben. Dazu legst du Token-Limits fest: als Obergrenze für die Länge einzelner KI-Antworten und als Nutzungskontingent pro Lernendem – wahlweise pro Tag oder pro Monat. So bleiben Kosten und Nutzung jederzeit kontrollierbar.</p>
+              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Wähle je Agent das passende KI-Modell in unterschiedlichen Intelligenz-Stufen – von schnellen, günstigen Modellen für einfache Fragen und hohes Volumen bis zu Premium-Modellen für anspruchsvolle Aufgaben; die Credit-Kosten siehst du direkt daneben. Dazu legst du Limits fest: als Obergrenze für die Länge einzelner KI-Antworten und als Nutzungskontingent pro Lernendem – wahlweise pro Tag oder pro Monat. So bleiben Kosten und Nutzung jederzeit kontrollierbar.</p>
             </div>
           </article>
-          <!-- GALLERY-ITEM: Alphalytics Portal -->
+          <!-- GALLERY-ITEM: Analytics -->
           <article class="tg-panel w-full shrink-0 p-4 sm:p-6" data-tg-panel="1">
-            <div class="tg-media"><img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/2a6e9d11-5d58-41eb-b68b-b33ae72810c8_original.gif" alt="Alphalytics Portal" class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" loading="lazy"></div>
+            <div class="tg-media"><img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/2a6e9d11-5d58-41eb-b68b-b33ae72810c8_original.gif" alt="Analytics" class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" loading="lazy"></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Alphalytics Portal</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Analytics</h3>
                 
               </div>
-              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Das Alphalytics Portal – das KI-Analytics-Portal von Alphalearn – wertet die Interaktionen mit den KI-Tutoren aus und zeigt im Dashboard, welche Fragen Lernende stellen, wo Verständnisprobleme auftreten und welche Inhalte besonders häufig Unterstützung erfordern. Der Analytics-Assistent filtert aus allen Metriken die wichtigsten heraus und liefert punktgenaue Analysen und Handlungsempfehlungen.</p>
+              <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Analytics, das KI-Analytics-Portal von Alphalearn, wertet die Interaktionen mit den KI-Tutoren aus und zeigt im Dashboard, welche Fragen Lernende stellen, wo Verständnisprobleme auftreten und welche Inhalte besonders häufig Unterstützung erfordern. Der Analytics-Assistent filtert aus allen Metriken die wichtigsten heraus und liefert punktgenaue Analysen und Handlungsempfehlungen.</p>
             </div>
           </article>
           <!-- GALLERY-ITEM: DSGVO &amp; Hosting in Deutschland -->
@@ -3693,7 +3740,7 @@
             <div class="tg-media"><img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/00248ced-d248-4fd7-a874-504f1b029542_1600w.png" alt="DSGVO &amp; Hosting in Deutschland" class="rounded-2xl block h-auto w-full ring-1 ring-gray-200" loading="lazy"></div>
             <div class="tg-text">
               <div class="mt-5 flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">DSGVO &amp; Hosting in Deutschland</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">DSGVO &amp; Hosting in Deutschland</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Hosting auf vertrauenswürdigen deutschen Servern, DSGVO-konforme Architektur und höchste Datenschutzstandards. Deine Rechte bleiben bei dir; eine Auftragsverarbeitungsvereinbarung (AVV) wird bereitgestellt.</p>
@@ -3704,7 +3751,7 @@
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Ethische Guardrails</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Ethische Guardrails</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">KI braucht klare Grenzen. Mit den Guardrails im Alphalearn Portal bestimmst du, worüber deine KI-Tutoren sprechen dürfen und ob Regelverstöße protokolliert, umgeleitet oder blockiert werden. Vorkonfigurierte Guardrail-Templates auf Basis der ethischen Leitlinien der UNESCO für KI in der Bildung aktivierst du direkt im Portal, passt sie individuell an oder erweiterst sie um eigene Regeln.</p>
@@ -3715,7 +3762,7 @@
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Qualitätskontrolle</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Qualitätskontrolle</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Lernende bewerten jede KI-Antwort mit Daumen hoch oder runter – bei Daumen runter können sie in einem Satz ergänzen, was gefehlt hat oder falsch war. Im Alphalearn Portal laufen diese Bewertungen gebündelt zusammen: So erkennst du schwache Antworten, ergänzt gezielt die Wissensbasis und verbesserst deine KI-Tutoren Schritt für Schritt.</p>
@@ -3726,7 +3773,7 @@
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Rollen &amp; Rechte</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Rollen &amp; Rechte</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Im Alphalearn Portal vergibst du Rollen und Rechte so, dass Dozierende und Trainer nur die Kurse und Teilnehmenden sehen, für die sie verantwortlich sind. Über das Rollenmanagement lädst du Mitarbeitende zur gemeinsamen Verwaltung ein.</p>
@@ -3737,7 +3784,7 @@
             
             <div class="tg-text tg-text--only">
               <div class="flex flex-wrap items-center gap-2">
-                <h3 class="text-xl font-semibold tracking-tight text-gray-900 font-geist sm:text-2xl">Freigabeprozesse</h3>
+                <h3 class="text-2xl font-normal leading-tight tracking-tight text-[#0a0a0f] font-geist sm:text-[1.75rem]">Freigabeprozesse</h3>
                 
               </div>
               <p class="mt-2 text-[15px] leading-relaxed text-gray-600 font-geist">Bestimmte Aufgaben im Alphalearn Portal sind an Rollen gebunden oder müssen erst freigegeben werden, und jede Änderung wird protokolliert – gerade dann hilfreich, wenn viele Personen gemeinsam am Portal arbeiten.</p>
@@ -3748,8 +3795,8 @@
             <div class="flex items-center gap-1.5" data-tg-dots></div>
             <div class="flex items-center gap-2">
               <span class="text-xs tabular-nums text-gray-400 font-geist" data-tg-counter>1 / 7</span>
-              <button type="button" data-tg-prev aria-label="Zurück" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 active:scale-95"><i data-lucide="chevron-left" class="h-4 w-4"></i></button>
-              <button type="button" data-tg-next aria-label="Weiter" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 active:scale-95"><i data-lucide="chevron-right" class="h-4 w-4"></i></button>
+              <button type="button" data-tg-prev aria-label="Zurück" class="flex h-9 w-9 items-center justify-center rounded-full border-[1.5px] border-[#0a0a0f] bg-white text-[#0a0a0f] active:scale-95"><i data-lucide="chevron-left" class="h-4 w-4"></i></button>
+              <button type="button" data-tg-next aria-label="Weiter" class="flex h-9 w-9 items-center justify-center rounded-full border-[1.5px] border-[#0a0a0f] bg-white text-[#0a0a0f] active:scale-95"><i data-lucide="chevron-right" class="h-4 w-4"></i></button>
             </div>
           </div>
         </div>
@@ -3764,8 +3811,8 @@
 
 
   <!-- ================= UNTERSTÜTZER-LOGOS ================= -->
-  <section class="sm:px-6 lg:px-8 max-w-7xl mx-auto px-4 pt-12 sm:pt-[120px] relative">
-      <p class="text-sm text-black/50 font-geist text-center">mit Unterstützung von: </p>
+  <section class="sm:px-6 lg:px-8 max-w-7xl mx-auto px-4 pt-24 sm:pt-32 relative">
+      <p class="text-sm font-medium text-gray-500 font-geist text-center">mit Unterstützung von: </p>
     
     <div class="flex justify-center items-center gap-6 mt-4">
 
@@ -3893,20 +3940,20 @@
 </div>
   </section>
 
-  <div class="pt-12 sm:pt-[120px]">
-  <section class="cta-final sm:px-6 lg:px-8 max-w-7xl z-10 mr-auto ml-auto pt-8 pb-14 sm:pb-20 relative">
-    <div class="text-center max-w-2xl mx-auto">
-      <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900 font-geist">Überzeug dich mit deinen eigenen Kursinhalten</h2>
-      <p class="text-lg text-gray-500 font-geist mt-4">Der Free-Plan kostet nichts, braucht keine Kreditkarte —
-        und dein erster Tutor steht in wenigen Minuten.</p>
-      <div class="flex flex-col sm:flex-row gap-4 mt-10 items-center justify-center">
+  <div class="pt-24 sm:pt-32">
+  <section class="cta-final sm:px-6 lg:px-8 max-w-7xl z-10 mr-auto ml-auto px-4 pb-4 relative">
+    <div class="max-w-5xl">
+      <h2 class="ds-h2">Überzeug dich mit deinen eigenen Kursinhalten</h2>
+      <p class="ds-sub mt-6 sm:mt-8">Starte im Free-Plan ohne Kreditkarte oder teste den Professional-Plan
+        14 Tage kostenlos. Dein erster Tutor steht in wenigen Minuten.</p>
+      <div class="ds-btn-row mt-10 sm:mt-12">
         <a href="https://portal.alphabees.de/auth/register" data-cta="features_top_trial"
-          class="group inline-flex min-w-[230px] items-center justify-center gap-x-3 rounded-full border border-gray-900 bg-gray-900 px-8 py-4 text-base font-semibold text-white font-geist shadow-[0_8px_30px_rgba(15,23,42,0.25)] transition-all duration-300 ease-out hover:bg-gray-800 hover:scale-105 hover:shadow-[0_22px_50px_-10px_rgba(15,23,42,0.5)] active:scale-95">
+          class="ds-btn ds-btn--lg">
           Kostenlos testen
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
         </a>
         <a href="/de/preis.html" data-cta="features_top_pricing"
-          class="group inline-flex min-w-[230px] items-center justify-center gap-x-3 rounded-full bg-white px-8 py-4 text-base font-semibold text-gray-900 font-geist border border-gray-300 shadow-[0_8px_30px_rgba(15,23,42,0.08)] transition-all duration-300 ease-out hover:border-gray-400 hover:bg-gray-50 hover:scale-105 hover:shadow-[0_22px_50px_-10px_rgba(15,23,42,0.3)] active:scale-95">
+          class="ds-btn ds-btn--ghost ds-btn--lg">
           Preise ansehen
         </a>
       </div>
@@ -4165,7 +4212,7 @@
       const progress = 76; const rings = document.querySelectorAll('[data-ring]'); rings.forEach((ring, idx) => { const r = parseFloat(ring.getAttribute('data-radius')); const circumference = 2 * Math.PI * r; const pct = progress / 100; const dash = Math.max(0, circumference * pct - 2); ring.style.transition = 'stroke-dasharray 1200ms cubic-bezier(0.22, 1, 0.36, 1), stroke-dashoffset 1200ms cubic-bezier(0.22, 1, 0.36, 1)'; ring.style.strokeDasharray = `0 ${circumference}`; ring.style.strokeDashoffset = '0'; setTimeout(() => { ring.style.strokeDasharray = `${dash} ${circumference}`; ring.style.strokeDashoffset = '0'; }, 120 + idx * 80); }); ((el) => { if (el) el.textContent = progress; })(document.getElementById('percentValue'));
     </script>
   </div>
-</main><section aria-labelledby="ai-section" class="overflow-hidden border-black/5 border-t relative">
+</main><section aria-labelledby="ai-section" class="overflow-hidden relative">
   <!-- Subtle arcs -->
   <div class="pointer-events-none absolute inset-0">
     <div class="absolute -right-1/4 top-24 h-[900px] w-[900px] rounded-full border border-white/10"></div>
@@ -4220,12 +4267,6 @@
     }
   </script>
 </section><section aria-labelledby="dark-how-it-works" class="overflow-hidden relative">
-  <!-- Background accents -->
-  <div class="pointer-events-none absolute inset-0">
-    <div class="absolute -left-1/4 top-10 h-[900px] w-[900px] rounded-full bg-indigo-500/10 blur-3xl"></div>
-    <div class="absolute -right-1/3 bottom-0 h-[1200px] w-[1200px] rounded-full bg-fuchsia-500/10 blur-3xl"></div>
-    <div class="absolute inset-0 bg-[radial-gradient(60%_60%_at_20%_20%,rgba(255,255,255,0.06),transparent_60%)]"></div>
-  </div>
 
   
 
@@ -4234,20 +4275,14 @@
       lucide.createIcons({ attrs: { 'stroke-width': 1.5 } });
     }
   </script>
-</section><section aria-labelledby="mobile-app" class="overflow-hidden border-black/5 border-t relative">
-  <!-- Decorative glows -->
-  <div class="pointer-events-none absolute inset-0">
-    <div class="absolute -left-1/3 top-24 h-[900px] w-[900px] rounded-full bg-indigo-500/10 blur-3xl"></div>
-    <div class="absolute -left-1/4 top-64 h-[1200px] w-[1200px] rounded-full bg-amber-400/10 blur-3xl"></div>
-  </div>
+</section><section aria-labelledby="mobile-app" class="overflow-hidden relative">
 
-  <section class="md:py-24 overflow-hidden font-geist bg-white pt-16 pb-16 relative">
-  <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
+  <section class="ds-faq pt-24 sm:pt-32 pb-24 sm:pb-32 overflow-hidden font-geist bg-white relative">
+  <div class="sm:px-6 lg:px-8 max-w-7xl mr-auto ml-auto px-4">
     <!-- Header -->
-    <div class="mb-12 md:mb-16 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-      <div class="max-w-2xl">
-        <h2 class="md:text-4xl text-3xl font-semibold text-gray-900 tracking-tight">Fragen zu den Funktionen</h2>
-        <p class="text-lg text-gray-600 mt-4">Was Bildungsanbieter vor dem Einsatz eines KI-Tutors meist wissen wollen: Aufwand, Qualität und Kontrolle.</p>
+    <div class="mb-14 md:mb-20 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div class="max-w-5xl">
+        <h2 class="ds-h2">Fragen zu den Funktionen.</h2>
       </div>
       <!-- Decorative icon/element -->
 
@@ -4330,7 +4365,7 @@
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
             <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-              Du wählst je Agent ein KI-Modell in unterschiedlichen Intelligenz-Stufen und siehst die Credit-Kosten direkt daneben. Token-Limits begrenzen die Länge einzelner Antworten und das Nutzungskontingent pro Lernendem pro Tag oder Monat. Das Alphalytics Portal zeigt, wie die Tutoren genutzt werden. Die Plan-Limits findest du auf der <a href="/de/preis.html" class="text-blue-600 hover:underline">Preisseite</a>.
+              Du wählst je Agent ein KI-Modell in unterschiedlichen Intelligenz-Stufen und siehst die Credit-Kosten direkt daneben. Limits begrenzen die Länge einzelner Antworten und das Nutzungskontingent pro Lernendem pro Tag oder Monat. Die Analytics zeigen, wie die Tutoren genutzt werden. Die Plan-Limits findest du auf der <a href="/de/preis.html" class="ds-link">Preisseite</a>.
             </div>
           </div>
         </div>
@@ -4346,7 +4381,7 @@
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
             <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-              Ja. Es gibt ein <a href="/de/ilias-plugin.html" class="text-blue-600 hover:underline">ILIAS Plugin</a>, eine LTI-1.3-Schnittstelle für weitere Lernplattformen sowie die Einbettung in Webseiten und SCORM-Pakete. Wissensquellen bindest du zusätzlich aus Google Drive, Microsoft SharePoint oder Dropbox an. Für Moodle gibt es das <a href="/de/moodle-plugin.html" class="text-blue-600 hover:underline">Moodle Plugin</a> inklusive Moodle Mobile App.
+              Ja. Es gibt ein <a href="/de/ilias-plugin.html" class="ds-link">ILIAS Plugin</a>, eine LTI-1.3-Schnittstelle für weitere Lernplattformen sowie die Einbettung in Webseiten und SCORM-Pakete. Wissensquellen bindest du zusätzlich aus Google Drive, Microsoft SharePoint oder Dropbox an. Für Moodle gibt es das <a href="/de/moodle-plugin.html" class="ds-link">Moodle Plugin</a> inklusive Moodle Mobile App.
             </div>
           </div>
         </div>
@@ -4356,7 +4391,7 @@
     <!-- Bottom Contact Section -->
 
   </div>
-  <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
+  <div class="sm:px-6 lg:px-8 max-w-7xl mr-auto ml-auto px-4">
   <!-- Header -->
   <div class="mb-12 md:mb-16 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
     <div class="max-w-2xl">
@@ -4371,24 +4406,19 @@
 
 
   <!-- Bottom Contact Section -->
-  <div class="sm:p-10 overflow-hidden group bg-gray-900 rounded-3xl mt-16 pt-8 pr-8 pb-8 pl-8 relative shadow-2xl">
-    <!-- Glow effects -->
-    <div class="absolute top-0 right-0 -mt-10 -mr-10 h-64 w-64 rounded-full bg-blue-500/20 blur-3xl group-hover:bg-blue-500/30 transition-colors duration-500">
-    </div>
-    <div class="-mb-10 -ml-10 group-hover:bg-indigo-500/30 transition-colors duration-500 bg-indigo-500/20 w-64 h-64 rounded-full absolute bottom-0 left-0 blur-3xl">
-    </div>
+  <div class="ds-band ds-dark sm:p-10 overflow-hidden rounded-3xl mt-16 pt-8 pr-8 pb-8 pl-8 relative">
 
-    <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-      <div class="text-center md:text-left">
-        <h3 class="text-2xl font-semibold text-white tracking-tight">Noch Fragen?</h3>
-        <p class="text-gray-400 max-w-md mt-2">Du hast weitere Fragen zu Alphabees oder der Funktionalität des
+    <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <div class="text-left">
+        <h3 class="ds-h3">Noch Fragen?</h3>
+        <p class="text-gray-300 max-w-md mt-3">Du hast weitere Fragen zu Alphabees oder der Funktionalität des
           KI-Tutors? Wir haben unseren AI-Support Bot mit all unserem Wissen gefüttert. Mit Sicherheit wird er deine
           Frage beantworten können.
         </p>
       </div>
       <div class="flex-shrink-0">
-        <button data-cta="support_chat" onclick="toggleContactForm(this)" class="inline-flex gap-2 hover:bg-gray-50 hover:scale-[1.02] transition-all duration-200 text-sm font-semibold text-gray-900 bg-white rounded-full pt-3 pr-6 pb-3 pl-6 shadow-sm gap-x-2 gap-y-2 items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" style="width: 18px; height: 18px; color: rgb(17, 24, 39)" class="lucide lucide-mail w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" data-mingcute="message-4-ai-line" data-icon-set="mingcute" data-icon-replaced="true" stroke-width="0.5"><g fill="none" class=""><path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"></path><path fill="#111827" d="M2 6a3 3 0 0 1 3-3h8a1 1 0 1 1 0 2H5a1 1 0 0 0-1 1v13l2.134-1.6a2 2 0 0 1 1.199-.4H19a1 1 0 0 0 1-1v-4a1 1 0 1 1 2 0v4a3 3 0 0 1-3 3H7.333L4 21.5c-.824.618-2 .03-2-1zm9 6a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2zm4-4a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2zm5-7a1 1 0 0 1 .946.677l.13.378c.3.879.99 1.57 1.87 1.87l.377.129a1 1 0 0 1 0 1.892l-.378.13c-.879.3-1.57.99-1.87 1.87l-.129.377a1 1 0 0 1-1.892 0l-.13-.378a3 3 0 0 0-1.87-1.87l-.377-.129a1 1 0 0 1 0-1.892l.378-.13c.879-.3 1.57-.99 1.87-1.87l.129-.377l.062-.146A1 1 0 0 1 20 1m0 3.196a5 5 0 0 1-.804.804q.449.355.804.803q.356-.447.803-.803A5 5 0 0 1 20 4.196" class=""></path></g></svg>
+        <button data-cta="support_chat" onclick="toggleContactForm(this)" class="ds-btn ds-btn--light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" style="width: 18px; height: 18px" class="lucide lucide-mail w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" data-mingcute="message-4-ai-line" data-icon-set="mingcute" data-icon-replaced="true" stroke-width="0.5"><g fill="none" class=""><path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"></path><path fill="#111827" d="M2 6a3 3 0 0 1 3-3h8a1 1 0 1 1 0 2H5a1 1 0 0 0-1 1v13l2.134-1.6a2 2 0 0 1 1.199-.4H19a1 1 0 0 0 1-1v-4a1 1 0 1 1 2 0v4a3 3 0 0 1-3 3H7.333L4 21.5c-.824.618-2 .03-2-1zm9 6a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2zm4-4a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2zm5-7a1 1 0 0 1 .946.677l.13.378c.3.879.99 1.57 1.87 1.87l.377.129a1 1 0 0 1 0 1.892l-.378.13c-.879.3-1.57.99-1.87 1.87l-.129.377a1 1 0 0 1-1.892 0l-.13-.378a3 3 0 0 0-1.87-1.87l-.377-.129a1 1 0 0 1 0-1.892l.378-.13c.879-.3 1.57-.99 1.87-1.87l.129-.377l.062-.146A1 1 0 0 1 20 1m0 3.196a5 5 0 0 1-.804.804q.449.355.804.803q.356-.447.803-.803A5 5 0 0 1 20 4.196" class=""></path></g></svg>
             Contact AI Support
           </button>
       </div>
@@ -4524,8 +4554,6 @@
     </clipPath>
   </defs>
 </svg>
-        <p class="text-sm text-gray-400 font-geist max-w-sm mt-4">KI-Tutoren für Akademien, Hochschulen, Aus- und
-          Weiterbildung.</p>
         <p class="text-sm text-gray-400 font-geist max-w-sm mt-2">Alphalearn ist eine Marke von Alphabees.</p>
         <div class="mt-6 flex items-center gap-3">
           <a href="https://moodle.org/plugins/block_alphabees" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center hover:bg-white/20 transition bg-white/10 w-10 h-10 border-white/10 border rounded-lg backdrop-blur-md">
@@ -4536,6 +4564,9 @@
                 <path d="M77.05,129.17c20.75,6.68,42.3,8.73,64,7l-1,135h-63v-142Z" style="fill: #fff;" class=""></path>
               </g>
             </svg>
+          </a>
+          <a href="https://github.com/alphabees-25/ilias-plugin-alphabees" target="_blank" rel="noopener noreferrer" aria-label="ILIAS-Plugin von Alphalearn" class="inline-flex items-center justify-center hover:bg-white/20 transition bg-white/10 w-10 h-10 border-white/10 border rounded-lg backdrop-blur-md">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 12" width="25" height="10" aria-hidden="true"><text x="15" y="10.6" text-anchor="middle" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="12.4" letter-spacing="-.15" fill="#fff">ILIAS</text></svg>
           </a>
           <a href="https://github.com/LErdweg/moodle-block_alphabees/wiki" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center hover:bg-white/20 transition bg-white/10 w-10 h-10 border-white/10 border rounded-lg backdrop-blur-md">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" style="color: rgb(255, 255, 255); width: 18px; height: 18px" class="w-[18px] h-[18px]" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" data-simple-icons="github" data-icon-set="simple-icons" data-icon-replaced="true" stroke-width="0.5">
@@ -4586,7 +4617,7 @@
           <ul class="mt-4 space-y-3">
             <li class=""><a href="/de/academy.html" class="hover:text-white transition text-sm text-gray-400 font-geist">Academy</a></li>
             <li class=""><a href="/de/helpcenter.html" class="text-sm text-gray-400 hover:text-white transition font-geist" style="">Hilfe-Center</a></li>
-            <li class=""><a href="https://portal.alphabees.de/auth/register" class="hover:text-white transition text-sm text-gray-400 font-geist">Alphabees-Portal</a></li>
+            <li class=""><a href="https://portal.alphabees.de/auth/register" class="hover:text-white transition text-sm text-gray-400 font-geist">Alphalearn Portal</a></li>
             <li class=""><a href="/de/blog.html" class="hover:text-white transition text-sm text-gray-400 font-geist">Blog</a></li>
             <li class=""><a href="/de/ki-tutor-guide-bildungsanbieter-deutschland-2026.html" class="hover:text-white transition text-sm text-gray-400 font-geist">KI-Tutor-Guide 2026</a></li>
           </ul>
@@ -4928,4 +4959,17 @@
 </script>
 
 
+<script>
+/* Hero-Video: Breite ohne Scrollbalken messen, Pause-Knopf, reduzierte Bewegung (wie Startseite) */
+(function () {
+  var root = document.documentElement, video = document.querySelector('.hv-video'), btn = document.querySelector('.hv-pause');
+  function vw() { root.style.setProperty('--hv-vw', root.clientWidth + 'px'); }
+  vw(); window.addEventListener('resize', vw);
+  if ('ResizeObserver' in window) new ResizeObserver(vw).observe(root);
+  if (!video || !btn) return;
+  function setPaused(p) { if (p) video.pause(); else video.play().catch(function () {}); btn.setAttribute('aria-pressed', p ? 'true' : 'false'); btn.setAttribute('aria-label', p ? 'Hintergrundvideo abspielen' : 'Hintergrundvideo anhalten'); }
+  btn.addEventListener('click', function () { setPaused(!video.paused); });
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) setPaused(true);
+})();
+</script>
 </body></html>
