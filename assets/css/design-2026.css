@@ -1,0 +1,113 @@
+/* Alphalearn Design 2026 – gemeinsame Bausteine für alle Seiten (abgeleitet von der neuen Startseite, Okt. 2026)
+   Farben: Schwarz #0a0a0f, CI-Blau #3B82F6 / #2563eb, KI-Verlauf aus dem Hero-Video.
+   Klassen mit Präfix ds- sind für neue/umgestellte Inhalte gedacht. */
+
+@import url("https://fonts.googleapis.com/css2?family=Geist:ital,wght@1,300&display=swap");
+
+:root {
+  --ds-black: #0a0a0f;
+  --ds-blue: #3B82F6;
+  --ds-blue-dark: #2563eb;
+  --ds-ai-gradient:
+    radial-gradient(55% 150% at 8% 100%, #3B82F6 0%, rgba(59,130,246,0) 72%),
+    radial-gradient(45% 150% at 36% 0%, #B47FFF 0%, rgba(180,127,255,0) 72%),
+    radial-gradient(45% 150% at 70% 100%, #FF8093 0%, rgba(255,128,147,0) 72%),
+    radial-gradient(40% 150% at 96% 0%, #FFAF85 0%, rgba(255,175,133,0) 72%),
+    linear-gradient(100deg, #3B82F6 0%, #B47FFF 36%, #FF7EAF 64%, #FFAF85 100%);
+}
+
+@keyframes kbFlow { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
+
+/* ---------- Überschriften: groß, dünn, schwarz, linksbündig ---------- */
+.ds-h1 { font-family: 'Geist', sans-serif; font-weight: 400; font-size: clamp(2.6rem, 6.6vw, 5.75rem); line-height: 1.04; letter-spacing: -.035em; color: var(--ds-black); text-align: left; }
+.ds-h2 { font-family: 'Geist', sans-serif; font-weight: 400; font-size: clamp(2.2rem, 5vw, 4.4rem); line-height: 1.06; letter-spacing: -.03em; color: var(--ds-black); text-align: left; }
+.ds-h3 { font-family: 'Geist', sans-serif; font-weight: 400; font-size: clamp(1.6rem, 2.6vw, 2.25rem); line-height: 1.12; letter-spacing: -.02em; color: var(--ds-black); }
+.ds-sub { font-family: 'Geist', sans-serif; font-weight: 300; font-size: clamp(1.15rem, 1.5vw, 1.4rem); line-height: 1.5; color: #4b5563; max-width: 42rem; }
+.ds-dark .ds-h1, .ds-dark .ds-h2, .ds-dark .ds-h3 { color: #fff; }
+.ds-dark .ds-sub { color: #d1d5db; }
+
+/* ---------- Buttons: schwarze Pille, beim Hover KI-Verlauf ---------- */
+.ds-btn { position: relative; isolation: isolate; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; gap: .75rem; min-height: 3.5rem; padding: .95rem 2rem; border: 0; border-radius: 9999px; background: var(--ds-black); color: #fff; font-family: 'Geist', sans-serif; font-size: 1.05rem; font-weight: 600; letter-spacing: -.01em; text-decoration: none; cursor: pointer; transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .4s, background-color .45s ease, color .3s; }
+.ds-btn--lg { min-height: 4.5rem; padding: 1.25rem 2.75rem; font-size: 1.2rem; }
+.ds-btn::before { content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit; opacity: 0; transition: opacity .45s ease; background: var(--ds-ai-gradient); background-size: 200% 100%; background-position: 0% 50%; filter: saturate(1.3); }
+.ds-btn:hover::before, .ds-btn:focus-visible::before { opacity: 1; animation: kbFlow 5s ease-in-out infinite alternate; }
+.ds-btn:hover { background-color: transparent; color: #fff; transform: translateY(-2px); box-shadow: 0 18px 40px -18px rgba(180,127,255,.7); text-shadow: 0 1px 2px rgba(10,10,15,.22); }
+.ds-btn:active { transform: translateY(0) scale(.98); }
+.ds-btn:focus-visible { outline: 2px solid var(--ds-blue-dark); outline-offset: 3px; }
+.ds-btn svg { flex: none; transition: transform .25s; }
+.ds-btn:hover svg { transform: translateX(3px); }
+/* Varianten */
+.ds-btn--ghost { background: transparent; color: var(--ds-black); box-shadow: inset 0 0 0 2px var(--ds-black); }
+.ds-btn--ghost:hover { box-shadow: 0 18px 40px -18px rgba(180,127,255,.7); }
+.ds-btn--light { background: #fff; color: var(--ds-black); }
+.ds-dark .ds-btn--ghost { color: #fff; box-shadow: inset 0 0 0 2px rgba(255,255,255,.7); }
+.ds-btn--grad { background: var(--ds-ai-gradient); background-size: 200% 100%; animation: kbFlow 6s ease-in-out infinite alternate; text-shadow: 0 1px 2px rgba(10,10,15,.22); }
+.ds-btn-row { display: flex; flex-wrap: wrap; gap: 1rem; }
+@media (max-width: 639px) { .ds-btn-row { flex-direction: column; align-items: stretch; } }
+@media (prefers-reduced-motion: reduce) { .ds-btn:hover::before, .ds-btn--grad { animation: none; } .ds-btn, .ds-btn svg { transition: none; } }
+
+/* ---------- Stilmittel „mehr erfahren“: Geist Light Italic, unterstrichen, CI-Blau ---------- */
+.ds-more, .ab-more { display: inline-block; font-family: 'Geist', sans-serif; font-weight: 300; font-style: italic; font-size: clamp(1.2rem, 1.6vw, 1.6rem); line-height: 1.3; color: var(--ds-blue); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .24em; transition: color .2s ease, text-underline-offset .2s ease; }
+.ds-more:hover, .ab-more:hover { color: #60A5FA; text-underline-offset: .34em; }
+.ds-link, .ab-more-inline { color: var(--ds-blue-dark); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .2em; }
+.ds-link:hover, .ab-more-inline:hover { color: #1d4ed8; }
+
+/* ---------- Karten und Flächen ---------- */
+.ds-card { border: 1.5px solid var(--ds-black); border-radius: 1.25rem; background: #fff; }
+.ds-band { background: var(--ds-black); color: #fff; }
+
+/* ---------- Footer neues Design (gemeinsames Partial #site-footer und Startseite #site-footer-2026) ---------- */
+#site-footer > footer, #site-footer-2026 > footer { background: var(--ds-black); border-top: 0; }
+#site-footer > footer > .absolute, #site-footer-2026 > footer > .absolute { display: none; }
+#site-footer > footer .border-t, #site-footer-2026 > footer .border-t { border-top-color: transparent; }
+#site-footer > footer h3, #site-footer-2026 > footer h3 { font-size: .8rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.45); }
+#site-footer > footer ul a, #site-footer-2026 > footer ul a { font-size: .98rem; color: #e5e7eb; transition: color .2s; }
+#site-footer > footer ul a:hover, #site-footer-2026 > footer ul a:hover { color: #fff; text-decoration: underline; text-underline-offset: .25em; text-decoration-thickness: 1px; }
+#site-footer > footer .lg\:col-span-4 a.rounded-lg, #site-footer-2026 > footer .lg\:col-span-4 a.rounded-lg { border-radius: 9999px; background: transparent; border: 1.5px solid rgba(255,255,255,.35); backdrop-filter: none; }
+#site-footer > footer .lg\:col-span-4 a.rounded-lg:hover, #site-footer-2026 > footer .lg\:col-span-4 a.rounded-lg:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+#site-footer > footer .lg\:col-span-4 > p, #site-footer-2026 > footer .lg\:col-span-4 > p { margin-top: 1.25rem; }
+#site-footer > footer .max-w-xl h3, #site-footer-2026 > footer .max-w-xl h3 { font-size: 1.6rem; font-weight: 400; letter-spacing: -.02em; text-transform: none; color: #fff; }
+#site-footer > footer form input[type=email], #site-footer-2026 > footer form input[type=email] { border-radius: 9999px; background: transparent; border: 1.5px solid rgba(255,255,255,.35); padding: .85rem 1.25rem; }
+#site-footer > footer form input[type=email]:focus, #site-footer-2026 > footer form input[type=email]:focus { border-color: #fff; box-shadow: none; }
+#site-footer > footer form button[type=submit], #site-footer-2026 > footer form button[type=submit] { border-radius: 9999px; margin-left: .6rem; padding: .85rem 1.6rem; font-weight: 600; color: #fff; border: 0; text-shadow: 0 1px 2px rgba(10,10,15,.22); background: var(--ds-ai-gradient); background-size: 200% 100%; animation: kbFlow 6s ease-in-out infinite alternate; transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .4s; }
+#site-footer > footer form button[type=submit]:hover, #site-footer-2026 > footer form button[type=submit]:hover { transform: translateY(-1px); box-shadow: 0 14px 32px -14px rgba(180,127,255,.85); }
+@media (prefers-reduced-motion: reduce) { #site-footer > footer form button[type=submit], #site-footer-2026 > footer form button[type=submit] { animation: none; } }
+
+/* ---------- Kleines Label statt farbiger Badge-Pille (falls ein Label inhaltlich nötig ist) ---------- */
+.ds-label { display: inline-block; font-family: 'Geist', sans-serif; font-size: .8rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: #6b7280; }
+.ds-dark .ds-label { color: rgba(255,255,255,.55); }
+
+/* ---------- FAQ-Blöcke (gleiches Markup wie bisher: .group.rounded-2xl > button[data-faq] + .faq-content) ---------- */
+.ds-faq .grid.md\:grid-cols-2, .ds-faq .grid.lg\:grid-cols-2 { align-items: start; }
+.ds-faq .group.rounded-2xl { border: 1.5px solid var(--ds-black) !important; background: #fff !important; box-shadow: none !important; }
+.ds-faq .group.rounded-2xl > button > span:first-child { font-size: 1.08rem; font-weight: 500; color: var(--ds-black); letter-spacing: -.01em; }
+.ds-faq .faq-content > div > div { font-size: 1rem; line-height: 1.65; color: #4b5563; }
+.ds-faq .faq-icon { width: 2.25rem; height: 2.25rem; border: 1.5px solid var(--ds-black) !important; background: #fff !important; color: var(--ds-black) !important; transition: background-color .25s, color .25s; }
+.ds-faq .faq-icon svg { color: currentColor !important; }
+.ds-faq .group.rounded-2xl:hover .faq-icon, .ds-faq button[aria-expanded="true"] .faq-icon { background: var(--ds-black) !important; color: #fff !important; }
+.ds-faq button:focus-visible { outline: 2px solid var(--ds-blue-dark); outline-offset: -4px; border-radius: 1rem; }
+
+/* ---------- Cookie-Banner (gemeinsames Footer-Partial) im neuen Design – höhere Spezifität, weil das Partial eigene Stile mitbringt ---------- */
+html body #cookie-banner .ab-cc-card { border: 1.5px solid var(--ds-black); border-radius: 1.75rem; box-shadow: none; }
+html body #cookie-banner .ab-cc-card > .pointer-events-none.absolute { display: none; }
+html body #cookie-banner .text-center > .inline-flex.rounded-full { display: none; }
+html body #cookie-banner #cookie-title { font-weight: 400; letter-spacing: -.025em; color: var(--ds-black); }
+html body #cookie-banner .ab-cc-opt { border-color: #e5e7eb; }
+html body #cookie-banner .ab-cc-opt[aria-checked="true"] { border-color: var(--ds-black); box-shadow: inset 0 0 0 1px var(--ds-black); }
+html body #cookie-banner .ab-cc-opt[aria-checked="true"] .ab-cc-title { color: var(--ds-black); }
+html body #cookie-banner .ab-cc-thumb { background: var(--ds-black); box-shadow: none; }
+html body #cookie-banner .bg-indigo-400 { background: var(--ds-black); }
+html body #cookie-banner a { color: var(--ds-blue-dark); }
+html body #cookie-banner #cookie-confirm, html body #newsletter-popup > div > button:last-child {
+  position: relative; isolation: isolate; overflow: hidden; border-radius: 9999px; background: var(--ds-black); color: #fff; min-height: 3.5rem; font-family: 'Geist', sans-serif; font-weight: 600; box-shadow: none;
+  transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .4s, background-color .45s ease; }
+html body #cookie-banner #cookie-confirm::before, html body #newsletter-popup > div > button:last-child::before {
+  content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit; opacity: 0; transition: opacity .45s ease; background: var(--ds-ai-gradient); background-size: 200% 100%; filter: saturate(1.3); }
+html body #cookie-banner #cookie-confirm:hover, html body #newsletter-popup > div > button:last-child:hover { background-color: transparent; transform: translateY(-2px); box-shadow: 0 18px 40px -18px rgba(180,127,255,.7); }
+html body #cookie-banner #cookie-confirm:hover::before, html body #newsletter-popup > div > button:last-child:hover::before { opacity: 1; animation: kbFlow 5s ease-in-out infinite alternate; }
+
+/* ---------- Newsletter-Bestätigung (auf jeder Seite) ---------- */
+html body #newsletter-popup > div { border: 1.5px solid var(--ds-black); border-radius: 1.75rem; box-shadow: none; }
+html body #newsletter-popup h3 { font-family: 'Geist', sans-serif; font-weight: 400; font-size: 1.75rem; letter-spacing: -.02em; color: var(--ds-black); }
+html body #newsletter-popup .bg-green-100 { background: var(--ds-black); }
+html body #newsletter-popup .bg-green-100 svg { color: #fff; stroke: #fff; }
