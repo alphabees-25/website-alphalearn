@@ -25,7 +25,10 @@
     unlocked: false,
     started: false,
     firstName: '',
-    requested: false     // Handbuch in diesem Browser angefordert
+    requested: false,    // Handbuch in diesem Browser angefordert
+    view: 'ch',          // 'ch' = Kapitel, 'plan' = persönlicher Fahrplan (im selben Kasten)
+    justUnlocked: false, // Hinweis „Freigeschaltet“ zeigen
+    freshUnlock: false   // Kapitel kurz aufleuchten lassen (nur beim ersten Aufbau nach dem Freischalten)
   };
 
   // ---------- Helpers ----------
@@ -51,6 +54,7 @@
   function itemLocked(i) { return gated() && FREE_IDS.indexOf(i.id) === -1; }
   function chLocked(chId) { return gated() && chId !== CH[0].id; }
   var LOCK = '<svg class="kc-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="11" x="4" y="11" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>';
+  var DOC = '<svg class="kc-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg>';
   function itemsOf(chId) { return ITEMS.filter(function (i) { return i.ch === chId; }); }
   function activeItems() {
     var ids = chapters().map(function (c) { return c.id; });
@@ -115,16 +119,22 @@
         '<nav class="grid gap-1.5 sm:flex sm:flex-wrap sm:gap-2 lg:flex-col lg:flex-nowrap lg:gap-1 lg:border-t lg:border-gray-100 lg:pt-4" aria-label="Kapitel">' +
           chs.map(function (x, n) {
             var st = stats(itemsOf(x.id));
-            var active = x.id === state.ch;
+            var active = state.view === 'ch' && x.id === state.ch;
             var lk = chLocked(x.id);
-            return '<button type="button" class="kc-tab' + (active ? ' is-active' : '') + (st.done === st.total ? ' is-done' : '') + (lk ? ' is-locked' : '') + '" data-act="' + (lk ? 'gate-modal' : 'tab') + '" data-ch="' + x.id + '"' + (lk ? ' aria-haspopup="dialog"' : ' aria-current="' + active + '"') + '>' +
+            var fresh = state.freshUnlock && n > 0;
+            return '<button type="button" class="kc-tab' + (active ? ' is-active' : '') + (st.done === st.total ? ' is-done' : '') + (lk ? ' is-locked' : '') + (fresh ? ' is-fresh' : '') + '"' + (fresh ? ' style="animation-delay:' + (n * 0.12).toFixed(2) + 's"' : '') + ' data-act="' + (lk ? 'gate-modal' : 'tab') + '" data-ch="' + x.id + '"' + (lk ? ' aria-haspopup="dialog"' : ' aria-current="' + active + '"') + '>' +
               '<span class="kc-tab-n">' + (lk ? LOCK : (st.done === st.total ? '✓' : (n + 1))) + '</span><span class="min-w-0">' + esc(x.title) + '</span>' +
               '<span class="kc-tab-c">' + st.done + '/' + st.total + '</span></button>';
           }).join('') +
+          (gated() ? '' : '<button type="button" class="kc-tab kc-tab--plan' + (state.view === 'plan' ? ' is-active' : '') + (state.justUnlocked ? ' is-new' : '') + '" data-act="plan"' + (state.view === 'plan' ? ' aria-current="true"' : '') + '>' +
+            '<span class="kc-tab-n">' + DOC + '</span><span class="min-w-0">Ihr Fahrplan</span>' +
+            (state.justUnlocked ? '<span class="kc-new">Neu</span>' : '<span class="kc-tab-c">' + s.mustOpen + ' Pflicht offen</span>') + '</button>') +
         '</nav>' +
       '</div></aside>' +
 
+      (state.view === 'plan' && !gated() ? '<div class="p-5 sm:p-8 lg:p-10 kc-fade" id="kc-plan">' + fullReport() + '</div>' :
       '<div class="p-5 sm:p-8 lg:p-10 kc-fade" id="kc-chapter">' +
+        (state.justUnlocked && !gated() ? unlockedNote() : '') +
         '<p class="text-sm font-medium tracking-tight text-blue-600 font-geist mb-2">Kapitel ' + (idx + 1) + ' von ' + chs.length + ' · ' + esc(c.sub) + '</p>' +
         '<h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 font-geist mb-3">' + esc(c.title) + '</h2>' +
         '<p class="text-gray-600 mb-7 max-w-2xl leading-relaxed">' + esc(c.intro) + '</p>' +
@@ -136,12 +146,13 @@
            next ? '<button type="button" class="kc-btn-primary" data-act="tab" data-ch="' + next.id + '">Weiter: ' + esc(next.title) + ' →</button>'
                 : '<button type="button" class="kc-btn-primary" data-act="to-gate">Fahrplan erstellen →</button>') +
         '</div>' +
-      '</div>' +
+      '</div>') +
       '</div>' +
 
-      (state.unlocked || !asideOn() ? '<div class="p-3 sm:p-5 lg:p-6 pt-0 sm:pt-0 lg:pt-0">' + (state.unlocked ? fullReport() : gate(false)) + '</div>' : '');
+      (gated() && !asideOn() ? '<div class="p-3 sm:p-5 lg:p-6 pt-0 sm:pt-0 lg:pt-0">' + gate(false) + '</div>' : '');
 
     root.innerHTML = html;
+    state.freshUnlock = false;
     root.classList.add('kc-ready');   // Mindesthöhe (gegen Springen beim Laden) gilt nur bis zum ersten Aufbau
   }
 
@@ -187,6 +198,17 @@
           '<p class="kc-error text-sm font-medium text-red-600 mt-3" role="alert" hidden></p>' +
           '<button type="submit" class="kc-btn-primary mt-5 w-full">Handbuch anfordern</button>' +
         '</form></div>');
+  }
+
+  // Hinweis im selben Kasten, sobald freigeschaltet: was neu dazugekommen ist
+  function unlockedNote() {
+    return '<div class="kc-unlocked" role="status">' +
+      '<span class="kc-unlocked-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>' +
+      '<div class="kc-unlocked-txt"><p class="kc-unlocked-h">Freigeschaltet: alle Kapitel und Ihr Fahrplan</p>' +
+      '<p class="kc-unlocked-p">Alle Erklärungen sind jetzt offen. Das Handbuch kommt per E-Mail, sobald Sie Ihre Adresse bestätigt haben.</p></div>' +
+      '<button type="button" class="kc-btn-primary" data-act="plan">Fahrplan ansehen →</button>' +
+      '<button type="button" class="kc-unlocked-x" data-act="note-close" aria-label="Hinweis schließen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>' +
+    '</div>';
   }
 
   // Gesperrter Teil der Checkliste: Titel verschwommen als Vorschau, darüber die Karte zum Handbuch
@@ -258,7 +280,7 @@
       '</div>';
   }
 
-  var modal = null, pendingItem = null, lastFocus = null, modalCtx = '';
+  var modal = null, pendingItem = null, lastFocus = null, modalCtx = '', pendingCh = null, pendingMyth = null;
   function modalOpen() { return !!(modal && !modal.hidden); }
   function openModal(itemId, opener, ctx) {
     if (!modal) {
@@ -271,6 +293,8 @@
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modalOpen()) closeModal(); });
     }
     pendingItem = itemId || null; lastFocus = opener || null; modalCtx = ctx || 'checklist';
+    pendingCh = opener && opener.getAttribute ? opener.getAttribute('data-ch') : null;
+    pendingMyth = ctx === 'myth' && opener && opener.closest ? opener.closest('details') : null;
     modal.innerHTML = modalHtml(modalCtx); modal.hidden = false;
     document.documentElement.classList.add('kc-modal-open');
     var f = modal.querySelector('input[name=first_name]'); if (f) f.focus({ preventScroll: true });
@@ -292,9 +316,10 @@
   function fullReport() {
     var s = stats();
     var open = openItems();
-    var html = '<section class="kc-report rounded-3xl border border-gray-200 bg-gray-50/40 p-4 sm:p-8 lg:p-10 scroll-mt-6" id="kc-report">' +
+    var html = '<section class="kc-report scroll-mt-6" id="kc-report">' +
+      '<p class="text-sm font-medium tracking-tight text-blue-600 font-geist mb-2">Persönlicher Fahrplan · ' + s.done + ' von ' + s.total + ' erledigt</p>' +
       '<div class="flex flex-wrap items-center justify-between gap-4 mb-2">' +
-        '<h3 class="text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 font-geist">' + (state.firstName ? esc(state.firstName) + ', Ihr Handbuch ist unterwegs' : 'Ihr Handbuch und Fahrplan') + '</h3>' +
+        '<h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 font-geist">' + (state.firstName ? esc(state.firstName) + ', Ihr Fahrplan' : 'Ihr Fahrplan') + '</h2>' +
         '<div class="flex flex-wrap gap-2 kc-noprint">' +
           '<button type="button" class="kc-btn-ghost" data-act="print">Als PDF speichern</button>' +
           '<button type="button" class="kc-btn-ghost" data-act="copy-link">Link kopieren</button>' +
@@ -304,7 +329,7 @@
         '<div class="kc-dl-card"><span class="kc-dl-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span><span><span class="block font-semibold text-gray-900 font-geist">Handbuch als PDF per E-Mail</span><span class="block text-sm text-gray-600 mt-1">28 Seiten zum Abhaken, Ausfüllen und Weiterleiten. Kommt, sobald die E-Mail-Adresse bestätigt ist.</span></span></div>' +
         (CFG.assistantUrl ? '<a href="#assistent" data-act="to-assistant" class="kc-dl-card"><span class="kc-dl-ico is-chat" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span><span><span class="block font-semibold text-gray-900 font-geist">KI-Assistent fragen →</span><span class="block text-sm text-gray-600 mt-1">Fragen zum Handbuch, jederzeit, mit Verweis auf die Fundstelle.</span></span></a>' : '') +
       '</div>' +
-      '<p class="text-sm text-gray-600 mb-8">Ihr Fahrplan unten – Stand: ' + s.done + ' von ' + s.total + ' erledigt. Haken Sie oben weiter ab – der Fahrplan aktualisiert sich mit.</p>';
+      '<p class="text-sm text-gray-600 mb-8">Offene Punkte nach Kapitel, Pflichtpunkte zuerst. Haken Sie in den Kapiteln weiter ab – der Fahrplan aktualisiert sich mit.</p>';
 
     if (open.length) {
       html += '<div class="space-y-8 mb-12">' + chapters().map(function (c) {
@@ -435,7 +460,9 @@
     else if (act === 'details') { var d = el.getAttribute('data-id'); state.open[d] = !state.open[d]; render(); }
     else if (act === 'gate-modal') { openModal(el.getAttribute('data-id'), el, el.getAttribute('data-ch') ? 'chapter' : 'checklist'); }
     else if (act === 'modal-close') { closeModal(); }
-    else if (act === 'tab') { state.ch = el.getAttribute('data-ch'); render(); scrollTo(root); }
+    else if (act === 'plan') { state.view = 'plan'; state.justUnlocked = false; render(); scrollTo(root); track('check_plan_view', {}); }
+    else if (act === 'note-close') { state.justUnlocked = false; render(); }
+    else if (act === 'tab') { state.ch = el.getAttribute('data-ch'); state.view = 'ch'; render(); scrollTo(root); }
     else if (act === 'emp') { state.employees = el.getAttribute('data-val') === '1'; save(); syncHash(); render(); }
     else if (act === 'to-gate') {
       track('check_result_view', { done: stats().done, total: stats().total });
@@ -444,7 +471,8 @@
         // Kasten steht schon sichtbar in der Seitenspalte: hervorheben und ins erste Feld springen
         g.classList.remove('kc-flash'); void g.offsetWidth; g.classList.add('kc-flash');
         var f = g.querySelector('input[name=first_name]'); if (f) f.focus({ preventScroll: true });
-      } else scrollTo(document.getElementById(state.unlocked ? 'kc-report' : 'kc-gate'));
+      } else if (state.unlocked) { state.view = 'plan'; state.justUnlocked = false; render(); scrollTo(root); }
+      else scrollTo(document.getElementById('kc-gate'));
     }
     else if (act === 'print') { track('check_report_print', {}); window.print(); }
     else if (act === 'copy-link') { copy(reportLink(), el, 'Link kopiert'); track('check_share', { method: 'copy' }); }
@@ -467,14 +495,19 @@
     btn.disabled = true; btn.textContent = 'Einen Moment …';
     track('check_report_request', { done: stats().done, newsletter: fd.get('newsletter') ? 'ja' : 'nein' });
     var fromModal = modalOpen() && modal.contains(form);
+    var myth = fromModal ? pendingMyth : null, goCh = fromModal ? pendingCh : null;
     submitLead(fd).then(function () {
       state.unlocked = true;
       state.requested = true;
       state.firstName = String(fd.get('first_name')).trim();
       try { localStorage.setItem(STORE + '-u', '1'); } catch (x) { /* egal */ }
+      state.justUnlocked = true; state.freshUnlock = true;
       if (fromModal) { closeModal(); if (pendingItem) state.open[pendingItem] = true; }
+      if (goCh) { state.ch = goCh; state.view = 'ch'; }
       syncHash(); render(); renderAside();
-      if (!fromModal) scrollTo(document.getElementById('kc-report'));
+      // Im selben Kasten bleiben: beim Irrtum dort weiterlesen, sonst oben im Kasten den Hinweis zeigen
+      if (myth) myth.open = true;
+      else scrollTo(root);
     });
   }
 
@@ -507,7 +540,9 @@
 
   // Fahrplan-Link aus E-Mail (#r=...) hat Vorrang, sonst gespeicherter Stand
   var m = /#r=([^&]+)/.exec(location.hash);
-  if (m && decodeState(decodeURIComponent(m[1]))) { state.unlocked = true; save(); track('check_report_open', {}); }
+  var ownBrowser = false; try { ownBrowser = localStorage.getItem(STORE + '-u') === '1'; } catch (x) { /* egal */ }
+  var fromLink = false;
+  if (m && decodeState(decodeURIComponent(m[1]))) { state.unlocked = true; save(); track('check_report_open', {}); if (!ownBrowser) { state.view = 'plan'; fromLink = true; } }
   else {
     load();
     try { state.unlocked = localStorage.getItem(STORE + '-u') === '1'; } catch (x) { /* egal */ }
@@ -515,4 +550,5 @@
   try { state.requested = localStorage.getItem(STORE + '-u') === '1'; } catch (x) { /* egal */ }
   render();
   renderAside();
+  if (fromLink) setTimeout(function () { scrollTo(root); }, 300);
 })();

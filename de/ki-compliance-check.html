@@ -14,11 +14,14 @@
   <meta property="og:title" content="KI-Tutor einführen: die Checkliste für Bildungsanbieter">
   <meta property="og:description" content="DSGVO, AI Act, Betriebsrat, Anbieterauswahl: was Sie vor dem Start klären – und welche 10 Irrtümer KI-Projekte unnötig bremsen.">
   <meta property="og:url" content="https://alphalearn.ai/de/ki-compliance-check.html">
-  <meta property="og:image" content="/social-image.png">
+  <meta property="og:image" content="https://alphalearn.ai/assets/social/og-de-ki-check.jpg">
+  <meta property="og:image:width" content="2400">
+  <meta property="og:image:height" content="1260">
+  <meta property="og:image:alt" content="Handbuch „KI-Tutor einführen“: Checkliste für Bildungsanbieter">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="KI-Tutor einführen: die Checkliste für Bildungsanbieter">
   <meta name="twitter:description" content="Was Sie vor dem Start klären – und welche 10 Irrtümer KI-Projekte unnötig bremsen.">
-  <meta name="twitter:image" content="/social-image.png">
+  <meta name="twitter:image" content="https://alphalearn.ai/assets/social/og-de-ki-check.jpg">
   <meta name="geo.region" content="DE">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -178,6 +181,29 @@
     .kc-lockwall-h { font-family:'Geist',sans-serif; font-size:1.35rem; letter-spacing:-.02em; color:#0a0a0f; margin:0 0 .4rem; }
     .kc-lockwall-p { font-size:.92rem; line-height:1.55; color:#4b5563; margin:0 auto 1.1rem; max-width:26rem; }
     .kc-lockwall-s { font-size:.78rem; color:#6b7280; margin:.7rem 0 0; }
+    /* Nach dem Freischalten: alles im selben Kasten. Eintrag „Ihr Fahrplan“, Aufleuchten der Kapitel, Hinweis oben */
+    .kc-tab--plan .kc-tab-n { color:#fff; background:linear-gradient(135deg, #3B82F6 0%, #B47FFF 40%, #FF7EAF 75%, #FFAF85 100%); }
+    .kc-tab--plan .kc-tab-n .kc-lock { width:.85rem; height:.85rem; }
+    @media (min-width:1024px) { .kc-tab--plan { margin-top:.6rem; } }
+    .kc-tab--plan .kc-tab-c { white-space:nowrap; }
+    .kc-new { margin-left:auto; flex-shrink:0; font-size:.68rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:#fff; border-radius:9999px; padding:.2rem .55rem;
+      background:linear-gradient(100deg, #3B82F6 0%, #B47FFF 40%, #FF7EAF 75%, #FFAF85 100%); }
+    .kc-tab--plan.is-new { box-shadow:0 0 0 0 rgba(180,127,255,.6); animation:kcPulse 1.8s ease-out 3; }
+    @keyframes kcPulse { 0% { box-shadow:0 0 0 0 rgba(180,127,255,.6); } 100% { box-shadow:0 0 0 12px rgba(180,127,255,0); } }
+    .kc-tab.is-fresh { animation:kcFresh 1.3s ease-out both; }
+    @keyframes kcFresh { 0% { background:rgba(180,127,255,.35); } 100% { background:#f3f4f6; } }
+    .kc-unlocked { position:relative; display:flex; flex-wrap:wrap; align-items:center; gap:.8rem 1rem; margin:0 0 1.75rem; padding:1rem 3rem 1rem 1rem; border-radius:1.1rem; color:#0a0a0f;
+      background:linear-gradient(100deg, rgba(59,130,246,.12) 0%, rgba(180,127,255,.16) 36%, rgba(255,126,175,.16) 66%, rgba(255,175,133,.18) 100%); border:1.5px solid rgba(10,10,15,.08); animation:kcPopIn .45s cubic-bezier(.2,.8,.2,1); }
+    .kc-unlocked-ico { flex-shrink:0; width:2.3rem; height:2.3rem; border-radius:9999px; display:inline-flex; align-items:center; justify-content:center; color:#fff; background:#059669; }
+    .kc-unlocked-ico svg { width:1.15rem; height:1.15rem; }
+    .kc-unlocked-txt { flex:1 1 15rem; min-width:0; }
+    .kc-unlocked-h { margin:0; font-family:'Geist',sans-serif; font-weight:500; font-size:1rem; }
+    .kc-unlocked-p { margin:.15rem 0 0; font-size:.86rem; line-height:1.45; color:#374151; }
+    .kc-unlocked .kc-btn-primary { min-height:2.6rem; padding:.55rem 1.2rem; font-size:.9rem; }
+    .kc-unlocked-x { position:absolute; top:.6rem; right:.6rem; width:1.9rem; height:1.9rem; border-radius:9999px; display:inline-flex; align-items:center; justify-content:center; color:#374151; background:transparent; border:0; cursor:pointer; }
+    .kc-unlocked-x:hover { background:rgba(10,10,15,.06); }
+    .kc-unlocked-x svg { width:1rem; height:1rem; }
+    @media (prefers-reduced-motion: reduce) { .kc-tab.is-fresh, .kc-tab--plan.is-new, .kc-unlocked { animation:none; } }
     .kc-modal { position:fixed; inset:0; z-index:1000; display:grid; place-items:center; padding:1rem; background:rgba(10,10,15,.55); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); animation:kcFadeIn .2s ease-out; }
     .kc-modal[hidden] { display:none; }
     .kc-modal-box { width:min(30rem, 100%); max-height:calc(100vh - 2rem); max-height:calc(100dvh - 2rem); overflow-y:auto; border-radius:1.5rem; animation:kcPopIn .25s cubic-bezier(.2,.8,.2,1); box-shadow:0 30px 80px -20px rgba(0,0,0,.6); }
@@ -376,12 +402,12 @@
     }
 
     /* ---------- Überschriften und Akzente im per JS erzeugten Inhalt (ki-check.js bleibt unverändert) ---------- */
-    #kc-chapter > p:first-child { font-size:.8rem; font-weight:500; letter-spacing:.08em; text-transform:uppercase; color:#6b7280; }
-    #kc-chapter > h2 { font-size:clamp(1.75rem, 3vw, 2.5rem); line-height:1.1; font-weight:400; letter-spacing:-.025em; color:#0a0a0f; }
+    #kc-chapter > p.text-blue-600, #kc-report > p.text-blue-600 { font-size:.8rem; font-weight:500; letter-spacing:.08em; text-transform:uppercase; color:#6b7280; }
+    #kc-chapter > h2, #kc-report > div > h2 { font-size:clamp(1.75rem, 3vw, 2.5rem); line-height:1.1; font-weight:400; letter-spacing:-.025em; color:#0a0a0f; }
     .kc-side-card p.text-lg { font-weight:500; color:#0a0a0f; }
     #kc-gate h3, section.kc-report h3, section.kc-report h4, .kc-promo h4 { font-weight:400; letter-spacing:-.02em; }
     #kc-gate .text-blue-300 { color:rgba(255,255,255,.55); }
-    section.kc-report { border:1.5px solid #0a0a0f; background:#fff; }
+    section.kc-report { border:0; background:transparent; }
     section.kc-report p.text-blue-600 { color:#0a0a0f; }
 
     @media (prefers-reduced-motion: reduce) {
@@ -392,7 +418,8 @@
     }
 
     @media print {
-      #site-header, #site-footer, .kc-hero, .kc-section, .kc-noprint, #kc-gate, nav[aria-label="Kapitel"], #kc-chapter { display:none !important; }
+      #site-header, #site-footer, .kc-hero, .kc-section, .kc-noprint, #kc-gate, nav[aria-label="Kapitel"], #kc-chapter, .kc-unlocked, .kc-aside, #kc-modal { display:none !important; }
+      #kc-app > div:first-child { display:block !important; }
       body { background:#fff !important; }
       #kc-app { border:0 !important; min-height:0 !important; }
       .kc-tpl { break-inside:avoid; }
