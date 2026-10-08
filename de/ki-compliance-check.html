@@ -50,8 +50,8 @@
   </script>
   <style>
     /* ==========================================================================
-       KI-Check im CI von alphalearn.ai: Akzent Blau #2563eb, neutrale Grautöne,
-       Geist/Inter, Komponenten aus de/index.html, features.html, preis.html
+       KI-Check im Design 2026 von alphalearn.ai (assets/css/design-2026.css):
+       Schwarz #0a0a0f, schwarze 1,5px-Konturen, Pillen-Buttons mit KI-Verlauf beim Hover, Geist/Inter
        ========================================================================== */
 
     /* ---------- Basis ---------- */
@@ -59,64 +59,34 @@
     html, body { overflow-x: clip; width: 100%; }
     *, *::before, *::after { box-sizing: border-box; }
     .font-geist { font-family: 'Geist', sans-serif !important; }
-    .aura-background-component { max-width: 100vw; overflow: hidden; }
-    /* Fokus wie die Auswahlkarten im Cookie-Banner der Website (indigo-500) */
-    :where(a, button, summary, input, [tabindex]):focus-visible { outline: 2px solid #6366f1; outline-offset: 2px; }
+    /* Fokus wie .ds-btn (CI-Blau) */
+    :where(a, button, summary, input, [tabindex]):focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
     @keyframes kcIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
     .kc-fade { animation: kcIn .35s cubic-bezier(.2,.8,.2,1) both; }
 
-    /* ---------- Buttons ---------- */
-    /* Haupt-CTA: der blaue Partikel-Button der Startseite (.button in de/index.html), Werte 1:1, nur namespaced */
-    .kc-cta { cursor:pointer; position:relative; display:inline-flex; align-items:center; justify-content:center; overflow:hidden; transition:all .25s ease; background:radial-gradient(65.28% 65.28% at 50% 100%, rgba(34,211,238,.8) 0%, rgba(34,211,238,0) 100%), linear-gradient(0deg,#2563eb,#2563eb); border-radius:9999px; border:none; padding:12px 20px; min-height:48px; width:260px; max-width:100%; }
-    .kc-cta::before, .kc-cta::after { content:""; position:absolute; transition:all .5s ease-in-out; z-index:0; }
-    .kc-cta::before { inset:1px; background:linear-gradient(177.95deg, rgba(255,255,255,.19) 0%, rgba(255,255,255,0) 100%); border-radius:9999px; }
-    .kc-cta::after { inset:2px; background:radial-gradient(65.28% 65.28% at 50% 100%, rgba(34,211,238,.8) 0%, rgba(34,211,238,0) 100%), linear-gradient(0deg,#2563eb,#2563eb); border-radius:9999px; }
-    .kc-cta:active { transform:scale(.95); }
-    .kc-cta-points { overflow:hidden; width:100%; height:100%; pointer-events:none; position:absolute; inset:0; z-index:1; }
-    .kc-cta-points i { bottom:-10px; position:absolute; animation:kcPoints infinite ease-in-out; pointer-events:none; width:2px; height:2px; background-color:#fff; border-radius:9999px; }
-    @keyframes kcPoints { 0% { transform:translateY(0); } 85% { opacity:0; } 100% { transform:translateY(-55px); opacity:0; } }
-    .kc-cta-points i:nth-child(1) { left:10%; opacity:1; animation-duration:2.35s; animation-delay:.2s; }
-    .kc-cta-points i:nth-child(2) { left:30%; opacity:.7; animation-duration:2.5s; animation-delay:.5s; }
-    .kc-cta-points i:nth-child(3) { left:25%; opacity:.8; animation-duration:2.2s; animation-delay:.1s; }
-    .kc-cta-points i:nth-child(4) { left:44%; opacity:.6; animation-duration:2.05s; }
-    .kc-cta-points i:nth-child(5) { left:50%; opacity:1; animation-duration:1.9s; }
-    .kc-cta-points i:nth-child(6) { left:75%; opacity:.5; animation-duration:1.5s; animation-delay:1.5s; }
-    .kc-cta-points i:nth-child(7) { left:88%; opacity:.9; animation-duration:2.2s; animation-delay:.2s; }
-    .kc-cta-points i:nth-child(8) { left:58%; opacity:.8; animation-duration:2.25s; animation-delay:.2s; }
-    .kc-cta-points i:nth-child(9) { left:98%; opacity:.6; animation-duration:2.6s; animation-delay:.1s; }
-    .kc-cta-points i:nth-child(10) { left:65%; opacity:1; animation-duration:2.5s; animation-delay:.2s; }
-    .kc-cta-inner { z-index:2; gap:6px; position:relative; width:100%; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:16px; font-weight:500; line-height:1.5; }
-    .kc-cta-inner svg { width:18px; height:18px; transition:transform .3s ease; }
-    .kc-cta:hover .kc-cta-inner svg { transform:translateX(2px); }
-    .kc-cta:hover .kc-cta-inner svg path { animation:kcDash .8s linear forwards; }
-    @keyframes kcDash { 0% { stroke-dasharray:0,20; stroke-dashoffset:0; } 50% { stroke-dasharray:10,10; stroke-dashoffset:-5; } 100% { stroke-dasharray:20,0; stroke-dashoffset:-10; } }
-
-    /* Dunkle Pille (Startseite „Kostenlos testen“, Cookie-Banner „Auswahl bestätigen“) */
-    .kc-btn-primary { display:inline-flex; align-items:center; justify-content:center; gap:.75rem; border-radius:9999px; background:#111827; color:#fff; font-family:'Geist',sans-serif; font-weight:600; font-size:1rem; line-height:1.5rem; padding:1rem 2rem; text-align:center; box-shadow:0 8px 30px rgba(15,23,42,.25); transition:all .3s ease-out; }
-    .kc-btn-primary:hover { background:#1f2937; transform:scale(1.03); box-shadow:0 16px 45px rgba(15,23,42,.35); }
+    /* ---------- Buttons: Pillen wie .ds-btn / .ds-btn--light / .ds-btn--ghost aus design-2026.css ---------- */
+    /* Die Klassen werden in assets/js/ki-check.js erzeugt und bleiben unverändert, hier ändert sich nur das Aussehen */
+    .kc-btn-primary, .kc-btn-light, .kc-btn-outline { position:relative; isolation:isolate; overflow:hidden; display:inline-flex; align-items:center; justify-content:center; gap:.75rem; min-height:3.5rem; padding:.95rem 2rem; border:0; border-radius:9999px; font-family:'Geist',sans-serif; font-size:1.05rem; font-weight:600; line-height:1.3; letter-spacing:-.01em; text-align:center; text-decoration:none; cursor:pointer; transition:transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .4s, background-color .45s ease, color .3s; }
+    .kc-btn-primary { background:#0a0a0f; color:#fff; }
+    .kc-btn-light { background:#fff; color:#0a0a0f; }
+    .kc-btn-outline { background:transparent; color:#fff; box-shadow:inset 0 0 0 2px rgba(255,255,255,.7); }
+    .kc-btn-primary::before, .kc-btn-light::before, .kc-btn-outline::before { content:''; position:absolute; inset:0; z-index:-1; border-radius:inherit; opacity:0; transition:opacity .45s ease; background:var(--ds-ai-gradient); background-size:200% 100%; background-position:0% 50%; filter:saturate(1.3); }
+    .kc-btn-primary:hover::before, .kc-btn-light:hover::before, .kc-btn-outline:hover::before,
+    .kc-btn-primary:focus-visible::before, .kc-btn-light:focus-visible::before, .kc-btn-outline:focus-visible::before { opacity:1; animation:kbFlow 5s ease-in-out infinite alternate; }
+    .kc-btn-primary:hover, .kc-btn-light:hover, .kc-btn-outline:hover { background-color:transparent; color:#fff; transform:translateY(-2px); box-shadow:0 18px 40px -18px rgba(180,127,255,.7); text-shadow:0 1px 2px rgba(10,10,15,.22); }
+    .kc-btn-primary:active, .kc-btn-light:active, .kc-btn-outline:active { transform:translateY(0) scale(.98); }
     .kc-btn-primary.w-full:hover { transform:none; }
-    .kc-btn-primary:active { transform:scale(.95); }
-    .kc-btn-primary:disabled { opacity:.75; transform:none; cursor:progress; }
-    /* Weiße Pille auf Dunkel („Contact AI Support“) und Glas-Variante aus den Footer-Tokens */
-    .kc-btn-light { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; min-height:2.75rem; background:#fff; color:#111827; font-family:'Geist',sans-serif; font-weight:600; font-size:.875rem; line-height:1.25rem; border-radius:9999px; padding:.75rem 1.5rem; text-align:center; box-shadow:0 1px 2px rgba(0,0,0,.05); transition:all .2s; }
-    .kc-btn-light:hover { background:#f9fafb; transform:scale(1.02); }
-    .kc-btn-light:disabled { opacity:.7; }
-    .kc-btn-outline { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; min-height:2.75rem; border:1px solid rgba(255,255,255,.2); background:rgba(255,255,255,.1); color:#fff; font-family:'Geist',sans-serif; font-weight:600; font-size:.875rem; line-height:1.25rem; border-radius:9999px; padding:.75rem 1.5rem; text-align:center; -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px); transition:all .2s; }
-    .kc-btn-outline:hover { background:rgba(255,255,255,.2); transform:scale(1.02); }
-    /* Kleiner Hilfs-Button (Preistabelle), auf 44px Klickfläche angehoben */
-    .kc-btn-ghost { display:inline-flex; align-items:center; justify-content:center; gap:.4rem; min-height:2.75rem; border:1px solid #e5e7eb; background:#fff; color:#374151; font-family:'Geist',sans-serif; font-size:.875rem; font-weight:500; border-radius:.5rem; padding:.5rem 1rem; white-space:nowrap; box-shadow:0 1px 2px rgba(0,0,0,.05); transition:all .15s; }
-    .kc-btn-ghost:hover { background:#f9fafb; color:#111827; }
+    .kc-btn-primary:disabled, .kc-btn-light:disabled { opacity:.75; transform:none; cursor:progress; }
+    .kc-btn-primary:disabled::before, .kc-btn-light:disabled::before { opacity:0; animation:none; }
+    /* Kleiner Hilfs-Button (Bericht, Vorlagen): schwarze Kontur-Pille, 44px Klickfläche */
+    .kc-btn-ghost { display:inline-flex; align-items:center; justify-content:center; gap:.4rem; min-height:2.75rem; border:1.5px solid #0a0a0f; background:#fff; color:#0a0a0f; font-family:'Geist',sans-serif; font-size:.875rem; font-weight:500; border-radius:9999px; padding:.5rem 1.1rem; white-space:nowrap; transition:background-color .2s, color .2s; }
+    .kc-btn-ghost:hover { background:#0a0a0f; color:#fff; }
     .kc-link { display:inline-flex; align-items:center; min-height:2.75rem; color:#4b5563; font-weight:500; font-family:'Geist',sans-serif; transition:color .15s; }
-    .kc-link:hover { color:#2563eb; }
-
-    /* ---------- Badge über Überschriften (blaue Pille der Website) ---------- */
-    .kc-eyebrow { display:inline-flex; align-items:center; gap:.5rem; max-width:100%; text-align:left; border:1px solid #dbeafe; background:#eff6ff; color:#2563eb; border-radius:9999px; padding:.25rem .75rem; font-family:'Geist',sans-serif; font-size:.75rem; line-height:1rem; font-weight:500; }
-    .kc-eyebrow svg { width:.75rem; height:.75rem; flex-shrink:0; }
+    .kc-link:hover { color:#0a0a0f; text-decoration:underline; text-underline-offset:.25em; text-decoration-thickness:1px; }
 
     /* ---------- Hero ---------- */
-    .kc-hero-meta { display:block; text-align:center; }
-    .kc-hero-meta svg { display:inline-block; vertical-align:-.15em; margin-right:.4rem; width:.95rem; height:.95rem; color:#9ca3af; flex-shrink:0; }
-    @media (min-width:1024px) { .kc-hero-meta { display:inline-flex; align-items:center; gap:.5rem; text-align:left; } .kc-hero-meta svg { margin-right:0; } }
+    .kc-hero-meta { display:flex; align-items:flex-start; gap:.5rem; text-align:left; }
+    .kc-hero-meta svg { flex-shrink:0; margin-top:.2rem; width:.95rem; height:.95rem; color:#6b7280; }
     .kc-hero-visual svg { width:100%; height:auto; display:block; }
     .kc-float { animation:kcFloat 7s ease-in-out infinite; transform-box:fill-box; }
     .kc-float-2 { animation:kcFloat 8s ease-in-out -2.5s infinite; transform-box:fill-box; }
@@ -127,31 +97,30 @@
     .kc-grow { transform-box:fill-box; transform-origin:left center; animation:kcGrow 1.1s cubic-bezier(.2,.8,.2,1) .4s both; }
     @keyframes kcGrow { from { transform:scaleX(.08); } to { transform:scaleX(1); } }
 
-    /* ---------- Zeitleiste (Schrittkarten „01/02/03“ von Demos/Moodle-Plugin, Verbindungslinie wie auf der Startseite) ---------- */
+    /* ---------- Zeitleiste (Schrittkarten wie /moodle-plugin: schwarze Kontur, dünne große Daten) ---------- */
     .kc-timeline { position:relative; display:grid; gap:1rem; }
     .kc-tl-item { position:relative; padding-left:2.4rem; }
-    .kc-tl-item:not(:last-child)::after { content:''; position:absolute; left:.6rem; top:2.9rem; bottom:-1.6rem; width:2px; background:rgba(99,102,241,.8); }
-    .kc-tl-item:nth-last-child(2)::after { background:repeating-linear-gradient(180deg,rgba(99,102,241,.8) 0 8px,transparent 8px 12px); }
-    .kc-tl-dot { position:absolute; left:.04rem; top:1.6rem; width:1.25rem; height:1.25rem; border-radius:9999px; background:#4f46e5; box-shadow:0 0 0 4px #fff, 0 4px 12px rgba(79,70,229,.5); }
-    .kc-tl-item.is-next .kc-tl-dot { left:.1625rem; top:1.725rem; width:1rem; height:1rem; background:#fff; border:2px solid #e5e7eb; box-shadow:0 0 0 4px #fff; }
-    .kc-tl-card { height:100%; border:1px solid #e5e7eb; background:rgba(249,250,251,.4); border-radius:1rem; padding:1.5rem; }
-    .kc-tl-item.is-next .kc-tl-card { border-style:dashed; border-color:#d1d5db; background:#fff; }
-    .kc-tl-date { font-family:'Geist',sans-serif; font-size:.875rem; line-height:1.25rem; font-weight:600; color:#2563eb; }
+    .kc-tl-item:not(:last-child)::after { content:''; position:absolute; left:.6rem; top:2.9rem; bottom:-1.6rem; width:2px; background:#0a0a0f; }
+    .kc-tl-item:nth-last-child(2)::after { background:repeating-linear-gradient(180deg,#0a0a0f 0 8px,transparent 8px 12px); }
+    .kc-tl-dot { position:absolute; left:.04rem; top:1.6rem; width:1.25rem; height:1.25rem; border-radius:9999px; background:#0a0a0f; box-shadow:0 0 0 4px #fff; }
+    .kc-tl-item.is-next .kc-tl-dot { left:.1625rem; top:1.725rem; width:1rem; height:1rem; background:#fff; border:1.5px solid #0a0a0f; box-shadow:0 0 0 4px #fff; }
+    .kc-tl-card { height:100%; border:1.5px solid #0a0a0f; background:#fff; border-radius:1.25rem; padding:1.75rem; }
+    .kc-tl-item.is-next .kc-tl-card { border-style:dashed; border-color:#0a0a0f; background:#fff; }
+    .kc-tl-date { font-family:'Geist',sans-serif; font-size:1.6rem; line-height:1.15; font-weight:300; letter-spacing:-.02em; color:#0a0a0f; }
     @media (min-width:768px) {
       .kc-timeline { grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.5rem; padding-top:2.4rem; }
       .kc-tl-item::after { display:none; }
-      .kc-timeline::before { content:''; position:absolute; left:1.875rem; right:calc((100% - 3rem) / 3 - 1.875rem); top:.5rem; height:2px; background:linear-gradient(90deg,rgba(99,102,241,.8) 50%,transparent 50%),repeating-linear-gradient(90deg,rgba(99,102,241,.8) 0 8px,transparent 8px 12px); }
+      .kc-timeline::before { content:''; position:absolute; left:1.875rem; right:calc((100% - 3rem) / 3 - 1.875rem); top:.5rem; height:2px; background:linear-gradient(90deg,#0a0a0f 50%,transparent 50%),repeating-linear-gradient(90deg,#0a0a0f 0 8px,transparent 8px 12px); }
       .kc-tl-item { padding-left:0; }
       .kc-tl-dot { left:1.25rem; top:-2.4625rem; }
       .kc-tl-item.is-next .kc-tl-dot { left:1.375rem; top:-2.3375rem; }
     }
 
-    /* ---------- App-Rahmen (Tab-Galerie .tg von /features) ---------- */
+    /* ---------- App-Rahmen: weiße Fläche mit schwarzer Kontur ---------- */
     /* Mindesthöhe je Band knapp unter der kleinsten gemessenen Höhe im Erstbesuch: nie leere Fläche, nur wenige px Wachstum unterhalb des sichtbaren Bereichs */
-    #kc-app { position:relative; overflow:clip; border-radius:36px; border:1.5px solid #d1d5db; background:rgba(255,255,255,.72); box-shadow:0 1px 2px rgba(15,23,42,.04); min-height:2740px; }
-    #kc-app::before { content:""; position:absolute; inset:0; pointer-events:none; z-index:0; background:radial-gradient(circle at top left, rgba(59,130,246,.16), transparent 38%), radial-gradient(circle at bottom right, rgba(14,165,233,.14), transparent 34%); }
+    #kc-app { position:relative; overflow:clip; border-radius:2rem; border:1.5px solid #0a0a0f; background:#fff; min-height:2740px; }
     #kc-app > * { position:relative; z-index:1; }
-    @media (max-width:639px) { #kc-app { border-radius:0; border-left:0; border-right:0; } }
+    @media (max-width:639px) { #kc-app { border-radius:0; border:0; } }
     @media (min-width:400px) { #kc-app { min-height:2470px; } }
     @media (min-width:480px) { #kc-app { min-height:2360px; } }
     @media (min-width:560px) { #kc-app { min-height:2250px; } }
@@ -159,22 +128,22 @@
     @media (min-width:768px) { #kc-app { min-height:1890px; } }
     @media (min-width:1024px) { #kc-app { min-height:1350px; } }
     @media (min-width:1180px) { #kc-app { min-height:1270px; } }
-    .kc-side-card { background:#f9fafb; border:1px solid #f3f4f6; border-radius:1rem; padding:1.25rem; }
+    .kc-side-card { background:#fff; border:1.5px solid #0a0a0f; border-radius:1.25rem; padding:1.25rem; }
     .kc-bar-track { height:.375rem; border-radius:9999px; background:#e5e7eb; overflow:hidden; }
-    .kc-bar { height:100%; border-radius:9999px; background:linear-gradient(90deg,#2563eb,#4f46e5); transition:width .35s cubic-bezier(.22,1,.36,1); }
+    .kc-bar { height:100%; border-radius:9999px; background:linear-gradient(100deg,#3B82F6 0%,#B47FFF 36%,#FF7EAF 64%,#FFAF85 100%); transition:width .35s cubic-bezier(.22,1,.36,1); }
 
     /* Ja/Nein als Segment-Schalter (Preis-Seite monatlich/jährlich, Sprachumschalter) */
-    .kc-seg { display:inline-flex; align-items:center; padding:.25rem; border-radius:9999px; background:rgba(243,244,246,.8); box-shadow:inset 0 0 0 1px rgba(229,231,235,.5); }
+    .kc-seg { display:inline-flex; align-items:center; padding:.25rem; border-radius:9999px; background:#f3f4f6; }
     .kc-chip { min-height:2.75rem; min-width:4.75rem; border-radius:9999px; padding:.5rem 1.25rem; font-family:'Geist',sans-serif; font-size:.875rem; font-weight:500; color:#4b5563; background:transparent; transition:background-color .3s, color .3s, box-shadow .3s; }
-    .kc-chip:hover { color:#111827; }
-    .kc-chip.is-active { background:#fff; color:#111827; font-weight:600; box-shadow:0 1px 2px rgba(0,0,0,.08), 0 0 0 1px rgba(229,231,235,.6); }
+    .kc-chip:hover { color:#0a0a0f; }
+    .kc-chip.is-active { background:#fff; color:#0a0a0f; font-weight:600; box-shadow:inset 0 0 0 1.5px #0a0a0f; }
 
     /* Kapitel: mobil Chips wie die Bereichsleiste auf /features, Desktop vertikale Liste wie die Tab-Galerie */
     .kc-tab { display:inline-flex; align-items:center; gap:.6rem; min-height:2.75rem; border-radius:9999px; background:#f3f4f6; color:#374151; padding:.375rem 1rem .375rem .375rem; font-family:'Geist',sans-serif; font-size:.875rem; font-weight:500; text-align:left; transition:background-color .2s, color .2s, box-shadow .2s; }
     .kc-tab:hover { background:#e5e7eb; }
-    .kc-tab.is-active { background:#111827; color:#fff; box-shadow:0 6px 20px -8px rgba(17,24,39,.6); }
+    .kc-tab.is-active { background:#0a0a0f; color:#fff; }
     .kc-tab-n { width:1.75rem; height:1.75rem; flex-shrink:0; border-radius:9999px; background:#fff; color:#4b5563; display:inline-flex; align-items:center; justify-content:center; font-size:.75rem; font-weight:600; transition:background-color .2s, color .2s; }
-    .kc-tab.is-active .kc-tab-n { background:#2563eb; color:#fff; }
+    .kc-tab.is-active .kc-tab-n { background:#fff; color:#0a0a0f; }
     .kc-tab.is-done .kc-tab-n { background:#059669; color:#fff; }
     .kc-tab-c { font-weight:500; color:#4b5563; font-size:.75rem; font-variant-numeric:tabular-nums; }
     .kc-tab.is-active .kc-tab-c { color:rgba(255,255,255,.75); }
@@ -182,69 +151,65 @@
     @media (min-width:1024px) {
       .kc-tab { width:100%; border-radius:14px; background:transparent; color:#4b5563; padding:.5rem .75rem .5rem .5rem; }
       .kc-tab:hover { background:#f9fafb; }
-      .kc-tab.is-active { background:#fff; color:#1d4ed8; box-shadow:0 8px 30px -12px rgba(29,78,216,.35), inset 0 0 0 1px #bfdbfe; }
+      .kc-tab.is-active { background:#fff; color:#0a0a0f; box-shadow:inset 0 0 0 1.5px #0a0a0f; }
+      .kc-tab.is-active:not(.is-done) .kc-tab-n { background:#0a0a0f; color:#fff; }
       .kc-tab-n { background:#f3f4f6; }
       .kc-tab-c, .kc-tab.is-active .kc-tab-c { margin-left:auto; color:#4b5563; }
     }
 
-    /* Checklisten-Punkte (Hover wie die FAQ-Karten der Website) */
-    .kc-item { border:1px solid #e5e7eb; background:#fff; border-radius:1rem; padding:.85rem 1rem .85rem .7rem; transition:border-color .3s, background-color .3s, box-shadow .3s; }
-    .kc-item:hover { border-color:#bfdbfe; box-shadow:0 10px 15px -3px rgba(59,130,246,.05), 0 4px 6px -4px rgba(59,130,246,.05); }
-    .kc-item.is-done { background:#f9fafb; border-color:#f3f4f6; }
-    .kc-item.is-done .kc-item-t > span:first-child { color:#6b7280; text-decoration:line-through; text-decoration-color:#bfdbfe; text-decoration-thickness:1.5px; }
+    /* Checklisten-Punkte: Karten mit schwarzer Kontur (wie .ds-faq) */
+    .kc-item { border:1.5px solid #0a0a0f; background:#fff; border-radius:1rem; padding:.85rem 1rem .85rem .7rem; transition:border-color .3s, background-color .3s; }
+    .kc-item.is-done { background:#fafafa; border-color:#d1d5db; }
+    .kc-item.is-done .kc-item-t > span:first-child { color:#6b7280; text-decoration:line-through; text-decoration-color:#9ca3af; text-decoration-thickness:1.5px; }
     /* 44px-Klickfläche, sichtbare Box per ::before, Häkchen per ::after */
     .kc-cb { flex-shrink:0; width:2.75rem; height:2.75rem; margin:-.6rem -.35rem -.6rem -.35rem; border-radius:.75rem; background:transparent; position:relative; transition:transform .12s; }
-    .kc-cb::before { content:''; position:absolute; inset:.6rem; border:2px solid #d1d5db; border-radius:.375rem; background:#fff; transition:background-color .2s, border-color .2s, box-shadow .2s; }
-    .kc-cb:hover::before { border-color:#2563eb; box-shadow:0 0 0 4px #eff6ff; }
+    .kc-cb::before { content:''; position:absolute; inset:.6rem; border:1.5px solid #0a0a0f; border-radius:.375rem; background:#fff; transition:background-color .2s, border-color .2s, box-shadow .2s; }
+    .kc-cb:hover::before { border-color:#0a0a0f; box-shadow:0 0 0 4px #f3f4f6; }
     .kc-cb:focus-visible { outline:none; }
-    .kc-cb:focus-visible::before { border-color:#2563eb; box-shadow:0 0 0 2px #fff, 0 0 0 4px #6366f1; }
+    .kc-cb:focus-visible::before { border-color:#0a0a0f; box-shadow:0 0 0 2px #fff, 0 0 0 4px #2563eb; }
     .kc-cb:active { transform:scale(.92); }
-    .kc-cb[aria-checked="true"]::before { background:#2563eb; border-color:#2563eb; }
+    .kc-cb[aria-checked="true"]::before { background:#0a0a0f; border-color:#0a0a0f; }
     .kc-cb[aria-checked="true"]::after { content:''; position:absolute; left:1.13rem; top:.94rem; width:.42rem; height:.78rem; border:solid #fff; border-width:0 2.5px 2.5px 0; transform:rotate(45deg); }
     .kc-cb.kc-pop::before { animation:kcPop .38s cubic-bezier(.3,1.6,.5,1); }
     .kc-cb.kc-pop::after { animation:kcTick .32s ease-out .06s both; }
     @keyframes kcPop { 0% { transform:scale(.7); } 60% { transform:scale(1.12); } 100% { transform:scale(1); } }
     @keyframes kcTick { from { opacity:0; transform:rotate(45deg) scale(.4); } to { opacity:1; transform:rotate(45deg) scale(1); } }
-    .kc-item-t { display:flex; width:100%; min-height:2.75rem; text-align:left; justify-content:space-between; align-items:center; gap:.75rem; margin:-.45rem 0; padding:.45rem 0; font-weight:600; color:#111827; line-height:1.45; font-family:'Geist',sans-serif; }
-    /* „Warum & wie“: kleiner Ring-Chip der Startseite („Mehr Details…“), geöffnet in Badge-Blau */
-    .kc-more { flex-shrink:0; display:inline-flex; align-items:center; gap:.35rem; border-radius:9999px; background:#fff; box-shadow:inset 0 0 0 1px #e5e7eb; padding:.25rem .7rem; font-size:.75rem; font-weight:500; color:#4b5563; white-space:nowrap; transition:background-color .2s, color .2s, box-shadow .2s; }
+    .kc-item-t { display:flex; width:100%; min-height:2.75rem; text-align:left; justify-content:space-between; align-items:center; gap:.75rem; margin:-.45rem 0; padding:.45rem 0; font-weight:500; color:#0a0a0f; line-height:1.45; font-family:'Geist',sans-serif; }
+    /* „Warum & wie“: kleiner Kontur-Chip, geöffnet schwarz gefüllt */
+    .kc-more { flex-shrink:0; display:inline-flex; align-items:center; gap:.35rem; border-radius:9999px; background:#fff; box-shadow:inset 0 0 0 1px #0a0a0f; padding:.25rem .7rem; font-size:.75rem; font-weight:500; color:#0a0a0f; white-space:nowrap; transition:background-color .2s, color .2s, box-shadow .2s; }
     .kc-more::after { content:''; width:.4rem; height:.4rem; border:solid currentColor; border-width:0 1.6px 1.6px 0; transform:translateY(-1px) rotate(45deg); transition:transform .2s; }
-    .kc-item-t:hover .kc-more { background:#f9fafb; color:#111827; }
-    .kc-item-t[aria-expanded="true"] .kc-more { background:#eff6ff; color:#2563eb; box-shadow:inset 0 0 0 1px #bfdbfe; }
+    .kc-item-t:hover .kc-more { background:#f3f4f6; color:#0a0a0f; }
+    .kc-item-t[aria-expanded="true"] .kc-more { background:#0a0a0f; color:#fff; box-shadow:inset 0 0 0 1px #0a0a0f; }
     .kc-item-t[aria-expanded="true"] .kc-more::after { transform:translateY(1px) rotate(-135deg); }
     @media (max-width:640px) { .kc-item-t { flex-direction:column; align-items:flex-start; gap:.4rem; } }
     /* „Pflicht“: Rot der Startseiten-Badge „Das Problem“ als kleiner Ring-Chip */
     .kc-must { display:inline-block; vertical-align:1px; margin-left:.35rem; font-size:.66rem; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:#b91c1c; background:#fef2f2; box-shadow:inset 0 0 0 1px rgba(220,38,38,.2); border-radius:9999px; padding:.1rem .5rem; text-decoration:none; }
     .kc-detail { margin-top:.75rem; padding-top:.75rem; border-top:1px dashed #e5e7eb; font-size:.9rem; color:#4b5563; line-height:1.65; font-weight:400; }
     .kc-detail p + p { margin-top:.6rem; }
-    /* Blaue Hinweisbox (highlight-box der Website) */
-    .kc-how { background:linear-gradient(135deg,#eff6ff 0%,#f0f9ff 100%); border:1px solid #bfdbfe; border-radius:1rem; padding:.85rem 1rem; color:#1e40af; }
+    /* „So geht’s“: ruhige Randlinie statt farbiger Box */
+    .kc-how { border-left:2px solid #0a0a0f; padding:.15rem 0 .15rem 1rem; color:#0a0a0f; }
     .kc-law { color:#6b7280; font-size:.75rem; font-family:'Geist',sans-serif; letter-spacing:.01em; }
 
     .kc-li { position:relative; padding-left:1.6rem; }
     .kc-li::before { content:''; position:absolute; left:.15rem; top:.3rem; width:.38rem; height:.7rem; border:solid currentColor; border-width:0 2px 2px 0; transform:rotate(45deg); opacity:.9; }
-    .kc-gate .kc-li::before, .kc-promo .kc-li::before { border-color:#60a5fa; opacity:1; }
+    .kc-gate .kc-li::before, .kc-promo .kc-li::before { border-color:#fff; opacity:.85; }
     .kc-check { width:1rem; height:1rem; border-radius:9999px; background:#eff6ff; position:relative; flex-shrink:0; }
     .kc-check::after { content:''; position:absolute; left:.33rem; top:.18rem; width:.3rem; height:.55rem; border:solid #2563eb; border-width:0 2px 2px 0; transform:rotate(45deg); }
 
-    /* ---------- Dunkle Blöcke („Noch Fragen?“ der Website: gray-900, blauer und indigo Schimmer) ---------- */
-    .kc-gate, .kc-promo { position:relative; isolation:isolate; overflow:hidden; background:#111827; box-shadow:0 25px 50px -12px rgba(0,0,0,.25); }
-    .kc-gate::before, .kc-promo::before { content:''; position:absolute; top:-2.5rem; right:-2.5rem; width:16rem; height:16rem; border-radius:9999px; background:rgba(59,130,246,.2); filter:blur(64px); z-index:-1; transition:background-color .5s; }
-    .kc-gate::after, .kc-promo::after { content:''; position:absolute; bottom:-2.5rem; left:-2.5rem; width:16rem; height:16rem; border-radius:9999px; background:rgba(99,102,241,.2); filter:blur(64px); z-index:-1; transition:background-color .5s; }
-    .kc-gate:hover::before, .kc-promo:hover::before { background:rgba(59,130,246,.3); }
-    .kc-gate:hover::after, .kc-promo:hover::after { background:rgba(99,102,241,.3); }
+    /* ---------- Dunkle Blöcke: reines Schwarz wie .ds-band, ohne Leuchteffekte ---------- */
+    .kc-gate, .kc-promo { position:relative; isolation:isolate; overflow:hidden; background:#0a0a0f; }
     .kc-promo :focus-visible { outline-color:#93c5fd; }
-    /* Formular: Glasrahmen mit weißer Karte (aufklappbares Kontaktformular im dunklen Block der Startseite) */
+    /* Formular: weiße Karte im dunklen Block, Eingabefelder als Kontur-Pillen */
     .kc-form-frame { background:rgba(255,255,255,.05); box-shadow:inset 0 0 0 1px rgba(255,255,255,.1), 0 25px 50px -12px rgba(0,0,0,.25); border-radius:1rem; padding:.5rem; -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px); }
-    .kc-form-card { background:#fff; border-radius:.75rem; padding:1.5rem; }
+    .kc-form-card { background:#fff; border-radius:1.25rem; padding:1.5rem; }
     @media (max-width:639px) { .kc-form-card { padding:1.1rem; } }
     @media (min-width:640px) { .kc-form-card { padding:1.75rem; } }
     .kc-field { display:flex; flex-direction:column; gap:.4rem; font-family:'Geist',sans-serif; font-size:.875rem; font-weight:500; color:#374151; }
-    .kc-field input { width:100%; min-width:0; min-height:3rem; border-radius:.5rem; border:1px solid #e5e7eb; background:#fff; color:#111827; padding:.75rem 1rem; font-size:1rem; font-weight:400; outline:none; box-shadow:0 1px 2px rgba(0,0,0,.05); transition:border-color .15s, box-shadow .15s; }
-    .kc-field input:hover { border-color:#d1d5db; }
-    .kc-field input:focus { border-color:#2563eb; box-shadow:0 0 0 3px rgba(37,99,235,.2); }
+    .kc-field input { width:100%; min-width:0; min-height:3.25rem; border-radius:9999px; border:1.5px solid #0a0a0f; background:#fff; color:#0a0a0f; padding:.8rem 1.25rem; font-size:1rem; font-weight:400; outline:none; transition:border-color .15s, box-shadow .15s; }
+    .kc-field input:hover { border-color:#0a0a0f; }
+    .kc-field input:focus { border-color:#0a0a0f; box-shadow:0 0 0 3px rgba(37,99,235,.25); }
     .kc-consent { display:flex; gap:.7rem; align-items:flex-start; margin-top:1.1rem; font-size:.875rem; color:#4b5563; line-height:1.5; cursor:pointer; }
-    .kc-consent input { margin-top:.12rem; width:1.15rem; height:1.15rem; accent-color:#2563eb; flex-shrink:0; cursor:pointer; }
+    .kc-consent input { margin-top:.12rem; width:1.15rem; height:1.15rem; accent-color:#0a0a0f; flex-shrink:0; cursor:pointer; }
     /* Handbuch-Mockup (rein dekorativ, bewusst ohne Cover-Inhalt – das PDF wird noch neu gestaltet) */
     .kc-book { position:relative; width:7.5rem; height:10rem; flex-shrink:0; transform:perspective(700px) rotateY(-14deg) rotateX(3deg); transform-origin:left center; }
     .kc-book-pages { position:absolute; inset:.35rem -.45rem .35rem auto; width:.9rem; border-radius:0 .35rem .35rem 0; background:repeating-linear-gradient(180deg,#f9fafb 0 2px,#e5e7eb 2px 3px); box-shadow:inset 2px 0 4px rgba(0,0,0,.08); }
@@ -258,15 +223,13 @@
     .kc-task { display:flex; gap:.7rem; font-size:.9rem; color:#4b5563; line-height:1.6; padding:.75rem .9rem; border-radius:.75rem; background:#fff; border:1px solid #f3f4f6; }
     @media (max-width:639px) { .kc-task { padding:.65rem .75rem; } }
     .kc-box { flex-shrink:0; width:1.05rem; height:1.05rem; margin-top:.22rem; border:2px solid #d1d5db; border-radius:.3rem; background:#fff; }
-    .kc-box-done { background:#eff6ff; border-color:#93c5fd !important; }
-    /* Vorlagen: FAQ-Karte der Website */
-    .kc-tpl { border:1px solid #e5e7eb; border-radius:1rem; background:rgba(249,250,251,.3); padding:.6rem 1.25rem; transition:all .3s; }
-    .kc-tpl:hover, .kc-tpl[open] { background:#fff; border-color:#bfdbfe; box-shadow:0 10px 15px -3px rgba(59,130,246,.05), 0 4px 6px -4px rgba(59,130,246,.05); }
+    .kc-box-done { background:#f3f4f6; border-color:#9ca3af !important; }
+    /* Vorlagen: FAQ-Karte mit schwarzer Kontur */
+    .kc-tpl { border:1.5px solid #0a0a0f; border-radius:1.25rem; background:#fff; padding:.6rem 1.25rem; }
     .kc-tpl[open] { padding-bottom:1.1rem; }
-    .kc-tpl summary { cursor:pointer; list-style:none; display:flex; align-items:center; gap:.5rem; min-height:2.75rem; font-weight:600; color:#111827; font-family:'Geist',sans-serif; }
+    .kc-tpl summary { cursor:pointer; list-style:none; display:flex; align-items:center; gap:.5rem; min-height:2.75rem; font-weight:500; color:#0a0a0f; font-family:'Geist',sans-serif; }
     .kc-tpl summary::-webkit-details-marker { display:none; }
-    .kc-tpl summary::after, .kc-myth summary::after { content:''; margin-left:auto; flex-shrink:0; width:2rem; height:2rem; border-radius:9999px; border:1px solid #e5e7eb; background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='M12 5v14'/%3E%3C/svg%3E") center/16px no-repeat; transition:transform .3s, border-color .3s; }
-    .kc-tpl:hover summary::after, .kc-myth:hover summary::after { border-color:#bfdbfe; }
+    .kc-tpl summary::after, .kc-myth summary::after { content:''; margin-left:auto; flex-shrink:0; width:2.25rem; height:2.25rem; border-radius:9999px; border:1.5px solid #0a0a0f; background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230a0a0f' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='M12 5v14'/%3E%3C/svg%3E") center/16px no-repeat; transition:transform .3s, border-color .3s; }
     .kc-tpl[open] summary::after, .kc-myth[open] summary::after { transform:rotate(45deg); }
     @media (max-width:639px) {
       .kc-tpl summary { display:grid; grid-template-columns:minmax(0,1fr) auto; column-gap:.75rem; row-gap:.1rem; padding:.45rem 0; }
@@ -274,32 +237,31 @@
       .kc-tpl summary::after { grid-column:2; grid-row:1; margin:0; }
     }
     .kc-pre { white-space:pre-wrap; font-family:'Geist', ui-monospace, monospace; font-size:.85rem; line-height:1.65; color:#374151; background:#f9fafb; border:1px solid #f3f4f6; border-radius:.75rem; padding:1rem 1.1rem; margin-top:.8rem; }
-    /* Download-Karten: Testimonial-Karte der Startseite, Icon-Kachel von der Moodle-Plugin-Seite */
-    .kc-dl-card { display:flex; gap:1rem; align-items:flex-start; padding:1.25rem; background:#fff; border-radius:1rem; border:1px solid #f3f4f6; box-shadow:0 4px 20px -10px rgba(0,0,0,.05); transition:all .3s; }
-    .kc-dl-card:hover { border-color:rgba(191,219,254,.6); box-shadow:0 10px 15px -3px rgba(59,130,246,.05), 0 4px 6px -4px rgba(59,130,246,.05); }
-    .kc-dl-ico { flex-shrink:0; width:2.5rem; height:2.5rem; border-radius:.5rem; background:rgba(79,70,229,.1); color:#4f46e5; display:inline-flex; align-items:center; justify-content:center; }
+    /* Download-Karten: schwarze Kontur, runde Icon-Kachel wie /moodle-plugin */
+    .kc-dl-card { display:flex; gap:1rem; align-items:flex-start; padding:1.25rem; background:#fff; border-radius:1.25rem; border:1.5px solid #0a0a0f; transition:background-color .2s; }
+    .kc-dl-card:hover { background:#fafafa; }
+    .kc-dl-ico { flex-shrink:0; width:2.5rem; height:2.5rem; border-radius:9999px; border:1.5px solid #0a0a0f; background:#fff; color:#0a0a0f; display:inline-flex; align-items:center; justify-content:center; }
     .kc-dl-ico svg { width:1.25rem; height:1.25rem; }
 
-    /* ---------- Irrtümer & FAQ (FAQ-Karten der Website) ---------- */
-    .kc-myth { border:1px solid #e5e7eb; background:rgba(249,250,251,.3); border-radius:1rem; transition:all .3s; }
-    .kc-myth:hover, .kc-myth[open] { background:#fff; border-color:#bfdbfe; box-shadow:0 10px 15px -3px rgba(59,130,246,.05), 0 4px 6px -4px rgba(59,130,246,.05); }
+    /* ---------- Irrtümer & FAQ (Karten wie .ds-faq) ---------- */
+    .kc-myth { border:1.5px solid #0a0a0f; background:#fff; border-radius:1.25rem; }
     .kc-myth summary { cursor:pointer; list-style:none; display:flex; gap:.8rem; align-items:flex-start; min-height:2.75rem; padding:1.5rem; border-radius:1rem; }
     .kc-myth summary::-webkit-details-marker { display:none; }
     .kc-myth summary::after { margin-top:-.2rem; }
-    .kc-myth-q { font-weight:600; color:#111827; font-family:'Geist',sans-serif; font-size:1rem; line-height:1.5; transition:color .2s; }
+    .kc-myth-q { font-weight:500; color:#0a0a0f; font-family:'Geist',sans-serif; font-size:1.05rem; letter-spacing:-.01em; line-height:1.5; transition:color .2s; }
     /* „Irrtum“: Rot der Badge „Das Problem“, als kleiner Ring-Chip */
     .kc-myth-tag { flex-shrink:0; font-family:'Geist',sans-serif; font-size:.68rem; font-weight:600; text-transform:uppercase; letter-spacing:.05em; color:#b91c1c; background:#fef2f2; box-shadow:inset 0 0 0 1px rgba(220,38,38,.2); border-radius:9999px; padding:.2rem .6rem; margin-top:.15rem; }
     .kc-myth-a { margin:-.5rem 1.5rem 1.5rem; color:#4b5563; font-size:.9rem; line-height:1.65; }
-    .kc-myth-a strong { color:#111827; }
+    .kc-myth-a strong { color:#0a0a0f; }
     .kc-myth-a .kc-law { display:block; margin-top:.6rem; }
     @media (max-width:639px) { .kc-myth summary { padding:1.15rem 1.1rem; } .kc-myth-a { margin:-.35rem 1.1rem 1.15rem; } }
     /* Irrtümer: nummeriert; geöffnet wird der Irrtum durchgestrichen und „Richtig ist“ grün wie die Badge „Die Lösung“ */
     .kc-myths { counter-reset:kcmyth; }
     .kc-myths .kc-myth { counter-increment:kcmyth; }
-    .kc-myths .kc-myth summary::before { content:counter(kcmyth,decimal-leading-zero); flex-shrink:0; font-family:'Geist',sans-serif; font-size:.875rem; font-weight:600; color:#2563eb; padding-top:.1rem; min-width:1.35rem; }
+    .kc-myths .kc-myth summary::before { content:counter(kcmyth,decimal-leading-zero); flex-shrink:0; font-family:'Geist',sans-serif; font-size:1.05rem; font-weight:300; color:#0a0a0f; padding-top:.05rem; min-width:1.6rem; }
     .kc-myths .kc-myth[open] .kc-myth-q { color:#6b7280; text-decoration:line-through; text-decoration-color:#fca5a5; text-decoration-thickness:1.5px; }
     .kc-myths .kc-myth[open] .kc-myth-tag { color:#6b7280; background:#f3f4f6; box-shadow:inset 0 0 0 1px #e5e7eb; }
-    .kc-myths .kc-myth-a { background:#f0fdf4; box-shadow:inset 0 0 0 1px rgba(22,163,74,.15); border-radius:.75rem; padding:1rem 1.15rem; }
+    .kc-myths .kc-myth-a { background:#f5f5f5; border-radius:.875rem; padding:1rem 1.15rem; }
     .kc-myths .kc-myth-a strong:first-child { color:#15803d; }
     @media (min-width:640px) { .kc-myths .kc-myth-a { margin-left:3.65rem; } }
     @media (max-width:639px) {
@@ -308,61 +270,59 @@
       .kc-myths .kc-myth summary::after { order:2; }
     }
 
+    /* ---------- Überschriften und Akzente im per JS erzeugten Inhalt (ki-check.js bleibt unverändert) ---------- */
+    #kc-chapter > p:first-child { font-size:.8rem; font-weight:500; letter-spacing:.08em; text-transform:uppercase; color:#6b7280; }
+    #kc-chapter > h2 { font-size:clamp(1.75rem, 3vw, 2.5rem); line-height:1.1; font-weight:400; letter-spacing:-.025em; color:#0a0a0f; }
+    .kc-side-card p.text-lg { font-weight:500; color:#0a0a0f; }
+    #kc-gate h3, section.kc-report h3, section.kc-report h4, .kc-promo h4 { font-weight:400; letter-spacing:-.02em; }
+    #kc-gate .text-blue-300 { color:rgba(255,255,255,.55); }
+    section.kc-report { border:1.5px solid #0a0a0f; background:#fff; }
+    section.kc-report p.text-blue-600 { color:#0a0a0f; }
+
     @media (prefers-reduced-motion: reduce) {
-      .kc-fade, .kc-float, .kc-float-2, .kc-draw, .kc-grow, .kc-cb.kc-pop::before, .kc-cb.kc-pop::after, .kc-cta-points i, .kc-cta:hover .kc-cta-inner svg path { animation:none !important; }
-      .kc-cta-points { display:none; }
+      .kc-fade, .kc-float, .kc-float-2, .kc-draw, .kc-grow, .kc-cb.kc-pop::before, .kc-cb.kc-pop::after, .kc-btn-primary:hover::before, .kc-btn-light:hover::before, .kc-btn-outline:hover::before { animation:none !important; }
       .kc-draw { stroke-dashoffset:0; }
-      .kc-bar, .kc-btn-primary, .kc-btn-light, .kc-btn-outline, .kc-cta { transition:none !important; }
+      .kc-bar, .kc-btn-primary, .kc-btn-light, .kc-btn-outline { transition:none !important; }
       .kc-btn-primary:hover, .kc-btn-light:hover, .kc-btn-outline:hover { transform:none; }
     }
 
     @media print {
-      #site-header, #site-footer, .kc-hero, .kc-section, .kc-noprint, #kc-gate, nav[aria-label="Kapitel"], #kc-chapter, .aura-background-component { display:none !important; }
+      #site-header, #site-footer, .kc-hero, .kc-section, .kc-noprint, #kc-gate, nav[aria-label="Kapitel"], #kc-chapter { display:none !important; }
       body { background:#fff !important; }
-      #kc-app { box-shadow:none !important; border:0 !important; min-height:0 !important; }
-      #kc-app::before { display:none; }
+      #kc-app { border:0 !important; min-height:0 !important; }
       .kc-tpl { break-inside:avoid; }
       details.kc-tpl > *:not(summary) { display:block !important; }
       .kc-task { border:0; padding:.35rem 0; }
     }
   </style>
   <script src="/assets/js/layout.js?v=static-v3" defer></script>
+  <link rel="stylesheet" href="/assets/css/design-2026.css">
 </head>
 <body class="min-h-screen antialiased text-gray-900 bg-white"
       style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
 
-  <!-- Hintergrund wie auf den übrigen Seiten (Unicorn Studio, gedrosselt: scale 0.5 / dpi 1 / fps 30) -->
-  <div class="aura-background-component top-0 w-full -z-10 h-screen absolute" data-alpha-mask="80" style="mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)" aria-hidden="true"><div class="aura-background-component top-0 w-full -z-10 absolute h-full">
-    <div data-us-project="yACzULFKkgXAmEcep6hu" data-us-scale="0.5" data-us-dpi="1" data-us-fps="30" class="absolute w-full h-full left-0 top-0 -z-10"></div>
-    <script type="text/javascript">
-      !function(){function u(){try{var c=document.createElement("canvas");return !!(window.WebGLRenderingContext&&(c.getContext("webgl")||c.getContext("experimental-webgl")))}catch(e){return!1}}if(u()&&!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head || document.body).appendChild(i)}}();
-    </script>
-  </div></div>
 
   <div id="site-header"><!-- partial:header:start -->
 <!-- Top Navigation -->
-    <header class="relative z-20 border-b border-gray-100">
-      <div class="sm:px-6 lg:px-8 max-w-7xl mr-auto ml-auto pr-4 pl-4">
-        <div class="flex sm:py-6 pt-4 pb-4 relative items-center justify-between">
+    <header class="relative z-20 border-b border-gray-100 bg-white">
+      <div class="px-4 sm:px-6">
+        <div class="flex py-2.5 sm:py-3 relative items-center">
   <!-- Brand -->
   <a href="/de/" class="flex gap-x-3 gap-y-3 items-center shrink-0 relative">
-    <img src="/assets/images/Logo_Alphalearn_outlines_fluid_animated.svg" alt="Alphalearn" class="h-[43px] w-auto max-w-[198px] object-contain" loading="eager" decoding="async">
+    <img src="/assets/images/Logo_Alphalearn_outlines_fluid_animated.svg" alt="Alphalearn" class="h-[30px] sm:h-[34px] w-auto max-w-[157px] object-contain" loading="eager" decoding="async">
     <span class="sr-only font-geist">Alphalearn</span>
   </a>
 
   <!-- Centered Navigation Group (Desktop) -->
-  <nav class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-8">
+  <nav class="hidden md:flex items-center gap-7 ml-10 lg:ml-12" style="position:relative; top:3px">
     <a href="/de/demos.html" class="nav-link hover:text-blue-600 transition-colors group text-sm font-medium text-gray-600 font-geist relative">
       Demos
-      <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
     </a>
     <a href="/de/preis.html" class="nav-link text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors font-geist relative group">
-      Preis
-      <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+      Preise
     </a>
     <a href="/de/features.html" class="nav-link hover:text-blue-600 transition-colors group text-sm font-medium text-gray-600 font-geist relative">
     Funktionen
-    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
   </a>
   </nav>
 
@@ -385,7 +345,7 @@
 
 
   <!-- Right Actions (Desktop & Mobile Toggle) -->
-  <div class="flex items-center gap-3 sm:gap-4 z-10 shrink-0 relative">
+  <div class="flex items-center gap-3 sm:gap-4 z-10 shrink-0 relative ml-auto">
     
     <!-- Language Toggle (Desktop) -->
     <div class="hidden md:flex items-center bg-gray-100/80 ring-1 ring-gray-200 rounded-lg p-0.5">
@@ -397,12 +357,12 @@
     <div class="hidden md:flex gap-1 border-gray-200 border-l ml-1 pl-2 gap-x-1 gap-y-1 items-center">
         <!-- Login Icon -->
         <a href="https://portal.alphabees.de/auth/login" class="group hover:bg-blue-50 transition-all duration-300 rounded-full pt-2 pr-2 pb-2 pl-2 relative" aria-label="Login">
-           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-x-0.5 w-[20px] h-[20px]" data-icon-replaced="true" style="width: 20px; height: 20px; color: rgb(37, 99, 235);"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" class=""></path><polyline points="10 17 15 12 10 7" class=""></polyline><line x1="15" x2="3" y1="12" y2="12" class=""></line></svg>
+           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in text-gray-600 group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-x-0.5 w-[20px] h-[20px]" data-icon-replaced="true" style="width: 20px; height: 20px;"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" class=""></path><polyline points="10 17 15 12 10 7" class=""></polyline><line x1="15" x2="3" y1="12" y2="12" class=""></line></svg>
            <span class="absolute top-full mt-2 left-1/2 -translate-x-1/2 px-2 py-1 bg-gray-900 text-white text-[10px] font-medium rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap font-geist shadow-lg transform translate-y-1 group-hover:translate-y-0">login</span>
         </a>
         <!-- Register Icon -->
         <a href="https://portal.alphabees.de/auth/register" class="group hover:bg-blue-50 transition-all duration-300 rounded-full pt-2 pr-2 pb-2 pl-2 relative" aria-label="Register">
-           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-plus group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 w-[20px] h-[20px]" data-icon-replaced="true" style="color: rgb(37, 99, 235); width: 20px; height: 20px;">
+           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-plus text-gray-600 group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 w-[20px] h-[20px]" data-icon-replaced="true" style="width: 20px; height: 20px;">
              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" class=""></path>
              <circle cx="9" cy="7" r="4" class=""></circle>
              <line x1="19" x2="19" y1="8" y2="14"></line>
@@ -428,11 +388,11 @@
       </div>
       <!-- Mobile Menu -->
       <div id="mobileMenu" class="md:hidden hidden">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="px-4 sm:px-6">
           <div class="border-t border-gray-100"></div>
           <div class="py-3 space-y-1 divide-y divide-gray-100 border-b border-gray-100">
             <a href="/de/demos.html" class="nav-link block hover:text-gray-900 text-sm text-gray-700 font-geist pt-3 pr-2 pb-3 pl-2">Demos</a>
-            <a href="/de/preis.html" class="nav-link block hover:text-gray-900 text-sm text-gray-700 font-geist pt-3 pr-2 pb-3 pl-2">Preis</a>
+            <a href="/de/preis.html" class="nav-link block hover:text-gray-900 text-sm text-gray-700 font-geist pt-3 pr-2 pb-3 pl-2">Preise</a>
             <a href="/de/features.html" class="block hover:text-gray-900 text-sm text-gray-700 font-geist pt-3 pr-2 pb-3 pl-2">Funktionen</a>
             
             
@@ -446,31 +406,26 @@
   <main class="relative">
     <!-- Hero -->
     <section class="kc-hero relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20 lg:pt-24 pb-16 sm:pb-20 lg:pb-28">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 lg:pt-28 pb-20 sm:pb-24 lg:pb-32">
         <div class="grid lg:grid-cols-[minmax(0,1.08fr)_minmax(0,.92fr)] gap-12 lg:gap-14 items-center">
-          <div class="text-center lg:text-left">
-            <span class="kc-eyebrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+          <div>
+            <span class="ds-label">
               Checkliste für Bildungsanbieter · Stand Oktober 2026
             </span>
-            <h1 class="mt-6 text-4xl leading-[1.1] sm:text-5xl lg:text-6xl font-semibold tracking-tight text-gray-900 font-geist text-balance">
-              KI-Tutor einführen:<br class="hidden sm:block"> <span class="text-blue-600">Was Sie vor dem Start klären müssen</span>
+            <h1 class="ds-h1 mt-6 text-balance" style="font-size: clamp(2.5rem, 4.9vw, 4.6rem);">
+              KI-Tutor einführen:<br class="hidden sm:block"> <span>Was Sie vor dem Start klären müssen</span>
             </h1>
-            <p class="mt-6 text-lg text-gray-600 font-geist max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            <p class="ds-sub mt-8">
               DSGVO, AI Act, Betriebsrat, Anbieterauswahl – und dazwischen viel Halbwissen. Diese Checkliste zeigt Schritt für Schritt, was wirklich gilt, wer wofür verantwortlich ist und worauf Sie bei der Auswahl achten sollten.
             </p>
-            <div class="mt-9 flex flex-col sm:flex-row gap-3 items-center justify-center lg:justify-start">
-              <a href="#kc-app" data-kc-start class="kc-cta"><span class="kc-cta-points" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="kc-cta-inner">Checkliste öffnen <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a>
-              <a href="#kc-irrtuemer" class="inline-flex items-center justify-center gap-x-2 w-[260px] max-w-full min-h-[48px] rounded-full border border-white/20 bg-white/10 pt-3 pr-5 pb-3 pl-5 text-sm font-medium text-gray-900 font-geist backdrop-blur-md cursor-pointer transition-all duration-300 ease-out shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(15,23,42,0.18),0px_12px_12px_-6px_rgba(0,0,0,0.06)] hover:bg-white/10 hover:scale-105 hover:shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_20px_40px_-5px_rgba(15,23,42,0.2),0px_10px_10px_-5px_rgba(0,0,0,0.04)] active:scale-95">10 Irrtümer, richtiggestellt</a>
+            <div class="mt-10 ds-btn-row">
+              <a href="#kc-app" data-kc-start class="ds-btn ds-btn--lg">Checkliste öffnen <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+              <a href="#kc-irrtuemer" class="ds-btn ds-btn--ghost ds-btn--lg">10 Irrtümer, richtiggestellt</a>
             </div>
-            <p class="kc-hero-meta mt-7 text-sm leading-relaxed text-gray-600 font-geist"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span class="text-pretty text-center lg:text-left">36 Punkte in 6 Kapiteln · anbieterneutral · ohne Anmeldung · Ihr Stand bleibt in Ihrem Browser</span></p>
+            <p class="kc-hero-meta mt-8 text-sm leading-relaxed text-gray-600 font-geist"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span class="text-pretty">36 Punkte in 6 Kapiteln · anbieterneutral · ohne Anmeldung · Ihr Stand bleibt in Ihrem Browser</span></p>
           </div>
           <div class="kc-hero-visual relative mx-auto w-full max-w-md lg:max-w-none" aria-hidden="true">
-            <div class="absolute inset-0 sm:-inset-10 pointer-events-none">
-              <div class="absolute right-6 sm:right-10 top-0 h-48 w-48 sm:h-72 sm:w-72 rounded-full bg-fuchsia-500/30 blur-3xl"></div>
-              <div class="absolute left-2 sm:left-5 top-12 sm:top-20 h-48 w-48 sm:h-72 sm:w-72 rounded-full bg-indigo-500/30 blur-3xl"></div>
-              <div class="absolute right-0 bottom-6 sm:bottom-10 h-48 w-48 sm:h-72 sm:w-72 rounded-full bg-amber-400/30 blur-3xl"></div>
-            </div>
-            <div class="relative rounded-2xl sm:rounded-3xl bg-white/70 p-3 sm:p-4 ring-1 ring-black/5 shadow-[0_2px_2px_rgba(0,0,0,0.04),_0_8px_12px_rgba(0,0,0,0.08),_0_24px_32px_rgba(0,0,0,0.10)] backdrop-blur-md">
+            <div class="relative rounded-[1.25rem] sm:rounded-3xl bg-white p-3 sm:p-4 border-[1.5px] border-[#0a0a0f]">
               <div class="overflow-hidden rounded-xl sm:rounded-2xl bg-white ring-1 ring-black/5">
                 <svg viewBox="0 0 520 540" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false">
                   <defs>
@@ -530,13 +485,13 @@
     </section>
 
     <!-- Zeitleiste -->
-    <section class="kc-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
+    <section class="kc-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 sm:pb-28">
       <ol class="kc-timeline">
         <li class="kc-tl-item is-past">
           <span class="kc-tl-dot" aria-hidden="true"></span>
           <div class="kc-tl-card">
             <p class="kc-tl-date mb-3">Seit 02.02.2025</p>
-            <p class="text-lg font-semibold text-gray-900 font-geist mb-1.5">KI-Kompetenz & Verbote</p>
+            <p class="text-lg font-medium tracking-tight text-[#0a0a0f] font-geist mb-1.5">KI-Kompetenz & Verbote</p>
             <p class="text-sm text-gray-600 leading-relaxed">Beteiligte schulen (Art. 4). Emotionserkennung in der Bildung ist verboten (Art. 5).</p>
           </div>
         </li>
@@ -544,7 +499,7 @@
           <span class="kc-tl-dot" aria-hidden="true"></span>
           <div class="kc-tl-card">
             <p class="kc-tl-date mb-3">Seit 02.08.2026</p>
-            <p class="text-lg font-semibold text-gray-900 font-geist mb-1.5">KI muss sich zu erkennen geben</p>
+            <p class="text-lg font-medium tracking-tight text-[#0a0a0f] font-geist mb-1.5">KI muss sich zu erkennen geben</p>
             <p class="text-sm text-gray-600 leading-relaxed">Lernende müssen erkennen, dass sie mit einer KI sprechen (Art. 50).</p>
           </div>
         </li>
@@ -552,7 +507,7 @@
           <span class="kc-tl-dot" aria-hidden="true"></span>
           <div class="kc-tl-card">
             <p class="kc-tl-date mb-3">Ab 02.12.2027</p>
-            <p class="text-lg font-semibold text-gray-900 font-geist mb-1.5">Hochrisiko-Regeln</p>
+            <p class="text-lg font-medium tracking-tight text-[#0a0a0f] font-geist mb-1.5">Hochrisiko-Regeln</p>
             <p class="text-sm text-gray-600 leading-relaxed">Nur wenn KI bewertet, zulässt, einstuft oder Prüfungen überwacht (Anhang III). Lernbegleitung nicht.</p>
           </div>
         </li>
@@ -570,25 +525,26 @@
     <section id="assistent" class="kc-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 sm:pb-28" hidden>
       <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
         <div class="lg:col-span-2">
-          <p class="kc-eyebrow mb-5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>KI-Assistent</p>
-          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900 font-geist mb-4">Fragen Sie das Handbuch</h2>
-          <p class="text-gray-600 text-lg leading-relaxed mb-5">Ihre Frage steht nicht in der Checkliste? Unser Assistent kennt alle Inhalte dieser Seite und antwortet mit Verweis auf die Fundstelle.</p>
-          <p class="text-sm text-blue-800 leading-relaxed rounded-2xl border border-blue-200 bg-gradient-to-br from-blue-50 to-sky-50 p-4">Zum Beispiel: „Brauchen wir eine Datenschutz-Folgenabschätzung?“ · „Was muss im AVV stehen?“ · „Ab wann wäre unser Tutor Hochrisiko?“</p>
+          <p class="ds-label mb-5">KI-Assistent</p>
+          <h2 class="ds-h2 text-balance mb-6">Fragen Sie das Handbuch</h2>
+          <p class="text-gray-600 text-lg leading-relaxed mb-6">Ihre Frage steht nicht in der Checkliste? Unser Assistent kennt alle Inhalte dieser Seite und antwortet mit Verweis auf die Fundstelle.</p>
+          <p class="text-sm text-[#0a0a0f] leading-relaxed ds-card p-4">Zum Beispiel: „Brauchen wir eine Datenschutz-Folgenabschätzung?“ · „Was muss im AVV stehen?“ · „Ab wann wäre unser Tutor Hochrisiko?“</p>
           <p class="text-xs text-gray-500 mt-5">Läuft auf AlphaLearn – dem KI-Tutor, den wir für Moodle und ILIAS entwickeln. Keine Rechtsberatung.</p>
         </div>
-        <div class="lg:col-span-3 rounded-3xl bg-white border border-gray-200 overflow-hidden shadow-[0_25px_70px_-20px_rgba(59,130,246,0.25),0_15px_40px_-20px_rgba(168,85,247,0.20)]">
+        <div class="lg:col-span-3 ds-card rounded-3xl overflow-hidden">
           <div class="h-[520px]"><iframe title="KI-Assistent zum Handbuch" class="w-full h-full border-0" allow="clipboard-read; clipboard-write; storage-access"></iframe></div>
         </div>
       </div>
     </section>
 
     <!-- Irrtümer -->
-    <section id="kc-irrtuemer" class="kc-section scroll-mt-6 border-y border-gray-100 bg-white">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <p class="kc-eyebrow mb-5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>Richtiggestellt</p>
-        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900 font-geist mb-4 text-balance">10 Irrtümer, die KI-Projekte in der Bildung unnötig bremsen</h2>
-        <p class="text-gray-600 text-lg leading-relaxed">Diese Sätze hören wir in fast jedem Auswahlprozess. Manche führen zu Monaten Verzögerung, andere zu falscher Sicherheit.</p>
+    <section id="kc-irrtuemer" class="kc-section scroll-mt-6 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
+      <div class="max-w-4xl">
+      <div class="mb-14 md:mb-20">
+        <p class="ds-label mb-5">Richtiggestellt</p>
+        <h2 class="ds-h2 text-balance mb-6">10 Irrtümer, die KI-Projekte in der Bildung unnötig bremsen</h2>
+        <p class="ds-sub">Diese Sätze hören wir in fast jedem Auswahlprozess. Manche führen zu Monaten Verzögerung, andere zu falscher Sicherheit.</p>
       </div>
       <div class="kc-myths space-y-3">
         <details class="kc-myth"><summary><span class="kc-myth-tag">Irrtum</span><span class="kc-myth-q">„Wenn wir einen KI-Tutor einsetzen, werden wir zum KI-Anbieter.“</span></summary>
@@ -612,19 +568,22 @@
         <details class="kc-myth"><summary><span class="kc-myth-tag">Irrtum</span><span class="kc-myth-q">„Wir bauen den KI-Tutor selbst und zahlen nur für die Token.“</span></summary>
           <div class="kc-myth-a"><p><strong>Richtig ist:</strong> Ein Chatbot für einen Kurs ist schnell gebaut. Schwieriger wird es, wenn hunderte Kurse automatisch aktuell bleiben sollen, das Tutor-Wissen sich je Kurs unterscheidet und tausende Lernende gleichzeitig darauf zugreifen. Wer hilft bei Wartung, Weiterentwicklung und Fehlerbehebung? Was als Pilot beginnt, wird schnell zum dauerhaften Entwicklungsprojekt.</p></div></details>
       </div>
-      <p class="mt-10 text-center text-sm text-gray-600">Was daraus für Sie konkret zu tun ist, steht in der <a href="#kc-app" data-kc-start class="font-semibold text-blue-600 underline underline-offset-2 hover:text-blue-700">Checkliste oben</a>.</p>
+      <p class="mt-10 text-sm text-gray-600">Was daraus für Sie konkret zu tun ist, steht in der <a href="#kc-app" data-kc-start class="ds-link font-medium">Checkliste oben</a>.</p>
+      </div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section class="kc-section max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
-      <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900 font-geist mb-8">Häufige Fragen</h2>
+    <section class="kc-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-24 sm:pb-32">
+      <div class="max-w-4xl">
+      <h2 class="ds-h2 mb-14 md:mb-20">Häufige Fragen.</h2>
       <div class="space-y-3">
         <details class="kc-myth"><summary><span class="kc-myth-q">Was muss ich vor der Einführung eines KI-Tutors nach DSGVO beachten?</span></summary><div class="kc-myth-a"><p>Rollen klären (Sie sind Verantwortlicher, der Anbieter Auftragsverarbeiter), einen AVV abschließen, Unterauftragsverarbeiter inklusive Sprachmodell und Standort kennen, Drittlandübermittlungen absichern, Training mit Ihren Daten vertraglich ausschließen, Rechtsgrundlage festlegen, Lernende informieren, Löschfristen definieren und eine Datenschutz-Folgenabschätzung prüfen.</p></div></details>
         <details class="kc-myth"><summary><span class="kc-myth-q">Werden meine Häkchen gespeichert?</span></summary><div class="kc-myth-a"><p>Nur in Ihrem Browser, damit Sie später weitermachen können. Erst wenn Sie das Handbuch anfordern, speichern wir Ihren Vornamen, Ihre E-Mail-Adresse und einen Link zu Ihrem Stand.</p></div></details>
         <details class="kc-myth"><summary><span class="kc-myth-q">Wer steht hinter der Checkliste?</span></summary><div class="kc-myth-a"><p>Alphabees, Anbieter des KI-Tutors AlphaLearn für Moodle und ILIAS. Die Checkliste bewertet Kriterien, nicht Anbieter – sie funktioniert mit jedem System.</p></div></details>
       </div>
-      <p class="text-xs text-gray-500 mt-10 pt-6 border-t border-gray-100 leading-relaxed">Diese Checkliste ersetzt keine Rechtsberatung. Sie gibt eine Orientierung auf Basis der Rechtslage im Oktober 2026 (DSGVO, KI-Verordnung (EU) 2024/1689 nach Digital Omnibus, BetrVG).</p>
+      <p class="text-xs text-gray-500 mt-12 leading-relaxed max-w-3xl">Diese Checkliste ersetzt keine Rechtsberatung. Sie gibt eine Orientierung auf Basis der Rechtslage im Oktober 2026 (DSGVO, KI-Verordnung (EU) 2024/1689 nach Digital Omnibus, BetrVG).</p>
+      </div>
     </section>
   </main>
 
@@ -653,8 +612,6 @@
     </clipPath>
   </defs>
 </svg>
-        <p class="text-sm text-gray-400 font-geist max-w-sm mt-4">KI-Tutoren für Akademien, Hochschulen, Aus- und
-          Weiterbildung.</p>
         <p class="text-sm text-gray-400 font-geist max-w-sm mt-2">Alphalearn ist eine Marke von Alphabees.</p>
         <div class="mt-6 flex items-center gap-3">
           <a href="https://moodle.org/plugins/block_alphabees" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center hover:bg-white/20 transition bg-white/10 w-10 h-10 border-white/10 border rounded-lg backdrop-blur-md">
@@ -665,6 +622,9 @@
                 <path d="M77.05,129.17c20.75,6.68,42.3,8.73,64,7l-1,135h-63v-142Z" style="fill: #fff;" class=""></path>
               </g>
             </svg>
+          </a>
+          <a href="https://github.com/alphabees-25/ilias-plugin-alphabees" target="_blank" rel="noopener noreferrer" aria-label="ILIAS-Plugin von Alphalearn" class="inline-flex items-center justify-center hover:bg-white/20 transition bg-white/10 w-10 h-10 border-white/10 border rounded-lg backdrop-blur-md">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 12" width="25" height="10" aria-hidden="true"><text x="15" y="10.6" text-anchor="middle" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="12.4" letter-spacing="-.15" fill="#fff">ILIAS</text></svg>
           </a>
           <a href="https://github.com/LErdweg/moodle-block_alphabees/wiki" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center hover:bg-white/20 transition bg-white/10 w-10 h-10 border-white/10 border rounded-lg backdrop-blur-md">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" style="color: rgb(255, 255, 255); width: 18px; height: 18px" class="w-[18px] h-[18px]" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" data-simple-icons="github" data-icon-set="simple-icons" data-icon-replaced="true" stroke-width="0.5">
@@ -715,9 +675,10 @@
           <ul class="mt-4 space-y-3">
             <li class=""><a href="/de/academy.html" class="hover:text-white transition text-sm text-gray-400 font-geist">Academy</a></li>
             <li class=""><a href="/de/helpcenter.html" class="text-sm text-gray-400 hover:text-white transition font-geist" style="">Hilfe-Center</a></li>
-            <li class=""><a href="https://portal.alphabees.de/auth/register" class="hover:text-white transition text-sm text-gray-400 font-geist">Alphabees-Portal</a></li>
+            <li class=""><a href="https://portal.alphabees.de/auth/register" class="hover:text-white transition text-sm text-gray-400 font-geist">Alphalearn Portal</a></li>
             <li class=""><a href="/de/blog.html" class="hover:text-white transition text-sm text-gray-400 font-geist">Blog</a></li>
             <li class=""><a href="/de/ki-tutor-guide-bildungsanbieter-deutschland-2026.html" class="hover:text-white transition text-sm text-gray-400 font-geist">KI-Tutor-Guide 2026</a></li>
+            <li class=""><a href="/de/ki-compliance-check.html" data-cta="footer_ki_check" class="hover:text-white transition text-sm text-gray-400 font-geist">KI-Compliance-Check</a></li>
           </ul>
         </div>
 

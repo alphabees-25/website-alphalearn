@@ -291,6 +291,45 @@ opacity: 0 !important;
   }
  ]
 }</script>
+  <link rel="stylesheet" href="/assets/css/design-2026.css">
+<style id="hero-video-css">
+  /* Hero-Video – im <head>, damit das Video schon beim ersten Zeichnen richtig (volle Breite, zugeschnitten) erscheint */
+  /* AI-Gradient der Marke: CI-Blue #3B82F6, Purple #B47FFF, Lobster #FF8093, Pink #FF7EAF, Orange #FFAF85.
+     Aufbau: Farbverlauf als Basis, darüber das entfärbte Video als bewegte Licht-Textur, darüber ein optionaler Verlauf für die Lesbarkeit. */
+  /* Gewählt am 06.10.: Voreinstellung „AI kräftig“ */
+  :root { --hv-vop:.7; --hv-vblend:overlay; --hv-gray:1; --hv-con:1.3; --hv-dark:0; --hv-grad:.3; --hv-blur:0px; --hv-sat:1.3;
+    --hv-mesh:
+      radial-gradient(38% 60% at 18% 72%, #3B82F6 0%, rgba(59,130,246,0) 72%),
+      radial-gradient(40% 55% at 38% 48%, #B47FFF 0%, rgba(180,127,255,0) 72%),
+      radial-gradient(34% 50% at 62% 78%, #FFAF85 0%, rgba(255,175,133,0) 72%),
+      radial-gradient(36% 50% at 88% 18%, #FF8093 0%, rgba(255,128,147,0) 72%),
+      radial-gradient(42% 55% at 26% 6%, #FF7EAF 0%, rgba(255,126,175,0) 72%),
+      radial-gradient(30% 45% at 100% 100%, #ffffff 0%, rgba(255,255,255,0) 70%),
+      linear-gradient(135deg, #FF7EAF 0%, #FF8093 45%, #FFAF85 85%, #FFE4D6 100%); }
+
+  /* Größere Hero-Schrift, Verhältnis H1 : Unterzeile wie bisher (Faktor ~1,2 mobil bis 1,4 Desktop) */
+  .hv-band h1.hero-h1 { font-size:2.7rem; }
+  .hv-band h1.hero-h1 + p { font-size:1.2rem; line-height:1.45; }
+  @media (min-width:640px) { .hv-band h1.hero-h1 { font-size:3.6rem; } .hv-band h1.hero-h1 + p { font-size:1.35rem; } }
+  @media (min-width:768px) { .hv-band h1.hero-h1 { font-size:4.5rem; } }
+  @media (min-width:1024px) { .hv-band h1.hero-h1 { font-size:min(8.1cqi, 5.25rem); } .hv-band h1.hero-h1 + p { font-size:1.4rem; } }
+  @media (min-width:1280px) { .hv-band h1.hero-h1 + p { font-size:1.575rem; } }
+  .hv-band { position:relative; isolation:isolate; padding:4rem 0 4.5rem; }
+  @media (min-width:640px) { .hv-band { padding:5rem 0 5.5rem; } }
+  @media (min-width:1024px) { .hv-band { padding:6.5rem 0 7rem; min-height:min(82vh, 820px); display:flex; align-items:center; } .hv-band > .grid { width:100%; } }
+  .hv-media { position:absolute; top:0; bottom:0; left:50%; width:var(--hv-vw,100vw); transform:translateX(-50%); z-index:-1; overflow:hidden; background:var(--hv-mesh); filter:saturate(var(--hv-sat)); }
+  .hv-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform:scale(1.04); mix-blend-mode:var(--hv-vblend); opacity:var(--hv-vop); filter:blur(var(--hv-blur)) grayscale(var(--hv-gray)) contrast(var(--hv-con)); }
+  .hv-shade { position:absolute; inset:0; background:linear-gradient(90deg, rgba(30,27,75,var(--hv-grad)) 0%, rgba(30,27,75,calc(var(--hv-grad) * .45)) 55%, rgba(30,27,75,0) 100%), rgba(30,27,75,var(--hv-dark)); }
+  @media (max-width:1023px) { .hv-shade { background:linear-gradient(180deg, rgba(30,27,75,var(--hv-grad)) 0%, rgba(30,27,75,calc(var(--hv-grad) * .45)) 60%, rgba(30,27,75,0) 100%), rgba(30,27,75,var(--hv-dark)); } }
+  .hv-controls { position:absolute; top:0; bottom:0; left:50%; width:var(--hv-vw,100vw); transform:translateX(-50%); z-index:5; pointer-events:none; }
+  .hv-pause { position:absolute; right:12px; bottom:12px; pointer-events:auto; width:2rem; height:2rem; border-radius:9999px; display:inline-flex; align-items:center; justify-content:center; color:#fff; background:rgba(255,255,255,.08); border:1.5px solid #fff; box-shadow:0 1px 4px rgba(15,23,42,.18); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); transition:background .2s; }
+  .hv-pause::before { content:''; position:absolute; inset:-6px; border-radius:9999px; } /* größere Klickfläche (44 px), sichtbar bleiben 32 px */
+  @media (min-width:640px) { .hv-pause { right:16px; bottom:16px; } }
+  .hv-pause:hover { background:rgba(255,255,255,.22); }
+  .hv-pause svg { filter:drop-shadow(0 1px 1px rgba(15,23,42,.25)); }
+  .hv-pause:focus-visible { outline:2px solid #fff; outline-offset:2px; }
+  .hv-pause .hv-ico-play { display:none; } .hv-pause[aria-pressed="true"] .hv-ico-play { display:block; } .hv-pause[aria-pressed="true"] .hv-ico-pause { display:none; }
+</style>
 </head>
   <body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
 
@@ -365,38 +404,29 @@ opacity: 0 !important;
   })();
 </script>
 
-<!-- Background (component) added by Aura -->
-<div class="aura-background-component top-0 w-full -z-10 h-screen absolute" data-alpha-mask="80" style="; mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)"><div class="aura-background-component top-0 w-full -z-10 absolute h-full">
-  <div data-us-project="yACzULFKkgXAmEcep6hu" data-us-scale="0.5" data-us-dpi="1" data-us-fps="30" class="absolute w-full h-full left-0 top-0 -z-10"></div>
-  <script type="text/javascript">
-    !function(){function u(){try{var c=document.createElement("canvas");return !!(window.WebGLRenderingContext&&(c.getContext("webgl")||c.getContext("experimental-webgl")))}catch(e){return!1}}if(u()&&!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head || document.body).appendChild(i)}}();
-  </script>
-</div></div>
+<!-- Unicorn background removed, video in the hero -->
     <!-- Global Header -->
 <div id="site-header"><!-- partial:header:start -->
 <!-- Top Navigation -->
-    <header class="relative z-20 border-b border-gray-100">
-      <div class="sm:px-6 lg:px-8 max-w-7xl mr-auto ml-auto pr-4 pl-4">
-        <div class="flex sm:py-6 pt-4 pb-4 relative items-center justify-between">
+    <header class="relative z-20 border-b border-gray-100 bg-white">
+      <div class="px-4 sm:px-6">
+        <div class="flex py-2.5 sm:py-3 relative items-center">
   <!-- Brand -->
   <a href="/en/" class="flex gap-x-3 gap-y-3 items-center shrink-0 relative">
-    <img src="/assets/images/Logo_Alphalearn_outlines_fluid_animated.svg" alt="Alphalearn" class="h-[43px] w-auto max-w-[198px] object-contain" loading="eager" decoding="async">
+    <img src="/assets/images/Logo_Alphalearn_outlines_fluid_animated.svg" alt="Alphalearn" class="h-[30px] sm:h-[34px] w-auto max-w-[157px] object-contain" loading="eager" decoding="async">
     <span class="sr-only font-geist">Alphalearn</span>
   </a>
 
   <!-- Centered Navigation Group (Desktop) -->
-  <nav class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-8">
+  <nav class="hidden md:flex items-center gap-7 ml-10 lg:ml-12" style="position:relative; top:3px">
     <a href="/en/demos.html" class="nav-link hover:text-blue-600 transition-colors group text-sm font-medium text-gray-600 font-geist relative">
       Demos
-      <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
     </a>
     <a href="/en/pricing.html" class="nav-link text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors font-geist relative group">
       Pricing
-      <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
     </a>
     <a href="/en/features.html" class="nav-link hover:text-blue-600 transition-colors group text-sm font-medium text-gray-600 font-geist relative">
     Features
-    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
   </a>
   </nav>
 
@@ -419,7 +449,7 @@ opacity: 0 !important;
 
 
   <!-- Right Actions (Desktop & Mobile Toggle) -->
-  <div class="flex items-center gap-3 sm:gap-4 z-10 shrink-0 relative">
+  <div class="flex items-center gap-3 sm:gap-4 z-10 shrink-0 relative ml-auto">
     
     <!-- Language Toggle (Desktop) -->
     <div class="hidden md:flex items-center bg-gray-100/80 ring-1 ring-gray-200 rounded-lg p-0.5">
@@ -431,12 +461,12 @@ opacity: 0 !important;
     <div class="hidden md:flex gap-1 border-gray-200 border-l ml-1 pl-2 gap-x-1 gap-y-1 items-center">
         <!-- Login Icon -->
         <a href="https://portal.alphabees.de/auth/login" class="group hover:bg-blue-50 transition-all duration-300 rounded-full pt-2 pr-2 pb-2 pl-2 relative" aria-label="Login">
-           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-x-0.5 w-[20px] h-[20px]" data-icon-replaced="true" style="width: 20px; height: 20px; color: rgb(37, 99, 235);"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" class=""></path><polyline points="10 17 15 12 10 7" class=""></polyline><line x1="15" x2="3" y1="12" y2="12" class=""></line></svg>
+           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in text-gray-600 group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-x-0.5 w-[20px] h-[20px]" data-icon-replaced="true" style="width: 20px; height: 20px;"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" class=""></path><polyline points="10 17 15 12 10 7" class=""></polyline><line x1="15" x2="3" y1="12" y2="12" class=""></line></svg>
            <span class="absolute top-full mt-2 left-1/2 -translate-x-1/2 px-2 py-1 bg-gray-900 text-white text-[10px] font-medium rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap font-geist shadow-lg transform translate-y-1 group-hover:translate-y-0">login</span>
         </a>
         <!-- Register Icon -->
         <a href="https://portal.alphabees.de/auth/register" class="group hover:bg-blue-50 transition-all duration-300 rounded-full pt-2 pr-2 pb-2 pl-2 relative" aria-label="Register">
-           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-plus group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 w-[20px] h-[20px]" data-icon-replaced="true" style="color: rgb(37, 99, 235); width: 20px; height: 20px;">
+           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-plus text-gray-600 group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 w-[20px] h-[20px]" data-icon-replaced="true" style="width: 20px; height: 20px;">
              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" class=""></path>
              <circle cx="9" cy="7" r="4" class=""></circle>
              <line x1="19" x2="19" y1="8" y2="14"></line>
@@ -462,7 +492,7 @@ opacity: 0 !important;
       </div>
       <!-- Mobile Menu -->
       <div id="mobileMenu" class="md:hidden hidden">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="px-4 sm:px-6">
           <div class="border-t border-gray-100"></div>
           <div class="py-3 space-y-1 divide-y divide-gray-100 border-b border-gray-100">
             <a href="/en/demos.html" class="nav-link block hover:text-gray-900 text-sm text-gray-700 font-geist pt-3 pr-2 pb-3 pl-2">Demos</a>
@@ -479,228 +509,43 @@ opacity: 0 !important;
 
     <!-- Hero -->
     <main class="relative">
-      <div class="sm:px-6 lg:px-8 sm:pt-24 lg:pt-32 xl:pt-40 sm:pb-24 lg:pb-32 xl:pb-40 max-w-7xl mr-auto ml-auto pt-24 pr-4 pb-24 pl-4">
-  <div class="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] sm:gap-12 lg:gap-16 xl:gap-20 gap-x-0 gap-y-8 items-center">
+      <div class="sm:px-6 lg:px-8 max-w-7xl mr-auto ml-auto pr-4 pl-4">
+  <script>document.documentElement.style.setProperty("--hv-vw", document.documentElement.clientWidth + "px");</script>
+  <div class="hv-band">
+    <div class="hv-media" aria-hidden="true">
+      <video class="hv-video" autoplay muted loop playsinline preload="auto" poster="/assets/video/Alphalearn_Hero_Background_Video_Poster.jpg">
+        <source src="/assets/video/Alphalearn_Hero_Background_Video.mp4" type="video/mp4">
+      </video>
+      <div class="hv-shade"></div>
+    </div>
+    <div class="hv-controls"><button type="button" class="hv-pause" aria-label="Pause background video" aria-pressed="false">
+      <svg class="hv-ico-pause" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+      <svg class="hv-ico-play" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>
+    </button></div>
+  <div class="grid grid-cols-1 sm:gap-12 lg:gap-16 xl:gap-20 gap-x-0 gap-y-8 items-center">
   <!-- Left: Copy -->
-  <section class="order-1 lg:order-2 lg:mt-32 mt-24 relative">
+  <section class="order-1 lg:order-2 relative">
     <div class="hero-h1-col lg:max-w-6xl w-full max-w-[772px]">
 
 
-      <h1 class="hero-h1 leading-[0.95] sm:mt-6 sm:text-5xl md:text-6xl text-4xl tracking-tight font-geist mt-6" style="animation: 1s ease-out 0.2s 1 normal both running fadeSlideIn">AI tutor as a plugin.<br>Also for Moodle and ILIAS.</h1>
+      <h1 class="hero-h1 text-white leading-[0.95] sm:mt-6 sm:text-5xl md:text-6xl text-4xl tracking-tight font-geist mt-6" style="animation: 1s ease-out 0.2s 1 normal both running fadeSlideIn">Stay independent.<br>AI tutor as a plugin.</h1>
 
-      <p class="sm:mt-6 sm:text-lg lg:text-base xl:text-lg lg:max-w-none -multi text-base text-gray-600 font-geist max-w-[676px] mt-6" style="animation: 1s ease-out 0.2s 1 normal both running fadeSlideIn">More support for learners. Less work for instructors.</p>
+      <p class="sm:mt-6 sm:text-lg lg:text-base xl:text-lg lg:max-w-none -multi text-base text-white/90 font-geist max-w-[676px] mt-6" style="animation: 1s ease-out 0.2s 1 normal both running fadeSlideIn">Also for Moodle and ILIAS.</p>
 
       <div class="flex flex-col sm:flex-row mt-8 gap-3 items-stretch sm:items-center justify-start" style="animation: fadeSlideIn 1s ease-out 0.4s both">
 
-        <button data-cta="hero_demo" type="button" class="button" onclick="openVideoLightbox()" id="videoButton">
-  <div class="points_wrapper">
-    <i class="point"></i><i class="point"></i><i class="point"></i><i class="point"></i><i class="point"></i>
-    <i class="point"></i><i class="point"></i><i class="point"></i><i class="point"></i><i class="point"></i>
-  </div>
-
-  <span class="inner">watch demo <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
-      <path d="M5 12h14" class=""></path>
-      <path d="m12 5 7 7-7 7"></path>
-    </svg></span>
-
-  <style>
-    .button {
-      cursor: pointer;
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      transition: all 0.25s ease;
-      background: radial-gradient(65.28% 65.28% at 50% 100%,
-          rgba(34, 211, 238, 0.8) 0%,
-          rgba(34, 211, 238, 0) 100%),
-        linear-gradient(0deg, #2563eb, #2563eb);
-      border-radius: 9999px;              /* pill */
-      border: none;
-      outline: none;
-      padding: 12px 20px;                 /* optional: a bit wider for pill look */
-      min-height: 48px;
-      width: 260px;
-
-    }
-
-    .button::before,
-    .button::after {
-      content: "";
-      position: absolute;
-      transition: all 0.5s ease-in-out;
-      z-index: 0;
-    }
-
-    .button::before {
-      inset: 1px;
-      background: linear-gradient(177.95deg,
-          rgba(255, 255, 255, 0.19) 0%,
-          rgba(255, 255, 255, 0) 100%);
-      border-radius: 9999px;              /* pill */
-    }
-
-    .button::after {
-      inset: 2px;
-      background: radial-gradient(65.28% 65.28% at 50% 100%,
-          rgba(34, 211, 238, 0.8) 0%,
-          rgba(34, 211, 238, 0) 100%),
-        linear-gradient(0deg, #2563eb, #2563eb);
-      border-radius: 9999px;              /* pill */
-    }
-
-    .button:active { transform: scale(0.95); }
-
-    .points_wrapper {
-      overflow: hidden;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      position: absolute;
-      z-index: 1;
-    }
-
-    .points_wrapper .point {
-      bottom: -10px;
-      position: absolute;
-      animation: floating-points infinite ease-in-out;
-      pointer-events: none;
-      width: 2px;
-      height: 2px;
-      background-color: #fff;
-      border-radius: 9999px;
-    }
-
-    @keyframes floating-points {
-      0% { transform: translateY(0); }
-      85% { opacity: 0; }
-      100% { transform: translateY(-55px); opacity: 0; }
-    }
-
-    .points_wrapper .point:nth-child(1) { left: 10%; opacity: 1; animation-duration: 2.35s; animation-delay: 0.2s; }
-    .points_wrapper .point:nth-child(2) { left: 30%; opacity: 0.7; animation-duration: 2.5s; animation-delay: 0.5s; }
-    .points_wrapper .point:nth-child(3) { left: 25%; opacity: 0.8; animation-duration: 2.2s; animation-delay: 0.1s; }
-    .points_wrapper .point:nth-child(4) { left: 44%; opacity: 0.6; animation-duration: 2.05s; }
-    .points_wrapper .point:nth-child(5) { left: 50%; opacity: 1; animation-duration: 1.9s; }
-    .points_wrapper .point:nth-child(6) { left: 75%; opacity: 0.5; animation-duration: 1.5s; animation-delay: 1.5s; }
-    .points_wrapper .point:nth-child(7) { left: 88%; opacity: 0.9; animation-duration: 2.2s; animation-delay: 0.2s; }
-    .points_wrapper .point:nth-child(8) { left: 58%; opacity: 0.8; animation-duration: 2.25s; animation-delay: 0.2s; }
-    .points_wrapper .point:nth-child(9) { left: 98%; opacity: 0.6; animation-duration: 2.6s; animation-delay: 0.1s; }
-    .points_wrapper .point:nth-child(10){ left: 65%; opacity: 1; animation-duration: 2.5s; animation-delay: 0.2s; }
-
-    .inner {
-      z-index: 2;
-      gap: 6px;
-      position: relative;
-      width: 100%;
-      color: white;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      font-weight: 500;
-      line-height: 1.5;
-      transition: color 0.2s ease-in-out;
-    }
-
-    .inner svg.icon {
-      width: 18px;
-      height: 18px;
-      transition: transform 0.3s ease;
-      stroke: white;
-      fill: none;
-    }
-
-    .button:hover svg.icon { transform: translateX(2px); }
-    .button:hover svg.icon path { animation: dash 0.8s linear forwards; }
-
-    @keyframes dash {
-      0% { stroke-dasharray: 0, 20; stroke-dashoffset: 0; }
-      50% { stroke-dasharray: 10, 10; stroke-dashoffset: -5; }
-      100% { stroke-dasharray: 20, 0; stroke-dashoffset: -10; }
-    }
-  </style>
-</button>
-        <button data-cta="hero_trial" class="inline-flex hover:bg-white/10 transition-all duration-300 ease-out cursor-pointer hover:shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_20px_40px_-5px_rgba(15,23,42,0.2),0px_10px_10px_-5px_rgba(0,0,0,0.04)] hover:scale-105 active:scale-95 text-sm font-medium text-gray-900 font-geist bg-white/10 w-[260px] border-white/20 border rounded-full pt-3 pr-5 pb-3 pl-5 shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(15,23,42,0.18),0px_12px_12px_-6px_rgba(0,0,0,0.06)] backdrop-blur-md gap-x-2 gap-y-x-2 items-center justify-center" onclick="window.location.href='https://portal.alphabees.de/auth/register'" role="button">start free trial</button>
+                <button data-cta="hero_trial" class="inline-flex hover:bg-white/10 transition-all duration-300 ease-out cursor-pointer hover:shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_20px_40px_-5px_rgba(15,23,42,0.2),0px_10px_10px_-5px_rgba(0,0,0,0.04)] hover:scale-105 active:scale-95 text-sm font-medium text-white font-geist bg-white/10 w-[260px] border-white/40 border rounded-full pt-3 pr-5 pb-3 pl-5 shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(15,23,42,0.18),0px_12px_12px_-6px_rgba(0,0,0,0.06)] backdrop-blur-md gap-x-2 gap-y-x-2 items-center justify-center" onclick="window.location.href='https://portal.alphabees.de/auth/register'" role="button">try for free</button>
 
 
       </div>
 
-      <!-- Divider -->
-      <div class="sm:mt-8 h-px bg-white/10 mt-6"></div>
 
-      <!-- Feature bullets -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-3 sm:gap-6 sm:mt-8 mt-8 gap-x-4 gap-y-4" style="animation: fadeSlideIn 1s ease-out 0.5s both">
-        <div class="flex items-start gap-3">
-
-          <div class="">
-
-
-          </div>
-        </div>
-
-        <div class="flex items-start gap-3">
-
-          <div class="">
-
-
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- Right: Visual -->
-  <section class="order-1 lg:order-2 mt-12 relative" style="animation: fadeSlideIn 1s ease-out 0.6s both">
-    <!-- Colorful background glow -->
-    <div class="absolute inset-0 sm:-inset-10 pointer-events-none">
-      <div class="absolute right-6 sm:right-10 top-0 h-48 w-48 sm:h-72 sm:w-72 rounded-full bg-fuchsia-500/30 blur-3xl">
-      </div>
-      <div class="absolute left-2 sm:left-5 top-12 sm:top-20 h-48 w-48 sm:h-72 sm:w-72 rounded-full bg-indigo-500/30 blur-3xl">
-      </div>
-      <div class="absolute right-0 bottom-6 sm:bottom-10 h-48 w-48 sm:h-72 sm:w-72 rounded-full bg-amber-400/30 blur-3xl">
-      </div>
-    </div>
-
-    <!-- Chart Card -->
-    <div class="-mt-16 sm:max-w-md lg:mx-0 lg:ml-auto lg:-mt-24 xl:-mt-12 sm:p-4 sm:rounded-3xl bg-white/70 max-w-sm z-10 rounded-2xl ring-black/5 ring-1 pt-3 pr-3 pb-1 pl-3 relative shadow-[0_2px_2px_rgba(0,0,0,0.04),_0_8px_12px_rgba(0,0,0,0.08),_0_24px_32px_rgba(0,0,0,0.10)] backdrop-blur-md">
-
-  <!-- Header -->
-  <div class="flex items-center justify-between">
-    <span class="text-xs font-medium text-gray-700 font-geist">
-
-    </span>
-
-    <span class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-1 text-emerald-600 text-xs font-medium font-geist">
-      <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
-    Live
-    </span>
-  </div>
-
-  <!-- Chat Container -->
-  <div class="mt-2 rounded-xl bg-white ring-1 ring-black/5 overflow-hidden">
-    <!-- Height is critical -->
-    <div class="h-[420px] sm:h-[420px]">
-      <iframe title="Alphabees AI Tutor" class="w-full h-full border-0" data-src="https://chat.alphabees.de/production/index.html?botId=355cb97f-f076-42b7-8aac-b0dfb8e4a236&amp;apiKey=359ea983-451c-4c2a-bbf1-ea467946e84f&amp;isFullscreen=true" allow="clipboard-read; clipboard-write; microphone; camera; storage-access"></iframe>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <div class="hidden">
-    <div class="mt-3 flex justify-between items-center text-[11px] text-gray-500">
-      <span class="font-geist">.</span>
-      <span class="inline-flex items-center gap-1 text-xs font-medium text-gray-700 font-geist"></span>
-    </div>
-  </div>
-
 
 </div>
-
-    <!-- Social proof -->
-
-  </section>
-</div>
+  </div><!-- /hv-band -->
   <div class="sm:mt-24 sm:px-6 lg:px-8 w-full max-w-7xl mt-16 mr-auto ml-auto pr-4 pl-4" style="animation: fadeSlideIn 1s ease-out 0.8s both">
 
     <p class="text-sm font-medium text-gray-500 font-geist text-center mb-8">10,000+ daily users</p>
@@ -916,270 +761,183 @@ opacity: 0 !important;
     </style>
   </div>
 <!-- partial:logo-banner:end --></div>
-</div><section class="py-24 bg-white relative overflow-hidden border-b border-gray-100">
-  <!-- Section Content -->
-  <div class="sm:px-6 lg:px-8 max-w-7xl z-10 mr-auto ml-auto pr-4 pl-4 relative">
-    
-    <!-- Badge -->
-    <div class="flex justify-center mb-16 animate-on-scroll" style="animation: fadeSlideIn 1s ease-out 0.1s both">
-      <div class="inline-flex text-xs font-medium text-green-600 font-geist bg-green-100 border-orange-100/50 border rounded-full px-3 py-1 shadow-sm gap-x-2 gap-y-2 items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
-        Benefits
-      </div>
+</div><section class="relative overflow-hidden bg-white pt-32 pb-24 sm:pt-44 sm:pb-32 lg:pt-56" aria-labelledby="bn-h2">
+  <style>
+
+    .bn-icon { width:104px; height:104px; margin-left:-6px; }
+    .bn-ic { width:100%; height:100%; overflow:visible; }
+    .bn-ic [stroke] { vector-effect:non-scaling-stroke; stroke-width:2.2px; }
+    /* nur die animierten Teile – sonst verschiebt transform-origin auch die festen translate/scale-Attribute */
+    .bn-plug2, .bn-spk, .bn-grow, .bn-ring, .bn-bulb, .bn-rays, .bn-eyes { transform-box:fill-box; transform-origin:center; }
+    .bn-icon:not(.is-in) .bn-ic * { animation-play-state:paused !important; }
+    /* 1 Stecker */
+    .bn-plug2 { animation:bnPlugIn 4.4s cubic-bezier(.65,0,.25,1) infinite both; }
+    @keyframes bnPlugIn { 0%,18% { transform:translateX(8px); } 34%,78% { transform:translateX(-6.4px); } 92%,100% { transform:translateX(8px); } }
+    .bn-spk { opacity:0; animation:bnSpk 4.4s ease-out infinite both; }
+    @keyframes bnSpk { 0%,33% { opacity:0; transform:scale(.6); } 37% { opacity:1; transform:scale(1); } 46% { opacity:.25; } 50% { opacity:1; } 62%,100% { opacity:0; transform:scale(1.15); } }
+    /* 2 Gehirn wächst */
+    .bn-grow { animation:bnGrow 5.2s cubic-bezier(.34,1.4,.5,1) infinite both; }
+    @keyframes bnGrow { 0% { transform:scale(.55); opacity:0; } 6% { transform:scale(.55); opacity:1; } 24% { transform:scale(.7); } 46% { transform:scale(.86); } 68%,86% { transform:scale(1.04); opacity:1; } 96%,100% { transform:scale(1.08); opacity:0; } }
+    .bn-ring { opacity:0; animation:bnRing 5.2s ease-out infinite both; }
+    @keyframes bnRing { 0%,62% { opacity:0; transform:scale(.7); } 70% { opacity:.55; transform:scale(.95); } 86%,100% { opacity:0; transform:scale(1.12); } }
+    /* 3 Orbi + Glühbirne */
+    .bn-bulb { animation:bnBulb 4.6s cubic-bezier(.2,.8,.2,1) infinite both; }
+    @keyframes bnBulb { 0%,10% { opacity:0; transform:translateY(12px) scale(.8); } 32%,84% { opacity:1; transform:none; } 94%,100% { opacity:0; transform:translateY(-3px); } }
+    .bn-rays { opacity:0; animation:bnRays 4.6s ease-out infinite both; }
+    @keyframes bnRays { 0%,34% { opacity:0; transform:scale(.6); } 42% { opacity:1; transform:scale(1); } 56% { opacity:.4; } 64%,84% { opacity:1; } 94%,100% { opacity:0; } }
+    .bn-glow { opacity:0; animation:bnGlow 4.6s ease-out infinite both; }
+    @keyframes bnGlow { 0%,34% { opacity:0; } 44%,84% { opacity:.28; } 94%,100% { opacity:0; } }
+    .bn-eyes { animation:bnLook 4.6s ease-in-out infinite both; }
+    @keyframes bnLook { 0%,20% { transform:translateY(0); } 30%,80% { transform:translateY(-1.3px); } 76% { transform:translateY(-1.3px) scaleY(1); } 78% { transform:translateY(-1.3px) scaleY(.15); } 80% { transform:translateY(-1.3px) scaleY(1); } 90%,100% { transform:translateY(0); } }
+    @media (prefers-reduced-motion: reduce) {
+      .bn-ic * { animation:none !important; }
+      .bn-plug2 { transform:translateX(-6.4px); } .bn-grow { transform:none; opacity:1; } .bn-bulb { opacity:1; } .bn-rays { opacity:1; } .bn-glow { opacity:.28; } .bn-ring, .bn-spk { opacity:0; }
+    }
+
+    /* 3D-Stecker groß (linke Kachel) */
+    .bn-icon--lg { width:min(100%, 310px); height:auto; aspect-ratio:260 / 244; margin-left:-10px; }
+    .bn-ic .bn-pin { stroke-width:3.6px; }
+    .bn-p3-plug, .bn-p3-spk { transform-box:view-box; transform-origin:0 0; }
+    .bn-p3-plug { animation:bnP3Plug 4.8s cubic-bezier(.65,0,.25,1) infinite both; }
+    @keyframes bnP3Plug { 0%,18% { transform:translate(24.2px,14.0px); } 36%,80% { transform:translate(0,0); } 94%,100% { transform:translate(24.2px,14.0px); } }
+    .bn-p3-spk { opacity:0; animation:bnP3Spk 4.8s ease-out infinite both; }
+    @keyframes bnP3Spk { 0%,35% { opacity:0; } 39% { opacity:1; } 47% { opacity:.25; } 51% { opacity:1; } 62%,100% { opacity:0; } }
+    @media (prefers-reduced-motion: reduce) { .bn-p3-plug { transform:none; } .bn-p3-spk { opacity:0; } }
+
+    /* Gehirn groß (mittlere Kachel): pulsiert und sendet dabei eine Umriss-Welle nach außen */
+    .bn-br-beat, .bn-br-echo { transform-box:view-box; }
+    .bn-br-beat { animation:bnBrBeat 2.6s cubic-bezier(.45,0,.55,1) infinite both; }
+    @keyframes bnBrBeat { 0%,100% { transform:scale(1); } 20% { transform:scale(1.06); } 50% { transform:scale(1); } }
+    .bn-br-echo { opacity:0; animation:bnBrEcho 2.6s cubic-bezier(.2,.7,.3,1) infinite both; }
+    @keyframes bnBrEcho { 0%,19% { opacity:0; transform:scale(1.06); } 21% { opacity:.5; } 80%,100% { opacity:0; transform:scale(1.26); } }
+    @media (prefers-reduced-motion: reduce) { .bn-br-beat { transform:none; } .bn-br-echo { opacity:0; } }
+
+    /* Orbi groß (rechte Kachel): schaut nach links und rechts, blinzelt zwischendurch */
+    .bn-or-look { animation:bnOrLook 6.4s cubic-bezier(.65,0,.35,1) infinite both; }
+    @keyframes bnOrLook { 0%,10% { transform:translateX(0); } 16%,36% { transform:translateX(-3.4px); } 42%,54% { transform:translateX(0); } 60%,80% { transform:translateX(2.6px); } 86%,100% { transform:translateX(0); } }
+    .bn-or-blink { transform-box:fill-box; transform-origin:center; animation:bnOrBlink 6.4s linear infinite both; }
+    @keyframes bnOrBlink { 0%,5% { transform:scaleY(1); } 6.5% { transform:scaleY(.08); } 8%,45% { transform:scaleY(1); } 46.5% { transform:scaleY(.08); } 48%,90% { transform:scaleY(1); } 91.2% { transform:scaleY(.08); } 92.4% { transform:scaleY(1); } 93.6% { transform:scaleY(.08); } 95%,100% { transform:scaleY(1); } }
+    @media (prefers-reduced-motion: reduce) { .bn-or-look, .bn-or-blink { transform:none; } }
+
+
+    .bn-tile { position:relative; display:flex; flex-direction:column; justify-content:space-between; gap:3.5rem; min-height:22rem; padding:2.25rem; border-radius:1.75rem; background:#0a0a0f; color:#fff; text-decoration:none; overflow:hidden; isolation:isolate;
+      transition:transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s; box-shadow:0 1px 2px rgba(0,0,0,.08); }
+    .bn-tile::after { content:''; position:absolute; inset:0; z-index:-1; opacity:0; transition:opacity .4s; background:radial-gradient(80% 60% at 20% 0%, rgba(59,130,246,.18), transparent 70%), radial-gradient(70% 60% at 100% 100%, rgba(180,127,255,.16), transparent 70%); }
+    .bn-tile:hover { transform:translateY(-4px); box-shadow:0 30px 60px -30px rgba(10,10,15,.55); }
+    .bn-tile:hover::after { opacity:1; }
+    .bn-tile:focus-visible { outline:2px solid #6366f1; outline-offset:3px; }
+    @media (min-width:1024px) { .bn-tile { min-height:26rem; padding:2.75rem; } }
+    .bn-tile-t { font-size:clamp(1.6rem, 2.2vw, 2.1rem); line-height:1.15; font-weight:400; letter-spacing:-.02em; color:#fff; }
+    /* Link-Hinweis unten rechts: Kreis mit Pfeil, beim Überfahren weiß gefüllt */
+    .bn-tile-t { padding-right:1.5rem; }
+    .bn-go { position:absolute; right:1.25rem; bottom:1.25rem; display:grid; place-items:center; width:2.5rem; height:2.5rem; border-radius:9999px; border:1.5px solid rgba(255,255,255,.4); color:#fff; transition:background-color .3s ease, border-color .3s ease, color .3s ease; }
+    .bn-go svg { width:1.2rem; height:1.2rem; transition:transform .35s cubic-bezier(.2,.8,.2,1); }
+    @media (min-width:768px) and (max-width:1279px) { .bn-go { right:.9rem; bottom:.9rem; width:2.15rem; height:2.15rem; } .bn-go svg { width:1rem; height:1rem; } .bn-tile-t { padding-right:1rem; } }
+    @media (min-width:1280px) { .bn-go { width:2.6rem; height:2.6rem; } }
+    @media (min-width:768px) and (max-width:1023px) { .bn-tile-t { font-size:1.4rem; } }
+    .bn-tile:hover .bn-go, .bn-tile:focus-visible .bn-go { background:#fff; border-color:#fff; color:#0a0a0f; }
+    .bn-tile:hover .bn-go svg, .bn-tile:focus-visible .bn-go svg { transform:translate(2px, -2px); }
+    @media (prefers-reduced-motion: reduce) { .bn-go svg { transition:none; } }
+    /* Icons auf Schwarz: hellerer Verlauf */
+    .bn-tile stop:first-child { stop-color:#60A5FA; }
+    .bn-tile stop:last-child { stop-color:#A78BFA; }
+    /* nacheinander leicht hochschieben, sobald sichtbar */
+    .bn-tiles.js .bn-tile { opacity:0; transform:translateY(64px); transition:opacity 1.1s cubic-bezier(.2,.7,.2,1) var(--d), transform 1.2s cubic-bezier(.2,.7,.2,1) var(--d), box-shadow .4s; }
+    .bn-tiles.js .bn-tile.is-in { opacity:1; transform:none; }
+    .bn-tiles.js .bn-tile.is-in:hover { transform:translateY(-4px); transition-delay:0s; }
+    @media (max-width:767px) { .bn-tiles.js .bn-tile { transition-delay:0s; } }
+    @media (prefers-reduced-motion: reduce) { .bn-tiles.js .bn-tile { opacity:1; transform:none; transition:none; } }
+    .bn-h2 { font-size:clamp(2.4rem, 6.4vw, 5.75rem); line-height:1.06; letter-spacing:-.03em; }
+    @media (min-width:768px) { .bn-h2 span { white-space:nowrap; } }
+  </style>
+  <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mb-20 sm:mb-28 lg:mb-36">
+      <h2 id="bn-h2" class="bn-h2 text-left font-normal tracking-tight text-gray-950 font-geist"><span class="block">Keep your LMS.</span><span class="block">Keep your courses.</span><span class="block">Use AI without <span class="whitespace-nowrap">lock-in.</span></span></h2>
     </div>
-
-    <!-- Animated Tiles Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-      
-      <!-- Tile 1 -->
-      <div class="group hover:border-gray-200 hover:shadow-xl hover:shadow-gray-100/50 transition-all duration-300 animate-on-scroll flex flex-col sm:p-10 bg-gray-100/50 h-full border-gray-100 border rounded-3xl px-8 py-8 relative gap-x-8 gap-y-8" style="animation: fadeSlideIn 1s ease-out 0.2s both">
-        <div class="flex items-baseline gap-1">
-          <span class="text-6xl sm:text-7xl font-semibold tracking-tighter text-gray-900 font-geist tabular-nums counter-item" data-target="97">97</span>
-          <span class="text-4xl sm:text-5xl font-medium text-gray-400 font-geist tracking-tight">%</span>
-        </div>
-        
-        <div class="space-y-6">
-          <div class="w-full h-px bg-gray-200 group-hover:bg-orange-200/50 transition-colors duration-500"></div>
-          <p class="leading-relaxed text-lg font-medium text-gray-600 font-geist">The AI answers most of your learners' questions.</p>
-        </div>
-      </div>
-
-      <!-- Tile 2 -->
-      <div class="group hover:border-gray-200 hover:shadow-xl hover:shadow-gray-100/50 transition-all duration-300 animate-on-scroll flex flex-col sm:p-10 bg-gray-100/50 h-full border-gray-100 border rounded-3xl px-8 py-8 relative gap-x-8 gap-y-8" style="animation: fadeSlideIn 1s ease-out 0.3s both">
-        <div class="flex items-baseline gap-1">
-          <span class="text-6xl sm:text-7xl font-semibold tracking-tighter text-gray-900 font-geist tabular-nums counter-item" data-target="78">78</span>
-          <span class="text-4xl sm:text-5xl font-medium text-gray-400 font-geist tracking-tight">%</span>
-        </div>
-        
-        <div class="space-y-6">
-          <div class="w-full h-px bg-gray-200 group-hover:bg-orange-200/50 transition-colors duration-500"></div>
-          <p class="leading-relaxed text-lg font-medium text-gray-600 font-geist">Reduce your support tickets.</p>
-        </div>
-      </div>
-
-      <!-- Tile 3 -->
-      <div class="group hover:border-gray-200 hover:shadow-xl hover:shadow-gray-100/50 transition-all duration-300 animate-on-scroll flex flex-col sm:p-10 bg-gray-100/50 h-full border-gray-100 border rounded-3xl px-8 py-8 relative gap-x-8 gap-y-8" style="animation: fadeSlideIn 1s ease-out 0.4s both">
-        <div class="flex items-baseline gap-1">
-          <span class="text-6xl sm:text-7xl font-semibold tracking-tighter text-gray-900 font-geist tabular-nums counter-item" data-target="50">50</span>
-          <span class="text-4xl sm:text-5xl font-medium text-gray-400 font-geist tracking-tight">%</span>
-        </div>
-        
-        <div class="space-y-6">
-          <div class="w-full h-px bg-gray-200 group-hover:bg-orange-200/50 transition-colors duration-500"></div>
-          <p class="leading-relaxed text-lg font-medium text-gray-600 font-geist">Save time for instructors and staff</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Counter Animation Script -->
-  <script>
-    (function() {
-      const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.2
-      };
-
-      const runCounter = (el) => {
-        const target = parseInt(el.getAttribute('data-target'));
-        const duration = 2000; // Animation duration in ms
-        const frameDuration = 1000 / 60;
-        const totalFrames = Math.round(duration / frameDuration);
-        const easeOutExpo = t => t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
-        
-        let frame = 0;
-        
-        const counter = setInterval(() => {
-          frame++;
-          const progress = easeOutExpo(frame / totalFrames);
-          const currentCount = Math.round(target * progress);
-
-          if (frame === totalFrames) {
-            clearInterval(counter);
-            el.textContent = target;
-          } else {
-            el.textContent = currentCount;
-          }
-        }, frameDuration);
-      };
-
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            runCounter(entry.target);
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
-
-      document.querySelectorAll('.counter-item').forEach(el => {
-        observer.observe(el);
-      });
-    })();
-  </script>
-</section><section class="sm:py-32 overflow-hidden bg-white pt-24 pb-24 relative">
-  <div class="sm:px-6 lg:px-8 max-w-7xl mr-auto ml-auto pr-4 pl-4">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 gap-x-8 gap-y-8">
-
-      <!-- Problem Side (Left) -->
-      <div class="group sm:p-12 overflow-hidden flex flex-col animate-on-scroll bg-gray-50 border-gray-100 border rounded-3xl pt-8 pr-8 pb-8 pl-8 relative justify-between" style="animation: fadeSlideIn 1s ease-out 0.2s both">
-
-        <!-- Text Content -->
-        <div class="relative z-10 mb-10">
-          <div class="inline-flex items-center gap-2 rounded-full bg-red-50/50 border border-red-100/50 px-3 py-1 text-xs font-medium text-red-600 font-geist mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-alert-circle">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="12" x2="12" y1="8" y2="12"></line>
-              <line x1="12" x2="12.01" y1="16" y2="16"></line>
-            </svg>The problem</div>
-          <h2 class="sm:text-4xl leading-[1.1] text-3xl font-semibold text-gray-900 tracking-tight font-geist">In e‑learning, quality drops when learners lack guidance.</h2>
-          <p class="text-base text-gray-500 font-geist max-w-md mt-4">Learners often feel isolated. Questions go unanswered and motivation drops without timely feedback.</p>
-        </div>
-
-        <!-- Visual: Frustrated/Empty State UI -->
-        <div class="relative w-full mt-auto">
-          <!-- Window Frame -->
-          <div class="relative rounded-xl bg-white border border-gray-200 shadow-sm overflow-hidden select-none">
-            <!-- Header -->
-            <div class="h-10 border-b border-gray-100 flex items-center px-4 gap-2 bg-gray-50/50">
-              <div class="flex gap-1.5">
-                <div class="w-2.5 h-2.5 rounded-full bg-gray-200"></div>
-                <div class="w-2.5 h-2.5 rounded-full bg-gray-200"></div>
-              </div>
-            </div>
-            <!-- Body -->
-            <div class="p-6 h-[240px] flex flex-col relative">
-              <!-- Course Content Skeleton -->
-              <div class="space-y-3 opacity-30 blur-[1px]">
-                <div class="h-4 bg-gray-200 rounded w-3/4"></div>
-                <div class="h-4 bg-gray-200 rounded w-1/2"></div>
-                <div class="h-32 bg-gray-100 rounded-lg w-full mt-4"></div>
-              </div>
-
-              <!-- Floating "No Support" Elements -->
-              <div class="flex absolute top-0 right-0 bottom-0 left-0 blur-none items-center justify-center">
-                <div class="relative">
-                  <!-- Central Icon -->
-                  <div class="flex bg-gray-200 w-16 h-16 border-gray-100 border rounded-full relative shadow-sm items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="book-text" aria-hidden="true" class="lucide lucide-book-text" data-icon-set="lucide" data-icon-replaced="true" style="color: rgb(156, 163, 175);"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"></path><path d="M8 11h8"></path><path d="M8 7h6"></path></svg>
-                  </div>
-
-                  <!-- Question Marks -->
-                  <div class="-top-6 -right-8 animate-pulse absolute" style="animation-duration: 3s">
-                    <div class="flex text-lg font-bold text-red-300 font-geist bg-red-50 w-10 h-10 border-red-100 border rounded-full items-center justify-center">
-                      ?</div>
-                  </div>
-                  <div class="absolute -bottom-4 -left-10 animate-pulse" style="animation-delay: 1s; animation-duration: 4s">
-                    <div class="flex text-sm font-bold text-red-300 font-geist bg-red-100 w-8 h-8 border-gray-100 border rounded-full items-center justify-center">
-                      ?</div>
-                  </div>
-
-                  <!-- Tooltip -->
-                  <div class="absolute top-20 left-1/2 -translate-x-1/2 text-center">
-                    <span class="inline-flex items-center ring-inset text-xs font-medium text-gray-500 font-geist bg-gray-100 ring-gray-500/10 ring-1 rounded-md pt-1 pr-2 pb-1 pl-2">Monotonous scrolling through e-Learning<br>without interaction</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Solution Side (Right) -->
-      <div class="group sm:p-12 overflow-hidden flex flex-col animate-on-scroll bg-white border-gray-200 border rounded-3xl pt-8 pr-8 pb-8 pl-8 relative shadow-[0_25px_70px_-20px_rgba(59,130,246,0.25),0_15px_40px_-20px_rgba(168,85,247,0.20)] justify-between" style="animation: fadeSlideIn 1s ease-out 0.4s both">
-
-  <!-- Subtle Background Glow -->
-  <div class="absolute -right-20 -top-20 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none mix-blend-multiply">
-  </div>
-  <div class="absolute -left-20 bottom-0 w-60 h-60 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none mix-blend-multiply">
-  </div>
-
-  <!-- Text Content -->
-  <div class="relative z-10 mb-10">
-    <div class="inline-flex text-xs font-medium text-green-600 font-geist bg-green-50 border-blue-100 border rounded-full mb-6 pt-1 pr-3 pb-1 pl-3 gap-x-2 gap-y-2 items-center">
-      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles">
-        <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z">
-        </path>
-      </svg>The solution</div>
-    <h2 class="sm:text-4xl leading-[1.1] bg-clip-text text-3xl font-semibold text-transparent tracking-tight font-geist bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">Boost learning quality with a digital private tutor.</h2>
-    <p class="mt-4 text-base text-gray-500 font-geist max-w-md">Instant help, interactive learning, and personal guidance — available 24/7.</p>
-  </div>
-
-  <!-- Visual: Active AI Tutor UI -->
-  <div class="relative w-full mt-auto">
-    <!-- Window Frame -->
-    <div class="relative rounded-xl bg-white border border-gray-200 shadow-lg shadow-blue-900/5 overflow-hidden ring-1 ring-black/5">
-      <!-- Header -->
-      <div class="flex bg-white h-10 border-gray-100 border-b pr-4 pl-4 items-center justify-between">
-        <div class="flex gap-1.5">
-          <div class="w-2.5 h-2.5 rounded-full bg-red-400/80"></div>
-          <div class="w-2.5 h-2.5 rounded-full bg-amber-400/80"></div>
-          <div class="w-2.5 h-2.5 rounded-full bg-emerald-400/80"></div>
-        </div>
-        <div class="flex items-center gap-1.5">
-          <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
-          <span class="text-[10px] font-medium text-gray-400 font-geist uppercase tracking-wider">AI Tutor Online</span>
-        </div>
-      </div>
-      <!-- Body -->
-      <div class="flex flex-col bg-gradient-to-b from-white to-gray-50/50 h-[240px] pt-6 pr-6 pb-6 pl-6 relative shadow-inner">
-
-        <!-- Chat Interaction -->
-        <div class="flex flex-col gap-4 w-full max-w-[90%] mx-auto">
-          <!-- User Message -->
-          <div class="flex items-end gap-2 self-end max-w-[85%]">
-            <div class="bg-gray-100 text-gray-700 px-4 py-2.5 rounded-2xl rounded-br-sm text-sm font-geist shadow-sm">Can you explain that example again?</div>
-            <div class="w-6 h-6 rounded-full bg-gray-200 border border-white shadow-sm flex-shrink-0"></div>
-          </div>
-
-          <!-- AI Response -->
-          <div class="flex items-start gap-3 max-w-[90%] mt-1">
-            <div class="flex shadow-blue-500/20 flex-shrink-0 bg-gradient-to-br from-blue-500 to-indigo-600 w-8 h-8 rounded-full shadow-md items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot text-white">
-                <path d="M12 8V4H8"></path>
-                <rect width="16" height="12" x="4" y="8" rx="2" class=""></rect>
-                <path d="M2 14h2"></path>
-                <path d="M20 14h2"></path>
-                <path d="M15 13v2"></path>
-                <path d="M9 13v2"></path>
-              </svg>
-            </div>
-            <div class="flex flex-col gap-1">
-              <div class="bg-white border border-blue-100/50 text-gray-800 px-4 py-3 rounded-2xl rounded-tl-sm text-sm font-geist shadow-[0_2px_8px_-2px_rgba(0,0,0,0.08)]">
-                <p class="">Absolutely! Think of it as a personal coach that’s always there for you.</p>
-              </div>
-              <!-- Typing Indicator / Follow up -->
-              <div class="flex items-center gap-2 mt-1">
-                <span class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-600 ring-1 ring-inset ring-emerald-600/20 font-geist">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg>
-                        Verstanden
-                      </span>
-                <span class="inline-flex items-center gap-1 rounded-full bg-white px-2 py-0.5 text-[10px] font-medium text-gray-500 ring-1 ring-inset ring-gray-200 font-geist hover:bg-gray-50 cursor-pointer transition">More details...</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
+    <div class="bn-tiles grid grid-cols-1 gap-5 md:grid-cols-3 lg:gap-6">
+      <a href="/en/features.html#area-moodle-integrationen" class="bn-tile group" style="--d:0ms">
+        <div class="bn-icon bn-icon--lg" aria-hidden="true"><svg viewBox="0 0 260 244" class="bn-ic bn-ic--plug3d" role="presentation" focusable="false">
+  <defs><linearGradient id="bnP3" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="244"><stop offset="0" stop-color="#3B82F6"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient></defs>
+  <g fill="none" stroke="url(#bnP3)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M37.2 60.0 L123.8 10.0 L144.6 22.0 L144.6 122.0 L58.0 172.0 L37.2 160.0 Z"/>
+      <path d="M37.2 60.0 L58.0 72.0 L144.6 22.0"/><path d="M58.0 72.0 L58.0 172.0"/>
+    <g transform="matrix(0.8660 -0.5000 0.0000 1.0000 58.0 72.0)"><circle cx="50" cy="51" r="31"/><circle cx="50" cy="51" r="25" stroke-opacity=".45"/></g>
+  </g>
+  <g fill="url(#bnP3)" transform="matrix(0.8660 -0.5000 0.0000 1.0000 58.0 72.0)"><circle cx="38" cy="51" r="4.4"/><circle cx="62" cy="51" r="4.4"/></g>
+  <g fill="none" stroke="url(#bnP3)" stroke-linecap="round" stroke-linejoin="round">
+    <g class="bn-p3-spk"><path d="M80.5 83.0 l-7.0 -7.0"/><path d="M130.7 48.0 l1.5 -10.0"/><path d="M139.4 107.0 l10.0 1.0"/></g>
+    <g class="bn-p3-plug">
+      <path class="bn-pin" d="M110.0 115.0 L90.9 104.0"/><path class="bn-pin" d="M130.7 103.0 L111.7 92.0"/>
+      <path d="M156.7 130.0 L165.4 135.0 C 186.2 147.0 240 168 228 196 C 216 226 150 210 110 220 C 84 226 54 228 26 234"/>
+      <path d="M95.2 111.5 L142.0 84.5 L180.1 106.5 L180.1 126.5 L133.3 153.5 L95.2 131.5 Z" fill="#0a0a0f"/>
+        <path d="M95.2 111.5 L133.3 133.5 L180.1 106.5"/><path d="M133.3 133.5 L133.3 153.5"/>
+      <path d="M116.9 107.8 L136.7 119.2" stroke-opacity=".55"/><path d="M126.2 102.4 L146.1 113.8" stroke-opacity=".55"/><path d="M135.6 97.0 L155.4 108.4" stroke-opacity=".55"/>
+      <path d="M152.4 132.5 l5.2 3.0"/><path d="M161.1 127.5 l5.2 3.0"/>
+    </g>
+  </g>
+</svg></div>
+        <h3 class="bn-tile-t font-geist">Plug and Play.<br>AI in your LMS.</h3>
+        <span class="bn-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+      </a>
+      <a href="/en/features.html#area-wissensbasis-autosync" class="bn-tile group" style="--d:240ms">
+        <div class="bn-icon bn-icon--lg" aria-hidden="true"><svg viewBox="0 0 260 244" class="bn-ic bn-ic--brain" role="presentation" focusable="false">
+  <defs><linearGradient id="bnB3" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="244"><stop offset="0" stop-color="#3B82F6"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient></defs>
+  <g fill="none" stroke="url(#bnB3)" stroke-linecap="round" stroke-linejoin="round">
+    <g class="bn-br-echo" style="transform-origin:130.0px 122.0px"><path d="M76.5 48.0 C69.8 52.0 69.0 53.0 64.0 57.7 C58.9 62.4 50.7 70.7 46.3 76.3 C41.9 81.9 40.1 85.9 37.5 91.4 C35.0 97.0 32.3 104.2 31.0 109.6 C29.7 115.0 29.5 118.9 29.8 123.9 C30.1 128.9 31.2 134.9 32.7 139.7 C34.2 144.4 36.3 148.6 38.7 152.5 C41.0 156.3 43.8 159.9 46.9 162.9 C50.0 166.0 53.1 168.5 57.3 170.6 C61.4 172.8 60.5 173.2 72.0 175.8 C83.6 178.3 113.9 182.1 126.7 185.8 C139.5 189.6 143.6 195.9 148.8 198.5 C154.0 201.2 153.8 200.9 157.9 201.6 C162.0 202.2 165.8 205.5 173.5 202.2 C181.1 198.9 196.9 187.6 203.7 181.9 C210.5 176.2 211.2 172.9 214.2 168.0 C217.3 163.0 219.7 161.9 222.1 152.1 C224.6 142.2 228.7 119.6 229.0 109.0 C229.4 98.5 228.5 96.9 224.4 88.7 C220.2 80.5 211.8 68.1 204.1 59.8 C196.5 51.6 185.5 43.8 178.4 39.4 C171.3 34.9 167.5 34.8 161.5 33.3 C155.5 31.9 148.0 31.2 142.4 30.6 C136.8 30.0 134.5 29.3 128.1 29.8 C121.7 30.3 112.8 30.8 104.2 33.8 C95.6 36.9 83.2 44.0 76.5 48.0 Z"/></g>
+    <g class="bn-br-beat" style="transform-origin:130.0px 122.0px">
+      <path d="M195.6 54.9 C195.2 54.0 194.4 51.4 193.1 49.6 C191.8 47.8 189.2 45.6 187.6 44.2 C186.0 42.8 185.4 42.4 183.4 41.3 C181.5 40.1 178.9 38.6 175.9 37.5 C173.0 36.5 168.4 35.4 165.8 34.9 C163.1 34.4 163.4 34.2 160.2 34.6 C157.1 34.9 149.5 36.1 146.8 36.9 C144.1 37.7 145.7 38.4 144.1 39.2 C142.6 39.9 140.0 40.2 137.5 41.3 C135.0 42.3 131.3 44.4 129.3 45.6 C127.4 46.7 127.6 46.5 125.6 48.1 C123.6 49.6 119.8 52.6 117.4 54.8 C115.0 56.9 113.2 58.9 111.4 61.1 C109.5 63.3 107.6 66.1 106.5 67.9 C105.3 69.7 105.0 70.5 104.6 71.9 C104.1 73.3 104.1 75.8 104.0 76.5"/><path d="M145.9 37.2 C145.7 36.8 145.1 35.4 144.7 34.8 C144.3 34.3 145.1 34.5 143.7 33.8 C142.2 33.2 138.0 31.5 136.0 30.8 C133.9 30.2 133.5 30.1 131.3 29.9 C129.1 29.8 125.2 29.7 122.7 29.9 C120.3 30.2 118.7 30.6 116.5 31.2 C114.4 31.9 111.8 33.1 109.9 34.1 C108.0 35.1 106.1 36.2 105.1 37.3 C104.0 38.3 103.8 40.0 103.5 40.5"/><path d="M109.2 44.5 C108.1 43.8 104.7 41.2 102.6 40.4 C100.6 39.7 99.3 39.9 96.9 40.1 C94.5 40.3 91.2 40.4 88.3 41.4 C85.3 42.3 81.9 44.0 79.2 45.8 C76.5 47.7 73.9 50.5 72.2 52.2 C70.4 54.0 70.8 54.9 68.8 56.3 C66.9 57.7 62.7 59.2 60.5 60.5 C58.3 61.9 57.4 62.6 55.6 64.4 C53.8 66.2 51.1 69.6 49.7 71.4 C48.4 73.3 48.3 73.8 47.5 75.6 C46.8 77.5 46.6 80.2 45.2 82.5 C43.8 84.7 40.7 86.9 39.1 89.1 C37.5 91.4 36.3 93.7 35.3 96.0 C34.4 98.2 33.9 100.6 33.5 102.6 C33.2 104.6 33.2 106.2 33.3 108.1 C33.4 110.0 34.0 113.1 34.2 114.1"/><path d="M162.5 48.0 C163.3 48.5 166.4 49.8 167.7 50.8 C169.1 51.8 170.0 52.8 170.8 53.8 C171.5 54.7 171.9 55.3 172.2 56.4 C172.6 57.5 172.8 59.2 172.7 60.4 C172.6 61.6 172.1 62.8 171.7 63.7 C171.3 64.6 170.6 65.6 170.4 65.9"/><path d="M195.6 54.9 C196.6 55.1 199.9 55.5 201.5 56.1 C203.1 56.6 203.4 56.6 205.3 58.2 C207.2 59.8 211.0 63.8 212.9 65.9 C214.8 68.1 215.1 68.5 216.6 71.2 C218.1 74.0 220.8 79.7 222.0 82.5 C223.1 85.3 223.1 86.2 223.5 88.2 C223.9 90.2 224.3 92.6 224.2 94.6 C224.2 96.6 223.5 99.2 223.4 100.1"/><path d="M195.6 54.9 C195.5 55.1 195.0 55.8 194.9 56.0"/><path d="M84.7 56.4 C84.4 56.7 83.8 57.1 82.8 58.2 C81.9 59.3 79.9 61.6 79.0 63.3 C78.0 64.9 77.4 66.7 77.1 68.1 C76.9 69.5 77.2 70.8 77.4 71.7 C77.6 72.5 77.9 72.6 78.6 73.1 C79.2 73.5 79.7 74.0 81.2 74.3 C82.7 74.6 85.9 74.7 87.6 75.0 C89.3 75.3 90.6 75.8 91.6 76.2 C92.6 76.6 93.1 76.9 93.8 77.4 C94.5 77.9 95.5 79.1 95.8 79.4"/><path d="M137.7 60.2 C138.8 59.9 141.8 58.9 144.1 58.6 C146.4 58.4 149.1 58.5 151.4 58.7 C153.8 59.0 156.3 59.7 158.3 60.3 C160.2 61.0 161.9 61.9 163.3 62.6 C164.7 63.3 165.5 64.1 166.6 64.7 C167.8 65.2 169.8 65.7 170.4 65.9"/><path d="M170.4 65.9 C170.6 66.4 170.5 67.3 171.7 69.0 C172.9 70.7 176.2 74.1 177.8 76.3 C179.3 78.5 180.0 80.4 180.7 82.5 C181.5 84.6 182.0 86.2 182.1 88.9 C182.2 91.6 181.9 96.0 181.4 98.8 C180.9 101.7 179.9 104.2 179.1 106.1 C178.3 108.0 177.4 108.9 176.6 110.1 C175.7 111.2 175.0 112.0 173.9 112.9 C172.9 113.8 171.6 114.8 170.4 115.5 C169.2 116.2 168.6 116.6 166.9 117.1 C165.1 117.5 161.2 118.1 160.0 118.2"/><path d="M204.2 75.2 C204.3 75.9 204.9 78.1 204.8 79.4 C204.8 80.6 204.4 81.7 203.9 82.7 C203.5 83.7 203.3 84.2 202.2 85.4 C201.1 86.5 198.1 89.0 197.3 89.8"/><path d="M104.0 76.5 C105.6 76.8 111.1 77.3 113.7 78.0 C116.2 78.8 117.7 79.8 119.4 80.9 C121.1 82.1 122.3 83.1 123.7 85.1 C125.1 87.1 127.1 91.6 127.8 92.9"/><path d="M104.0 76.5 C103.4 76.8 102.0 78.0 100.6 78.4 C99.3 78.9 96.8 79.2 96.0 79.4"/><path d="M58.7 78.7 C58.5 79.4 57.9 81.5 57.8 82.7 C57.6 83.9 57.6 84.9 57.7 85.8 C57.8 86.7 57.9 87.3 58.4 88.2 C59.0 89.2 60.6 90.7 61.1 91.4 C61.5 92.1 61.5 91.7 61.4 92.4 C61.3 93.1 60.8 94.7 60.3 95.7 C59.7 96.7 58.4 97.9 58.0 98.4"/><path d="M95.8 79.6 C95.5 80.2 95.2 81.6 94.1 83.1 C92.9 84.7 90.4 86.8 88.9 88.7 C87.4 90.6 86.3 92.5 85.2 94.6 C84.0 96.8 83.2 98.6 82.0 101.5 C80.9 104.3 79.2 109.2 78.3 111.8 C77.5 114.5 77.6 115.7 77.1 117.1 C76.6 118.6 76.1 117.1 75.5 120.5 C75.0 123.8 74.1 132.4 73.9 137.0 C73.7 141.6 74.0 144.7 74.4 148.0 C74.7 151.4 75.2 154.3 76.1 157.3 C77.0 160.3 78.8 163.7 79.6 165.9 C80.4 168.2 80.6 170.0 80.8 170.8"/><path d="M152.3 83.6 C151.7 83.4 150.1 82.6 148.5 82.7 C147.0 82.8 145.0 83.4 143.2 84.1 C141.4 84.9 139.6 85.8 137.7 87.0 C135.8 88.3 133.4 90.5 131.8 91.5 C130.1 92.5 128.5 92.6 127.8 92.9"/><path d="M182.3 88.2 C184.8 88.5 194.8 89.5 197.3 89.8"/><path d="M197.3 89.8 C197.6 90.3 197.8 91.6 198.7 93.1 C199.6 94.6 201.6 96.6 202.6 98.6 C203.6 100.6 204.5 102.7 205.0 105.0 C205.5 107.3 205.7 109.0 205.5 112.3 C205.3 115.5 203.8 122.4 203.5 124.4"/><path d="M127.8 92.9 C127.5 93.9 126.9 96.9 126.2 99.0 C125.5 101.1 124.0 104.4 123.6 105.4"/><path d="M216.8 97.3 C217.0 97.5 217.2 98.1 218.3 98.7 C219.4 99.2 222.2 99.5 223.6 100.4 C225.0 101.3 225.6 102.3 226.5 104.1 C227.5 106.0 228.6 108.8 229.2 111.6 C229.8 114.5 230.0 118.4 230.0 121.1 C230.0 123.8 229.7 125.7 229.3 127.7 C228.9 129.8 228.7 131.0 227.8 133.5 C226.9 136.0 225.3 140.2 224.1 142.8 C222.8 145.3 222.0 146.4 220.4 148.5 C218.7 150.6 215.3 153.5 214.0 155.1 C212.7 156.8 212.8 157.9 212.6 158.4"/><path d="M123.6 105.4 C123.8 105.7 123.4 105.7 124.6 106.9 C125.8 108.2 129.6 111.2 131.0 112.9 C132.3 114.7 132.3 115.9 132.7 117.4 C133.1 118.8 133.2 120.4 133.1 121.8 C133.0 123.2 132.7 124.6 132.3 125.8 C131.9 126.9 131.5 127.5 130.6 128.6 C129.6 129.8 127.3 131.9 126.7 132.6"/><path d="M123.6 105.4 C122.2 105.4 117.0 105.1 115.0 105.2 C112.9 105.3 112.5 105.5 111.2 106.0 C109.9 106.4 108.6 106.9 107.3 107.8 C106.0 108.7 104.3 110.3 103.4 111.2 C102.5 112.1 102.2 112.8 102.0 113.2"/><path d="M156.0 108.1 C156.1 109.0 156.2 112.2 156.6 113.6 C156.9 115.0 157.6 115.9 158.2 116.7 C158.7 117.5 159.7 118.0 160.0 118.2"/><path d="M43.5 109.6 C43.1 110.1 42.1 111.6 41.5 112.3 C40.9 112.9 40.7 113.1 39.9 113.5 C39.2 113.8 38.0 114.3 37.1 114.4 C36.1 114.6 34.9 114.3 34.4 114.3"/><path d="M34.2 114.3 C33.8 114.8 32.6 115.7 31.9 117.1 C31.3 118.6 30.7 121.2 30.4 122.9 C30.0 124.5 30.0 125.5 30.0 127.1 C30.0 128.7 29.9 129.8 30.3 132.4 C30.8 134.9 32.2 140.0 32.9 142.3 C33.6 144.6 33.7 144.7 34.5 146.3 C35.2 147.9 35.9 149.7 37.2 151.8 C38.5 153.9 40.1 156.5 42.2 158.9 C44.3 161.2 47.6 164.3 49.6 166.0 C51.7 167.7 52.9 168.2 54.7 169.2 C56.5 170.1 58.3 171.1 60.5 171.7 C62.6 172.4 65.7 173.0 67.5 173.3 C69.4 173.5 69.8 173.6 71.5 173.4 C73.2 173.3 76.1 172.8 77.7 172.4 C79.2 172.0 80.3 171.2 80.8 171.0"/><path d="M160.0 118.2 C160.1 119.4 160.5 123.1 160.8 124.9 C161.0 126.6 161.5 127.1 161.7 128.6 C161.8 130.1 162.2 130.9 161.9 133.9 C161.6 137.0 160.5 144.5 159.9 146.9 C159.3 149.4 159.3 147.1 158.3 148.7 C157.3 150.3 155.5 154.3 154.0 156.7 C152.6 159.0 151.4 160.5 149.4 162.6 C147.4 164.7 144.0 167.7 142.1 169.2 C140.3 170.7 140.3 170.7 138.4 171.8 C136.5 172.9 132.2 174.9 130.7 176.0 C129.1 177.0 129.2 177.9 128.9 178.3"/><path d="M75.7 119.6 C74.3 119.2 69.5 117.9 67.3 117.5 C65.1 117.0 64.0 117.0 62.7 116.9 C61.4 116.9 60.6 117.0 59.6 117.2 C58.6 117.4 57.6 117.5 56.5 118.1 C55.4 118.7 54.1 119.6 53.0 120.7 C51.8 121.8 50.5 122.8 49.4 124.6 C48.3 126.5 46.7 130.7 46.1 131.9"/><path d="M203.5 124.4 C204.2 124.6 206.3 124.8 207.5 125.2 C208.7 125.6 209.9 126.1 210.8 126.7 C211.7 127.2 212.3 127.9 212.9 128.6 C213.6 129.4 214.3 130.6 214.5 131.1"/><path d="M203.5 124.4 C202.1 125.6 197.8 129.5 194.9 131.3 C192.0 133.2 188.7 133.5 185.8 135.6 C183.0 137.8 179.6 142.3 177.7 144.1 C175.7 145.9 175.2 145.9 174.2 146.5 C173.1 147.1 172.4 147.3 171.3 147.5 C170.2 147.8 169.2 148.0 167.5 148.0 C165.9 148.1 162.6 147.8 161.3 147.7 C160.1 147.5 160.2 147.2 160.0 147.2"/><path d="M95.8 138.3 C96.2 138.3 97.1 137.9 98.0 137.9 C98.8 137.8 99.9 137.9 100.9 138.0 C101.8 138.1 102.9 138.2 103.7 138.5 C104.6 138.8 105.0 138.8 105.9 139.6 C106.9 140.4 108.1 141.2 109.6 143.4 C111.1 145.7 113.3 151.0 114.8 153.1 C116.2 155.2 117.0 155.3 118.3 156.1 C119.6 156.9 121.8 157.7 122.5 158.0"/><path d="M53.0 147.4 C52.7 148.3 51.8 151.6 51.4 152.7 C51.0 153.8 50.7 153.8 50.5 154.0"/><path d="M198.0 153.3 C197.4 154.2 195.7 156.8 194.2 158.4 C192.8 160.0 190.8 161.8 189.2 163.1 C187.5 164.3 186.5 165.0 184.3 165.8 C182.1 166.7 177.3 167.7 175.9 168.1"/><path d="M212.3 158.6 C211.5 158.9 208.8 159.5 207.5 160.0 C206.2 160.5 206.4 160.3 204.4 161.8 C202.4 163.2 200.5 165.2 195.6 168.6 C190.6 171.9 178.8 178.7 174.8 181.9 C170.7 185.1 171.7 186.1 171.2 188.0 C170.7 189.9 171.2 190.4 171.6 193.5 C172.0 196.6 173.5 203.7 173.7 206.5 C173.9 209.4 173.4 209.4 172.8 210.5 C172.2 211.6 171.1 212.4 170.2 213.0 C169.2 213.6 168.1 213.9 167.1 214.1 C166.1 214.3 165.1 214.3 164.2 214.1 C163.3 214.0 162.5 213.8 161.6 213.3 C160.7 212.9 160.0 212.4 158.9 211.2 C157.9 210.0 156.6 208.5 155.3 206.3 C154.0 204.1 152.0 199.9 151.1 197.9 C150.1 196.0 150.1 196.0 149.7 194.6 C149.3 193.3 148.9 190.6 148.8 189.8"/><path d="M212.6 158.6 C212.8 158.9 213.5 159.6 213.8 160.4 C214.1 161.2 214.4 162.1 214.3 163.5 C214.3 164.9 214.0 167.4 213.6 169.0 C213.3 170.7 212.8 172.0 212.1 173.4 C211.3 174.9 210.2 176.6 209.2 177.8 C208.1 179.1 207.0 180.1 205.9 181.2 C204.9 182.2 203.8 183.2 202.6 184.1 C201.4 184.9 200.5 185.5 198.9 186.2 C197.3 187.0 195.2 188.0 192.9 188.5 C190.6 189.1 188.0 189.7 185.0 189.6 C181.9 189.5 177.2 188.4 174.8 187.7 C172.5 187.0 173.7 185.2 170.8 185.3 C168.0 185.3 161.3 187.5 157.8 188.1 C154.4 188.7 151.6 188.7 150.1 188.9 C148.6 189.2 149.0 189.4 148.8 189.5"/><path d="M81.0 171.0 C81.4 171.2 82.1 171.1 83.4 171.9 C84.7 172.8 87.3 175.1 88.9 176.2 C90.6 177.3 91.2 177.8 93.4 178.5 C95.5 179.3 99.0 180.2 101.7 180.7 C104.5 181.1 107.5 181.4 109.9 181.4 C112.3 181.4 113.3 181.1 116.1 180.6 C118.9 180.1 124.8 178.6 126.9 178.2 C129.0 177.8 128.6 178.3 128.9 178.3"/><path d="M128.9 178.3 C129.2 178.8 129.5 180.5 130.5 181.6 C131.4 182.7 133.1 184.1 134.6 185.1 C136.2 186.0 137.9 186.8 139.9 187.4 C141.9 188.0 145.1 188.1 146.6 188.4 C148.0 188.8 148.2 189.4 148.5 189.5"/>
+    </g>
+  </g>
+</svg>
 </div>
-
+        <h3 class="bn-tile-t font-geist">Your course becomes the knowledge base</h3>
+        <span class="bn-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+      </a>
+      <a href="/en/features.html#area-lernen-dialog" class="bn-tile group" style="--d:480ms">
+        <div class="bn-icon bn-icon--lg" aria-hidden="true"><svg viewBox="0 0 260 244" class="bn-ic bn-ic--orbi" role="presentation" focusable="false">
+  <defs><linearGradient id="bnO3" gradientUnits="userSpaceOnUse" x1="0" y1="1" x2="0" y2="25"><stop offset="0" stop-color="#3B82F6"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient></defs>
+  <g transform="translate(34.5 20.5) scale(7.5)">
+    <circle cx="13" cy="13" r="12" fill="none" stroke="url(#bnO3)"/>
+    <g class="bn-or-look"><g class="bn-or-blink" fill="url(#bnO3)"><path d="M10.4834 6.70996C12.1046 6.70996 13.4189 8.02428 13.4189 9.64551V13.8389C13.4189 15.46 12.1046 16.7744 10.4834 16.7744C8.86245 16.7742 7.54891 15.4599 7.54883 13.8389V9.64551C7.54883 8.02444 8.86239 6.71022 10.4834 6.70996ZM9.64551 9.22559C8.95086 9.22559 8.38697 9.78881 8.38672 10.4834C8.38672 11.1782 8.9507 11.7422 9.64551 11.7422C10.3402 11.742 10.9033 11.1781 10.9033 10.4834C10.9031 9.78892 10.34 9.22577 9.64551 9.22559Z"/><path d="M18.0322 6.70996C19.6535 6.70996 20.9678 8.02428 20.9678 9.64551V13.8389C20.9677 15.46 19.6534 16.7744 18.0322 16.7744C16.4111 16.7744 15.0968 15.46 15.0967 13.8389V9.64551C15.0967 8.02429 16.411 6.70998 18.0322 6.70996ZM17.1934 9.22559C16.4988 9.22569 15.9358 9.78887 15.9355 10.4834C15.9355 11.1781 16.4986 11.7421 17.1934 11.7422C17.8882 11.7422 18.4512 11.1782 18.4512 10.4834C18.4509 9.78881 17.888 9.22559 17.1934 9.22559Z"/></g></g>
+  </g>
+</svg>
+</div>
+        <h3 class="bn-tile-t font-geist">A tutor that remembers</h3>
+        <span class="bn-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+      </a>
     </div>
   </div>
-</section><section class="sm:py-32 overflow-hidden animate-on-scroll bg-white border-gray-100 border-t pt-24 pb-24 relative" style="animation: fadeSlideIn 1s ease-out 0.2s both">
+</section>
+<script>
+(function () {
+  var els = document.querySelectorAll('.bn-icon');
+  if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('is-in'); }); return; }
+  var io = new IntersectionObserver(function (es) { es.forEach(function (en) { en.target.classList.toggle('is-in', en.isIntersecting); }); }, { threshold: .25 });
+  els.forEach(function (e) { io.observe(e); });
+  // Kacheln nacheinander einblenden und hochschieben – jede Kachel einzeln, sobald sie gut im Bild ist (einmalig)
+  var grid = document.querySelector('.bn-tiles');
+  if (grid) {
+    grid.classList.add('js');
+    var io2 = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-in'); io2.unobserve(en.target); } }); }, { threshold: .25, rootMargin: '0px 0px -12% 0px' });
+    grid.querySelectorAll('.bn-tile').forEach(function (t) { io2.observe(t); });
+  }
+})();
+</script><section class="tm-sec sm:py-32 overflow-hidden animate-on-scroll bg-white pt-24 pb-24 relative" style="animation: fadeSlideIn 1s ease-out 0.2s both">
 
   <!-- Section Header -->
-  <div class="text-center max-w-2xl z-10 mr-auto mb-16 ml-auto pr-4 pl-4 relative">
-    <div class="inline-flex text-xs font-medium text-gray-600 font-geist bg-white border-gray-200 border rounded-full mb-6 pt-1 pr-3 pb-1 pl-3 shadow-sm gap-x-2 gap-y-2 items-center">
-      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart text-red-500 fill-red-500/10">
-        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" class=""></path>
-      </svg>Loved by customers</div>
-    <h2 class="sm:text-4xl leading-[1.1] text-3xl font-semibold text-gray-900 tracking-tight font-geist">Built with education experts — made specifically for Moodle and ILIAS.</h2>
-    <p class="text-base text-gray-500 font-geist max-w-lg mt-4 mr-auto ml-auto">The Alphabees AI Tutor fits seamlessly into existing workflows and creates meaningful learning experiences.</p>
+  <div class="relative z-10 mx-auto mb-20 max-w-7xl px-4 sm:mb-28 sm:px-6 lg:px-8">
+    <h2 class="bn-h2 text-left font-normal tracking-tight text-gray-950 font-geist">Built for Moodle and ILIAS.</h2>
+      <div class="kb-ctas tm-ctas">
+      <a href="https://moodle.org/plugins/block_alphabees" target="_blank" rel="noopener" data-cta="moodle_plugin_download" class="kb-cta font-geist">Download Moodle plugin<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></a>
+      <a href="https://github.com/alphabees-25/ilias-plugin-alphabees" target="_blank" rel="noopener" data-cta="ilias_plugin_download" class="kb-cta font-geist">Download ILIAS plugin<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></a>
+    </div>
   </div>
+  <style>
+    .tm-sec .group.rounded-2xl { border:1.5px solid #0a0a0f; }
+    .tm-sec .group.rounded-2xl:hover { border-color:#0a0a0f; }
+    .kb-ctas.tm-ctas { margin:2.75rem 0 0; }
+    @media (min-width:640px) { .kb-ctas.tm-ctas { margin-top:3.5rem; } }
+  </style>
 
   <!-- Marquee Styles -->
   <style>
@@ -1244,7 +1002,7 @@ opacity: 0 !important;
             </div>
           </div>
           <div class="">
-            <blockquote class="leading-relaxed text-sm font-medium text-gray-900 font-geist">"Privacy is top‑priority at Alphabees. That convinced us."</blockquote>
+            <blockquote class="leading-relaxed text-sm font-medium text-gray-900 font-geist">"Privacy is a top priority at Alphabees. That convinced us."</blockquote>
             <div class="mt-3 flex items-center gap-2 text-xs text-gray-500 font-geist">
               <span class="font-semibold text-gray-700">Eve Vogelein</span>
               <span class="text-gray-300">|</span>
@@ -1318,7 +1076,7 @@ opacity: 0 !important;
             </div>
           </div>
           <div class="">
-            <blockquote class="leading-relaxed text-sm font-medium text-gray-900 font-geist">"Privacy is top‑priority at Alphabees. That convinced us."</blockquote>
+            <blockquote class="leading-relaxed text-sm font-medium text-gray-900 font-geist">"Privacy is a top priority at Alphabees. That convinced us."</blockquote>
             <div class="mt-3 flex items-center gap-2 text-xs text-gray-500 font-geist">
               <span class="font-semibold text-gray-700">Eve Vogelein</span>
               <span class="text-gray-300">|</span>
@@ -1393,7 +1151,9 @@ opacity: 0 !important;
             </div>
           </div>
           <div class="">
-            <blockquote class="text-sm font-medium text-gray-900 font-geist leading-relaxed">"Better than any chatbot we’ve tested. The answers are spot‑on."</blockquote>
+            <blockquote class="text-sm font-medium text-gray-900 font-geist leading-relaxed">
+              "Better than any chatbot we’ve tested. The answers are spot‑on."
+            </blockquote>
             <div class="mt-3 flex items-center gap-2 text-xs text-gray-500 font-geist">
               <span class="font-semibold text-gray-700">Klaus-Jürgen Brix</span>
               <span class="text-gray-300">|</span>
@@ -1410,7 +1170,9 @@ opacity: 0 !important;
             </div>
           </div>
           <div class="">
-            <blockquote class="leading-relaxed text-sm font-medium text-gray-900 font-geist">"Working with Alphabees is professional and innovative."</blockquote>
+            <blockquote class="leading-relaxed text-sm font-medium text-gray-900 font-geist">
+              "Working with Alphabees is professional and innovative."
+            </blockquote>
             <div class="mt-3 flex items-center gap-2 text-xs text-gray-500 font-geist">
               <span class="font-semibold text-gray-700">Lukas Marzi</span>
               <span class="text-gray-300">|</span>
@@ -1427,7 +1189,7 @@ opacity: 0 !important;
             </div>
           </div>
           <div class="">
-            <blockquote class="leading-relaxed text-sm font-medium text-gray-900 font-geist">"Tolles Team! Super Produkt!"</blockquote>
+            <blockquote class="leading-relaxed text-sm font-medium text-gray-900 font-geist">"Great team! Great product!"</blockquote>
             <div class="mt-3 flex items-center gap-2 text-xs text-gray-500 font-geist">
               <span class="font-semibold text-gray-700">Anne Schmidt</span>
               <span class="text-gray-300">|</span>
@@ -1444,7 +1206,9 @@ opacity: 0 !important;
             </div>
           </div>
           <div class="">
-            <blockquote class="leading-relaxed text-sm font-medium text-gray-900 font-geist">"Fast integration and great analytics. We can see exactly where things stall."</blockquote>
+            <blockquote class="leading-relaxed text-sm font-medium text-gray-900 font-geist">
+              "Fast integration and great analytics. We can see exactly where things stall."
+            </blockquote>
             <div class="mt-3 flex items-center gap-2 text-xs text-gray-500 font-geist">
               <span class="font-semibold text-gray-700">Tim Wolf</span>
               <span class="text-gray-300">|</span>
@@ -1464,7 +1228,9 @@ opacity: 0 !important;
             </div>
           </div>
           <div class="">
-            <blockquote class="text-sm font-medium text-gray-900 font-geist leading-relaxed">"Better than any chatbot we’ve tested. The answers are spot‑on."</blockquote>
+            <blockquote class="text-sm font-medium text-gray-900 font-geist leading-relaxed">
+              "Better than any chatbot we’ve tested. The answers are spot‑on."
+            </blockquote>
             <div class="mt-3 flex items-center gap-2 text-xs text-gray-500 font-geist">
               <span class="font-semibold text-gray-700">Klaus-Jürgen Brix</span>
               <span class="text-gray-300">|</span>
@@ -1481,7 +1247,9 @@ opacity: 0 !important;
             </div>
           </div>
           <div class="">
-            <blockquote class="leading-relaxed text-sm font-medium text-gray-900 font-geist">"Working with Alphabees is professional and innovative."</blockquote>
+            <blockquote class="leading-relaxed text-sm font-medium text-gray-900 font-geist">
+              "Working with Alphabees is professional and innovative."
+            </blockquote>
             <div class="mt-3 flex items-center gap-2 text-xs text-gray-500 font-geist">
               <span class="font-semibold text-gray-700">Lukas Marzi</span>
               <span class="text-gray-300">|</span>
@@ -1498,7 +1266,7 @@ opacity: 0 !important;
             </div>
           </div>
           <div class="">
-            <blockquote class="leading-relaxed text-sm font-medium text-gray-900 font-geist">"Tolles Team! Super Produkt!"</blockquote>
+            <blockquote class="leading-relaxed text-sm font-medium text-gray-900 font-geist">"Great team! Great product!"</blockquote>
             <div class="mt-3 flex items-center gap-2 text-xs text-gray-500 font-geist">
               <span class="font-semibold text-gray-700">Anne Schmidt</span>
               <span class="text-gray-300">|</span>
@@ -1516,7 +1284,9 @@ opacity: 0 !important;
             </div>
           </div>
           <div class="">
-            <blockquote class="leading-relaxed text-sm font-medium text-gray-900 font-geist">"Fast integration and great analytics. We can see exactly where things stall."</blockquote>
+            <blockquote class="leading-relaxed text-sm font-medium text-gray-900 font-geist">
+              "Fast integration and great analytics. We can see exactly where things stall."
+            </blockquote>
             <div class="mt-3 flex items-center gap-2 text-xs text-gray-500 font-geist">
               <span class="font-semibold text-gray-700">Tim Wolf</span>
               <span class="text-gray-300">|</span>
@@ -1529,7 +1299,7 @@ opacity: 0 !important;
     </div>
 
   </div>
-</section><section class="overflow-hidden bg-white border-gray-100 border-t pt-24 pb-24 relative">
+</section><section class="overflow-hidden bg-white pt-4 pb-24 relative">
   <!-- CSS for Custom Animations -->
   <style>
     @keyframes flow-dash {
@@ -1586,19 +1356,48 @@ opacity: 0 !important;
   <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6 relative">
 
     <!-- Section Header -->
-    <div class="animate-on-scroll text-center max-w-4xl mx-auto mt-16 mb-12" style="animation: fadeSlideIn 1s ease-out 0.1s both">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-medium font-geist mb-6">
-        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap">
-          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-        </svg>
-        How it works
-      </div>
-      <h2 class="sm:text-4xl text-4xl font-semibold text-gray-900 tracking-tight font-geist">Use your learning content as AI tutor knowledge</h2>
-      <p class="text-lg text-gray-500 font-geist mt-4 max-w-2xl mx-auto">Your course content syncs automatically with the AI tutor’s knowledge base. Upload additional AI knowledge manually or connect your cloud services.</p>
+    <div class="animate-on-scroll" style="animation: fadeSlideIn 1s ease-out 0.1s both">
+      <style>
+        .kb-ctas { display:flex; flex-direction:column; align-items:stretch; gap:1rem; margin-bottom:5rem; }
+        @media (min-width:640px) { .kb-ctas { flex-direction:row; gap:1.25rem; margin-bottom:8rem; } }
+        .kb-cta { position:relative; isolation:isolate; overflow:hidden; display:inline-flex; align-items:center; justify-content:center; gap:.85rem; min-height:4rem; padding:1.1rem 2.25rem; border:0; border-radius:9999px; background:#0a0a0f; color:#fff; font-size:1.15rem; font-weight:600; letter-spacing:-.01em; text-decoration:none; transition:transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .4s, background-color .45s ease; }
+        @media (min-width:640px) { .kb-cta { min-height:4.5rem; padding:1.25rem 2.75rem; font-size:1.25rem; } }
+        /* Hover: KI-Verlauf wie im Hero-Video (CI-Blau, Purple, Pink, Lobster, Orange), fließt langsam */
+        .kb-cta::before { content:''; position:absolute; inset:0; z-index:-1; border-radius:inherit; opacity:0; transition:opacity .45s ease;
+          background:
+            radial-gradient(55% 150% at 8% 100%, #3B82F6 0%, rgba(59,130,246,0) 72%),
+            radial-gradient(45% 150% at 36% 0%, #B47FFF 0%, rgba(180,127,255,0) 72%),
+            radial-gradient(45% 150% at 70% 100%, #FF8093 0%, rgba(255,128,147,0) 72%),
+            radial-gradient(40% 150% at 96% 0%, #FFAF85 0%, rgba(255,175,133,0) 72%),
+            linear-gradient(100deg, #3B82F6 0%, #B47FFF 36%, #FF7EAF 64%, #FFAF85 100%);
+          background-size:200% 100%; background-position:0% 50%; filter:saturate(1.3); }
+        .kb-cta:hover::before, .kb-cta:focus-visible::before { opacity:1; animation:kbFlow 5s ease-in-out infinite alternate; }
+        @keyframes kbFlow { from { background-position:0% 50%; } to { background-position:100% 50%; } }
+        .kb-cta:hover { background-color:transparent; transform:translateY(-2px); box-shadow:0 18px 40px -18px rgba(180,127,255,.7); text-shadow:0 1px 2px rgba(10,10,15,.22); }
+        .kb-cta:active { transform:translateY(0) scale(.98); }
+        .kb-cta:focus-visible { outline:2px solid #2563eb; outline-offset:3px; }
+        .kb-cta svg { flex:none; transition:transform .25s; }
+        .kb-cta:hover svg { transform:translateY(2px); }
+        @media (prefers-reduced-motion: reduce) { .kb-cta:hover::before { animation:none; } .kb-cta, .kb-cta svg { transition:none; } }
+        /* Überschrift links, Sync-Grafik rechts daneben (ab Desktop), mobil untereinander */
+        /* schwarze Fläche über die ganze Fensterbreite, Inhalt bleibt auf der Containerkante */
+        .kb-grid { --kb-bleed:calc(var(--hv-vw, 100vw) / 2 - 50%); display:grid; gap:3.5rem; align-items:center; margin-inline:calc(-1 * var(--kb-bleed)); padding:5.5rem var(--kb-bleed) 6rem; background:#0a0a0f; }
+        .kb-grid .kb-h2 { color:#fff; }
+        @media (min-width:640px) { .kb-grid { padding-block:7rem 7.5rem; } }
+        @media (min-width:1024px) { .kb-grid { grid-template-columns:minmax(0, 7fr) minmax(0, 6fr); gap:3.5rem; padding-block:9rem; } .kb-grid .kb-h2 { font-size:clamp(2.6rem, 4.2vw, 4.4rem); } }
+      </style>
     </div>
 
-    <!-- Animation Container -->
-    <div class="flex flex-col items-center animate-on-scroll w-full max-w-3xl mr-auto ml-auto relative pb-16" style="min-height: 380px; animation: fadeSlideIn 1s ease-out 0.25s both">
+    <div class="kb-grid">
+      <div class="kb-text"><h2 class="bn-h2 kb-h2 text-left font-normal tracking-tight text-gray-950 font-geist">Your <span class="whitespace-nowrap">course content</span> is automatically synced with the <span class="whitespace-nowrap">AI tutor’s</span> knowledge base.</h2>
+        <a href="/en/features.html#area-wissensbasis-autosync" class="ab-more" data-cta="kb_mehr_erfahren">learn more</a>
+        <style>
+          .ab-more { display:inline-block; margin-top:2.25rem; font-family:'Geist', sans-serif; font-weight:300; font-style:normal; font-size:clamp(1.05rem, 1.25vw, 1.25rem); line-height:1.3; color:#3B82F6; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:.24em; transition:color .2s ease, text-underline-offset .2s ease; }
+          .ab-more:hover { color:#60A5FA; text-underline-offset:.34em; }
+          .ab-more:focus-visible { outline:2px solid #3B82F6; outline-offset:4px; border-radius:2px; }
+        </style></div>
+      <!-- Animation Container -->
+    <div class="flex flex-col items-center animate-on-scroll w-full max-w-3xl mr-auto ml-auto relative" style="min-height: 0; animation: fadeSlideIn 1s ease-out 0.25s both">
 
       <div class="relative w-full flex flex-col items-center">
 
@@ -1638,7 +1437,7 @@ opacity: 0 !important;
             Moodle activities
             <div class="absolute bottom-[-4px] left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
           </div>
-          <div class="flex transition-all duration-300 bg-white w-20 h-20 border-indigo-400 border rounded-2xl drop-shadow-[0_14px_20px_rgba(99,102,241,0.45)] drop-shadow-[0_6px_10px_rgba(15,23,42,0.18)] items-center justify-center overflow-hidden">
+          <div class="flex transition-all duration-300 bg-white w-20 h-20 border-gray-950 border-[1.5px] rounded-2xl drop-shadow-[0_14px_20px_rgba(99,102,241,0.45)] drop-shadow-[0_6px_10px_rgba(15,23,42,0.18)] items-center justify-center overflow-hidden">
             <img src="https://images.icon-icons.com/2415/PNG/512/moodle_original_logo_icon_146420.png" alt="Moodle" class="w-10 h-10 object-contain" loading="lazy">
           </div>
         </div>
@@ -1649,7 +1448,7 @@ opacity: 0 !important;
             Articulate courses
             <div class="absolute bottom-[-4px] left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
           </div>
-          <div class="flex transition-all duration-300 bg-white w-20 h-20 border-indigo-400 border rounded-2xl drop-shadow-[0_14px_20px_rgba(99,102,241,0.45)] drop-shadow-[0_6px_10px_rgba(15,23,42,0.18)] items-center justify-center overflow-hidden">
+          <div class="flex transition-all duration-300 bg-white w-20 h-20 border-gray-950 border-[1.5px] rounded-2xl drop-shadow-[0_14px_20px_rgba(99,102,241,0.45)] drop-shadow-[0_6px_10px_rgba(15,23,42,0.18)] items-center justify-center overflow-hidden">
             <img src="/assets/images/logos/Articulate-360-Type-Logo_vector.svg" alt="Articulate" class="w-16 object-contain" loading="lazy">
           </div>
         </div>
@@ -1660,7 +1459,7 @@ opacity: 0 !important;
             iSpring courses
             <div class="absolute bottom-[-4px] left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
           </div>
-          <div class="flex transition-all duration-300 bg-white w-20 h-20 border-indigo-400 border rounded-2xl drop-shadow-[0_14px_20px_rgba(99,102,241,0.45)] drop-shadow-[0_6px_10px_rgba(15,23,42,0.18)] items-center justify-center overflow-hidden">
+          <div class="flex transition-all duration-300 bg-white w-20 h-20 border-gray-950 border-[1.5px] rounded-2xl drop-shadow-[0_14px_20px_rgba(99,102,241,0.45)] drop-shadow-[0_6px_10px_rgba(15,23,42,0.18)] items-center justify-center overflow-hidden">
             <img src="/assets/images/logos/iSpring-Solutions.png" alt="iSpring" class="w-16 object-contain" loading="lazy">
           </div>
         </div>
@@ -1671,7 +1470,7 @@ opacity: 0 !important;
             SCORM packages
             <div class="absolute bottom-[-4px] left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
           </div>
-          <div class="flex transition-all duration-300 bg-white w-20 h-20 border-indigo-400 border rounded-2xl drop-shadow-[0_14px_20px_rgba(99,102,241,0.45)] drop-shadow-[0_6px_10px_rgba(15,23,42,0.18)] items-center justify-center overflow-hidden">
+          <div class="flex transition-all duration-300 bg-white w-20 h-20 border-gray-950 border-[1.5px] rounded-2xl drop-shadow-[0_14px_20px_rgba(99,102,241,0.45)] drop-shadow-[0_6px_10px_rgba(15,23,42,0.18)] items-center justify-center overflow-hidden">
             <span class="text-[13px] font-bold text-gray-900 tracking-wide font-geist">SCORM</span>
           </div>
         </div>
@@ -1682,7 +1481,7 @@ opacity: 0 !important;
             Video content
             <div class="absolute bottom-[-4px] left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
           </div>
-          <div class="flex transition-all duration-300 bg-white w-20 h-20 border-indigo-400 border rounded-2xl drop-shadow-[0_14px_20px_rgba(99,102,241,0.45)] drop-shadow-[0_6px_10px_rgba(15,23,42,0.18)] items-center justify-center overflow-hidden">
+          <div class="flex transition-all duration-300 bg-white w-20 h-20 border-gray-950 border-[1.5px] rounded-2xl drop-shadow-[0_14px_20px_rgba(99,102,241,0.45)] drop-shadow-[0_6px_10px_rgba(15,23,42,0.18)] items-center justify-center overflow-hidden">
             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="30" viewBox="0 0 24 20" fill="none" aria-label="Video"><rect x="1.5" y="1.5" width="21" height="17" rx="3" fill="#F98012"></rect><path d="M9.8 6.6 15.4 10 9.8 13.4Z" fill="#ffffff"></path></svg>
           </div>
         </div>
@@ -1693,167 +1492,52 @@ opacity: 0 !important;
       <div class="relative z-20 flex flex-col items-center mt-24">
         <div class="relative w-32 h-32 flex items-center justify-center">
           <div class="absolute inset-0 rounded-full bg-indigo-500/20 animate-ai-pulse blur-xl"></div>
-          <div class="absolute inset-2 rounded-full bg-gradient-to-tr from-blue-600 via-indigo-600 to-violet-500 animate-spin-slow blur-sm opacity-75" style="animation-duration: 10s;"></div>
-          <div class="flex overflow-hidden bg-gradient-to-br from-indigo-900 via-indigo-800 to-violet-900 w-24 h-24 border-white/10 border rounded-full relative shadow-2xl items-center justify-center">
-            <div class="overflow-hidden bg-[#5B2BE0] w-full h-full rounded-xl relative">
-              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" class="block w-[94px] h-[94px]" role="img" aria-label="Animated robot icon" style="width: 94px; height: 94px; color: rgb(17, 24, 39);" stroke-width="2">
-                <title>Animated robot icon</title>
-                <style>
-                  .robot-eye-scan-feat2 { animation: robotScan 1.8s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
-                  .robot-eye-blink-feat2 { animation: robotBlink 7s infinite; transform-origin: center; transform-box: fill-box; }
-                  @keyframes robotScan { 0% { transform: translateX(14px); } 18% { transform: translateX(14px); } 38% { transform: translateX(0); } 52% { transform: translateX(0); } 72% { transform: translateX(-14px); } 84% { transform: translateX(-14px); } 100% { transform: translateX(14px); } }
-                  @keyframes robotBlink { 0%, 28%, 30%, 78%, 80%, 82%, 100% { transform: scaleY(1); } 29% { transform: scaleY(0.02); } 79% { transform: scaleY(0.02); } 79.5% { transform: scaleY(1); } 81% { transform: scaleY(0.02); } }
-                </style>
-                <rect width="512" height="512" fill="#5B2BE0"></rect>
-                <g fill="#FFFFFF">
-                  <circle cx="256" cy="115" r="26"></circle>
-                  <rect x="251" y="135" width="10" height="45"></rect>
-                  <rect x="96" y="175" width="320" height="210" rx="95"></rect>
-                  <rect x="236" y="380" width="40" height="25"></rect>
-                  <path d="M196 405 H316 A12 12 0 0 1 316 435 H196 A12 12 0 0 1 196 405"></path>
-                </g>
-                <g class="robot-eye-scan-feat2">
-                  <g class="robot-eye-blink-feat2">
-                    <rect x="198" y="235" width="36" height="85" rx="18" fill="#5B2BE0"></rect>
-                    <rect x="278" y="235" width="36" height="85" rx="18" fill="#5B2BE0"></rect>
-                  </g>
-                </g>
-              </svg>
-            </div>
-          </div>
-          <!-- Status Badge -->
-          <div class="absolute left-full ml-3 top-1/2 -translate-y-1/2 whitespace-nowrap">
-            <span class="inline-flex items-center gap-1.5 text-[10px] uppercase font-semibold text-gray-900 tracking-wider font-geist bg-white border-gray-100 border rounded-md pt-1 pr-2.5 pb-1 pl-2.5 shadow-sm"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span></span> AI Tutor</span>
-          </div>
+          <div class="kb-orbi stage" data-orbi-sync role="img" aria-label="Orbi, the AI tutor, takes in the course content"><div class="orbi-mount"></div></div>
         </div>
       </div>
 
       </div>
-
-      <!-- Connector: AI tutor → learners in Moodle -->
-      <div class="relative z-0 -mt-3 h-24 w-0.5">
-        <svg class="w-full h-full overflow-visible" viewBox="0 0 2 100" preserveAspectRatio="none" fill="none">
-          <path d="M1 0 L1 100" stroke="#6366f1" stroke-width="2" stroke-dasharray="8 4" stroke-linecap="round" class="animate-flow" style="stroke-opacity: 0.8;"></path>
-        </svg>
-      </div>
-
-      <!-- Learner in Moodle -->
-      <div class="relative z-10 flex justify-center">
-        <div class="sm:w-[320px] sm:h-[200px] flex flex-col overflow-hidden w-[280px] h-[180px] border-white/60 border rounded-2xl relative shadow-[0_20px_40px_-12px_rgba(99,102,241,0.15)] items-center justify-center bg-gradient-to-br from-indigo-50/90 via-purple-50/90 to-pink-50/90 backdrop-blur-xl">
-
-          <!-- Decorative AI Glow -->
-          <div class="absolute -top-20 -right-20 w-40 h-40 bg-purple-400/20 blur-3xl rounded-full pointer-events-none">
-          </div>
-          <div class="absolute -bottom-20 -left-20 w-40 h-40 bg-blue-400/20 blur-3xl rounded-full pointer-events-none">
-          </div>
-
-          <!-- Top Right Logo Placeholder -->
-          <div class="absolute top-4 right-4 text-indigo-900/20">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2560 655.66" class="h-5 w-auto fill-current">
-              <g>
-                <path d="M2560,467v24l-302.01,1.49c6.62,33.12,33.79,66.53,65.49,78.53,38.21,14.46,99.8,1.09,116.18-40.07,40-2.08,80.26-.43,120.35-.95v1c-26.93,70.53-92.45,111.94-165.64,121.86-149.92,20.31-270.01-71.33-249.21-229.21,15.92-120.88,126.35-176.93,240.21-162.5,107.01,13.56,168.46,99.65,173.6,203.44l1.04,2.42ZM2445,420c-8.13-49.21-46.22-89.15-98.55-86.05-46.57,2.76-76.52,43.52-85.45,86.05h184Z">
-                </path>
-                <g>
-                  <path d="M1973,0v643h-112v-37c-23.38,26.31-67.91,41.03-102.46,43.04-242.02,14.1-261.25-362.39-35.92-386.92,43.28-4.71,91.09,4.15,124.39,33.37l13.98,14.51V0h112.01ZM1763.8,342.3c-118.49,9.09-110.19,239.02,16.69,226.69,29.54-2.87,77.49-40.38,80.5-71.5,1.81-18.68,1.54-55.08,0-73.98-3.52-43.04-54.35-84.5-97.19-81.22Z">
-                  </path>
-                  <rect x="2007" width="115" height="643"></rect>
-                </g>
-              </g>
-              <g>
-                <path d="M920.79,258.29c115.2-6.16,209.52,68.55,215.2,186.22,6.79,140.72-110.14,229.32-245.17,205.17-221.26-39.57-208.71-378.62,29.98-391.39ZM928.8,350.3c-109.59,7.02-104.68,204.45-4.28,212.69,127.87,10.49,129.29-220.7,4.28-212.69Z">
-                </path>
-                <path d="M1335.79,258.29c140.2-7.51,236.86,102.49,210.89,240.89-37.92,202.1-348.58,207.19-393.19,6.83-28.45-127.76,50.32-240.64,182.3-247.72ZM1342.8,350.3c-107.61,6.91-104.52,204.38-3.28,212.69,127.32,10.45,129.96-220.82,3.28-212.69Z">
-                </path>
-                <g>
-                  <path d="M409,285c.82.73,6.16,3.09,8.47,5.03,1.94,1.63,10.23,10.1,10.96,9.94,22.69-26.75,59.07-36.59,93.07-38.96,95.58-6.66,190.2,27.61,195.54,136.44l-.05,246.55h-115v-239.5c0-26.89-20.19-53.09-47.52-55.48-43.26-3.79-65.33,16.83-68.53,59.44l.04,235.54h-115v-234.49c-1.85-20.99-7.9-45.35-29-54.51,27.02-17.65,49.62-43.04,67-70Z">
-                  </path>
-                  <g>
-                    <path d="M0,300c68.15-38.79,137.89-74.17,213.23-97.27,85.13-26.09,174.46-37.05,262.63-47.59l.97,5.69-112.83,81.19c-.37,1.52.23,1.6,1.06,2.42,8.63,8.57,21.01,17.09,30.46,25.54,4.72,4.22,9.89,11.84,13.47,15.03-17.38,26.96-39.98,52.35-67,70-22.62,14.78-56.3,27.82-83,32s-59.15,2.54-86.19-3.31c-10.06-2.17-19.7-5.8-29.81-7.69.15-11.63-2.53-23.79-3.04-35.46s.54-22.34-.07-33.44l-117.45-1.17c-1.63,11.83-1.13,23.66-1.45,35.55-.49,18.41-1.3,37.52-.03,56.05.96,13.95,6.56,29.92,8.75,44.25,5.09,33.23,4.54,65.34,3.29,98.72-.05,1.21.75,3.72-.99,3.48-15.97-36.05-29.4-69.88-23.88-110.36,1.24-9.1,6.02-19.3,6.87-27.13.57-5.22-.98-9.43-1.05-13.97-.39-29.2.04-58.48,1.05-87.55-4.72-1.06-13.52,2.81-15.01-2.99v-2Z">
-                    </path>
-                    <path d="M259,387c-2.79,11.05-2.71,22.26-4.04,33.46l.04,223.54h-114l-.04-251.54c.45-5.21,1.97-11.33,2.04-16.46,10.11,1.89,19.75,5.51,29.81,7.69,27.04,5.85,58.82,7.6,86.19,3.31Z">
-                    </path>
-                  </g>
-                </g>
-              </g>
-            </svg>
-          </div>
-
-          <!-- Main Content: 3 Learners Groups -->
-          <div class="flex items-center gap-4 sm:gap-6 z-10">
-
-            <!-- Group 1 -->
-            <div class="flex flex-col items-center gap-3 group cursor-default">
-              <div class="relative w-12 h-12 rounded-full bg-white shadow-sm ring-1 ring-blue-100 flex items-center justify-center text-blue-600 transition-transform group-hover:-translate-y-1 duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user">
-                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-              </div>
-              <div class="px-2.5 py-1 bg-white/60 border border-blue-100/50 rounded-md shadow-sm backdrop-blur-sm">
-                <span class="text-[10px] font-semibold text-blue-900/60 uppercase tracking-wide font-geist">learner</span>
-              </div>
-            </div>
-
-            <!-- Group 2 -->
-            <div class="flex flex-col items-center gap-3 group cursor-default">
-              <div class="relative w-12 h-12 rounded-full bg-white shadow-sm ring-1 ring-blue-100 flex items-center justify-center text-blue-600 transition-transform group-hover:-translate-y-1 duration-300 delay-75">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user">
-                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-              </div>
-              <div class="px-2.5 py-1 bg-white/60 border border-blue-100/50 rounded-md shadow-sm backdrop-blur-sm">
-                <span class="text-[10px] font-semibold text-blue-900/60 uppercase tracking-wide font-geist">learner</span>
-              </div>
-            </div>
-
-            <!-- Group 3 -->
-            <div class="flex flex-col items-center gap-3 group cursor-default">
-              <div class="relative w-12 h-12 rounded-full bg-white shadow-sm ring-1 ring-blue-100 flex items-center justify-center text-blue-600 transition-transform group-hover:-translate-y-1 duration-300 delay-150">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user">
-                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-              </div>
-              <div class="px-2.5 py-1 bg-white/60 border border-blue-100/50 rounded-md shadow-sm backdrop-blur-sm">
-                <span class="text-[10px] font-semibold text-blue-900/60 uppercase tracking-wide font-geist">learner</span>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-
+    </div>
+    <style>
+      .kb-orbi.stage { position:absolute; left:50%; top:50%; width:220px; height:220px; margin:-110px 0 0 -110px; transform:scale(.62); display:grid; place-items:center; overflow:visible; }
+      .kb-orbi .orbi-mount { position:relative; z-index:1; display:grid; place-items:center; min-height:0; }
+      /* Handy: Quellen-Kacheln etwas kleiner, damit sie sich nicht überlappen */
+      @media (max-width:479px) { .kb-grid .grid-cols-5 .w-20.h-20 { width:3.3rem; height:3.3rem; border-radius:.8rem; } .kb-grid .grid-cols-5 .w-20.h-20 img { max-width:78%; } .kb-grid .grid-cols-5 .w-20.h-20 span { font-size:.6rem; letter-spacing:0; } }
+    </style>
+    <link rel="stylesheet" href="/assets/orbi/core/orbi.css">
+    <link rel="stylesheet" href="/assets/orbi/orbi-embed.css">
+    <script type="module" src="/assets/orbi/embed-sync.js"></script>
     </div>
 
 
     <!-- CTA: Try for free -->
-    <div class="animate-on-scroll text-center max-w-2xl mx-auto mt-40" style="animation: fadeSlideIn 1s ease-out 0.1s both">
-      <h3 class="text-2xl sm:text-3xl font-semibold text-gray-900 tracking-tight font-geist">Test the AI tutor with your own course content</h3>
-      <p class="text-lg text-gray-500 font-geist mt-4">The Free plan costs nothing, needs no credit card — and your first tutor is ready in minutes.</p>
-      <div class="flex flex-col sm:flex-row gap-4 items-center justify-center mt-8">
-        <a href="https://portal.alphalearn.ai/auth/register"
-          class="group inline-flex items-center justify-center gap-x-3 rounded-full bg-gray-900 px-10 py-5 text-lg font-semibold text-white font-geist shadow-[0_8px_30px_rgba(15,23,42,0.25)] transition-all duration-300 ease-out hover:bg-gray-800 hover:scale-[1.03] hover:shadow-[0_16px_45px_rgba(15,23,42,0.35)] active:scale-95">
-          Try for free
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-        </a>
-        <a href="/en/pricing.html"
-          class="inline-flex items-center justify-center gap-x-2 rounded-full bg-white px-10 py-5 text-lg font-semibold text-gray-900 font-geist border border-gray-200 shadow-sm transition-all duration-300 ease-out hover:bg-gray-50 hover:scale-[1.03] active:scale-95">
-          View pricing
-        </a>
+    <div class="animate-on-scroll ft-cta" style="animation: fadeSlideIn 1s ease-out 0.1s both">
+      <h3 class="bn-h2 text-left font-normal tracking-tight text-gray-950 font-geist">Try the AI tutor with your own course content.</h3>
+      <p class="ft-sub font-geist">Try the Professional plan free for 14 days. Your first tutor is ready in minutes.</p>
+      <div class="kb-ctas ft-ctas">
+        <a href="https://portal.alphalearn.ai/auth/register" class="kb-cta kb-cta--arrow font-geist">Try for free<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a href="/en/pricing.html" class="kb-cta kb-cta--ghost font-geist">See pricing</a>
       </div>
+      <style>
+        .ft-cta { margin-top:8rem; }
+        @media (min-width:1024px) { .ft-cta { margin-top:11rem; } }
+        .ft-sub { margin-top:2rem; max-width:40rem; font-size:clamp(1.15rem, 1.5vw, 1.4rem); line-height:1.5; font-weight:300; color:#4b5563; }
+        .kb-ctas.ft-ctas { margin:3rem 0 0; }
+        .kb-cta--ghost { background:transparent; color:#0a0a0f; box-shadow:inset 0 0 0 2px #0a0a0f; }
+        .kb-cta--ghost:hover { color:#fff; }
+        .kb-cta--arrow:hover svg { transform:translateX(3px); }
+      </style>
     </div>
 
     <!-- Media Logo Marquee: as seen in -->
-    <div class="animate-on-scroll text-center mt-48 mb-8" style="animation: fadeSlideIn 1s ease-out 0.1s both">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-medium font-geist mb-8">
-        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-megaphone">
-          <path d="m3 11 18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path>
-        </svg>
-        as seen in
-      </div>
-      <div class="media-marquee mx-auto max-w-5xl" aria-label="Media Logos">
+    <div class="animate-on-scroll press mt-48 mb-8" style="animation: fadeSlideIn 1s ease-out 0.1s both">
+      <h3 class="bn-h2 press-h text-left font-normal tracking-tight text-gray-950 font-geist">As seen in.</h3>
+    <style>
+      .bn-h2.press-h { font-size:clamp(1.9rem, 3.2vw, 3rem); line-height:1.1; margin-bottom:2.5rem; }
+      .press .media-marquee { --logo-base-size:46px; --gap:4rem; max-width:none; }
+      @media (max-width:768px) { .press .media-marquee { --logo-base-size:34px; --gap:2.75rem; } }
+    </style>
+      <div class="media-marquee" aria-label="Media logos">
         <div class="marquee-track">
           <img class="logo-vox" src="https://images.squarespace-cdn.com/content/v1/65550fdc63aaa75a11dca17e/0aea8368-46c7-4399-85e0-6e9049fa466c/VOX_Logo.png?format=2500w" alt="VOX" loading="lazy">
           <img class="logo-stern" src="https://images.squarespace-cdn.com/content/v1/65550fdc63aaa75a11dca17e/d6993926-4520-4ebc-b16b-34c81f7dc1a4/Stern-Logo_komplett.png?format=500w" alt="Stern" loading="lazy">
@@ -1933,7 +1617,7 @@ opacity: 0 !important;
   const progress = 76; const rings = document.querySelectorAll('[data-ring]'); rings.forEach((ring, idx) => { const r = parseFloat(ring.getAttribute('data-radius')); const circumference = 2 * Math.PI * r; const pct = progress / 100; const dash = Math.max(0, circumference * pct - 2); ring.style.transition = 'stroke-dasharray 1200ms cubic-bezier(0.22, 1, 0.36, 1), stroke-dashoffset 1200ms cubic-bezier(0.22, 1, 0.36, 1)'; ring.style.strokeDasharray = `0 ${circumference}`; ring.style.strokeDashoffset = '0'; setTimeout(() => { ring.style.strokeDasharray = `${dash} ${circumference}`; ring.style.strokeDashoffset = '0'; }, 120 + idx * 80); }); ((el) => { if (el) el.textContent = progress; })(document.getElementById('percentValue'));
 </script>
 </div>
-    </main><section aria-labelledby="ai-section" class="overflow-hidden border-black/5 border-t relative">
+    </main><section aria-labelledby="ai-section" class="overflow-hidden relative">
   <!-- Subtle arcs -->
   <div class="pointer-events-none absolute inset-0">
     <div class="absolute -right-1/4 top-24 h-[900px] w-[900px] rounded-full border border-white/10"></div>
@@ -2002,20 +1686,40 @@ opacity: 0 !important;
       lucide.createIcons({ attrs: { 'stroke-width': 1.5 } });
     }
   </script>
-</section><section aria-labelledby="mobile-app" class="overflow-hidden border-black/5 border-t relative">
+</section><section aria-labelledby="mobile-app" class="overflow-hidden relative">
   <!-- Decorative glows -->
   <div class="pointer-events-none absolute inset-0">
     <div class="absolute -left-1/3 top-24 h-[900px] w-[900px] rounded-full bg-indigo-500/10 blur-3xl"></div>
     <div class="absolute -left-1/4 top-64 h-[1200px] w-[1200px] rounded-full bg-amber-400/10 blur-3xl"></div>
   </div>
 
-  <section class="md:py-24 overflow-hidden font-geist bg-white pt-16 pb-16 relative">
+  <section class="faq-sec overflow-hidden font-geist bg-white relative">
+  <style>
+    .faq-sec { padding-top:8rem; padding-bottom:8rem; }
+    @media (min-width:1024px) { .faq-sec { padding-top:11rem; } }
+    .faq-sec .faq-head { margin-bottom:3.5rem; }
+    @media (min-width:768px) { .faq-sec .faq-head { margin-bottom:5rem; } }
+    .faq-sec .grid.md\:grid-cols-2 { align-items:start; }   /* nur das Fragen-Raster, nicht die Klapp-Grids */
+    .faq-sec .grid > .group.rounded-2xl { border:1.5px solid #0a0a0f; background:#fff; box-shadow:none; }
+    .faq-sec .grid > .group.rounded-2xl > button > span:first-child { font-size:1.08rem; font-weight:500; color:#0a0a0f; letter-spacing:-.01em; }
+    .faq-sec .grid > .group.rounded-2xl .faq-content > div > div { font-size:1rem; line-height:1.65; color:#4b5563; }
+    .faq-sec .faq-content p + p, .faq-sec .faq-content p + ul, .faq-sec .faq-content ul + p { margin-top:.85rem; }
+    .faq-sec .faq-content ul { list-style:disc; padding-left:1.25rem; }
+    .faq-sec .faq-content li + li { margin-top:.35rem; }
+    .faq-sec .faq-content li::marker { color:#0a0a0f; }
+    .faq-sec .faq-content strong { font-weight:600; color:#0a0a0f; }
+    .ab-more-inline { color:#2563eb; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:.2em; }
+    .ab-more-inline:hover { color:#1d4ed8; }
+    .faq-sec .faq-icon { width:2.25rem; height:2.25rem; border:1.5px solid #0a0a0f; background:#fff; color:#0a0a0f; transition:background-color .25s, color .25s; }
+    .faq-sec .faq-icon svg { color:currentColor !important; }
+    .faq-sec .group.rounded-2xl:hover .faq-icon, .faq-sec button[aria-expanded="true"] .faq-icon { background:#0a0a0f; color:#fff; border-color:#0a0a0f; }
+    .faq-sec button:focus-visible { outline:2px solid #2563eb; outline-offset:-4px; border-radius:1rem; }
+  </style>
   <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
     <!-- Header -->
-    <div class="mb-12 md:mb-16 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-      <div class="max-w-2xl">
-        <h2 class="md:text-4xl text-3xl font-semibold text-gray-900 tracking-tight">Questions &amp; Answers</h2>
-        <p class="text-lg text-gray-600 mt-4">Here you’ll find more information about the Alphabees AI Tutor and our services.</p>
+    <div class="faq-head">
+      <div>
+        <h2 class="bn-h2 text-left font-normal tracking-tight text-gray-950 font-geist">Questions &amp; Answers.</h2>
       </div>
       <!-- Decorative icon/element -->
 
@@ -2026,14 +1730,16 @@ opacity: 0 !important;
       <!-- Item 1 -->
       <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
         <button data-faq="What does an AI tutor do?" onclick="toggleFaq(this)" class="flex focus:outline-none text-left w-full pt-6 pr-6 pb-6 pl-6 items-center justify-between" aria-expanded="false">
-          <span class="text-base font-semibold text-gray-900">What does an AI tutor do?</span>
+          <span class="text-base font-semibold text-gray-900">What does an <span class="whitespace-nowrap">AI tutor</span> do?</span>
           <span class="flex shrink-0 items-center justify-center transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon text-blue-600 bg-white w-8 h-8 border-gray-200 border rounded-full ml-6">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300 w-[16px] h-[16px]" data-icon-replaced="true" style="color: rgb(37, 99, 235); width: 16px; height: 16px;"><path d="M5 12h14" class=""></path><path d="M12 5v14" class=""></path></svg>
           </span>
         </button>
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
-            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">An AI tutor supports learners right in the course — with instant answers, summaries, examples, personalized practice, and clear explanations. It uses your course content (and any sources you add) as its knowledge base, so responses stay aligned with your e‑learning and drive progress. Learners get the help they need without ever leaving the platform.</div>
+            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
+              <p>An <span class="whitespace-nowrap">AI tutor</span> supports your learners right in the course, for example in Moodle or ILIAS. It uses your course content and any other sources you add as its knowledge base. The key features:</p><ul><li><strong>Intelligent AI chat:</strong> answers questions based on your course content, with the source shown below the answer (can be turned off).</li><li><strong>Personalized practice:</strong> exercises in various formats, matched to each learner’s level, with individual feedback.</li><li><strong>Didactic dialogue modes:</strong> such as Socratic counter-questions, debate, reflection questions or real-world examples.</li><li><strong>Active learning support:</strong> in Moodle, it offers prompts on its own that match the course section currently open.</li><li><strong>Guided learning mode:</strong> in Moodle, it works through a course or a PDF with your learners step by step.</li><li><strong>Adaptive learner profiles (optional):</strong> recognizes strengths and weaknesses and adapts exercises and explanations to them.</li><li><strong>80+ languages:</strong> adapts to each learner’s language and language level.</li></ul><p><a href="/en/features.html" class="ab-more-inline">See all features</a></p>
+            </div>
           </div>
         </div>
       </div>
@@ -2041,14 +1747,16 @@ opacity: 0 !important;
       <!-- Item 2 -->
       <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
         <button data-faq="What does an AI tutor cost?" onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
-          <span class="text-base font-semibold text-gray-900">What does an AI tutor cost?</span>
+          <span class="text-base font-semibold text-gray-900">What does an <span class="whitespace-nowrap">AI tutor</span> cost?</span>
           <span class="ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-blue-600 transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
           </span>
         </button>
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
-            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">Try the Alphabees AI Tutor for free and launch it instantly in your LMS. Plans start at €79/month. For detailed pricing, visit: <a href="/en/pricing.html" class="text-blue-600 hover:underline">alphalearn.ai/en/pricing.html</a></div>
+            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
+              <p>You start with the free 14-day trial of the Professional plan. Then you choose the plan that suits you. Prices per month, billed yearly, plus VAT:</p><ul><li><strong>Basic:</strong> €79 (up to 100 learners, 1,000 credits per month)</li><li><strong>Professional:</strong> €199 (up to 250 learners, 2,500 credits per month)</li><li><strong>Enterprise:</strong> custom pricing, for more than 250 learners</li></ul><p>Billed monthly, Basic costs €99 and Professional €249. You can buy extra credits whenever you need them.</p><p><a href="/en/pricing.html" class="ab-more-inline">Plan and pricing details</a></p>
+            </div>
           </div>
         </div>
       </div>
@@ -2063,7 +1771,9 @@ opacity: 0 !important;
         </button>
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
-            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">Alphabees gives you access to top AI providers and the latest high‑performance models. Choose between open‑source and closed‑source options. Currently available: OpenAI, Anthropic, Google, Meta, Mistral, Groq, DeepSeek. Pick your preferred provider — no separate contract required. If you want to bring your own model or a self‑hosted open‑weight model like LLaMA 3, just reach out. We’ll help you connect your API key.</div>
+            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
+              <p>We offer you the leading AI providers across different price and performance tiers, so you can run the <span class="whitespace-nowrap">AI tutor</span> as efficiently as possible for your use case.</p><ul><li><strong>Premium:</strong> OpenAI, Google and Anthropic</li><li><strong>Market leaders:</strong> OpenAI, Google and Anthropic</li><li><strong>Value:</strong> OpenAI, Google, Meta, Qwen, DeepSeek and Groq</li></ul>
+            </div>
           </div>
         </div>
       </div>
@@ -2078,22 +1788,26 @@ opacity: 0 !important;
         </button>
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
-            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">No. Alphabees gives you access to top AI providers and the latest high‑performance models. Just choose a provider in the Alphabees portal when you set up your tutor. All AI usage costs are already included in your plan.</div>
+            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
+              <p>No. AI usage is covered by your plan’s monthly credit allowance, so you don’t need your own contract with an AI provider. On the Enterprise plan, you can optionally use your own API key (bring your own API key). In that case, you pay for AI usage directly to the provider.</p><p><a href="/en/pricing.html" class="ab-more-inline">Compare plans</a></p>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Item 5 -->
       <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
-        <button data-faq="Can I integrate the AI tutor into my e‑learning and LMS?" onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
-          <span class="text-base font-semibold text-gray-900">Can I integrate the AI tutor into my e‑learning and LMS?</span>
+        <button data-faq="Can I integrate the AI tutor into my e-learning courses and my LMS, e.g. Moodle or ILIAS?" onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
+          <span class="text-base font-semibold text-gray-900">Can I integrate the <span class="whitespace-nowrap">AI tutor</span> into my e-learning courses and my LMS, e.g. Moodle or ILIAS?</span>
           <span class="ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-blue-600 transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
           </span>
         </button>
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
-            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">Yes. Our AI tutors integrate into common LMS platforms, so they fit seamlessly into your existing learning flow. For Moodle we even built a dedicated plugin — easy to set up with no technical knowledge.</div>
+            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
+              <p>Yes. With a short code snippet, you can embed the <span class="whitespace-nowrap">AI tutor</span> in any LMS and any e-learning course. For Moodle and ILIAS, there is also a dedicated plugin for each. Integration via LTI 1.3 is possible as well.</p><p><a href="/en/moodle-plugin.html" class="ab-more-inline">Moodle plugin</a> · <a href="/en/ilias-plugin.html" class="ab-more-inline">ILIAS plugin</a></p>
+            </div>
           </div>
         </div>
       </div>
@@ -2108,7 +1822,9 @@ opacity: 0 !important;
         </button>
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
-            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">All data is securely hosted on our servers in Germany, ensuring GDPR compliance.</div>
+            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
+              <p>The Alphalearn platform is hosted in Germany, and files you upload to your knowledge base are stored encrypted in EU data centers. To generate an answer, we pass chat content and content from your knowledge base to the selected AI model only temporarily and in pseudonymized form. Depending on the provider, the model runs in the EU or in the US, safeguarded by Standard Contractual Clauses. Your content is not used to train AI models. If you use your own API key on the Enterprise plan, the terms of your contract with the AI provider also apply to model usage.</p><p><a href="/en/privacy.html" class="ab-more-inline">Read our privacy policy</a></p>
+            </div>
           </div>
         </div>
       </div>
@@ -2123,7 +1839,9 @@ opacity: 0 !important;
         </button>
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
-            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">Yes. The Alphabees AI Tutor is GDPR‑compliant and built to meet EU AI Act requirements. Unless profiling for adaptive, learner-specific AI tutoring is enabled in the Alphalearn portal, we store no personal data and don’t use your data to train models. A GDPR‑compliant data processing agreement (DPA) exists between Alphabees and each AI provider, and we sign a DPA with every customer as well. In line with the EU AI Act, the tutor is used as a supportive learning tool, clearly labeled as AI via a disclaimer banner, and does not make automated decisions with legal or performance consequences. In addition, the tutor is accessible in accordance with WCAG 2.2, conformance level AA.</div>
+            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
+              <p>Alphalearn is designed for use in line with the GDPR and the EU AI Act: you receive a data processing agreement (DPA), and your content is not used to train AI models. By default, we don’t store chat histories long-term; the exceptions, for example for learner profiles, are listed in our <a href="/en/privacy.html" class="ab-more-inline">privacy policy</a>. For learning support, we classify the tutors as limited-risk systems under the EU AI Act, and they are clearly labeled as AI. If you use the tutor to assess learning outcomes, check the classification for your use case. Our <a href="/de/ki-compliance-check.html" class="ab-more-inline">AI compliance check</a> (in German) helps with that. For accessibility under WCAG, we’re happy to <a href="/en/contact.html" class="ab-more-inline">answer your questions directly</a>.</p><p><a href="/en/compliance.html" class="ab-more-inline">More on compliance</a></p>
+            </div>
           </div>
         </div>
       </div>
@@ -2131,14 +1849,16 @@ opacity: 0 !important;
       <!-- Item 8 -->
       <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
         <button data-faq="Does the AI tutor work in the Moodle Mobile App?" onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
-          <span class="text-base font-semibold text-gray-900">Does the AI tutor work in the Moodle Mobile App?</span>
+          <span class="text-base font-semibold text-gray-900">Does the <span class="whitespace-nowrap">AI tutor</span> work in the Moodle Mobile App?</span>
           <span class="ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-blue-600 transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
           </span>
         </button>
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
-            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">Yes. Alphabees is the only AI tutor that also works inside the Moodle Mobile App. With our dedicated plugin, learners can use the full AI assistance on the go, right inside their Moodle courses.</div>
+            <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
+              <p>Yes. As soon as the tutor is active in a Moodle course, it automatically appears as a chat in the official Moodle Mobile App, with no extra app and no extra login. On smartphones, the chat opens full screen, just like a messenger. That way, learners get support right in the course, even on the go. In ILIAS, the tutor appears as a chat on the course pages in the browser.</p><p><a href="/en/moodle-plugin.html" class="ab-more-inline">More about the Moodle plugin</a></p>
+            </div>
           </div>
         </div>
       </div>
@@ -2149,76 +1869,12 @@ opacity: 0 !important;
 
   </div>
   <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
-    <!-- Header -->
-    <div class="mb-12 md:mb-16 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-      <div class="max-w-2xl">
-
-
-      </div>
-      <!-- Decorative icon/element -->
-
-    </div>
+    
 
     <!-- FAQ Grid -->
 
 
     <!-- Bottom Contact Section -->
-    <div class="sm:p-10 overflow-hidden group bg-gray-900 rounded-3xl mt-16 pt-8 pr-8 pb-8 pl-8 relative shadow-2xl">
-      <!-- Glow effects -->
-      <div class="absolute top-0 right-0 -mt-10 -mr-10 h-64 w-64 rounded-full bg-blue-500/20 blur-3xl group-hover:bg-blue-500/30 transition-colors duration-500">
-      </div>
-      <div class="-mb-10 -ml-10 group-hover:bg-indigo-500/30 transition-colors duration-500 bg-indigo-500/20 w-64 h-64 rounded-full absolute bottom-0 left-0 blur-3xl">
-      </div>
-
-      <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-        <div class="text-center md:text-left">
-          <h3 class="text-2xl font-semibold text-white tracking-tight">Still have questions?</h3>
-          <p class="text-gray-400 max-w-md mt-2">Got more questions about Alphabees or the AI tutor? Our AI support bot is trained on all our knowledge — it can likely answer right away.</p>
-        </div>
-        <div class="flex-shrink-0">
-          <button data-cta="support_chat" onclick="toggleContactForm(this)" class="inline-flex hover:bg-gray-50 hover:scale-[1.02] transition-all duration-200 text-sm font-semibold text-gray-900 bg-white rounded-full pt-3 pr-6 pb-3 pl-6 shadow-sm gap-x-2 gap-y-2 items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" style="width: 18px; height: 18px; color: rgb(17, 24, 39)" class="lucide lucide-mail w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" data-mingcute="message-4-ai-line" data-icon-set="mingcute" data-icon-replaced="true" stroke-width="0.5"><g fill="none" class=""><path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"></path><path fill="#111827" d="M2 6a3 3 0 0 1 3-3h8a1 1 0 1 1 0 2H5a1 1 0 0 0-1 1v13l2.134-1.6a2 2 0 0 1 1.199-.4H19a1 1 0 0 0 1-1v-4a1 1 0 1 1 2 0v4a3 3 0 0 1-3 3H7.333L4 21.5c-.824.618-2 .03-2-1zm9 6a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2zm4-4a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2zm5-7a1 1 0 0 1 .946.677l.13.378c.3.879.99 1.57 1.87 1.87l.377.129a1 1 0 0 1 0 1.892l-.378.13c-.879.3-1.57.99-1.87 1.87l-.129.377a1 1 0 0 1-1.892 0l-.13-.378a3 3 0 0 0-1.87-1.87l-.377-.129a1 1 0 0 1 0-1.892l.378-.13c.879-.3 1.57-.99 1.87-1.87l.129-.377l.062-.146A1 1 0 0 1 20 1m0 3.196a5 5 0 0 1-.804.804q.449.355.804.803q.356-.447.803-.803A5 5 0 0 1 20 4.196" class=""></path></g></svg>
-            Contact AI Support
-          </button>
-        </div>
-      </div>
-
-      <!-- Expandable Form Block -->
-      <div id="contactFormBlock" class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out mt-0">
-        <div class="overflow-hidden">
-          <div class="pt-10 mt-8 border-t border-white/10">
-
-            <!-- AI Tutor Chat Integration -->
-            <div class="mx-auto max-w-2xl bg-white/5 ring-1 ring-white/10 rounded-2xl p-2 relative shadow-2xl backdrop-blur-md">
-
-              <!-- Header -->
-              <div class="flex items-center justify-between mb-4 px-2 pt-2">
-                <span class="text-xs font-medium text-gray-400 font-geist flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg>
-                AI-Customer Support
-              </span>
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-2.5 py-1 text-emerald-400 text-[10px] font-medium font-geist ring-1 ring-inset ring-emerald-500/20">
-                <span class="relative flex h-1.5 w-1.5">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
-                </span>
-                Live
-                </span>
-              </div>
-
-              <!-- Chat Container -->
-              <div class="rounded-xl bg-white ring-1 ring-white/10 overflow-hidden relative">
-                <div class="h-[450px] w-full">
-                  <iframe title="Alphabees AI Tutor" class="w-full h-full border-0" data-src="https://chat.alphabees.de/production/index.html?botId=355cb97f-f076-42b7-8aac-b0dfb8e4a236&amp;apiKey=359ea983-451c-4c2a-bbf1-ea467946e84f&amp;isFullscreen=true" allow="clipboard-read; clipboard-write; microphone; camera; storage-access"></iframe>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 
   <script>
@@ -2285,6 +1941,7 @@ opacity: 0 !important;
     }
   </script>
 </section><!-- Global Footer -->
+<!-- Footer styles: /assets/css/design-2026.css -->
 <div id="site-footer"><!-- partial:footer:start -->
 <footer class="text-white bg-gray-900 border-black/5 border-t relative">
   <div class="absolute inset-0 pointer-events-none">
@@ -2310,7 +1967,6 @@ opacity: 0 !important;
     </clipPath>
   </defs>
 </svg>
-        <p class="text-sm text-gray-400 font-geist max-w-sm mt-4">AI tutors for academies, universities, and continuing education.</p>
         <p class="text-sm text-gray-400 font-geist max-w-sm mt-2">Alphalearn is a brand of Alphabees.</p>
         <div class="mt-6 flex items-center gap-3">
           <a href="https://moodle.org/plugins/block_alphabees" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center hover:bg-white/20 transition bg-white/10 w-10 h-10 border-white/10 border rounded-lg backdrop-blur-md">
@@ -2321,6 +1977,9 @@ opacity: 0 !important;
                 <path d="M77.05,129.17c20.75,6.68,42.3,8.73,64,7l-1,135h-63v-142Z" style="fill: #fff;" class=""></path>
               </g>
             </svg>
+          </a>
+          <a href="https://github.com/alphabees-25/ilias-plugin-alphabees" target="_blank" rel="noopener noreferrer" aria-label="Alphalearn ILIAS plugin" class="inline-flex items-center justify-center hover:bg-white/20 transition bg-white/10 w-10 h-10 border-white/10 border rounded-lg backdrop-blur-md">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 12" width="25" height="10" aria-hidden="true"><text x="15" y="10.6" text-anchor="middle" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="12.4" letter-spacing="-.15" fill="#fff">ILIAS</text></svg>
           </a>
           <a href="https://github.com/LErdweg/moodle-block_alphabees/wiki" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center hover:bg-white/20 transition bg-white/10 w-10 h-10 border-white/10 border rounded-lg backdrop-blur-md">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" style="color: rgb(255, 255, 255); width: 18px; height: 18px" class="w-[18px] h-[18px]" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" data-simple-icons="github" data-icon-set="simple-icons" data-icon-replaced="true" stroke-width="0.5">
@@ -2372,10 +2031,10 @@ opacity: 0 !important;
             <li class=""><a href="/en/academy.html" class="hover:text-white transition text-sm text-gray-400 font-geist">Academy</a></li>
             <li class=""><a href="/en/helpcenter.html" class="text-sm text-gray-400 hover:text-white transition font-geist" style="">Help
                 Center</a></li>
-            <li class=""><a href="https://portal.alphabees.de/auth/register" class="hover:text-white transition text-sm text-gray-400 font-geist">Alphabees
+            <li class=""><a href="https://portal.alphabees.de/auth/register" class="hover:text-white transition text-sm text-gray-400 font-geist">Alphalearn
                 Portal</a></li>
             <li class=""><a href="/en/blog.html" class="hover:text-white transition text-sm text-gray-400 font-geist">Blog</a></li>
-            <li class=""><a href="/en/ai-tutor-guide-education-providers-2026.html" class="hover:text-white transition text-sm text-gray-400 font-geist">AI-Tutor Guide 2026</a></li>
+            <li class=""><a href="/en/ai-tutor-guide-education-providers-2026.html" class="hover:text-white transition text-sm text-gray-400 font-geist">AI Tutor Guide 2026</a></li>
           </ul>
         </div>
 
@@ -2896,4 +2555,20 @@ opacity: 0 !important;
   observer.observe(document.documentElement, { childList: true });
 })();
 </script>
+
+<script>
+/* Hero-Video: Breite ohne Scrollbalken messen, Pause-Knopf, reduzierte Bewegung */
+(function () {
+  var root = document.documentElement, video = document.querySelector('.hv-video'), btn = document.querySelector('.hv-pause');
+  function vw() { root.style.setProperty('--hv-vw', root.clientWidth + 'px'); }
+  vw(); window.addEventListener('resize', vw);
+  if ('ResizeObserver' in window) new ResizeObserver(vw).observe(root);
+  if (!video || !btn) return;
+  function setPaused(p) { if (p) video.pause(); else video.play().catch(function () {}); btn.setAttribute('aria-pressed', p ? 'true' : 'false'); btn.setAttribute('aria-label', p ? 'Play background video' : 'Pause background video'); }
+  btn.addEventListener('click', function () { setPaused(!video.paused); });
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) setPaused(true);
+})();
+</script>
+<!-- Alphalearn Chat-Widget (Orbi) -->
+<script>(function(){var e=document,t=e.createElement("script");t.src="https://chat.alphalearn.ai/chat-widget.js",t.onload=function(){_loadAlChat({apiKey:"359ea983-451c-4c2a-bbf1-ea467946e84f",botId:"355cb97f-f076-42b7-8aac-b0dfb8e4a236"})},e.body.appendChild(t);})();</script>
 </body></html>

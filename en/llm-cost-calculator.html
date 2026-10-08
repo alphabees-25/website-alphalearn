@@ -37,22 +37,25 @@
     .animate-on-scroll.animate { animation-play-state: running !important; }
     html, body { overflow-x: hidden; width: 100%; }
     *, *::before, *::after { box-sizing: border-box; }
+    /* Design 2026: .font-geist as on the reference pages (previously undefined, headings fell back to Inter) */
+    .font-geist { font-family: 'Geist', sans-serif !important; }
 
     input[type="range"] {
       -webkit-appearance: none; appearance: none;
       width: 100%; height: 6px; border-radius: 9999px;
       background: #e5e7eb; outline: none; cursor: pointer;
     }
+    input[type="range"]:focus-visible { outline: 2px solid #2563eb; outline-offset: 6px; }
     input[type="range"]::-webkit-slider-thumb {
       -webkit-appearance: none;
       width: 20px; height: 20px; border-radius: 50%;
-      background: #7c3aed; cursor: pointer;
+      background: #0a0a0f; cursor: pointer;
       border: 2px solid white;
-      box-shadow: 0 1px 4px rgba(0,0,0,.18), 0 0 0 3px rgba(124,58,237,.15);
+      box-shadow: 0 1px 4px rgba(0,0,0,.25), 0 0 0 1.5px #0a0a0f;
     }
     input[type="range"]::-moz-range-thumb {
       width: 20px; height: 20px; border-radius: 50%;
-      background: #7c3aed; border: 2px solid white; cursor: pointer;
+      background: #0a0a0f; border: 2px solid white; cursor: pointer;
     }
 
     .toggle-btn {
@@ -60,7 +63,8 @@
       border-radius: 9999px; border: none; cursor: pointer;
       transition: background .2s; background: #d1d5db; flex-shrink: 0;
     }
-    .toggle-btn.active { background: #7c3aed; }
+    .toggle-btn.active { background: #0a0a0f; }
+    .toggle-btn:focus-visible { outline: 2px solid #2563eb; outline-offset: 3px; }
     .toggle-thumb {
       position: absolute; top: 3px; left: 3px;
       width: 20px; height: 20px; border-radius: 50%;
@@ -70,13 +74,15 @@
     .toggle-btn.active .toggle-thumb { transform: translateX(22px); }
 
     .tier-card {
-      border: 2px solid #e5e7eb; border-radius: 12px;
-      padding: 12px; cursor: pointer;
-      transition: border-color .15s, background .15s;
+      border: 1.5px solid #d1d5db; border-radius: 1rem;
+      padding: 14px; cursor: pointer;
+      transition: border-color .15s, box-shadow .15s;
       background: white;
     }
-    .tier-card:hover { border-color: #a78bfa; }
-    .tier-card.selected { border-color: #7c3aed; background: #faf5ff; }
+    .tier-card:hover { border-color: #0a0a0f; }
+    .tier-card.selected { border-color: #0a0a0f; box-shadow: inset 0 0 0 1px #0a0a0f; }
+    /* Stars in the rating table: black instead of yellow */
+    .kr-quality .text-yellow-400 { color: #0a0a0f; }
 
     .badge-green  { display:inline-flex;align-items:center;gap:4px;background:#f0fdf4;color:#15803d;font-size:.7rem;font-weight:600;border-radius:9999px;padding:2px 8px; }
     .badge-orange { display:inline-flex;align-items:center;gap:4px;background:#fff7ed;color:#c2410c;font-size:.7rem;font-weight:600;border-radius:9999px;padding:2px 8px; }
@@ -92,34 +98,32 @@
     })();
   </script>
   <script src="/assets/js/layout.js?v=static-v3" defer></script>
+  <link rel="stylesheet" href="/assets/css/design-2026.css">
 </head>
-<body class="min-h-screen antialiased text-gray-900 bg-gray-50 overflow-x-hidden"
+<body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden"
       style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
 
   <div id="site-header"><!-- partial:header:start -->
 <!-- Top Navigation -->
-    <header class="relative z-20 border-b border-gray-100">
-      <div class="sm:px-6 lg:px-8 max-w-7xl mr-auto ml-auto pr-4 pl-4">
-        <div class="flex sm:py-6 pt-4 pb-4 relative items-center justify-between">
+    <header class="relative z-20 border-b border-gray-100 bg-white">
+      <div class="px-4 sm:px-6">
+        <div class="flex py-2.5 sm:py-3 relative items-center">
   <!-- Brand -->
   <a href="/en/" class="flex gap-x-3 gap-y-3 items-center shrink-0 relative">
-    <img src="/assets/images/Logo_Alphalearn_outlines_fluid_animated.svg" alt="Alphalearn" class="h-[43px] w-auto max-w-[198px] object-contain" loading="eager" decoding="async">
+    <img src="/assets/images/Logo_Alphalearn_outlines_fluid_animated.svg" alt="Alphalearn" class="h-[30px] sm:h-[34px] w-auto max-w-[157px] object-contain" loading="eager" decoding="async">
     <span class="sr-only font-geist">Alphalearn</span>
   </a>
 
   <!-- Centered Navigation Group (Desktop) -->
-  <nav class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-8">
+  <nav class="hidden md:flex items-center gap-7 ml-10 lg:ml-12" style="position:relative; top:3px">
     <a href="/en/demos.html" class="nav-link hover:text-blue-600 transition-colors group text-sm font-medium text-gray-600 font-geist relative">
       Demos
-      <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
     </a>
     <a href="/en/pricing.html" class="nav-link text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors font-geist relative group">
       Pricing
-      <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
     </a>
     <a href="/en/features.html" class="nav-link hover:text-blue-600 transition-colors group text-sm font-medium text-gray-600 font-geist relative">
     Features
-    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
   </a>
   </nav>
 
@@ -142,7 +146,7 @@
 
 
   <!-- Right Actions (Desktop & Mobile Toggle) -->
-  <div class="flex items-center gap-3 sm:gap-4 z-10 shrink-0 relative">
+  <div class="flex items-center gap-3 sm:gap-4 z-10 shrink-0 relative ml-auto">
     
     <!-- Language Toggle (Desktop) -->
     <div class="hidden md:flex items-center bg-gray-100/80 ring-1 ring-gray-200 rounded-lg p-0.5">
@@ -154,12 +158,12 @@
     <div class="hidden md:flex gap-1 border-gray-200 border-l ml-1 pl-2 gap-x-1 gap-y-1 items-center">
         <!-- Login Icon -->
         <a href="https://portal.alphabees.de/auth/login" class="group hover:bg-blue-50 transition-all duration-300 rounded-full pt-2 pr-2 pb-2 pl-2 relative" aria-label="Login">
-           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-x-0.5 w-[20px] h-[20px]" data-icon-replaced="true" style="width: 20px; height: 20px; color: rgb(37, 99, 235);"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" class=""></path><polyline points="10 17 15 12 10 7" class=""></polyline><line x1="15" x2="3" y1="12" y2="12" class=""></line></svg>
+           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in text-gray-600 group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-x-0.5 w-[20px] h-[20px]" data-icon-replaced="true" style="width: 20px; height: 20px;"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" class=""></path><polyline points="10 17 15 12 10 7" class=""></polyline><line x1="15" x2="3" y1="12" y2="12" class=""></line></svg>
            <span class="absolute top-full mt-2 left-1/2 -translate-x-1/2 px-2 py-1 bg-gray-900 text-white text-[10px] font-medium rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap font-geist shadow-lg transform translate-y-1 group-hover:translate-y-0">login</span>
         </a>
         <!-- Register Icon -->
         <a href="https://portal.alphabees.de/auth/register" class="group hover:bg-blue-50 transition-all duration-300 rounded-full pt-2 pr-2 pb-2 pl-2 relative" aria-label="Register">
-           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-plus group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 w-[20px] h-[20px]" data-icon-replaced="true" style="color: rgb(37, 99, 235); width: 20px; height: 20px;">
+           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-plus text-gray-600 group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 w-[20px] h-[20px]" data-icon-replaced="true" style="width: 20px; height: 20px;">
              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" class=""></path>
              <circle cx="9" cy="7" r="4" class=""></circle>
              <line x1="19" x2="19" y1="8" y2="14"></line>
@@ -185,7 +189,7 @@
       </div>
       <!-- Mobile Menu -->
       <div id="mobileMenu" class="md:hidden hidden">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="px-4 sm:px-6">
           <div class="border-t border-gray-100"></div>
           <div class="py-3 space-y-1 divide-y divide-gray-100 border-b border-gray-100">
             <a href="/en/demos.html" class="nav-link block hover:text-gray-900 text-sm text-gray-700 font-geist pt-3 pr-2 pb-3 pl-2">Demos</a>
@@ -203,31 +207,27 @@
   <main class="relative">
 
     <!-- Hero -->
-    <div class="relative bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 overflow-hidden">
-      <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
-      <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-fuchsia-400/10 blur-3xl pointer-events-none"></div>
-
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-14 sm:pt-32 sm:pb-16 relative">
-        <nav class="flex items-center gap-2 mb-8 text-sm text-white/60 font-geist"
+    <div class="relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8 sm:pt-24 sm:pb-12 lg:pt-28 relative"><nav class="flex items-center gap-2 mb-12 sm:mb-16 text-sm text-gray-500 font-geist"
              style="animation: fadeSlideIn .8s ease-out both;">
-          <a href="index.html" class="hover:text-white transition">Home</a>
+      <a href="index.html" class="hover:text-[#0a0a0f] transition">Home</a>
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
-          <span class="text-white/40">Cost Calculator</span>
+          <span class="text-gray-400">Cost Calculator</span>
         </nav>
 
         <div class="flex flex-wrap items-center gap-3 mb-5"
              style="animation: fadeSlideIn .8s ease-out .05s both;">
-          <span class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-white text-xs font-semibold font-geist">
+          <span class="ds-label">
             Free Tool
           </span>
         </div>
 
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white font-geist leading-[1.15] tracking-tight mb-5"
+        <h1 class="ds-h1 text-balance max-w-5xl mb-8"
             style="animation: fadeSlideIn .8s ease-out .1s both;">
           When Does Self-Hosting an AI Tutor Actually Pay Off?
         </h1>
-        <div class="text-base sm:text-lg text-white/70 font-geist font-normal leading-relaxed max-w-3xl space-y-3"
+        <div class="ds-sub space-y-4"
              style="animation: fadeSlideIn .8s ease-out .15s both;">
           <p>The idea sounds appealing: your own AI model running on a server in-house, full control, and seemingly lower costs than the big cloud providers. But is that really the whole picture?</p>
           <p>This calculator goes beyond surface-level price lists. It reveals the Total Cost of Ownership (TCO) — from expensive server hardware and hidden staffing overhead to the electricity costs nobody mentions upfront.</p>
@@ -237,41 +237,42 @@
     </div>
 
     <!-- Calculator -->
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-24 sm:pt-12 sm:pb-32">
+     <div class="max-w-5xl">
 
       <!-- 1. Inputs -->
-      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8 mb-5 animate-on-scroll"
+      <div class="ds-card p-6 sm:p-8 mb-6 animate-on-scroll"
            style="animation: fadeSlideIn .7s ease-out both;">
 
-        <h2 class="text-base font-semibold font-geist text-gray-900 mb-5">Your Institution</h2>
+        <h2 class="font-geist text-2xl sm:text-[1.75rem] font-normal tracking-tight text-[#0a0a0f] mb-6">Your Institution</h2>
 
         <!-- Sliders 2-col -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 mb-5">
           <div>
             <div class="flex items-center justify-between mb-2">
               <label class="text-sm font-medium text-gray-700">Learners in LMS</label>
-              <span class="font-semibold font-geist text-violet-700 text-sm bg-violet-50 px-2.5 py-0.5 rounded-full"
+              <span class="font-medium font-geist text-[#0a0a0f] text-sm bg-white border-[1.5px] border-[#0a0a0f] px-3 py-0.5 rounded-full tabular-nums"
                     id="learners-display">1,000</span>
             </div>
             <input type="range" id="learners" min="100" max="50000" step="100" value="1000">
-            <div class="flex justify-between mt-1.5 text-xs text-gray-400"><span>100</span><span>50,000</span></div>
+            <div class="flex justify-between mt-1.5 text-xs text-gray-500"><span>100</span><span>50,000</span></div>
           </div>
           <div>
             <div class="flex items-center justify-between mb-2">
               <label class="text-sm font-medium text-gray-700">AI requests / day / learner</label>
-              <span class="font-semibold font-geist text-violet-700 text-sm bg-violet-50 px-2.5 py-0.5 rounded-full ml-3"
+              <span class="font-medium font-geist text-[#0a0a0f] text-sm bg-white border-[1.5px] border-[#0a0a0f] px-3 py-0.5 rounded-full ml-3 tabular-nums"
                     id="requests-display">5</span>
             </div>
             <input type="range" id="requestsPerDay" min="1" max="30" step="1" value="5">
-            <div class="flex justify-between mt-1.5 text-xs text-gray-400"><span>1</span><span>30</span></div>
+            <div class="flex justify-between mt-1.5 text-xs text-gray-500"><span>1</span><span>30</span></div>
           </div>
         </div>
 
         <!-- Team toggle -->
         <div class="flex items-center justify-between py-4 border-t border-gray-100">
           <div>
-            <p class="text-sm font-medium text-gray-800">AI engineering team available?</p>
-            <p class="text-xs text-gray-400 mt-0.5">In-house staff for AI infrastructure and maintenance</p>
+            <p class="text-sm font-medium text-[#0a0a0f]">AI engineering team available?</p>
+            <p class="text-xs text-gray-500 mt-0.5">In-house staff for AI infrastructure and maintenance</p>
           </div>
           <div class="flex items-center gap-3 ml-4">
             <span id="team-label" class="text-sm text-gray-500">Not available</span>
@@ -283,22 +284,22 @@
 
         <!-- Hardware tiers -->
         <div class="pt-4 border-t border-gray-100">
-          <p class="text-sm font-medium text-gray-800 mb-3">Hardware Configuration</p>
+          <p class="text-sm font-medium text-[#0a0a0f] mb-3">Hardware Configuration</p>
           <div class="grid grid-cols-3 gap-2">
             <div class="tier-card" data-tier="mini">
-              <div class="font-semibold text-xs font-geist text-gray-800 mb-0.5">Mac Mini M4 Pro</div>
-              <div class="text-xs text-violet-600 font-medium">~€2,000</div>
-              <div class="text-xs text-gray-400 mt-2 leading-relaxed">Llama 3 8B · 35 W<br>up to 800 req/day</div>
+              <div class="font-semibold text-xs font-geist text-[#0a0a0f] mb-0.5">Mac Mini M4 Pro</div>
+              <div class="text-xs text-[#0a0a0f] font-medium">~€2,000</div>
+              <div class="text-xs text-gray-500 mt-2 leading-relaxed">Llama 3 8B · 35 W<br>up to 800 req/day</div>
             </div>
             <div class="tier-card selected" data-tier="server">
-              <div class="font-semibold text-xs font-geist text-gray-800 mb-0.5">AI Server (RTX 4090)</div>
-              <div class="text-xs text-violet-600 font-medium">~€3,500</div>
-              <div class="text-xs text-gray-400 mt-2 leading-relaxed">Llama 3 8B · 400 W<br>up to 4,000 req/day</div>
+              <div class="font-semibold text-xs font-geist text-[#0a0a0f] mb-0.5">AI Server (RTX 4090)</div>
+              <div class="text-xs text-[#0a0a0f] font-medium">~€3,500</div>
+              <div class="text-xs text-gray-500 mt-2 leading-relaxed">Llama 3 8B · 400 W<br>up to 4,000 req/day</div>
             </div>
             <div class="tier-card" data-tier="pro">
-              <div class="font-semibold text-xs font-geist text-gray-800 mb-0.5">Pro Server (2× H100)</div>
-              <div class="text-xs text-violet-600 font-medium">~€75,000</div>
-              <div class="text-xs text-gray-400 mt-2 leading-relaxed">Llama 3 70B · 1,500 W<br>up to 20,000 req/day</div>
+              <div class="font-semibold text-xs font-geist text-[#0a0a0f] mb-0.5">Pro Server (2× H100)</div>
+              <div class="text-xs text-[#0a0a0f] font-medium">~€75,000</div>
+              <div class="text-xs text-gray-500 mt-2 leading-relaxed">Llama 3 70B · 1,500 W<br>up to 20,000 req/day</div>
             </div>
           </div>
           <p class="text-xs text-orange-600 font-medium mt-2.5 h-4" id="r-units-warn"></p>
@@ -306,24 +307,24 @@
       </div>
 
       <!-- 2. Self-hosting cost — dark card -->
-      <div class="bg-gray-900 rounded-2xl p-6 sm:p-8 mb-5 text-white animate-on-scroll"
+      <div class="ds-band ds-dark rounded-[1.25rem] p-6 sm:p-8 mb-6 text-white animate-on-scroll"
            style="animation: fadeSlideIn .7s ease-out .05s both;">
-        <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-5 font-geist">Self-Hosting Cost Estimate</p>
+        <p class="ds-label mb-6">Self-Hosting Cost Estimate</p>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <div>
-            <div class="text-3xl sm:text-4xl font-bold font-geist text-white" id="r-self-total">—</div>
-            <div class="text-xs text-gray-400 mt-1.5">monthly operating costs</div>
+            <div class="text-4xl sm:text-5xl font-normal tracking-tight font-geist text-white tabular-nums" id="r-self-total">—</div>
+            <div class="text-sm text-gray-400 mt-2">monthly operating costs</div>
           </div>
           <div>
-            <div class="text-3xl sm:text-4xl font-bold font-geist text-gray-300" id="r-init">—</div>
-            <div class="text-xs text-gray-400 mt-1.5">upfront investment (hardware)</div>
+            <div class="text-4xl sm:text-5xl font-normal tracking-tight font-geist text-gray-300 tabular-nums" id="r-init">—</div>
+            <div class="text-sm text-gray-400 mt-2">upfront investment (hardware)</div>
           </div>
           <div>
-            <div class="text-3xl sm:text-4xl font-bold font-geist text-orange-400" id="r-three-year">—</div>
-            <div class="text-xs text-gray-400 mt-1.5">total cost over 3 years</div>
+            <div class="text-4xl sm:text-5xl font-normal tracking-tight font-geist text-[#FFAF85] tabular-nums" id="r-three-year">—</div>
+            <div class="text-sm text-gray-400 mt-2">total cost over 3 years</div>
           </div>
         </div>
-        <div class="mt-5 pt-5 border-t border-white/10 flex flex-wrap gap-x-6 gap-y-2 text-xs text-gray-400">
+        <div class="mt-6 pt-5 border-t border-white/15 flex flex-wrap gap-x-6 gap-y-2 text-xs text-gray-400">
           <span>≈ <span class="text-gray-200 font-medium" id="r-per-learner">—</span> per learner / month</span>
           <span><span class="text-gray-200 font-medium" id="r-daily">—</span> requests / day</span>
           <span><span class="text-gray-200 font-medium" id="r-monthly">—</span> requests / month</span>
@@ -331,100 +332,100 @@
       </div>
 
       <!-- 3. Cost breakdown -->
-      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8 mb-5 animate-on-scroll"
+      <div class="ds-card p-6 sm:p-8 mb-6 animate-on-scroll"
            style="animation: fadeSlideIn .7s ease-out .1s both;">
 
-        <h2 class="text-base font-semibold font-geist text-gray-900 mb-1">Monthly Cost Breakdown</h2>
-        <p class="text-xs text-gray-400 mb-4">Ongoing operating costs, excluding upfront hardware investment</p>
+        <h2 class="font-geist text-2xl sm:text-[1.75rem] font-normal tracking-tight text-[#0a0a0f] mb-2">Monthly Cost Breakdown</h2>
+        <p class="text-sm text-gray-500 mb-4">Ongoing operating costs, excluding upfront hardware investment</p>
 
-        <div class="divide-y divide-gray-50">
+        <div class="divide-y divide-gray-200">
           <div class="flex justify-between items-center py-3">
             <div>
               <span class="text-sm text-gray-700">Hardware (amortised, 36 months)</span>
               <p class="text-xs text-gray-400 mt-0.5">Purchase price × units ÷ 36</p>
             </div>
-            <span class="font-semibold font-geist text-gray-800 tabular-nums" id="r-hw">—</span>
+            <span class="font-medium font-geist text-[#0a0a0f] tabular-nums" id="r-hw">—</span>
           </div>
           <div class="flex justify-between items-center py-3">
             <div>
               <span class="text-sm text-gray-700">Electricity (24/7 operation)</span>
               <p class="text-xs text-gray-400 mt-0.5">€0.35/kWh · continuous operation</p>
             </div>
-            <span class="font-semibold font-geist text-gray-800 tabular-nums" id="r-elec">—</span>
+            <span class="font-medium font-geist text-[#0a0a0f] tabular-nums" id="r-elec">—</span>
           </div>
           <div class="flex justify-between items-center py-3">
             <div>
               <span class="text-sm text-gray-700">Staffing (maintenance, updates, support)</span>
               <p class="text-xs text-gray-400 mt-0.5" id="r-personnel-hint">External specialist: €90/h</p>
             </div>
-            <span class="font-semibold font-geist text-gray-800 tabular-nums" id="r-personnel">—</span>
+            <span class="font-medium font-geist text-[#0a0a0f] tabular-nums" id="r-personnel">—</span>
           </div>
           <div class="flex justify-between items-center py-3" id="r-coloc-row" style="display:none">
             <div>
               <span class="text-sm text-gray-700">Colocation (data centre rack)</span>
               <p class="text-xs text-gray-400 mt-0.5">Rack rental incl. power infrastructure</p>
             </div>
-            <span class="font-semibold font-geist text-gray-800 tabular-nums" id="r-coloc">—</span>
+            <span class="font-medium font-geist text-[#0a0a0f] tabular-nums" id="r-coloc">—</span>
           </div>
           <div class="flex justify-between items-center pt-4 pb-1">
-            <span class="font-semibold text-gray-900">Total / month</span>
-            <span class="font-bold text-gray-900 font-geist text-xl tabular-nums" id="r-breakdown-total">—</span>
+            <span class="font-medium text-[#0a0a0f]">Total / month</span>
+            <span class="font-normal text-[#0a0a0f] font-geist text-2xl tracking-tight tabular-nums" id="r-breakdown-total">—</span>
           </div>
         </div>
       </div>
 
       <!-- 4. Qualitative comparison -->
-      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8 mb-5 overflow-x-auto animate-on-scroll"
+      <div class="ds-card kr-quality p-6 sm:p-8 mb-6 overflow-x-auto animate-on-scroll"
            style="animation: fadeSlideIn .7s ease-out .15s both;">
 
-        <h2 class="text-base font-semibold font-geist text-gray-900 mb-1">Qualitative Assessment</h2>
-        <p class="text-xs text-gray-400 mb-5">Operational differences beyond pure cost</p>
+        <h2 class="font-geist text-2xl sm:text-[1.75rem] font-normal tracking-tight text-[#0a0a0f] mb-2">Qualitative Assessment</h2>
+        <p class="text-sm text-gray-500 mb-5">Operational differences beyond pure cost</p>
 
         <table class="w-full text-sm min-w-[440px]">
           <thead>
-            <tr class="border-b border-gray-100">
+            <tr class="border-b-[1.5px] border-[#0a0a0f]">
               <th class="text-left py-2.5 text-gray-500 font-medium w-2/5">Criterion</th>
-              <th class="py-2.5 text-blue-600 font-medium text-center w-[30%]">
-                Cloud AI<br><span class="font-normal text-xs text-blue-400">(latest AI models)</span>
+              <th class="py-2.5 text-[#0a0a0f] font-medium text-center w-[30%]">
+                Cloud AI<br><span class="font-normal text-xs text-gray-500">(latest AI models)</span>
               </th>
-              <th class="py-2.5 text-gray-600 font-medium text-center w-[30%]">
-                Self-Hosting<br><span class="font-normal text-xs text-gray-400" id="q-model-label">(Llama 3 8B)</span>
+              <th class="py-2.5 text-[#0a0a0f] font-medium text-center w-[30%]">
+                Self-Hosting<br><span class="font-normal text-xs text-gray-500" id="q-model-label">(Llama 3 8B)</span>
               </th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-gray-50">
+          <tbody class="divide-y divide-gray-200">
             <tr>
-              <td class="py-3 text-gray-700 font-medium">Response quality</td>
+              <td class="py-3 text-[#0a0a0f] font-medium">Response quality</td>
               <td class="py-3 text-center"><span class="text-yellow-400 text-base">★★★★★</span></td>
               <td class="py-3 text-center" id="q-quality">—</td>
             </tr>
             <tr>
-              <td class="py-3 text-gray-700 font-medium">Maintenance effort</td>
+              <td class="py-3 text-[#0a0a0f] font-medium">Maintenance effort</td>
               <td class="py-3 text-center"><span class="badge-green">✓ None</span></td>
               <td class="py-3 text-center" id="q-maintenance">—</td>
             </tr>
             <tr>
-              <td class="py-3 text-gray-700 font-medium">Scalability</td>
+              <td class="py-3 text-[#0a0a0f] font-medium">Scalability</td>
               <td class="py-3 text-center"><span class="badge-green">✓ Unlimited</span></td>
               <td class="py-3 text-center"><span class="badge-orange">⚠ Limited</span></td>
             </tr>
             <tr>
-              <td class="py-3 text-gray-700 font-medium">Data privacy</td>
+              <td class="py-3 text-[#0a0a0f] font-medium">Data privacy</td>
               <td class="py-3 text-center"><span class="badge-green">✓ GDPR-compliant</span></td>
               <td class="py-3 text-center"><span class="badge-green">✓ Full control</span></td>
             </tr>
             <tr>
-              <td class="py-3 text-gray-700 font-medium">Reliability</td>
+              <td class="py-3 text-[#0a0a0f] font-medium">Reliability</td>
               <td class="py-3 text-center"><span class="badge-green">✓ 99.9% SLA</span></td>
               <td class="py-3 text-center"><span class="badge-orange">⚠ Your responsibility</span></td>
             </tr>
             <tr>
-              <td class="py-3 text-gray-700 font-medium">Model updates</td>
+              <td class="py-3 text-[#0a0a0f] font-medium">Model updates</td>
               <td class="py-3 text-center"><span class="badge-green">✓ Automatic</span></td>
               <td class="py-3 text-center"><span class="badge-orange">⚠ Manual &amp; risky</span></td>
             </tr>
             <tr>
-              <td class="py-3 text-gray-700 font-medium">Upfront investment</td>
+              <td class="py-3 text-[#0a0a0f] font-medium">Upfront investment</td>
               <td class="py-3 text-center"><span class="badge-green">✓ €0</span></td>
               <td class="py-3 text-center" id="q-investment">—</td>
             </tr>
@@ -433,32 +434,34 @@
       </div>
 
       <!-- 5. CTA -->
-      <div class="rounded-2xl bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 p-8 text-center mb-8 animate-on-scroll"
+      <div class="ds-band ds-dark rounded-3xl p-8 sm:p-12 mt-16 sm:mt-20 mb-10 animate-on-scroll"
            style="animation: fadeSlideIn .7s ease-out .2s both;">
-        <p class="text-xs font-semibold text-white/50 uppercase tracking-widest mb-2 font-geist">Alphabees AI Tutor</p>
-        <h3 class="text-xl sm:text-2xl font-semibold text-white font-geist mb-2">
+        <p class="ds-label mb-4">Alphabees AI Tutor</p>
+        <h3 class="ds-h3 text-balance max-w-3xl mb-4">
           Cloud AI with zero maintenance — ready in your LMS
         </h3>
-        <p class="text-white/70 text-sm mb-7 max-w-xl mx-auto">
+        <p class="text-gray-300 leading-relaxed mb-8 max-w-xl">
           GDPR-compliant, scalable, trained on your content — no hardware, no DevOps.
         </p>
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <div class="ds-btn-row">
           <a href="features.html"
-             class="inline-flex items-center justify-center gap-2 bg-white text-violet-700 font-semibold font-geist text-sm rounded-xl px-6 py-3 hover:bg-violet-50 transition shadow-sm">
+             class="ds-btn ds-btn--light text-center">
             Explore AI Tutor features
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
           </a>
           <a href="https://portal.alphabees.de/auth/register"
-             class="inline-flex items-center justify-center gap-2 bg-white/15 backdrop-blur border border-white/25 text-white font-semibold font-geist text-sm rounded-xl px-6 py-3 hover:bg-white/25 transition">
+             class="ds-btn ds-btn--ghost">
             Try for free
           </a>
         </div>
       </div>
 
-      <p class="text-xs text-gray-400 text-center leading-relaxed max-w-2xl mx-auto pb-4">
+      <p class="text-xs text-gray-500 leading-relaxed max-w-2xl pb-4">
         Assumptions: avg. 1,500 tokens / request · electricity €0.35/kWh · hardware amortised over 36 months ·
         in-house staff €65/h, external specialist €90/h. This calculator is for guidance only and does not replace an individual cost analysis.
       </p>
+
+     </div>
 
     </div>
   </main>
@@ -488,7 +491,6 @@
     </clipPath>
   </defs>
 </svg>
-        <p class="text-sm text-gray-400 font-geist max-w-sm mt-4">AI tutors for academies, universities, and continuing education.</p>
         <p class="text-sm text-gray-400 font-geist max-w-sm mt-2">Alphalearn is a brand of Alphabees.</p>
         <div class="mt-6 flex items-center gap-3">
           <a href="https://moodle.org/plugins/block_alphabees" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center hover:bg-white/20 transition bg-white/10 w-10 h-10 border-white/10 border rounded-lg backdrop-blur-md">
@@ -499,6 +501,9 @@
                 <path d="M77.05,129.17c20.75,6.68,42.3,8.73,64,7l-1,135h-63v-142Z" style="fill: #fff;" class=""></path>
               </g>
             </svg>
+          </a>
+          <a href="https://github.com/alphabees-25/ilias-plugin-alphabees" target="_blank" rel="noopener noreferrer" aria-label="Alphalearn ILIAS plugin" class="inline-flex items-center justify-center hover:bg-white/20 transition bg-white/10 w-10 h-10 border-white/10 border rounded-lg backdrop-blur-md">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 12" width="25" height="10" aria-hidden="true"><text x="15" y="10.6" text-anchor="middle" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="12.4" letter-spacing="-.15" fill="#fff">ILIAS</text></svg>
           </a>
           <a href="https://github.com/LErdweg/moodle-block_alphabees/wiki" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center hover:bg-white/20 transition bg-white/10 w-10 h-10 border-white/10 border rounded-lg backdrop-blur-md">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" style="color: rgb(255, 255, 255); width: 18px; height: 18px" class="w-[18px] h-[18px]" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" data-simple-icons="github" data-icon-set="simple-icons" data-icon-replaced="true" stroke-width="0.5">
@@ -550,10 +555,10 @@
             <li class=""><a href="/en/academy.html" class="hover:text-white transition text-sm text-gray-400 font-geist">Academy</a></li>
             <li class=""><a href="/en/helpcenter.html" class="text-sm text-gray-400 hover:text-white transition font-geist" style="">Help
                 Center</a></li>
-            <li class=""><a href="https://portal.alphabees.de/auth/register" class="hover:text-white transition text-sm text-gray-400 font-geist">Alphabees
+            <li class=""><a href="https://portal.alphabees.de/auth/register" class="hover:text-white transition text-sm text-gray-400 font-geist">Alphalearn
                 Portal</a></li>
             <li class=""><a href="/en/blog.html" class="hover:text-white transition text-sm text-gray-400 font-geist">Blog</a></li>
-            <li class=""><a href="/en/ai-tutor-guide-education-providers-2026.html" class="hover:text-white transition text-sm text-gray-400 font-geist">AI-Tutor Guide 2026</a></li>
+            <li class=""><a href="/en/ai-tutor-guide-education-providers-2026.html" class="hover:text-white transition text-sm text-gray-400 font-geist">AI Tutor Guide 2026</a></li>
           </ul>
         </div>
 
@@ -821,7 +826,7 @@
         daily:daily, monthly:monthly, units:units, t:t,
         hwMo:hwMo, elecMo:elecMo, persMo:persMo,
         selfMo:selfMo, initInv:initInv,
-        threeYear: initInv + selfMo * 36,
+        threeYear: initInv + (selfMo - hwMo) * 36,
         perLearner: selfMo / S.learners
       };
     }

@@ -34,43 +34,36 @@
   <script src="https://unpkg.com/lucide@1.18.0/dist/umd/lucide.min.js"></script>
   <link rel="stylesheet" href="/assets/css/academy.css">
   <script src="/assets/js/layout.js?v=static-v3" defer></script>
+  <link rel="stylesheet" href="/assets/css/design-2026.css">
+  <style>
+    /* Design 2026: video tiles with black outline, calm hover without colored shadow (overrides academy.css on this page only) */
+    .video-card:hover { transform: translateY(-4px) !important; box-shadow: none !important; }
+    .video-card:focus-visible { outline: 2px solid #2563eb; outline-offset: 4px; }
+  </style>
 </head>
 
 <body class="min-h-full bg-white text-gray-900 antialiased font-geist">
-  <!-- Background (component) added by Aura -->
-  <div class="aura-background-component absolute top-0 -z-10 h-screen w-full" data-alpha-mask="80"
-    style="mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)">
-    <div class="aura-background-component absolute left-0 top-0 -z-10 h-full w-full">
-      <div data-us-project="yACzULFKkgXAmEcep6hu" data-us-scale="0.5" data-us-dpi="1" data-us-fps="30" class="absolute left-0 top-0 -z-10 h-full w-full"></div>
-      <script type="text/javascript">
-        !function () { function supportsWebGL() { try { var c = document.createElement("canvas"); return !!(window.WebGLRenderingContext && (c.getContext("webgl") || c.getContext("experimental-webgl"))); } catch (e) { return false; } } if (supportsWebGL() && !window.UnicornStudio) { window.UnicornStudio = { isInitialized: !1 }; var i = document.createElement("script"); i.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js", i.onload = function () { window.UnicornStudio.isInitialized || (UnicornStudio.init(), window.UnicornStudio.isInitialized = !0) }, (document.head || document.body).appendChild(i) } }();
-      </script>
-    </div>
-  </div>
   <div id="site-header"><!-- partial:header:start -->
 <!-- Top Navigation -->
-    <header class="relative z-20 border-b border-gray-100">
-      <div class="sm:px-6 lg:px-8 max-w-7xl mr-auto ml-auto pr-4 pl-4">
-        <div class="flex sm:py-6 pt-4 pb-4 relative items-center justify-between">
+    <header class="relative z-20 border-b border-gray-100 bg-white">
+      <div class="px-4 sm:px-6">
+        <div class="flex py-2.5 sm:py-3 relative items-center">
   <!-- Brand -->
   <a href="/en/" class="flex gap-x-3 gap-y-3 items-center shrink-0 relative">
-    <img src="/assets/images/Logo_Alphalearn_outlines_fluid_animated.svg" alt="Alphalearn" class="h-[43px] w-auto max-w-[198px] object-contain" loading="eager" decoding="async">
+    <img src="/assets/images/Logo_Alphalearn_outlines_fluid_animated.svg" alt="Alphalearn" class="h-[30px] sm:h-[34px] w-auto max-w-[157px] object-contain" loading="eager" decoding="async">
     <span class="sr-only font-geist">Alphalearn</span>
   </a>
 
   <!-- Centered Navigation Group (Desktop) -->
-  <nav class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-8">
+  <nav class="hidden md:flex items-center gap-7 ml-10 lg:ml-12" style="position:relative; top:3px">
     <a href="/en/demos.html" class="nav-link hover:text-blue-600 transition-colors group text-sm font-medium text-gray-600 font-geist relative">
       Demos
-      <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
     </a>
     <a href="/en/pricing.html" class="nav-link text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors font-geist relative group">
       Pricing
-      <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
     </a>
     <a href="/en/features.html" class="nav-link hover:text-blue-600 transition-colors group text-sm font-medium text-gray-600 font-geist relative">
     Features
-    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
   </a>
   </nav>
 
@@ -93,7 +86,7 @@
 
 
   <!-- Right Actions (Desktop & Mobile Toggle) -->
-  <div class="flex items-center gap-3 sm:gap-4 z-10 shrink-0 relative">
+  <div class="flex items-center gap-3 sm:gap-4 z-10 shrink-0 relative ml-auto">
     
     <!-- Language Toggle (Desktop) -->
     <div class="hidden md:flex items-center bg-gray-100/80 ring-1 ring-gray-200 rounded-lg p-0.5">
@@ -105,12 +98,12 @@
     <div class="hidden md:flex gap-1 border-gray-200 border-l ml-1 pl-2 gap-x-1 gap-y-1 items-center">
         <!-- Login Icon -->
         <a href="https://portal.alphabees.de/auth/login" class="group hover:bg-blue-50 transition-all duration-300 rounded-full pt-2 pr-2 pb-2 pl-2 relative" aria-label="Login">
-           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-x-0.5 w-[20px] h-[20px]" data-icon-replaced="true" style="width: 20px; height: 20px; color: rgb(37, 99, 235);"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" class=""></path><polyline points="10 17 15 12 10 7" class=""></polyline><line x1="15" x2="3" y1="12" y2="12" class=""></line></svg>
+           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in text-gray-600 group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-x-0.5 w-[20px] h-[20px]" data-icon-replaced="true" style="width: 20px; height: 20px;"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" class=""></path><polyline points="10 17 15 12 10 7" class=""></polyline><line x1="15" x2="3" y1="12" y2="12" class=""></line></svg>
            <span class="absolute top-full mt-2 left-1/2 -translate-x-1/2 px-2 py-1 bg-gray-900 text-white text-[10px] font-medium rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap font-geist shadow-lg transform translate-y-1 group-hover:translate-y-0">login</span>
         </a>
         <!-- Register Icon -->
         <a href="https://portal.alphabees.de/auth/register" class="group hover:bg-blue-50 transition-all duration-300 rounded-full pt-2 pr-2 pb-2 pl-2 relative" aria-label="Register">
-           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-plus group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 w-[20px] h-[20px]" data-icon-replaced="true" style="color: rgb(37, 99, 235); width: 20px; height: 20px;">
+           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-plus text-gray-600 group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 w-[20px] h-[20px]" data-icon-replaced="true" style="width: 20px; height: 20px;">
              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" class=""></path>
              <circle cx="9" cy="7" r="4" class=""></circle>
              <line x1="19" x2="19" y1="8" y2="14"></line>
@@ -136,7 +129,7 @@
       </div>
       <!-- Mobile Menu -->
       <div id="mobileMenu" class="md:hidden hidden">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="px-4 sm:px-6">
           <div class="border-t border-gray-100"></div>
           <div class="py-3 space-y-1 divide-y divide-gray-100 border-b border-gray-100">
             <a href="/en/demos.html" class="nav-link block hover:text-gray-900 text-sm text-gray-700 font-geist pt-3 pr-2 pb-3 pl-2">Demos</a>
@@ -152,34 +145,18 @@
 <!-- partial:header:end --></div>
 
   <main class="relative">
-    <section class="overflow-hidden border-b border-gray-100">
-      <div
-        class="mx-auto max-w-7xl px-4 pb-20 pt-24 sm:px-6 sm:pb-24 sm:pt-24 lg:px-8 lg:pb-28 lg:pt-32 xl:pt-40">
-        <div
-          class="relative z-10 mx-auto flex max-w-5xl flex-col items-center justify-center px-6 pb-12 pt-12 text-center sm:pb-10 sm:pt-16">
-          <div
-            class="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-tr from-blue-50/40 via-indigo-50/40 to-purple-50/40 opacity-60 blur-3xl">
-          </div>
+    <section class="overflow-hidden">
+      <div class="mx-auto max-w-7xl px-6 pb-4 pt-20 sm:pb-8 sm:pt-28 lg:px-8 lg:pt-36">
+        <div class="relative z-10 max-w-5xl">
+          <h1 class="ds-h1 text-balance" style="animation: fadeSlideIn 1s ease-out 0.1s both">Alphalearn Academy</h1>
 
-          <h1
-            class="mb-6 max-w-4xl text-4xl font-semibold leading-[1.1] tracking-tight text-gray-900 text-balance sm:text-5xl lg:text-6xl"
-            style="animation: fadeSlideIn 1s ease-out 0.1s both">Alphalearn Academy</h1>
-
-          <p
-            class="mx-auto mb-10 max-w-3xl text-lg leading-relaxed text-gray-600 text-balance sm:text-xl"
-            style="animation: fadeSlideIn 1s ease-out 0.2s both">Want to create your first AI tutor, connect Moodle,
+          <p class="ds-sub mt-6 sm:mt-8" style="animation: fadeSlideIn 1s ease-out 0.2s both">Want to create your first AI tutor, connect Moodle,
             or explore the latest features? The AlphaSupport Agent finds the right guide for you and links directly to
             the relevant video tutorials. Just describe what you need.</p>
         </div>
 
-        <div class="mx-auto max-w-4xl px-0 sm:px-6" style="animation: fadeSlideIn 1s ease-out 0.3s both">
-          <div class="relative overflow-hidden rounded-3xl bg-white/70 p-3 ring-1 ring-black/5 shadow-[0_2px_2px_rgba(0,0,0,0.04),_0_8px_12px_rgba(0,0,0,0.08),_0_24px_32px_rgba(0,0,0,0.10)] backdrop-blur-md sm:p-4">
-            <div
-              class="pointer-events-none absolute right-0 top-0 -mr-10 -mt-10 h-64 w-64 rounded-full bg-blue-200/40 blur-3xl">
-            </div>
-            <div
-              class="pointer-events-none absolute bottom-0 left-0 -mb-10 -ml-10 h-64 w-64 rounded-full bg-indigo-200/40 blur-3xl">
-            </div>
+        <div class="mt-14 max-w-4xl sm:mt-20" style="animation: fadeSlideIn 1s ease-out 0.3s both">
+          <div class="relative overflow-hidden rounded-[1.25rem] border-[1.5px] border-[#0a0a0f] bg-white p-3 sm:rounded-[1.5rem] sm:p-4">
             <div class="relative z-10">
               <div class="mb-3 flex items-center justify-between px-2 pt-1">
                 <span class="flex items-center gap-2 text-xs font-medium text-gray-600">
@@ -208,104 +185,91 @@
       </div>
     </section>
 
-    <section class="bg-white py-16 sm:py-20">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="mb-10 max-w-2xl">
-          <h2 class="text-3xl font-semibold tracking-tight text-gray-950 sm:text-4xl">Quick Start with Alphalearn</h2>
-          <p class="mt-4 text-lg text-gray-600">The most important tutorials for a successful start.</p>
+    <section class="bg-white py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mb-14 max-w-5xl md:mb-20">
+          <h2 class="ds-h2">Quick Start with Alphalearn</h2>
+          <p class="ds-sub mt-6">The most important tutorials for a successful start.</p>
         </div>
-        <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          <article data-video-src="https://www.youtube.com/embed/MtE8z9CXBas?si=9Tin2JFGWAsdM6dn&enablejsapi=1" class="video-card overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <article data-video-src="https://www.youtube.com/embed/MtE8z9CXBas?si=9Tin2JFGWAsdM6dn&enablejsapi=1" class="video-card overflow-hidden rounded-[1.25rem] border-[1.5px] border-[#0a0a0f] bg-white">
             <div class="aspect-square bg-gray-100"><img class="h-full w-full object-cover" src="/assets/images/academy_tiles/01.Schnellstart_und_Benutzeroberfläche.png" alt="Quick start and user interface"></div>
-            <h3 class="bg-gray-950 px-4 py-3 text-base font-semibold text-white">Quick start and user interface</h3>
+            <h3 class="bg-[#0a0a0f] px-5 py-3 text-base font-semibold text-white">Quick start and user interface</h3>
           </article>
-          <article data-video-src="https://www.youtube.com/embed/LhcrCNQRli0?si=hWQo2SqSE5oIcH5s&enablejsapi=1" class="video-card overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
+          <article data-video-src="https://www.youtube.com/embed/LhcrCNQRli0?si=hWQo2SqSE5oIcH5s&enablejsapi=1" class="video-card overflow-hidden rounded-[1.25rem] border-[1.5px] border-[#0a0a0f] bg-white">
             <div class="aspect-square bg-gray-100"><img class="h-full w-full object-cover" src="/assets/images/academy_tiles/02.Das%20richtige_Template_wählen.png" alt="Choose the right Alpha template"></div>
-            <h3 class="bg-gray-950 px-4 py-3 text-base font-semibold text-white">Choose the right Alpha template</h3>
+            <h3 class="bg-[#0a0a0f] px-5 py-3 text-base font-semibold text-white">Choose the right Alpha template</h3>
           </article>
-          <article data-video-src="https://www.youtube.com/embed/qhjYEdZzyx4?si=Wlfldkhyjsc2Y3pu&enablejsapi=1" class="video-card overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
+          <article data-video-src="https://www.youtube.com/embed/qhjYEdZzyx4?si=Wlfldkhyjsc2Y3pu&enablejsapi=1" class="video-card overflow-hidden rounded-[1.25rem] border-[1.5px] border-[#0a0a0f] bg-white">
             <div class="aspect-square bg-gray-100"><img class="h-full w-full object-cover" src="/assets/images/academy_tiles/03.KI-Tutor_erstellen_und_konfigurieren.png" alt="Create and configure an AI tutor"></div>
-            <h3 class="bg-gray-950 px-4 py-3 text-base font-semibold text-white">Create and configure an AI tutor</h3>
+            <h3 class="bg-[#0a0a0f] px-5 py-3 text-base font-semibold text-white">Create and configure an AI tutor</h3>
           </article>
-          <article data-video-src="https://www.youtube.com/embed/lb5tJgefRM4?si=cbKQgYcDbv1A_UoV&enablejsapi=1" class="video-card overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
+          <article data-video-src="https://www.youtube.com/embed/lb5tJgefRM4?si=cbKQgYcDbv1A_UoV&enablejsapi=1" class="video-card overflow-hidden rounded-[1.25rem] border-[1.5px] border-[#0a0a0f] bg-white">
             <div class="aspect-square bg-gray-100"><img class="h-full w-full object-cover" src="/assets/images/academy_tiles/04.Wissensbasis_aufbauen_und_zuweisen.png" alt="Build and assign a knowledge base"></div>
-            <h3 class="bg-gray-950 px-4 py-3 text-base font-semibold text-white">Build and assign a knowledge base</h3>
+            <h3 class="bg-[#0a0a0f] px-5 py-3 text-base font-semibold text-white">Build and assign a knowledge base</h3>
           </article>
-          <article data-video-src="https://www.youtube.com/embed/dXK7LGu1b6s?si=HsnUIOgk0ZM6gcq7&enablejsapi=1" class="video-card overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
-            <div class="aspect-square bg-gray-100"><img class="h-full w-full object-cover" src="/assets/images/academy_tiles/05.Alphalearn_mit_Moodle_verbinden.png" alt="Connect AlphaLearn with Moodle"></div>
-            <h3 class="bg-gray-950 px-4 py-3 text-base font-semibold text-white">Connect AlphaLearn with Moodle</h3>
+          <article data-video-src="https://www.youtube.com/embed/dXK7LGu1b6s?si=HsnUIOgk0ZM6gcq7&enablejsapi=1" class="video-card overflow-hidden rounded-[1.25rem] border-[1.5px] border-[#0a0a0f] bg-white">
+            <div class="aspect-square bg-gray-100"><img class="h-full w-full object-cover" src="/assets/images/academy_tiles/05.Alphalearn_mit_Moodle_verbinden.png" alt="Connect Alphalearn with Moodle"></div>
+            <h3 class="bg-[#0a0a0f] px-5 py-3 text-base font-semibold text-white">Connect Alphalearn with Moodle</h3>
           </article>
-          <article data-video-src="https://www.youtube.com/embed/YIaPxLNBNRE?si=pX4IC2qjLPLewxoU&enablejsapi=1" class="video-card overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
+          <article data-video-src="https://www.youtube.com/embed/YIaPxLNBNRE?si=pX4IC2qjLPLewxoU&enablejsapi=1" class="video-card overflow-hidden rounded-[1.25rem] border-[1.5px] border-[#0a0a0f] bg-white">
             <div class="aspect-square bg-gray-100"><img class="h-full w-full object-cover" src="/assets/images/academy_tiles/06.KI-Tutoren_in_Moodle_nutzen.png" alt="Use and manage AI tutors in Moodle"></div>
-            <h3 class="bg-gray-950 px-4 py-3 text-base font-semibold text-white">Use and manage AI tutors in Moodle</h3>
+            <h3 class="bg-[#0a0a0f] px-5 py-3 text-base font-semibold text-white">Use and manage AI tutors in Moodle</h3>
           </article>
         </div>
-        <div class="mt-10">
-          <a href="https://www.youtube.com/playlist?list=PLybvgPP83CBsdIOy16e-Rcrl470pIOdV3" target="_blank" rel="noopener noreferrer" class="academy-button">
-            <span class="academy-button-points" aria-hidden="true">
-              <i class="point"></i><i class="point"></i><i class="point"></i><i class="point"></i><i class="point"></i>
-              <i class="point"></i><i class="point"></i><i class="point"></i><i class="point"></i><i class="point"></i>
-            </span>
-            <span class="academy-button-inner">View all tutorials <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
-          </a>
+        <div class="mt-12 sm:mt-16">
+          <a href="https://www.youtube.com/playlist?list=PLybvgPP83CBsdIOy16e-Rcrl470pIOdV3" target="_blank" rel="noopener noreferrer" class="ds-btn">View all tutorials <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
         </div>
       </div>
     </section>
 
-    <section class="border-y border-gray-100 bg-gray-50 py-16 sm:py-20">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="mb-10 max-w-2xl">
-          <h2 class="text-3xl font-semibold tracking-tight text-gray-950 sm:text-4xl">New Features in Alphalearn</h2>
-          <p class="mt-4 text-lg text-gray-600">Discover the latest features and unlock the full potential of Alphalearn.</p>
+    <section class="bg-white py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mb-14 max-w-5xl md:mb-20">
+          <h2 class="ds-h2">New Features in Alphalearn</h2>
+          <p class="ds-sub mt-6">Discover the latest features and unlock the full potential of Alphalearn.</p>
         </div>
-        <div class="grid gap-5 md:grid-cols-3">
-          <article data-video-pending="true" data-video-src="https://www.youtube.com/embed/MtE8z9CXBas?si=-z5-Ebz4WrPifdhX&enablejsapi=1" class="video-card overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
-            <div class="relative aspect-square bg-gray-100"><img class="h-full w-full object-cover" src="/assets/images/academy_tiles/Learner_Profiles.png" alt="Learner profiles"><span class="absolute left-4 top-4 rounded-full bg-gray-950/85 px-3 py-1 text-sm font-medium text-white shadow-sm backdrop-blur">In progress</span></div>
-            <h3 class="bg-gray-950 px-4 py-3 text-base font-semibold text-white">Learner profiles</h3>
+        <div class="grid gap-6 md:grid-cols-3">
+          <article data-video-pending="true" data-video-src="https://www.youtube.com/embed/MtE8z9CXBas?si=-z5-Ebz4WrPifdhX&enablejsapi=1" class="video-card overflow-hidden rounded-[1.25rem] border-[1.5px] border-[#0a0a0f] bg-white">
+            <div class="relative aspect-square bg-gray-100"><img class="h-full w-full object-cover" src="/assets/images/academy_tiles/Learner_Profiles.png" alt="Learner profiles"><span class="absolute left-4 top-4 rounded-full bg-[#0a0a0f] px-3 py-1 text-sm font-medium text-white">In progress</span></div>
+            <h3 class="bg-[#0a0a0f] px-5 py-3 text-base font-semibold text-white">Learner profiles</h3>
           </article>
-          <article data-video-pending="true" data-video-src="https://www.youtube.com/embed/MtE8z9CXBas?si=-z5-Ebz4WrPifdhX&enablejsapi=1" class="video-card overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
-            <div class="relative aspect-square bg-gray-100"><img class="h-full w-full object-cover" src="/assets/images/academy_tiles/Teacher%20_Tools.png" alt="Features for teachers"><span class="absolute left-4 top-4 rounded-full bg-gray-950/85 px-3 py-1 text-sm font-medium text-white shadow-sm backdrop-blur">In progress</span></div>
-            <h3 class="bg-gray-950 px-4 py-3 text-base font-semibold text-white">Features for teachers</h3>
+          <article data-video-pending="true" data-video-src="https://www.youtube.com/embed/MtE8z9CXBas?si=-z5-Ebz4WrPifdhX&enablejsapi=1" class="video-card overflow-hidden rounded-[1.25rem] border-[1.5px] border-[#0a0a0f] bg-white">
+            <div class="relative aspect-square bg-gray-100"><img class="h-full w-full object-cover" src="/assets/images/academy_tiles/Teacher%20_Tools.png" alt="Features for teachers"><span class="absolute left-4 top-4 rounded-full bg-[#0a0a0f] px-3 py-1 text-sm font-medium text-white">In progress</span></div>
+            <h3 class="bg-[#0a0a0f] px-5 py-3 text-base font-semibold text-white">Features for teachers</h3>
           </article>
-          <article data-video-pending="true" data-video-src="https://www.youtube.com/embed/MtE8z9CXBas?si=-z5-Ebz4WrPifdhX&enablejsapi=1" class="video-card overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
-            <div class="relative aspect-square bg-gray-100"><img class="h-full w-full object-cover" src="/assets/images/academy_tiles/Send_exercises.png" alt="Generate and send exercises"><span class="absolute left-4 top-4 rounded-full bg-gray-950/85 px-3 py-1 text-sm font-medium text-white shadow-sm backdrop-blur">In progress</span></div>
-            <h3 class="bg-gray-950 px-4 py-3 text-base font-semibold text-white">Generate and send exercises</h3>
+          <article data-video-pending="true" data-video-src="https://www.youtube.com/embed/MtE8z9CXBas?si=-z5-Ebz4WrPifdhX&enablejsapi=1" class="video-card overflow-hidden rounded-[1.25rem] border-[1.5px] border-[#0a0a0f] bg-white">
+            <div class="relative aspect-square bg-gray-100"><img class="h-full w-full object-cover" src="/assets/images/academy_tiles/Send_exercises.png" alt="Generate and send exercises"><span class="absolute left-4 top-4 rounded-full bg-[#0a0a0f] px-3 py-1 text-sm font-medium text-white">In progress</span></div>
+            <h3 class="bg-[#0a0a0f] px-5 py-3 text-base font-semibold text-white">Generate and send exercises</h3>
           </article>
         </div>
-        <div class="mt-10">
-          <a href="https://www.youtube.com/playlist?list=PLybvgPP83CBsdIOy16e-Rcrl470pIOdV3" target="_blank" rel="noopener noreferrer" class="academy-button">
-            <span class="academy-button-points" aria-hidden="true">
-              <i class="point"></i><i class="point"></i><i class="point"></i><i class="point"></i><i class="point"></i>
-              <i class="point"></i><i class="point"></i><i class="point"></i><i class="point"></i><i class="point"></i>
-            </span>
-            <span class="academy-button-inner">View all updates <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
-          </a>
+        <div class="mt-12 sm:mt-16">
+          <a href="https://www.youtube.com/playlist?list=PLybvgPP83CBsdIOy16e-Rcrl470pIOdV3" target="_blank" rel="noopener noreferrer" class="ds-btn">View all updates <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
         </div>
       </div>
     </section>
 
-    <section class="bg-white py-16 sm:py-20">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="mb-10 max-w-2xl">
-          <h2 class="text-3xl font-semibold tracking-tight text-gray-950 sm:text-4xl">Questions &amp; Answers</h2>
-          <p class="mt-4 text-lg text-gray-600">Find more information about the Alphabees AI tutor and Alphabees services.</p>
+    <section class="ds-faq bg-white py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mb-14 max-w-5xl md:mb-20">
+          <h2 class="ds-h2">Questions &amp; Answers.</h2>
         </div>
-        <div class="grid gap-5 md:grid-cols-2">
-          <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 transition-all duration-300 hover:border-blue-200 hover:bg-white hover:shadow-lg hover:shadow-blue-500/5">
-            <button data-faq="What does an AI tutor do?" onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false"><span class="text-base font-semibold text-gray-900">What does an AI tutor do?</span><span class="faq-icon ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-blue-600 transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600"><i data-lucide="plus" class="h-4 w-4 transition-transform"></i></span></button>
-            <div class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out"><div class="overflow-hidden"><p class="px-6 pb-6 text-sm leading-7 text-gray-600">An AI tutor supports learners directly in the course with instant answers, summaries, practical examples, personalized exercises, and clear explanations. It uses your course content and other approved sources as its knowledge base.</p></div></div>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 transition-all duration-300">
+            <button data-faq="What does an AI tutor do?" onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false"><span class="text-base font-semibold text-gray-900">What does an AI tutor do?</span><span class="faq-icon ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white transition-all duration-300"><i data-lucide="plus" class="h-4 w-4 transition-transform"></i></span></button>
+            <div class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out"><div class="overflow-hidden"><p class="px-6 pb-6 text-base leading-[1.65] text-gray-600">An AI tutor supports learners directly in the course with instant answers, summaries, practical examples, personalized exercises, and clear explanations. It uses your course content and other approved sources as its knowledge base.</p></div></div>
           </div>
-          <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 transition-all duration-300 hover:border-blue-200 hover:bg-white hover:shadow-lg hover:shadow-blue-500/5">
-            <button data-faq="Can I integrate the AI tutor into Moodle?" onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false"><span class="text-base font-semibold text-gray-900">Can I integrate the AI tutor into Moodle?</span><span class="faq-icon ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-blue-600 transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600"><i data-lucide="plus" class="h-4 w-4 transition-transform"></i></span></button>
-            <div class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out"><div class="overflow-hidden"><p class="px-6 pb-6 text-sm leading-7 text-gray-600">Yes. There is a dedicated Moodle plugin that lets you embed the AI tutor directly into courses, so learners receive support without leaving their learning environment.</p></div></div>
+          <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 transition-all duration-300">
+            <button data-faq="Can I integrate the AI tutor into Moodle?" onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false"><span class="text-base font-semibold text-gray-900">Can I integrate the AI tutor into Moodle?</span><span class="faq-icon ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white transition-all duration-300"><i data-lucide="plus" class="h-4 w-4 transition-transform"></i></span></button>
+            <div class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out"><div class="overflow-hidden"><p class="px-6 pb-6 text-base leading-[1.65] text-gray-600">Yes. There is a dedicated Moodle plugin that lets you embed the AI tutor directly into courses, so learners receive support without leaving their learning environment.</p></div></div>
           </div>
-          <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 transition-all duration-300 hover:border-blue-200 hover:bg-white hover:shadow-lg hover:shadow-blue-500/5">
-            <button data-faq="What content can I use as a knowledge base?" onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false"><span class="text-base font-semibold text-gray-900">What content can I use as a knowledge base?</span><span class="faq-icon ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-blue-600 transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600"><i data-lucide="plus" class="h-4 w-4 transition-transform"></i></span></button>
-            <div class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out"><div class="overflow-hidden"><p class="px-6 pb-6 text-sm leading-7 text-gray-600">You can add documents, websites, course materials, and other data sources. The tutor then answers questions based on the approved content.</p></div></div>
+          <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 transition-all duration-300">
+            <button data-faq="What content can I use as a knowledge base?" onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false"><span class="text-base font-semibold text-gray-900">What content can I use as a knowledge base?</span><span class="faq-icon ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white transition-all duration-300"><i data-lucide="plus" class="h-4 w-4 transition-transform"></i></span></button>
+            <div class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out"><div class="overflow-hidden"><p class="px-6 pb-6 text-base leading-[1.65] text-gray-600">You can add documents, websites, course materials, and other data sources. The tutor then answers questions based on the approved content.</p></div></div>
           </div>
-          <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 transition-all duration-300 hover:border-blue-200 hover:bg-white hover:shadow-lg hover:shadow-blue-500/5">
-            <button data-faq="Does the AI tutor work on mobile?" onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false"><span class="text-base font-semibold text-gray-900">Does the AI tutor work on mobile?</span><span class="faq-icon ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-blue-600 transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600"><i data-lucide="plus" class="h-4 w-4 transition-transform"></i></span></button>
-            <div class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out"><div class="overflow-hidden"><p class="px-6 pb-6 text-sm leading-7 text-gray-600">Yes. The AI tutor can be used in mobile learning environments, including the Moodle Mobile App when the right setup is in place.</p></div></div>
+          <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 transition-all duration-300">
+            <button data-faq="Does the AI tutor work on mobile?" onclick="toggleFaq(this)" class="flex w-full items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false"><span class="text-base font-semibold text-gray-900">Does the AI tutor work on mobile?</span><span class="faq-icon ml-6 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white transition-all duration-300"><i data-lucide="plus" class="h-4 w-4 transition-transform"></i></span></button>
+            <div class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out"><div class="overflow-hidden"><p class="px-6 pb-6 text-base leading-[1.65] text-gray-600">Yes. The AI tutor can be used in mobile learning environments, including the Moodle Mobile App when the right setup is in place.</p></div></div>
           </div>
         </div>
       </div>
@@ -337,7 +301,6 @@
     </clipPath>
   </defs>
 </svg>
-        <p class="text-sm text-gray-400 font-geist max-w-sm mt-4">AI tutors for academies, universities, and continuing education.</p>
         <p class="text-sm text-gray-400 font-geist max-w-sm mt-2">Alphalearn is a brand of Alphabees.</p>
         <div class="mt-6 flex items-center gap-3">
           <a href="https://moodle.org/plugins/block_alphabees" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center hover:bg-white/20 transition bg-white/10 w-10 h-10 border-white/10 border rounded-lg backdrop-blur-md">
@@ -348,6 +311,9 @@
                 <path d="M77.05,129.17c20.75,6.68,42.3,8.73,64,7l-1,135h-63v-142Z" style="fill: #fff;" class=""></path>
               </g>
             </svg>
+          </a>
+          <a href="https://github.com/alphabees-25/ilias-plugin-alphabees" target="_blank" rel="noopener noreferrer" aria-label="Alphalearn ILIAS plugin" class="inline-flex items-center justify-center hover:bg-white/20 transition bg-white/10 w-10 h-10 border-white/10 border rounded-lg backdrop-blur-md">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 12" width="25" height="10" aria-hidden="true"><text x="15" y="10.6" text-anchor="middle" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="12.4" letter-spacing="-.15" fill="#fff">ILIAS</text></svg>
           </a>
           <a href="https://github.com/LErdweg/moodle-block_alphabees/wiki" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center hover:bg-white/20 transition bg-white/10 w-10 h-10 border-white/10 border rounded-lg backdrop-blur-md">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" style="color: rgb(255, 255, 255); width: 18px; height: 18px" class="w-[18px] h-[18px]" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" data-simple-icons="github" data-icon-set="simple-icons" data-icon-replaced="true" stroke-width="0.5">
@@ -399,10 +365,10 @@
             <li class=""><a href="/en/academy.html" class="hover:text-white transition text-sm text-gray-400 font-geist">Academy</a></li>
             <li class=""><a href="/en/helpcenter.html" class="text-sm text-gray-400 hover:text-white transition font-geist" style="">Help
                 Center</a></li>
-            <li class=""><a href="https://portal.alphabees.de/auth/register" class="hover:text-white transition text-sm text-gray-400 font-geist">Alphabees
+            <li class=""><a href="https://portal.alphabees.de/auth/register" class="hover:text-white transition text-sm text-gray-400 font-geist">Alphalearn
                 Portal</a></li>
             <li class=""><a href="/en/blog.html" class="hover:text-white transition text-sm text-gray-400 font-geist">Blog</a></li>
-            <li class=""><a href="/en/ai-tutor-guide-education-providers-2026.html" class="hover:text-white transition text-sm text-gray-400 font-geist">AI-Tutor Guide 2026</a></li>
+            <li class=""><a href="/en/ai-tutor-guide-education-providers-2026.html" class="hover:text-white transition text-sm text-gray-400 font-geist">AI Tutor Guide 2026</a></li>
           </ul>
         </div>
 
