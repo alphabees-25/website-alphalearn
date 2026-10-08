@@ -133,7 +133,22 @@
     @media (min-width:1280px) and (max-width:1439px) { #kc-app > div:first-child { grid-template-columns:15rem minmax(0,1fr); } }
     .kc-gate--aside { padding:1.1rem 1.1rem 1.1rem; }
     .kc-gate--aside .kc-li::before { top:.22rem; }
-    .kc-gate--aside .kc-form-card { padding:1rem; }
+    /* Formular-Karte in der Seitenspalte im KI-Verlauf der Marke (CI-Blau, Purple, Pink, Lobster, Orange); Schrift dunkel für Kontrast */
+    .kc-gate--aside .kc-form-card { padding:1rem;
+      background:
+        radial-gradient(60% 45% at 0% 0%, #3B82F6 0%, rgba(59,130,246,0) 75%),
+        radial-gradient(55% 45% at 100% 30%, #B47FFF 0%, rgba(180,127,255,0) 75%),
+        radial-gradient(60% 45% at 0% 75%, #FF8093 0%, rgba(255,128,147,0) 75%),
+        radial-gradient(60% 50% at 100% 100%, #FFAF85 0%, rgba(255,175,133,0) 75%),
+        linear-gradient(160deg, #3B82F6 0%, #B47FFF 34%, #FF7EAF 66%, #FFAF85 100%); }
+    .kc-gate--aside .kc-form-card .kc-field { color:#0a0a0f; }
+    .kc-gate--aside .kc-form-card .kc-field input { border-color:#fff; }
+    .kc-gate--aside .kc-form-card .kc-field input:focus { border-color:#0a0a0f; box-shadow:0 0 0 3px rgba(255,255,255,.55); }
+    .kc-gate--aside .kc-form-card .kc-consent { color:rgba(10,10,15,.88); }
+    .kc-gate--aside .kc-form-card .kc-consent input { accent-color:#0a0a0f; }
+    .kc-gate--aside .kc-form-card > p.text-xs { color:rgba(10,10,15,.78); }
+    .kc-gate--aside .kc-form-card > p.text-xs a { color:#0a0a0f; text-decoration-color:rgba(10,10,15,.6); }
+    .kc-gate--aside .kc-form-card .kc-error { color:#7f1d1d; }
     .kc-gate--aside .kc-field { gap:.3rem; font-size:.8rem; }
     .kc-gate--aside .kc-field input { min-height:2.6rem; padding:.55rem 1rem; font-size:.95rem; }
     .kc-gate--aside .kc-consent { margin-top:.8rem; }

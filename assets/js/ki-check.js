@@ -185,14 +185,14 @@
       return '<div class="kc-gate kc-gate--aside rounded-3xl p-5 text-white" id="kc-gate">' +
         '<div class="flex items-center gap-4 mb-5">' + bookMock('kc-mock-stage--sm') +
           '<div class="min-w-0"><p class="text-xs font-semibold uppercase tracking-widest text-blue-300 font-geist mb-2">Kostenlos</p>' +
-          '<h3 class="text-[1.15rem] leading-snug tracking-tight font-geist text-balance">Das Handbuch <span class="whitespace-nowrap">„KI-Tutor einführen“</span> als PDF</h3></div></div>' +
+          '<h3 class="text-[1.15rem] leading-snug tracking-tight font-geist text-balance">Das Handbuch <span class="whitespace-nowrap">„KI-Tutor einführen“</span> als&nbsp;PDF</h3></div></div>' +
         list + form + '</div>';
     }
     return '<div class="kc-gate rounded-3xl p-5 sm:p-10 text-white scroll-mt-6" id="kc-gate">' +
       '<div class="grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] gap-8 lg:gap-12 items-center">' +
         '<div><div class="flex items-center gap-6 mb-7">' + bookMock('kc-mock-stage--md hidden sm:block') +
           '<div><p class="text-xs font-semibold uppercase tracking-widest text-blue-300 font-geist mb-2">Kostenlos</p>' +
-          '<h3 class="text-2xl sm:text-3xl lg:text-[1.75rem] font-semibold tracking-tight font-geist text-balance">Das Handbuch <span class="whitespace-nowrap">„KI-Tutor einführen“</span> als PDF</h3></div></div>' +
+          '<h3 class="text-2xl sm:text-3xl lg:text-[1.75rem] font-semibold tracking-tight font-geist text-balance">Das Handbuch <span class="whitespace-nowrap">„KI-Tutor einführen“</span> als&nbsp;PDF</h3></div></div>' +
           list + '</div>' +
         form +
       '</div></div>';
