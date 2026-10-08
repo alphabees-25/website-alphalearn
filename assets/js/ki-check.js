@@ -42,15 +42,14 @@
   }
   function chapters() { return CH.filter(function (c) { return !c.employeesOnly || state.employees !== false; }); }
   function chById(id) { return CH.filter(function (c) { return c.id === id; })[0]; }
-  // Gate: frei sind Kapitel 1 und die erste Hälfte von Kapitel 2 (Datenschutz). Der Rest der Checkliste
-  // (Punkte und Kapitel) ist erst nach Anforderung des Handbuchs nutzbar. Irrtümer: MYTHS_FREE frei aufklappbar.
-  var GATE_CH = CH[1].id;
-  var FREE_IDS = itemsOfRaw(CH[0].id).concat(itemsOfRaw(GATE_CH).slice(0, Math.ceil(itemsOfRaw(GATE_CH).length / 2))).map(function (i) { return i.id; });
+  // Gate: frei ist nur Kapitel 1 (Rollen klären). Ab Kapitel 2 öffnet jeder Schritt das Fenster zum Handbuch;
+  // nutzbar wird der Rest erst nach Anforderung. Irrtümer: MYTHS_FREE frei aufklappbar.
+  var FREE_IDS = itemsOfRaw(CH[0].id).map(function (i) { return i.id; });
   var MYTHS_FREE = 2;
   function itemsOfRaw(chId) { return DATA.items.filter(function (i) { return i.ch === chId; }); }
   function gated() { return !(state.requested || state.unlocked); }
   function itemLocked(i) { return gated() && FREE_IDS.indexOf(i.id) === -1; }
-  function chLocked(chId) { return gated() && chId !== CH[0].id && chId !== GATE_CH; }
+  function chLocked(chId) { return gated() && chId !== CH[0].id; }
   var LOCK = '<svg class="kc-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="11" x="4" y="11" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>';
   function itemsOf(chId) { return ITEMS.filter(function (i) { return i.ch === chId; }); }
   function activeItems() {
@@ -94,7 +93,7 @@
     var s = stats();
     var chs = chapters();
     if (chs.map(function (c) { return c.id; }).indexOf(state.ch) === -1) state.ch = chs[0].id;
-    if (chLocked(state.ch)) state.ch = GATE_CH;
+    if (chLocked(state.ch)) state.ch = CH[0].id;
     var c = chById(state.ch);
     var idx = chs.indexOf(c);
     var next = chs[idx + 1];
@@ -133,7 +132,7 @@
         lockWall(itemsOf(c.id).filter(itemLocked)) +
         '<div class="mt-9 pt-6 border-t border-gray-100 flex flex-wrap items-center justify-between gap-3">' +
           (idx > 0 ? '<button type="button" class="kc-link text-sm" data-act="tab" data-ch="' + chs[idx - 1].id + '">← ' + esc(chs[idx - 1].title) + '</button>' : '<span></span>') +
-          (next && chLocked(next.id) ? '<button type="button" class="kc-btn-primary kc-btn-locked" data-act="gate-modal" aria-haspopup="dialog">Weiter: ' + esc(next.title) + ' ' + LOCK + '</button>' :
+          (next && chLocked(next.id) ? '<button type="button" class="kc-btn-primary kc-btn-locked" data-act="gate-modal" data-ch="' + next.id + '" aria-haspopup="dialog">Weiter: ' + esc(next.title) + ' ' + LOCK + '</button>' :
            next ? '<button type="button" class="kc-btn-primary" data-act="tab" data-ch="' + next.id + '">Weiter: ' + esc(next.title) + ' →</button>'
                 : '<button type="button" class="kc-btn-primary" data-act="to-gate">Fahrplan erstellen →</button>') +
         '</div>' +
@@ -409,16 +408,6 @@
   // ---------- Events ----------
   function syncHash() { if (state.unlocked) history.replaceState(null, '', '#r=' + encodeState()); }
 
-  // Mitten in Datenschutz: nach 3 angefassten Punkten (abgehakt oder aufgeklappt) einmal das Fenster zeigen
-  var gateTouched = {}, gateAutoShown = false;
-  function touchGate(id) {
-    if (!gated() || gateAutoShown) return;
-    var it = ITEMS.filter(function (x) { return x.id === id; })[0];
-    if (!it || it.ch !== GATE_CH) return;
-    gateTouched[id] = true;
-    if (Object.keys(gateTouched).length >= 3) { gateAutoShown = true; setTimeout(function () { if (gated() && !modalOpen()) openModal(null, null, 'auto'); }, 600); }
-  }
-
   // Irrtümer: MYTHS_FREE frei aufklappbar, danach öffnet sich das Fenster statt des Irrtums
   var mythOpened = {};
   [].forEach.call(document.querySelectorAll('#kc-irrtuemer details.kc-myth'), function (d, n) {
@@ -441,9 +430,9 @@
       var it = ITEMS.filter(function (x) { return x.id === id; })[0];
       var cs = stats(itemsOf(it.ch));
       if (state.done[id] && cs.done === cs.total) track('check_block_complete', { block: it.ch });
-      save(); syncHash(); render(); touchGate(id);
+      save(); syncHash(); render();
     }
-    else if (act === 'details') { var d = el.getAttribute('data-id'); state.open[d] = !state.open[d]; render(); touchGate(d); }
+    else if (act === 'details') { var d = el.getAttribute('data-id'); state.open[d] = !state.open[d]; render(); }
     else if (act === 'gate-modal') { openModal(el.getAttribute('data-id'), el, el.getAttribute('data-ch') ? 'chapter' : 'checklist'); }
     else if (act === 'modal-close') { closeModal(); }
     else if (act === 'tab') { state.ch = el.getAttribute('data-ch'); render(); scrollTo(root); }
