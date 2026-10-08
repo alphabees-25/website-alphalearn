@@ -481,8 +481,7 @@ font-family: 'DM Sans', sans-serif !important;
 .font-cormorant {
 font-family: 'Cormorant Garamond', serif !important;
 }
-
-
+</style>
 
 <style id="global-overflow-guard">
   html, body {
@@ -504,6 +503,7 @@ font-family: 'Cormorant Garamond', serif !important;
     overflow: hidden;
   }
 </style>
+  <link rel="stylesheet" href="/assets/css/design-2026.css">
 </head>
 <body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
 
@@ -578,40 +578,28 @@ font-family: 'Cormorant Garamond', serif !important;
   })();
   </script>
 
-  <!-- Background (component) added by Aura -->
-  <div class="aura-background-component top-0 w-full -z-10 absolute" data-alpha-mask="80" style="height: 200vh; mask-image: linear-gradient(to bottom, transparent, black 0%, black 85%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 85%, transparent)">
-    <div class="aura-background-component top-0 w-full -z-10 absolute h-full">
-      <div data-us-project="yACzULFKkgXAmEcep6hu" data-us-scale="0.5" data-us-dpi="1" data-us-fps="30" class="absolute w-full h-full left-0 top-0 -z-10"></div>
-      <script type="text/javascript">
-        !function(){function u(){try{var c=document.createElement("canvas");return !!(window.WebGLRenderingContext&&(c.getContext("webgl")||c.getContext("experimental-webgl")))}catch(e){return!1}}if(u()&&!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head || document.body).appendChild(i)}}();
-      </script>
-    </div>
-  </div>
   <!-- Global Header -->
 <div id="site-header"><!-- partial:header:start -->
 <!-- Top Navigation -->
-    <header class="relative z-20 border-b border-gray-100">
-      <div class="sm:px-6 lg:px-8 max-w-7xl mr-auto ml-auto pr-4 pl-4">
-        <div class="flex sm:py-6 pt-4 pb-4 relative items-center justify-between">
+    <header class="relative z-20 border-b border-gray-100 bg-white">
+      <div class="px-4 sm:px-6">
+        <div class="flex py-2.5 sm:py-3 relative items-center">
   <!-- Brand -->
   <a href="/de/" class="flex gap-x-3 gap-y-3 items-center shrink-0 relative">
-    <img src="/assets/images/Logo_Alphalearn_outlines_fluid_animated.svg" alt="Alphalearn" class="h-[43px] w-auto max-w-[198px] object-contain" loading="eager" decoding="async">
+    <img src="/assets/images/Logo_Alphalearn_outlines_fluid_animated.svg" alt="Alphalearn" class="h-[30px] sm:h-[34px] w-auto max-w-[157px] object-contain" loading="eager" decoding="async">
     <span class="sr-only font-geist">Alphalearn</span>
   </a>
 
   <!-- Centered Navigation Group (Desktop) -->
-  <nav class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-8">
+  <nav class="hidden md:flex items-center gap-7 ml-10 lg:ml-12" style="position:relative; top:3px">
     <a href="/de/demos.html" class="nav-link hover:text-blue-600 transition-colors group text-sm font-medium text-gray-600 font-geist relative">
       Demos
-      <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
     </a>
     <a href="/de/preis.html" class="nav-link text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors font-geist relative group">
-      Preis
-      <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+      Preise
     </a>
     <a href="/de/features.html" class="nav-link hover:text-blue-600 transition-colors group text-sm font-medium text-gray-600 font-geist relative">
     Funktionen
-    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
   </a>
   </nav>
 
@@ -634,7 +622,7 @@ font-family: 'Cormorant Garamond', serif !important;
 
 
   <!-- Right Actions (Desktop & Mobile Toggle) -->
-  <div class="flex items-center gap-3 sm:gap-4 z-10 shrink-0 relative">
+  <div class="flex items-center gap-3 sm:gap-4 z-10 shrink-0 relative ml-auto">
     
     <!-- Language Toggle (Desktop) -->
     <div class="hidden md:flex items-center bg-gray-100/80 ring-1 ring-gray-200 rounded-lg p-0.5">
@@ -646,12 +634,12 @@ font-family: 'Cormorant Garamond', serif !important;
     <div class="hidden md:flex gap-1 border-gray-200 border-l ml-1 pl-2 gap-x-1 gap-y-1 items-center">
         <!-- Login Icon -->
         <a href="https://portal.alphabees.de/auth/login" class="group hover:bg-blue-50 transition-all duration-300 rounded-full pt-2 pr-2 pb-2 pl-2 relative" aria-label="Login">
-           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-x-0.5 w-[20px] h-[20px]" data-icon-replaced="true" style="width: 20px; height: 20px; color: rgb(37, 99, 235);"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" class=""></path><polyline points="10 17 15 12 10 7" class=""></polyline><line x1="15" x2="3" y1="12" y2="12" class=""></line></svg>
+           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in text-gray-600 group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-x-0.5 w-[20px] h-[20px]" data-icon-replaced="true" style="width: 20px; height: 20px;"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" class=""></path><polyline points="10 17 15 12 10 7" class=""></polyline><line x1="15" x2="3" y1="12" y2="12" class=""></line></svg>
            <span class="absolute top-full mt-2 left-1/2 -translate-x-1/2 px-2 py-1 bg-gray-900 text-white text-[10px] font-medium rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap font-geist shadow-lg transform translate-y-1 group-hover:translate-y-0">login</span>
         </a>
         <!-- Register Icon -->
         <a href="https://portal.alphabees.de/auth/register" class="group hover:bg-blue-50 transition-all duration-300 rounded-full pt-2 pr-2 pb-2 pl-2 relative" aria-label="Register">
-           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-plus group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 w-[20px] h-[20px]" data-icon-replaced="true" style="color: rgb(37, 99, 235); width: 20px; height: 20px;">
+           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-plus text-gray-600 group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 w-[20px] h-[20px]" data-icon-replaced="true" style="width: 20px; height: 20px;">
              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" class=""></path>
              <circle cx="9" cy="7" r="4" class=""></circle>
              <line x1="19" x2="19" y1="8" y2="14"></line>
@@ -677,11 +665,11 @@ font-family: 'Cormorant Garamond', serif !important;
       </div>
       <!-- Mobile Menu -->
       <div id="mobileMenu" class="md:hidden hidden">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="px-4 sm:px-6">
           <div class="border-t border-gray-100"></div>
           <div class="py-3 space-y-1 divide-y divide-gray-100 border-b border-gray-100">
             <a href="/de/demos.html" class="nav-link block hover:text-gray-900 text-sm text-gray-700 font-geist pt-3 pr-2 pb-3 pl-2">Demos</a>
-            <a href="/de/preis.html" class="nav-link block hover:text-gray-900 text-sm text-gray-700 font-geist pt-3 pr-2 pb-3 pl-2">Preis</a>
+            <a href="/de/preis.html" class="nav-link block hover:text-gray-900 text-sm text-gray-700 font-geist pt-3 pr-2 pb-3 pl-2">Preise</a>
             <a href="/de/features.html" class="block hover:text-gray-900 text-sm text-gray-700 font-geist pt-3 pr-2 pb-3 pl-2">Funktionen</a>
             
             
@@ -694,17 +682,13 @@ font-family: 'Cormorant Garamond', serif !important;
 
   <!-- Hero -->
   <main class="relative overflow-hidden">
-    <div class="sm:px-6 sm:pt-24 xl:pt-40 sm:pb-24 xl:pb-40 lg:px-8 lg:pb-4 max-w-7xl mr-auto ml-auto pt-24 pr-4 pb-24 pl-4">
-      <div class="flex flex-col sm:pt-16 sm:pb-6 z-10 text-center max-w-5xl mr-auto ml-auto pt-12 pr-6 pb-16 pl-6 relative items-center justify-center">
+    <div class="max-w-7xl mr-auto ml-auto px-6 lg:px-8 pt-20 pb-4 sm:pt-28 sm:pb-8 lg:pt-36 lg:pb-12">
+      <div class="relative z-10 max-w-5xl">
 
-  <!-- Background Gradient for subtle depth -->
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-blue-50/40 via-indigo-50/40 to-purple-50/40 rounded-full blur-3xl -z-10 pointer-events-none opacity-60">
-  </div>
+  <h1 class="ds-h1 text-balance" style="animation: fadeSlideIn 1s ease-out 0.1s both">Werde Teil von Alphabees</h1>
 
-  <h1 class="leading-[1.1] text-balance sm:text-5xl lg:text-6xl text-4xl font-semibold text-gray-900 tracking-tight font-geist max-w-4xl mb-6" style="animation: fadeSlideIn 1s ease-out 0.1s both">Werde Teil von Alphabees</h1>
-
-  <p class="sm:text-xl leading-relaxed text-balance text-lg text-gray-600 font-geist max-w-2xl mr-auto mb-10 ml-auto" style="animation: fadeSlideIn 1s ease-out 0.2s both">Wir suchen immer wieder Talente für unser wachsendes
-    Team. Schau dir unser Stellenprofil an und melde dich bei uns.</p>
+  <p class="ds-sub mt-6 sm:mt-8" style="animation: fadeSlideIn 1s ease-out 0.2s both">Wir suchen immer wieder Talente für unser wachsendes
+    Team. Lerne unsere Werte kennen und schau auf LinkedIn nach offenen Stellen.</p>
 
   <div style="animation: fadeSlideIn 1s ease-out 0.3s both;" class="">
 
@@ -714,8 +698,8 @@ font-family: 'Cormorant Garamond', serif !important;
 
     </div>
 
-    <section class="overflow-hidden sm:pt-3 pt-24 pb-24 relative" style="background: transparent">
-      <div class="sm:px-6 lg:px-8 max-w-7xl mr-auto ml-auto pr-4 pl-4">
+    <section class="overflow-hidden pt-16 sm:pt-20 pb-24 sm:pb-32 relative">
+      <div class="px-6 lg:px-8 max-w-7xl mr-auto ml-auto">
 
         <!-- Section Header -->
 
@@ -724,16 +708,10 @@ font-family: 'Cormorant Garamond', serif !important;
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
 
           <!-- Card 1: Innovation -->
-          <div class="group transition-all duration-300 ease-out flex flex-col animate-on-scroll bg-white h-full border-gray-200 border rounded-3xl pt-8 pr-8 pb-8 pl-8 relative overflow-hidden shadow-[0_22px_60px_-30px_rgba(59,130,246,0.22),0_12px_32px_-30px_rgba(168,85,247,0.18)] hover:scale-[1.015] hover:shadow-[0_26px_72px_-24px_rgba(59,130,246,0.28),0_16px_42px_-24px_rgba(168,85,247,0.22)] animate" style="animation: fadeSlideIn 1s ease-out 0.2s both">
-
-            <!-- Subtle Background Glow -->
-            <div class="absolute z-0 -right-20 -top-20 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none mix-blend-multiply">
-            </div>
-            <div class="absolute z-0 -left-20 bottom-0 w-60 h-60 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none mix-blend-multiply">
-            </div>
+          <div class="group flex flex-col animate-on-scroll bg-white h-full border-[1.5px] border-[#0a0a0f] rounded-[1.25rem] p-8 relative overflow-hidden animate" style="animation: fadeSlideIn 1s ease-out 0.2s both">
 
             <!-- Icon -->
-            <div class="flex transition-transform duration-300 group-hover:scale-110 z-10 text-blue-600 bg-gray-50 w-12 h-12 border-blue-100 border rounded-2xl mb-6 relative items-center justify-center">
+            <div class="relative z-10 flex w-12 h-12 items-center justify-center rounded-full border-[1.5px] border-[#0a0a0f] bg-white text-[#0a0a0f] mb-8">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb">
                 <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-1 1.5-2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5">
                 </path>
@@ -744,8 +722,8 @@ font-family: 'Cormorant Garamond', serif !important;
 
             <!-- Text -->
             <div class="relative z-10">
-              <h3 class="text-xl font-semibold text-gray-900 font-geist mb-3">Innovation</h3>
-              <p class="text-gray-500 font-geist leading-relaxed">
+              <h3 class="ds-h3 mb-4">Innovation</h3>
+              <p class="text-gray-600 font-geist leading-relaxed">
                 Wir suchen Visionäre, die komplexe Probleme lieben und kreative Lösungen für die Bildung der Zukunft
                 entwickeln.
               </p>
@@ -753,16 +731,10 @@ font-family: 'Cormorant Garamond', serif !important;
           </div>
 
           <!-- Card 2: Teamgeist -->
-          <div class="group transition-all duration-300 ease-out flex flex-col animate-on-scroll bg-white h-full border-gray-200 border rounded-3xl pt-8 pr-8 pb-8 pl-8 relative overflow-hidden shadow-[0_22px_60px_-30px_rgba(59,130,246,0.22),0_12px_32px_-30px_rgba(168,85,247,0.18)] hover:scale-[1.015] hover:shadow-[0_26px_72px_-24px_rgba(59,130,246,0.28),0_16px_42px_-24px_rgba(168,85,247,0.22)] animate" style="animation: fadeSlideIn 1s ease-out 0.3s both">
-
-            <!-- Subtle Background Glow -->
-            <div class="absolute z-0 -right-20 -top-20 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none mix-blend-multiply">
-            </div>
-            <div class="absolute z-0 -left-20 bottom-0 w-60 h-60 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none mix-blend-multiply">
-            </div>
+          <div class="group flex flex-col animate-on-scroll bg-white h-full border-[1.5px] border-[#0a0a0f] rounded-[1.25rem] p-8 relative overflow-hidden animate" style="animation: fadeSlideIn 1s ease-out 0.3s both">
 
             <!-- Icon -->
-            <div class="flex transition-transform duration-300 group-hover:scale-110 text-purple-600 bg-gray-50 w-12 h-12 z-10 border-blue-100 border rounded-2xl mb-6 relative items-center justify-center">
+            <div class="relative z-10 flex w-12 h-12 items-center justify-center rounded-full border-[1.5px] border-[#0a0a0f] bg-white text-[#0a0a0f] mb-8">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-handshake">
                 <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
                 </path>
@@ -773,8 +745,8 @@ font-family: 'Cormorant Garamond', serif !important;
 
             <!-- Text -->
             <div class="relative z-10">
-              <h3 class="text-xl font-semibold text-gray-900 font-geist mb-3">Teamgeist</h3>
-              <p class="text-gray-500 font-geist leading-relaxed">
+              <h3 class="ds-h3 mb-4">Teamgeist</h3>
+              <p class="text-gray-600 font-geist leading-relaxed">
                 Zusammenhalt ist unsere Stärke. Wir unterstützen uns gegenseitig, teilen Wissen und feiern gemeinsame
                 Erfolge.
               </p>
@@ -782,16 +754,10 @@ font-family: 'Cormorant Garamond', serif !important;
           </div>
 
           <!-- Card 3: Leidenschaft -->
-          <div class="group transition-all duration-300 ease-out flex flex-col animate-on-scroll bg-white h-full border-gray-200 border rounded-3xl pt-8 pr-8 pb-8 pl-8 relative overflow-hidden shadow-[0_22px_60px_-30px_rgba(59,130,246,0.22),0_12px_32px_-30px_rgba(168,85,247,0.18)] hover:scale-[1.015] hover:shadow-[0_26px_72px_-24px_rgba(59,130,246,0.28),0_16px_42px_-24px_rgba(168,85,247,0.22)] animate" style="animation: fadeSlideIn 1s ease-out 0.4s both">
-
-            <!-- Subtle Background Glow -->
-            <div class="absolute z-0 -right-20 -top-20 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none mix-blend-multiply">
-            </div>
-            <div class="absolute z-0 -left-20 bottom-0 w-60 h-60 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none mix-blend-multiply">
-            </div>
+          <div class="group flex flex-col animate-on-scroll bg-white h-full border-[1.5px] border-[#0a0a0f] rounded-[1.25rem] p-8 relative overflow-hidden animate" style="animation: fadeSlideIn 1s ease-out 0.4s both">
 
             <!-- Icon -->
-            <div class="flex transition-transform duration-300 group-hover:scale-110 text-pink-600 bg-gray-50 w-12 h-12 z-10 border-blue-100 border rounded-2xl mb-6 relative items-center justify-center">
+            <div class="relative z-10 flex w-12 h-12 items-center justify-center rounded-full border-[1.5px] border-[#0a0a0f] bg-white text-[#0a0a0f] mb-8">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flame">
                 <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.115.385-2.256 1-3.24.114.912.207 1.91.5 2.74Z">
                 </path>
@@ -801,8 +767,8 @@ font-family: 'Cormorant Garamond', serif !important;
 
             <!-- Text -->
             <div class="relative z-10">
-              <h3 class="text-xl font-semibold text-gray-900 font-geist mb-3">Leidenschaft</h3>
-              <p class="text-gray-500 font-geist leading-relaxed">
+              <h3 class="ds-h3 mb-4">Leidenschaft</h3>
+              <p class="text-gray-600 font-geist leading-relaxed">
                 Wir brennen für moderne Technologien und Bildung. Deine Begeisterung treibt uns und unsere Produkte
                 voran.
               </p>
@@ -810,27 +776,21 @@ font-family: 'Cormorant Garamond', serif !important;
           </div>
 
           <!-- Card 4: Neugier -->
-          <div class="group transition-all duration-300 ease-out flex flex-col animate-on-scroll bg-white h-full border-gray-200 border rounded-3xl pt-8 pr-8 pb-8 pl-8 relative overflow-hidden shadow-[0_22px_60px_-30px_rgba(59,130,246,0.22),0_12px_32px_-30px_rgba(168,85,247,0.18)] hover:scale-[1.015] hover:shadow-[0_26px_72px_-24px_rgba(59,130,246,0.28),0_16px_42px_-24px_rgba(168,85,247,0.22)]" style="animation: fadeSlideIn 1s ease-out 0.5s both">
+          <div class="group flex flex-col animate-on-scroll bg-white h-full border-[1.5px] border-[#0a0a0f] rounded-[1.25rem] p-8 relative overflow-hidden" style="animation: fadeSlideIn 1s ease-out 0.5s both">
 
-            <!-- Subtle Background Glow (exported style) -->
-            <div class="absolute z-0 -right-20 -top-20 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none mix-blend-multiply">
-            </div>
-            <div class="absolute z-0 -left-20 bottom-0 w-60 h-60 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none mix-blend-multiply">
-            </div>
-
-            <div class="relative z-10 flex group-hover:scale-110 transition-transform duration-300 text-amber-600 bg-gray-50 w-12 h-12 border-blue-100 border rounded-2xl mb-6 items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="width: 24px; height: 24px; color: rgb(217, 119, 6);" class="font-sans w-[24px] h-[24px]" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" data-mingcute="ai-line" data-icon-set="mingcute" data-icon-replaced="true" stroke-width="0.2">
+            <div class="relative z-10 flex w-12 h-12 items-center justify-center rounded-full border-[1.5px] border-[#0a0a0f] bg-white text-[#0a0a0f] mb-8">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="width: 24px; height: 24px;" class="font-sans w-[24px] h-[24px]" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" data-mingcute="ai-line" data-icon-set="mingcute" data-icon-replaced="true" stroke-width="0.2">
                 <g fill="none" class="">
                   <path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z">
                   </path>
-                  <path fill="#d97706" d="M9.107 5.448c.598-1.75 3.016-1.803 3.725-.159l.06.16l.807 2.36a4 4 0 0 0 2.276 2.411l.217.081l2.36.806c1.75.598 1.803 3.016.16 3.725l-.16.06l-2.36.807a4 4 0 0 0-2.412 2.276l-.081.216l-.806 2.361c-.598 1.75-3.016 1.803-3.724.16l-.062-.16l-.806-2.36a4 4 0 0 0-2.276-2.412l-.216-.081l-2.36-.806c-1.751-.598-1.804-3.016-.16-3.724l.16-.062l2.36-.806A4 4 0 0 0 8.22 8.025l.081-.216zM11 6.094l-.806 2.36a6 6 0 0 1-3.49 3.649l-.25.091l-2.36.806l2.36.806a6 6 0 0 1 3.649 3.49l.091.25l.806 2.36l.806-2.36a6 6 0 0 1 3.49-3.649l.25-.09l2.36-.807l-2.36-.806a6 6 0 0 1-3.649-3.49l-.09-.25zM19 2a1 1 0 0 1 .898.56l.048.117l.35 1.026l1.027.35a1 1 0 0 1 .118 1.845l-.118.048l-1.026.35l-.35 1.027a1 1 0 0 1-1.845.117l-.048-.117l-.35-1.026l-1.027-.35a1 1 0 0 1-.118-1.845l.118-.048l1.026-.35l.35-1.027A1 1 0 0 1 19 2" class=""></path>
+                  <path fill="currentColor" d="M9.107 5.448c.598-1.75 3.016-1.803 3.725-.159l.06.16l.807 2.36a4 4 0 0 0 2.276 2.411l.217.081l2.36.806c1.75.598 1.803 3.016.16 3.725l-.16.06l-2.36.807a4 4 0 0 0-2.412 2.276l-.081.216l-.806 2.361c-.598 1.75-3.016 1.803-3.724.16l-.062-.16l-.806-2.36a4 4 0 0 0-2.276-2.412l-.216-.081l-2.36-.806c-1.751-.598-1.804-3.016-.16-3.724l.16-.062l2.36-.806A4 4 0 0 0 8.22 8.025l.081-.216zM11 6.094l-.806 2.36a6 6 0 0 1-3.49 3.649l-.25.091l-2.36.806l2.36.806a6 6 0 0 1 3.649 3.49l.091.25l.806 2.36l.806-2.36a6 6 0 0 1 3.49-3.649l.25-.09l2.36-.807l-2.36-.806a6 6 0 0 1-3.649-3.49l-.09-.25zM19 2a1 1 0 0 1 .898.56l.048.117l.35 1.026l1.027.35a1 1 0 0 1 .118 1.845l-.118.048l-1.026.35l-.35 1.027a1 1 0 0 1-1.845.117l-.048-.117l-.35-1.026l-1.027-.35a1 1 0 0 1-.118-1.845l.118-.048l1.026-.35l.35-1.027A1 1 0 0 1 19 2" class=""></path>
                 </g>
               </svg>
             </div>
 
             <div class="relative z-10">
-              <h3 class="text-xl font-semibold text-gray-900 font-geist mb-3">AI-first</h3>
-              <p class="text-gray-500 font-geist leading-relaxed">
+              <h3 class="ds-h3 mb-4">AI-first</h3>
+              <p class="text-gray-600 font-geist leading-relaxed">
                 Ständiges Lernen ist Teil unserer DNA. Wir suchen Menschen, die Fragen stellen und sich stetig
                 weiterentwickeln.
               </p>
@@ -838,16 +798,10 @@ font-family: 'Cormorant Garamond', serif !important;
           </div>
 
           <!-- Card 5: Verantwortung -->
-          <div class="group transition-all duration-300 ease-out flex flex-col animate-on-scroll bg-white h-full border-gray-200 border rounded-3xl pt-8 pr-8 pb-8 pl-8 relative overflow-hidden shadow-[0_22px_60px_-30px_rgba(59,130,246,0.22),0_12px_32px_-30px_rgba(168,85,247,0.18)] hover:scale-[1.015] hover:shadow-[0_26px_72px_-24px_rgba(59,130,246,0.28),0_16px_42px_-24px_rgba(168,85,247,0.22)]" style="animation: fadeSlideIn 1s ease-out 0.6s both">
-
-            <!-- Subtle Background Glow -->
-            <div class="absolute z-0 -right-20 -top-20 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none mix-blend-multiply">
-            </div>
-            <div class="absolute z-0 -left-20 bottom-0 w-60 h-60 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none mix-blend-multiply">
-            </div>
+          <div class="group flex flex-col animate-on-scroll bg-white h-full border-[1.5px] border-[#0a0a0f] rounded-[1.25rem] p-8 relative overflow-hidden" style="animation: fadeSlideIn 1s ease-out 0.6s both">
 
             <!-- Icon -->
-            <div class="flex transition-transform duration-300 group-hover:scale-110 z-10 text-emerald-600 bg-gray-50 w-12 h-12 border-blue-100 border rounded-2xl mb-6 relative items-center justify-center">
+            <div class="relative z-10 flex w-12 h-12 items-center justify-center rounded-full border-[1.5px] border-[#0a0a0f] bg-white text-[#0a0a0f] mb-8">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check">
                 <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" class="">
                 </path>
@@ -857,8 +811,8 @@ font-family: 'Cormorant Garamond', serif !important;
 
             <!-- Text -->
             <div class="relative z-10">
-              <h3 class="text-xl font-semibold text-gray-900 font-geist mb-3">Verantwortung</h3>
-              <p class="text-gray-500 font-geist leading-relaxed">
+              <h3 class="ds-h3 mb-4">Verantwortung</h3>
+              <p class="text-gray-600 font-geist leading-relaxed">
                 Wir handeln proaktiv und übernehmen Ownership. Du hast den Freiraum, Entscheidungen zu treffen und
                 umzusetzen.
               </p>
@@ -866,16 +820,10 @@ font-family: 'Cormorant Garamond', serif !important;
           </div>
 
           <!-- Card 6: Fokus -->
-          <div class="group transition-all duration-300 ease-out flex flex-col animate-on-scroll bg-white h-full border-gray-200 border rounded-3xl pt-8 pr-8 pb-8 pl-8 relative overflow-hidden shadow-[0_22px_60px_-30px_rgba(59,130,246,0.22),0_12px_32px_-30px_rgba(168,85,247,0.18)] hover:scale-[1.015] hover:shadow-[0_26px_72px_-24px_rgba(59,130,246,0.28),0_16px_42px_-24px_rgba(168,85,247,0.22)]" style="animation: fadeSlideIn 1s ease-out 0.7s both">
-
-            <!-- Subtle Background Glow -->
-            <div class="absolute z-0 -right-20 -top-20 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none mix-blend-multiply">
-            </div>
-            <div class="absolute z-0 -left-20 bottom-0 w-60 h-60 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none mix-blend-multiply">
-            </div>
+          <div class="group flex flex-col animate-on-scroll bg-white h-full border-[1.5px] border-[#0a0a0f] rounded-[1.25rem] p-8 relative overflow-hidden" style="animation: fadeSlideIn 1s ease-out 0.7s both">
 
             <!-- Icon -->
-            <div class="flex transition-transform duration-300 group-hover:scale-110 text-indigo-600 bg-gray-50 w-12 h-12 z-10 border-blue-100 border rounded-2xl mb-6 relative items-center justify-center">
+            <div class="relative z-10 flex w-12 h-12 items-center justify-center rounded-full border-[1.5px] border-[#0a0a0f] bg-white text-[#0a0a0f] mb-8">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-focus">
                 <circle cx="12" cy="12" r="3"></circle>
                 <path d="M3 7V5a2 2 0 0 1 2-2h2"></path>
@@ -887,8 +835,8 @@ font-family: 'Cormorant Garamond', serif !important;
 
             <!-- Text -->
             <div class="relative z-10">
-              <h3 class="text-xl font-semibold text-gray-900 font-geist mb-3">Fokus</h3>
-              <p class="text-gray-500 font-geist leading-relaxed">
+              <h3 class="ds-h3 mb-4">Fokus</h3>
+              <p class="text-gray-600 font-geist leading-relaxed">
                 Wir konzentrieren uns auf das Wesentliche: Den bestmöglichen Nutzen für unsere Anwender. Qualität vor
                 Quantität.
               </p>
@@ -898,29 +846,30 @@ font-family: 'Cormorant Garamond', serif !important;
         </div>
       </div>
     </section>
-    <div class="sm:pb-32 z-10 pb-24 relative" style="background: transparent">
+    <div class="pt-8 sm:pt-12 pb-24 sm:pb-32 z-10 relative">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="animate-on-scroll text-center max-w-2xl mr-auto ml-auto" style="animation: fadeSlideIn 1s ease-out 0.1s both">
-          <div class="flex flex-col sm:pt-16 sm:pb-6 z-10 text-center max-w-5xl mr-auto ml-auto pt-12 pr-6 pb-16 pl-6 relative items-center justify-center">
+        <div class="animate-on-scroll max-w-5xl" style="animation: fadeSlideIn 1s ease-out 0.1s both">
+          <div class="relative z-10 max-w-5xl">
 
-  <!-- Background Gradient for subtle depth -->
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-blue-50/40 via-indigo-50/40 to-purple-50/40 rounded-full blur-3xl -z-10 pointer-events-none opacity-60">
-  </div>
+  <h2 class="ds-h2 text-balance" style="animation: fadeSlideIn 1s ease-out 0.1s both">Klingt das nach dir?</h2>
 
-  <h2 class="leading-[1.1] text-balance sm:text-5xl lg:text-5xl text-4xl font-semibold text-gray-900 tracking-tight font-geist max-w-4xl mb-6" style="animation: fadeSlideIn 1s ease-out 0.1s both">Klingt das nach dir?</h2>
-
-  <p class="sm:text-xl leading-relaxed text-balance text-lg text-gray-600 font-geist max-w-2xl mr-auto mb-10 ml-auto" style="animation: fadeSlideIn 1s ease-out 0.2s both">Schau auf unserem LinkedIn-Profil vorbei. Dort veröffentlichen wir alle offenen Stellen. Folge uns, um keine neuen Jobs zu verpassen.</p>
+  <p class="ds-sub mt-6" style="animation: fadeSlideIn 1s ease-out 0.2s both">Schau auf unserem LinkedIn-Profil vorbei. Dort veröffentlichen wir alle offenen Stellen. Folge uns, um keine neuen Jobs zu verpassen.</p>
 
   <div style="animation: fadeSlideIn 1s ease-out 0.3s both;" class="">
 
   </div>
 
 </div>
-          <a href="https://www.linkedin.com/company/alphabees/" class="inline-flex items-center justify-center gap-2 cursor-pointer transition-all duration-300 ease-out hover:bg-white/10 hover:scale-105 hover:shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_20px_40px_-5px_rgba(15,23,42,0.2),0px_10px_10px_-5px_rgba(0,0,0,0.04)] active:scale-95 text-sm font-medium text-gray-900 tracking-tight bg-white/10 border-white/20 border rounded-full pt-3 pr-5 pb-3 pl-5 shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),0px_6px_6px_-3px_rgba(15,23,42,0.18),0px_12px_12px_-6px_rgba(0,0,0,0.06)] backdrop-blur-md">
-
-
-  <span class="">zum Alphabees LinkedIn Profil</span>
-</a>
+          <div class="ds-btn-row mt-10 sm:mt-12">
+    <a href="https://www.linkedin.com/company/alphabees/" class="ds-btn ds-btn--lg max-sm:!px-5 max-sm:!gap-2 max-sm:!text-[1.05rem]">
+      <span class="">zum Alphabees LinkedIn Profil</span>
+      <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+        stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" aria-hidden="true">
+        <path d="M5 12h14"></path>
+        <path d="m12 5 7 7-7 7"></path>
+      </svg>
+    </a>
+    </div>
         </div>
       </div>
     </div>
@@ -946,7 +895,7 @@ font-family: 'Cormorant Garamond', serif !important;
       </script>
     </div>
   </main>
-  <section aria-labelledby="ai-section" class="overflow-hidden border-black/5 border-t relative">
+  <section aria-labelledby="ai-section" class="overflow-hidden relative">
     <!-- Subtle arcs -->
     <div class="pointer-events-none absolute inset-0">
       <div class="absolute -right-1/4 top-24 h-[900px] w-[900px] rounded-full border border-white/10"></div>
@@ -1002,13 +951,6 @@ font-family: 'Cormorant Garamond', serif !important;
     </script>
   </section>
   <section aria-labelledby="dark-how-it-works" class="overflow-hidden relative">
-    <!-- Background accents -->
-    <div class="pointer-events-none absolute inset-0">
-      <div class="absolute -left-1/4 top-10 h-[900px] w-[900px] rounded-full bg-indigo-500/10 blur-3xl"></div>
-      <div class="absolute -right-1/3 bottom-0 h-[1200px] w-[1200px] rounded-full bg-fuchsia-500/10 blur-3xl"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(60%_60%_at_20%_20%,rgba(255,255,255,0.06),transparent_60%)]">
-      </div>
-    </div>
 
 
 
@@ -1018,12 +960,7 @@ font-family: 'Cormorant Garamond', serif !important;
     }
     </script>
   </section>
-  <section aria-labelledby="mobile-app" class="overflow-hidden border-black/5 border-t relative">
-    <!-- Decorative glows -->
-    <div class="pointer-events-none absolute inset-0">
-      <div class="absolute -left-1/3 top-24 h-[900px] w-[900px] rounded-full bg-indigo-500/10 blur-3xl"></div>
-      <div class="absolute -left-1/4 top-64 h-[1200px] w-[1200px] rounded-full bg-amber-400/10 blur-3xl"></div>
-    </div>
+  <section aria-labelledby="mobile-app" class="overflow-hidden relative">
 
     <!-- FAQ entfernt (SEO 10/2026): globaler FAQ nur noch auf der Startseite -->
 
@@ -1059,8 +996,6 @@ font-family: 'Cormorant Garamond', serif !important;
     </clipPath>
   </defs>
 </svg>
-        <p class="text-sm text-gray-400 font-geist max-w-sm mt-4">KI-Tutoren für Akademien, Hochschulen, Aus- und
-          Weiterbildung.</p>
         <p class="text-sm text-gray-400 font-geist max-w-sm mt-2">Alphalearn ist eine Marke von Alphabees.</p>
         <div class="mt-6 flex items-center gap-3">
           <a href="https://moodle.org/plugins/block_alphabees" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center hover:bg-white/20 transition bg-white/10 w-10 h-10 border-white/10 border rounded-lg backdrop-blur-md">
@@ -1071,6 +1006,9 @@ font-family: 'Cormorant Garamond', serif !important;
                 <path d="M77.05,129.17c20.75,6.68,42.3,8.73,64,7l-1,135h-63v-142Z" style="fill: #fff;" class=""></path>
               </g>
             </svg>
+          </a>
+          <a href="https://github.com/alphabees-25/ilias-plugin-alphabees" target="_blank" rel="noopener noreferrer" aria-label="ILIAS-Plugin von Alphalearn" class="inline-flex items-center justify-center hover:bg-white/20 transition bg-white/10 w-10 h-10 border-white/10 border rounded-lg backdrop-blur-md">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 12" width="25" height="10" aria-hidden="true"><text x="15" y="10.6" text-anchor="middle" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="12.4" letter-spacing="-.15" fill="#fff">ILIAS</text></svg>
           </a>
           <a href="https://github.com/LErdweg/moodle-block_alphabees/wiki" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center hover:bg-white/20 transition bg-white/10 w-10 h-10 border-white/10 border rounded-lg backdrop-blur-md">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" style="color: rgb(255, 255, 255); width: 18px; height: 18px" class="w-[18px] h-[18px]" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" data-simple-icons="github" data-icon-set="simple-icons" data-icon-replaced="true" stroke-width="0.5">
@@ -1121,9 +1059,10 @@ font-family: 'Cormorant Garamond', serif !important;
           <ul class="mt-4 space-y-3">
             <li class=""><a href="/de/academy.html" class="hover:text-white transition text-sm text-gray-400 font-geist">Academy</a></li>
             <li class=""><a href="/de/helpcenter.html" class="text-sm text-gray-400 hover:text-white transition font-geist" style="">Hilfe-Center</a></li>
-            <li class=""><a href="https://portal.alphabees.de/auth/register" class="hover:text-white transition text-sm text-gray-400 font-geist">Alphabees-Portal</a></li>
+            <li class=""><a href="https://portal.alphabees.de/auth/register" class="hover:text-white transition text-sm text-gray-400 font-geist">Alphalearn Portal</a></li>
             <li class=""><a href="/de/blog.html" class="hover:text-white transition text-sm text-gray-400 font-geist">Blog</a></li>
             <li class=""><a href="/de/ki-tutor-guide-bildungsanbieter-deutschland-2026.html" class="hover:text-white transition text-sm text-gray-400 font-geist">KI-Tutor-Guide 2026</a></li>
+            <li class=""><a href="/de/ki-compliance-check.html" data-cta="footer_ki_check" class="hover:text-white transition text-sm text-gray-400 font-geist">KI-Compliance-Check</a></li>
           </ul>
         </div>
 

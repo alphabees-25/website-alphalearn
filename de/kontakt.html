@@ -515,12 +515,8 @@
       max-width: 100%;
       height: auto;
     }
-
-    .aura-background-component {
-      max-width: 100vw;
-      overflow: hidden;
-    }
   </style>
+  <link rel="stylesheet" href="/assets/css/design-2026.css">
 </head>
 
 <body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden"
@@ -597,41 +593,28 @@
     })();
   </script>
 
-  <!-- Background (component) added by Aura -->
-  <div class="aura-background-component top-0 w-full -z-10 h-screen absolute" data-alpha-mask="80"
-    style="; mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)">
-    <div class="aura-background-component top-0 w-full -z-10 absolute h-full">
-      <div data-us-project="yACzULFKkgXAmEcep6hu" data-us-scale="0.5" data-us-dpi="1" data-us-fps="30" class="absolute w-full h-full left-0 top-0 -z-10"></div>
-      <script type="text/javascript">
-        !function () { function supportsWebGL() { try { var c = document.createElement("canvas"); return !!(window.WebGLRenderingContext && (c.getContext("webgl") || c.getContext("experimental-webgl"))); } catch (e) { return false; } } if (supportsWebGL() && !window.UnicornStudio) { window.UnicornStudio = { isInitialized: !1 }; var i = document.createElement("script"); i.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js", i.onload = function () { window.UnicornStudio.isInitialized || (UnicornStudio.init(), window.UnicornStudio.isInitialized = !0) }, (document.head || document.body).appendChild(i) } }();
-      </script>
-    </div>
-  </div>
   <!-- Global Header -->
   <div id="site-header"><!-- partial:header:start -->
 <!-- Top Navigation -->
-    <header class="relative z-20 border-b border-gray-100">
-      <div class="sm:px-6 lg:px-8 max-w-7xl mr-auto ml-auto pr-4 pl-4">
-        <div class="flex sm:py-6 pt-4 pb-4 relative items-center justify-between">
+    <header class="relative z-20 border-b border-gray-100 bg-white">
+      <div class="px-4 sm:px-6">
+        <div class="flex py-2.5 sm:py-3 relative items-center">
   <!-- Brand -->
   <a href="/de/" class="flex gap-x-3 gap-y-3 items-center shrink-0 relative">
-    <img src="/assets/images/Logo_Alphalearn_outlines_fluid_animated.svg" alt="Alphalearn" class="h-[43px] w-auto max-w-[198px] object-contain" loading="eager" decoding="async">
+    <img src="/assets/images/Logo_Alphalearn_outlines_fluid_animated.svg" alt="Alphalearn" class="h-[30px] sm:h-[34px] w-auto max-w-[157px] object-contain" loading="eager" decoding="async">
     <span class="sr-only font-geist">Alphalearn</span>
   </a>
 
   <!-- Centered Navigation Group (Desktop) -->
-  <nav class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-8">
+  <nav class="hidden md:flex items-center gap-7 ml-10 lg:ml-12" style="position:relative; top:3px">
     <a href="/de/demos.html" class="nav-link hover:text-blue-600 transition-colors group text-sm font-medium text-gray-600 font-geist relative">
       Demos
-      <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
     </a>
     <a href="/de/preis.html" class="nav-link text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors font-geist relative group">
-      Preis
-      <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+      Preise
     </a>
     <a href="/de/features.html" class="nav-link hover:text-blue-600 transition-colors group text-sm font-medium text-gray-600 font-geist relative">
     Funktionen
-    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
   </a>
   </nav>
 
@@ -654,7 +637,7 @@
 
 
   <!-- Right Actions (Desktop & Mobile Toggle) -->
-  <div class="flex items-center gap-3 sm:gap-4 z-10 shrink-0 relative">
+  <div class="flex items-center gap-3 sm:gap-4 z-10 shrink-0 relative ml-auto">
     
     <!-- Language Toggle (Desktop) -->
     <div class="hidden md:flex items-center bg-gray-100/80 ring-1 ring-gray-200 rounded-lg p-0.5">
@@ -666,12 +649,12 @@
     <div class="hidden md:flex gap-1 border-gray-200 border-l ml-1 pl-2 gap-x-1 gap-y-1 items-center">
         <!-- Login Icon -->
         <a href="https://portal.alphabees.de/auth/login" class="group hover:bg-blue-50 transition-all duration-300 rounded-full pt-2 pr-2 pb-2 pl-2 relative" aria-label="Login">
-           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-x-0.5 w-[20px] h-[20px]" data-icon-replaced="true" style="width: 20px; height: 20px; color: rgb(37, 99, 235);"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" class=""></path><polyline points="10 17 15 12 10 7" class=""></polyline><line x1="15" x2="3" y1="12" y2="12" class=""></line></svg>
+           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in text-gray-600 group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-x-0.5 w-[20px] h-[20px]" data-icon-replaced="true" style="width: 20px; height: 20px;"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" class=""></path><polyline points="10 17 15 12 10 7" class=""></polyline><line x1="15" x2="3" y1="12" y2="12" class=""></line></svg>
            <span class="absolute top-full mt-2 left-1/2 -translate-x-1/2 px-2 py-1 bg-gray-900 text-white text-[10px] font-medium rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap font-geist shadow-lg transform translate-y-1 group-hover:translate-y-0">login</span>
         </a>
         <!-- Register Icon -->
         <a href="https://portal.alphabees.de/auth/register" class="group hover:bg-blue-50 transition-all duration-300 rounded-full pt-2 pr-2 pb-2 pl-2 relative" aria-label="Register">
-           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-plus group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 w-[20px] h-[20px]" data-icon-replaced="true" style="color: rgb(37, 99, 235); width: 20px; height: 20px;">
+           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-plus text-gray-600 group-hover:text-blue-600 transition-transform duration-300 group-hover:scale-110 w-[20px] h-[20px]" data-icon-replaced="true" style="width: 20px; height: 20px;">
              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" class=""></path>
              <circle cx="9" cy="7" r="4" class=""></circle>
              <line x1="19" x2="19" y1="8" y2="14"></line>
@@ -697,11 +680,11 @@
       </div>
       <!-- Mobile Menu -->
       <div id="mobileMenu" class="md:hidden hidden">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="px-4 sm:px-6">
           <div class="border-t border-gray-100"></div>
           <div class="py-3 space-y-1 divide-y divide-gray-100 border-b border-gray-100">
             <a href="/de/demos.html" class="nav-link block hover:text-gray-900 text-sm text-gray-700 font-geist pt-3 pr-2 pb-3 pl-2">Demos</a>
-            <a href="/de/preis.html" class="nav-link block hover:text-gray-900 text-sm text-gray-700 font-geist pt-3 pr-2 pb-3 pl-2">Preis</a>
+            <a href="/de/preis.html" class="nav-link block hover:text-gray-900 text-sm text-gray-700 font-geist pt-3 pr-2 pb-3 pl-2">Preise</a>
             <a href="/de/features.html" class="block hover:text-gray-900 text-sm text-gray-700 font-geist pt-3 pr-2 pb-3 pl-2">Funktionen</a>
             
             
@@ -714,53 +697,18 @@
 
   <!-- Hero -->
   <main class="relative">
-    <div
-      class="sm:px-6 lg:px-8 sm:pt-24 lg:pt-32 xl:pt-40 sm:pb-24 lg:pb-32 xl:pb-40 max-w-7xl mr-auto ml-auto pt-24 pr-4 pb-24 pl-4">
-      <div
-        class="flex flex-col sm:pt-16 sm:pb-4 text-center max-w-5xl z-10 mr-auto ml-auto pt-12 pr-6 pb-16 pl-6 relative items-center justify-center">
+    <div class="max-w-7xl mr-auto ml-auto px-6 lg:px-8 pt-20 pb-4 sm:pt-28 sm:pb-8 lg:pt-36">
+      <div class="relative z-10 max-w-5xl">
+        <h1 class="ds-h1 text-balance" style="animation: fadeSlideIn 1s ease-out 0.1s both">Kontakt</h1>
 
-        <!-- Background Gradient for subtle depth -->
-        <div
-          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-blue-50/40 via-indigo-50/40 to-purple-50/40 rounded-full blur-3xl -z-10 pointer-events-none opacity-60">
-        </div>
-
-        <h1
-          class="leading-[1.1] text-balance sm:text-5xl lg:text-6xl text-4xl font-semibold text-gray-900 tracking-tight font-geist max-w-4xl mb-6"
-          style="animation: fadeSlideIn 1s ease-out 0.1s both">Kontakt</h1>
-
-        <p class="sm:text-xl leading-relaxed text-balance text-lg text-gray-600 font-geist max-w-2xl mr-auto mb-10 ml-auto"
-          style="animation: fadeSlideIn 1s ease-out 0.2s both"><span class="inline-flex items-center justify-center gap-2 font-medium text-gray-900">Erhalte eine Antwort über unseren AlphaSupport Agent <i data-lucide="arrow-down" class="h-5 w-5"></i></span></p>
-
-        <div style="animation: fadeSlideIn 1s ease-out 0.3s both;" class="">
-
-        </div>
-
+        <p class="ds-sub mt-6 sm:mt-8" style="animation: fadeSlideIn 1s ease-out 0.2s both"><span>Erhalte eine Antwort über unseren AlphaSupport Agent <i data-lucide="arrow-down" class="ml-1 inline-block h-5 w-5 align-[-0.2em]"></i></span></p>
       </div>
-      <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
-        <!-- Header -->
-        <div class="mb-12 md:mb-16 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <div class="max-w-2xl">
-
-
-          </div>
-          <!-- Decorative icon/element -->
-
-        </div>
-
-        <!-- FAQ Grid -->
-
-
+      <div>
         <!-- Bottom Contact Section -->
-        <div class="mx-auto mt-16 max-w-4xl px-0 sm:px-6" style="width: min(calc(100vw - 2rem), 56rem);">
-          <div class="relative overflow-hidden rounded-3xl bg-white/70 p-3 ring-1 ring-black/5 shadow-[0_2px_2px_rgba(0,0,0,0.04),_0_8px_12px_rgba(0,0,0,0.08),_0_24px_32px_rgba(0,0,0,0.10)] backdrop-blur-md sm:p-4">
-            <div
-              class="pointer-events-none absolute right-0 top-0 -mr-10 -mt-10 h-64 w-64 rounded-full bg-blue-200/40 blur-3xl">
-            </div>
-            <div
-              class="pointer-events-none absolute bottom-0 left-0 -mb-10 -ml-10 h-64 w-64 rounded-full bg-indigo-200/40 blur-3xl">
-            </div>
+        <div class="mt-14 sm:mt-20 w-full max-w-4xl" style="animation: fadeSlideIn 1s ease-out 0.3s both">
+          <div class="relative overflow-hidden rounded-[1.25rem] border-[1.5px] border-[#0a0a0f] bg-white p-3 sm:rounded-[1.5rem] sm:p-4">
             <div class="relative z-10">
-              <div class="mb-3 flex items-center justify-between px-2 pt-1">
+              <div class="mb-3 flex items-center justify-between px-2 pt-1 font-geist">
                 <span class="flex items-center gap-2 text-xs font-medium text-gray-600">
                   <i data-lucide="bot" class="h-4 w-4"></i>
                   AlphaSupport Agent
@@ -787,28 +735,14 @@
       </div>
     </div>
     <div class="w-full max-w-[260px] sm:max-w-[280px]">
-      <div
-        class="relative overflow-hidden rounded-[32px] shadow-2xl ring-1 ring-white/20 bg-gradient-to-br from-sky-400 via-indigo-500 to-violet-600">
-        <div class="pointer-events-none absolute inset-0 opacity-60"
-          style="background: radial-gradient(120% 70% at 30% 15%, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.12) 28%, rgba(255,255,255,0.0) 55%);">
-        </div>
-        <div class="pointer-events-none absolute -inset-24 blur-3xl opacity-30"
-          style="background: radial-gradient(50% 50% at 70% 30%, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.0) 60%);">
-        </div>
-
-
+      <div class="relative overflow-hidden rounded-[32px]">
       </div>
       <script>
         const progress = 76; const rings = document.querySelectorAll('[data-ring]'); rings.forEach((ring, idx) => { const r = parseFloat(ring.getAttribute('data-radius')); const circumference = 2 * Math.PI * r; const pct = progress / 100; const dash = Math.max(0, circumference * pct - 2); ring.style.transition = 'stroke-dasharray 1200ms cubic-bezier(0.22, 1, 0.36, 1), stroke-dashoffset 1200ms cubic-bezier(0.22, 1, 0.36, 1)'; ring.style.strokeDasharray = `0 ${circumference}`; ring.style.strokeDashoffset = '0'; setTimeout(() => { ring.style.strokeDasharray = `${dash} ${circumference}`; ring.style.strokeDashoffset = '0'; }, 120 + idx * 80); }); ((el) => { if (el) el.textContent = progress; })(document.getElementById('percentValue'));
       </script>
     </div>
   </main>
-  <section aria-labelledby="ai-section" class="overflow-hidden border-black/5 border-t relative">
-    <!-- Subtle arcs -->
-    <div class="pointer-events-none absolute inset-0">
-      <div class="absolute -right-1/4 top-24 h-[900px] w-[900px] rounded-full border border-white/10"></div>
-      <div class="absolute -right-1/3 top-64 h-[1200px] w-[1200px] rounded-full border border-white/5"></div>
-    </div>
+  <section aria-labelledby="ai-section" class="overflow-hidden relative">
 
 
 
@@ -859,13 +793,6 @@
     </script>
   </section>
   <section aria-labelledby="dark-how-it-works" class="overflow-hidden relative">
-    <!-- Background accents -->
-    <div class="pointer-events-none absolute inset-0">
-      <div class="absolute -left-1/4 top-10 h-[900px] w-[900px] rounded-full bg-indigo-500/10 blur-3xl"></div>
-      <div class="absolute -right-1/3 bottom-0 h-[1200px] w-[1200px] rounded-full bg-fuchsia-500/10 blur-3xl"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(60%_60%_at_20%_20%,rgba(255,255,255,0.06),transparent_60%)]">
-      </div>
-    </div>
 
 
 
@@ -878,49 +805,48 @@
   <section aria-labelledby="mobile-app" class="overflow-hidden relative">
     <!-- Decorative glows -->
     <!-- seo-content:start -->
-<section class="relative bg-white py-16 md:py-24 border-t border-black/5 font-geist">
+<section class="relative bg-white py-24 sm:py-32 font-geist">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <p class="text-sm font-medium tracking-tight text-blue-600">Kontakt</p>
-        <h2 class="mt-2 text-3xl md:text-4xl font-semibold tracking-tight text-gray-900">So erreichst du uns</h2>
-        <p class="mt-4 text-lg leading-8 text-gray-600">Ob Frage zur Integration, Angebot für deine Organisation oder technisches Problem mit dem Plugin: Hier findest du den passenden Weg.</p>
+      <div class="max-w-5xl">
+        <p class="ds-label">Kontakt</p>
+        <h2 class="ds-h2 mt-4">So erreichst du uns</h2>
+        <p class="ds-sub mt-6">Ob Frage zur Integration, Angebot für deine Organisation oder technisches Problem mit dem Plugin: Hier findest du den passenden Weg.</p>
       </div>
-      <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <div class="rounded-2xl border border-gray-200 bg-gray-50/40 p-6">
-          <h3 class="text-lg font-semibold text-gray-900">Sofort-Antwort rund um die Uhr</h3>
+      <div class="mt-14 md:mt-20 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div class="ds-card p-7">
+          <h3 class="text-lg font-medium tracking-tight text-[#0a0a0f]">Sofort-Antwort rund um die Uhr</h3>
           <p class="mt-3 text-sm leading-relaxed text-gray-600">Der AlphaSupport Agent oben auf dieser Seite kennt unsere Funktionen, Preise und Integrationen und beantwortet deine Fragen sofort – auch abends und am Wochenende.</p>
         </div>
-        <div class="rounded-2xl border border-gray-200 bg-gray-50/40 p-6">
-          <h3 class="text-lg font-semibold text-gray-900">Allgemeine Anfragen</h3>
-          <p class="mt-3 text-sm leading-relaxed text-gray-600">Angebote, Kooperationen, Presse: <a href="mailto:info@alphabees.de" class="text-blue-600 hover:underline">info@alphabees.de</a>. Für individuelle Angebote ab 500 Lernenden nenn uns am besten gleich deine Lernplattform und die ungefähre Zahl der Lernenden.</p>
+        <div class="ds-card p-7">
+          <h3 class="text-lg font-medium tracking-tight text-[#0a0a0f]">Allgemeine Anfragen</h3>
+          <p class="mt-3 text-sm leading-relaxed text-gray-600">Angebote, Kooperationen, Presse: <a href="mailto:info@alphabees.de" class="ds-link">info@alphabees.de</a>. Für ein Enterprise-Angebot (mehr als 250 Lernende) nenn uns am besten gleich deine Lernplattform und die ungefähre Zahl der Lernenden.</p>
         </div>
-        <div class="rounded-2xl border border-gray-200 bg-gray-50/40 p-6">
-          <h3 class="text-lg font-semibold text-gray-900">Technischer Support</h3>
-          <p class="mt-3 text-sm leading-relaxed text-gray-600">Fragen zum Moodle oder ILIAS Plugin: <a href="mailto:support@alphabees.de" class="text-blue-600 hover:underline">support@alphabees.de</a>. Hilfreich sind deine Moodle- bzw. ILIAS-Version und eine kurze Fehlerbeschreibung. Anleitungen findest du in der <a href="/de/academy.html" class="text-blue-600 hover:underline">Academy</a>.</p>
+        <div class="ds-card p-7">
+          <h3 class="text-lg font-medium tracking-tight text-[#0a0a0f]">Technischer Support</h3>
+          <p class="mt-3 text-sm leading-relaxed text-gray-600">Fragen zum Moodle- oder ILIAS-Plugin: <a href="mailto:support@alphabees.de" class="ds-link">support@alphabees.de</a>. Hilfreich sind deine Moodle- bzw. ILIAS-Version und eine kurze Fehlerbeschreibung. Anleitungen findest du in der <a href="/de/academy.html" class="ds-link">Academy</a>.</p>
         </div>
-        <div class="rounded-2xl border border-gray-200 bg-gray-50/40 p-6">
-          <h3 class="text-lg font-semibold text-gray-900">Persönliche Demo</h3>
-          <p class="mt-3 text-sm leading-relaxed text-gray-600">In 20 Minuten zeigen wir dir das Alphalearn Portal und klären Integration, Datenschutz und Preise. <a href="https://calendly.com/demo-alphabees/austausch-anfragen-alphabees" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Termin direkt buchen</a>.</p>
+        <div class="ds-card p-7">
+          <h3 class="text-lg font-medium tracking-tight text-[#0a0a0f]">Persönliche Demo</h3>
+          <p class="mt-3 text-sm leading-relaxed text-gray-600">In 20 Minuten zeigen wir dir das Alphalearn Portal und klären Integration, Datenschutz und Preise. <a href="https://calendly.com/demo-alphabees/austausch-anfragen-alphabees" target="_blank" rel="noopener" class="ds-link">Termin direkt buchen</a>.</p>
         </div>
-        <div class="rounded-2xl border border-gray-200 bg-gray-50/40 p-6">
-          <h3 class="text-lg font-semibold text-gray-900">Selbst ausprobieren</h3>
-          <p class="mt-3 text-sm leading-relaxed text-gray-600">Mit dem kostenlosen Plan legst du ohne Kreditkarte deinen ersten KI-Tutor an und testest ihn mit deinen eigenen Inhalten. <a href="/de/preis.html" class="text-blue-600 hover:underline">Pläne vergleichen</a>.</p>
+        <div class="ds-card p-7">
+          <h3 class="text-lg font-medium tracking-tight text-[#0a0a0f]">Selbst ausprobieren</h3>
+          <p class="mt-3 text-sm leading-relaxed text-gray-600">Registriere dich kostenlos im Alphalearn Portal und teste den Professional-Plan 14 Tage lang mit deinen eigenen Inhalten. <a href="/de/preis.html" class="ds-link">Pläne vergleichen</a>.</p>
         </div>
-        <div class="rounded-2xl border border-gray-200 bg-gray-50/40 p-6">
-          <h3 class="text-lg font-semibold text-gray-900">Anschrift</h3>
-          <p class="mt-3 text-sm leading-relaxed text-gray-600">Alphabees UG (haftungsbeschränkt)<br>Kolonnenstraße 8<br>10827 Berlin<br>Geschäftsführung: Lasse Erdweg, Marcel Pasternak<br><a href="/de/impressum.html" class="text-blue-600 hover:underline">Impressum</a></p>
+        <div class="ds-card p-7">
+          <h3 class="text-lg font-medium tracking-tight text-[#0a0a0f]">Anschrift</h3>
+          <p class="mt-3 text-sm leading-relaxed text-gray-600">Alphabees UG (haftungsbeschränkt)<br>Kolonnenstraße 8<br>10827 Berlin<br>Geschäftsführung: Lasse Erdweg, Marcel Pasternak<br><a href="/de/impressum.html" class="ds-link">Impressum</a></p>
         </div>
       </div>
     </div>
   </section>
 <!-- seo-content:end -->
-<section class="md:py-24 overflow-hidden font-geist bg-white pt-16 pb-16 relative">
+<section class="ds-faq overflow-hidden font-geist bg-white pt-8 pb-24 sm:pt-8 sm:pb-32 relative">
       <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
         <!-- Header -->
-        <div class="mb-12 md:mb-16 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <div class="max-w-2xl">
-            <h2 class="md:text-4xl text-3xl font-semibold text-gray-900 tracking-tight">Fragen zur Kontaktaufnahme</h2>
-            <p class="text-lg text-gray-600 mt-4">Wie du uns erreichst und wohin deine Anfrage am besten passt.</p>
+        <div class="mb-14 md:mb-20">
+          <div class="max-w-5xl">
+            <h2 class="ds-h2">Fragen zur Kontaktaufnahme.</h2>
           </div>
           <!-- Decorative icon/element -->
 
@@ -929,11 +855,11 @@
         <!-- FAQ Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
       <!-- Item 1 -->
-      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 transition-all duration-300">
         <button data-faq="Wie bekomme ich am schnellsten eine Antwort?" onclick="toggleFaq(this)" class="flex focus:outline-none text-left w-full pt-6 pr-6 pb-6 pl-6 items-center justify-between" aria-expanded="false">
           <span class="text-base font-semibold text-gray-900">Wie bekomme ich am schnellsten eine Antwort?</span>
-          <span class="flex shrink-0 items-center justify-center transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon text-blue-600 bg-white w-8 h-8 border-gray-200 border rounded-full ml-6">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300 w-[16px] h-[16px]" style="color: rgb(37, 99, 235); width: 16px; height: 16px;"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+          <span class="flex shrink-0 items-center justify-center transition-all duration-300 faq-icon bg-white w-8 h-8 border-gray-200 border rounded-full ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300 w-[16px] h-[16px]" style="width: 16px; height: 16px;"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
           </span>
         </button>
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
@@ -945,65 +871,65 @@
         </div>
       </div>
       <!-- Item 2 -->
-      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 transition-all duration-300">
         <button data-faq="Ich habe ein technisches Problem mit dem Plugin. Wohin wende ich mich?" onclick="toggleFaq(this)" class="flex focus:outline-none text-left w-full pt-6 pr-6 pb-6 pl-6 items-center justify-between" aria-expanded="false">
           <span class="text-base font-semibold text-gray-900">Ich habe ein technisches Problem mit dem Plugin. Wohin wende ich mich?</span>
-          <span class="flex shrink-0 items-center justify-center transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon text-blue-600 bg-white w-8 h-8 border-gray-200 border rounded-full ml-6">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300 w-[16px] h-[16px]" style="color: rgb(37, 99, 235); width: 16px; height: 16px;"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+          <span class="flex shrink-0 items-center justify-center transition-all duration-300 faq-icon bg-white w-8 h-8 border-gray-200 border rounded-full ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300 w-[16px] h-[16px]" style="width: 16px; height: 16px;"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
           </span>
         </button>
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
             <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-              Viele Einrichtungsschritte sind in der <a href="/de/academy.html" class="text-blue-600 hover:underline">Alphalearn Academy</a> erklärt. Bei technischen Fragen zum Moodle oder ILIAS Plugin schreib an support@alphabees.de – am besten mit Moodle- bzw. ILIAS-Version und einer kurzen Fehlerbeschreibung.
+              Viele Einrichtungsschritte sind in der <a href="/de/academy.html" class="ds-link">Alphalearn Academy</a> erklärt. Bei technischen Fragen zum Moodle- oder ILIAS-Plugin schreib an support@alphabees.de – am besten mit Moodle- bzw. ILIAS-Version und einer kurzen Fehlerbeschreibung.
             </div>
           </div>
         </div>
       </div>
       <!-- Item 3 -->
-      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 transition-all duration-300">
         <button data-faq="Kann ich eine persönliche Demo vereinbaren?" onclick="toggleFaq(this)" class="flex focus:outline-none text-left w-full pt-6 pr-6 pb-6 pl-6 items-center justify-between" aria-expanded="false">
           <span class="text-base font-semibold text-gray-900">Kann ich eine persönliche Demo vereinbaren?</span>
-          <span class="flex shrink-0 items-center justify-center transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon text-blue-600 bg-white w-8 h-8 border-gray-200 border rounded-full ml-6">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300 w-[16px] h-[16px]" style="color: rgb(37, 99, 235); width: 16px; height: 16px;"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+          <span class="flex shrink-0 items-center justify-center transition-all duration-300 faq-icon bg-white w-8 h-8 border-gray-200 border rounded-full ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300 w-[16px] h-[16px]" style="width: 16px; height: 16px;"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
           </span>
         </button>
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
             <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-              Ja. In 20 Minuten zeigen wir dir das Alphalearn Portal und klären Fragen zu Integration, Datenschutz und Preisen. Den Termin buchst du über die <a href="/de/demos.html" class="text-blue-600 hover:underline">Demo-Seite</a>.
+              Ja. In 20 Minuten zeigen wir dir das Alphalearn Portal und klären Fragen zu Integration, Datenschutz und Preisen. Den Termin buchst du über die <a href="/de/demos.html" class="ds-link">Demo-Seite</a>.
             </div>
           </div>
         </div>
       </div>
       <!-- Item 4 -->
-      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 transition-all duration-300">
         <button data-faq="Wo sitzt Alphabees?" onclick="toggleFaq(this)" class="flex focus:outline-none text-left w-full pt-6 pr-6 pb-6 pl-6 items-center justify-between" aria-expanded="false">
           <span class="text-base font-semibold text-gray-900">Wo sitzt Alphabees?</span>
-          <span class="flex shrink-0 items-center justify-center transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon text-blue-600 bg-white w-8 h-8 border-gray-200 border rounded-full ml-6">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300 w-[16px] h-[16px]" style="color: rgb(37, 99, 235); width: 16px; height: 16px;"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+          <span class="flex shrink-0 items-center justify-center transition-all duration-300 faq-icon bg-white w-8 h-8 border-gray-200 border rounded-full ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300 w-[16px] h-[16px]" style="width: 16px; height: 16px;"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
           </span>
         </button>
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
             <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-              Alphabees UG (haftungsbeschränkt), Kolonnenstraße 8, 10827 Berlin. Alle Unternehmensangaben findest du im <a href="/de/impressum.html" class="text-blue-600 hover:underline">Impressum</a>.
+              Alphabees UG (haftungsbeschränkt), Kolonnenstraße 8, 10827 Berlin. Alle Unternehmensangaben findest du im <a href="/de/impressum.html" class="ds-link">Impressum</a>.
             </div>
           </div>
         </div>
       </div>
       <!-- Item 5 -->
-      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+      <div class="group rounded-2xl border border-gray-200 bg-gray-50/30 transition-all duration-300">
         <button data-faq="Wohin mit Presse- oder Partneranfragen?" onclick="toggleFaq(this)" class="flex focus:outline-none text-left w-full pt-6 pr-6 pb-6 pl-6 items-center justify-between" aria-expanded="false">
           <span class="text-base font-semibold text-gray-900">Wohin mit Presse- oder Partneranfragen?</span>
-          <span class="flex shrink-0 items-center justify-center transition-all duration-300 group-hover:border-blue-200 group-hover:text-blue-600 faq-icon text-blue-600 bg-white w-8 h-8 border-gray-200 border rounded-full ml-6">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300 w-[16px] h-[16px]" style="color: rgb(37, 99, 235); width: 16px; height: 16px;"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+          <span class="flex shrink-0 items-center justify-center transition-all duration-300 faq-icon bg-white w-8 h-8 border-gray-200 border rounded-full ml-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus transition-transform duration-300 w-[16px] h-[16px]" style="width: 16px; height: 16px;"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
           </span>
         </button>
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
             <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-              Presseanfragen und Partnerschaften gehen ebenfalls an info@alphabees.de. Informationen für Agenturen und Berater findest du im <a href="/de/partner-program.html" class="text-blue-600 hover:underline">Partnerprogramm</a>.
+              Presseanfragen und Partnerschaften gehen ebenfalls an info@alphabees.de. Informationen für Agenturen und Berater findest du im <a href="/de/partner-program.html" class="ds-link">Partnerprogramm</a>.
             </div>
           </div>
         </div>
@@ -1072,10 +998,6 @@
 
       </script>
     </section>
-    <div class="pointer-events-none absolute inset-0">
-      <div class="absolute -left-1/3 top-24 h-[900px] w-[900px] rounded-full bg-indigo-500/10 blur-3xl"></div>
-      <div class="absolute -left-1/4 top-64 h-[1200px] w-[1200px] rounded-full bg-amber-400/10 blur-3xl"></div>
-    </div>
 
 
 
@@ -1110,8 +1032,6 @@
     </clipPath>
   </defs>
 </svg>
-        <p class="text-sm text-gray-400 font-geist max-w-sm mt-4">KI-Tutoren für Akademien, Hochschulen, Aus- und
-          Weiterbildung.</p>
         <p class="text-sm text-gray-400 font-geist max-w-sm mt-2">Alphalearn ist eine Marke von Alphabees.</p>
         <div class="mt-6 flex items-center gap-3">
           <a href="https://moodle.org/plugins/block_alphabees" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center hover:bg-white/20 transition bg-white/10 w-10 h-10 border-white/10 border rounded-lg backdrop-blur-md">
@@ -1122,6 +1042,9 @@
                 <path d="M77.05,129.17c20.75,6.68,42.3,8.73,64,7l-1,135h-63v-142Z" style="fill: #fff;" class=""></path>
               </g>
             </svg>
+          </a>
+          <a href="https://github.com/alphabees-25/ilias-plugin-alphabees" target="_blank" rel="noopener noreferrer" aria-label="ILIAS-Plugin von Alphalearn" class="inline-flex items-center justify-center hover:bg-white/20 transition bg-white/10 w-10 h-10 border-white/10 border rounded-lg backdrop-blur-md">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 12" width="25" height="10" aria-hidden="true"><text x="15" y="10.6" text-anchor="middle" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="12.4" letter-spacing="-.15" fill="#fff">ILIAS</text></svg>
           </a>
           <a href="https://github.com/LErdweg/moodle-block_alphabees/wiki" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center hover:bg-white/20 transition bg-white/10 w-10 h-10 border-white/10 border rounded-lg backdrop-blur-md">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" style="color: rgb(255, 255, 255); width: 18px; height: 18px" class="w-[18px] h-[18px]" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" data-simple-icons="github" data-icon-set="simple-icons" data-icon-replaced="true" stroke-width="0.5">
@@ -1172,9 +1095,10 @@
           <ul class="mt-4 space-y-3">
             <li class=""><a href="/de/academy.html" class="hover:text-white transition text-sm text-gray-400 font-geist">Academy</a></li>
             <li class=""><a href="/de/helpcenter.html" class="text-sm text-gray-400 hover:text-white transition font-geist" style="">Hilfe-Center</a></li>
-            <li class=""><a href="https://portal.alphabees.de/auth/register" class="hover:text-white transition text-sm text-gray-400 font-geist">Alphabees-Portal</a></li>
+            <li class=""><a href="https://portal.alphabees.de/auth/register" class="hover:text-white transition text-sm text-gray-400 font-geist">Alphalearn Portal</a></li>
             <li class=""><a href="/de/blog.html" class="hover:text-white transition text-sm text-gray-400 font-geist">Blog</a></li>
             <li class=""><a href="/de/ki-tutor-guide-bildungsanbieter-deutschland-2026.html" class="hover:text-white transition text-sm text-gray-400 font-geist">KI-Tutor-Guide 2026</a></li>
+            <li class=""><a href="/de/ki-compliance-check.html" data-cta="footer_ki_check" class="hover:text-white transition text-sm text-gray-400 font-geist">KI-Compliance-Check</a></li>
           </ul>
         </div>
 
