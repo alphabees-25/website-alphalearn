@@ -7,15 +7,15 @@
   <link rel="alternate" hreflang="en" href="https://alphalearn.ai/en/demos.html">
   <link rel="alternate" hreflang="x-default" href="https://alphalearn.ai/de/demos.html">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://alphalearn.ai/social-image.png">
-  <meta property="og:image:width" content="2640">
-  <meta property="og:image:height" content="1430">
+  <meta property="og:image" content="https://alphalearn.ai/assets/social/og-de-demos.jpg">
+  <meta property="og:image:width" content="2400">
+  <meta property="og:image:height" content="1260">
   <meta property="og:title" content="Demos: Alphabees KI-Tutor in Moodle & Articulate">
   <meta property="og:description" content="Sieh Live-Demos des KI-Tutors in Moodle und Articulate Rise. Erlebe Q&A, Quellen, Übungen und den Tutor-Workflow.">
   <meta name="twitter:title" content="Demos: Alphabees KI-Tutor in Moodle & Articulate">
   <meta name="twitter:description" content="Sieh Live-Demos des KI-Tutors in Moodle und Articulate Rise. Erlebe Q&A, Quellen, Übungen und den Tutor-Workflow.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://alphalearn.ai/social-image.png"><meta charset="utf-8">
+  <meta name="twitter:image" content="https://alphalearn.ai/assets/social/og-de-demos.jpg"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Demos: Alphabees KI-Tutor in Moodle & Articulate</title>
 <meta name="description" content="Sieh Live-Demos des KI-Tutors in Moodle und Articulate Rise. Erlebe Q&A, Quellen, Übungen und den Tutor-Workflow.">
@@ -225,6 +225,7 @@
   .dm-tile-video { opacity:0; transition:opacity .35s ease; }
   .dm-tile.is-playing .dm-tile-video { opacity:1; }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@200&display=swap" rel="stylesheet">
 <style id="bn-tile-css">
   /* Kachel im Stil der Benefit-Kacheln der Startseite (de/index.html): schwarz, große Linienzeichnung mit Verlauf, Pfeil unten rechts */
   .bn-tile { position:relative; display:flex; flex-direction:column; justify-content:space-between; gap:2.5rem; min-height:22rem; padding:2.25rem; border-radius:1.75rem; background:#0a0a0f; color:#fff; text-decoration:none; overflow:hidden; isolation:isolate;
@@ -305,12 +306,12 @@
   @media (max-width:479px) { .dm-sep { display:none; } .dm-login { column-gap:1rem; } }
   /* Drei Schritte: schwarze Kacheln, große Ziffer als Linienzeichnung; nacheinander wird eine Kachel breit (Desktop) */
   .dm-steps { display:flex; flex-direction:column; gap:1.25rem; }
-  .dm-step { position:relative; display:flex; flex-direction:column; justify-content:space-between; gap:1.25rem; min-height:0; padding:2rem 2.25rem; border-radius:1.75rem; background:#0a0a0f; color:#fff; overflow:hidden; isolation:isolate; }
+  .dm-step { position:relative; display:flex; flex-direction:column; justify-content:flex-start; gap:1.5rem; min-height:0; padding:2rem 2.25rem; border-radius:1.75rem; background:#0a0a0f; color:#fff; overflow:hidden; isolation:isolate; }
   .dm-step::after { content:''; position:absolute; inset:0; z-index:-1; opacity:0; transition:opacity .6s; background:radial-gradient(80% 60% at 20% 0%, rgba(59,130,246,.18), transparent 70%), radial-gradient(70% 60% at 100% 100%, rgba(180,127,255,.16), transparent 70%); }
   .dm-step.is-active::after { opacity:1; }
-  .dm-num { display:block; width:min(100%, 9rem); height:auto; overflow:visible; }
-  .dm-num-t { font-family:'Geist', sans-serif; font-weight:300; font-size:150px; letter-spacing:-4px; fill:url(#dmNumG); stroke:none; }
-  .dm-step-t { font-family:'Geist', sans-serif; font-weight:400; font-size:clamp(1.5rem, 2vw, 2rem); line-height:1.15; letter-spacing:-.02em; color:#fff; }
+  .dm-num { display:block; flex:none; width:9rem; max-width:none; height:auto; overflow:visible; }
+  .dm-num-t { font-family:'Geist', sans-serif; font-weight:200; font-size:150px; letter-spacing:-4px; fill:url(#dmNumG); stroke:none; }
+  .dm-step-t { font-family:'Geist', sans-serif; font-weight:400; font-size:1.6rem; line-height:1.15; letter-spacing:-.02em; color:#fff; }
   .dm-step-p { margin-top:.9rem; font-family:'Geist', sans-serif; font-size:1rem; line-height:1.6; color:#d1d5db; max-width:34rem; }
   .dm-step-link { color:#93C5FD; text-decoration:underline; text-underline-offset:.2em; text-decoration-thickness:1px; }
   .dm-step-link:hover { color:#fff; }
@@ -318,11 +319,9 @@
     .dm-steps { flex-direction:row; gap:1.5rem; }
     .dm-step { flex:1 1 0; min-width:0; min-height:19rem; padding:2.25rem 2.5rem; transition:flex-grow 1s cubic-bezier(.65,0,.25,1); cursor:default; }
     .dm-step.is-active { flex-grow:3.2; }
-    .dm-num { width:9rem; }
     .dm-step-p { width:30rem; max-width:none; }
     .dm-step-p { transition:opacity .45s ease; }
     .dm-step:not(.is-active) .dm-step-p { opacity:0; transition-duration:.25s; }
-    .dm-step:not(.is-active) .dm-step-t { font-size:1.5rem; }
     .dm-steps.is-static .dm-step { flex-grow:1; }
     .dm-steps.is-static .dm-step-p { opacity:1; }
     .dm-steps.is-static .dm-step-p { width:auto; }
