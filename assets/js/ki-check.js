@@ -42,10 +42,15 @@
   }
   function chapters() { return CH.filter(function (c) { return !c.employeesOnly || state.employees !== false; }); }
   function chById(id) { return CH.filter(function (c) { return c.id === id; })[0]; }
-  // Weiches Gate: Kapitel 1 und 2 zeigen „Warum & wie“ frei, ab Kapitel 3 erst nach Anforderung des Handbuchs.
-  // Abhaken bleibt überall ohne Anmeldung möglich.
-  var FREE_CH = CH.slice(0, 2).map(function (c) { return c.id; });
-  function gatedCh(chId) { return !(state.requested || state.unlocked) && FREE_CH.indexOf(chId) === -1; }
+  // Gate: frei sind Kapitel 1 und die erste Hälfte von Kapitel 2 (Datenschutz). Der Rest der Checkliste
+  // (Punkte und Kapitel) ist erst nach Anforderung des Handbuchs nutzbar. Irrtümer: MYTHS_FREE frei aufklappbar.
+  var GATE_CH = CH[1].id;
+  var FREE_IDS = itemsOfRaw(CH[0].id).concat(itemsOfRaw(GATE_CH).slice(0, Math.ceil(itemsOfRaw(GATE_CH).length / 2))).map(function (i) { return i.id; });
+  var MYTHS_FREE = 2;
+  function itemsOfRaw(chId) { return DATA.items.filter(function (i) { return i.ch === chId; }); }
+  function gated() { return !(state.requested || state.unlocked); }
+  function itemLocked(i) { return gated() && FREE_IDS.indexOf(i.id) === -1; }
+  function chLocked(chId) { return gated() && chId !== CH[0].id && chId !== GATE_CH; }
   var LOCK = '<svg class="kc-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="11" x="4" y="11" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>';
   function itemsOf(chId) { return ITEMS.filter(function (i) { return i.ch === chId; }); }
   function activeItems() {
@@ -89,6 +94,7 @@
     var s = stats();
     var chs = chapters();
     if (chs.map(function (c) { return c.id; }).indexOf(state.ch) === -1) state.ch = chs[0].id;
+    if (chLocked(state.ch)) state.ch = GATE_CH;
     var c = chById(state.ch);
     var idx = chs.indexOf(c);
     var next = chs[idx + 1];
@@ -111,8 +117,9 @@
           chs.map(function (x, n) {
             var st = stats(itemsOf(x.id));
             var active = x.id === state.ch;
-            return '<button type="button" class="kc-tab' + (active ? ' is-active' : '') + (st.done === st.total ? ' is-done' : '') + '" data-act="tab" data-ch="' + x.id + '" aria-current="' + active + '">' +
-              '<span class="kc-tab-n">' + (st.done === st.total ? '✓' : (n + 1)) + '</span><span class="min-w-0">' + esc(x.title) + '</span>' +
+            var lk = chLocked(x.id);
+            return '<button type="button" class="kc-tab' + (active ? ' is-active' : '') + (st.done === st.total ? ' is-done' : '') + (lk ? ' is-locked' : '') + '" data-act="' + (lk ? 'gate-modal' : 'tab') + '" data-ch="' + x.id + '"' + (lk ? ' aria-haspopup="dialog"' : ' aria-current="' + active + '"') + '>' +
+              '<span class="kc-tab-n">' + (lk ? LOCK : (st.done === st.total ? '✓' : (n + 1))) + '</span><span class="min-w-0">' + esc(x.title) + '</span>' +
               '<span class="kc-tab-c">' + st.done + '/' + st.total + '</span></button>';
           }).join('') +
         '</nav>' +
@@ -122,12 +129,12 @@
         '<p class="text-sm font-medium tracking-tight text-blue-600 font-geist mb-2">Kapitel ' + (idx + 1) + ' von ' + chs.length + ' · ' + esc(c.sub) + '</p>' +
         '<h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 font-geist mb-3">' + esc(c.title) + '</h2>' +
         '<p class="text-gray-600 mb-7 max-w-2xl leading-relaxed">' + esc(c.intro) + '</p>' +
-        (gatedCh(c.id) ? '<div class="kc-lockhint">' + LOCK + '<p>Die Erklärungen zu diesem Kapitel – warum, wie und auf welcher Rechtsgrundlage – stehen im Handbuch. Abhaken können Sie trotzdem.</p>' +
-          '<button type="button" class="kc-btn-primary" data-act="gate-modal" aria-haspopup="dialog">Handbuch kostenlos anfordern</button></div>' : '') +
-        '<ul class="space-y-2.5">' + itemsOf(c.id).map(item).join('') + '</ul>' +
+        '<ul class="space-y-2.5">' + itemsOf(c.id).filter(function (i) { return !itemLocked(i); }).map(item).join('') + '</ul>' +
+        lockWall(itemsOf(c.id).filter(itemLocked)) +
         '<div class="mt-9 pt-6 border-t border-gray-100 flex flex-wrap items-center justify-between gap-3">' +
           (idx > 0 ? '<button type="button" class="kc-link text-sm" data-act="tab" data-ch="' + chs[idx - 1].id + '">← ' + esc(chs[idx - 1].title) + '</button>' : '<span></span>') +
-          (next ? '<button type="button" class="kc-btn-primary" data-act="tab" data-ch="' + next.id + '">Weiter: ' + esc(next.title) + ' →</button>'
+          (next && chLocked(next.id) ? '<button type="button" class="kc-btn-primary kc-btn-locked" data-act="gate-modal" aria-haspopup="dialog">Weiter: ' + esc(next.title) + ' ' + LOCK + '</button>' :
+           next ? '<button type="button" class="kc-btn-primary" data-act="tab" data-ch="' + next.id + '">Weiter: ' + esc(next.title) + ' →</button>'
                 : '<button type="button" class="kc-btn-primary" data-act="to-gate">Fahrplan erstellen →</button>') +
         '</div>' +
       '</div>' +
@@ -144,14 +151,14 @@
   }
 
   function item(i) {
-    var d = !!state.done[i.id], g = gatedCh(i.ch), o = !g && !!state.open[i.id];
+    var d = !!state.done[i.id], o = !!state.open[i.id];
     return '<li class="kc-item' + (d ? ' is-done' : '') + '">' +
       '<div class="flex items-start gap-2.5">' +
         '<button type="button" class="kc-cb" role="checkbox" aria-checked="' + d + '" data-act="toggle" data-id="' + i.id + '" aria-label="Erledigt: ' + esc(i.t) + '"></button>' +
         '<div class="flex-1 min-w-0">' +
-          '<button type="button" class="kc-item-t" data-act="' + (g ? 'gate-modal' : 'details') + '" data-id="' + i.id + '"' + (g ? ' aria-haspopup="dialog"' : ' aria-expanded="' + o + '"') + '>' +
+          '<button type="button" class="kc-item-t" data-act="details" data-id="' + i.id + '" aria-expanded="' + o + '">' +
             '<span>' + esc(i.t) + (i.must ? ' <span class="kc-must">Pflicht</span>' : '') + '</span>' +
-            '<span class="kc-more' + (g ? ' is-locked' : '') + '">' + (g ? 'Warum & wie ' + LOCK : (o ? 'weniger' : 'Warum & wie')) + '</span>' +
+            '<span class="kc-more">' + (o ? 'weniger' : 'Warum & wie') + '</span>' +
           '</button>' +
           (o ? '<div class="kc-detail">' +
                 '<p>' + esc(i.why) + '</p>' +
@@ -183,15 +190,33 @@
         '</form></div>');
   }
 
-  // Fenster für gesperrte Erklärungen: Cover, Nutzen, Formular (Stil wie die Seitenspalte)
-  function modalHtml() {
+  // Gesperrter Teil der Checkliste: Titel verschwommen als Vorschau, darüber die Karte zum Handbuch
+  function lockWall(locked) {
+    if (!locked.length) return '';
+    var rest = chapters().filter(function (x) { return chLocked(x.id); }).map(function (x) { return x.title; });
+    return '<div class="kc-lockwall">' +
+      '<ul class="kc-lockwall-preview space-y-2.5" aria-hidden="true">' + locked.map(function (i) {
+        return '<li class="kc-item"><div class="flex items-start gap-2.5"><span class="kc-cb"></span><span class="kc-lockwall-t">' + esc(i.t) + '</span></div></li>';
+      }).join('') + '</ul>' +
+      '<div class="kc-lockwall-card">' +
+        '<span class="kc-lockwall-ico">' + LOCK + '</span>' +
+        '<p class="kc-lockwall-h">Weiter geht’s im Handbuch</p>' +
+        '<p class="kc-lockwall-p">Die übrigen ' + locked.length + ' Punkte zu ' + esc(chById(locked[0].ch).title) + (rest.length ? ' und die Kapitel ' + esc(rest.join(', ')) : '') + ' – mit Begründung, Rechtsgrundlage und Vorlagen.</p>' +
+        '<button type="button" class="kc-btn-primary" data-act="gate-modal" aria-haspopup="dialog">Handbuch kostenlos anfordern</button>' +
+        '<p class="kc-lockwall-s">Nach dem Absenden geht es hier sofort weiter.</p>' +
+      '</div></div>';
+  }
+
+  // Fenster für den gesperrten Teil: Cover, Nutzen, Formular (Stil wie die Seitenspalte)
+  function modalHtml(ctx) {
+    var myth = ctx === 'myth';
     return '<div class="kc-modal-box kc-gate kc-gate--aside kc-gate--modal text-white">' +
       '<button type="button" class="kc-modal-x" data-act="modal-close" aria-label="Schließen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>' +
       '<div class="flex items-center gap-5 mb-5 pr-8">' + bookMock('kc-mock-stage--md') +
         '<div class="min-w-0"><p class="text-xs font-semibold uppercase tracking-widest text-blue-300 font-geist mb-2">Kostenlos</p>' +
-        '<h3 id="kc-modal-title" class="text-[1.35rem] leading-snug tracking-tight font-geist text-balance">Alle 36 Punkte mit Begründung, Rechtsgrundlage und Vorlagen</h3></div></div>' +
-      '<p class="text-[0.9rem] leading-relaxed text-gray-300 mb-2">Die Erklärungen ab Kapitel 3 stehen im Handbuch <span class="whitespace-nowrap">„KI-Tutor einführen“</span>: 28 Seiten mit allen 36 Punkten, den 10 Irrtümern, 15 Fragen an KI-Anbieter und 4 Vorlagen.</p>' +
-      '<p class="text-[0.9rem] leading-relaxed text-white mb-5">Nach dem Absenden sehen Sie alle Erklärungen sofort hier auf der Seite. Das Handbuch kommt per E-Mail.</p>' +
+        '<h3 id="kc-modal-title" class="text-[1.35rem] leading-snug tracking-tight font-geist text-balance">' + (myth ? 'Alle 10 Irrtümer richtiggestellt – und die komplette Checkliste' : 'Alle 36 Punkte mit Begründung, Rechtsgrundlage und Vorlagen') + '</h3></div></div>' +
+      '<p class="text-[0.9rem] leading-relaxed text-gray-300 mb-2">' + (myth ? 'Die Auflösung aller Irrtümer steht' : 'Die weiteren Punkte und Kapitel stehen') + ' im Handbuch <span class="whitespace-nowrap">„KI-Tutor einführen“</span>: 28 Seiten mit allen 36 Punkten, den 10 Irrtümern, 15 Fragen an KI-Anbieter und 4 Vorlagen.</p>' +
+      '<p class="text-[0.9rem] leading-relaxed text-white mb-5">Nach dem Absenden ist hier sofort alles freigeschaltet: Checkliste, Erklärungen und Irrtümer. Das Handbuch kommt per E-Mail.</p>' +
       formHtml(true) +
     '</div>';
   }
@@ -234,9 +259,9 @@
       '</div>';
   }
 
-  var modal = null, pendingItem = null, lastFocus = null;
+  var modal = null, pendingItem = null, lastFocus = null, modalCtx = '';
   function modalOpen() { return !!(modal && !modal.hidden); }
-  function openModal(itemId, opener) {
+  function openModal(itemId, opener, ctx) {
     if (!modal) {
       modal = document.createElement('div');
       modal.id = 'kc-modal'; modal.className = 'kc-modal kc-noprint'; modal.hidden = true;
@@ -246,11 +271,11 @@
       modal.addEventListener('submit', onSubmit);
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modalOpen()) closeModal(); });
     }
-    pendingItem = itemId || null; lastFocus = opener || null;
-    modal.innerHTML = modalHtml(); modal.hidden = false;
+    pendingItem = itemId || null; lastFocus = opener || null; modalCtx = ctx || 'checklist';
+    modal.innerHTML = modalHtml(modalCtx); modal.hidden = false;
     document.documentElement.classList.add('kc-modal-open');
     var f = modal.querySelector('input[name=first_name]'); if (f) f.focus({ preventScroll: true });
-    track('check_gate_modal', { item: pendingItem || '', chapter: state.ch });
+    track('check_gate_modal', { from: modalCtx, item: pendingItem || '', chapter: state.ch });
   }
   function closeModal() {
     if (!modalOpen()) return;
@@ -384,6 +409,27 @@
   // ---------- Events ----------
   function syncHash() { if (state.unlocked) history.replaceState(null, '', '#r=' + encodeState()); }
 
+  // Mitten in Datenschutz: nach 3 angefassten Punkten (abgehakt oder aufgeklappt) einmal das Fenster zeigen
+  var gateTouched = {}, gateAutoShown = false;
+  function touchGate(id) {
+    if (!gated() || gateAutoShown) return;
+    var it = ITEMS.filter(function (x) { return x.id === id; })[0];
+    if (!it || it.ch !== GATE_CH) return;
+    gateTouched[id] = true;
+    if (Object.keys(gateTouched).length >= 3) { gateAutoShown = true; setTimeout(function () { if (gated() && !modalOpen()) openModal(null, null, 'auto'); }, 600); }
+  }
+
+  // Irrtümer: MYTHS_FREE frei aufklappbar, danach öffnet sich das Fenster statt des Irrtums
+  var mythOpened = {};
+  [].forEach.call(document.querySelectorAll('#kc-irrtuemer details.kc-myth'), function (d, n) {
+    var sum = d.querySelector('summary'); if (!sum) return;
+    sum.addEventListener('click', function (e) {
+      if (!gated() || d.open || mythOpened[n]) return;
+      if (Object.keys(mythOpened).length < MYTHS_FREE) { mythOpened[n] = true; return; }
+      e.preventDefault(); openModal(null, sum, 'myth');
+    });
+  });
+
   function onClick(e) {
     var el = e.target.closest('[data-act]');
     if (!el || el.tagName === 'FORM') return;
@@ -395,10 +441,10 @@
       var it = ITEMS.filter(function (x) { return x.id === id; })[0];
       var cs = stats(itemsOf(it.ch));
       if (state.done[id] && cs.done === cs.total) track('check_block_complete', { block: it.ch });
-      save(); syncHash(); render();
+      save(); syncHash(); render(); touchGate(id);
     }
-    else if (act === 'details') { var d = el.getAttribute('data-id'); state.open[d] = !state.open[d]; render(); }
-    else if (act === 'gate-modal') { openModal(el.getAttribute('data-id'), el); }
+    else if (act === 'details') { var d = el.getAttribute('data-id'); state.open[d] = !state.open[d]; render(); touchGate(d); }
+    else if (act === 'gate-modal') { openModal(el.getAttribute('data-id'), el, el.getAttribute('data-ch') ? 'chapter' : 'checklist'); }
     else if (act === 'modal-close') { closeModal(); }
     else if (act === 'tab') { state.ch = el.getAttribute('data-ch'); render(); scrollTo(root); }
     else if (act === 'emp') { state.employees = el.getAttribute('data-val') === '1'; save(); syncHash(); render(); }
