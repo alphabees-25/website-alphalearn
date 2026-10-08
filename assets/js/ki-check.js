@@ -42,6 +42,11 @@
   }
   function chapters() { return CH.filter(function (c) { return !c.employeesOnly || state.employees !== false; }); }
   function chById(id) { return CH.filter(function (c) { return c.id === id; })[0]; }
+  // Weiches Gate: Kapitel 1 und 2 zeigen „Warum & wie“ frei, ab Kapitel 3 erst nach Anforderung des Handbuchs.
+  // Abhaken bleibt überall ohne Anmeldung möglich.
+  var FREE_CH = CH.slice(0, 2).map(function (c) { return c.id; });
+  function gatedCh(chId) { return !(state.requested || state.unlocked) && FREE_CH.indexOf(chId) === -1; }
+  var LOCK = '<svg class="kc-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="11" x="4" y="11" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>';
   function itemsOf(chId) { return ITEMS.filter(function (i) { return i.ch === chId; }); }
   function activeItems() {
     var ids = chapters().map(function (c) { return c.id; });
@@ -117,6 +122,8 @@
         '<p class="text-sm font-medium tracking-tight text-blue-600 font-geist mb-2">Kapitel ' + (idx + 1) + ' von ' + chs.length + ' · ' + esc(c.sub) + '</p>' +
         '<h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 font-geist mb-3">' + esc(c.title) + '</h2>' +
         '<p class="text-gray-600 mb-7 max-w-2xl leading-relaxed">' + esc(c.intro) + '</p>' +
+        (gatedCh(c.id) ? '<div class="kc-lockhint">' + LOCK + '<p>Die Erklärungen zu diesem Kapitel – warum, wie und auf welcher Rechtsgrundlage – stehen im Handbuch. Abhaken können Sie trotzdem.</p>' +
+          '<button type="button" class="kc-btn-primary" data-act="gate-modal" aria-haspopup="dialog">Handbuch kostenlos anfordern</button></div>' : '') +
         '<ul class="space-y-2.5">' + itemsOf(c.id).map(item).join('') + '</ul>' +
         '<div class="mt-9 pt-6 border-t border-gray-100 flex flex-wrap items-center justify-between gap-3">' +
           (idx > 0 ? '<button type="button" class="kc-link text-sm" data-act="tab" data-ch="' + chs[idx - 1].id + '">← ' + esc(chs[idx - 1].title) + '</button>' : '<span></span>') +
@@ -129,6 +136,7 @@
       (state.unlocked || !asideOn() ? '<div class="p-3 sm:p-5 lg:p-6 pt-0 sm:pt-0 lg:pt-0">' + (state.unlocked ? fullReport() : gate(false)) + '</div>' : '');
 
     root.innerHTML = html;
+    root.classList.add('kc-ready');   // Mindesthöhe (gegen Springen beim Laden) gilt nur bis zum ersten Aufbau
   }
 
   function chip(name, val, label, active) {
@@ -136,14 +144,14 @@
   }
 
   function item(i) {
-    var d = !!state.done[i.id], o = !!state.open[i.id];
+    var d = !!state.done[i.id], g = gatedCh(i.ch), o = !g && !!state.open[i.id];
     return '<li class="kc-item' + (d ? ' is-done' : '') + '">' +
       '<div class="flex items-start gap-2.5">' +
         '<button type="button" class="kc-cb" role="checkbox" aria-checked="' + d + '" data-act="toggle" data-id="' + i.id + '" aria-label="Erledigt: ' + esc(i.t) + '"></button>' +
         '<div class="flex-1 min-w-0">' +
-          '<button type="button" class="kc-item-t" data-act="details" data-id="' + i.id + '" aria-expanded="' + o + '">' +
+          '<button type="button" class="kc-item-t" data-act="' + (g ? 'gate-modal' : 'details') + '" data-id="' + i.id + '"' + (g ? ' aria-haspopup="dialog"' : ' aria-expanded="' + o + '"') + '>' +
             '<span>' + esc(i.t) + (i.must ? ' <span class="kc-must">Pflicht</span>' : '') + '</span>' +
-            '<span class="kc-more">' + (o ? 'weniger' : 'Warum & wie') + '</span>' +
+            '<span class="kc-more' + (g ? ' is-locked' : '') + '">' + (g ? 'Warum & wie ' + LOCK : (o ? 'weniger' : 'Warum & wie')) + '</span>' +
           '</button>' +
           (o ? '<div class="kc-detail">' +
                 '<p>' + esc(i.why) + '</p>' +
@@ -161,16 +169,8 @@
       '<span class="kc-mock-gloss"></span><span class="kc-mock-pages"></span><span class="kc-mock-back"></span></div></div>';
   }
 
-  function gate(aside) {
-    var s = stats();
-    var list = '<ul class="' + (aside ? 'space-y-1.5 text-gray-300 text-[0.8rem] leading-[1.35] mb-5' : 'space-y-3 text-gray-300 text-[0.95rem] leading-relaxed') + '">' +
-            '<li class="kc-li">28 Seiten: die komplette Checkliste zum Abhaken, die 10 Irrtümer und Fristen</li>' +
-            '<li class="kc-li">15 Fragen an jeden KI-Anbieter – als Vergleichstabelle zum Ausfüllen</li>' +
-            '<li class="kc-li">4 Vorlagen: Rollen-Steckbrief, Transparenzhinweis, Schulungsnachweis, Eckpunkte Betriebsvereinbarung</li>' +
-            '<li class="kc-li">Pro Kapitel vermerkt, wer sich kümmert – zum Weiterleiten an Datenschutz, Betriebsrat, Einkauf</li>' +
-            '<li class="kc-li">Dazu: Zugang zum KI-Assistenten, der Ihre Fragen zum Handbuch jederzeit beantwortet</li>' +
-          '</ul>';
-    var form =
+  function formHtml(aside) {
+    return (
         '<div class="kc-form-frame"><form class="kc-form kc-form-card text-gray-900" data-act="submit" novalidate>' +
           '<div class="grid gap-3' + (aside ? '' : ' sm:grid-cols-2') + '">' +
             '<label class="kc-field"><span>Vorname</span><input name="first_name" autocomplete="given-name" required></label>' +
@@ -180,7 +180,32 @@
           '<p class="text-xs text-gray-500 mt-4 leading-relaxed">Sie erhalten gleich eine E-Mail mit einem Bestätigungslink. Sobald Sie Ihre Adresse bestätigt haben, erhalten Sie das Handbuch als PDF. Details in der <a class="text-blue-600 underline underline-offset-2 hover:text-blue-700" href="' + esc(CFG.privacyUrl || '/de/privacy.html') + '">Datenschutzerklärung</a>.</p>' +
           '<p class="kc-error text-sm font-medium text-red-600 mt-3" role="alert" hidden></p>' +
           '<button type="submit" class="kc-btn-primary mt-5 w-full">Handbuch anfordern</button>' +
-        '</form></div>';
+        '</form></div>');
+  }
+
+  // Fenster für gesperrte Erklärungen: Cover, Nutzen, Formular (Stil wie die Seitenspalte)
+  function modalHtml() {
+    return '<div class="kc-modal-box kc-gate kc-gate--aside kc-gate--modal text-white">' +
+      '<button type="button" class="kc-modal-x" data-act="modal-close" aria-label="Schließen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>' +
+      '<div class="flex items-center gap-5 mb-5 pr-8">' + bookMock('kc-mock-stage--md') +
+        '<div class="min-w-0"><p class="text-xs font-semibold uppercase tracking-widest text-blue-300 font-geist mb-2">Kostenlos</p>' +
+        '<h3 id="kc-modal-title" class="text-[1.35rem] leading-snug tracking-tight font-geist text-balance">Alle 36 Punkte mit Begründung, Rechtsgrundlage und Vorlagen</h3></div></div>' +
+      '<p class="text-[0.9rem] leading-relaxed text-gray-300 mb-2">Die Erklärungen ab Kapitel 3 stehen im Handbuch <span class="whitespace-nowrap">„KI-Tutor einführen“</span>: 28 Seiten mit allen 36 Punkten, den 10 Irrtümern, 15 Fragen an KI-Anbieter und 4 Vorlagen.</p>' +
+      '<p class="text-[0.9rem] leading-relaxed text-white mb-5">Nach dem Absenden sehen Sie alle Erklärungen sofort hier auf der Seite. Das Handbuch kommt per E-Mail.</p>' +
+      formHtml(true) +
+    '</div>';
+  }
+
+  function gate(aside) {
+    var s = stats();
+    var list = '<ul class="' + (aside ? 'space-y-1.5 text-gray-300 text-[0.8rem] leading-[1.35] mb-5' : 'space-y-3 text-gray-300 text-[0.95rem] leading-relaxed') + '">' +
+            '<li class="kc-li">28 Seiten: die komplette Checkliste zum Abhaken, die 10 Irrtümer und Fristen</li>' +
+            '<li class="kc-li">15 Fragen an jeden KI-Anbieter – als Vergleichstabelle zum Ausfüllen</li>' +
+            '<li class="kc-li">4 Vorlagen: Rollen-Steckbrief, Transparenzhinweis, Schulungsnachweis, Eckpunkte Betriebsvereinbarung</li>' +
+            '<li class="kc-li">Pro Kapitel vermerkt, wer sich kümmert – zum Weiterleiten an Datenschutz, Betriebsrat, Einkauf</li>' +
+            '<li class="kc-li">Dazu: Zugang zum KI-Assistenten, der Ihre Fragen zum Handbuch jederzeit beantwortet</li>' +
+          '</ul>';
+    var form = formHtml(aside);
     if (aside) {
       return '<div class="kc-gate kc-gate--aside rounded-3xl p-5 text-white" id="kc-gate">' +
         '<div class="flex items-center gap-4 mb-5">' + bookMock('kc-mock-stage--sm') +
@@ -207,6 +232,31 @@
       '<p class="text-[0.9rem] leading-relaxed text-gray-300">Bitte bestätigen Sie Ihre E-Mail-Adresse über den Link in unserer E-Mail. Danach erhalten Sie das Handbuch als PDF.</p>' +
       (state.unlocked ? '<button type="button" class="kc-btn-light mt-5 w-full" data-act="to-gate">Zum Fahrplan ↓</button>' : '') +
       '</div>';
+  }
+
+  var modal = null, pendingItem = null, lastFocus = null;
+  function modalOpen() { return !!(modal && !modal.hidden); }
+  function openModal(itemId, opener) {
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'kc-modal'; modal.className = 'kc-modal kc-noprint'; modal.hidden = true;
+      modal.setAttribute('role', 'dialog'); modal.setAttribute('aria-modal', 'true'); modal.setAttribute('aria-labelledby', 'kc-modal-title');
+      document.body.appendChild(modal);
+      modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); else onClick(e); });
+      modal.addEventListener('submit', onSubmit);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modalOpen()) closeModal(); });
+    }
+    pendingItem = itemId || null; lastFocus = opener || null;
+    modal.innerHTML = modalHtml(); modal.hidden = false;
+    document.documentElement.classList.add('kc-modal-open');
+    var f = modal.querySelector('input[name=first_name]'); if (f) f.focus({ preventScroll: true });
+    track('check_gate_modal', { item: pendingItem || '', chapter: state.ch });
+  }
+  function closeModal() {
+    if (!modalOpen()) return;
+    modal.hidden = true; modal.innerHTML = '';
+    document.documentElement.classList.remove('kc-modal-open');
+    if (lastFocus && document.body.contains(lastFocus)) lastFocus.focus({ preventScroll: true });
   }
 
   function renderAside() {
@@ -261,8 +311,8 @@
 
     html += '<div class="kc-promo rounded-3xl text-white p-8 sm:p-10">' +
       '<p class="text-xs font-semibold uppercase tracking-widest text-gray-400 font-geist mb-2">In eigener Sache</p>' +
-      '<h4 class="text-2xl font-semibold tracking-tight font-geist mb-3">So beantwortet AlphaLearn die Anbieter-Fragen</h4>' +
-      '<p class="text-gray-400 text-sm leading-relaxed mb-6 max-w-2xl">Wir haben diese Checkliste gebaut, weil wir genau diese Fragen in jedem Auswahlprozess beantworten. Falls Sie AlphaLearn – den KI-Tutor für Moodle und ILIAS – in Ihre Auswahl aufnehmen, hier unsere Antworten in Kurzform:</p>' +
+      '<h4 class="text-2xl font-semibold tracking-tight font-geist mb-3">So beantwortet Alphalearn die Anbieter-Fragen</h4>' +
+      '<p class="text-gray-400 text-sm leading-relaxed mb-6 max-w-2xl">Wir haben diese Checkliste gebaut, weil wir genau diese Fragen in jedem Auswahlprozess beantworten. Falls Sie Alphalearn – den KI-Tutor für Moodle und ILIAS – in Ihre Auswahl aufnehmen, hier unsere Antworten in Kurzform:</p>' +
       '<ul class="grid sm:grid-cols-2 gap-x-8 gap-y-2.5 text-sm text-gray-300 mb-8">' +
         BRIDGE.map(function (x) { return '<li class="kc-li">' + esc(x) + '</li>'; }).join('') +
       '</ul>' +
@@ -348,6 +398,8 @@
       save(); syncHash(); render();
     }
     else if (act === 'details') { var d = el.getAttribute('data-id'); state.open[d] = !state.open[d]; render(); }
+    else if (act === 'gate-modal') { openModal(el.getAttribute('data-id'), el); }
+    else if (act === 'modal-close') { closeModal(); }
     else if (act === 'tab') { state.ch = el.getAttribute('data-ch'); render(); scrollTo(root); }
     else if (act === 'emp') { state.employees = el.getAttribute('data-val') === '1'; save(); syncHash(); render(); }
     else if (act === 'to-gate') {
@@ -379,13 +431,15 @@
     var btn = form.querySelector('button[type=submit]');
     btn.disabled = true; btn.textContent = 'Einen Moment …';
     track('check_report_request', { done: stats().done, newsletter: fd.get('newsletter') ? 'ja' : 'nein' });
+    var fromModal = modalOpen() && modal.contains(form);
     submitLead(fd).then(function () {
       state.unlocked = true;
       state.requested = true;
       state.firstName = String(fd.get('first_name')).trim();
       try { localStorage.setItem(STORE + '-u', '1'); } catch (x) { /* egal */ }
+      if (fromModal) { closeModal(); if (pendingItem) state.open[pendingItem] = true; }
       syncHash(); render(); renderAside();
-      scrollTo(document.getElementById('kc-report'));
+      if (!fromModal) scrollTo(document.getElementById('kc-report'));
     });
   }
 
