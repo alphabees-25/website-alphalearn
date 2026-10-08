@@ -130,15 +130,15 @@
     /* Seitenspalte mit dem Handbuch: ab 1280px Inhalt links, Handbuch rechts; scrollt mit bis zum Ende des Inhalts */
     .kc-aside { display:none; }
     @media (min-width:1280px) {
-      .kc-layout { display:grid; grid-template-columns:minmax(0,1fr) 22rem; column-gap:3rem; max-width:90rem; margin:0 auto; padding:0 2rem; }
+      .kc-layout { display:grid; grid-template-columns:minmax(0,1fr); max-width:90rem; margin:0 auto; padding:0 2rem; }
       .kc-layout .kc-main .max-w-7xl, .kc-layout > .kc-hero > .max-w-7xl { max-width:none; padding-left:0; padding-right:0; }
       .kc-layout > .kc-hero { grid-column:1 / -1; }
       .kc-layout > .kc-hero .grid { grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr); }
       .kc-layout .kc-hero .ds-sub { max-width:40rem; }
-      .kc-aside { display:block; padding:0 0 4rem; }
+      .kc-aside { display:none; }
       .kc-aside-sticky { position:sticky; top:1.25rem; max-height:calc(100vh - 2.5rem); overflow-y:auto; scrollbar-width:none; border-radius:1.5rem; }
       .kc-aside-sticky::-webkit-scrollbar { display:none; }
-      .kc-layout #kc-app { min-height:1360px; }
+      .kc-layout #kc-app { min-height:1150px; }
     }
     @media (min-width:1280px) and (max-width:1439px) { #kc-app > div:first-child { grid-template-columns:15rem minmax(0,1fr); } }
     /* Nach dem ersten Aufbau richtet sich der Checklisten-Kasten nach seinem Inhalt (kein Leerraum unter kurzen Kapiteln) */
@@ -266,7 +266,11 @@
     @media (min-width:768px) { #kc-app { min-height:1650px; } }
     @media (min-width:1024px) { #kc-app { min-height:1350px; } }
     @media (min-width:1180px) { #kc-app { min-height:1170px; } }
-    .kc-side-card { background:#fff; border:1.5px solid #0a0a0f; border-radius:1.25rem; padding:1.25rem; }
+    .kc-side-card { background:#0a0a0f; color:#fff; border:1.5px solid #0a0a0f; border-radius:1.25rem; padding:1.25rem; }
+    .kc-side-card p.text-gray-500 { color:rgba(255,255,255,.55); }
+    .kc-side-card p.text-gray-600 { color:rgba(255,255,255,.75); }
+    .kc-side-card .kc-bar-track { height:.6rem; background:rgba(255,255,255,.14); }
+    .kc-side-card .kc-bar { min-width:.6rem; box-shadow:0 0 14px rgba(180,127,255,.55); }
     .kc-bar-track { height:.375rem; border-radius:9999px; background:#e5e7eb; overflow:hidden; }
     .kc-bar { height:100%; border-radius:9999px; background:linear-gradient(100deg,#3B82F6 0%,#B47FFF 36%,#FF7EAF 64%,#FFAF85 100%); transition:width .35s cubic-bezier(.22,1,.36,1); }
 
@@ -489,6 +493,31 @@
     @media (max-width:479px) { .kq-doc { flex-direction:column; gap:.35rem; } }
     @media print { .kq-jump, .kq-tpl-link { display:none !important; } .kq-doc, .kq-ask-c { break-inside:avoid; } }
 
+    /* Fragekarten schwarz (Design 2026 dunkle Kachel), Antworten als helle Kontur-Chips */
+    .kq-card { background:#0a0a0f; color:#fff; border-color:#0a0a0f; padding:1.5rem 1.5rem 1.35rem; box-shadow:0 18px 40px -28px rgba(10,10,15,.6); }
+    .kq-card :focus-visible { outline-color:#93c5fd; }
+    .kq-card .kq-q { color:#fff; }
+    .kq-card .kq-help { color:rgba(255,255,255,.6); }
+    .kq-card .kq-num { background:rgba(255,255,255,.12); color:#fff; }
+    .kq-card.is-answered .kq-num { background:#059669; }
+    .kq-card .kc-must { color:#fecaca; background:rgba(239,68,68,.18); box-shadow:inset 0 0 0 1px rgba(248,113,113,.35); }
+    .kq-card .kq-opt { background:transparent; border-color:rgba(255,255,255,.22); color:rgba(255,255,255,.88); }
+    .kq-card .kq-opt:hover { border-color:#fff; color:#fff; }
+    .kq-card .kq-opt.is-on { background:#fff; border-color:#fff; color:#0a0a0f; box-shadow:none; }
+    .kq-card .kq-mark { background:transparent; border-color:rgba(255,255,255,.5); }
+    .kq-card .kq-opt.is-on .kq-mark { background:#0a0a0f; border-color:#0a0a0f; }
+    .kq-card .kq-field > label:first-child { color:rgba(255,255,255,.75); }
+    .kq-card .kq-field input[type=text], .kq-card .kq-field textarea { background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.22); color:#fff; }
+    .kq-card .kq-field input[type=text]:hover, .kq-card .kq-field textarea:hover { border-color:rgba(255,255,255,.5); }
+    .kq-card .kq-field input[type=text]:focus, .kq-card .kq-field textarea:focus { border-color:#fff; box-shadow:0 0 0 3px rgba(147,197,253,.35); }
+    .kq-card .kq-field input::placeholder, .kq-card .kq-field textarea::placeholder { color:rgba(255,255,255,.38); }
+    .kq-card .kq-none { color:rgba(255,255,255,.6); }
+    .kq-card .kq-none input { accent-color:#fff; }
+    .kq-card .kq-why-btn { color:rgba(255,255,255,.7); }
+    .kq-card .kq-why-btn:hover { color:#fff; }
+    .kq-card .kq-why { background:rgba(255,255,255,.08); color:rgba(255,255,255,.8); }
+    .kq-card .kq-why strong { color:#fff; }
+
     /* ---------- Report ---------- */
     .kc-task { display:flex; gap:.7rem; font-size:.9rem; color:#4b5563; line-height:1.6; padding:.75rem .9rem; border-radius:.75rem; background:#fff; border:1px solid #f3f4f6; }
     @media (max-width:639px) { .kc-task { padding:.65rem .75rem; } }
@@ -543,7 +572,7 @@
     /* ---------- Überschriften und Akzente im per JS erzeugten Inhalt (ki-check.js bleibt unverändert) ---------- */
     #kc-chapter > p.text-blue-600, #kc-report > p.text-blue-600 { font-size:.8rem; font-weight:500; letter-spacing:.08em; text-transform:uppercase; color:#6b7280; }
     #kc-chapter > h2, #kc-report > div > h2 { font-size:clamp(1.75rem, 3vw, 2.5rem); line-height:1.1; font-weight:400; letter-spacing:-.025em; color:#0a0a0f; }
-    .kc-side-card p.text-lg { font-weight:500; color:#0a0a0f; }
+    .kc-side-card p.text-lg { font-weight:500; color:#fff; }
     #kc-gate h3, section.kc-report h3, section.kc-report h4, .kc-promo h4 { font-weight:400; letter-spacing:-.02em; }
     #kc-gate .text-blue-300 { color:rgba(255,255,255,.55); }
     section.kc-report { border:0; background:transparent; }

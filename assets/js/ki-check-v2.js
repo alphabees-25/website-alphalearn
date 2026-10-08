@@ -14,7 +14,8 @@
 
   var asideSlot = document.getElementById('kc-aside-slot');
   var mqAside = window.matchMedia ? window.matchMedia('(min-width: 1280px)') : null;
-  function asideOn() { return !!(asideSlot && mqAside && mqAside.matches); }
+  // Seitenspalte nur, wenn sie per CSS sichtbar ist (derzeit ausgeblendet: mehr Platz für die Fragen)
+  function asideOn() { return !!(asideSlot && mqAside && mqAside.matches && asideSlot.offsetParent !== null); }
 
   var ITEMS = DATA.items;
   var CH = DATA.chapters;
@@ -313,7 +314,7 @@
       '<p class="text-sm font-medium tracking-tight text-blue-600 font-geist mb-2">Schritt ' + (idx + 1) + ' von ' + qs.length + ' · ' + esc(step.sub) + '</p>' +
       '<h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 font-geist mb-3">' + esc(step.title) + '</h2>' +
       '<p class="text-gray-600 mb-7 max-w-2xl leading-relaxed">' + esc(step.intro) + '</p>' +
-      '<div class="space-y-4">' + vq.map(function (q, k) { return qCard(q, (idx + 1) + '.' + (k + 1)); }).join('') + '</div>' +
+      '<div class="space-y-6">' + vq.map(function (q, k) { return qCard(q, (idx + 1) + '.' + (k + 1)); }).join('') + '</div>' +
       '<div class="mt-9 pt-6 border-t border-gray-100 flex flex-wrap items-center justify-between gap-3">' +
         (prev ? '<button type="button" class="kc-link text-sm" data-act="step" data-step="' + prev.id + '">← ' + esc(prev.title) + '</button>' : '<span></span>') +
         (next ? '<button type="button" class="kc-btn-primary" data-act="step" data-step="' + next.id + '">Weiter: ' + esc(next.title) + ' →</button>'
