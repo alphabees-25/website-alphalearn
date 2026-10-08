@@ -176,9 +176,9 @@
             '<label class="kc-field"><span>Geschäftliche E-Mail</span><input name="email" type="email" autocomplete="email" required></label>' +
           '</div>' +
           '<label class="kc-consent"><input type="checkbox" name="newsletter" value="1"><span>Ja, schicken Sie mir gelegentlich Praxiswissen zu KI in der Bildung, Rechtslage und Moodle/ILIAS. Abmeldung jederzeit möglich.</span></label>' +
-          '<p class="text-xs text-gray-500 mt-4 leading-relaxed">Der Download startet sofort. Zusätzlich schicken wir Ihnen das Handbuch per E-Mail, damit Sie es später wiederfinden (bitte kurz bestätigen). Details in der <a class="text-blue-600 underline underline-offset-2 hover:text-blue-700" href="' + esc(CFG.privacyUrl || '/de/privacy.html') + '">Datenschutzerklärung</a>.</p>' +
+          '<p class="text-xs text-gray-500 mt-4 leading-relaxed">Sie erhalten gleich eine E-Mail mit einem Bestätigungslink. Sobald Sie Ihre Adresse bestätigt haben, erhalten Sie das Handbuch als PDF. Details in der <a class="text-blue-600 underline underline-offset-2 hover:text-blue-700" href="' + esc(CFG.privacyUrl || '/de/privacy.html') + '">Datenschutzerklärung</a>.</p>' +
           '<p class="kc-error text-sm font-medium text-red-600 mt-3" role="alert" hidden></p>' +
-          '<button type="submit" class="kc-btn-primary mt-5 w-full">Handbuch herunterladen</button>' +
+          '<button type="submit" class="kc-btn-primary mt-5 w-full">Handbuch anfordern</button>' +
         '</form></div>' +
       '</div></div>';
   }
@@ -195,7 +195,7 @@
           '<a class="kc-btn-ghost" data-act="share" href="mailto:?subject=' + encodeURIComponent('KI-Tutor-Einführung: unser Fahrplan') + '&body=' + encodeURIComponent('Hallo,\n\nich habe für unsere geplante KI-Tutor-Einführung eine Checkliste durchgearbeitet (DSGVO, EU AI Act, Mitbestimmung, Anbieterauswahl). Hier ist der aktuelle Stand mit allen offenen Punkten:\n' + reportLink() + '\n\nKönnen wir die Punkte gemeinsam ansehen, bevor wir einen Anbieter auswählen?') + '">An Datenschutz weiterleiten</a>' +
         '</div></div>' +
       '<div class="grid gap-3 sm:grid-cols-[repeat(auto-fit,minmax(18rem,1fr))] my-6 kc-noprint">' +
-        '<a href="' + esc(CFG.handbookUrl) + '" download data-act="dl" class="kc-dl-card"><span class="kc-dl-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg></span><span><span class="block font-semibold text-gray-900 font-geist">Handbuch als PDF ↓</span><span class="block text-sm text-gray-600 mt-1">28 Seiten zum Abhaken, Ausfüllen und Weiterleiten. Kommt zusätzlich per E-Mail.</span></span></a>' +
+        '<div class="kc-dl-card"><span class="kc-dl-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span><span><span class="block font-semibold text-gray-900 font-geist">Handbuch als PDF per E-Mail</span><span class="block text-sm text-gray-600 mt-1">28 Seiten zum Abhaken, Ausfüllen und Weiterleiten. Kommt, sobald die E-Mail-Adresse bestätigt ist.</span></span></div>' +
         (CFG.assistantUrl ? '<a href="#assistent" data-act="to-assistant" class="kc-dl-card"><span class="kc-dl-ico is-chat" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span><span><span class="block font-semibold text-gray-900 font-geist">KI-Assistent fragen →</span><span class="block text-sm text-gray-600 mt-1">Fragen zum Handbuch, jederzeit, mit Verweis auf die Fundstelle.</span></span></a>' : '') +
       '</div>' +
       '<p class="text-sm text-gray-600 mb-8">Ihr Fahrplan unten – Stand: ' + s.done + ' von ' + s.total + ' erledigt. Haken Sie oben weiter ab – der Fahrplan aktualisiert sich mit.</p>';
@@ -345,7 +345,6 @@
       try { localStorage.setItem(STORE + '-u', '1'); } catch (x) { /* egal */ }
       syncHash(); render();
       scrollTo(document.getElementById('kc-report'));
-      if (CFG.handbookUrl) { var a = document.createElement('a'); a.href = CFG.handbookUrl; a.download = ''; document.body.appendChild(a); a.click(); a.remove(); track('check_handbook_download', { from: 'submit' }); }
     });
   });
 
