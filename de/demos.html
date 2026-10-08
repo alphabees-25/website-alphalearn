@@ -243,7 +243,10 @@
   .bn-tile stop:first-child { stop-color:#60A5FA; }
   .bn-tile stop:last-child { stop-color:#A78BFA; }
   .bn-ic { width:100%; height:100%; overflow:visible; }
-  .bn-icon--guided { width:100%; aspect-ratio:1890 / 1480; }
+  /* beide Lernmodus-Kacheln quadratisch und gleich groß; die Zeichnung füllt den Platz über dem Titel */
+  .bn-tile { aspect-ratio:1 / 1; min-height:0; }
+  .bn-icon--guided, .bn-icon--buddy { flex:1 1 auto; min-height:0; width:100%; }
+  @media (max-width:639px) { .bn-tile { padding:1.75rem; gap:1.5rem; } .bn-tile-t { font-size:1.35rem; } }
   .bn-ic--guided * { vector-effect:non-scaling-stroke; }
   .bn-ic--guided .gl-m { stroke-width:2.2px; }
   .bn-ic--guided .gl-n { stroke-width:1.6px; }
@@ -266,7 +269,6 @@
   @keyframes glInput { 0%,2% { transform:scaleX(0); opacity:.6; } 13% { transform:scaleX(1); opacity:.6; } 15%,100% { transform:scaleX(1); opacity:0; } }
   @media (prefers-reduced-motion: reduce) { .gl-dot, .gl-feed, .gl-new1, .gl-new2, .gl-typing, .gl-td, .gl-input { animation:none; } .gl-dot { opacity:.55; } .gl-feed { transform:translateY(-644px); } .gl-new1, .gl-new2 { opacity:1; } .gl-typing, .gl-input { opacity:0; } .bn-go svg { transition:none; } }
   /* Kachel „Kursbegleitend“: Kurs wird durchgescrollt, Klick auf den Chat-Knopf öffnet das Chat-Fenster, Lernende:r und KI-Tutor chatten */
-  .bn-icon--buddy { width:100%; aspect-ratio:2080 / 2060; }
   .bn-ic--buddy * { vector-effect:non-scaling-stroke; }
   .bn-ic--buddy .gl-m { stroke-width:2.2px; }
   .bn-ic--buddy .gl-n { stroke-width:1.6px; }
@@ -514,7 +516,7 @@
       </div>
       <a href="https://moodle-demo.lassedesk.top/course/view.php?id=119" target="_blank" rel="noopener" data-cta="demos_course_moodle_guided"
         class="bn-tile group" aria-label="Geführten Lernmodus im Moodle-Demo-Kurs öffnen (neues Fenster)">
-        <div class="bn-icon bn-icon--guided" aria-hidden="true"><svg viewBox="255 460 1890 1480" class="bn-ic bn-ic--guided" role="presentation" focusable="false">
+        <div class="bn-icon bn-icon--guided" aria-hidden="true"><svg preserveAspectRatio="xMinYMid meet" viewBox="255 460 1890 1480" class="bn-ic bn-ic--guided" role="presentation" focusable="false">
   <defs><linearGradient id="dmGL" gradientUnits="userSpaceOnUse" x1="0" y1="490" x2="0" y2="1910"><stop offset="0" stop-color="#3B82F6"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient>
     <clipPath id="dmGLchat"><rect x="742" y="509" width="773" height="1243"/></clipPath></defs>
   <g fill="none" stroke="url(#dmGL)" stroke-linecap="round" stroke-linejoin="round">
@@ -539,9 +541,9 @@
       </div>
       <a href="https://moodle-demo.lassedesk.top/course/view.php?id=3" target="_blank" rel="noopener" data-cta="demos_course_moodle_companion"
         class="bn-tile group lg:order-1" aria-label="Kursbegleitenden Lernmodus im Moodle-Demo-Kurs öffnen (neues Fenster)">
-        <div class="bn-icon bn-icon--buddy" aria-hidden="true"><svg viewBox="240 225 2080 2060" class="bn-ic bn-ic--buddy" role="presentation" focusable="false">
+        <div class="bn-icon bn-icon--buddy" aria-hidden="true"><svg preserveAspectRatio="xMinYMid meet" viewBox="240 630 2080 1630" class="bn-ic bn-ic--buddy" role="presentation" focusable="false">
   <defs><linearGradient id="dmCB" gradientUnits="userSpaceOnUse" x1="0" y1="250" x2="0" y2="2260"><stop offset="0" stop-color="#3B82F6"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient>
-    <clipPath id="dmCBview"><rect x="240" y="225" width="2080" height="2060"/></clipPath>
+    <clipPath id="dmCBview"><rect x="240" y="630" width="2080" height="1630"/></clipPath>
     <clipPath id="dmCBchat"><rect x="1432" y="1187" width="837" height="946"/></clipPath></defs>
   <g fill="none" stroke="url(#dmCB)" stroke-linecap="round" stroke-linejoin="round">
     <g clip-path="url(#dmCBview)" stroke="#8099FA"><g class="cb-course"><rect x="269" y="258" width="674" height="130" class="gl-s"/><rect x="269" y="543" width="1619" height="273" class="gl-s"/><rect x="269" y="891" width="1420" height="378" class="gl-s"/><rect x="269" y="1343" width="1554" height="646" class="gl-s"/><rect x="269" y="2063" width="1237" height="188" class="gl-s"/><rect x="269" y="2371" width="674" height="130" class="gl-s"/><rect x="269" y="2656" width="1619" height="273" class="gl-s"/><rect x="269" y="3004" width="1420" height="378" class="gl-s"/><rect x="269" y="3456" width="1554" height="646" class="gl-s"/><rect x="269" y="4176" width="1237" height="188" class="gl-s"/></g></g>
@@ -562,9 +564,37 @@
     </div>
   </section>
 
+  <!-- seo-content:start -->
+<section class="relative bg-white pt-24 sm:pt-32 font-geist">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-6xl">
+        <p class="ds-label">Mit eigenen Inhalten testen</p>
+        <h2 class="ds-h2 text-balance mt-4">Dein eigener <span class="whitespace-nowrap">KI-Tutor</span> in drei Schritten</h2>
+        <p class="ds-sub mt-6">Am aussagekräftigsten ist der Test mit deinen eigenen Kursinhalten. Starte im Free-Plan ohne Kreditkarte oder teste den Professional-Plan 14 Tage kostenlos.</p>
+      </div>
+      <div class="mt-12 sm:mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-[1.25rem] border-[1.5px] border-[#0a0a0f] bg-white p-6 sm:p-7">
+          <p class="ds-label">01</p>
+          <h3 class="mt-3 text-xl font-medium tracking-tight text-[#0a0a0f]">Kostenlos registrieren</h3>
+          <p class="mt-3 text-base leading-relaxed text-gray-600">Lege im Alphalearn Portal ein kostenloses Konto im Free-Plan an, ohne Kreditkarte. Für den ausführlichen Test aktivierst du den 14-Tage-Test des Professional-Plans.</p>
+        </div>
+        <div class="rounded-[1.25rem] border-[1.5px] border-[#0a0a0f] bg-white p-6 sm:p-7">
+          <p class="ds-label">02</p>
+          <h3 class="mt-3 text-xl font-medium tracking-tight text-[#0a0a0f]">Wissen hinzufügen</h3>
+          <p class="mt-3 text-base leading-relaxed text-gray-600">Lade ein PDF hoch, füge eine Web-Quelle hinzu oder synchronisiere einen Moodle-Kurs. Der Tutor nutzt diese Inhalte als Wissensbasis.</p>
+        </div>
+        <div class="rounded-[1.25rem] border-[1.5px] border-[#0a0a0f] bg-white p-6 sm:p-7">
+          <p class="ds-label">03</p>
+          <h3 class="mt-3 text-xl font-medium tracking-tight text-[#0a0a0f]">Testen und platzieren</h3>
+          <p class="mt-3 text-base leading-relaxed text-gray-600">Stell dem Tutor die Fragen deiner Lernenden und prüfe die Quellenangaben. Passt das Ergebnis, platzierst du ihn per <a href="/de/moodle-plugin.html" class="ds-link">Moodle Plugin</a> oder <a href="/de/ilias-plugin.html" class="ds-link">ILIAS Plugin</a> im Kurs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- seo-content:end -->
 <!-- Conversion-CTA direkt nach dem Live-Chat -->
 <section class="cta-after-demo sm:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
-  <div class="max-w-6xl pt-16 pb-24 sm:pt-24 sm:pb-32">
+  <div class="max-w-6xl pt-28 pb-24 sm:pt-40 sm:pb-32 lg:pt-48">
     <h2 class="ds-h2 text-balance">Das waren KI-Tutoren mit unseren Inhalten. Wie klingt einer mit deinen?</h2>
     <div class="ds-btn-row mt-10 sm:mt-12">
       <a href="https://portal.alphabees.de/auth/register" data-cta="demos_after_chat_trial"
@@ -677,34 +707,6 @@
   </script>
 </section><section aria-labelledby="mobile-app" class="overflow-hidden relative">
 
-  <!-- seo-content:start -->
-<section class="relative bg-white py-16 sm:py-24 font-geist">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="max-w-6xl">
-        <p class="ds-label">Mit eigenen Inhalten testen</p>
-        <h2 class="ds-h2 text-balance mt-4">Dein eigener <span class="whitespace-nowrap">KI-Tutor</span> in drei Schritten</h2>
-        <p class="ds-sub mt-6">Am aussagekräftigsten ist der Test mit deinen eigenen Kursinhalten. Starte im Free-Plan ohne Kreditkarte oder teste den Professional-Plan 14 Tage kostenlos.</p>
-      </div>
-      <div class="mt-12 sm:mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <div class="rounded-[1.25rem] border-[1.5px] border-[#0a0a0f] bg-white p-6 sm:p-7">
-          <p class="ds-label">01</p>
-          <h3 class="mt-3 text-xl font-medium tracking-tight text-[#0a0a0f]">Kostenlos registrieren</h3>
-          <p class="mt-3 text-base leading-relaxed text-gray-600">Lege im Alphalearn Portal ein kostenloses Konto im Free-Plan an, ohne Kreditkarte. Für den ausführlichen Test aktivierst du den 14-Tage-Test des Professional-Plans.</p>
-        </div>
-        <div class="rounded-[1.25rem] border-[1.5px] border-[#0a0a0f] bg-white p-6 sm:p-7">
-          <p class="ds-label">02</p>
-          <h3 class="mt-3 text-xl font-medium tracking-tight text-[#0a0a0f]">Wissen hinzufügen</h3>
-          <p class="mt-3 text-base leading-relaxed text-gray-600">Lade ein PDF hoch, füge eine Web-Quelle hinzu oder synchronisiere einen Moodle-Kurs. Der Tutor nutzt diese Inhalte als Wissensbasis.</p>
-        </div>
-        <div class="rounded-[1.25rem] border-[1.5px] border-[#0a0a0f] bg-white p-6 sm:p-7">
-          <p class="ds-label">03</p>
-          <h3 class="mt-3 text-xl font-medium tracking-tight text-[#0a0a0f]">Testen und platzieren</h3>
-          <p class="mt-3 text-base leading-relaxed text-gray-600">Stell dem Tutor die Fragen deiner Lernenden und prüfe die Quellenangaben. Passt das Ergebnis, platzierst du ihn per <a href="/de/moodle-plugin.html" class="ds-link">Moodle Plugin</a> oder <a href="/de/ilias-plugin.html" class="ds-link">ILIAS Plugin</a> im Kurs.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-<!-- seo-content:end -->
 <section class="ds-faq overflow-hidden font-geist bg-white py-24 sm:py-32 relative">
   <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
     <!-- Header -->
