@@ -674,11 +674,9 @@
       '<p class="text-xs text-gray-300 mt-2 mb-5" data-prog="t">' + p.done + ' von ' + p.total + ' Fragen beantwortet</p>' +
       (state.unlocked ? '<p class="text-[0.86rem] leading-relaxed text-gray-300 mb-6">„KI-Tutor einführen“: 28 Seiten zu Rollen, DSGVO, AI Act und Mitbestimmung – kostenlos per E-Mail.</p>' :
       '<ul class="space-y-2 text-gray-300 text-[0.84rem] leading-snug mb-6">' +
-        '<li class="kc-li">Wo Sie anfangen – mit Zuständigkeiten</li>' +
-        '<li class="kc-li">Welche Dokumente Sie brauchen</li>' +
-        '<li class="kc-li">Wer zustimmen muss</li>' +
-        '<li class="kc-li">Was Sie den Anbieter fragen – als fertige Mail</li>' +
-        '<li class="kc-li">Dazu: Handbuch <span class="whitespace-nowrap">„KI-Tutor einführen“</span> als PDF (28 Seiten)</li>' +
+        '<li class="kc-li">Welche Regeln müssen beachtet werden?</li>' +
+        '<li class="kc-li">Welche Dokumente werden benötigt?</li>' +
+        '<li class="kc-li">Wer ist wofür verantwortlich?</li>' +
       '</ul>') +
       (next ? '<button type="button" class="kc-btn-light w-full" data-act="step" data-step="' + next.id + '">' + (next.id === 'E' ? 'Zur Auswertung →' : 'Weiter: ' + esc(next.title) + ' →') + '</button>'
             : '<button type="button" class="kc-btn-light w-full" data-act="to-form">' + (state.unlocked ? 'Handbuch anfordern →' : 'Auswertung anzeigen →') + '</button>') +
