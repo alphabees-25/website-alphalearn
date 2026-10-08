@@ -8,6 +8,10 @@
   var CFG = window.KI_CHECK_CONFIG || {};
   var root = document.getElementById('kc-app');
   if (!DATA || !root) return;
+  // Handbuch-Spalte rechts (ab 1280px, scrollt mit). Darunter steht der Kasten wie bisher unter der Checkliste.
+  var asideSlot = document.getElementById('kc-aside-slot');
+  var mqAside = window.matchMedia ? window.matchMedia('(min-width: 1280px)') : null;
+  function asideOn() { return !!(asideSlot && mqAside && mqAside.matches); }
 
   var CH = DATA.chapters;
   var ITEMS = DATA.items;
@@ -20,7 +24,8 @@
     open: {},            // id -> Details aufgeklappt
     unlocked: false,
     started: false,
-    firstName: ''
+    firstName: '',
+    requested: false     // Handbuch in diesem Browser angefordert
   };
 
   // ---------- Helpers ----------
@@ -121,7 +126,7 @@
       '</div>' +
       '</div>' +
 
-      '<div class="p-3 sm:p-5 lg:p-6 pt-0 sm:pt-0 lg:pt-0">' + (state.unlocked ? fullReport() : gate()) + '</div>';
+      (state.unlocked || !asideOn() ? '<div class="p-3 sm:p-5 lg:p-6 pt-0 sm:pt-0 lg:pt-0">' + (state.unlocked ? fullReport() : gate(false)) + '</div>' : '');
 
     root.innerHTML = html;
   }
@@ -149,29 +154,25 @@
       '</div></li>';
   }
 
-  function gate() {
+  // Cover des Handbuchs als kleines 3D-Buch (Styles .kc-mock-* in der Seite)
+  function bookMock(cls) {
+    return '<div class="kc-mock-stage ' + cls + '" aria-hidden="true"><div class="kc-mock-book">' +
+      '<img class="kc-mock-cover" src="/assets/images/ki-check/handbuch-cover.webp" width="1024" height="1536" alt="" loading="lazy" decoding="async">' +
+      '<span class="kc-mock-gloss"></span><span class="kc-mock-pages"></span><span class="kc-mock-back"></span></div></div>';
+  }
+
+  function gate(aside) {
     var s = stats();
-    return '<div class="kc-gate rounded-3xl p-5 sm:p-10 text-white scroll-mt-6" id="kc-gate">' +
-      '<div class="grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] gap-8 lg:gap-12 items-center">' +
-        '<div><div class="flex items-center gap-6 mb-7">' +
-          '<div class="kc-book hidden sm:block" aria-hidden="true"><span class="kc-book-pages"></span><span class="kc-book-cover">' +
-            '<span class="kc-book-line" style="top:1.1rem;width:2.2rem;background:#93c5fd"></span>' +
-            '<span class="kc-book-line" style="top:2.1rem;width:4.6rem;background:#111827"></span>' +
-            '<span class="kc-book-line" style="top:2.85rem;width:3.4rem;background:#111827"></span>' +
-            '<span class="kc-book-line" style="top:4rem;width:4.2rem;height:.26rem"></span>' +
-            '<span class="kc-book-line" style="top:4.55rem;width:3.6rem;height:.26rem"></span>' +
-            '<span class="kc-book-check"></span></span></div>' +
-          '<div><p class="text-xs font-semibold uppercase tracking-widest text-blue-300 font-geist mb-2">Kostenlos</p>' +
-          '<h3 class="text-2xl sm:text-3xl lg:text-[1.75rem] font-semibold tracking-tight font-geist text-balance">Das Handbuch „KI-Tutor einführen“ als PDF</h3></div></div>' +
-          '<ul class="space-y-3 text-gray-300 text-[0.95rem] leading-relaxed">' +
+    var list = '<ul class="' + (aside ? 'space-y-1.5 text-gray-300 text-[0.8rem] leading-[1.35] mb-5' : 'space-y-3 text-gray-300 text-[0.95rem] leading-relaxed') + '">' +
             '<li class="kc-li">28 Seiten: die komplette Checkliste zum Abhaken, die 10 Irrtümer und Fristen</li>' +
             '<li class="kc-li">15 Fragen an jeden KI-Anbieter – als Vergleichstabelle zum Ausfüllen</li>' +
             '<li class="kc-li">4 Vorlagen: Rollen-Steckbrief, Transparenzhinweis, Schulungsnachweis, Eckpunkte Betriebsvereinbarung</li>' +
             '<li class="kc-li">Pro Kapitel vermerkt, wer sich kümmert – zum Weiterleiten an Datenschutz, Betriebsrat, Einkauf</li>' +
             '<li class="kc-li">Dazu: Zugang zum KI-Assistenten, der Ihre Fragen zum Handbuch jederzeit beantwortet</li>' +
-          '</ul></div>' +
+          '</ul>';
+    var form =
         '<div class="kc-form-frame"><form class="kc-form kc-form-card text-gray-900" data-act="submit" novalidate>' +
-          '<div class="grid sm:grid-cols-2 gap-3">' +
+          '<div class="grid gap-3' + (aside ? '' : ' sm:grid-cols-2') + '">' +
             '<label class="kc-field"><span>Vorname</span><input name="first_name" autocomplete="given-name" required></label>' +
             '<label class="kc-field"><span>Geschäftliche E-Mail</span><input name="email" type="email" autocomplete="email" required></label>' +
           '</div>' +
@@ -179,8 +180,39 @@
           '<p class="text-xs text-gray-500 mt-4 leading-relaxed">Sie erhalten gleich eine E-Mail mit einem Bestätigungslink. Sobald Sie Ihre Adresse bestätigt haben, erhalten Sie das Handbuch als PDF. Details in der <a class="text-blue-600 underline underline-offset-2 hover:text-blue-700" href="' + esc(CFG.privacyUrl || '/de/privacy.html') + '">Datenschutzerklärung</a>.</p>' +
           '<p class="kc-error text-sm font-medium text-red-600 mt-3" role="alert" hidden></p>' +
           '<button type="submit" class="kc-btn-primary mt-5 w-full">Handbuch anfordern</button>' +
-        '</form></div>' +
+        '</form></div>';
+    if (aside) {
+      return '<div class="kc-gate kc-gate--aside rounded-3xl p-5 text-white" id="kc-gate">' +
+        '<div class="flex items-center gap-4 mb-5">' + bookMock('kc-mock-stage--sm') +
+          '<div class="min-w-0"><p class="text-xs font-semibold uppercase tracking-widest text-blue-300 font-geist mb-2">Kostenlos</p>' +
+          '<h3 class="text-[1.15rem] leading-snug tracking-tight font-geist text-balance">Das Handbuch <span class="whitespace-nowrap">„KI-Tutor einführen“</span> als PDF</h3></div></div>' +
+        list + form + '</div>';
+    }
+    return '<div class="kc-gate rounded-3xl p-5 sm:p-10 text-white scroll-mt-6" id="kc-gate">' +
+      '<div class="grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] gap-8 lg:gap-12 items-center">' +
+        '<div><div class="flex items-center gap-6 mb-7">' + bookMock('kc-mock-stage--md hidden sm:block') +
+          '<div><p class="text-xs font-semibold uppercase tracking-widest text-blue-300 font-geist mb-2">Kostenlos</p>' +
+          '<h3 class="text-2xl sm:text-3xl lg:text-[1.75rem] font-semibold tracking-tight font-geist text-balance">Das Handbuch <span class="whitespace-nowrap">„KI-Tutor einführen“</span> als PDF</h3></div></div>' +
+          list + '</div>' +
+        form +
       '</div></div>';
+  }
+
+  // Seitenspalte nach dem Absenden: Bestätigung statt Formular
+  function asideDone() {
+    return '<div class="kc-gate kc-gate--aside rounded-3xl p-5 text-white" id="kc-gate">' +
+      '<div class="flex items-center gap-4 mb-5">' + bookMock('kc-mock-stage--sm') +
+        '<div class="min-w-0"><p class="text-xs font-semibold uppercase tracking-widest text-blue-300 font-geist mb-2">Angefordert</p>' +
+        '<h3 class="text-[1.3rem] leading-snug tracking-tight font-geist text-balance">' + (state.firstName ? esc(state.firstName) + ', Ihr Handbuch ist unterwegs' : 'Ihr Handbuch ist unterwegs') + '</h3></div></div>' +
+      '<p class="text-[0.9rem] leading-relaxed text-gray-300">Bitte bestätigen Sie Ihre E-Mail-Adresse über den Link in unserer E-Mail. Danach erhalten Sie das Handbuch als PDF.</p>' +
+      (state.unlocked ? '<button type="button" class="kc-btn-light mt-5 w-full" data-act="to-gate">Zum Fahrplan ↓</button>' : '') +
+      '</div>';
+  }
+
+  function renderAside() {
+    if (!asideSlot) return;
+    if (!asideOn()) { asideSlot.innerHTML = ''; return; }
+    asideSlot.innerHTML = state.requested ? asideDone() : gate(true);
   }
 
   function fullReport() {
@@ -302,7 +334,7 @@
   // ---------- Events ----------
   function syncHash() { if (state.unlocked) history.replaceState(null, '', '#r=' + encodeState()); }
 
-  root.addEventListener('click', function (e) {
+  function onClick(e) {
     var el = e.target.closest('[data-act]');
     if (!el || el.tagName === 'FORM') return;
     var act = el.getAttribute('data-act');
@@ -318,15 +350,23 @@
     else if (act === 'details') { var d = el.getAttribute('data-id'); state.open[d] = !state.open[d]; render(); }
     else if (act === 'tab') { state.ch = el.getAttribute('data-ch'); render(); scrollTo(root); }
     else if (act === 'emp') { state.employees = el.getAttribute('data-val') === '1'; save(); syncHash(); render(); }
-    else if (act === 'to-gate') { track('check_result_view', { done: stats().done, total: stats().total }); scrollTo(document.getElementById(state.unlocked ? 'kc-report' : 'kc-gate')); }
+    else if (act === 'to-gate') {
+      track('check_result_view', { done: stats().done, total: stats().total });
+      var g = document.getElementById('kc-gate');
+      if (!state.unlocked && asideOn() && g) {
+        // Kasten steht schon sichtbar in der Seitenspalte: hervorheben und ins erste Feld springen
+        g.classList.remove('kc-flash'); void g.offsetWidth; g.classList.add('kc-flash');
+        var f = g.querySelector('input[name=first_name]'); if (f) f.focus({ preventScroll: true });
+      } else scrollTo(document.getElementById(state.unlocked ? 'kc-report' : 'kc-gate'));
+    }
     else if (act === 'print') { track('check_report_print', {}); window.print(); }
     else if (act === 'copy-link') { copy(reportLink(), el, 'Link kopiert'); track('check_share', { method: 'copy' }); }
     else if (act === 'share') { track('check_share', { method: 'mail' }); }
     else if (act === 'dl') { track('check_handbook_download', { from: 'report' }); }
     else if (act === 'copy-tpl') { copy(TEMPLATES[el.getAttribute('data-i')].body, el, 'Kopiert'); }
-  });
+  }
 
-  root.addEventListener('submit', function (e) {
+  function onSubmit(e) {
     e.preventDefault();
     var form = e.target;
     var fd = new FormData(form);
@@ -341,12 +381,21 @@
     track('check_report_request', { done: stats().done, newsletter: fd.get('newsletter') ? 'ja' : 'nein' });
     submitLead(fd).then(function () {
       state.unlocked = true;
+      state.requested = true;
       state.firstName = String(fd.get('first_name')).trim();
       try { localStorage.setItem(STORE + '-u', '1'); } catch (x) { /* egal */ }
-      syncHash(); render();
+      syncHash(); render(); renderAside();
       scrollTo(document.getElementById('kc-report'));
     });
-  });
+  }
+
+  root.addEventListener('click', onClick);
+  root.addEventListener('submit', onSubmit);
+  if (asideSlot) { asideSlot.addEventListener('click', onClick); asideSlot.addEventListener('submit', onSubmit); }
+  if (mqAside) {
+    var onMq = function () { render(); renderAside(); };
+    if (mqAside.addEventListener) mqAside.addEventListener('change', onMq); else if (mqAside.addListener) mqAside.addListener(onMq);
+  }
 
   function copy(text, el, msg) {
     var done = function () { var t = el.textContent; el.textContent = msg; setTimeout(function () { el.textContent = t; }, 1600); };
@@ -374,5 +423,7 @@
     load();
     try { state.unlocked = localStorage.getItem(STORE + '-u') === '1'; } catch (x) { /* egal */ }
   }
+  try { state.requested = localStorage.getItem(STORE + '-u') === '1'; } catch (x) { /* egal */ }
   render();
+  renderAside();
 })();
