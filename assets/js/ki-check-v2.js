@@ -89,7 +89,7 @@
     return done;
   }
   function reportLink() { return (CFG.reportUrl || location.origin + location.pathname) + '#a=' + encodeAnswers(); }
-  function syncHash() { if (state.unlocked) history.replaceState(null, '', '#a=' + encodeAnswers()); }
+  function syncHash() { if (state.unlocked && state.step === 'E') history.replaceState(null, '', '#a=' + encodeAnswers()); }
 
   // ---------- Fragen, Schritte, Status ----------
   function stepActive(s) { return !s.employeesOnly || state.answers.p_emp !== 'nein'; }
@@ -288,9 +288,9 @@
         steps.map(function (s, n) {
           var active = s.id === state.step;
           if (s.result) {
-            return '<button type="button" class="kc-tab kc-tab--plan' + (active ? ' is-active' : '') + (state.justUnlocked ? ' is-new' : '') + '" data-act="step" data-step="E"' + (active ? ' aria-current="true"' : '') + '>' +
+            return '<button type="button" class="kc-tab kc-tab--plan' + (active ? ' is-active' : '') + '' + '" data-act="step" data-step="E"' + (active ? ' aria-current="true"' : '') + '>' +
               '<span class="kc-tab-n">' + DOC + '</span><span class="min-w-0">' + 'Ihre Auswertung' + '</span>' +
-              (state.justUnlocked ? '<span class="kc-new">Neu</span>' : '') + '</button>';
+              '</button>';
           }
           var qs = visibleQs(s).filter(function (q) { return !q.optional; }), a = qs.filter(answered).length, full = qs.length && a === qs.length;
           return '<button type="button" class="kc-tab' + (active ? ' is-active' : '') + (full ? ' is-done' : '') + '" data-act="step" data-step="' + s.id + '"' + (active ? ' aria-current="true"' : '') + '>' +
@@ -419,7 +419,7 @@
         '<label class="kc-field"><span>Geschäftliche E-Mail</span><input name="email" type="email" autocomplete="email" required></label>' +
       '</div>' +
       '<label class="kc-consent"><input type="checkbox" name="newsletter" value="1"><span>Ja, schicken Sie mir gelegentlich Praxiswissen zu KI in der Bildung, Rechtslage und Moodle/ILIAS. Abmeldung jederzeit möglich.</span></label>' +
-      '<p class="text-xs text-gray-500 mt-4 leading-relaxed">Wir erhalten Vorname, E-Mail, Organisation, Rolle und Ihre ausgewählten Antworten (als Link zu Ihrer Auswertung). Ihre übrigen Textfelder bleiben in Ihrem Browser. Details in der <a class="text-blue-600 underline underline-offset-2 hover:text-blue-700" href="' + esc(CFG.privacyUrl || '/de/privacy.html') + '">Datenschutzerklärung</a>.</p>' +
+      '<p class="text-xs text-gray-500 mt-4 leading-relaxed">Wir nutzen Vorname und E-Mail-Adresse nur, um Ihnen das Handbuch zu schicken. Ihre Antworten und Ihre Auswertung bleiben in Ihrem Browser. Details in der <a class="text-blue-600 underline underline-offset-2 hover:text-blue-700" href="' + esc(CFG.privacyUrl || '/de/privacy.html') + '">Datenschutzerklärung</a>.</p>' +
       '<p class="kc-error text-sm font-medium text-red-600 mt-3" role="alert" hidden></p>' +
       '<button type="submit" class="kc-btn-primary mt-5 w-full">Auswertung anzeigen →</button>' +
     '</form></div>';
@@ -453,8 +453,8 @@
   function unlockedNote() {
     return '<div class="kc-unlocked" role="status">' +
       '<span class="kc-unlocked-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>' +
-      '<div class="kc-unlocked-txt"><p class="kc-unlocked-h">Ihre Auswertung ist da</p>' +
-      '<p class="kc-unlocked-p">Das Handbuch kommt per E-Mail, sobald Sie Ihre Adresse bestätigt haben. Ihre Antworten können Sie jederzeit ändern – die Auswertung passt sich an.</p></div>' +
+      '<div class="kc-unlocked-txt"><p class="kc-unlocked-h">Ihr Handbuch ist unterwegs</p>' +
+      '<p class="kc-unlocked-p">Bitte bestätigen Sie Ihre E-Mail-Adresse über den Link in unserer E-Mail – danach erhalten Sie das Handbuch als PDF.</p></div>' +
       '<button type="button" class="kc-unlocked-x" data-act="note-close" aria-label="Hinweis schließen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>' +
     '</div>';
   }
@@ -572,6 +572,7 @@
         '<a href="' + esc(CFG.calendlyUrl) + '" data-cta="kicheck_call_frage" target="_blank" rel="noopener" class="kc-btn-primary mt-4">In 20 Minuten mit uns besprechen</a></div>';
     }
 
+    if (!state.requested) html += handbookCard().replace('mt-8 scroll-mt-6', 'mb-12 scroll-mt-6');
     html += '<div class="kc-promo rounded-3xl text-white p-8 sm:p-10">' +
       '<p class="text-xs font-semibold uppercase tracking-widest text-gray-400 font-geist mb-2">In eigener Sache</p>' +
       '<h4 class="text-2xl font-semibold tracking-tight font-geist mb-3">So beantwortet Alphalearn die Anbieter-Fragen</h4>' +
@@ -582,7 +583,6 @@
         '<a href="' + esc(CFG.calendlyUrl) + '" data-cta="kicheck_call" target="_blank" rel="noopener" class="kc-btn-outline">Auswertung in 20 Minuten besprechen</a>' +
         '<a href="' + esc(CFG.complianceUrl) + '" data-cta="kicheck_compliance" class="kc-btn-outline">Compliance-Details</a>' +
       '</div></div>' +
-      (!state.requested ? handbookCard() : '') +
       '<p class="text-xs text-gray-500 mt-8 leading-relaxed">Dieser Check ersetzt keine Rechtsberatung. Die Auswertung ist aus Ihren Angaben erstellt. Stand der Rechtslage: Oktober 2026 (DSGVO, KI-Verordnung nach Digital Omnibus, BetrVG).</p>' +
       '</section></div>';
     return html;
@@ -701,21 +701,12 @@
   }
   function submitLead(fd) {
     var providers = CFG.providers || [];
-    var st = statuses();
-    var rolle = optOf(qById('p_rolle'), state.answers.p_rolle);
+    // Nur was für den Versand des Handbuchs nötig ist – Antworten und Auswertung bleiben im Browser
     var payload = {
       first_name: fd.get('first_name') || '',
       email: fd.get('email') || '',
       newsletter: fd.get('newsletter') ? 'ja' : 'nein',
-      ampel: ampelString(st),
-      organisation: txt('org'),
-      rolle: rolle ? rolle.t : '',
-      phase: state.answers.p_phase || '',
-      lms: state.answers.p_lms || '',
-      luecken: activeItems().filter(function (i) { return !isClear(stat(st, i)); }).map(function (i) { return i.id + '=' + stat(st, i); }).join(' '),
-      antworten: JSON.stringify(state.answers),
-      status: state.answers.p_emp === 'nein' ? 'fragebogen' : 'fragebogen+bv',
-      report_link: reportLink(),
+      status: 'handbuch',
       version: Q.version,
       quelle: (new URLSearchParams(location.search)).get('utm_source') || document.referrer || 'direkt'
     };
@@ -724,7 +715,7 @@
       var body = new URLSearchParams();
       body.append('email_address', payload.email);
       body.append('fields[first_name]', payload.first_name);
-      ['newsletter', 'ampel', 'report_link', 'organisation', 'rolle'].forEach(function (k) { body.append('fields[ki_check_' + k + ']', payload[k]); });
+      body.append('fields[ki_check_newsletter]', payload.newsletter);
       jobs.push(fetch(CFG.kit.endpoint.replace('{formId}', CFG.kit.formId), { method: 'POST', mode: 'no-cors', body: body }));
     }
     if (providers.indexOf('sheets') !== -1 && CFG.sheets && CFG.sheets.endpoint) {
@@ -742,8 +733,8 @@
       else state.lastStep = null;
     }
     state.step = id;
-    if (id === 'E' && !state.unlocked) track('check_teaser_view', {});
-    save(); render(); scrollTo(root);
+    if (id === 'E') track('check_result_view', {});
+    save(); render(); syncHash(); scrollTo(root);
   }
   function setAnswer(qid, v) {
     var q = qById(qid); if (!q) return;
@@ -828,14 +819,14 @@
     var btn = form.querySelector('button[type=submit]');
     btn.disabled = true; btn.textContent = 'Einen Moment …';
     var sm = summary();
-    track('check_report_request', { done: sm.mustDone, total: sm.mustTotal, newsletter: fd.get('newsletter') ? 'ja' : 'nein', from: state.unlocked ? 'shared' : 'result' });
+    track('check_report_request', { done: sm.mustDone, total: sm.mustTotal, newsletter: fd.get('newsletter') ? 'ja' : 'nein' });
     submitLead(fd).then(function () {
       state.unlocked = true; state.requested = true; state.justUnlocked = true;
       state.firstName = String(fd.get('first_name')).trim();
       try { localStorage.setItem(STORE + '-u', '1'); localStorage.setItem(STORE + '-n', state.firstName); } catch (x) { /* egal */ }
       state.step = 'E';
       save(); syncHash(); render();
-      scrollTo(root);
+      var note = root.querySelector('.kc-unlocked'); scrollTo(note || root);
     });
   }
 
@@ -877,9 +868,8 @@
   } else if (r) {
     var done = decodeLegacy(decodeURIComponent(r[1]));
     if (done) { state.legacyDone = done; state.unlocked = true; state.step = 'E'; fromLink = true; track('check_report_open', { legacy: 1 }); }
-  } else if (state.requested) {
-    state.unlocked = true;
   }
+  state.unlocked = true;   // Auswertung ohne Formular; E-Mail nur noch fürs Handbuch
   render();
   if (fromLink) setTimeout(function () { scrollTo(root); }, 300);
 })();
