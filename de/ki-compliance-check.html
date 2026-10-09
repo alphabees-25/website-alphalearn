@@ -554,7 +554,13 @@
     .kq-offer a { color:#0a0a0f; }
     .kq-offer-line { margin-top:1.25rem; font-size:.85rem; color:rgba(255,255,255,.7); }
     .kq-offer-line a { color:#1aff80; }
-    @media print { .kq-offer-line, .kq-offer-line a { color:#0a0a0f !important; } }
+    .kq-offer-line { font-size:.95rem; }
+    /* Im PDF: schwarzer Kasten bleibt schwarz (sonst weiße Schrift auf weiß), Kontaktzeile gut sichtbar, Kasten nicht über zwei Seiten */
+    @media print {
+      .kc-promo { -webkit-print-color-adjust:exact; print-color-adjust:exact; break-inside:avoid; }
+      .kq-offer-line { color:#fff !important; font-size:1rem; }
+      .kq-offer-line a { color:#1aff80 !important; }
+    }
 
     /* ---------- Report ---------- */
     .kc-task { display:flex; gap:.7rem; font-size:.9rem; color:#4b5563; line-height:1.6; padding:.75rem .9rem; border-radius:.75rem; background:#fff; border:1px solid #f3f4f6; }

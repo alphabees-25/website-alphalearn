@@ -490,6 +490,20 @@
     return 'mailto:' + OFFER_MAIL + '?subject=' + encodeURIComponent('Vergleichsangebot KI-Tutor (KI-Compliance-Check)') + '&body=' + encodeURIComponent(body);
   }
 
+  function promoHtml(ev) {
+    return '<div class="kc-promo rounded-3xl text-white p-8 sm:p-10 mb-12">' +
+      '<p class="text-xs font-semibold uppercase tracking-widest text-gray-400 font-geist mb-2">In eigener Sache</p>' +
+      '<h4 class="text-2xl font-semibold tracking-tight font-geist mb-3">So beantwortet Alphabees die Anbieter-Fragen</h4>' +
+      '<p class="text-gray-300 text-sm leading-relaxed mb-6 max-w-3xl">Alphabees entwickelt KI-Tutoren mit Schwerpunkt auf Moodle und ILIAS. Die Fragen aus diesem Check besprechen wir mit jedem Kunden vor dem Start, deshalb haben wir ihn gebaut. Die Unterlagen, die Sie von uns als Anbieter brauchen, liegen bereit: So können Sie unseren KI-Tutor Alphalearn ohne lange Vorlaufzeit testen und rechtlich sauber einsetzen.</p>' +
+      '<ul class="grid sm:grid-cols-2 gap-x-8 gap-y-2.5 text-sm text-gray-300 mb-8">' + BRIDGE.map(function (x) { return '<li class="kc-li">' + esc(x) + '</li>'; }).join('') + '</ul>' +
+      '<div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 kc-noprint kq-promo-btns">' +
+        '<a href="' + offerHref(ev.vq) + '" data-cta="kicheck_offer" class="kc-btn-light">Vergleichsangebot bei Alphabees einholen</a>' +
+        '<a href="' + esc(CFG.demoUrl) + '?utm_source=ki-check&utm_medium=report" data-cta="kicheck_demo" class="kc-btn-outline">Tutor-Demo ansehen</a>' +
+        '<a href="' + esc(CFG.calendlyUrl) + '" data-cta="kicheck_call" target="_blank" rel="noopener" class="kc-btn-outline">Auswertung in 20 Minuten besprechen</a>' +
+        '<a href="' + esc(CFG.complianceUrl) + '" data-cta="kicheck_compliance" class="kc-btn-outline">Compliance-Details</a>' +
+      '</div><p class="kq-offer-line">Vergleichsangebot bei Alphabees einholen: <a href="' + offerHref(ev.vq) + '" data-cta="kicheck_offer_line">' + OFFER_MAIL + '</a></p></div>';
+  }
+
   function resultHtml() {
     var tpls = templates(), ev = evaluation(), sm = ev.sm, st = ev.st, pr = priority(st), anb = txt('anbieter');
     var html = '<div class="p-5 sm:p-8 lg:p-10 kc-fade" id="kc-plan"><section class="kc-report scroll-mt-6" id="kc-report">' +
@@ -507,6 +521,9 @@
         [['start', 'Wo anfangen?'], ['wichtig', 'Was ist wichtig?'], ['docs', 'Dokumente'], ['ok', 'Freigaben'], ['fragen', 'Fragen'], ['plan', 'Fahrplan'], ['tpl', 'Vorlagen']].map(function (x) {
           return '<button type="button" data-act="jump" data-to="kq-sec-' + x[0] + '">' + x[1] + '</button>';
         }).join('') + '</nav>';
+
+    // Alphabees ganz oben: Hersteller-Hinweis mit Vergleichsangebot
+    html += promoHtml(ev);
 
     // 1. Wo fange ich an?
     html += secH('start', '1', 'Wo fangen Sie an?', 'Ihre ersten drei Schritte – sortiert nach Pflicht und Projektphase.');
@@ -599,18 +616,8 @@
     }
 
     if (!state.requested) html += handbookCard().replace('mt-8 scroll-mt-6', 'mb-12 scroll-mt-6');
-    html += '<div class="kc-promo rounded-3xl text-white p-8 sm:p-10">' +
-      '<p class="text-xs font-semibold uppercase tracking-widest text-gray-400 font-geist mb-2">In eigener Sache</p>' +
-      '<h4 class="text-2xl font-semibold tracking-tight font-geist mb-3">So beantwortet Alphalearn die Anbieter-Fragen</h4>' +
-      '<p class="text-gray-400 text-sm leading-relaxed mb-6 max-w-2xl">Wir haben diesen Check gebaut, weil wir genau diese Fragen in jedem Auswahlprozess beantworten. Falls Sie Alphalearn – den KI-Tutor für Moodle und ILIAS – in Ihre Auswahl aufnehmen:</p>' +
-      '<ul class="grid sm:grid-cols-2 gap-x-8 gap-y-2.5 text-sm text-gray-300 mb-8">' + BRIDGE.map(function (x) { return '<li class="kc-li">' + esc(x) + '</li>'; }).join('') + '</ul>' +
-      '<div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 kc-noprint kq-promo-btns">' +
-        '<a href="' + offerHref(ev.vq) + '" data-cta="kicheck_offer" class="kc-btn-light">Vergleichsangebot bei Alphabees einholen</a>' +
-        '<a href="' + esc(CFG.demoUrl) + '?utm_source=ki-check&utm_medium=report" data-cta="kicheck_demo" class="kc-btn-outline">Tutor-Demo ansehen</a>' +
-        '<a href="' + esc(CFG.calendlyUrl) + '" data-cta="kicheck_call" target="_blank" rel="noopener" class="kc-btn-outline">Auswertung in 20 Minuten besprechen</a>' +
-        '<a href="' + esc(CFG.complianceUrl) + '" data-cta="kicheck_compliance" class="kc-btn-outline">Compliance-Details</a>' +
-      '</div><p class="kq-offer-line">Vergleichsangebot bei Alphabees einholen: <a href="' + offerHref(ev.vq) + '" data-cta="kicheck_offer_line">' + OFFER_MAIL + '</a></p></div>' +
-      '<p class="text-xs text-gray-500 mt-8 leading-relaxed">Dieser Check ersetzt keine Rechtsberatung. Die Auswertung ist aus Ihren Angaben erstellt. Stand der Rechtslage: Oktober 2026 (DSGVO, KI-Verordnung nach Digital Omnibus, BetrVG).</p>' +
+
+    html += '<p class="text-xs text-gray-500 mt-8 leading-relaxed">Dieser Check ersetzt keine Rechtsberatung. Die Auswertung ist aus Ihren Angaben erstellt. Stand der Rechtslage: Oktober 2026 (DSGVO, KI-Verordnung nach Digital Omnibus, BetrVG).</p>' +
       '</section></div>';
     return html;
   }
