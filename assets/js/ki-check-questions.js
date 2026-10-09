@@ -5,6 +5,8 @@
    Typen: single (eine Antwort), multi (mehrere; abgewählte Punkte = offen, „none“ = alle unklar), fields (Textfelder, bleiben im Browser). */
 window.KI_CHECK_QUESTIONS = {
   version: '2026-10-fragebogen-1',
+  // Punkte ohne Frage: R4 (eigener Name/Branding) ist bei einem Lern-Tutor praktisch nicht relevant (Art. 25 KI-VO nur bei Hochrisiko)
+  skipItems: ['R4'],
   steps: [
     { id: 'P', title: 'Ihr Projekt', sub: 'Ausgangslage',
       intro: 'Ein paar Angaben vorab. Daraus entstehen später Ihre vorausgefüllten Vorlagen. Textfelder sind freiwillig und bleiben in Ihrem Browser.',
@@ -12,7 +14,8 @@ window.KI_CHECK_QUESTIONS = {
         { id: 'p_basis', type: 'fields', q: 'Worum geht es bei Ihnen?', fields: [
           { k: 'org', label: 'Ihre Organisation', ph: 'z. B. XY-Akademie' },
           { k: 'kurs', label: 'Kurs oder Bereich für den Start', ph: 'z. B. Pflegekurs, Modul 3' },
-          { k: 'anbieter', label: 'KI-Tutor bzw. Anbieter im Gespräch', ph: 'z. B. Produktname' }
+          { k: 'anbieter', label: 'KI-Tutor bzw. Anbieter im Gespräch', ph: 'z. B. Produktname' },
+          { k: 'tutorName', label: 'Name des Tutors für Ihre Lernenden (optional)', ph: 'z. B. Lernbuddy' }
         ] },
         { id: 'p_rolle', type: 'single', q: 'Ihre Rolle im Projekt', opts: [
           { v: 'leitung', t: 'Geschäftsführung / Projektleitung' }, { v: 'datenschutz', t: 'Datenschutz' },
@@ -45,19 +48,12 @@ window.KI_CHECK_QUESTIONS = {
           { v: 'nein', t: 'Nein, unklar formuliert oder noch kein AVV', s: { R2: 'open' } },
           { v: 'wn', t: 'Weiß ich nicht', s: { R2: 'unclear' } }
         ] },
-        { id: 'r3', type: 'single', item: 'R3', q: 'Wie setzen Sie den KI-Tutor ein – und ist Ihre Rolle nach der KI-Verordnung notiert?', opts: [
-          { v: 'fertig_notiert', t: 'Fertiges Produkt eines Herstellers, Rolle als Betreiber ist notiert', s: { R3: 'done' } },
-          { v: 'fertig', t: 'Fertiges Produkt eines Herstellers, Rolle noch nicht notiert', s: { R3: 'part' } },
+        { id: 'r3', type: 'single', item: 'R3', q: 'Wie setzen Sie den KI-Tutor ein – und ist Ihre Rolle nach der KI-Verordnung notiert?', help: 'Betreiber im Sinne der KI-Verordnung ist, wer den Tutor in eigener Verantwortung nutzt. Den technischen Betrieb übernimmt weiterhin der Anbieter.', opts: [
+          { v: 'fertig_notiert', t: 'Fertiges Produkt eines Anbieters, Rolle als Betreiber ist notiert', s: { R3: 'done' } },
+          { v: 'fertig', t: 'Fertiges Produkt eines Anbieters, Rolle noch nicht notiert', s: { R3: 'part' } },
           { v: 'eigen', t: 'Selbst entwickelt oder entwickeln lassen', s: { R3: 'check' } },
           { v: 'offen', t: 'Noch offen', s: { R3: 'open' } }
         ] },
-        { id: 'r_brand', type: 'single', item: 'R4', q: 'Läuft der Tutor bei Ihnen unter eigenem Namen, z. B. „Lernbuddy der XY-Akademie“?', opts: [
-          { v: 'ja', t: 'Ja' }, { v: 'nein', t: 'Nein', s: { R4: 'na' } }, { v: 'offen', t: 'Noch offen', s: { R4: 'open' } }
-        ] },
-        { id: 'r4', type: 'single', item: 'R4', showIf: { q: 'r_brand', eq: 'ja' }, q: 'Ist schriftlich geregelt, dass der Hersteller Kennzeichnung, Dokumentation und Updates liefert und Sie den Tutor konfigurieren und betreiben?', opts: [
-          { v: 'ja', t: 'Ja', s: { R4: 'done' } }, { v: 'teil', t: 'Teilweise', s: { R4: 'part' } },
-          { v: 'nein', t: 'Nein', s: { R4: 'open' } }, { v: 'wn', t: 'Weiß ich nicht', s: { R4: 'unclear' } }
-        ], fields: [ { k: 'tutorName', label: 'Name des Tutors bei Ihnen', ph: 'z. B. Lernbuddy' } ] },
         { id: 'r5', type: 'fields', item: 'R5', q: 'Wer entscheidet bei Ihnen, wenn …', help: 'Eine Funktion genügt. Bleibt in Ihrem Browser.', compute: 'r5', fields: [
           { k: 'p_fach', label: '… der Tutor falsch antwortet? (fachlich)', ph: 'z. B. Studiengangsleitung', none: true },
           { k: 'p_tech', label: '… das Plugin ein Update braucht? (technisch)', ph: 'z. B. LMS-Administration', none: true },
@@ -77,10 +73,10 @@ window.KI_CHECK_QUESTIONS = {
           { v: 'training', t: 'Schriftlicher Ausschluss: kein Training von Modellen mit Ihren Daten', item: 'D4' },
           { v: 'none', t: 'Nichts davon / weiß ich nicht', none: true }
         ] },
-        { id: 'd3', type: 'single', item: 'D3', q: 'Wo läuft das Sprachmodell, das der Tutor nutzt?', opts: [
-          { v: 'eu', t: 'In der EU bzw. im EWR', s: { D3: 'na' } },
-          { v: 'us_ok', t: 'USA oder anderes Drittland – abgesichert (z. B. DPF oder Standardvertragsklauseln)', s: { D3: 'done' } },
-          { v: 'us', t: 'USA oder anderes Drittland – noch nicht abgesichert', s: { D3: 'open' } },
+        { id: 'd3', type: 'single', item: 'D3', q: 'Wo läuft das Sprachmodell, das der Tutor nutzt – und ist eine Übermittlung außerhalb der EU abgesichert?', help: 'Ein Sprachmodell außerhalb der EU ist erlaubt, wenn die Übermittlung abgesichert ist – z. B. über das EU-US Data Privacy Framework oder Standardvertragsklauseln. Pflicht ist nur die Absicherung, nicht der Standort EU.', opts: [
+          { v: 'eu', t: 'In der EU bzw. im EWR – keine Absicherung nötig', s: { D3: 'na' } },
+          { v: 'us_ok', t: 'Außerhalb der EU (z. B. USA) – abgesichert, z. B. über DPF oder Standardvertragsklauseln', s: { D3: 'done' } },
+          { v: 'us', t: 'Außerhalb der EU – Absicherung noch offen', s: { D3: 'open' } },
           { v: 'wn', t: 'Weiß ich nicht', s: { D3: 'unclear' } }
         ], fields: [ { k: 'modell', label: 'Sprachmodell-Anbieter und Region', ph: 'z. B. Anbieter, Rechenzentrum Frankfurt' } ] },
         { id: 'd5', type: 'single', item: 'D5', q: 'Ist festgelegt, auf welcher Rechtsgrundlage Lernende den Tutor nutzen?', opts: [

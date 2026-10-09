@@ -122,7 +122,8 @@
     qSteps().forEach(function (s) { visibleQs(s).forEach(function (q) { if (q.optional) return; total++; if (answered(q)) done++; }); });
     return { total: total, done: done, pct: total ? Math.round(done / total * 100) : 0 };
   }
-  function activeItems() { return ITEMS.filter(function (i) { return !chById(i.ch).employeesOnly || state.answers.p_emp !== 'nein'; }); }
+  var SKIP = Q.skipItems || [];
+  function activeItems() { return ITEMS.filter(function (i) { return SKIP.indexOf(i.id) === -1 && (!chById(i.ch).employeesOnly || state.answers.p_emp !== 'nein'); }); }
 
   function statuses() {
     var st = {};
@@ -203,7 +204,7 @@
     if (!l.length) return 'na';
     return l.sort(function (a, b) { return SEV[a] - SEV[b]; })[0];
   }
-  function itemsActive(ids) { return ids.filter(function (id) { var i = itemById(id); return i && (!chById(i.ch).employeesOnly || state.answers.p_emp !== 'nein'); }); }
+  function itemsActive(ids) { return ids.filter(function (id) { var i = itemById(id); return i && SKIP.indexOf(id) === -1 && (!chById(i.ch).employeesOnly || state.answers.p_emp !== 'nein'); }); }
   var DOC_LABEL = { open: 'Fehlt', unanswered: 'Offen', unclear: 'Klären', check: 'Prüfen lassen', part: 'Teilweise', done: 'Liegt vor', na: 'Entfällt' };
   var DOC_FROM = { anbieter: 'Vom Anbieter anfordern', intern: 'Selbst erstellen', br: 'Mit dem Betriebsrat' };
   function docList(st) {
@@ -465,6 +466,16 @@
   function badge(s, labels) { return '<span class="kq-badge kq-badge--' + s + '">' + (labels || LABEL)[s] + '</span>'; }
   function tplIndex(key) { var r = -1; (state._tpls || []).forEach(function (t, n) { if (t.key === key) r = n; }); return r; }
 
+  // Vergleichsangebot bei Alphabees: Mail mit den offenen Anbieter-Fragen (nur wenn der Nutzer sie selbst abschickt)
+  var OFFER_MAIL = 'info@alphabees.de';
+  function offerHref(vq) {
+    var org = txt('org');
+    var body = 'Guten Tag,\n\nwir bereiten die Einführung eines KI-Tutors vor' + (org ? ' (' + org + ')' : '') + ' und möchten ein Vergleichsangebot von Alphabees einholen.' +
+      (vq && vq.length ? '\n\nBitte beantworten Sie dabei diese Fragen aus unserem KI-Check:\n\n' + vq.map(function (x, k) { return (k + 1) + '. ' + x; }).join('\n') : '') +
+      '\n\nVielen Dank und freundliche Grüße';
+    return 'mailto:' + OFFER_MAIL + '?subject=' + encodeURIComponent('Vergleichsangebot KI-Tutor (KI-Compliance-Check)') + '&body=' + encodeURIComponent(body);
+  }
+
   function resultHtml() {
     var tpls = templates(), ev = evaluation(), sm = ev.sm, st = ev.st, pr = priority(st), anb = txt('anbieter');
     var html = '<div class="p-5 sm:p-8 lg:p-10 kc-fade" id="kc-plan"><section class="kc-report scroll-mt-6" id="kc-report">' +
@@ -528,7 +539,8 @@
     html += '<div class="kq-ask mb-12">' +
       '<div class="kq-ask-c"><p class="kq-docs-h">' + (anb ? 'An ' + esc(anb) : 'An den Anbieter') + ' · ' + ev.vq.length + (ev.vq.length === 1 ? ' Frage' : ' Fragen') + '</p>' +
         (ev.vq.length ? '<ol class="kq-ask-l">' + ev.vq.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ol>' +
-          '<button type="button" class="kc-btn-ghost mt-4 kc-noprint" data-act="copy-tpl" data-i="' + mi + '">Als fertige Mail kopieren</button>'
+          '<button type="button" class="kc-btn-ghost mt-4 kc-noprint" data-act="copy-tpl" data-i="' + mi + '">Als fertige Mail kopieren</button>' +
+          '<p class="kq-offer">Vergleichsangebot einholen? Schicken Sie dieselben Fragen an Alphabees: <a href="' + offerHref(ev.vq) + '" data-cta="kicheck_offer_fragen">' + OFFER_MAIL + '</a></p>'
           : '<p class="text-sm text-gray-600">Laut Ihren Angaben sind alle Anbieter-Fragen geklärt.</p>') + '</div>' +
       '<div class="kq-ask-c"><p class="kq-docs-h">Intern · ' + ev.il.length + (ev.il.length === 1 ? ' Punkt' : ' Punkte') + ' aus Ihren „Weiß ich nicht“-Antworten</p>' +
         (ev.il.length ? '<ul class="kq-ask-l kq-ask-l--ul">' + ev.il.map(function (i) { var ow = ownerOf(i); return '<li>' + esc(i.t) + (ow ? ' <span class="text-gray-500">– ' + esc(ow) + '</span>' : '') + '</li>'; }).join('') + '</ul>' +
@@ -579,10 +591,11 @@
       '<p class="text-gray-400 text-sm leading-relaxed mb-6 max-w-2xl">Wir haben diesen Check gebaut, weil wir genau diese Fragen in jedem Auswahlprozess beantworten. Falls Sie Alphalearn – den KI-Tutor für Moodle und ILIAS – in Ihre Auswahl aufnehmen:</p>' +
       '<ul class="grid sm:grid-cols-2 gap-x-8 gap-y-2.5 text-sm text-gray-300 mb-8">' + BRIDGE.map(function (x) { return '<li class="kc-li">' + esc(x) + '</li>'; }).join('') + '</ul>' +
       '<div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 kc-noprint kq-promo-btns">' +
-        '<a href="' + esc(CFG.demoUrl) + '?utm_source=ki-check&utm_medium=report" data-cta="kicheck_demo" class="kc-btn-light">Tutor-Demo ansehen</a>' +
+        '<a href="' + offerHref(ev.vq) + '" data-cta="kicheck_offer" class="kc-btn-light">Vergleichsangebot bei Alphabees einholen</a>' +
+        '<a href="' + esc(CFG.demoUrl) + '?utm_source=ki-check&utm_medium=report" data-cta="kicheck_demo" class="kc-btn-outline">Tutor-Demo ansehen</a>' +
         '<a href="' + esc(CFG.calendlyUrl) + '" data-cta="kicheck_call" target="_blank" rel="noopener" class="kc-btn-outline">Auswertung in 20 Minuten besprechen</a>' +
         '<a href="' + esc(CFG.complianceUrl) + '" data-cta="kicheck_compliance" class="kc-btn-outline">Compliance-Details</a>' +
-      '</div></div>' +
+      '</div><p class="kq-offer-line">Vergleichsangebot bei Alphabees einholen: <a href="' + offerHref(ev.vq) + '" data-cta="kicheck_offer_line">' + OFFER_MAIL + '</a></p></div>' +
       '<p class="text-xs text-gray-500 mt-8 leading-relaxed">Dieser Check ersetzt keine Rechtsberatung. Die Auswertung ist aus Ihren Angaben erstellt. Stand der Rechtslage: Oktober 2026 (DSGVO, KI-Verordnung nach Digital Omnibus, BetrVG).</p>' +
       '</section></div>';
     return html;
@@ -604,7 +617,7 @@
     { title: 'Anbieter-Fragenkatalog: 15 Fragen an jeden KI-Anbieter', ref: 'DSGVO, KI-Verordnung, BetrVG',
       body: 'Rollen & Datenschutz\n1. Wo laufen Hosting und Sprachmodell (Anbieter, Land, Region)?\n2. Welche Unterauftragsverarbeiter setzen Sie ein – inklusive Sprachmodell-Anbieter?\n3. Liegen AVV und TOMs fertig vor? Nutzen Sie unsere Daten für eigene Zwecke?\n4. Werden Eingaben unserer Lernenden zum Training oder Fine-Tuning genutzt?\n5. Falls Drittland: DPF-Zertifizierung oder Standardvertragsklauseln?\n6. Welche Löschfristen gelten, und löschen Sie automatisch?\n7. Liefern Sie Bausteine für eine Datenschutz-Folgenabschätzung?\n\nKI-Verordnung\n8. Wie wird Lernenden angezeigt, dass sie mit einer KI sprechen?\n9. Enthält das System Emotions- oder Stimmungserkennung?\n10. Wie stufen Sie Ihr System ein, und welche Funktionen würden es zu Hochrisiko machen?\n\nQualität, Sicherheit, Mitbestimmung\n11. Antwortet der Tutor nur aus unseren Inhalten, mit Quellenangabe?\n12. Lässt sich die Didaktik einstellen (z. B. keine Lösungen vorsagen)?\n13. Wie lassen sich Antworten bewerten und Fehler melden – ohne Einzelauswertung von Personen?\n14. Wie lange liefern Sie Sicherheitsupdates, und wie informieren Sie über Sicherheitslücken?\n15. Was passiert mit Inhalten und Daten bei Vertragsende?' },
     { title: 'Rollen-Steckbrief', ref: 'Art. 4, 28 DSGVO; Art. 3 KI-Verordnung',
-      body: 'KI-Tutor: [Name], Einsatz in: [Kurs/Bereich], Zweck: Lernbegleitung\n\nDSGVO\nVerantwortlicher: [Ihre Organisation]\nAuftragsverarbeiter: [Anbieter], AVV vom [Datum]\nUnterauftragsverarbeiter: [Hosting], [Sprachmodell-Anbieter, Region]\n\nKI-Verordnung\nAnbieter (Hersteller): [Anbieter]\nBetreiber: [Ihre Organisation]\nEinstufung: kein Hochrisiko (keine Bewertung, Zulassung, Einstufung oder Prüfungsaufsicht)\n\nAnsprechpersonen\nFachlich: [Name]   Technisch: [Name]   Datenschutz: [Name]   Vertretung: [Name]' },
+      body: 'KI-Tutor: [Name], Einsatz in: [Kurs/Bereich], Zweck: Lernbegleitung\n\nDSGVO\nVerantwortlicher: [Ihre Organisation]\nAuftragsverarbeiter: [Anbieter], AVV vom [Datum]\nUnterauftragsverarbeiter: [Hosting], [Sprachmodell-Anbieter, Region]\n\nKI-Verordnung\nAnbieter: [Anbieter]\nBetreiber (Nutzung in eigener Verantwortung): [Ihre Organisation]\nEinstufung: kein Hochrisiko (keine Bewertung, Zulassung, Einstufung oder Prüfungsaufsicht)\n\nAnsprechpersonen\nFachlich: [Name]   Technisch: [Name]   Datenschutz: [Name]   Vertretung: [Name]' },
     { title: 'Transparenzhinweis für das Chatfenster', ref: 'Art. 50 KI-Verordnung',
       body: 'Sie sprechen mit [Name des Tutors], einem KI-gestützten Lernbegleiter.\nDie Antworten werden automatisch auf Basis der Kursinhalte erzeugt und können Fehler enthalten.\nBei prüfungsrelevanten Fragen wenden Sie sich bitte zusätzlich an [Ansprechperson/Kontakt].\nBitte geben Sie keine sensiblen persönlichen Daten ein.\nHinweise zum Datenschutz: [Link zur Datenschutzerklärung]' },
     { title: 'Schulungsnachweis KI-Kompetenz', ref: 'Art. 4 KI-Verordnung',
