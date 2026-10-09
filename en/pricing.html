@@ -481,7 +481,7 @@ opacity: 0 !important;
       <script>document.documentElement.style.setProperty("--hv-vw", document.documentElement.clientWidth + "px");</script>
       <div class="hv-band">
     <div class="hv-media" aria-hidden="true">
-      <video class="hv-video" autoplay muted loop playsinline preload="auto" poster="/assets/video/Alphalearn_Hero_Background_Video_Poster.jpg">
+      <video class="hv-video" muted loop playsinline preload="none" poster="/assets/video/Alphalearn_Hero_Background_Video_Poster.jpg">
         <source src="/assets/video/Alphalearn_Hero_Background_Video.mp4" type="video/mp4">
       </video>
       <div class="hv-shade"></div>
@@ -3071,7 +3071,7 @@ opacity: 0 !important;
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
             <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-              No. AI usage is included in your plan’s monthly credit allowance, so you don’t need your own contract with an AI provider. In the Enterprise plan, you can optionally bring your own API key (BYOK): you then use your own key and pay for AI usage directly to the provider.
+              No. AI usage is included in your plan’s monthly credit allowance, so you don’t need your own contract with an AI provider. In the Enterprise plan, you can optionally bring your own API key (BYOK): you then use your own key and pay for AI usage directly to the provider. To see what running it yourself would cost, try our <a href="/en/llm-cost-calculator.html" class="text-blue-600 underline underline-offset-2 hover:text-blue-700">LLM cost calculator</a>; when self-hosting pays off is covered in our <a href="/en/self-hosting-ai-tutors-worth-it.html" class="text-blue-600 underline underline-offset-2 hover:text-blue-700">cost analysis</a>.
             </div>
           </div>
         </div>
@@ -3401,6 +3401,8 @@ opacity: 0 !important;
                 Portal</a></li>
             <li class=""><a href="/en/blog.html" class="hover:text-white transition text-sm text-gray-400 font-geist">Blog</a></li>
             <li class=""><a href="/en/ai-tutor-guide-education-providers-2026.html" class="hover:text-white transition text-sm text-gray-400 font-geist">AI Tutor Guide 2026</a></li>
+            <li class=""><a href="/en/llm-cost-calculator.html" class="hover:text-white transition text-sm text-gray-400 font-geist">LLM Cost Calculator</a></li>
+            <li class=""><a href="/en/self-hosting-ai-tutors-worth-it.html" class="hover:text-white transition text-sm text-gray-400 font-geist">Self-Hosting: Is It Worth It?</a></li>
           </ul>
         </div>
 
@@ -3886,7 +3888,13 @@ opacity: 0 !important;
   if (!video || !btn) return;
   function setPaused(p) { if (p) video.pause(); else video.play().catch(function () {}); btn.setAttribute('aria-pressed', p ? 'true' : 'false'); btn.setAttribute('aria-label', p ? 'Play background video' : 'Pause background video'); }
   btn.addEventListener('click', function () { setPaused(!video.paused); });
-  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) setPaused(true);
+  // Video erst nach dem Laden der Seite holen (Poster sofort sichtbar); bei reduzierter Bewegung oder Datensparmodus gar nicht
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var saveData = navigator.connection && navigator.connection.saveData;
+  if (reduce || saveData) { setPaused(true); return; }
+  function startHero() { video.preload = 'auto'; setPaused(false); }
+  function later() { setTimeout(startHero, 400); }
+  if (document.readyState === 'complete') later(); else window.addEventListener('load', later);
 })();
 </script>
 </body>

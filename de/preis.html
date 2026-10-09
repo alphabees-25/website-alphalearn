@@ -787,7 +787,7 @@
       <script>document.documentElement.style.setProperty("--hv-vw", document.documentElement.clientWidth + "px");</script>
       <div class="hv-band">
     <div class="hv-media" aria-hidden="true">
-      <video class="hv-video" autoplay muted loop playsinline preload="auto" poster="/assets/video/Alphalearn_Hero_Background_Video_Poster.jpg">
+      <video class="hv-video" muted loop playsinline preload="none" poster="/assets/video/Alphalearn_Hero_Background_Video_Poster.jpg">
         <source src="/assets/video/Alphalearn_Hero_Background_Video.mp4" type="video/mp4">
       </video>
       <div class="hv-shade"></div>
@@ -3429,7 +3429,7 @@
         <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out faq-content">
           <div class="overflow-hidden">
             <div class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-              Nein. Die KI-Nutzung ist über das monatliche Credit-Kontingent deines Plans enthalten, einen eigenen Vertrag mit einem KI-Anbieter brauchst du nicht. Im Enterprise-Plan kannst du optional deinen eigenen API-Key nutzen (Bring your own API Key): Dann nutzt du deinen eigenen Schlüssel und zahlst die KI-Nutzung direkt beim Anbieter.
+              Nein. Die KI-Nutzung ist über das monatliche Credit-Kontingent deines Plans enthalten, einen eigenen Vertrag mit einem KI-Anbieter brauchst du nicht. Im Enterprise-Plan kannst du optional deinen eigenen API-Key nutzen (Bring your own API Key): Dann nutzt du deinen eigenen Schlüssel und zahlst die KI-Nutzung direkt beim Anbieter. Was ein eigener Betrieb kosten würde, zeigt unser <a href="/de/llm-kostenrechner.html" class="text-blue-600 underline underline-offset-2 hover:text-blue-700">LLM-Kostenrechner</a>; wann sich Self-Hosting lohnt, erklärt unser <a href="/de/wann-lohnt-sich-self-hosting-ki-tutoren.html" class="text-blue-600 underline underline-offset-2 hover:text-blue-700">Artikel zur Kostenrechnung</a>.
             </div>
           </div>
         </div>
@@ -3761,6 +3761,8 @@
             <li class=""><a href="/de/blog.html" class="hover:text-white transition text-sm text-gray-400 font-geist">Blog</a></li>
             <li class=""><a href="/de/ki-tutor-guide-bildungsanbieter-deutschland-2026.html" class="hover:text-white transition text-sm text-gray-400 font-geist">KI-Tutor-Guide 2026</a></li>
             <li class=""><a href="/de/ki-compliance-check.html" data-cta="footer_ki_check" class="hover:text-white transition text-sm text-gray-400 font-geist">KI-Compliance-Check</a></li>
+            <li class=""><a href="/de/llm-kostenrechner.html" class="hover:text-white transition text-sm text-gray-400 font-geist">LLM-Kostenrechner</a></li>
+            <li class=""><a href="/de/wann-lohnt-sich-self-hosting-ki-tutoren.html" class="hover:text-white transition text-sm text-gray-400 font-geist">Self-Hosting: Lohnt es sich?</a></li>
           </ul>
         </div>
 
@@ -4275,7 +4277,13 @@
   if (!video || !btn) return;
   function setPaused(p) { if (p) video.pause(); else video.play().catch(function () {}); btn.setAttribute('aria-pressed', p ? 'true' : 'false'); btn.setAttribute('aria-label', p ? 'Hintergrundvideo abspielen' : 'Hintergrundvideo anhalten'); }
   btn.addEventListener('click', function () { setPaused(!video.paused); });
-  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) setPaused(true);
+  // Video erst nach dem Laden der Seite holen (Poster sofort sichtbar); bei reduzierter Bewegung oder Datensparmodus gar nicht
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var saveData = navigator.connection && navigator.connection.saveData;
+  if (reduce || saveData) { setPaused(true); return; }
+  function startHero() { video.preload = 'auto'; setPaused(false); }
+  function later() { setTimeout(startHero, 400); }
+  if (document.readyState === 'complete') later(); else window.addEventListener('load', later);
 })();
 </script>
 </body>

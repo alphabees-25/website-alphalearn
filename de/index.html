@@ -404,7 +404,6 @@ opacity: 0 !important;
   })();
 </script>
 
-<!-- TEST: Unicorn-Hintergrund entfernt, Video im Hero -->
     <!-- Global Header -->
 <div id="site-header"><!-- partial:header:start -->
 <!-- Top Navigation -->
@@ -513,7 +512,7 @@ opacity: 0 !important;
   <script>document.documentElement.style.setProperty("--hv-vw", document.documentElement.clientWidth + "px");</script>
   <div class="hv-band">
     <div class="hv-media" aria-hidden="true">
-      <video class="hv-video" autoplay muted loop playsinline preload="auto" poster="/assets/video/Alphalearn_Hero_Background_Video_Poster.jpg">
+      <video class="hv-video" muted loop playsinline preload="none" poster="/assets/video/Alphalearn_Hero_Background_Video_Poster.jpg">
         <source src="/assets/video/Alphalearn_Hero_Background_Video.mp4" type="video/mp4">
       </video>
       <div class="hv-shade"></div>
@@ -2035,6 +2034,8 @@ opacity: 0 !important;
             <li class=""><a href="/de/blog.html" class="hover:text-white transition text-sm text-gray-400 font-geist">Blog</a></li>
             <li class=""><a href="/de/ki-tutor-guide-bildungsanbieter-deutschland-2026.html" class="hover:text-white transition text-sm text-gray-400 font-geist">KI-Tutor-Guide 2026</a></li>
             <li class=""><a href="/de/ki-compliance-check.html" data-cta="footer_ki_check" class="hover:text-white transition text-sm text-gray-400 font-geist">KI-Compliance-Check</a></li>
+            <li class=""><a href="/de/llm-kostenrechner.html" class="hover:text-white transition text-sm text-gray-400 font-geist">LLM-Kostenrechner</a></li>
+            <li class=""><a href="/de/wann-lohnt-sich-self-hosting-ki-tutoren.html" class="hover:text-white transition text-sm text-gray-400 font-geist">Self-Hosting: Lohnt es sich?</a></li>
           </ul>
         </div>
 
@@ -2534,10 +2535,6 @@ opacity: 0 !important;
       initInViewAnimations();
     }
 
-    // Re-initialize UnicornStudio (Aurora background)
-    if (window.UnicornStudio && window.UnicornStudio.init) {
-      try { UnicornStudio.init(); } catch(e) {}
-    }
   });
 
   // Also observe for late-injected styles via MutationObserver
@@ -2566,7 +2563,13 @@ opacity: 0 !important;
   if (!video || !btn) return;
   function setPaused(p) { if (p) video.pause(); else video.play().catch(function () {}); btn.setAttribute('aria-pressed', p ? 'true' : 'false'); btn.setAttribute('aria-label', p ? 'Hintergrundvideo abspielen' : 'Hintergrundvideo anhalten'); }
   btn.addEventListener('click', function () { setPaused(!video.paused); });
-  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) setPaused(true);
+  // Video erst nach dem Laden der Seite holen (Poster sofort sichtbar); bei reduzierter Bewegung oder Datensparmodus gar nicht
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var saveData = navigator.connection && navigator.connection.saveData;
+  if (reduce || saveData) { setPaused(true); return; }
+  function startHero() { video.preload = 'auto'; setPaused(false); }
+  function later() { setTimeout(startHero, 400); }
+  if (document.readyState === 'complete') later(); else window.addEventListener('load', later);
 })();
 </script>
 <!-- Alphalearn Chat-Widget (Orbi) -->
