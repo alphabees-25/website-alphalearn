@@ -220,7 +220,9 @@
     });
     // Fachliche bzw. rechtliche Prüfung nur, wenn Antworten sie nahelegen
     var why = [];
-    if (st.A1 === 'check') why.push('Einsatz mit Bewertung, Zulassung, Einstufung oder Prüfungsaufsicht');
+    var a1 = state.answers.a1 || [];
+    var onlyPractice = a1.indexOf('uebung') !== -1 && a1.every(function (v) { return v === 'uebung' || v === 'lernen'; });
+    if (st.A1 === 'check') why.push(onlyPractice ? 'Bewertung von Übungsantworten – klären, ob das als Bewertung von Lernergebnissen zählt' : 'Einsatz mit Bewertung, Zulassung, Einstufung oder Prüfungsaufsicht');
     if (st.R3 === 'check') why.push('selbst entwickelter Tutor');
     if (st.D5 === 'check') why.push('geplante Einwilligungen');
     if (why.length) out.push({ who: 'Fachliche bzw. rechtliche Prüfung', what: why.join(', '), person: '', s: 'check' });
@@ -397,21 +399,33 @@
       { q: 'Was muss ich fragen?', n: ev.vq.length, l: (ev.vq.length === 1 ? 'Frage' : 'Fragen') + ' an ' + (anb || 'den Anbieter') + (ev.il.length ? ' · ' + ev.il.length + ' intern' : '') },
       { q: 'Was muss ich sonst beachten?', n: sm.todo, l: (sm.todo === 1 ? 'Aufgabe' : 'Aufgaben') + ' im Fahrplan' }
     ];
+    if (state.requested) return mailSentHtml();
     return '<div class="p-5 sm:p-8 lg:p-10 kc-fade" id="kc-chapter">' +
-      '<p class="text-sm font-medium tracking-tight text-blue-600 font-geist mb-2">Ihre Auswertung · Stand laut Ihren Angaben</p>' +
-      '<h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 font-geist mb-3">' + (missing ? 'Ihr Zwischenstand' + (org ? ' für ' + esc(org) : '') : (org ? 'Ihre Auswertung für ' + esc(org) + ' ist fertig' : 'Ihre Auswertung ist fertig')) + '</h2>' +
+      '<p class="text-sm font-medium tracking-tight text-blue-600 font-geist mb-2">Ihre Auswertung' + (org ? ' für ' + esc(org) : '') + '</p>' +
+      '<h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 font-geist mb-3">Die Auswertung erhalten Sie per E-Mail</h2>' +
+      '<p class="text-gray-600 mb-6 max-w-2xl leading-relaxed">Tragen Sie Vorname und E-Mail-Adresse ein und klicken Sie auf „Absenden“. Wir schicken Ihnen den Link zu Ihrer persönlichen Auswertung – dazu das Handbuch als PDF.</p>' +
       (missing ? '<p class="kq-hint">' + missing + (missing === 1 ? ' Frage ist' : ' Fragen sind') + ' noch offen. ' +
-        (firstOpen ? '<button type="button" class="kc-link" data-act="step" data-step="' + firstOpen.id + '">Jetzt beantworten</button> – oder einfach weiter.' : '') + '</p>' : '') +
-      '<p class="kq-verdict">' + esc(verdict(ev)) + '</p>' +
-      ampelHtml(st) +
-      (pr[0] ? '<div class="kq-first"><p class="kq-first-l">Ihr erster Schritt</p><p class="kq-first-t">' + esc(pr[0].t) + '</p></div>' : '') +
-      '<p class="kq-first-l mb-3">Ihre Auswertung beantwortet</p>' +
+        (firstOpen ? '<button type="button" class="kc-link" data-act="step" data-step="' + firstOpen.id + '">Jetzt beantworten</button> – oder einfach absenden.' : '') + '</p>' : '') +
+      gateCard() +
+      '<p class="kq-first-l mt-10 mb-3">Das steht in Ihrer Auswertung</p>' +
       '<div class="kq-qcards">' + cards.map(function (c) {
         return '<div class="kq-qcard"><p class="kq-qcard-q">' + esc(c.q) + '</p><p class="kq-qcard-n"><span>' + c.n + '</span> ' + esc(c.l) + '</p><span class="kq-qcard-lock" aria-hidden="true">' + DOC + '</span></div>';
       }).join('') + '</div>' +
-      gateCard() +
     '</div>';
   }
+
+  function mailSentHtml() {
+    return '<div class="p-5 sm:p-8 lg:p-10 kc-fade" id="kc-chapter">' +
+      '<div class="kc-unlocked" role="status" style="padding-right:1rem">' +
+        '<span class="kc-unlocked-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>' +
+        '<div class="kc-unlocked-txt"><p class="kc-unlocked-h">' + (state.firstName ? esc(state.firstName) + ', schauen' : 'Schauen') + ' Sie in Ihr Postfach</p>' +
+        '<p class="kc-unlocked-p">' + MAIL_SENT_TEXT + '</p></div>' +
+      '</div>' +
+      '<p class="text-sm text-gray-600 leading-relaxed max-w-2xl">Keine E-Mail da? Bitte prüfen Sie auch den Spam-Ordner. Absender ist marketing@alphabees.de.</p>' +
+      '<div class="flex flex-wrap gap-3 mt-6"><button type="button" class="kc-btn-ghost" data-act="step" data-step="' + qSteps()[0].id + '">Antworten ansehen</button></div>' +
+    '</div>';
+  }
+  var MAIL_SENT_TEXT = 'Wir haben Ihnen eine E-Mail mit dem Link zu Ihrer Auswertung geschickt. Bestätigen Sie darin außerdem Ihre E-Mail-Adresse – dann erhalten Sie das Handbuch als PDF.';
 
   function formHtml(wide) {
     return '<div class="kc-form-frame"><form class="kc-form kc-form-card text-gray-900" data-act="submit" novalidate>' +
@@ -420,7 +434,7 @@
         '<label class="kc-field"><span>Geschäftliche E-Mail</span><input name="email" type="email" autocomplete="email" required></label>' +
       '</div>' +
       '<label class="kc-consent"><input type="checkbox" name="newsletter" value="1"><span>Ja, schicken Sie mir gelegentlich Praxiswissen zu KI in der Bildung, Rechtslage und Moodle/ILIAS. Abmeldung jederzeit möglich.</span></label>' +
-      '<p class="text-xs text-gray-500 mt-4 leading-relaxed">Wir nutzen Vorname und E-Mail-Adresse nur, um Ihnen das Handbuch zu schicken. Ihre Antworten und Ihre Auswertung bleiben in Ihrem Browser. Details in der <a class="text-blue-600 underline underline-offset-2 hover:text-blue-700" href="' + esc(CFG.privacyUrl || '/de/privacy.html') + '">Datenschutzerklärung</a>.</p>' +
+      '<p class="text-xs text-gray-500 mt-4 leading-relaxed">Wir erhalten Vorname, E-Mail-Adresse und den Link zu Ihrer Auswertung (mit Ihren angeklickten Antworten, ohne Textfelder) – nur, um Ihnen Auswertung und Handbuch zu schicken. Details in der <a class="text-blue-600 underline underline-offset-2 hover:text-blue-700" href="' + esc(CFG.privacyUrl || '/de/privacy.html') + '">Datenschutzerklärung</a>.</p>' +
       '<p class="kc-error text-sm font-medium text-red-600 mt-3" role="alert" hidden></p>' +
       '<button type="submit" class="kc-btn-primary mt-5 w-full">Auswertung anzeigen →</button>' +
     '</form></div>';
@@ -431,11 +445,11 @@
       '<div class="flex items-center gap-4 mb-4">' + bookMock('kc-mock-stage--sm') +
         '<div class="min-w-0"><p class="text-xs font-semibold uppercase tracking-widest text-blue-300 font-geist mb-2">Kostenlos</p>' +
         '<h3 class="text-[1.3rem] leading-snug tracking-tight font-geist text-balance">Wohin dürfen wir Ihre Auswertung schicken?</h3></div></div>' +
-      '<p class="text-[0.9rem] leading-relaxed text-gray-300 mb-3">Ihre vollständige Auswertung sehen Sie sofort hier:</p>' +
+      '<p class="text-[0.9rem] leading-relaxed text-gray-300 mb-3">Per E-Mail erhalten Sie den Link zu Ihrer Auswertung mit:</p>' +
       '<ul class="kq-gate-list text-gray-200 text-[0.86rem] leading-snug mb-5">' +
         ['Ihre ersten Schritte mit Zuständigkeiten', 'Dokumenten-Checkliste: was vorliegt, was fehlt', 'Freigaben: wer zustimmen muss', 'Fertige Mail mit Ihren offenen Fragen an den Anbieter', 'Interne Klärungsliste', 'Vorlagen, vorausgefüllt mit Ihren Angaben'].map(function (t) { return '<li class="kc-li">' + esc(t) + '</li>'; }).join('') +
-        '<li class="kc-li">Per E-Mail nach Bestätigung: Handbuch <span class="whitespace-nowrap">„KI-Tutor einführen“</span> als PDF (28 Seiten)</li></ul>' +
-      formHtml(true) +
+        '<li class="kc-li">Dazu: Handbuch <span class="whitespace-nowrap">„KI-Tutor einführen“</span> als PDF (28 Seiten)</li></ul>' +
+      formHtml(true).replace('Auswertung anzeigen →', 'Absenden') +
       '<button type="button" class="kq-back" data-act="step" data-step="' + qSteps()[0].id + '">← Antworten ändern</button>' +
     '</div>';
   }
@@ -714,12 +728,13 @@
   }
   function submitLead(fd) {
     var providers = CFG.providers || [];
-    // Nur was für den Versand des Handbuchs nötig ist – Antworten und Auswertung bleiben im Browser
+    // Nur was für den Versand nötig ist: Vorname, E-Mail, Newsletter-Wahl und Link zur Auswertung (Antwortcodes, keine Textfelder)
     var payload = {
       first_name: fd.get('first_name') || '',
       email: fd.get('email') || '',
       newsletter: fd.get('newsletter') ? 'ja' : 'nein',
-      status: 'handbuch',
+      report_link: reportLink(),
+      status: 'auswertung',
       version: Q.version,
       quelle: (new URLSearchParams(location.search)).get('utm_source') || document.referrer || 'direkt'
     };
@@ -729,6 +744,7 @@
       body.append('email_address', payload.email);
       body.append('fields[first_name]', payload.first_name);
       body.append('fields[ki_check_newsletter]', payload.newsletter);
+      body.append('fields[ki_check_report_link]', payload.report_link);
       jobs.push(fetch(CFG.kit.endpoint.replace('{formId}', CFG.kit.formId), { method: 'POST', mode: 'no-cors', body: body }));
     }
     if (providers.indexOf('sheets') !== -1 && CFG.sheets && CFG.sheets.endpoint) {
@@ -746,7 +762,7 @@
       else state.lastStep = null;
     }
     state.step = id;
-    if (id === 'E') track('check_result_view', {});
+    if (id === 'E') track(state.unlocked ? 'check_result_view' : 'check_teaser_view', {});
     save(); render(); syncHash(); scrollTo(root);
   }
   function setAnswer(qid, v) {
@@ -776,6 +792,7 @@
     else if (act === 'why') { var w = el.getAttribute('data-q'); state.why[w] = !state.why[w]; render(); }
     else if (act === 'step') go(el.getAttribute('data-step'));
     else if (act === 'note-close') { state.justUnlocked = false; render(); }
+    else if (act === 'again') { state.requested = false; try { localStorage.removeItem(STORE + '-u'); } catch (x) { /* egal */ } render(); scrollTo(root); }
     else if (act === 'jump') { scrollTo(document.getElementById(el.getAttribute('data-to'))); }
     else if (act === 'open-tpl') {
       var d = root.querySelector('details[data-tpl="' + el.getAttribute('data-i') + '"]');
@@ -834,7 +851,7 @@
     var sm = summary();
     track('check_report_request', { done: sm.mustDone, total: sm.mustTotal, newsletter: fd.get('newsletter') ? 'ja' : 'nein' });
     submitLead(fd).then(function () {
-      state.unlocked = true; state.requested = true; state.justUnlocked = true;
+      state.requested = true; state.justUnlocked = state.unlocked;
       state.firstName = String(fd.get('first_name')).trim();
       try { localStorage.setItem(STORE + '-u', '1'); localStorage.setItem(STORE + '-n', state.firstName); } catch (x) { /* egal */ }
       state.step = 'E';
@@ -874,7 +891,8 @@
   if (m) {
     var a = decodeAnswers(m[1]);
     if (a) {
-      if (!state.requested) { state.answers = a; state.texts = {}; fromLink = true; }
+      if (!state.requested) { state.answers = a; state.texts = {}; }
+      fromLink = true;
       state.unlocked = true; state.step = 'E';
       track('check_report_open', {});
     }
@@ -882,7 +900,8 @@
     var done = decodeLegacy(decodeURIComponent(r[1]));
     if (done) { state.legacyDone = done; state.unlocked = true; state.step = 'E'; fromLink = true; track('check_report_open', { legacy: 1 }); }
   }
-  state.unlocked = true;   // Auswertung ohne Formular; E-Mail nur noch fürs Handbuch
   render();
   if (fromLink) setTimeout(function () { scrollTo(root); }, 300);
+  // Link zur Auswertung in einem schon offenen Tab: neu laden, damit er greift
+  window.addEventListener('hashchange', function () { if (/#a=/.test(location.hash) && !state.unlocked) location.reload(); });
 })();

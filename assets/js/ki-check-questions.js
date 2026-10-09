@@ -79,9 +79,9 @@ window.KI_CHECK_QUESTIONS = {
           { v: 'us', t: 'Außerhalb der EU – Absicherung noch offen', s: { D3: 'open' } },
           { v: 'wn', t: 'Weiß ich nicht', s: { D3: 'unclear' } }
         ], fields: [ { k: 'modell', label: 'Sprachmodell-Anbieter und Region', ph: 'z. B. Anbieter, Rechenzentrum Frankfurt' } ] },
-        { id: 'd5', type: 'single', item: 'D5', q: 'Ist festgelegt, auf welcher Rechtsgrundlage Lernende den Tutor nutzen?', opts: [
-          { v: 'ja', t: 'Ja, festgelegt und dokumentiert (z. B. Vertragserfüllung)', s: { D5: 'done' } },
-          { v: 'einwilligung', t: 'Wir planen, Einwilligungen einzuholen', s: { D5: 'check' } },
+        { id: 'd5', type: 'single', item: 'D5', q: 'Ist festgelegt, auf welcher rechtlichen Grundlage Sie die Daten der Lernenden im Tutor verarbeiten?', help: 'Wenn Lernende mit dem Tutor chatten, verarbeiten Sie personenbezogene Daten. Dafür braucht es nach der DSGVO einen rechtlichen Grund (Art. 6). Gehört der Tutor zu Ihrem Kursangebot, ist das meist der Vertrag mit den Lernenden – eine Einwilligung jedes Einzelnen ist in der Regel nicht nötig. Wichtig ist, dass die Grundlage festgelegt und im Verarbeitungsverzeichnis notiert ist.', opts: [
+          { v: 'ja', t: 'Ja, festgelegt und notiert – z. B. Teil des Kursvertrags', s: { D5: 'done' } },
+          { v: 'einwilligung', t: 'Wir wollen jede:n Lernende:n einzeln einwilligen lassen', s: { D5: 'check' } },
           { v: 'nein', t: 'Noch nicht festgelegt', s: { D5: 'open' } },
           { v: 'wn', t: 'Weiß ich nicht', s: { D5: 'unclear' } }
         ] },
@@ -98,8 +98,9 @@ window.KI_CHECK_QUESTIONS = {
     { id: 'A', title: 'EU AI Act', sub: 'KI-Verordnung',
       intro: 'Für einen Lern-Tutor überschaubar – wenn Sie wissen, wo die Grenzen liegen.',
       questions: [
-        { id: 'a1', type: 'multi', item: 'A1', q: 'Wofür soll der Tutor eingesetzt werden?', help: 'Mehrfachauswahl', compute: 'a1', opts: [
-          { v: 'lernen', t: 'Lernbegleitung: Fragen beantworten, erklären, üben' },
+        { id: 'a1', type: 'multi', item: 'A1', q: 'Wofür soll der Tutor eingesetzt werden?', help: 'Mehrfachauswahl. Wichtig für die Einstufung nach der KI-Verordnung: Hochrisiko sind nur Zulassung, Bewertung von Lernergebnissen, Einstufung und Prüfungsaufsicht. Hochrisiko heißt nicht verboten – es gelten dann zusätzliche Pflichten.', compute: 'a1', opts: [
+          { v: 'lernen', t: 'Lernbegleitung: Fragen beantworten, erklären, Übungsfragen stellen' },
+          { v: 'uebung', t: 'Übungsfragen generieren und Antworten bewerten – nur zur Übung, ohne Note', hr: true },
           { v: 'bewerten', t: 'Lernergebnisse bewerten oder benoten', hr: true },
           { v: 'zulassung', t: 'Über Zulassungen entscheiden', hr: true },
           { v: 'einstufen', t: 'Bildungsniveau einstufen', hr: true },
