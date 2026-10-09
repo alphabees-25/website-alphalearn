@@ -33,7 +33,7 @@ window.KI_CHECK_QUESTIONS = {
     { id: 'R', title: 'Rollen klären', sub: 'Wer ist wer?',
       intro: 'Bevor es um Paragrafen geht: Wer ist wofür verantwortlich? Die meisten Missverständnisse in KI-Projekten entstehen hier. Auch „Weiß ich nicht“ ist ein Ergebnis – daraus wird in Ihrem Fahrplan eine Klärungsaufgabe.',
       questions: [
-        { id: 'r1', type: 'single', item: 'R1', q: 'Ist schriftlich festgehalten, dass Ihre Organisation für den KI-Tutor datenschutzrechtlich Verantwortlicher ist und der Anbieter Auftragsverarbeiter?', opts: [
+        { id: 'r1', type: 'single', item: 'R1', q: 'Ist schriftlich festgehalten, dass Ihre Organisation für den KI-Tutor datenschutzrechtlich verantwortlich ist und der Anbieter als Auftragsverarbeiter handelt?', opts: [
           { v: 'ja', t: 'Ja, im Verarbeitungsverzeichnis', s: { R1: 'done' } },
           { v: 'teil', t: 'Besprochen, aber nicht notiert', s: { R1: 'part' } },
           { v: 'nein', t: 'Nein', s: { R1: 'open' } },
@@ -54,7 +54,7 @@ window.KI_CHECK_QUESTIONS = {
         { id: 'r_brand', type: 'single', item: 'R4', q: 'Läuft der Tutor bei Ihnen unter eigenem Namen, z. B. „Lernbuddy der XY-Akademie“?', opts: [
           { v: 'ja', t: 'Ja' }, { v: 'nein', t: 'Nein', s: { R4: 'na' } }, { v: 'offen', t: 'Noch offen', s: { R4: 'open' } }
         ] },
-        { id: 'r4', type: 'single', item: 'R4', showIf: { q: 'r_brand', eq: 'ja' }, q: 'Ist schriftlich geregelt, dass der Hersteller Kennzeichnung, Dokumentation und Updates liefert und Sie konfigurieren und betreiben?', opts: [
+        { id: 'r4', type: 'single', item: 'R4', showIf: { q: 'r_brand', eq: 'ja' }, q: 'Ist schriftlich geregelt, dass der Hersteller Kennzeichnung, Dokumentation und Updates liefert und Sie den Tutor konfigurieren und betreiben?', opts: [
           { v: 'ja', t: 'Ja', s: { R4: 'done' } }, { v: 'teil', t: 'Teilweise', s: { R4: 'part' } },
           { v: 'nein', t: 'Nein', s: { R4: 'open' } }, { v: 'wn', t: 'Weiß ich nicht', s: { R4: 'unclear' } }
         ], fields: [ { k: 'tutorName', label: 'Name des Tutors bei Ihnen', ph: 'z. B. Lernbuddy' } ] },
