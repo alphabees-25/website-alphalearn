@@ -432,7 +432,7 @@
         '<h3 class="text-[1.3rem] leading-snug tracking-tight font-geist text-balance">Wohin dürfen wir Ihre Auswertung schicken?</h3></div></div>' +
       '<p class="text-[0.9rem] leading-relaxed text-gray-300 mb-3">Ihre vollständige Auswertung sehen Sie sofort hier:</p>' +
       '<ul class="kq-gate-list text-gray-200 text-[0.86rem] leading-snug mb-5">' +
-        ['Ihre ersten Schritte mit Zuständigkeiten', 'Dokumenten-Mappe: was vorliegt, was fehlt', 'Freigaben: wer zustimmen muss', 'Fertige Mail mit Ihren offenen Fragen an den Anbieter', 'Interne Klärungsliste', 'Vorlagen, vorausgefüllt mit Ihren Angaben'].map(function (t) { return '<li class="kc-li">' + esc(t) + '</li>'; }).join('') +
+        ['Ihre ersten Schritte mit Zuständigkeiten', 'Dokumenten-Checkliste: was vorliegt, was fehlt', 'Freigaben: wer zustimmen muss', 'Fertige Mail mit Ihren offenen Fragen an den Anbieter', 'Interne Klärungsliste', 'Vorlagen, vorausgefüllt mit Ihren Angaben'].map(function (t) { return '<li class="kc-li">' + esc(t) + '</li>'; }).join('') +
         '<li class="kc-li">Per E-Mail nach Bestätigung: Handbuch <span class="whitespace-nowrap">„KI-Tutor einführen“</span> als PDF (28 Seiten)</li></ul>' +
       formHtml(true) +
       '<button type="button" class="kq-back" data-act="step" data-step="' + qSteps()[0].id + '">← Antworten ändern</button>' +

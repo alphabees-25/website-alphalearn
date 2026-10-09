@@ -286,7 +286,7 @@
     .kc-tab.is-active { background:#0a0a0f; color:#fff; }
     .kc-tab-n { width:1.75rem; height:1.75rem; flex-shrink:0; border-radius:9999px; background:#fff; color:#4b5563; display:inline-flex; align-items:center; justify-content:center; font-size:.75rem; font-weight:600; transition:background-color .2s, color .2s; }
     .kc-tab.is-active .kc-tab-n { background:#fff; color:#0a0a0f; }
-    .kc-tab.is-done .kc-tab-n { background:#059669; color:#fff; }
+    .kc-tab.is-done .kc-tab-n { background:#1aff80; color:#0a0a0f; box-shadow:inset 0 0 0 1.5px #0a0a0f; font-weight:700; }
     .kc-tab-c { font-weight:500; color:#4b5563; font-size:.75rem; font-variant-numeric:tabular-nums; }
     .kc-tab.is-active .kc-tab-c { color:rgba(255,255,255,.75); }
     @media (max-width:639px) { .kc-tab { width:100%; border-radius:.875rem; } .kc-tab-c { margin-left:auto; } }
@@ -499,7 +499,7 @@
     .kq-card .kq-q { color:#fff; }
     .kq-card .kq-help { color:rgba(255,255,255,.6); }
     .kq-card .kq-num { background:rgba(255,255,255,.12); color:#fff; }
-    .kq-card.is-answered .kq-num { background:#059669; }
+    .kq-card.is-answered .kq-num { background:#1aff80; color:#0a0a0f; }
     .kq-card .kc-must { color:#fecaca; background:rgba(239,68,68,.18); box-shadow:inset 0 0 0 1px rgba(248,113,113,.35); }
     .kq-card .kq-opt { background:transparent; border-color:rgba(255,255,255,.22); color:rgba(255,255,255,.88); }
     .kq-card .kq-opt:hover { border-color:#fff; color:#fff; }
@@ -507,16 +507,46 @@
     .kq-card .kq-mark { background:transparent; border-color:rgba(255,255,255,.5); }
     .kq-card .kq-opt.is-on .kq-mark { background:#0a0a0f; border-color:#0a0a0f; }
     .kq-card .kq-field > label:first-child { color:rgba(255,255,255,.75); }
-    .kq-card .kq-field input[type=text], .kq-card .kq-field textarea { background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.22); color:#fff; }
-    .kq-card .kq-field input[type=text]:hover, .kq-card .kq-field textarea:hover { border-color:rgba(255,255,255,.5); }
-    .kq-card .kq-field input[type=text]:focus, .kq-card .kq-field textarea:focus { border-color:#fff; box-shadow:0 0 0 3px rgba(147,197,253,.35); }
-    .kq-card .kq-field input::placeholder, .kq-card .kq-field textarea::placeholder { color:rgba(255,255,255,.38); }
+    .kq-card .kq-field input[type=text], .kq-card .kq-field textarea { background:#fff; border:0; color:#0a0a0f; }
+    .kq-card .kq-field input[type=text]:hover, .kq-card .kq-field textarea:hover { border:0; }
+    .kq-card .kq-field input[type=text]:focus, .kq-card .kq-field textarea:focus { border:0; box-shadow:0 0 0 3px rgba(26,255,128,.55); }
+    .kq-card .kq-field input::placeholder, .kq-card .kq-field textarea::placeholder { color:#9ca3af; }
     .kq-card .kq-none { color:rgba(255,255,255,.6); }
     .kq-card .kq-none input { accent-color:#fff; }
     .kq-card .kq-why-btn { color:rgba(255,255,255,.7); }
     .kq-card .kq-why-btn:hover { color:#fff; }
     .kq-card .kq-why { background:rgba(255,255,255,.08); color:rgba(255,255,255,.8); }
     .kq-card .kq-why strong { color:#fff; }
+
+    /* Feedback 2026-10-09: Vertrauens-Chips, Bonus-Hinweis am Buch, Ergebnisvorschau mit Beispiel, Ablauf, Handbuch-Bonus */
+    .kc-trust { display:flex; flex-wrap:wrap; gap:.5rem; list-style:none; margin:0; padding:0; }
+    .kc-trust li { display:inline-flex; align-items:center; gap:.4rem; padding:.4rem .8rem; border-radius:9999px; background:#f3f4f6; font-family:'Geist',sans-serif; font-size:.85rem; font-weight:500; color:#1f2937; }
+    .kc-trust svg { width:.9rem; height:.9rem; color:#059669; }
+    .kc-mock-badge { position:absolute; left:50%; bottom:.4rem; transform:translateX(-50%); white-space:nowrap; font-family:'Geist',sans-serif; font-size:.85rem; font-weight:500; color:#0a0a0f; background:#1aff80; border:1.5px solid #0a0a0f; border-radius:9999px; padding:.4rem 1rem; }
+    @media (min-width:640px) { .kc-gets-list--stack { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media (min-width:1024px) { .kc-gets-list--stack { grid-template-columns:minmax(0,1fr); } }
+    .kc-example { margin:0; border:1.5px solid #0a0a0f; border-radius:1.5rem; background:#fff; overflow:hidden; box-shadow:0 30px 60px -36px rgba(10,10,15,.45); }
+    @media (min-width:1024px) { .kc-example { position:sticky; top:1.5rem; } }
+    .kc-example-bar { display:flex; align-items:center; gap:.4rem; padding:.75rem 1rem; border-bottom:1.5px solid #0a0a0f; background:#fafafa; }
+    .kc-example-bar span { width:.65rem; height:.65rem; border-radius:9999px; background:#d1d5db; }
+    .kc-example-bar p { margin-left:.5rem; font-family:'Geist',sans-serif; font-size:.78rem; font-weight:500; color:#6b7280; letter-spacing:.04em; text-transform:uppercase; }
+    .kc-example-in { padding:1.4rem 1.4rem 1.2rem; }
+    .kc-example-docs { display:grid; gap:.4rem; list-style:none; margin:0; padding:0; }
+    .kc-example-mail { display:flex; gap:.8rem; align-items:center; margin-top:1.25rem; padding:.85rem 1rem; border-radius:.9rem; background:#0a0a0f; }
+    .kc-example-mail .kc-gets-ico { background:#1aff80; border-color:#1aff80; }
+    .kc-example-mail .kc-gets-t { color:#fff; }
+    .kc-example-mail .kc-gets-u { color:rgba(255,255,255,.7); margin-top:.1rem; }
+    .kc-example-cap { padding:.7rem 1.4rem .9rem; font-size:.75rem; color:#6b7280; border-top:1px solid #f3f4f6; }
+    .kc-steps { display:grid; gap:1rem; list-style:none; margin:0; padding:0; }
+    @media (min-width:768px) { .kc-steps { grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.5rem; } }
+    .kc-steps li { border:1.5px solid #0a0a0f; border-radius:1.25rem; padding:1.5rem; background:#fff; }
+    .kc-steps-n { display:inline-flex; align-items:center; justify-content:center; width:2.4rem; height:2.4rem; border-radius:9999px; margin-bottom:1rem; font-family:'Geist',sans-serif; font-weight:600; color:#0a0a0f; background:#1aff80; border:1.5px solid #0a0a0f; }
+    .kc-bonus { display:grid; gap:2rem; align-items:center; padding:2rem; border-radius:2rem; background:#0a0a0f; color:#fff; }
+    .kc-bonus .ds-label { color:rgba(255,255,255,.55); }
+    .kc-bonus .ds-h2 { color:#fff; }
+    .kc-bonus .kc-mock-stage--md { justify-self:center; }
+    .kc-bonus .kc-mock-stage--md .kc-mock-book { --w:150px; --t:7px; }
+    @media (min-width:768px) { .kc-bonus { grid-template-columns:auto minmax(0,1fr); gap:3rem; padding:3rem; } .kc-bonus .kc-mock-stage--md .kc-mock-book { --w:180px; --t:8px; } }
 
     /* ---------- Report ---------- */
     .kc-task { display:flex; gap:.7rem; font-size:.9rem; color:#4b5563; line-height:1.6; padding:.75rem .9rem; border-radius:.75rem; background:#fff; border:1px solid #f3f4f6; }
@@ -710,30 +740,19 @@
         <div class="grid lg:grid-cols-[minmax(0,1.08fr)_minmax(0,.92fr)] gap-12 lg:gap-14 items-center lg:items-start">
           <div>
             <span class="ds-label">
-              KI-Check für Bildungsanbieter · Stand Oktober 2026
+              KI-Compliance-Check · Kostenlos
             </span>
             <h1 class="ds-h1 mt-6 text-balance" style="font-size: clamp(2.5rem, 4.9vw, 4.6rem);">
-              KI-Tutor einführen:<br class="hidden sm:block"> <span>Ihr Fahrplan bis zum Start</span>
+              KI-Tutor einführen?<br class="hidden sm:block"> <span>Wir helfen bei der Vorbereitung.</span>
             </h1>
             <p class="ds-sub mt-8">
-              Sie kreuzen an, was auf Ihr Projekt zutrifft – auch „Weiß ich nicht“. Danach wissen Sie, was zu tun ist, und gehen vorbereitet in Gespräche mit Anbieter, Datenschutz und Geschäftsführung. Ihre Auswertung speichern Sie als PDF oder leiten sie ans Team weiter.
+              Finden Sie in 10 Minuten heraus, welche Dokumente und Freigaben Sie benötigen, was noch fehlt und was als Nächstes zu tun ist. Mit passenden Vorlagen und Rechtsgrundlagen.
             </p>
             <div class="mt-10 ds-btn-row">
-              <a href="#kc-app" data-kc-start class="ds-btn ds-btn--lg">Fahrplan kostenlos erstellen <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+              <a href="#kc-app" data-kc-start class="ds-btn ds-btn--lg">Check kostenlos starten <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
               <a href="#kc-irrtuemer" class="ds-btn ds-btn--ghost ds-btn--lg">10 Irrtümer, richtiggestellt</a>
             </div>
-            <p class="kc-hero-meta mt-8 text-sm leading-relaxed text-gray-600 font-geist"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span class="text-pretty">Rund 25 Fragen · ca. 10 Minuten · anbieterneutral · plus Handbuch per E-Mail</span></p>
-            <!-- Was man am Ende erhält -->
-            <div class="kc-gets mt-12">
-              <p class="ds-label">Was Sie am Ende erhalten – und was Sie damit tun</p>
-              <ul class="kc-gets-list mt-6">
-                <li><span class="kc-gets-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg></span><div><p class="kc-gets-t">Ampel je Thema und Ihre ersten drei Schritte</p><p class="kc-gets-u">Sehen, wo Ihr Projekt steht, womit Sie anfangen und was vor dem Start wichtig ist.</p></div></li>
-                <li><span class="kc-gets-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/><path d="m9 13 2 2 4-4"/></svg></span><div><p class="kc-gets-t">Dokumenten-Mappe mit bis zu 19 Unterlagen</p><p class="kc-gets-u">Fehlendes gezielt besorgen: beim Anbieter anfordern oder selbst erstellen.</p></div></li>
-                <li><span class="kc-gets-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg></span><div><p class="kc-gets-t">Übersicht: wer zustimmen muss, mit Status</p><p class="kc-gets-u">Freigaben rechtzeitig einholen – von der IT bis zu den Rechteinhabern der Kursinhalte.</p></div></li>
-                <li><span class="kc-gets-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span><div><p class="kc-gets-t">Fertige Mail an Ihren Anbieter</p><p class="kc-gets-u">Kopieren und abschicken – mit genau den Fragen, die bei Ihnen noch offen sind.</p></div></li>
-                <li><span class="kc-gets-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><div><p class="kc-gets-t">Vorlagen, vorausgefüllt mit Ihren Angaben</p><p class="kc-gets-u">Rollen-Steckbrief, Transparenzhinweis, Schulungsnachweis: anpassen statt neu schreiben.</p></div></li>
-              </ul>
-            </div>
+            <ul class="kc-trust mt-8" aria-label="Auf einen Blick"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Kostenlos</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Ca. 10 Minuten</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Ohne Vorwissen</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Anbieterneutral</li></ul>
           </div>
           <div class="kc-hero-visual relative mx-auto w-full max-w-md lg:max-w-none lg:sticky lg:top-8 lg:pt-10">
             <!-- Handbuch-Mockup: Cover als dünnes Buch, leicht perspektivisch gedreht (reines CSS-3D) -->
@@ -748,6 +767,7 @@
                 </div>
               </div>
               <span class="kc-mock-shadow" aria-hidden="true"></span>
+              <figcaption class="kc-mock-badge">Gratis dazu: Handbuch per E-Mail</figcaption>
             </figure>
           </div>
         </div>
@@ -755,8 +775,85 @@
     </section>
 
   <div class="kc-main">
-    <!-- Zeitleiste -->
+    <!-- Ergebnisvorschau -->
+    <section class="kc-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 sm:pb-28" id="kc-ergebnis">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div>
+          <p class="ds-label mb-5">Ihr Ergebnis</p>
+          <h2 class="ds-h2 text-balance mb-10">Das bekommen Sie nach dem Check</h2>
+          <ul class="kc-gets-list kc-gets-list--stack">
+            <li><span class="kc-gets-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/><path d="m9 13 2 2 4-4"/></svg></span><div><p class="kc-gets-t">Ihre persönliche Dokumenten-Checkliste</p><p class="kc-gets-u">Bis zu 19 relevante Unterlagen. Sie sehen, was vorhanden ist und was noch fehlt.</p></div></li>
+            <li><span class="kc-gets-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg></span><div><p class="kc-gets-t">Ihre nächsten Schritte</p><p class="kc-gets-u">Klare Prioritäten und konkrete Aufgaben für den Projektstart.</p></div></li>
+            <li><span class="kc-gets-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg></span><div><p class="kc-gets-t">Alle notwendigen Freigaben</p><p class="kc-gets-u">Erfahren Sie, wen Sie einbeziehen und welche Zustimmung Sie benötigen.</p></div></li>
+            <li><span class="kc-gets-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><div><p class="kc-gets-t">Vorlagen und Rechtsgrundlagen</p><p class="kc-gets-u">Passende Muster, vorausgefüllt mit Ihren Angaben und ergänzt um relevante Gesetzesstellen.</p></div></li>
+            <li><span class="kc-gets-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span><div><p class="kc-gets-t">Eine fertige Anfrage an Ihren Anbieter</p><p class="kc-gets-u">Alle offenen Fragen in einer E-Mail. Einfach kopieren und versenden.</p></div></li>
+          </ul>
+        </div>
+        <figure class="kc-example" aria-label="Beispiel einer Auswertung">
+          <div class="kc-example-bar" aria-hidden="true"><span></span><span></span><span></span><p>Beispiel · Ihre Auswertung</p></div>
+          <div class="kc-example-in">
+            <p class="kq-first-l mb-3">Welche Dokumente brauchen Sie?</p>
+            <ul class="kc-example-docs"><li class="kq-doc is-ok"><span class="kq-badge kq-badge--done">Liegt vor</span><span class="kq-doc-t">Auftragsverarbeitungsvertrag (AVV)</span></li><li class="kq-doc"><span class="kq-badge kq-badge--open">Fehlt</span><span class="kq-doc-t">Nachweis zur Drittlandübermittlung</span></li><li class="kq-doc"><span class="kq-badge kq-badge--unclear">Klären</span><span class="kq-doc-t">Datenschutzhinweise für Lernende</span></li><li class="kq-doc"><span class="kq-badge kq-badge--open">Fehlt</span><span class="kq-doc-t">Schulungsnachweis KI-Kompetenz <span class="kq-tpl-link">Vorlage</span></span></li></ul>
+            <div class="kq-first mt-6 mb-0"><p class="kq-first-l">Ihr erster Schritt</p><p class="kq-first-t">Ausschließen, dass der Anbieter Daten für eigene Zwecke nutzt</p><p class="kq-next-o">Zuständig: Datenschutz · Art. 28 DSGVO</p></div>
+            <div class="kc-example-mail"><span class="kc-gets-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span><div><p class="kc-gets-t">Mail an Ihren Anbieter</p><p class="kc-gets-u">11 offene Fragen – kopieren und versenden</p></div></div>
+          </div>
+          <figcaption class="kc-example-cap">Beispiel mit fiktiven Angaben. Ihre Auswertung richtet sich nach Ihren Antworten.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Ablauf -->
     <section class="kc-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 sm:pb-28">
+      <p class="ds-label mb-5">So funktioniert’s</p>
+      <h2 class="ds-h2 text-balance mb-10">In 10 Minuten zur persönlichen Checkliste</h2>
+      <ol class="kc-steps">
+        <li><span class="kc-steps-n">1</span><p class="kc-gets-t">Fragen beantworten</p><p class="kc-gets-u">Beantworten Sie rund 25 einfache Fragen zu Ihrem Projekt. „Weiß ich nicht“ ist auch eine Antwort.</p></li>
+        <li><span class="kc-steps-n">2</span><p class="kc-gets-t">Auswertung erhalten</p><p class="kc-gets-u">Sehen Sie, welche Dokumente, Freigaben und nächsten Schritte für Ihr Projekt relevant sind.</p></li>
+        <li><span class="kc-steps-n">3</span><p class="kc-gets-t">Direkt loslegen</p><p class="kc-gets-u">Nutzen Sie die Vorlagen, klären Sie offene Fragen und teilen Sie Ihre Checkliste mit dem Team.</p></li>
+      </ol>
+    </section>
+
+    <!-- KI-Check (Fragebogen) -->
+    <section class="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8 pb-20 sm:pb-28">
+      <div id="kc-app" aria-live="polite">
+        <noscript><p class="p-8 text-gray-600">Bitte aktivieren Sie JavaScript, um den interaktiven KI-Check zu nutzen.</p></noscript>
+      </div>
+    </section>
+
+    <!-- Gratis-Handbuch -->
+    <section class="kc-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 sm:pb-28">
+      <div class="kc-bonus">
+        <div class="kc-mock-stage kc-mock-stage--md" aria-hidden="true"><div class="kc-mock-book"><img class="kc-mock-cover" src="/assets/images/ki-check/handbuch-cover.webp" width="1024" height="1536" alt="" loading="lazy" decoding="async"><span class="kc-mock-gloss"></span><span class="kc-mock-pages"></span><span class="kc-mock-back"></span></div></div>
+        <div>
+          <p class="ds-label mb-4">Bonus</p>
+          <h2 class="ds-h2 text-balance mb-4" style="font-size:clamp(1.8rem,3vw,2.6rem)">Gratis dazu: Das Handbuch zur KI-Tutor-Einführung</h2>
+          <p class="text-gray-300 text-lg leading-relaxed mb-6 max-w-2xl">Wichtige Anforderungen, Rechtsgrundlagen und Praxistipps zum Nachlesen. Direkt per E-Mail, sobald Sie Ihre Auswertung angefordert und Ihre Adresse bestätigt haben.</p>
+          <a href="#kc-app" data-kc-start class="kc-btn-light">Check starten und Handbuch erhalten</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- KI-Assistent (wird per ki-check-config.js aktiviert) -->
+    <section id="assistent" class="kc-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 sm:pb-28" hidden>
+      <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
+        <div class="lg:col-span-2">
+          <p class="ds-label mb-5">KI-Assistent</p>
+          <h2 class="ds-h2 text-balance mb-6">Noch Fragen? Unser KI-Assistent hilft.</h2>
+          <p class="text-gray-600 text-lg leading-relaxed mb-6">Fragen Sie nach DSGVO, KI-Verordnung oder benötigten Dokumenten. Unser KI-Assistent antwortet mit Verweisen auf die passenden Rechtsgrundlagen.</p>
+          <p class="text-sm text-[#0a0a0f] leading-relaxed ds-card p-4">Zum Beispiel: „Brauchen wir eine Datenschutz-Folgenabschätzung?“ · „Was muss im AVV stehen?“ · „Ab wann wäre unser Tutor Hochrisiko?“</p>
+          <p class="text-xs text-gray-500 mt-5">Läuft auf Alphalearn – dem KI-Tutor, den wir für Moodle und ILIAS entwickeln. Keine Rechtsberatung.</p>
+        </div>
+        <div class="lg:col-span-3 ds-card rounded-3xl overflow-hidden">
+          <div class="h-[520px]"><iframe title="KI-Assistent zum Handbuch" class="w-full h-full border-0" allow="clipboard-read; clipboard-write; storage-access"></iframe></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rechtliche Anforderungen (Zeitleiste) -->
+    <section class="kc-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 sm:pb-28">
+      <p class="ds-label mb-5">Wissen</p>
+      <h2 class="ds-h2 text-balance mb-6">Welche rechtlichen Anforderungen gelten für KI-Tutoren?</h2>
+      <p class="ds-sub mb-12">Von der DSGVO bis zur KI-Verordnung: Wir zeigen Ihnen, welche Vorgaben bei der Einführung eines KI-Tutors relevant sein können.</p>
       <ol class="kc-timeline">
         <li class="kc-tl-item is-past">
           <span class="kc-tl-dot" aria-hidden="true"></span>
@@ -783,29 +880,6 @@
           </div>
         </li>
       </ol>
-    </section>
-
-    <!-- KI-Check (Fragebogen) -->
-    <section class="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8 pb-20 sm:pb-28">
-      <div id="kc-app" aria-live="polite">
-        <noscript><p class="p-8 text-gray-600">Bitte aktivieren Sie JavaScript, um den interaktiven KI-Check zu nutzen.</p></noscript>
-      </div>
-    </section>
-
-    <!-- KI-Assistent (wird per ki-check-config.js aktiviert) -->
-    <section id="assistent" class="kc-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 sm:pb-28" hidden>
-      <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
-        <div class="lg:col-span-2">
-          <p class="ds-label mb-5">KI-Assistent</p>
-          <h2 class="ds-h2 text-balance mb-6">Fragen Sie das Handbuch</h2>
-          <p class="text-gray-600 text-lg leading-relaxed mb-6">Ihre Frage kommt im KI-Check nicht vor? Unser Assistent kennt alle Inhalte dieser Seite und antwortet mit Verweis auf die Fundstelle.</p>
-          <p class="text-sm text-[#0a0a0f] leading-relaxed ds-card p-4">Zum Beispiel: „Brauchen wir eine Datenschutz-Folgenabschätzung?“ · „Was muss im AVV stehen?“ · „Ab wann wäre unser Tutor Hochrisiko?“</p>
-          <p class="text-xs text-gray-500 mt-5">Läuft auf Alphalearn – dem KI-Tutor, den wir für Moodle und ILIAS entwickeln. Keine Rechtsberatung.</p>
-        </div>
-        <div class="lg:col-span-3 ds-card rounded-3xl overflow-hidden">
-          <div class="h-[520px]"><iframe title="KI-Assistent zum Handbuch" class="w-full h-full border-0" allow="clipboard-read; clipboard-write; storage-access"></iframe></div>
-        </div>
-      </div>
     </section>
 
     <!-- Irrtümer -->
