@@ -33,8 +33,20 @@
     document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/; SameSite=Lax`;
   };
 
+  // Ein Cookie verschwindet nur, wenn Name, Pfad UND Domain passen. Unsere
+  // eigenen Cookies sind host-only, Google setzt _ga dagegen auf die
+  // registrierbare Domain (".alphalearn.ai") — ohne passendes domain-Attribut
+  // überlebten sie den Widerruf. Deshalb einmal ohne domain und zusätzlich je
+  // Domain-Ebene löschen, mit und ohne führenden Punkt.
   const deleteCookie = (name) => {
-    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=Lax`;
+    const base = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=Lax`;
+    document.cookie = base;
+    const parts = window.location.hostname.split('.');
+    for (let i = 0; i < parts.length - 1; i += 1) {
+      const domain = parts.slice(i).join('.');
+      document.cookie = `${base}; domain=${domain}`;
+      document.cookie = `${base}; domain=.${domain}`;
+    }
   };
 
   const readConsent = () => {
