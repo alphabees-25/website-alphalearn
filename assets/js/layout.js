@@ -314,52 +314,104 @@
     });
   };
 
-  // Consent-Dialog: drei Stufen (alle / nur Statistik / keine). Die Texte
-  // stehen sprachspezifisch im jeweiligen footer.html-Partial, hier nur Logik.
+  // Cookie-Hinweis: schmale Leiste unten, drei Stufen (alle / nur Statistik /
+  // keine) mit je einem Klick. Die Texte stehen sprachspezifisch im jeweiligen
+  // footer.html-Partial, hier nur Logik und der generative Reveal.
+  const GENFX_BASE = '/assets/genfx/';
+
+  // Laufzeit und CSS des Reveals erst laden, wenn die Leiste wirklich gebraucht
+  // wird: wer schon entschieden hat, lädt die 37 KB nie.
+  const loadGenerate = () => {
+    if (window.__abGenfx) return window.__abGenfx;
+    if (!document.getElementById('ab-genfx-css')) {
+      const link = document.createElement('link');
+      link.id = 'ab-genfx-css';
+      link.rel = 'stylesheet';
+      link.href = `${GENFX_BASE}ui-generation.css`;
+      document.head.appendChild(link);
+    }
+    window.__abGenfx = import(`${GENFX_BASE}ui-generation.js`).then((mod) => mod.generate);
+    return window.__abGenfx;
+  };
+
   const initCookieBanner = () => {
     const banner = document.getElementById('cookie-banner');
     if (!banner) return;
 
+    const card = document.getElementById('cookie-card');
     const options = Array.from(banner.querySelectorAll('[data-choice]'));
-    const confirmBtn = document.getElementById('cookie-confirm');
-    const thumb = document.getElementById('cookie-track-thumb');
-    const backdrop = banner.querySelector('[data-cookie-backdrop]');
 
     const CHOICES = {
       all: { functional: true, analytics: true },
       stats: { functional: false, analytics: true },
       none: { functional: false, analytics: false }
     };
-    const POSITIONS = { all: '0%', stats: '50%', none: '100%' };
-    const ORDER = ['all', 'stats', 'none'];
+    const REVEAL_MS = 1500;
+    let genRun = null;
 
-    let choice = 'stats';
-    // Nur schließbar, wenn bereits eine Entscheidung vorliegt (Widerruf über Footer).
-    let dismissible = false;
-
-    const select = (next) => {
-      if (!CHOICES[next]) return;
-      choice = next;
-      options.forEach((opt) => {
-        opt.setAttribute('aria-checked', String(opt.dataset.choice === next));
-      });
-      if (thumb) thumb.style.left = POSITIONS[next];
+    const stopReveal = () => {
+      if (!genRun) return;
+      const run = genRun;
+      genRun = null;
+      try {
+        run.cancel();
+      } catch (err) {
+        // Lauf war schon durch – cancel() ist dann ein No-op.
+      }
     };
 
     const choiceFromConsent = (consent) => {
-      if (!consent || !consent.analytics) return 'none';
+      if (!consent) return null;
+      if (!consent.analytics) return 'none';
       return consent.functional ? 'all' : 'stats';
     };
 
-    const showBanner = () => {
-      banner.classList.remove('hidden');
-      document.body.style.overflowY = 'hidden';
-      if (confirmBtn) confirmBtn.focus({ preventScroll: true });
+    const markActive = (consent) => {
+      const current = choiceFromConsent(consent);
+      options.forEach((opt) => {
+        if (opt.dataset.choice === current) opt.setAttribute('data-active', 'true');
+        else opt.removeAttribute('data-active');
+      });
     };
 
     const hideBanner = () => {
+      stopReveal();
       banner.classList.add('hidden');
-      document.body.style.overflowY = '';
+      banner.removeAttribute('data-building');
+    };
+
+    // Zeichnet die Leiste als gepunkteten Bauplan und deckt sie dann auf.
+    // parent: banner, weil die Zeichenebene sonst am body hängt und beim
+    // Scrollen von der fixierten Leiste wegwandert. data-building hält die
+    // echte Leiste bis zum Start unsichtbar – ohne das blitzt sie einmal auf.
+    const reveal = async () => {
+      banner.setAttribute('data-building', '');
+      banner.classList.remove('hidden');
+
+      let generate;
+      try {
+        generate = await loadGenerate();
+        await document.fonts.ready;
+      } catch (err) {
+        console.warn('[consent] Reveal übersprungen', err);
+        banner.removeAttribute('data-building');
+        return;
+      }
+
+      banner.removeAttribute('data-building');
+      if (banner.classList.contains('hidden') || !card) return;
+
+      const run = generate(card, { mode: 'skeleton', parent: banner, duration: REVEAL_MS });
+      genRun = run;
+      // Ein Hinweis, den man wegklicken muss, darf nie an seiner Animation hängen.
+      const guard = setTimeout(stopReveal, REVEAL_MS + 2000);
+      try {
+        await run.finished;
+      } catch (err) {
+        console.warn('[consent] Reveal abgebrochen', err);
+      }
+      clearTimeout(guard);
+      if (genRun === run) genRun = null;
     };
 
     const trackConsentGranted = () => {
@@ -370,53 +422,38 @@
     };
 
     options.forEach((opt) => {
-      opt.addEventListener('click', () => select(opt.dataset.choice));
-      opt.addEventListener('keydown', (event) => {
-        const index = ORDER.indexOf(choice);
-        if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
-          event.preventDefault();
-          const next = Math.min(index + 1, ORDER.length - 1);
-          select(ORDER[next]);
-          options[next]?.focus({ preventScroll: true });
-        }
-        if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
-          event.preventDefault();
-          const next = Math.max(index - 1, 0);
-          select(ORDER[next]);
-          options[next]?.focus({ preventScroll: true });
-        }
+      opt.addEventListener('click', () => {
+        const consent = CHOICES[opt.dataset.choice];
+        if (!consent) return;
+        setConsent(consent);
+        markActive(activeConsent);
+        hideBanner();
+        if (consent.analytics) trackConsentGranted();
       });
     });
 
-    confirmBtn?.addEventListener('click', () => {
-      const consent = CHOICES[choice];
-      setConsent(consent);
-      hideBanner();
-      if (consent.analytics) trackConsentGranted();
-    });
-
-    backdrop?.addEventListener('click', () => {
-      if (dismissible) hideBanner();
-    });
-
+    // Escape schließt nur, wenn schon eine Entscheidung vorliegt.
     document.addEventListener('keydown', (event) => {
       if (event.key !== 'Escape') return;
-      if (dismissible && !banner.classList.contains('hidden')) hideBanner();
+      if (banner.classList.contains('hidden')) return;
+      if (activeConsent || readConsent()) hideBanner();
     });
 
+    // Widerruf über den Footer: sofort da, ohne Reveal. Wer hier klickt, will
+    // umstellen und nicht zusehen.
     document.querySelectorAll('[data-cookie-settings]').forEach((btn) => {
       btn.addEventListener('click', (event) => {
         event.preventDefault();
-        dismissible = true;
-        select(choiceFromConsent(activeConsent || readConsent()));
-        showBanner();
+        markActive(activeConsent || readConsent());
+        banner.removeAttribute('data-building');
+        banner.classList.remove('hidden');
+        options[0]?.focus({ preventScroll: true });
       });
     });
 
     if (!activeConsent) {
-      dismissible = false;
-      select('stats');
-      showBanner();
+      markActive(null);
+      void reveal();
     }
   };
 
