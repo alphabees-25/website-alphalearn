@@ -23,7 +23,6 @@ window.KI_CHECK_CONFIG = {
   assistantUrl: '',
   reportUrl: 'https://alphalearn.ai/de/ki-compliance-check.html',
   demoUrl: '/de/demos.html',
-  complianceUrl: '/de/compliance.html',
   calendlyUrl: 'https://calendly.com/demo-alphabees/austausch-anfragen-alphabees',
   privacyUrl: '/de/privacy.html'
 };

@@ -53,8 +53,6 @@ AlphaLearn provides AI-powered tutoring solutions for education providers — in
 - AGB (DE): https://alphalearn.ai/de/agb.html
 - Imprint (EN): https://alphalearn.ai/en/imprint.html
 - Impressum (DE): https://alphalearn.ai/de/impressum.html
-- Security: https://alphalearn.ai/en/security.html
-- Compliance: https://alphalearn.ai/en/compliance.html
 
 ---
 

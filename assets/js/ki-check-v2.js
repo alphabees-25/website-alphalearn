@@ -500,7 +500,6 @@
         '<a href="' + offerHref(ev.vq) + '" data-cta="kicheck_offer" class="kc-btn-light">Vergleichsangebot bei Alphabees einholen</a>' +
         '<a href="' + esc(CFG.demoUrl) + '?utm_source=ki-check&utm_medium=report" data-cta="kicheck_demo" class="kc-btn-outline">Tutor-Demo ansehen</a>' +
         '<a href="' + esc(CFG.calendlyUrl) + '" data-cta="kicheck_call" target="_blank" rel="noopener" class="kc-btn-outline">Auswertung in 20 Minuten besprechen</a>' +
-        '<a href="' + esc(CFG.complianceUrl) + '" data-cta="kicheck_compliance" class="kc-btn-outline">Compliance-Details</a>' +
       '</div><p class="kq-offer-line">Vergleichsangebot bei Alphabees einholen: <a href="' + offerHref(ev.vq) + '" data-cta="kicheck_offer_line">' + OFFER_MAIL + '</a></p></div>';
   }
 

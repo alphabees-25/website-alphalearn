@@ -368,7 +368,6 @@
       '<div class="flex flex-col sm:flex-row gap-3 kc-noprint">' +
         '<a href="' + esc(CFG.demoUrl) + '?utm_source=ki-check&utm_medium=report" data-cta="kicheck_demo" class="kc-btn-light">Tutor-Demo ansehen</a>' +
         '<a href="' + esc(CFG.calendlyUrl) + '" data-cta="kicheck_call" target="_blank" rel="noopener" class="kc-btn-outline">Fahrplan in 20 Minuten besprechen</a>' +
-        '<a href="' + esc(CFG.complianceUrl) + '" data-cta="kicheck_compliance" class="kc-btn-outline">Compliance-Details</a>' +
       '</div></div>' +
       '<p class="text-xs text-gray-500 mt-8 leading-relaxed">Diese Checkliste ersetzt keine Rechtsberatung. Stand der Rechtslage: Oktober 2026 (DSGVO, KI-Verordnung nach Digital Omnibus, BetrVG).</p>' +
       '</section>';
