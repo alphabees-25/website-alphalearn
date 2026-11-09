@@ -1083,16 +1083,24 @@
       var track = root.querySelector("[data-lh-track]"), slides = [].slice.call(root.querySelectorAll("[data-lh-slide]"));
       var dotsEl = root.querySelector("[data-lh-dots]"), prev = root.querySelector("[data-lh-prev]"), next = root.querySelector("[data-lh-next]");
       var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      var dots = slides.map(function () { var d = document.createElement("span"); d.className = "ft-lh-dot"; dotsEl.appendChild(d); return d; });
-      function step() { return slides[1].offsetLeft - slides[0].offsetLeft; }
-      function update() {
-        var i = track.scrollLeft >= max() ? slides.length - 1 : Math.round(track.scrollLeft / step());
-        dots.forEach(function (d, k) { d.dataset.active = String(k === i); });
-      }
+      var dots = slides.map(function (s, k) { s.dataset.i = k; var d = document.createElement("span"); d.className = "ft-lh-dot"; dotsEl.appendChild(d); return d; });
+      function step() { return track.children[1].offsetLeft - track.children[0].offsetLeft; }
       function max() { return track.scrollWidth - track.clientWidth - 2; }
-      // ohne Ende: nach der letzten Lernhilfe wieder zur ersten und umgekehrt
-      prev.addEventListener("click", function () { track.scrollLeft <= 2 ? track.scrollTo({ left: track.scrollWidth }) : track.scrollBy({ left: -step() }); });
-      next.addEventListener("click", function () { track.scrollLeft >= max() ? track.scrollTo({ left: 0 }) : track.scrollBy({ left: step() }); });
+      function update() {
+        var first = track.children[Math.min(Math.round(track.scrollLeft / step()), slides.length - 1)];
+        dots.forEach(function (d, k) { d.dataset.active = String(k === +first.dataset.i); });
+      }
+      // ohne Ende: am Rand wandert die Karte von der anderen Seite unsichtbar herüber
+      // (Sprung ohne Animation um eine Kartenbreite), dann gleitet das Band weiter in dieselbe Richtung
+      function jump(by) { track.style.scrollSnapType = "none"; track.style.scrollBehavior = "auto"; track.scrollLeft += by; void track.offsetWidth; track.style.scrollBehavior = ""; track.style.scrollSnapType = ""; }
+      next.addEventListener("click", function () {
+        if (track.scrollLeft + step() > max()) { var w = step(); track.appendChild(track.firstElementChild); jump(-w); }
+        track.scrollBy({ left: step() });
+      });
+      prev.addEventListener("click", function () {
+        if (track.scrollLeft < step() - 2) { var w = step(); track.insertBefore(track.lastElementChild, track.firstElementChild); jump(w); }
+        track.scrollBy({ left: -step() });
+      });
       track.addEventListener("scroll", function () { window.requestAnimationFrame(update); }, { passive: true });
       window.addEventListener("resize", update);
       update();
