@@ -450,6 +450,9 @@ opacity: 0 !important;
   <!-- Right Actions (Desktop & Mobile Toggle) -->
   <div class="flex items-center gap-3 sm:gap-4 z-10 shrink-0 relative ml-auto">
     
+    <!-- Trial CTA (Desktop) -->
+    <a href="https://portal.alphalearn.ai/auth/register" data-cta="header_trial" class="hidden md:inline-flex items-center rounded-full bg-blue-600 hover:bg-blue-700 text-white text-[13px] font-medium font-geist px-4 py-1.5 shadow-sm transition-colors whitespace-nowrap">Kostenlos testen</a>
+
     <!-- Language Toggle (Desktop) -->
     <div class="hidden md:flex items-center bg-gray-100/80 ring-1 ring-gray-200 rounded-lg p-0.5">
        <button class="lang-toggle px-2.5 py-1 text-[11px] font-semibold font-geist rounded-md text-gray-500 hover:text-gray-900 transition-all" data-lang="de">DE</button>
@@ -497,6 +500,7 @@ opacity: 0 !important;
             <a href="/de/demos.html" class="nav-link block hover:text-gray-900 text-sm text-gray-700 font-geist pt-3 pr-2 pb-3 pl-2">Demos</a>
             <a href="/de/preis.html" class="nav-link block hover:text-gray-900 text-sm text-gray-700 font-geist pt-3 pr-2 pb-3 pl-2">Preise</a>
             <a href="/de/features.html" class="block hover:text-gray-900 text-sm text-gray-700 font-geist pt-3 pr-2 pb-3 pl-2">Funktionen</a>
+            <a href="https://portal.alphalearn.ai/auth/register" data-cta="header_trial_mobile" class="block text-sm font-medium text-blue-600 font-geist pt-3 pr-2 pb-3 pl-2">Kostenlos testen</a>
             
             
           </div>
@@ -533,7 +537,7 @@ opacity: 0 !important;
 
       <div class="flex flex-col sm:flex-row mt-8 gap-3 items-stretch sm:items-center justify-start" style="animation: fadeSlideIn 1s ease-out 0.4s both">
 
-                <button data-cta="hero_trial" class="inline-flex hover:bg-white/10 transition-all duration-300 ease-out cursor-pointer hover:shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_20px_40px_-5px_rgba(15,23,42,0.2),0px_10px_10px_-5px_rgba(0,0,0,0.04)] hover:scale-105 active:scale-95 text-sm font-medium text-white font-geist bg-white/10 w-[260px] border-white/40 border rounded-full pt-3 pr-5 pb-3 pl-5 shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(15,23,42,0.18),0px_12px_12px_-6px_rgba(0,0,0,0.06)] backdrop-blur-md gap-x-2 gap-y-x-2 items-center justify-center" onclick="window.location.href='https://portal.alphabees.de/auth/register'" role="button">kostenlos testen</button>
+                <button type="button" data-cta="hero_video" class="inline-flex hover:bg-white/10 transition-all duration-300 ease-out cursor-pointer hover:shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_20px_40px_-5px_rgba(15,23,42,0.2),0px_10px_10px_-5px_rgba(0,0,0,0.04)] hover:scale-105 active:scale-95 text-sm font-medium text-white font-geist bg-white/10 w-[260px] border-white/40 border rounded-full pt-3 pr-5 pb-3 pl-5 shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(15,23,42,0.18),0px_12px_12px_-6px_rgba(0,0,0,0.06)] backdrop-blur-md gap-x-2 gap-y-x-2 items-center justify-center" onclick="openVideoLightbox()" aria-haspopup="dialog"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>Video ansehen</button>
 
 
       </div>
@@ -2292,7 +2296,7 @@ opacity: 0 !important;
 </script>
 
     <!-- YouTube Video Lightbox -->
-<div id="videoLightbox" class="video-lightbox" onclick="closeVideoLightbox(event)">
+<div id="videoLightbox" class="video-lightbox" role="dialog" aria-modal="true" aria-label="Video" onclick="closeVideoLightbox(event)">
   <div class="lightbox-content" onclick="event.stopPropagation()">
     <button class="lightbox-close" onclick="closeVideoLightbox(event)" aria-label="Close video">×</button>
     <div class="video-container">
@@ -2329,8 +2333,7 @@ opacity: 0 !important;
     width: 90%;
     max-width: 900px;
     background: #000;
-    border-radius: 8px;
-    overflow: hidden;
+    border-radius: 12px;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   }
 
@@ -2363,6 +2366,7 @@ opacity: 0 !important;
     padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
     height: 0;
     overflow: hidden;
+    border-radius: 12px;
   }
 
   .video-container iframe {
@@ -2382,7 +2386,7 @@ opacity: 0 !important;
 
 <script>
   // YouTube Video ID
-  const YOUTUBE_VIDEO_ID = 'Ei57rgH9mXg';
+  const YOUTUBE_VIDEO_ID = '4dZnbszNzRw';
   
   // Get DOM elements
   const lightbox = document.getElementById('videoLightbox');
@@ -2392,7 +2396,7 @@ opacity: 0 !important;
   function openVideoLightbox() {
     // Set the YouTube embed URL with autoplay
     // Using origin parameter and enablejsapi to prevent Error 153
-    const embedUrl = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0&enablejsapi=1&origin=${window.location.origin}`;
+    const embedUrl = `https://www.youtube-nocookie.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0&playsinline=1`;
     youtubePlayer.src = embedUrl;
     
     // Show lightbox
