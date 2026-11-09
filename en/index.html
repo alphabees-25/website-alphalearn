@@ -841,13 +841,25 @@ opacity: 0 !important;
     .bn-tiles.js .bn-tile.is-in:hover { transform:translateY(-4px); transition-delay:0s; }
     @media (max-width:767px) { .bn-tiles.js .bn-tile { transition-delay:0s; } }
     @media (prefers-reduced-motion: reduce) { .bn-tiles.js .bn-tile { opacity:1; transform:none; transition:none; } }
-    /* Kachel "Ein Tutor, der sich erinnert": Strich-Orbi (Vorlage Orbi_white_lines.svg) mit dem Blick aus dem Orbi-Lab:
-       hält eine Seite, blinzelt, schaut gespiegelt zur anderen Seite, dazwischen ein einfaches Blinzeln */
-    .bn-or-look { transform-box:view-box; transform-origin:38.79px 31px; animation:bnOrLook 9s linear infinite both; }
-    @keyframes bnOrLook { 0%,46% { transform:scaleX(1); } 46.01%,96% { transform:scaleX(-1); } 96.01%,100% { transform:scaleX(1); } }
-    .bn-or-blink { transform-box:view-box; transform-origin:38.79px 31px; animation:bnOrBlink 9s linear infinite both; }
-    @keyframes bnOrBlink { 0%,44% { transform:scaleY(1); } 46% { transform:scaleY(.06); } 48%,71% { transform:scaleY(1); } 72% { transform:scaleY(.06); } 73%,94% { transform:scaleY(1); } 96% { transform:scaleY(.06); } 98%,100% { transform:scaleY(1); } }
-    @media (prefers-reduced-motion: reduce) { .bn-or-look, .bn-or-blink { animation:none; transform:none; } }
+    /* Kachel "Ein Tutor, der sich erinnert": Orbi als Strichzeichnung (Vorlage Orbi_white_lines.svg), Augen und
+       Bewegung 1:1 aus dem Orbi-Lab (assets/orbi/core/orbi.css): Augen aus fünf Kapseln, die sich zur Blickseite
+       biegen; Blick schwingt im Bogen von rechts nach links (Umlauf 13 s wie beim Tutor), Blinzeln im 7-s-Takt. */
+    @property --bo-look { syntax:'<number>'; inherits:true; initial-value:1; }
+    .bo-gaze { --bo-look:1; transform-box:view-box; transform-origin:64px 58px; animation:boGaze 13s cubic-bezier(.45,0,.55,1) infinite;
+      transform:translate(calc(4.5px * var(--bo-look)), calc(1.5px - 6.5px * var(--bo-look) * var(--bo-look))) rotate(calc(-14deg * var(--bo-look))); }
+    @keyframes boGaze { 0%,46.5% { --bo-look:1; } 50%,96.5% { --bo-look:-1; } 100% { --bo-look:1; } }
+    .bo-eye, .bo-seg { transform-box:view-box; }
+    .bo-eye--l { transform:scaleX(calc(1 - .2 * max(0, var(--bo-look) * -1))); transform-origin:52px 58px; }
+    .bo-eye--r { transform:scaleX(calc(1 - .2 * max(0, var(--bo-look)))); transform-origin:76px 58px; }
+    .bo-up, .bo-up2 { transform:rotate(calc(-5.5deg * var(--bo-look))); }
+    .bo-down, .bo-down2 { transform:rotate(calc(5.5deg * var(--bo-look))); }
+    .bo-eye--l .bo-up { transform-origin:52px 56.4px; } .bo-eye--l .bo-up2 { transform-origin:52px 53.2px; }
+    .bo-eye--l .bo-down { transform-origin:52px 59.6px; } .bo-eye--l .bo-down2 { transform-origin:52px 62.8px; }
+    .bo-eye--r .bo-up { transform-origin:76px 56.4px; } .bo-eye--r .bo-up2 { transform-origin:76px 53.2px; }
+    .bo-eye--r .bo-down { transform-origin:76px 59.6px; } .bo-eye--r .bo-down2 { transform-origin:76px 62.8px; }
+    .bo-blink { transform-box:view-box; transform-origin:64px 58px; animation:boBlink 7s linear infinite; }
+    @keyframes boBlink { 0%,28%,30%,78%,80%,82%,100% { transform:scaleY(1); } 29%,79%,81% { transform:scaleY(.04); } 79.5% { transform:scaleY(1); } }
+    @media (prefers-reduced-motion: reduce) { .bo-gaze, .bo-blink { animation:none; } }
     .bn-h2 { font-size:clamp(2.4rem, 6.4vw, 5.75rem); line-height:1.06; letter-spacing:-.03em; }
     @media (min-width:768px) { .bn-h2 span { white-space:nowrap; } }
   </style>
@@ -896,12 +908,12 @@ opacity: 0 !important;
       </a>
       <a href="/en/features.html#lernerprofile" class="bn-tile group" style="--d:480ms">
         <div class="bn-icon bn-icon--lg" aria-hidden="true"><svg viewBox="0 0 260 244" class="bn-ic bn-ic--orbi" role="presentation" focusable="false">
-  <defs><linearGradient id="bnO3" gradientUnits="userSpaceOnUse" x1="0" y1="10" x2="0" y2="68"><stop offset="0" stop-color="#3B82F6"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient></defs>
-  <g transform="translate(9.8 1.8) scale(3.1)">
-    <circle cx="38.7902" cy="38.7902" r="28.961" fill="none" stroke="url(#bnO3)" stroke-width="2.4"/>
-    <g class="bn-or-look"><g class="bn-or-blink">
-      <path fill="url(#bnO3)" d="M29.3966 30.8752C27.3653 27.6109 28.8854 23.3052 32.5158 22.0396L33.1046 21.8344C35.7579 20.9095 38.6977 21.9499 40.1787 24.3379L41.2244 26.0241C43.053 28.9729 44.2206 32.283 44.6466 35.7265L44.936 38.0667C45.283 40.8717 43.6253 43.5386 40.9564 44.4689L40.4019 44.6622C36.7715 45.9278 32.9042 43.5001 32.466 39.6804L32.434 39.4011C32.0965 36.4589 31.1098 33.6284 29.5451 31.1139L29.3966 30.8752Z"/>
-      <path fill="url(#bnO3)" d="M44.6725 24.0604C43.0872 21.5374 44.1537 18.1947 46.9073 17.0559C49.0909 16.1529 51.607 16.9695 52.8441 18.9827L54.766 22.1101C56.545 25.0051 57.8192 28.1812 58.5343 31.503L59.0006 33.6687C59.4941 35.9615 58.2778 38.2792 56.1105 39.1755C53.3322 40.3245 50.1882 38.697 49.5224 35.7651L48.9354 33.1803C48.3857 30.7599 47.4304 28.4499 46.1099 26.3482L44.6725 24.0604Z"/>
+  <defs><linearGradient id="bnO3" gradientUnits="userSpaceOnUse" x1="0" y1="21" x2="0" y2="107"><stop offset="0" stop-color="#3B82F6"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient></defs>
+  <g transform="translate(-3.6 -11.6) scale(2.088)">
+    <circle cx="64" cy="64" r="43" fill="none" stroke="url(#bnO3)" stroke-width="3.6"/>
+    <g class="bo-gaze"><g class="bo-blink" fill="url(#bnO3)">
+      <g class="bo-eye bo-eye--l"><rect x="45" y="49.4" width="14" height="17.2" rx="7"/><g class="bo-seg bo-down"><rect x="45" y="52.6" width="14" height="17.2" rx="7"/><g class="bo-seg bo-down2"><rect x="45" y="55.8" width="14" height="17.2" rx="7"/></g></g><g class="bo-seg bo-up"><rect x="45" y="46.2" width="14" height="17.2" rx="7"/><g class="bo-seg bo-up2"><rect x="45" y="43" width="14" height="17.2" rx="7"/></g></g></g>
+      <g class="bo-eye bo-eye--r"><rect x="69" y="49.4" width="14" height="17.2" rx="7"/><g class="bo-seg bo-down"><rect x="69" y="52.6" width="14" height="17.2" rx="7"/><g class="bo-seg bo-down2"><rect x="69" y="55.8" width="14" height="17.2" rx="7"/></g></g><g class="bo-seg bo-up"><rect x="69" y="46.2" width="14" height="17.2" rx="7"/><g class="bo-seg bo-up2"><rect x="69" y="43" width="14" height="17.2" rx="7"/></g></g></g>
     </g></g>
   </g>
 </svg>
