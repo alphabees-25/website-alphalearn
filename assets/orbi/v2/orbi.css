@@ -1,0 +1,471 @@
+.orbi {
+  --orbi-size: 220px;
+  --orbi-spin-a-duration: 11s;
+  --orbi-spin-b-duration: 15s;
+  --orbi-scan-duration: 2.6s;
+  --orbi-blink-duration: 7s;
+  position: relative;
+  display: inline-block;
+  width: var(--orbi-size);
+  height: var(--orbi-size);
+  line-height: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  contain: layout style;
+}
+
+.orbi__actor {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: 50% 88%;
+  will-change: transform;
+}
+
+.orbi__shadow {
+  position: absolute;
+  left: 23%;
+  right: 23%;
+  bottom: 5%;
+  height: 9%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, color-mix(in srgb, var(--orbi-eye) 30%, transparent) 0%, transparent 72%);
+  filter: blur(5px);
+  opacity: .28;
+  transform-origin: 50% 50%;
+  will-change: transform, opacity;
+}
+
+.orbi__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  fill: none;
+  filter: drop-shadow(0 15px 22px color-mix(in srgb, var(--orbi-fill-4) 20%, transparent));
+  transform-box: fill-box;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.orbi[data-sequence="spin-centrifugal"] .orbi__actor { transform-origin: 50% 50%; }
+
+.orbi-color-fill-1 { stop-color: var(--orbi-fill-1); stop-opacity: .82; }
+.orbi-color-fill-2 { stop-color: var(--orbi-fill-2); stop-opacity: .58; }
+.orbi-color-fill-3 { stop-color: var(--orbi-fill-3); stop-opacity: .5; }
+.orbi-color-fill-4 { stop-color: var(--orbi-fill-4); stop-opacity: .4; }
+.orbi-color-glow-2 { stop-color: var(--orbi-glow-2); stop-opacity: .42; }
+.orbi-color-glow-3 { stop-color: var(--orbi-glow-3); stop-opacity: .76; }
+.orbi-color-band-a-1 { stop-color: var(--orbi-band-a-1); stop-opacity: .8; }
+.orbi-color-band-a-2 { stop-color: var(--orbi-band-a-2); stop-opacity: .64; }
+.orbi-color-band-a-3 { stop-color: var(--orbi-band-a-3); stop-opacity: .52; }
+.orbi-color-band-a-4 { stop-color: var(--orbi-band-a-4); stop-opacity: .37; }
+.orbi-color-band-b-1 { stop-color: var(--orbi-band-b-1); stop-opacity: .4; }
+.orbi-color-band-b-2 { stop-color: var(--orbi-band-b-2); stop-opacity: .68; }
+.orbi-color-band-b-3 { stop-color: var(--orbi-band-b-3); stop-opacity: .54; }
+.orbi-color-rim-2 { stop-color: var(--orbi-rim-2); stop-opacity: .18; }
+.orbi-color-rim-3 { stop-color: var(--orbi-rim-3); stop-opacity: .28; }
+.orbi-color-shade { stop-color: var(--orbi-shade, var(--orbi-eye)); }
+/* Der weiße Orbi ist eine feste Kugel, kein Glas (Vorlage orbi-end-3d.svg). */
+.orbi--white .orbi-color-fill-1,
+.orbi--white .orbi-color-fill-2,
+.orbi--white .orbi-color-fill-3,
+.orbi--white .orbi-color-fill-4 { stop-opacity: 1; }
+/* Auf dem weißen Körper wirkt der Augen-Halo wie ein Fleck — dort klare Augen,
+   nur mit ihrem kleinen Schatten. */
+.orbi--white .orbi__eyes { filter: none; }
+/* Ebenso der wandernde Schimmer der bunten Orbis: auf Weiß liegt er als Knick
+   über dem hinteren Auge. */
+.orbi--white .orbi__shine { display: none; }
+.orbi__solid-a { fill: var(--orbi-solid-a); }
+.orbi__solid-b { fill: var(--orbi-solid-b); }
+.orbi__wave { stroke: var(--orbi-wave); }
+.orbi__eye { fill: var(--orbi-eye); }
+.orbi__eyes-smile,
+.orbi__eyes-sleep { stroke: var(--orbi-eye); }
+.orbi__eye-light { fill: #fff; }
+.orbi__eye-shadow { fill: var(--orbi-eye); opacity: .38; }
+.orbi__play-icon-triangle,
+.orbi__stop-icon-square {
+  fill: none;
+  stroke: var(--orbi-eye);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.orbi__play-icon,
+.orbi__stop-icon {
+  opacity: 0;
+  transform-box: view-box;
+  transform-origin: 64px 64px;
+  will-change: opacity, transform;
+}
+
+.orbi__interaction-tint {
+  fill: #ff365c;
+  mix-blend-mode: multiply;
+  opacity: 0;
+  transform-box: view-box;
+  transform-origin: 64px 64px;
+  will-change: opacity;
+}
+
+.orbi[data-play-stop-state] {
+  cursor: pointer;
+  outline: none;
+}
+
+.orbi[data-play-stop-state]:focus-visible .orbi__svg {
+  filter:
+    drop-shadow(0 0 0 rgba(0, 0, 0, 0))
+    drop-shadow(0 0 9px rgba(100, 73, 235, .62))
+    drop-shadow(0 15px 22px color-mix(in srgb, var(--orbi-fill-4) 20%, transparent));
+}
+
+.orbi[data-play-stop-state="play-hover"] .orbi__eyes {
+  opacity: 0;
+  transform: scale(.14, .62);
+}
+.orbi[data-play-stop-state="play-hover"] .orbi__play-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.orbi[data-play-stop-state="stop"] .orbi__eyes,
+.orbi[data-play-stop-state="stop-hover"] .orbi__eyes {
+  opacity: 0;
+  transform: scale(.12, .58);
+}
+.orbi[data-play-stop-state="stop"] .orbi__play-icon,
+.orbi[data-play-stop-state="stop-hover"] .orbi__play-icon {
+  opacity: 0;
+  transform: scale(.24);
+}
+.orbi[data-play-stop-state="stop"] .orbi__stop-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+.orbi[data-play-stop-state="stop"] .orbi__interaction-tint { opacity: .24; }
+.orbi[data-play-stop-state="stop-hover"] .orbi__stop-icon {
+  opacity: 1;
+  transform: scale(1.08);
+}
+.orbi[data-play-stop-state="stop-hover"] .orbi__interaction-tint { opacity: .42; }
+
+.orbi__brows,
+.orbi__mouth-flat,
+.orbi__mouth-frown,
+.orbi__mouth-whistle,
+.orbi__mouth-whistle-closed,
+.orbi__mouth-party,
+.orbi__party-hat,
+.orbi__rambo-headband,
+.orbi__rambo-gun,
+.orbi__rambo-flash {
+  opacity: 0;
+  transform-box: view-box;
+  transform-origin: 64px 64px;
+  will-change: opacity, transform;
+}
+
+.orbi__mouth-whistle,
+.orbi__mouth-whistle-closed {
+  transform-origin: 64px 82px;
+}
+
+.orbi__expression-layer { opacity: 1; }
+
+.orbi__brow-left,
+.orbi__brow-right {
+  transform-box: fill-box;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.orbi__party-hat { transform-origin: 62px 43px; }
+
+.orbi__rambo-headband { transform-origin: 64px 48px; }
+.orbi__rambo-band,
+.orbi__rambo-tail {
+  fill: none;
+  stroke: #ef3f59;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.orbi__rambo-band {
+  stroke-width: 5.8;
+  filter: drop-shadow(0 2px 2px rgba(104, 19, 40, .28));
+}
+.orbi__rambo-knot {
+  fill: #d92d4c;
+  stroke: #ff8091;
+  stroke-width: 1;
+}
+.orbi__rambo-tail { stroke-width: 4; }
+.orbi__rambo-gun--left { transform-origin: 42px 69px; }
+.orbi__rambo-gun--right { transform-origin: 86px 69px; }
+.orbi__rambo-barrel {
+  fill: none;
+  stroke: #251d51;
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+.orbi__rambo-body,
+.orbi__rambo-grip,
+.orbi__rambo-mag {
+  fill: #312963;
+  stroke: #17122f;
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+}
+.orbi__rambo-highlight {
+  fill: none;
+  stroke: #8174c6;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  opacity: .82;
+}
+.orbi__rambo-flash { transform-origin: center; }
+.orbi__rambo-flash path {
+  fill: #ffd34e;
+  stroke: #ff8a34;
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 4px rgba(255, 137, 47, .72));
+}
+
+.orbi__spin-a,
+.orbi__spin-b,
+.orbi__shine {
+  transform-box: view-box;
+  transform-origin: 64px 64px;
+}
+
+.orbi__spin-a { animation: orbi-lab-spin-a var(--orbi-spin-a-duration) linear infinite; }
+.orbi__spin-b { animation: orbi-lab-spin-b var(--orbi-spin-b-duration) linear infinite; }
+.orbi__shine { animation: orbi-lab-shine 4.8s ease-in-out infinite; }
+
+.orbi__eyes {
+  transform-box: view-box;
+  transform-origin: 64px 59px;
+}
+
+/* Umherschauen wie ein Pendel (Skizze Marcel, 02.11.2026): an den Seiten steht
+   das Gesicht oben und schräg, beim Schwenk fällt es im Bogen durch die Mitte
+   nach unten und wird gerade. Alles hängt an einer Zahl, `--orbi-look`
+   (−1 links … 0 geradeaus … 1 rechts, registriert in orbi.js): x läuft mit
+   ihr, y als Parabel (Bogen), dazu Neigung, Biegung und Verkürzung der Augen
+   (Marcel, 05.11.2026). Zwei Gruppen (Augen, Ausdrucks-Ebene) tragen dieselbe
+   Animation und drehen um denselben Punkt — Brauen und Mund bleiben so am
+   Gesicht. Sequenzen animieren `.orbi__eyes` darin, nie diese Hülle. */
+.orbi__gaze {
+  --orbi-look: 1;
+  animation: orbi-lab-gaze calc(var(--orbi-scan-duration) * 5) cubic-bezier(.45, 0, .55, 1) infinite;
+  animation-delay: calc(var(--orbi-scan-duration) * -5 * var(--orbi-gaze-phase, 0));
+  transform:
+    translate(calc(4.5px * var(--orbi-look)), calc(1.5px - 6.5px * var(--orbi-look) * var(--orbi-look)))
+    rotate(calc(-14deg * var(--orbi-look)));
+  transform-box: view-box;
+  transform-origin: 64px 58px;
+}
+
+/* Feste Blickrichtung je Orbi (`setGaze`, z.B. geseedet auf den Agent-
+   Kacheln, Marcel 02.11.2026): er bleibt links, rechts oder geradeaus und
+   schaut nur selten kurz zur Seite. `--orbi-gaze-phase` (0–1 des Umlaufs)
+   streut, wann. */
+.orbi[data-gaze="right"] .orbi__gaze { animation-name: orbi-lab-gaze-right; }
+.orbi[data-gaze="left"] .orbi__gaze { --orbi-look: -1; animation-name: orbi-lab-gaze-left; }
+.orbi[data-gaze="center"] .orbi__gaze { --orbi-look: 0; animation-name: orbi-lab-gaze-center; }
+
+/* Augen auf der Kugel (Vorlage orbi-end-3d.svg): jedes Auge sind fünf
+   überlappende Kapseln, deren äußere verschachtelt um ihre Gelenke drehen — so biegt es sich
+   zur Seite, in die Orbi schaut, ")" rechts, "(" links, gerade in der Mitte.
+   Das Auge, das dabei nach hinten wandert (rechts beim Blick nach rechts),
+   wird schmaler; geradeaus sind beide gleich. */
+.orbi__eye-unit,
+.orbi__eye-seg { transform-box: view-box; }
+.orbi__eye-unit--left {
+  transform: scaleX(calc(1 - .2 * max(0, var(--orbi-look) * -1)));
+  transform-origin: 52px 58px;
+}
+.orbi__eye-unit--right {
+  transform: scaleX(calc(1 - .2 * max(0, var(--orbi-look))));
+  transform-origin: 76px 58px;
+}
+.orbi__eye-seg--up,
+.orbi__eye-seg--up2 { transform: rotate(calc(-5.5deg * var(--orbi-look))); }
+.orbi__eye-seg--down,
+.orbi__eye-seg--down2 { transform: rotate(calc(5.5deg * var(--orbi-look))); }
+.orbi__eye-unit--left .orbi__eye-seg--up { transform-origin: 52px 56.4px; }
+.orbi__eye-unit--left .orbi__eye-seg--up2 { transform-origin: 52px 53.2px; }
+.orbi__eye-unit--left .orbi__eye-seg--down { transform-origin: 52px 59.6px; }
+.orbi__eye-unit--left .orbi__eye-seg--down2 { transform-origin: 52px 62.8px; }
+.orbi__eye-unit--right .orbi__eye-seg--up { transform-origin: 76px 56.4px; }
+.orbi__eye-unit--right .orbi__eye-seg--up2 { transform-origin: 76px 53.2px; }
+.orbi__eye-unit--right .orbi__eye-seg--down { transform-origin: 76px 59.6px; }
+.orbi__eye-unit--right .orbi__eye-seg--down2 { transform-origin: 76px 62.8px; }
+
+.orbi__blink {
+  animation: orbi-lab-blink var(--orbi-blink-duration) linear infinite;
+  animation-delay: calc(var(--orbi-blink-duration) * -1 * var(--orbi-blink-phase, 0));
+  overflow: visible;
+  transform-box: view-box;
+  transform-origin: 64px 58px;
+}
+
+.orbi__eyes-open,
+.orbi__eyes-smile,
+.orbi__eyes-sleep {
+  transform-box: fill-box;
+  transform-origin: center;
+  will-change: opacity, transform;
+}
+
+.orbi__eyes-open { opacity: 1; }
+.orbi__eyes-smile,
+.orbi__eyes-sleep { opacity: 0; }
+
+.orbi--tutor:not([data-performing]) .orbi__eyes-open {
+  animation: orbi-lab-auto-open 8.5s linear infinite;
+  animation-delay: calc(8.5s * -1 * var(--orbi-smile-phase, 0));
+}
+
+.orbi--tutor:not([data-performing]) .orbi__eyes-smile {
+  animation: orbi-lab-auto-smile 8.5s linear infinite;
+  animation-delay: calc(8.5s * -1 * var(--orbi-smile-phase, 0));
+}
+
+.orbi[data-performing] .orbi__spin-a,
+.orbi[data-performing] .orbi__spin-b,
+.orbi[data-performing] .orbi__shine,
+.orbi[data-performing] .orbi__gaze {
+  animation-play-state: paused;
+}
+
+.orbi[data-performing] .orbi__blink {
+  animation: none;
+  transform: scaleY(1);
+}
+
+@keyframes orbi-lab-spin-a { to { transform: rotate(360deg); } }
+@keyframes orbi-lab-spin-b { to { transform: rotate(-360deg); } }
+@keyframes orbi-lab-shine {
+  50% { transform: rotate(10deg) translate(2px, -1px); opacity: .86; }
+}
+@keyframes orbi-lab-gaze {
+  0% { --orbi-look: 1; }
+  46.5% { --orbi-look: 1; }
+  50% { --orbi-look: -1; }
+  96.5% { --orbi-look: -1; }
+  100% { --orbi-look: 1; }
+}
+@keyframes orbi-lab-gaze-right {
+  0% { --orbi-look: 1; }
+  85% { --orbi-look: 1; }
+  88.5% { --orbi-look: -1; }
+  94% { --orbi-look: -1; }
+  97.5% { --orbi-look: 1; }
+  100% { --orbi-look: 1; }
+}
+@keyframes orbi-lab-gaze-left {
+  0% { --orbi-look: -1; }
+  85% { --orbi-look: -1; }
+  88.5% { --orbi-look: 1; }
+  94% { --orbi-look: 1; }
+  97.5% { --orbi-look: -1; }
+  100% { --orbi-look: -1; }
+}
+@keyframes orbi-lab-gaze-center {
+  0% { --orbi-look: 0; }
+  40% { --orbi-look: 0; }
+  41.75% { --orbi-look: 1; }
+  47% { --orbi-look: 1; }
+  48.75% { --orbi-look: 0; }
+  90% { --orbi-look: 0; }
+  91.75% { --orbi-look: -1; }
+  97% { --orbi-look: -1; }
+  98.75% { --orbi-look: 0; }
+  100% { --orbi-look: 0; }
+}
+@keyframes orbi-lab-blink {
+  0%, 28%, 30%, 78%, 80%, 82%, 100% { transform: scaleY(1); }
+  29%, 79%, 81% { transform: scaleY(.04); }
+  79.5% { transform: scaleY(1); }
+}
+@keyframes orbi-lab-auto-open {
+  0%, 63% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  64.5% {
+    opacity: .26;
+    transform: scaleY(.62);
+    animation-timing-function: cubic-bezier(.4, 0, .7, 1);
+  }
+  66%, 84% {
+    opacity: 0;
+    transform: scaleY(.44);
+  }
+  86% {
+    opacity: .34;
+    transform: scaleY(.68);
+    animation-timing-function: cubic-bezier(.12, .72, .25, 1);
+  }
+  87.5% {
+    opacity: 1;
+    transform: scaleY(1.05);
+  }
+  89.5%, 100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+@keyframes orbi-lab-auto-smile {
+  0%, 63% {
+    opacity: 0;
+    transform: scale(.84, .68) translateY(2px);
+  }
+  64.5% {
+    opacity: .68;
+    transform: scale(.96, .9) translateY(.5px);
+    animation-timing-function: cubic-bezier(.16, 1, .3, 1);
+  }
+  66% {
+    opacity: 1;
+    transform: scale(1.04) translateY(0);
+  }
+  68%, 84% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  86% {
+    opacity: .48;
+    transform: scale(.97, .82) translateY(1px);
+    animation-timing-function: cubic-bezier(.4, 0, .8, .45);
+  }
+  87.5%, 100% {
+    opacity: 0;
+    transform: scale(.91, .62) translateY(2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbi__spin-a,
+  .orbi__spin-b,
+  .orbi__shine,
+  .orbi__eyes,
+  .orbi__blink,
+  .orbi__eyes-open,
+  .orbi__eyes-smile,
+  .orbi__eyes-sleep {
+    animation: none !important;
+  }
+  .orbi__eyes-open { opacity: 1; }
+  .orbi__eyes-smile,
+  .orbi__eyes-sleep { opacity: 0; }
+  /* Ohne Pendel, aber in der schrägen Grundhaltung. */
+  .orbi__gaze { animation: none !important; }
+}
