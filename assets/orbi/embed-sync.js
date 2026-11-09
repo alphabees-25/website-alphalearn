@@ -1,9 +1,9 @@
 // Orbi in der Sync-Grafik der Startseite: hüpft zweimal kurz, Pause – in Schleife (kein Nachdenken, Wunsch des Nutzers).
 // Module aus dem orbi-animation-lab; Augen, Blinzeln und Lichtbänder laufen per CSS ohnehin.
-import { createOrbi } from "./core/orbi.js?v=0.10.0";
-import { createPersonalityEffects } from "./core/personality-effects.js?v=0.11.1";
-import { OrbiController } from "./core/controller.js?v=0.11.0";
-import * as hopSmall from "./sequences/hop-small/sequence.js?v=1";
+import { createOrbi } from "./core/orbi.js?v=20261106";
+import { createPersonalityEffects } from "./core/personality-effects.js?v=20261106";
+import { OrbiController } from "./core/controller.js?v=20261106";
+import * as hopSmall from "./sequences/hop-small/sequence.js?v=20261106";
 
 const stage = document.querySelector("[data-orbi-sync]");
 if (stage) {

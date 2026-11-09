@@ -1,10 +1,9 @@
 // Orbis auf der Website: Platzhalter <div class="orbi-host agent-…"> werden mit
-// dem Orbi aus dem Lab gefüllt (orbi.js, palettes.js, orbi.css sind unveränderte
-// Kopien aus AlphaTutor/tools/orbi-animation-lab/core vom 06.11.2026 — dort ändern, dann neu kopieren;
-// ../core ist eine ältere Lab-Kopie für Startseite und 404).
+// dem Orbi aus dem Lab gefüllt (core/ ist eine unveränderte
+// Kopie von AlphaTutor/tools/orbi-animation-lab/core vom 06.11.2026 — dort ändern, dann neu kopieren).
 // Wie auf den Agent-Kacheln im Portal: Blickrichtung, Versatz, Blinzeln und
 // Lachen je Orbi zufällig, damit nebeneinander stehende Orbis nicht im Gleichtakt laufen.
-import { createOrbi } from "./orbi.js";
+import { createOrbi } from "./core/orbi.js?v=20261106";
 
 const TYPES = { tutor: "tutor", dozent: "twin", twin: "twin", support: "support", assist: "assist" };
 const GAZES = ["left", "right", "center"];

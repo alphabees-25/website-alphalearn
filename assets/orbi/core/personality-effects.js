@@ -1,5 +1,6 @@
-import { getOrbiType } from "./palettes.js?v=0.3.0";
+import { getOrbiType } from "./palettes.js?v=0.4.0";
 import { DEFAULT_GROWTH_TRAITS } from "./trait-growth-keyframes.js?v=0.4.0";
+import { RAMBO_CASING_COUNT, RAMBO_SHOT_COUNT } from "./rambo-keyframes.js?v=0.1.1";
 
 const CONFETTI_COLORS = ["#ff6ea9", "#ffd34e", "#46d6c8", "#775cf6", "#72a8ff"];
 
@@ -80,5 +81,33 @@ export function createPersonalityEffects({ type = "tutor", id = "orbi-personalit
   };
   setGrowthTraits(initialGrowthTraits);
 
-  return { root, thoughtBubble, thoughtDots, confettiParticles, whistleNotes, sleepZs, tryMeBubble, growthTraits, setGrowthTraits };
+  const ramboCasings = Array.from({ length: RAMBO_CASING_COUNT }, (_, index) => {
+    const casing = document.createElement("i");
+    casing.className = "orbi-rambo-casing";
+    casing.dataset.casingIndex = String(index);
+    root.appendChild(casing);
+    return casing;
+  });
+
+  const ramboStreaks = Array.from({ length: RAMBO_SHOT_COUNT }, (_, index) => {
+    const streak = document.createElement("i");
+    streak.className = `orbi-rambo-streak orbi-rambo-streak--${index % 2 === 0 ? "left" : "right"}`;
+    streak.dataset.shotIndex = String(index);
+    root.appendChild(streak);
+    return streak;
+  });
+
+  return {
+    root,
+    thoughtBubble,
+    thoughtDots,
+    confettiParticles,
+    whistleNotes,
+    sleepZs,
+    tryMeBubble,
+    growthTraits,
+    setGrowthTraits,
+    ramboCasings,
+    ramboStreaks,
+  };
 }

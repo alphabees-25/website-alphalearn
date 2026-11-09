@@ -64,6 +64,24 @@ export const ORBI_TYPES = Object.freeze({
       solidA: "#b44df0", solidB: "#6a4ce8", wave: "#4a22b0", eye: "#200a52",
     },
   },
+  // Weißer Orbi (Vorlage Orbi_Exports_Final/Orbi_schraeg/3D/orbi-end-3d.svg,
+  // Marcel 06.11.2026): kein Agent-Template, sondern die neutrale Fassung für
+  // Website, Präsentationen und Assets. Fester Körper statt Glas (orbi.css).
+  white: {
+    label: "Weiß",
+    personality: "klar · neutral",
+    timing: { spinA: "11s", spinB: "15s", scan: "2.6s", blink: "7s" },
+    colors: {
+      fill1: "#ffffff", fill2: "#f7f8fd", fill3: "#dfe3f2", fill4: "#a3aacf",
+      glow2: "#ece8ff", glow3: "#8f84e4",
+      bandA1: "#ffffff", bandA2: "#f4f1ff", bandA3: "#e4e6f6", bandA4: "#eef3ff",
+      bandB1: "#fff4fa", bandB2: "#d8dcf1", bandB3: "#e6ecfb",
+      rim2: "#e6e0ff", rim3: "#a69ce8",
+      solidA: "#ffd9ea", solidB: "#dde4fa", wave: "#cdd0ec", eye: "#1f2a4a",
+      // Randschatten lila wie in der Vorlage — sonst nimmt er die Augenfarbe.
+      shade: "#7d72d6",
+    },
+  },
 });
 
 const COLOR_VARIABLES = {
@@ -73,6 +91,7 @@ const COLOR_VARIABLES = {
   bandB1: "--orbi-band-b-1", bandB2: "--orbi-band-b-2", bandB3: "--orbi-band-b-3",
   rim2: "--orbi-rim-2", rim3: "--orbi-rim-3",
   solidA: "--orbi-solid-a", solidB: "--orbi-solid-b", wave: "--orbi-wave", eye: "--orbi-eye",
+  shade: "--orbi-shade",
 };
 
 export function getOrbiType(type) {
@@ -85,7 +104,9 @@ export function applyOrbiType(element, type) {
   element.className = `orbi orbi--${element.dataset.type}`;
 
   Object.entries(COLOR_VARIABLES).forEach(([key, variable]) => {
-    element.style.setProperty(variable, config.colors[key]);
+    // Optionale Farben (`shade`) fallen ohne Wert auf ihre CSS-Vorgabe zurück.
+    if (config.colors[key]) element.style.setProperty(variable, config.colors[key]);
+    else element.style.removeProperty(variable);
   });
 
   element.style.setProperty("--orbi-spin-a-duration", config.timing.spinA);

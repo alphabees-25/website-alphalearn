@@ -1,5 +1,5 @@
-import { createOrbi } from "./orbi.js?v=0.9.12";
-import { getOrbiType } from "./palettes.js?v=0.3.0";
+import { createOrbi } from "./orbi.js?v=0.14.3";
+import { getOrbiType } from "./palettes.js?v=0.4.0";
 import { MINI_ORBI_SIZES } from "./split-swarm-keyframes.js?v=0.8.0";
 
 export function createMiniOrbiSwarm({ type = "tutor", id = "orbi-mini-swarm" } = {}) {

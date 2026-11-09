@@ -135,6 +135,8 @@ export class OrbiController extends EventTarget {
       sleepZs: Array.from(stage?.querySelectorAll(".orbi-sleep-z") || []),
       tryMeBubble: stage?.querySelector(".orbi-try-me-bubble") || null,
       growthTraits: Array.from(stage?.querySelectorAll(".orbi-growth-trait") || []),
+      ramboCasings: Array.from(stage?.querySelectorAll(".orbi-rambo-casing") || []),
+      ramboStreaks: Array.from(stage?.querySelectorAll(".orbi-rambo-streak") || []),
       effectsRoot: stage?.querySelector(".orbi-stage-effects") || null,
       learningWidget: stage?.querySelector(".learning-widget-demo") || null,
     };
