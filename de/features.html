@@ -252,8 +252,8 @@
                 font-size:clamp(2.1rem, 4.6vw, 4.4rem); max-width:22ch; text-shadow:0 1px 18px rgba(30,27,75,.18); }
   @media (min-width:1024px) { .ft-hero-h1 { max-width:24ch; } }
 </style>
-  <link rel="stylesheet" href="/assets/orbi/v2/orbi.css?v=20261106">
-  <script type="module" src="/assets/orbi/v2/orbi-site.js?v=20261106"></script>
+  <link rel="stylesheet" href="/assets/orbi/core/orbi.css?v=20261106">
+  <script type="module" src="/assets/orbi/orbi-site.js?v=20261106"></script>
 </head>
   <body class="min-h-screen antialiased text-gray-900 bg-white overflow-x-hidden" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
 
@@ -572,7 +572,7 @@
     @media (max-width: 479px) { .tg-media .grid-cols-5 .w-20.h-20 { width: 3.3rem; height: 3.3rem; border-radius: .8rem; } .tg-media .grid-cols-5 .w-20.h-20 img { max-width: 78%; } .tg-media .grid-cols-5 .w-20.h-20 span { font-size: .6rem; letter-spacing: 0; } }
     @media (prefers-reduced-motion: reduce) { .tg-track, .ft-areas-track { scroll-behavior: auto; } .ft-areas-track { transition: none; } }
 
-    /* ---- ORBI: Agent-Maskottchen aus dem Orbi-Lab (assets/orbi/v2, Stand 06.11.2026) ----
+    /* ---- ORBI: Agent-Maskottchen aus dem Orbi-Lab (assets/orbi/core, Stand 06.11.2026) ----
        Die Platzhalter .orbi-host füllt orbi-site.js; Augen, Blick, Blinzeln und
        Lichtbänder kommen aus orbi.css. Hier nur Größe und die an die Größe
        angepassten Schatten (orbi.css rechnet für 220 px). */
@@ -1031,6 +1031,87 @@
         </div>
       </article>
     </div>
+  </section>
+
+
+  <!-- ================= M1.6 · INTERAKTIVE LERNHILFEN (Galerie, Videos aus alphalearn-learning-aids-de/build/web_gallery) ================= -->
+  <section id="lernhilfen" class="sm:px-6 lg:px-8 max-w-7xl mx-auto px-4 pt-24 sm:pt-32 pb-8 sm:pb-12 relative scroll-mt-24" data-lh-gallery>
+    <style>
+      .ft-lh-track { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; padding-bottom: 4px; }
+      .ft-lh-track::-webkit-scrollbar { display: none; }
+      .ft-lh-slide { flex: 0 0 85%; margin: 0; scroll-snap-align: start; }
+      @media (min-width: 640px) { .ft-lh-slide { flex-basis: calc((100% - 20px) / 2); } }
+      @media (min-width: 1024px) { .ft-lh-slide { flex-basis: calc((100% - 40px) / 3); } }
+      .ft-lh-media { overflow: hidden; border-radius: 28px; border: 1.5px solid #0a0a0f; background: #fff; aspect-ratio: 1 / 1; }
+      .ft-lh-media video { display: block; width: 100%; height: 100%; object-fit: cover; }
+      .ft-lh-dot { width: 6px; height: 6px; border-radius: 9999px; background: #d1d5db; transition: width .25s, background-color .25s; }
+      .ft-lh-dot[data-active="true"] { width: 20px; background: #0a0a0f; }
+      @media (prefers-reduced-motion: reduce) { .ft-lh-track { scroll-behavior: auto; } }
+    </style>
+    <div class="animate-on-scroll max-w-5xl mb-12 sm:mb-16" style="animation: fadeSlideIn 1s ease-out 0.1s both">
+      <h2 class="ds-h2">Interaktive Lernhilfen statt lange Texte</h2>
+      <p class="ds-sub mt-6 sm:mt-8">Während KI-Chatbots ihr Wissen über Text vermitteln, generiert der KI-Tutor von Alphabees seine Lerninhalte visuell. In Echtzeit werden interaktive Lernhilfen erstellt, die individuell auf den Lernenden zugeschnitten sind.</p>
+    </div>
+    <div class="ft-lh-track" data-lh-track aria-label="Beispiele für interaktive Lernhilfen">
+        <figure class="ft-lh-slide" data-lh-slide>
+          <div class="ft-lh-media"><video muted loop playsinline preload="none" poster="/assets/features/lernhilfen/slider.jpg" width="880" height="880" aria-label="Lernhilfe Interaktiver Regler: der KI-Tutor erstellt sie, dann wird sie bedient" data-lh-video><source src="/assets/features/lernhilfen/slider.mp4" type="video/mp4"></video></div>
+          <figcaption class="mt-5 px-1"><h3 class="text-xl font-medium tracking-tight text-[#0a0a0f] font-geist">Interaktiver Regler</h3><p class="mt-1.5 text-[15px] leading-relaxed text-gray-600 font-geist">Lernende verändern einen Wert und sehen sofort, wie sich das Ergebnis verändert.</p></figcaption>
+        </figure>
+        <figure class="ft-lh-slide" data-lh-slide>
+          <div class="ft-lh-media"><video muted loop playsinline preload="none" poster="/assets/features/lernhilfen/expand.jpg" width="880" height="880" aria-label="Lernhilfe Aufklappbare Karten: der KI-Tutor erstellt sie, dann wird sie bedient" data-lh-video><source src="/assets/features/lernhilfen/expand.mp4" type="video/mp4"></video></div>
+          <figcaption class="mt-5 px-1"><h3 class="text-xl font-medium tracking-tight text-[#0a0a0f] font-geist">Aufklappbare Karten</h3><p class="mt-1.5 text-[15px] leading-relaxed text-gray-600 font-geist">Begriffe und Erklärungen öffnen sich erst, wenn Lernende sie anklicken.</p></figcaption>
+        </figure>
+        <figure class="ft-lh-slide" data-lh-slide>
+          <div class="ft-lh-media"><video muted loop playsinline preload="none" poster="/assets/features/lernhilfen/flow.jpg" width="880" height="880" aria-label="Lernhilfe Animierte Abläufe: der KI-Tutor erstellt sie, dann wird sie bedient" data-lh-video><source src="/assets/features/lernhilfen/flow.mp4" type="video/mp4"></video></div>
+          <figcaption class="mt-5 px-1"><h3 class="text-xl font-medium tracking-tight text-[#0a0a0f] font-geist">Animierte Abläufe</h3><p class="mt-1.5 text-[15px] leading-relaxed text-gray-600 font-geist">Zusammenhänge bauen sich Schritt für Schritt als Diagramm auf.</p></figcaption>
+        </figure>
+        <figure class="ft-lh-slide" data-lh-slide>
+          <div class="ft-lh-media"><video muted loop playsinline preload="none" poster="/assets/features/lernhilfen/takeaways.jpg" width="880" height="880" aria-label="Lernhilfe Merkliste: der KI-Tutor erstellt sie, dann wird sie bedient" data-lh-video><source src="/assets/features/lernhilfen/takeaways.mp4" type="video/mp4"></video></div>
+          <figcaption class="mt-5 px-1"><h3 class="text-xl font-medium tracking-tight text-[#0a0a0f] font-geist">Merkliste</h3><p class="mt-1.5 text-[15px] leading-relaxed text-gray-600 font-geist">Die wichtigsten Punkte zum Abhaken und Wiederholen.</p></figcaption>
+        </figure>
+        <figure class="ft-lh-slide" data-lh-slide>
+          <div class="ft-lh-media"><video muted loop playsinline preload="none" poster="/assets/features/lernhilfen/flashcard.jpg" width="880" height="880" aria-label="Lernhilfe Lernkarten: der KI-Tutor erstellt sie, dann wird sie bedient" data-lh-video><source src="/assets/features/lernhilfen/flashcard.mp4" type="video/mp4"></video></div>
+          <figcaption class="mt-5 px-1"><h3 class="text-xl font-medium tracking-tight text-[#0a0a0f] font-geist">Lernkarten</h3><p class="mt-1.5 text-[15px] leading-relaxed text-gray-600 font-geist">Karten zum Umdrehen, mit denen sich Lernende selbst abfragen.</p></figcaption>
+        </figure>
+    </div>
+    <div class="mt-8 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-1.5" data-lh-dots aria-hidden="true"></div>
+      <div class="flex items-center gap-2">
+        <button type="button" data-lh-prev aria-label="Zurück" class="flex h-9 w-9 items-center justify-center rounded-full border-[1.5px] border-[#0a0a0f] bg-white text-[#0a0a0f] active:scale-95 disabled:opacity-30"><i data-lucide="chevron-left" class="h-4 w-4"></i></button>
+        <button type="button" data-lh-next aria-label="Weiter" class="flex h-9 w-9 items-center justify-center rounded-full border-[1.5px] border-[#0a0a0f] bg-white text-[#0a0a0f] active:scale-95 disabled:opacity-30"><i data-lucide="chevron-right" class="h-4 w-4"></i></button>
+      </div>
+    </div>
+    <script>
+    (function () {
+      var root = document.querySelector("[data-lh-gallery]");
+      if (!root) return;
+      var track = root.querySelector("[data-lh-track]"), slides = [].slice.call(root.querySelectorAll("[data-lh-slide]"));
+      var dotsEl = root.querySelector("[data-lh-dots]"), prev = root.querySelector("[data-lh-prev]"), next = root.querySelector("[data-lh-next]");
+      var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var dots = slides.map(function () { var d = document.createElement("span"); d.className = "ft-lh-dot"; dotsEl.appendChild(d); return d; });
+      function step() { return slides[1].offsetLeft - slides[0].offsetLeft; }
+      function update() {
+        var i = Math.round(track.scrollLeft / step()), max = track.scrollWidth - track.clientWidth - 2;
+        dots.forEach(function (d, k) { d.dataset.active = String(k === Math.min(i, slides.length - 1)); });
+        prev.disabled = track.scrollLeft <= 2; next.disabled = track.scrollLeft >= max;
+      }
+      prev.addEventListener("click", function () { track.scrollBy({ left: -step() }); });
+      next.addEventListener("click", function () { track.scrollBy({ left: step() }); });
+      track.addEventListener("scroll", function () { window.requestAnimationFrame(update); }, { passive: true });
+      window.addEventListener("resize", update);
+      update();
+      // Videos laufen nur, solange sie ganz im Bild sind; bei "Bewegung reduzieren" bleibt das fertige Standbild
+      if (reduce || !("IntersectionObserver" in window)) return;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          var v = e.target;
+          if (e.intersectionRatio >= 0.6) { if (v.paused) { v.currentTime = 0; v.play().catch(function () {}); } }
+          else if (!v.paused) v.pause();
+        });
+      }, { threshold: [0, 0.6] });
+      root.querySelectorAll("[data-lh-video]").forEach(function (v) { io.observe(v); });
+    })();
+    </script>
   </section>
 
 
