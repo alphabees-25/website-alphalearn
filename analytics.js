@@ -5,9 +5,11 @@
  *   <script src="/analytics.js" defer></script>
  * (oder zentral aus layout.js nachladen)
  *
- * Consent: Diese Datei sendet nur, wenn window.gtag existiert.
+ * Consent: An GA4 wird nur gesendet, wenn window.gtag existiert.
  * Lädt euer Cookie-Banner GA4 erst nach Zustimmung, greift das
  * automatisch auch für alle Events hier.
+ * Umami (cookielos, stats.alphabees.ai, geladen in layout.js) bekommt
+ * jedes Event unabhängig vom Banner.
  *
  * CTAs auszeichnen (empfohlen, macht Reports lesbar):
  *   <a href="/de/demos.html" data-cta="hero_demo">Demo ansehen</a>
@@ -20,6 +22,9 @@
 
   // ---------- Basis ----------
   function track(eventName, params) {
+    if (window.umami && typeof window.umami.track === 'function') {
+      window.umami.track(eventName, params || {});
+    }
     if (typeof window.gtag !== 'function') return; // Consent nicht erteilt / GA nicht geladen
     window.gtag('event', eventName, params || {});
   }

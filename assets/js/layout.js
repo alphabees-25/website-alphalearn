@@ -7,6 +7,27 @@
   const GA_MEASUREMENT_ID = 'G-R1NYZ0V0HK';
   let activeConsent = null;
 
+  // Umami (selbst gehostet auf stats.alphabees.ai): setzt keine Cookies und
+  // speichert keine IP-Adressen, läuft deshalb unabhängig vom Cookie-Banner.
+  // Abmelden per ?notrack (localStorage umami.disabled), wieder an per ?track.
+  const UMAMI_WEBSITE_ID = '246ccf47-13ae-4490-a4ed-5b7907085f11';
+  try {
+    const trackParams = new URLSearchParams(window.location.search);
+    if (trackParams.has('notrack')) localStorage.setItem('umami.disabled', '1');
+    if (trackParams.has('track')) localStorage.removeItem('umami.disabled');
+  } catch (err) {
+    // localStorage gesperrt: dann greift nur Do-Not-Track
+  }
+  if (!document.querySelector('script[data-website-id]')) {
+    const umamiScript = document.createElement('script');
+    umamiScript.defer = true;
+    umamiScript.src = 'https://stats.alphabees.ai/s.js';
+    umamiScript.dataset.websiteId = UMAMI_WEBSITE_ID;
+    umamiScript.dataset.domains = 'alphalearn.ai';
+    umamiScript.dataset.doNotTrack = 'true';
+    document.head.appendChild(umamiScript);
+  }
+
   // Consent Mode v2: Default "denied" in den dataLayer pushen, BEVOR gtag.js
   // geladen/konfiguriert wird (Laden passiert weiterhin erst nach Zustimmung
   // über loadAnalytics — der bestehende Banner-Mechanismus bleibt unverändert).
@@ -248,8 +269,8 @@
   document.documentElement.lang = currentLang || 'de';
 
   // Funnel-Event-Tracking zentral nachladen (statt auf jeder HTML-Seite).
-  // analytics.js sendet nur, wenn window.gtag existiert — also erst nachdem
-  // loadAnalytics() nach Analytics-Zustimmung gelaufen ist.
+  // analytics.js sendet an Umami immer, an GA4 nur, wenn window.gtag existiert —
+  // also erst nachdem loadAnalytics() nach Analytics-Zustimmung gelaufen ist.
   const analyticsScript = document.createElement('script');
   analyticsScript.src = normalizePath(`${getBasePath()}/analytics.js`);
   analyticsScript.defer = true;
