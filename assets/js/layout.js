@@ -496,6 +496,28 @@
   // Chat iframes use data-src and load on visibility. The embedded chat app
   // focuses its input on load, which scrolls the page down to the iframe on
   // reload if the iframe loads while offscreen.
+  // Kit (ConvertKit) Formular-Skript erst laden, wenn jemand ein Kit-Formular benutzt
+  // (Fokus, Tippen, Klick). Vorher keine Verbindung zu Kit (Datenschutz, seit 11.11.2026).
+  // Wird abgeschickt, bevor das Skript da ist, greift der normale POST an Kit – das Formular funktioniert immer.
+  const KIT_SCRIPT_SRC = 'https://f.convertkit.com/ckjs/ck.5.js';
+  const initKitLazyLoad = () => {
+    let requested = false;
+    const load = (event) => {
+      if (requested) return;
+      const form = event.target && event.target.closest && event.target.closest('form[data-sv-form]');
+      if (!form) return;
+      requested = true;
+      ['focusin', 'pointerdown', 'keydown'].forEach((t) => document.removeEventListener(t, load, true));
+      if (document.querySelector(`script[src="${KIT_SCRIPT_SRC}"]`)) return;
+      const script = document.createElement('script');
+      script.src = KIT_SCRIPT_SRC;
+      script.async = true;
+      document.head.appendChild(script);
+    };
+    ['focusin', 'pointerdown', 'keydown'].forEach((t) => document.addEventListener(t, load, true));
+  };
+  initKitLazyLoad();
+
   const initChatIframeLazyLoad = () => {
     const frames = document.querySelectorAll('iframe[data-src^="https://chat.alphabees.de"]');
     if (!frames.length) return;

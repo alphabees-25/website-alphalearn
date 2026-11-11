@@ -341,3 +341,4 @@ Regeln ab jetzt:
 - Plattform-Datenschutz (Dienstleister, Speicherdauern, TOM): einzige Quelle ist die AVV im Portal. privacy.html behandelt nur die Website und nennt für Orbi nur Empfänger-Kategorien.
 - Kontakt in allen Rechtstexten: support@alphabees.de (privacy@alphabees.de existiert nicht). DSB: Lasse Erdweg.
 - Neue Cookies/Speicher (localStorage-Keys, Dritt-Skripte) immer in cookie-policy.html DE/EN nachtragen.
+- Kit-Formular-Skript (ck.5.js) wird NICHT mehr per <script> in Seiten eingebunden, sondern von assets/js/layout.js (initKitLazyLoad) erst bei Fokus/Klick/Taste in einem form[data-sv-form] nachgeladen (seit 11.11.2026). Neue Kit-Formulare brauchen nur das Attribut data-sv-form; nie wieder ck.5.js direkt in den <head> schreiben. Bei Änderungen an layout.js die Version ?v=static-vN in allen Seiten hochzählen.
