@@ -335,3 +335,9 @@ Regeln ab jetzt:
 - **Schriften:** Geist, Geist Mono und Inter liegen lokal unter `assets/fonts/` (SIL OFL, aus @fontsource-variable 5.3.0), eingebunden über `assets/css/fonts.css` (+ Preload für Geist). Seit 10.11.2026 lädt keine Seite mehr etwas von fonts.googleapis.com/fonts.gstatic.com – nie wieder Google-Fonts-Links einfügen (DSGVO, LG München I 3 O 17493/20). Neue Schrift → woff2 lokal ablegen.
 - **Tailwind:** kein Play-CDN mehr (seit 10.11.2026). `scripts/seo_build.py` baut `assets/css/tailwind.css` mit der Tailwind-CLI 3.4.17 (npx, Config `scripts/tailwind/`) und setzt einen Content-Hash als `?v=` in den Link. Jede Seite bindet `<link rel="stylesheet" href="/assets/css/tailwind.css?v=…">` am Ende von `<head>` ein; neue Seiten genauso. Nie wieder `cdn.tailwindcss.com` einbinden, der Build bricht dann ab. Klassen, die per JS aus Strings zusammengesetzt werden (z. B. `"bg-" + farbe`), findet der Scanner nicht: Klassen immer vollständig ausschreiben.
 - JSON-LD: Organization + WebSite auf den Startseiten, SoftwareApplication auf `de/preis.html` / `en/pricing.html`.
+
+## Rechtstexte (seit 11.11.2026)
+- AGB: einzige Quelle ist das Portal (https://portal.alphalearn.ai/auth/terms-and-conditions). de/agb.html und en/terms.html verweisen nur darauf – keinen AGB-Text mehr auf die Website kopieren.
+- Plattform-Datenschutz (Dienstleister, Speicherdauern, TOM): einzige Quelle ist die AVV im Portal. privacy.html behandelt nur die Website und nennt für Orbi nur Empfänger-Kategorien.
+- Kontakt in allen Rechtstexten: support@alphabees.de (privacy@alphabees.de existiert nicht). DSB: Lasse Erdweg.
+- Neue Cookies/Speicher (localStorage-Keys, Dritt-Skripte) immer in cookie-policy.html DE/EN nachtragen.
