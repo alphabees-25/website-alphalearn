@@ -15,6 +15,12 @@ What it does (idempotent):
 2. Rebuilds the <lastmod> of every URL in sitemap.xml from the date of the
    last git commit that touched the file (or today, if the file has
    uncommitted changes).
+3. Builds assets/css/tailwind.css with the Tailwind CLI 3.4.17 (via npx),
+   scanning all pages, partials and JS files for classes. Replaces the
+   Tailwind Play CDN (Google warns against it in production). Pages link
+   /assets/css/tailwind.css at the end of <head>; never add
+   cdn.tailwindcss.com again. Skip with --no-css only if npx is unavailable,
+   and then do not commit HTML with new Tailwind classes.
 
 After editing a partial, simply run the script again.
 """
@@ -124,8 +130,40 @@ def update_sitemap() -> int:
     return count
 
 
+TAILWIND_VERSION = "3.4.17"
+
+
+def build_tailwind() -> None:
+    cfg = ROOT / "scripts" / "tailwind"
+    out = ROOT / "assets" / "css" / "tailwind.css"
+    cmd = ["npx", "--yes", f"tailwindcss@{TAILWIND_VERSION}", "-c", str(cfg / "tailwind.config.js"),
+           "-i", str(cfg / "input.css"), "-o", str(out), "--minify"]
+    r = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
+    if r.returncode != 0 or not out.exists():
+        sys.exit("Tailwind build FAILED (assets/css/tailwind.css not updated):\n" + r.stderr[-2000:])
+    cdn = [str(f.relative_to(ROOT)) for lang in LANGS for f in (ROOT / lang).rglob("*.html")
+           if "cdn.tailwindcss.com" in f.read_text(encoding="utf-8")]
+    if cdn:
+        sys.exit("These pages still load the Tailwind Play CDN, replace it with "
+                 "<link rel=\"stylesheet\" href=\"/assets/css/tailwind.css\">: " + ", ".join(cdn))
+    # cache-busting: link carries a hash of the CSS content
+    import hashlib
+    ver = hashlib.sha1(out.read_bytes()).hexdigest()[:10]
+    changed = 0
+    for lang in LANGS:
+        for f in (ROOT / lang).rglob("*.html"):
+            html = f.read_text(encoding="utf-8")
+            new = re.sub(r'/assets/css/tailwind\.css(\?v=[^"]*)?"', f'/assets/css/tailwind.css?v={ver}"', html)
+            if new != html:
+                f.write_text(new, encoding="utf-8")
+                changed += 1
+    print(f"tailwind.css built ({out.stat().st_size // 1024} KB, v={ver}, links updated in {changed} page(s))")
+
+
 if __name__ == "__main__":
     n = inline_partials()
     print(f"partials inlined/refreshed in {n} page(s)")
     if "--no-sitemap" not in sys.argv:
         print(f"sitemap lastmod set for {update_sitemap()} URL(s)")
+    if "--no-css" not in sys.argv:
+        build_tailwind()
