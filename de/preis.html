@@ -1020,7 +1020,7 @@
                 <span id="price-basic"
                   class="tabular-nums text-5xl leading-none font-normal text-gray-900 tracking-tight font-geist">79 €</span>
               </div>
-              <p class="text-xs leading-4 text-gray-400 font-geist">pro Monat, netto</p>
+              <p data-billing-note="cards" class="text-xs leading-4 text-gray-400 font-geist">pro Monat, netto, jährliche Abrechnung</p>
             </div>
             <a data-cta="pricing_demo" data-plan="basic" href="https://calendly.com/demo-alphabees/austausch-anfragen-alphabees" class="ds-btn w-full !px-4 mb-10">Demo buchen
               <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
@@ -1101,7 +1101,7 @@
                 <span id="price-pro"
                   class="tabular-nums text-5xl leading-none font-normal text-gray-900 tracking-tight font-geist">199 €</span>
               </div>
-              <p class="text-xs leading-4 text-gray-400 font-geist">pro Monat, netto</p>
+              <p data-billing-note="cards" class="text-xs leading-4 text-gray-400 font-geist">pro Monat, netto, jährliche Abrechnung</p>
             </div>
             <a data-cta="pricing_start" data-plan="professional" href="https://portal.alphalearn.ai/auth/register" class="ds-btn ds-btn--grad w-full !px-4 mb-10">14 Tage kostenlos testen
               <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
@@ -1291,6 +1291,7 @@
 
                 priceBasic.textContent = '99 €';
                 pricePro.textContent = '249 €';
+                document.querySelectorAll('[data-billing-note="cards"]').forEach((el) => { el.textContent = 'pro Monat, netto, monatliche Abrechnung'; });
               } else {
                 bg.classList.remove('translate-x-0');
                 bg.classList.add('translate-x-full');
@@ -1303,6 +1304,7 @@
 
                 priceBasic.textContent = '79 €';
                 pricePro.textContent = '199 €';
+                document.querySelectorAll('[data-billing-note="cards"]').forEach((el) => { el.textContent = 'pro Monat, netto, jährliche Abrechnung'; });
               }
             };
           </script>
@@ -3191,7 +3193,7 @@
               </table>
             </div>
           </div>
-          <p class="mt-4 text-xs leading-relaxed text-gray-500 font-geist">Alle Preise pro Monat, netto.</p>
+          <p data-billing-note="table" class="mt-4 text-xs leading-relaxed text-gray-500 font-geist">Jährliche Abrechnung mit 20 % Rabatt; angezeigt ist der Preis pro Monat. Alle Preise netto zzgl. USt.</p>
 
           <script>
             window.setTablePricing = function (plan) {
@@ -3231,9 +3233,11 @@
               if (isMonthly) {
                 priceBasic.innerHTML = '99 € / Monat netto';
                 pricePro.innerHTML = '249 € / Monat netto';
+                document.querySelectorAll('[data-billing-note="table"]').forEach((el) => { el.textContent = 'Monatliche Abrechnung. Alle Preise pro Monat, netto zzgl. USt.'; });
               } else {
                 priceBasic.innerHTML = '79 € / Monat netto';
                 pricePro.innerHTML = '199 € / Monat netto';
+                document.querySelectorAll('[data-billing-note="table"]').forEach((el) => { el.textContent = 'Jährliche Abrechnung mit 20 % Rabatt; angezeigt ist der Preis pro Monat. Alle Preise netto zzgl. USt.'; });
               }
             };
 

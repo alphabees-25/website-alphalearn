@@ -758,7 +758,7 @@ opacity: 0 !important;
                 <span id="price-basic"
                   class="tabular-nums text-5xl leading-none font-normal text-gray-900 tracking-tight font-geist">€79</span>
               </div>
-              <p class="text-xs leading-4 text-gray-400 font-geist">per month, net</p>
+              <p data-billing-note="cards" class="text-xs leading-4 text-gray-400 font-geist">per month, net, billed annually</p>
             </div>
             <a data-cta="pricing_demo" data-plan="basic" href="https://calendly.com/demo-alphabees/austausch-anfragen-alphabees" class="ds-btn w-full !px-4 mb-10">Book a demo
               <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
@@ -835,7 +835,7 @@ opacity: 0 !important;
                 <span id="price-pro"
                   class="tabular-nums text-5xl leading-none font-normal text-gray-900 tracking-tight font-geist">€199</span>
               </div>
-              <p class="text-xs leading-4 text-gray-400 font-geist">per month, net</p>
+              <p data-billing-note="cards" class="text-xs leading-4 text-gray-400 font-geist">per month, net, billed annually</p>
             </div>
             <a data-cta="pricing_start" data-plan="professional" href="https://portal.alphalearn.ai/auth/register" class="ds-btn ds-btn--grad w-full !px-4 mb-10">Try free for 14 days
               <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
@@ -1018,6 +1018,7 @@ opacity: 0 !important;
 
                 priceBasic.textContent = '€99';
                 pricePro.textContent = '€249';
+                document.querySelectorAll('[data-billing-note="cards"]').forEach((el) => { el.textContent = 'per month, net, billed monthly'; });
               } else {
                 bg.classList.remove('translate-x-0');
                 bg.classList.add('translate-x-full');
@@ -1030,6 +1031,7 @@ opacity: 0 !important;
 
                 priceBasic.textContent = '€79';
                 pricePro.textContent = '€199';
+                document.querySelectorAll('[data-billing-note="cards"]').forEach((el) => { el.textContent = 'per month, net, billed annually'; });
               }
             };
           </script>
@@ -2878,7 +2880,7 @@ opacity: 0 !important;
               </table>
             </div>
           </div>
-          <p class="mt-4 text-xs leading-relaxed text-gray-500 font-geist">All prices per month, net.</p>
+          <p data-billing-note="table" class="mt-4 text-xs leading-relaxed text-gray-500 font-geist">Billed annually with a 20% discount; the price shown is per month. All prices net, plus VAT.</p>
 
           <script>
             window.setTablePricing = function (plan) {
@@ -2918,9 +2920,11 @@ opacity: 0 !important;
               if (isMonthly) {
                 priceBasic.innerHTML = '€99 / month, net';
                 pricePro.innerHTML = '€249 / month, net';
+                document.querySelectorAll('[data-billing-note="table"]').forEach((el) => { el.textContent = 'Billed monthly. All prices per month, net, plus VAT.'; });
               } else {
                 priceBasic.innerHTML = '€79 / month, net';
                 pricePro.innerHTML = '€199 / month, net';
+                document.querySelectorAll('[data-billing-note="table"]').forEach((el) => { el.textContent = 'Billed annually with a 20% discount; the price shown is per month. All prices net, plus VAT.'; });
               }
             };
 
