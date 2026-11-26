@@ -1,0 +1,10 @@
+.git
+.github
+.claude
+.playwright-mcp
+Claude outputs
+_reserve
+_dev-preview
+node_modules
+scripts
+**/.DS_Store

@@ -1,0 +1,145 @@
+# alphalearn.ai auf K3s (Hetzner): gleiches Muster wie alphacourse/AlphaTutor (deploy-prod-k3s.yml).
+# Kein kubectl, kein kubeconfig - nur ein Image in ghcr und ein Tag-Commit an alphabees-deployments;
+# ArgoCD pollt das Repo und synct (~3 Min), danach läuft der Canary mit Health-Gate (~10 Min).
+#
+# Jeder Push auf main ist damit ein Deploy. Vorher wie immer lokal: python3 scripts/seo_build.py
+# Rollback: Tag in alphabees-deployments/apps/website/values-prod.yaml zurücksetzen.
+# Actions per Commit-SHA gepinnt (wie alphacourse).
+name: Deploy to K3s (Production)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  # Einen laufenden Deploy nie abbrechen, nur warten.
+  group: deploy-k3s-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  image:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      packages: write
+    outputs:
+      sha: ${{ steps.meta.outputs.sha }}
+    env:
+      REGISTRY: ghcr.io/alphabees-25/website-alphalearn
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Tag bestimmen
+        id: meta
+        run: |
+          echo "sha=${GITHUB_SHA}" >> "$GITHUB_OUTPUT"
+          echo "image=${REGISTRY}:${GITHUB_SHA}" >> "$GITHUB_OUTPUT"
+
+      - name: Bauen
+        env:
+          IMAGE: ${{ steps.meta.outputs.image }}
+        run: docker build --pull -t "$IMAGE" .
+
+      - name: Smoke-Test (Health, Startseite, kein internes Material)
+        env:
+          IMAGE: ${{ steps.meta.outputs.image }}
+        run: |
+          docker run -d --name web -p 8080:8080 "$IMAGE"
+          for i in $(seq 1 20); do curl -fsS http://127.0.0.1:8080/healthz && break; sleep 1; done
+          check() { code=$(curl -s -o /dev/null -w '%{http_code}' "http://127.0.0.1:8080$1"); echo "$1 -> $code"; [ "$code" = "$2" ] || { echo "::error::$1 lieferte $code statt $2"; exit 1; }; }
+          check /de/ 200
+          check /en/ 200
+          check /de/features.html 200
+          check /sitemap.xml 200
+          check /robots.txt 200
+          check /de 301
+          check /gibt-es-nicht 404
+          check /claude.md 404
+          check /scripts/seo_build.py 404
+          docker rm -f web
+
+      - name: Bei ghcr anmelden
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: echo "$GITHUB_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+
+      - name: Pushen
+        env:
+          IMAGE: ${{ steps.meta.outputs.image }}
+        run: docker push "$IMAGE"
+
+  deploy:
+    needs: image
+    runs-on: ubuntu-latest
+    # REGISTRY_TOKEN_GITHUB (Schreibrecht auf alphabees-deployments) liegt im Environment production,
+    # wie bei alphacourse.
+    environment: production
+    timeout-minutes: 10
+    env:
+      SHA: ${{ needs.image.outputs.sha }}
+      FILE: apps/website/values-prod.yaml
+    steps:
+      - name: Checkout deployments repo
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: alphabees-25/alphabees-deployments
+          token: ${{ secrets.REGISTRY_TOKEN_GITHUB }}
+          path: deployments
+
+      - name: Image-Tag in values-prod.yaml setzen
+        working-directory: deployments
+        run: |
+          if [ ! -f "$FILE" ]; then
+            echo "::notice::$FILE gibt es noch nicht (Chart nicht gemergt) - nur Image gebaut, kein Deploy."
+            exit 0
+          fi
+          yq -i ".image.tag = \"$SHA\"" "$FILE"
+          git diff --stat
+
+      - name: Commit und Push an alphabees-deployments
+        working-directory: deployments
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet; then
+            echo "Keine Änderung"
+            exit 0
+          fi
+          git add "$FILE"
+          git commit -m "chore(website): bump to $SHA
+
+          Triggered by: $GITHUB_ACTOR
+          Source: $GITHUB_REPOSITORY@$SHA
+          Build: $GITHUB_RUN_ID"
+          # Andere Repos bumpen dasselbe Repo: abgewiesenen Push neu aufsetzen, nie verwerfen.
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              echo "Nach alphabees-deployments gepusht; ArgoCD synct in rund 3 Minuten."
+              break
+            fi
+            if [ "$attempt" = 5 ]; then
+              echo "::error::Push nach 5 Versuchen abgewiesen"
+              exit 1
+            fi
+            git pull --rebase --autostash origin main
+          done
+
+      - name: Job-Summary
+        run: |
+          {
+            echo "## alphalearn.ai auf K3s"
+            echo
+            echo "Image: \`ghcr.io/alphabees-25/website-alphalearn:$SHA\`"
+            echo
+            echo "Eingetragen in \`alphabees-deployments/$FILE\`; ArgoCD synct in rund 3 Minuten, danach Canary mit Health-Gate."
+          } >> "$GITHUB_STEP_SUMMARY"
